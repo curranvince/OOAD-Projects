@@ -6,17 +6,7 @@ public class Deck {
 
     public Deck() {
         cards_ = new Card[54];
-        num_cards_ = 54;
-        int counter = 0;
-        for (int i = 0; i < 4; i++) {
-            for (int j = 2; j < 15; j++) {
-                cards_[counter] = new Card(i, j);
-                counter++;
-            }
-        }
-        
-        cards_[52] = new Card(98, 98);
-        cards_[53] = new Card(99, 99);
+        Reset();
     }
 
     void ShowDeck() {
