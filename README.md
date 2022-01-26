@@ -1,6 +1,4 @@
-OOAD Projects SP 22
-
-CSCI4448 Object-Oriented Analysis and Design Projects, Spring 2022
+CSCI4448 Object-Oriented Analysis and Design Projects
 
 Please see individual projects for their own READMEs.
 
