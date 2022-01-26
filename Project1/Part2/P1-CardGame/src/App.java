@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    static void Run() {
         System.out.println("Welcome to the card drawing simulation");
         Scanner scanner = new Scanner(System.in);
         Deck deck = new Deck();
@@ -26,5 +26,9 @@ public class App {
         }
         System.out.println("Goodbye");
         scanner.close();
+    }
+    
+    public static void main(String[] args) throws Exception {
+        Run();
     }
 }
