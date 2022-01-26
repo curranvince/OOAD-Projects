@@ -1,5 +1,6 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Matching matching = new Matching();
+        matching.Run();
     }
 }
