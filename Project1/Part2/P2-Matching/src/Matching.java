@@ -49,5 +49,6 @@ public class Matching {
                 }
             }
         }
+        scanner.close();
     }
 }
