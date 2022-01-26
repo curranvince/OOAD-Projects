@@ -1,4 +1,5 @@
 public class Card {
+    // cards have a suit and rank
     int suit_;
     int rank_;
 
@@ -47,7 +48,7 @@ public class Card {
             case 10:
                 return String.valueOf(rank_); 
             // cases for face cards 
-                case 11:
+            case 11:
                 return "Jack";
             case 12:
                 return "Queen";

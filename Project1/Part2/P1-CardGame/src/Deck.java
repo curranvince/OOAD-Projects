@@ -1,10 +1,13 @@
 import java.util.Random;
 
 public class Deck {
+    // a deck is a collection of cards
     private Card[] cards_;
+    // current number of cards in deck
     private int num_cards_;
 
     public Deck() {
+        // initialize deck with 54 cards every time
         cards_ = new Card[54];
         Reset();
     }
@@ -34,7 +37,7 @@ public class Deck {
         } else if (n == 0) {
             // print blank line if they want 0 cards
             System.out.println("");
-        }else {
+        } else {
             // for valid input draw however many cards user wants
             for (int i = 0; i < n; i ++) {
                 int c_i = ChooseCard();
@@ -42,6 +45,7 @@ public class Deck {
                 RemoveCard(c_i);
             }
         }
+        // reset the deck after every draw of cards
         Reset();
     }
 

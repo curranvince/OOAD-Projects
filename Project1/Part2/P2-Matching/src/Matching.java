@@ -40,7 +40,7 @@ public class Matching {
                 int matches = 0;
                 // if we have valid 5 letter word conver to uppercase for comparison
                 guess = guess.toUpperCase();
-                // check each letter of the guess against real word
+                // check each letter of the guess against the real word
                 // give information wether each letter is correct, in the wrong position, or not in the word
                 for (int i = 0; i < 5; i++) {
                     if (guess.charAt(i) == words_[index].charAt(i)) {
