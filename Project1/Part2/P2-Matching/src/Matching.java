@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Matching {
-    String[] words_ = new String[] {
+    static String[] words_ = new String[] {
         "CLASS",
         "FLAGS",
         "SHADE",
@@ -17,7 +17,7 @@ public class Matching {
         "PITCH"
     };
 
-    void Run() {
+    static void Run() {
         Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
         int index = rand.nextInt(12);
