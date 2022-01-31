@@ -5,6 +5,4 @@ public class Clerk extends Staff {
         name_ =  name;
         break_percentage_ = break_percentage;
     }
-    
-    void ArriveAtStore(int day) { System.out.println(name_ + " has arrived at the store on Day " + day); }
 }

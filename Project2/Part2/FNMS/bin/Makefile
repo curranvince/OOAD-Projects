@@ -7,8 +7,12 @@ FILE =
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
-	ItemFactory.java \
+	Utility.java \
 	Item.java \
+	ItemFactory.java \
+	Clerk.java \
+	Staff.java \
+	Customer.java \
 	CashRegister.java \
 	Store.java \
 	App.java
