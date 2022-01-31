@@ -1,9 +1,12 @@
+import javax.net.ssl.SSLEngineResult.HandshakeStatus;
+
 enum Size {
     Small, 
     Medium, 
     Large
 }
 public class Item {
+    ItemType itemType;
     String name_;
     int purchase_price_;
     int list_price_;
@@ -39,27 +42,45 @@ class Music extends Item {
 }
 
 class CD extends Music { 
-    CD() { name_ += " CD"; }
+    CD() { 
+        name_ += " CD"; 
+        itemType = ItemType.CD;
+    }
 }
 
 class Vinyl extends Music {
-    Vinyl() { name_ += " Vinyl"; }
+    Vinyl() { 
+        name_ += " Vinyl"; 
+        itemType = ItemType.VINYL;
+    }
 }
 class PaperScore extends Music {
-    PaperScore() { name_ += " Paper Score"; }
+    PaperScore() { 
+        name_ += " Paper Score"; 
+        itemType = ItemType.PAPERSCORE;
+    }
 }
 
 class Players extends Item {}
 
 class CDPlayer extends Players { 
-    CDPlayer() { name_ += "CD Player"; }
+    CDPlayer() { 
+        name_ += "CD Player"; 
+        itemType = ItemType.CDPLAYER;
+    }
 }
 
 class RecordPlayer extends Players {
-    RecordPlayer() { name_ += "Record Player"; }
+    RecordPlayer() { 
+        name_ += "Record Player";
+        itemType = ItemType.RECORDPLAYER;
+    }
 }
 class MP3Player extends Players {
-    MP3Player() { name_ += "MP3 Player"; }
+    MP3Player() { 
+        name_ += "MP3 Player";
+        itemType = ItemType.MP3PLAYER;
+    }
 }
 
 class Instruments extends Item {}
@@ -79,18 +100,21 @@ class Stringed extends Instruments {
 class Guitar extends Stringed {
     Guitar() {
         name_ += "Guitar";
+        itemType = ItemType.GUITAR;
     }
 }
 
 class Bass extends Stringed {
     Bass() {
         name_ += "Bass";
+        itemType = ItemType.BASS;
     }
 }
 
 class Mandolin extends Stringed {
     Mandolin() {
         name_ += "Mandolin";
+        itemType = ItemType.MANDOLIN;
     }
 }
 
@@ -102,6 +126,7 @@ class Flute extends Wind {
     Flute() {
         type_= "Wood";
         name_ += type_ + " Flute";
+        itemType = ItemType.FLUTE;
     }
 }
 
@@ -111,6 +136,7 @@ class Harmonica extends Wind {
     Harmonica() {
         key_= "F#";
         name_ += "Harmonica in " + key_;
+        itemType = ItemType.HARMONICA;
     }
 }
 
@@ -122,6 +148,7 @@ class Hats extends Clothing {
     Hats() {
         size_ = Utility.GetRandomSize();
         name_ += size_.name() + " Hat";
+        itemType = ItemType.HATS;
     }
 }
 
@@ -131,12 +158,14 @@ class Shirts extends Clothing {
     Shirts() {
         size_ = Utility.GetRandomSize();
         name_ += size_.name() + " Shirt";
+        itemType = ItemType.SHIRTS;
     }
 }
 
 class Bandanas extends Clothing {
     Bandanas() {
         name_ += "Bandana";
+        itemType = ItemType.BANDANAS;
     }
 }
 
@@ -148,6 +177,7 @@ class PracticeAmps extends Accessories {
     PracticeAmps() {
         wattage_ = Utility.GetRandomNum(10, 21);
         name_ += wattage_ + " watt amp";
+        itemType = ItemType.PRACTICEAMPS;
     }
 }
 
@@ -157,6 +187,7 @@ class Cables extends Accessories {
     Cables() {
         length_ = Utility.GetRandomNum(1, 7);
         name_ += length_ + " meter cable";
+        itemType = ItemType.CABLES;
     }
 }
 
@@ -166,5 +197,6 @@ class Strings extends Accessories {
     Strings() {
         type_ = "Guitar";
         name_ += type_ + " strings";
+        itemType = ItemType.STRINGS;
     }
 }

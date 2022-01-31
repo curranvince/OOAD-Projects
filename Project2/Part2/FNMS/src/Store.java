@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Vector;
 
 enum ItemType {
@@ -77,11 +78,28 @@ public class Store {
     }
 
     void DoInventory() {
+        // vector to keep track of all types
+        Vector<ItemType> types = new Vector<ItemType>();
+        Collections.addAll(types, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
         int total = 0;
         for (Item item : inventory_) {
+            // for every type we have remove it
+            // so were left with only types we dont have in stock
+            for (ItemType type : types) {
+                if (item.itemType == type) types.remove(type);
+            }
+            // add value of item to total
             total += item.purchase_price_;
         }
+        // broadcast total value of inventory
         System.out.println(clerks_.get(clerk_id_).name_ + " does inventory to find we have $" + total + " worth of product");
+
+        // make orders
+        if (types.size() > 0) {
+            for (ItemType type : types) {
+                // 
+            }
+        }
     }
 
     void RunSimulation() {
@@ -104,6 +122,7 @@ public class Store {
                 GoToBank();
             }
             // do inventory
+            DoInventory();
             // order items of type we have none
         }  
         
