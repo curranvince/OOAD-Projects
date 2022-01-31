@@ -25,6 +25,18 @@ public class ItemFactory {
             return new Flute();
         } else if (itemType.equalsIgnoreCase("HARMONICA")) {
             return new Harmonica();
+        } else if (itemType.equalsIgnoreCase("HATS")) {
+            return new Hats();
+        } else if (itemType.equalsIgnoreCase("SHIRTS")) {
+            return new Shirts();
+        } else if (itemType.equalsIgnoreCase("BANDANAS")) {
+            return new Bandanas();
+        } else if (itemType.equalsIgnoreCase("PRACTICEAMPS")) {
+            return new PracticeAmps();
+        } else if (itemType.equalsIgnoreCase("CABLES")) {
+            return new Cables();
+        } else if (itemType.equalsIgnoreCase("STRINGS")) {
+            return new Strings();
         } 
         return null;
     }

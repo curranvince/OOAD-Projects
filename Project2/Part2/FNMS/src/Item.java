@@ -1,5 +1,10 @@
 import java.util.Random;
 
+enum Size {
+    Small, 
+    Medium, 
+    Large
+}
 public class Item {
     String name_;
     int purchase_price_;
@@ -63,8 +68,7 @@ class Stringed extends Instruments {
     boolean electric_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
-        Random rand = new Random();
-        int switcher = rand.nextInt(2);
+        int switcher = Utility.GetRandomNum(2);
         if (switcher == 1) {
             electric_ = true;
             name_ += "Electric ";
@@ -107,5 +111,60 @@ class Harmonica extends Wind {
     Harmonica() {
         key_= "F#";
         name_ += "Harmonica in " + key_;
+    }
+}
+
+class Clothing extends Item {}
+
+class Hats extends Clothing {
+    Size size_;
+
+    Hats() {
+        size_ = Utility.GetRandomSize();
+        name_ += size_.name() + " Hat";
+    }
+}
+
+class Shirts extends Clothing {
+    Size size_;
+
+    Shirts() {
+        size_ = Utility.GetRandomSize();
+        name_ += size_.name() + " Shirt";
+    }
+}
+
+class Bandanas extends Clothing {
+    Bandanas() {
+        name_ += "Bandana";
+    }
+}
+
+class Accessories extends Item {}
+
+class PracticeAmps extends Accessories {
+    int wattage_;
+
+    PracticeAmps() {
+        wattage_ = Utility.GetRandomNum(10, 21);
+        name_ += wattage_ + " watt amp";
+    }
+}
+
+class Cables extends Accessories {
+    int length_;
+
+    Cables() {
+        length_ = Utility.GetRandomNum(1, 7);
+        name_ += length_ + " meter cable";
+    }
+}
+
+class Strings extends Accessories {
+    String type_;
+
+    Strings() {
+        type_ = "Guitar";
+        name_ += type_ + " strings";
     }
 }

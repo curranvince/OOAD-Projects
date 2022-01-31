@@ -11,7 +11,13 @@ enum ItemTypes {
     BASS,
     MANDOLIN,
     FLUTE,
-    HARMONICA
+    HARMONICA,
+    HATS,
+    SHIRTS,
+    BANDANAS,
+    PRACTICEAMPS,
+    CABLES,
+    STRINGS
 }
 
 public class Store {
@@ -38,6 +44,7 @@ public class Store {
             item.Display();
         }
         
+        // test register
         register_.AddMoney(20);
         register_.Display();
 
