@@ -6,15 +6,7 @@ public class Utility {
     static int GetRandomNum(int range) { return random.nextInt(range); }
     static int GetRandomNum(int min, int max) { return random.nextInt(max-min)+min; }
 
-    static Size GetRandomSize() {
-        int rando = GetRandomNum(3);
-        if (rando == 0) {
-            return Size.Small;
-        } else if (rando == 1) {
-            return Size.Medium;
-        } else {
-            return Size.Large;
-        }
-    }
-
+    static Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
+    static ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
+    
 }

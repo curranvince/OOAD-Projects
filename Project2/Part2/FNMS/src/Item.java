@@ -1,5 +1,3 @@
-import java.util.Random;
-
 enum Size {
     Small, 
     Medium, 
@@ -9,15 +7,17 @@ public class Item {
     String name_;
     int purchase_price_;
     int list_price_;
-    boolean newOrUsed;
-    int dayArrived;
+    int day_arrived;
     int condition_;
     int sale_price_;
     int day_sold_;
 
     Item() {
         name_ = "";
-        list_price_ = 20;
+        purchase_price_ = Utility.GetRandomNum(1, 51);
+        list_price_ = 2*purchase_price_;
+        day_arrived = 0;
+        condition_ = Utility.GetRandomNum(5);
     };
 
     void Display() {
