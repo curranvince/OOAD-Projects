@@ -65,15 +65,18 @@ public class Store {
         else return 0;
     }
 
-    void OpenStore() { 
+    void ArriveAtStore() { 
         System.out.println(clerks_.get(clerk_id_).name_  + " has arrived at the store on Day " + current_day_); 
         if (orders_.containsKey(current_day_)) {
+            // need to remove current from map
             for (ItemType type : orders_.get(current_day_)) {
                 System.out.println(clerks_.get(clerk_id_).name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
                     inventory_.add(ItemFactory.MakeItem(type.name()));
+                    register_.TakeMoney(inventory_.lastElement().purchase_price_);
                 }
             }
+            orders_.remove(current_day_);
         } else {
             System.out.println(clerks_.get(clerk_id_).name_  + " finds no orders delivered today"); 
         }
@@ -98,7 +101,7 @@ public class Store {
         // vector to keep track of all types
         Set<ItemType> allItemTypes = new HashSet<ItemType>();
         Collections.addAll(allItemTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
-        Set<ItemType> foundTypes = new HashSet<ItemType>();
+        Set<ItemType> foundTypes = new HashSet<ItemType>(); 
         int total = 0;
         for (Item item : inventory_) {
             // for every type we have remove it so were left with only types we dont have in stock
@@ -108,19 +111,19 @@ public class Store {
         }
         // broadcast total value of inventory
         System.out.println(clerks_.get(clerk_id_).name_ + " does inventory to find we have $" + total + " worth of product");
+        
         // find missing items through difference of the all set and the found set
         allItemTypes.removeAll(foundTypes);
-        if (allItemTypes.size() > 0) {
+        if (!allItemTypes.isEmpty()) {
             // remove items weve already ordered
-            for (ItemType type : allItemTypes) {
-                for (Vector<ItemType> vec : orders_.values()) {
-                    for (ItemType orderedItem : vec) {
-                        if (type == orderedItem) allItemTypes.remove(orderedItem);
-                    }
+            for (Vector<ItemType> vec : orders_.values()) {
+                for (ItemType orderedItem : vec) {
+                    allItemTypes.remove(orderedItem);
                 }
+                if (allItemTypes.isEmpty()) break;
             }
             // place orders
-            if (allItemTypes.size() > 0) {
+            if (!allItemTypes.isEmpty()) {
                 for (ItemType type : allItemTypes) {
                     int deliveryDay = Utility.GetRandomNum(1, 4) + current_day_;
                     // if date isnt in order system then add it
@@ -136,23 +139,105 @@ public class Store {
         }
     }
 
+    void Sell(Item item, int salePrice) {
+        register_.AddMoney(salePrice);
+        item.day_sold_ = current_day_;
+        item.sale_price_ = salePrice;
+        inventory_.remove(item);
+        sold_.add(item);
+    }
+
+    void Buy(ItemType itemType, String condition, int salePrice) {
+        register_.TakeMoney(salePrice);
+        Item newItem = ItemFactory.MakeItem(itemType.name());
+        newItem.condition_ = condition;
+        newItem.purchase_price_ = salePrice;
+        inventory_.add(newItem);
+    }
+
+    void OpenTheStore() {
+        Vector<Customer> customers = Utility.MakeCustomers();
+        for (Customer customer : customers) {
+            if (customer.buying_) {
+                System.out.println("A customer comes in looking to buy a " + customer.item_.name());
+                // see if we have an item for them in stock
+                boolean found = false;
+                for (Item item : inventory_) {
+                    if (item.itemType == customer.item_) {
+                        found = true;
+                        int willBuy = Utility.GetRandomNum(2);
+                        if (willBuy == 0) {
+                            // customer buys at list price
+                            System.out.println("The customer buys the " + item.name_ + " for $" + item.list_price_);
+                            Sell(item, item.list_price_);
+                            break;
+                        } else {
+                            // offer discount to get 75% chance of buying
+                            System.out.println(clerks_.get(clerk_id_).name_ + " offers a 10% discount");
+                            willBuy = Utility.GetRandomNum(4);
+                            if (willBuy != 0) {
+                                // customer buys at discount
+                                int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
+                                System.out.println("Customer buys " + item.name_ + " for $" + discountPrice);
+                                Sell(item, discountPrice);
+                                break;
+                            } else {
+                                System.out.println("The customer leaves without buying anything");
+                            }
+                        }
+                    }
+                }
+                if (!found) System.out.println(clerks_.get(clerk_id_).name_ + " informs the customer we have no " + customer.item_.name() + " in stock");
+            } else {
+                System.out.println("A customer comes in looking to sell a " + customer.item_.name());
+                String condition = Utility.GetRandomCondition();
+                int offerPrice = Utility.GetOfferPrice(condition);
+                System.out.println(clerks_.get(clerk_id_).name_ + " determines the quality of the item to be " + condition + " and the value to be $" + offerPrice );
+                if (register_.HasEnough(offerPrice)) {
+                    int willSell = Utility.GetRandomNum(2);
+                    if (willSell == 0) {
+                        // buy at initial value price
+                        System.out.println("The store buys a " + customer.item_ + " in " + condition + " for $" + offerPrice);
+                        Buy(customer.item_, condition, offerPrice);
+                    } else {
+                        // add 10% to price and try again
+                        // offer discount to get 75% chance of buying
+                        System.out.println(clerks_.get(clerk_id_).name_ + " offers a 10% increase to the price");
+                        willSell = Utility.GetRandomNum(4);
+                        if (willSell != 0) {
+                            // customer sells at extra offer price
+                            int extraPrice = (int)(offerPrice+(offerPrice*0.1));
+                            System.out.println("The store buys a " + customer.item_ + " in " + condition + " for $" + extraPrice);
+                            Buy(customer.item_, condition, extraPrice);
+                        } else {
+                            System.out.println("The customer leaves without selling their " + customer.item_);
+                        }
+                    }
+                } else {
+                    System.out.println("The Store doesn't have enough momey to buy the " + customer.item_);
+                }
+            }
+        }
+    }
+
     void RunSimulation() {
         // display inventory
         
         // each day goes in here
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 30; i++) {
             current_day_++;
             // pick whos working
             clerk_id_ = GetClerk();
             // update workers days worked stats
             clerks_.get(GetOffClerk()).ResetDaysWorked();
             clerks_.get(clerk_id_).IncrementDaysWorked();
-            // open store, accept deliveries
-            OpenStore();
-            // displays inventory
+            // accept deliveries
+            ArriveAtStore();
+            /* displays inventory
             for (Item item : inventory_) {
                 item.Display();
             }
+            */
             // check the register
             if (!CheckRegister()) {
                 // if not enough in register go to bank
@@ -160,12 +245,8 @@ public class Store {
             }
             // do inventory and order items
             DoInventory();
-            
-            if (current_day_ == 3) {
-                inventory_.removeElementAt(0);
-                inventory_.removeElementAt(0);
-                inventory_.removeElementAt(0);
-            }
+            // open store
+            OpenTheStore();
         }  
         
     };

@@ -5,6 +5,7 @@ public class Customer {
 
     Customer(boolean buying) {
         buying_ = buying;
+        item_ = Utility.GetRandomItemType();
     }
 
     public void DisplayRequest() {

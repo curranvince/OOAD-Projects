@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.Random;
 
 public class Utility {
@@ -9,4 +10,54 @@ public class Utility {
     static Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
     static ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
     
+    static Vector<Customer> MakeCustomers() {
+        Vector<Customer> toServe = new Vector<Customer>();
+        int buyers = Utility.GetRandomNum(4, 11);
+        int sellers = Utility.GetRandomNum(1, 5);
+        for (int i = 0; i < buyers; i++) {
+            toServe.add(new Customer(true));
+        }
+        for (int i = 0; i < sellers; i++) {
+            toServe.add(new Customer(false));
+        }
+        
+        // shuffle vector so we get customers in random order
+        Collections.shuffle(toServe);
+        return toServe;
+    }
+    
+    static String GetRandomCondition() {
+        int rando = GetRandomNum(5);
+        switch (rando) {
+            case 0:
+                return "Poor";
+            case 1:
+                return "Fair";
+            case 2:
+                return "Good";
+            case 3:
+                return "Very Good";
+            case 4:
+                return "Excellent";
+            default:
+                return "Houston we have a problem";
+        }
+    }
+    
+    static int GetOfferPrice(String condition) {
+        switch (condition) {
+            case "Poor":
+                return GetRandomNum(1, 11);
+            case "Fair":
+                return GetRandomNum(10, 21);
+            case "Good":
+                return GetRandomNum(20, 31);
+            case "Very Good":
+                return GetRandomNum(30, 41);
+            case "Excellent":
+                return GetRandomNum(40, 51);
+            default:
+                return 100000;
+        }
+    }
 }

@@ -9,7 +9,7 @@ public class Item {
     int purchase_price_;
     int list_price_;
     int day_arrived;
-    int condition_;
+    String condition_;
     int sale_price_;
     int day_sold_;
 
@@ -18,7 +18,7 @@ public class Item {
         purchase_price_ = Utility.GetRandomNum(1, 51);
         list_price_ = 2*purchase_price_;
         day_arrived = 0;
-        condition_ = Utility.GetRandomNum(5);
+        condition_ = Utility.GetRandomCondition();
     };
 
     void Display() {
