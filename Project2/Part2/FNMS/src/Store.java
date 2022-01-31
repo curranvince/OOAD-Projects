@@ -1,6 +1,3 @@
-import java.util.Collections;
-import java.util.Vector;
-
 import java.util.*;
 
 enum ItemType {
@@ -214,7 +211,7 @@ public class Store {
                         }
                     }
                 } else {
-                    System.out.println("The Store doesn't have enough momey to buy the " + customer.item_);
+                    System.out.println("The Store doesn't have enough money to buy the " + customer.item_);
                 }
             }
         }
@@ -233,21 +230,18 @@ public class Store {
             clerks_.get(clerk_id_).IncrementDaysWorked();
             // accept deliveries
             ArriveAtStore();
-            /* displays inventory
-            for (Item item : inventory_) {
-                item.Display();
-            }
-            */
-            // check the register
-            if (!CheckRegister()) {
-                // if not enough in register go to bank
-                GoToBank();
-            }
+            // check the register & go to bank if we're broke
+            if (!CheckRegister()) { GoToBank(); }
             // do inventory and order items
             DoInventory();
             // open store
             OpenTheStore();
         }  
-        
     };
 }
+
+/* displays inventory
+    for (Item item : inventory_) {
+        item.Display();
+    }
+*/
