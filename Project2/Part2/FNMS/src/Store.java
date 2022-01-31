@@ -86,7 +86,9 @@ public class Store {
             // for every type we have remove it
             // so were left with only types we dont have in stock
             for (ItemType type : types) {
-                if (item.itemType == type) types.remove(type);
+                if (item.itemType == type) {
+                    //types.remove(type);
+                }
             }
             // add value of item to total
             total += item.purchase_price_;
@@ -95,11 +97,13 @@ public class Store {
         System.out.println(clerks_.get(clerk_id_).name_ + " does inventory to find we have $" + total + " worth of product");
 
         // make orders
+        /*
         if (types.size() > 0) {
             for (ItemType type : types) {
-                // 
+                
             }
         }
+        */
     }
 
     void RunSimulation() {
