@@ -1,5 +1,3 @@
-import javax.rmi.CORBA.Util;
-
 public class Clerk extends Staff {
     int break_percentage_;
 
