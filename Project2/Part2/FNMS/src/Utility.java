@@ -40,7 +40,7 @@ public class Utility {
             case 4:
                 return "Excellent";
             default:
-                return "Houston we have a problem";
+                return "ERROR: Utility::GetRandomCondition";
         }
     }
     
@@ -60,4 +60,19 @@ public class Utility {
                 return 100000;
         }
     }
+
+    static String LowerCondition(String condition) {
+        switch (condition) {
+            case "Excellent":
+                return "Very Good";
+            case "Very Good":
+                return "Good";
+            case "Good":
+                return "Fair";
+            case "Fair":
+                return "Poor";
+            default:
+                return "ERROR: Utility::LowerCondition";
+        }
+     }
 }

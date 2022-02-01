@@ -1,3 +1,5 @@
+import javax.rmi.CORBA.Util;
+
 public class Clerk extends Staff {
     int break_percentage_;
 
@@ -5,4 +7,6 @@ public class Clerk extends Staff {
         name_ =  name;
         break_percentage_ = break_percentage;
     }
+
+    boolean Clean() { return (Utility.GetRandomNum(100) > break_percentage_); }
 }
