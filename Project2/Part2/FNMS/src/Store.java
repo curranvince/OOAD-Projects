@@ -163,6 +163,7 @@ public class Store {
                     if (item.itemType == customer.item_) {
                         found = true;
                         int willBuy = Utility.GetRandomNum(2);
+                        System.out.println(clerks_.get(clerk_id_).name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
                         if (willBuy == 0) {
                             // customer buys at list price
                             System.out.println("The customer buys the " + item.name_ + " for $" + item.list_price_);
@@ -175,11 +176,14 @@ public class Store {
                             if (willBuy != 0) {
                                 // customer buys at discount
                                 int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
-                                System.out.println("The customer buys " + item.name_ + " for $" + discountPrice);
+                                System.out.println("The customer buys the " + item.name_ + " for $" + discountPrice);
                                 Sell(item, discountPrice);
                                 break;
                             } else {
-                                System.out.println("The customer leaves without buying anything");
+                                System.out.println("The customer decides not to buy the " + item.name_);
+                                // no break assumes we want to show the customer each of something we have in stock, not just one
+                                // add break here to show customer only one item if they don't buy the first
+                                // break;
                             }
                         }
                     }
@@ -188,12 +192,12 @@ public class Store {
             } else {
                 Item item = ItemFactory.MakeItem(customer.item_.name());
                 int offerPrice = Utility.GetOfferPrice(item.condition_);
-                System.out.println(clerks_.get(clerk_id_).name_ + " determines the " + item.name_ + "to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
+                System.out.println(clerks_.get(clerk_id_).name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 if (register_.HasEnough(offerPrice)) {
                     int willSell = Utility.GetRandomNum(2);
                     if (willSell == 0) {
                         // buy at initial value price
-                        System.out.println("The store buys a " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
+                        System.out.println("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
                         Buy(item, offerPrice);
                     } else {
                         // add 10% to price and try again
@@ -203,7 +207,7 @@ public class Store {
                         if (willSell != 0) {
                             // customer sells at extra offer price
                             int extraPrice = (int)(offerPrice+(offerPrice*0.1));
-                            System.out.println("The store buys a " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
+                            System.out.println("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
                             Buy(item, extraPrice);
                         } else {
                             System.out.println("The customer leaves without selling their " + item.name_);
