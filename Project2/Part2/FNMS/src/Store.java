@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 enum ItemType {
     PAPERSCORE,
@@ -69,7 +70,9 @@ public class Store {
             for (ItemType type : orders_.get(current_day_)) {
                 System.out.println(clerks_.get(clerk_id_).name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
-                    inventory_.add(ItemFactory.MakeItem(type.name()));
+                    Item toAdd = ItemFactory.MakeItem(type.name());
+                    toAdd.day_arrived = current_day_;
+                    inventory_.add(toAdd);
                     register_.TakeMoney(inventory_.lastElement().purchase_price_);
                 }
             }
@@ -144,12 +147,9 @@ public class Store {
         sold_.add(item);
     }
 
-    void Buy(ItemType itemType, String condition, int salePrice) {
+    void Buy(Item item, int salePrice) {
         register_.TakeMoney(salePrice);
-        Item newItem = ItemFactory.MakeItem(itemType.name());
-        newItem.condition_ = condition;
-        newItem.purchase_price_ = salePrice;
-        inventory_.add(newItem);
+        inventory_.add(item);
     }
 
     void OpenTheStore() {
@@ -175,7 +175,7 @@ public class Store {
                             if (willBuy != 0) {
                                 // customer buys at discount
                                 int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
-                                System.out.println("Customer buys " + item.name_ + " for $" + discountPrice);
+                                System.out.println("The customer buys " + item.name_ + " for $" + discountPrice);
                                 Sell(item, discountPrice);
                                 break;
                             } else {
@@ -186,16 +186,16 @@ public class Store {
                 }
                 if (!found) System.out.println(clerks_.get(clerk_id_).name_ + " informs the customer we have no " + customer.item_.name() + " in stock");
             } else {
-                System.out.println("A customer comes in looking to sell a " + customer.item_.name());
-                String condition = Utility.GetRandomCondition();
-                int offerPrice = Utility.GetOfferPrice(condition);
-                System.out.println(clerks_.get(clerk_id_).name_ + " determines the quality of the item to be " + condition + " and the value to be $" + offerPrice );
+                Item item = ItemFactory.MakeItem(customer.item_.name());
+                System.out.println("A customer comes in looking to sell a " + item.name_);
+                int offerPrice = Utility.GetOfferPrice(item.condition_);
+                System.out.println(clerks_.get(clerk_id_).name_ + " determines the item to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 if (register_.HasEnough(offerPrice)) {
                     int willSell = Utility.GetRandomNum(2);
                     if (willSell == 0) {
                         // buy at initial value price
-                        System.out.println("The store buys a " + customer.item_ + " in " + condition + " for $" + offerPrice);
-                        Buy(customer.item_, condition, offerPrice);
+                        System.out.println("The store buys a " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
+                        Buy(item, offerPrice);
                     } else {
                         // add 10% to price and try again
                         // offer discount to get 75% chance of buying
@@ -204,14 +204,14 @@ public class Store {
                         if (willSell != 0) {
                             // customer sells at extra offer price
                             int extraPrice = (int)(offerPrice+(offerPrice*0.1));
-                            System.out.println("The store buys a " + customer.item_ + " in " + condition + " for $" + extraPrice);
-                            Buy(customer.item_, condition, extraPrice);
+                            System.out.println("The store buys a " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
+                            Buy(item, extraPrice);
                         } else {
-                            System.out.println("The customer leaves without selling their " + customer.item_);
+                            System.out.println("The customer leaves without selling their " + item.name_);
                         }
                     }
                 } else {
-                    System.out.println("The Store doesn't have enough money to buy the " + customer.item_);
+                    System.out.println("The Store doesn't have enough money to buy the " + item.name_);
                 }
             }
         }
@@ -241,6 +241,12 @@ public class Store {
 
     void RunSimulation() {
         // display inventory
+        try {
+            PrintStream o = new PrintStream(new File("Output.txt"));
+            System.setOut(o);
+        } catch (Exception e) {
+
+        }
         
         // each day goes in here
         for (int i = 0; i < 30; i++) {
