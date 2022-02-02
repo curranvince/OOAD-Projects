@@ -155,8 +155,8 @@ public class Store {
     void OpenTheStore() {
         Vector<Customer> customers = Utility.MakeCustomers();
         for (Customer customer : customers) {
+            customer.DisplayRequest();
             if (customer.buying_) {
-                System.out.println("A customer comes in looking to buy a " + customer.item_.name());
                 // see if we have an item for them in stock
                 boolean found = false;
                 for (Item item : inventory_) {
@@ -187,9 +187,8 @@ public class Store {
                 if (!found) System.out.println(clerks_.get(clerk_id_).name_ + " informs the customer we have no " + customer.item_.name() + " in stock");
             } else {
                 Item item = ItemFactory.MakeItem(customer.item_.name());
-                System.out.println("A customer comes in looking to sell a " + item.name_);
                 int offerPrice = Utility.GetOfferPrice(item.condition_);
-                System.out.println(clerks_.get(clerk_id_).name_ + " determines the item to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
+                System.out.println(clerks_.get(clerk_id_).name_ + " determines the " + item.name_ + "to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 if (register_.HasEnough(offerPrice)) {
                     int willSell = Utility.GetRandomNum(2);
                     if (willSell == 0) {
@@ -211,7 +210,7 @@ public class Store {
                         }
                     }
                 } else {
-                    System.out.println("The Store doesn't have enough money to buy the " + item.name_);
+                    System.out.println("The store doesn't have enough money to buy the " + item.name_);
                 }
             }
         }
