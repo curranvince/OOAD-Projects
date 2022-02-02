@@ -243,8 +243,8 @@ public class Store {
         try {
             PrintStream o = new PrintStream(new File("Output.txt"));
             System.setOut(o);
-        } catch (Exception e) {
-
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("Please create file 'Output.txt' in src folder");
         }
         
         // each day goes in here
