@@ -242,16 +242,37 @@ public class Store {
         }
     }
 
-    void RunSimulation() {
+    void OutputResults() {
         // display inventory
+        System.out.println("Items left in inventory: ");
+        int total = 0;
+        for (Item item : inventory_) {
+            item.Display();
+            total += item.purchase_price_;
+        }
+        System.out.println("The total value of the remaining inventory is $" + total);
+        // display items sold
+        total =  0;
+        System.out.println("Items sold: ");
+        for (Item item : sold_) {
+            item.DisplaySold();
+            total += item.sale_price_;
+        }
+        System.out.println("The store sold $" + total + " worth of items this month");
+        // display money stats
+        System.out.println("The store has $" + register_.money_ + " in the register");
+        System.out.println("$" + total_withdrawn_ + " was withdrawn from the bank");
+    }
+
+    void RunSimulation() {
+        // set output stream
         try {
             PrintStream o = new PrintStream(new File("Output.txt"));
             System.setOut(o);
         } catch (FileNotFoundException fnfe) {
             System.out.println("Please create file 'Output.txt' in src folder");
         }
-        
-        // each day goes in here
+        // each loop represents one day
         for (int i = 0; i < 30; i++) {
             current_day_++;
             // pick whos working
@@ -272,11 +293,7 @@ public class Store {
             // announce the end of the day
             System.out.println(clerks_.get(clerk_id_).name_ + " locks up and goes home for the night");
         }  
+        // display final results
+        OutputResults();
     }
 }
-
-/* displays inventory
-    for (Item item : inventory_) {
-        item.Display();
-    }
-*/

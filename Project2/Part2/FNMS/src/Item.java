@@ -24,6 +24,10 @@ public class Item {
     void Display() {
         System.out.println(name_ + " for $" + list_price_);
     }
+
+    void DisplaySold() {
+        System.out.println(name_ + " for $" + sale_price_ + " on Day " + day_sold_);
+    }
     
 }
 

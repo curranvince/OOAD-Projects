@@ -4,8 +4,6 @@ public class CashRegister {
     CashRegister() {
         money_ = 0;
     }
-
-    void Display() { System.out.println("The store has $" + money_); }
     
     void AddMoney(int money) { money_ += money; }
 
