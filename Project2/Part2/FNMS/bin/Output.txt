@@ -2,1008 +2,1442 @@ Velma has arrived at the store on Day 1
 Velma finds no orders delivered today
 Velma checks the register to find $0
 Velma goes to the bank to withdraw $1000 for the register
-Velma does inventory to find we have $1237 worth of product
-A customer comes in looking to buy a FLUTE
-The customer buys the Wood Flute for $70
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 12 watt amp for $18
-A customer comes in looking to buy a GUITAR
+Velma does inventory to find we have $1394 worth of product
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 11 watt amp, selling for $32
 Velma offers a 10% discount
-Customer buys Guitar for $63
-A customer comes in looking to buy a STRINGS
-The customer buys the Guitar strings for $48
-A customer comes in looking to sell a 13 watt amp
-Velma determines the item to be in Very Good condition and the value to be $37
-Velma offers a 10% increase to the price
-The customer leaves without selling their 13 watt amp
-A customer comes in looking to buy a FLUTE
+The customer buys the 11 watt amp for $28
+Alice has come into the store looking to sell a CABLES
+Velma determines the 4 meter cable to be in Good condition and the value to be $30
+The store buys the 4 meter cable in Good condition for $30
+Alice has come into the store looking to sell a VINYL
+Velma determines the Walking by Beatles Vinyl to be in Poor condition and the value to be $6
+The store buys the Walking by Beatles Vinyl in Poor condition for $6
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $58
 Velma offers a 10% discount
-Customer buys Wood Flute for $36
-A customer comes in looking to buy a PAPERSCORE
-Velma offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $61
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 15 watt amp for $58
-A customer comes in looking to buy a FLUTE
-The customer buys the Wood Flute for $82
-A customer comes in looking to buy a BASS
-Velma offers a 10% discount
-Customer buys Bass for $48
-A customer comes in looking to buy a RECORDPLAYER
-Velma offers a 10% discount
-Customer buys Record Player for $48
-Velma cleans the store without incident
-Velma locks up and goes home for the night
-Shaggy has arrived at the store on Day 2
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $1532
-Shaggy does inventory to find we have $956 worth of product
-Shaggy placed an order for 3 FLUTEs to arrive on Day 5
-A customer comes in looking to sell a Medium Shirt
-Shaggy determines the item to be in Very Good condition and the value to be $38
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Medium Shirt
-A customer comes in looking to buy a SHIRTS
-Shaggy offers a 10% discount
-Customer buys Large Shirt for $16
-A customer comes in looking to buy a CABLES
-The customer buys the 5 meter cable for $36
-A customer comes in looking to buy a MANDOLIN
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-Shaggy offers a 10% discount
-Customer buys Electric Mandolin for $46
-A customer comes in looking to buy a SHIRTS
-The customer buys the Small Shirt for $14
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
-Shaggy has arrived at the store on Day 3
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $1644
-Shaggy does inventory to find we have $896 worth of product
-A customer comes in looking to sell a CD Player
-Shaggy determines the item to be in Poor condition and the value to be $10
-Shaggy offers a 10% increase to the price
-The store buys a CD Player in Poor condition for $11
-A customer comes in looking to sell a 1 meter cable
-Shaggy determines the item to be in Good condition and the value to be $30
-Shaggy offers a 10% increase to the price
-The store buys a 1 meter cable in Good condition for $33
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $88
-A customer comes in looking to buy a HATS
-The customer buys the Medium Hat for $30
-A customer comes in looking to buy a CD
-The customer buys the Walking by Beatles CD for $24
-A customer comes in looking to buy a PAPERSCORE
-Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $61
-A customer comes in looking to sell a 12 watt amp
-Shaggy determines the item to be in Very Good condition and the value to be $39
-Shaggy offers a 10% increase to the price
-The store buys a 12 watt amp in Very Good condition for $42
-A customer comes in looking to sell a 2 meter cable
-Shaggy determines the item to be in Fair condition and the value to be $11
-The store buys a 2 meter cable in Fair condition for $11
-A customer comes in looking to buy a HATS
-Shaggy offers a 10% discount
-Customer buys Medium Hat for $21
-A customer comes in looking to buy a SHIRTS
-Shaggy offers a 10% discount
-Customer buys Small Shirt for $86
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
-Shaggy has arrived at the store on Day 4
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $1857
-Shaggy does inventory to find we have $853 worth of product
-Shaggy placed an order for 3 SHIRTSs to arrive on Day 5
-A customer comes in looking to buy a BASS
-The customer buys the Bass for $6
-A customer comes in looking to buy a HATS
-The customer buys the Small Hat for $60
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $80
-A customer comes in looking to buy a VINYL
-The customer buys the Walking by Beatles Vinyl for $26
-A customer comes in looking to sell a Medium Shirt
-Shaggy determines the item to be in Poor condition and the value to be $3
-The store buys a Medium Shirt in Poor condition for $3
-A customer comes in looking to buy a GUITAR
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-Shaggy offers a 10% discount
-Customer buys Guitar for $3
-A customer comes in looking to buy a PRACTICEAMPS
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-The customer buys the 12 watt amp for $92
-A customer comes in looking to buy a HARMONICA
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-Shaggy offers a 10% discount
-Customer buys Harmonica in F# for $16
-A customer comes in looking to buy a FLUTE
-Shaggy informs the customer we have no FLUTE in stock
-A customer comes in looking to sell a Guitar strings
-Shaggy determines the item to be in Poor condition and the value to be $10
-Shaggy offers a 10% increase to the price
-The store buys a Guitar strings in Poor condition for $11
-A customer comes in looking to buy a MP3PLAYER
-The customer buys the MP3 Player for $64
-A customer comes in looking to sell a Walking by Beatles Paper Score
-Shaggy determines the item to be in Good condition and the value to be $29
-Shaggy offers a 10% increase to the price
-The store buys a Walking by Beatles Paper Score in Good condition for $31
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
-Velma has arrived at the store on Day 5
-Velma finds an order with 3 FLUTEs
-Velma finds an order with 3 SHIRTSs
-Velma checks the register to find $1987
-Velma does inventory to find we have $922 worth of product
-Velma placed an order for 3 HATSs to arrive on Day 8
-A customer comes in looking to buy a VINYL
-The customer buys the Walking by Beatles Vinyl for $30
-A customer comes in looking to sell a MP3 Player
-Velma determines the item to be in Poor condition and the value to be $6
-The store buys a MP3 Player in Poor condition for $6
-A customer comes in looking to buy a MP3PLAYER
+The customer buys the Electric Mandolin for $52
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $52
+The customer buys the Harmonica in F# for $52
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 4 meter cable, selling for $78
+The customer buys the 4 meter cable for $78
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $92
 The customer buys the MP3 Player for $92
-A customer comes in looking to buy a PAPERSCORE
-The customer buys the Walking by Beatles Paper Score for $42
-A customer comes in looking to buy a CD
-The customer buys the Walking by Beatles CD for $30
-A customer comes in looking to buy a MP3PLAYER
-The customer buys the MP3 Player for $46
-A customer comes in looking to buy a MP3PLAYER
-The customer buys the MP3 Player for $88
-A customer comes in looking to sell a Small Shirt
-Velma determines the item to be in Fair condition and the value to be $10
-Velma offers a 10% increase to the price
-The store buys a Small Shirt in Fair condition for $11
-A customer comes in looking to buy a CD
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $22
 Velma offers a 10% discount
-The customer leaves without buying anything
+The customer decides not to buy the CD Player
+Velma shows the customer the CD Player, selling for $82
+Velma offers a 10% discount
+The customer buys the CD Player for $73
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 11 watt amp, selling for $62
+The customer buys the 11 watt amp for $62
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $18
+The customer buys the Harmonica in F# for $18
+Alice has come into the store looking to buy a CD
+Velma shows the customer the Walking by Beatles CD, selling for $78
+The customer buys the Walking by Beatles CD for $78
+Alice has come into the store looking to buy a CD
+Velma shows the customer the Walking by Beatles CD, selling for $48
+The customer buys the Walking by Beatles CD for $48
 Velma cleans the store without incident
 Velma locks up and goes home for the night
-Shaggy has arrived at the store on Day 6
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $2298
-Shaggy does inventory to find we have $815 worth of product
-Shaggy placed an order for 3 MP3PLAYERs to arrive on Day 9
-A customer comes in looking to buy a BASS
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Shaggy determines the item to be in Fair condition and the value to be $10
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Walking by Beatles Vinyl
-A customer comes in looking to buy a BASS
-Shaggy offers a 10% discount
-Customer buys Electric Bass for $45
-A customer comes in looking to buy a SHIRTS
-Shaggy offers a 10% discount
-Customer buys Medium Shirt for $68
-A customer comes in looking to buy a BASS
-Shaggy informs the customer we have no BASS in stock
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Shaggy determines the item to be in Fair condition and the value to be $16
-The store buys a Walking by Beatles Vinyl in Fair condition for $16
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $22
-A customer comes in looking to sell a 6 meter cable
-Shaggy determines the item to be in Fair condition and the value to be $19
-Shaggy offers a 10% increase to the price
-The store buys a 6 meter cable in Fair condition for $20
-Oh no! Shaggy broke a Bandana while cleaning
-It's condition has worsened to Poor, and its list price has lowered to $76
-Shaggy locks up and goes home for the night
-Shaggy has arrived at the store on Day 7
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $2397
-Shaggy does inventory to find we have $788 worth of product
-Shaggy placed an order for 3 RECORDPLAYERs to arrive on Day 10
-Shaggy placed an order for 3 BASSs to arrive on Day 8
-A customer comes in looking to buy a CD
-The customer buys the Walking by Beatles CD for $98
-A customer comes in looking to buy a CDPLAYER
-Shaggy offers a 10% discount
-Customer buys CD Player for $39
-A customer comes in looking to buy a SHIRTS
-The customer buys the Large Shirt for $84
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Poor condition and the value to be $10
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Wood Flute
-A customer comes in looking to buy a CD
-Shaggy informs the customer we have no CD in stock
-A customer comes in looking to buy a CD
-Shaggy informs the customer we have no CD in stock
-A customer comes in looking to sell a Walking by Beatles Paper Score
-Shaggy determines the item to be in Excellent condition and the value to be $46
-The store buys a Walking by Beatles Paper Score in Excellent condition for $46
-A customer comes in looking to buy a HARMONICA
-Shaggy offers a 10% discount
-Customer buys Harmonica in F# for $39
-Oh no! Shaggy broke a Wood Flute while cleaning
-It's condition has worsened to Very Good, and its list price has lowered to $2
-Shaggy locks up and goes home for the night
-Velma has arrived at the store on Day 8
-Velma finds an order with 3 HATSs
-Velma finds an order with 3 BASSs
-Velma checks the register to find $2495
-Velma does inventory to find we have $783 worth of product
-Velma placed an order for 3 CDs to arrive on Day 10
-Velma placed an order for 3 HARMONICAs to arrive on Day 9
-A customer comes in looking to buy a MANDOLIN
+Velma has arrived at the store on Day 2
+Velma finds no orders delivered today
+Velma checks the register to find $1545
+Velma does inventory to find we have $1149 worth of product
+Alice has come into the store looking to buy a VINYL
+Velma shows the customer the Walking by Beatles Vinyl, selling for $72
 Velma offers a 10% discount
-Customer buys Electric Mandolin for $68
-A customer comes in looking to sell a Walking by Beatles Paper Score
-Velma determines the item to be in Very Good condition and the value to be $38
-Velma offers a 10% increase to the price
-The store buys a Walking by Beatles Paper Score in Very Good condition for $41
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 13 watt amp for $30
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Velma determines the item to be in Fair condition and the value to be $16
-The store buys a Walking by Beatles Vinyl in Fair condition for $16
-A customer comes in looking to sell a Harmonica in F#
-Velma determines the item to be in Very Good condition and the value to be $39
-The store buys a Harmonica in F# in Very Good condition for $39
-A customer comes in looking to buy a GUITAR
+The customer buys the Walking by Beatles Vinyl for $64
+Alice has come into the store looking to buy a SHIRTS
+Velma shows the customer the Large Shirt, selling for $86
+The customer buys the Large Shirt for $86
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $92
+The customer buys the Record Player for $92
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $42
+The customer buys the MP3 Player for $42
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Medium Hat, selling for $44
 Velma offers a 10% discount
-Customer buys Electric Guitar for $14
-A customer comes in looking to buy a PRACTICEAMPS
+The customer buys the Medium Hat for $39
+Alice has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Walking by Beatles Paper Score, selling for $8
+The customer buys the Walking by Beatles Paper Score for $8
+Alice has come into the store looking to sell a HARMONICA
+Velma determines the Harmonica in F# to be in Good condition and the value to be $29
+The store buys the Harmonica in F# in Good condition for $29
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Electric Guitar, selling for $74
+Velma offers a 10% discount
+The customer buys the Electric Guitar for $66
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 17 watt amp, selling for $34
+The customer buys the 17 watt amp for $34
+Alice has come into the store looking to buy a PRACTICEAMPS
 Velma informs the customer we have no PRACTICEAMPS in stock
-A customer comes in looking to buy a MP3PLAYER
-Velma informs the customer we have no MP3PLAYER in stock
-A customer comes in looking to buy a MANDOLIN
-Velma offers a 10% discount
-Customer buys Electric Mandolin for $3
-A customer comes in looking to sell a 2 meter cable
-Velma determines the item to be in Very Good condition and the value to be $30
-The store buys a 2 meter cable in Very Good condition for $30
-A customer comes in looking to buy a HARMONICA
-Velma offers a 10% discount
-The customer leaves without buying anything
+Alice has come into the store looking to sell a FLUTE
+Velma determines the Wood Flute to be in Good condition and the value to be $25
+Velma offers a 10% increase to the price
+The store buys the Wood Flute in Good condition for $27
 Velma cleans the store without incident
 Velma locks up and goes home for the night
-Velma has arrived at the store on Day 9
-Velma finds an order with 3 MP3PLAYERs
-Velma finds an order with 3 HARMONICAs
-Velma checks the register to find $2365
-Velma does inventory to find we have $908 worth of product
-Velma placed an order for 3 PRACTICEAMPSs to arrive on Day 10
-Velma placed an order for 3 MANDOLINs to arrive on Day 11
-Velma placed an order for 3 GUITARs to arrive on Day 11
-A customer comes in looking to buy a CABLES
-The customer buys the 4 meter cable for $74
-A customer comes in looking to buy a GUITAR
-Velma informs the customer we have no GUITAR in stock
-A customer comes in looking to buy a HATS
+Velma has arrived at the store on Day 3
+Velma finds no orders delivered today
+Velma checks the register to find $1920
+Velma does inventory to find we have $996 worth of product
+Velma placed an order for 3 PRACTICEAMPSs to arrive on Day 4
+Alice has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $98
+The customer buys the Guitar strings for $98
+Alice has come into the store looking to buy a BANDANAS
+Velma shows the customer the Bandana, selling for $50
+The customer buys the Bandana for $50
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Bass, selling for $80
 Velma offers a 10% discount
-Customer buys Small Hat for $23
-A customer comes in looking to buy a CABLES
-The customer buys the 3 meter cable for $50
-A customer comes in looking to sell a Electric Mandolin
-Velma determines the item to be in Poor condition and the value to be $8
-The store buys a Electric Mandolin in Poor condition for $8
-A customer comes in looking to buy a FLUTE
+The customer buys the Bass for $72
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $10
+The customer buys the Harmonica in F# for $10
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $42
+The customer buys the Electric Mandolin for $42
+Alice has come into the store looking to sell a STRINGS
+Velma determines the Guitar strings to be in Very Good condition and the value to be $38
+Velma offers a 10% increase to the price
+The store buys the Guitar strings in Very Good condition for $41
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $90
 Velma offers a 10% discount
-The customer leaves without buying anything
+The customer buys the Harmonica in F# for $81
+Alice has come into the store looking to buy a VINYL
+Velma shows the customer the Walking by Beatles Vinyl, selling for $24
+The customer buys the Walking by Beatles Vinyl for $24
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $38
 Velma offers a 10% discount
-Customer buys Wood Flute for $68
-A customer comes in looking to buy a CD
-Velma informs the customer we have no CD in stock
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Velma determines the item to be in Poor condition and the value to be $8
-The store buys a Walking by Beatles Vinyl in Poor condition for $8
-A customer comes in looking to buy a HARMONICA
+The customer buys the Record Player for $34
+Alice has come into the store looking to buy a VINYL
+Velma shows the customer the Walking by Beatles Vinyl, selling for $66
 Velma offers a 10% discount
-The customer leaves without buying anything
-The customer buys the Harmonica in F# for $70
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $24
+The customer buys the Walking by Beatles Vinyl for $59
 Velma cleans the store without incident
 Velma locks up and goes home for the night
-Velma has arrived at the store on Day 10
-Velma finds an order with 3 RECORDPLAYERs
-Velma finds an order with 3 CDs
-Velma finds an order with 3 PRACTICEAMPSs
-Velma checks the register to find $2451
-Velma does inventory to find we have $989 worth of product
-A customer comes in looking to buy a MANDOLIN
-Velma offers a 10% discount
-Customer buys Electric Mandolin for $32
-A customer comes in looking to buy a GUITAR
-Velma informs the customer we have no GUITAR in stock
-A customer comes in looking to buy a BASS
-The customer buys the Electric Bass for $26
-A customer comes in looking to sell a Large Shirt
-Velma determines the item to be in Excellent condition and the value to be $46
-The store buys a Large Shirt in Excellent condition for $46
-A customer comes in looking to buy a GUITAR
-Velma informs the customer we have no GUITAR in stock
-A customer comes in looking to sell a Wood Flute
-Velma determines the item to be in Good condition and the value to be $22
-The store buys a Wood Flute in Good condition for $22
-Velma cleans the store without incident
-Velma locks up and goes home for the night
-Shaggy has arrived at the store on Day 11
-Shaggy finds an order with 3 MANDOLINs
-Shaggy finds an order with 3 GUITARs
-Shaggy checks the register to find $2316
-Shaggy does inventory to find we have $1117 worth of product
-A customer comes in looking to buy a PAPERSCORE
-The customer buys the Walking by Beatles Paper Score for $34
-A customer comes in looking to sell a 10 watt amp
-Shaggy determines the item to be in Poor condition and the value to be $9
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their 10 watt amp
-A customer comes in looking to buy a HARMONICA
+Shaggy has arrived at the store on Day 4
+Shaggy finds an order with 3 PRACTICEAMPSs
+Shaggy checks the register to find $2261
+Shaggy does inventory to find we have $871 worth of product
+Shaggy placed an order for 3 HARMONICAs to arrive on Day 7
+Alice has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Electric Mandolin, selling for $90
 Shaggy offers a 10% discount
-Customer buys Harmonica in F# for $50
-A customer comes in looking to sell a Walking by Beatles CD
-Shaggy determines the item to be in Fair condition and the value to be $11
-Shaggy offers a 10% increase to the price
-The store buys a Walking by Beatles CD in Fair condition for $12
-A customer comes in looking to buy a MANDOLIN
+The customer buys the Electric Mandolin for $81
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Large Shirt, selling for $20
 Shaggy offers a 10% discount
-Customer buys Electric Mandolin for $21
-A customer comes in looking to buy a FLUTE
-The customer buys the Wood Flute for $36
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $30
-A customer comes in looking to buy a BASS
-The customer buys the Electric Bass for $22
+The customer buys the Large Shirt for $18
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $60
+The customer buys the Guitar strings for $60
+Alice has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 11 watt amp, selling for $26
+Shaggy offers a 10% discount
+The customer buys the 11 watt amp for $23
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy shows the customer the CD Player, selling for $22
+The customer buys the CD Player for $22
+Alice has come into the store looking to buy a BASS
+Shaggy shows the customer the Electric Bass, selling for $88
+The customer buys the Electric Bass for $88
+Alice has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 14 watt amp, selling for $78
+Shaggy offers a 10% discount
+The customer buys the 14 watt amp for $70
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Medium Shirt, selling for $88
+The customer buys the Medium Shirt for $88
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $76
+Shaggy offers a 10% discount
+The customer decides not to buy the Guitar strings
+Shaggy shows the customer the Guitar strings, selling for $72
+The customer buys the Guitar strings for $72
+Alice has come into the store looking to sell a BASS
+Shaggy determines the Electric Bass to be in Fair condition and the value to be $17
+Shaggy offers a 10% increase to the price
+The customer leaves without selling their Electric Bass
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 3 meter cable, selling for $8
+The customer buys the 3 meter cable for $8
+Oh no! Shaggy broke a 11 watt amp while cleaning. It has been removed from inventory
+Shaggy locks up and goes home for the night
+Shaggy has arrived at the store on Day 5
+Shaggy finds no orders delivered today
+Shaggy checks the register to find $2791
+Shaggy does inventory to find we have $559 worth of product
+Shaggy placed an order for 3 PRACTICEAMPSs to arrive on Day 8
+Shaggy placed an order for 3 SHIRTSs to arrive on Day 6
+Shaggy placed an order for 3 MANDOLINs to arrive on Day 7
+Alice has come into the store looking to buy a CD
+Shaggy shows the customer the Walking by Beatles CD, selling for $94
+The customer buys the Walking by Beatles CD for $94
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $76
+The customer buys the Guitar strings for $76
+Alice has come into the store looking to sell a CD
+Shaggy determines the Walking by Beatles CD to be in Very Good condition and the value to be $34
+Shaggy offers a 10% increase to the price
+The store buys the Walking by Beatles CD in Very Good condition for $37
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $8
+The customer buys the Walking by Beatles Paper Score for $8
+Alice has come into the store looking to sell a GUITAR
+Shaggy determines the Guitar to be in Fair condition and the value to be $13
+The store buys the Guitar in Fair condition for $13
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 2 meter cable, selling for $50
+Shaggy offers a 10% discount
+The customer decides not to buy the 2 meter cable
+Shaggy shows the customer the 4 meter cable, selling for $92
+The customer buys the 4 meter cable for $92
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
+Velma has arrived at the store on Day 6
+Velma finds an order with 3 SHIRTSs
+Velma checks the register to find $2907
+Velma does inventory to find we have $593 worth of product
+Velma placed an order for 3 STRINGSs to arrive on Day 9
+Alice has come into the store looking to sell a PRACTICEAMPS
+Velma determines the 12 watt amp to be in Excellent condition and the value to be $45
+Velma offers a 10% increase to the price
+The customer leaves without selling their 12 watt amp
+Alice has come into the store looking to buy a MANDOLIN
+Velma informs the customer we have no MANDOLIN in stock
+Alice has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Walking by Beatles Paper Score, selling for $68
+Velma offers a 10% discount
+The customer buys the Walking by Beatles Paper Score for $61
+Alice has come into the store looking to sell a CABLES
+Velma determines the 2 meter cable to be in Very Good condition and the value to be $37
+Velma offers a 10% increase to the price
+The store buys the 2 meter cable in Very Good condition for $40
+Alice has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Fair condition and the value to be $11
+Velma offers a 10% increase to the price
+The customer leaves without selling their Record Player
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Guitar, selling for $28
+Velma offers a 10% discount
+The customer buys the Guitar for $25
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Electric Bass, selling for $82
+The customer buys the Electric Bass for $82
+Alice has come into the store looking to buy a PAPERSCORE
+Velma informs the customer we have no PAPERSCORE in stock
+Alice has come into the store looking to buy a CD
+Velma shows the customer the Walking by Beatles CD, selling for $52
+The customer buys the Walking by Beatles CD for $52
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $18
+The customer buys the Wood Flute for $18
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma informs the customer we have no PRACTICEAMPS in stock
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $66
+Velma offers a 10% discount
+The customer decides not to buy the Wood Flute
+Velma shows the customer the Wood Flute, selling for $82
+The customer buys the Wood Flute for $82
+Velma cleans the store without incident
+Velma locks up and goes home for the night
+Velma has arrived at the store on Day 7
+Velma finds an order with 3 HARMONICAs
+Velma finds an order with 3 MANDOLINs
+Velma checks the register to find $3040
+Velma does inventory to find we have $604 worth of product
+Velma placed an order for 3 BASSs to arrive on Day 8
+Velma placed an order for 3 CDs to arrive on Day 8
+Velma placed an order for 3 PAPERSCOREs to arrive on Day 8
+Alice has come into the store looking to sell a PAPERSCORE
+Velma determines the Walking by Beatles Paper Score to be in Poor condition and the value to be $7
+The store buys the Walking by Beatles Paper Score in Poor condition for $7
+Alice has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Walking by Beatles Paper Score, selling for $96
+Velma offers a 10% discount
+The customer buys the Walking by Beatles Paper Score for $86
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Medium Hat, selling for $96
+Velma offers a 10% discount
+The customer decides not to buy the Medium Hat
+Velma shows the customer the Large Hat, selling for $14
+The customer buys the Large Hat for $14
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $62
+The customer buys the Electric Mandolin for $62
+Alice has come into the store looking to buy a STRINGS
+Velma informs the customer we have no STRINGS in stock
+Velma cleans the store without incident
+Velma locks up and goes home for the night
+Velma has arrived at the store on Day 8
+Velma finds an order with 3 PRACTICEAMPSs
+Velma finds an order with 3 BASSs
+Velma finds an order with 3 CDs
+Velma finds an order with 3 PAPERSCOREs
+Velma checks the register to find $2915
+Velma does inventory to find we have $846 worth of product
+Alice has come into the store looking to buy a SHIRTS
+Velma shows the customer the Medium Shirt, selling for $72
+Velma offers a 10% discount
+The customer buys the Medium Shirt for $64
+Alice has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Very Good condition and the value to be $35
+Velma offers a 10% increase to the price
+The store buys the Record Player in Very Good condition for $38
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $68
+Velma offers a 10% discount
+The customer buys the Harmonica in F# for $61
+Alice has come into the store looking to sell a GUITAR
+Velma determines the Electric Guitar to be in Excellent condition and the value to be $41
+Velma offers a 10% increase to the price
+The customer leaves without selling their Electric Guitar
+Alice has come into the store looking to buy a CD
+Velma shows the customer the Walking by Beatles CD, selling for $64
+Velma offers a 10% discount
+The customer buys the Walking by Beatles CD for $57
+Alice has come into the store looking to sell a HATS
+Velma determines the Large Hat to be in Very Good condition and the value to be $32
+The store buys the Large Hat in Very Good condition for $32
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Electric Guitar, selling for $40
+Velma offers a 10% discount
+The customer buys the Electric Guitar for $36
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $16
+Velma offers a 10% discount
+The customer buys the CD Player for $14
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $74
+The customer buys the Harmonica in F# for $74
+Velma cleans the store without incident
+Velma locks up and goes home for the night
+Shaggy has arrived at the store on Day 9
+Shaggy finds an order with 3 STRINGSs
+Shaggy checks the register to find $3054
+Shaggy does inventory to find we have $827 worth of product
+Shaggy placed an order for 3 CDPLAYERs to arrive on Day 11
+Alice has come into the store looking to buy a HATS
+Shaggy shows the customer the Medium Hat, selling for $96
+The customer buys the Medium Hat for $96
+Alice has come into the store looking to sell a BANDANAS
+Shaggy determines the Bandana to be in Fair condition and the value to be $14
+The store buys the Bandana in Fair condition for $14
+Alice has come into the store looking to buy a FLUTE
+Shaggy shows the customer the Wood Flute, selling for $66
+Shaggy offers a 10% discount
+The customer buys the Wood Flute for $59
+Alice has come into the store looking to sell a VINYL
+Shaggy determines the Walking by Beatles Vinyl to be in Poor condition and the value to be $5
+The store buys the Walking by Beatles Vinyl in Poor condition for $5
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $50
+The customer buys the Walking by Beatles Paper Score for $50
+Alice has come into the store looking to buy a HATS
+Shaggy shows the customer the Large Hat, selling for $28
+Shaggy offers a 10% discount
+The customer buys the Large Hat for $25
+Alice has come into the store looking to sell a MP3PLAYER
+Shaggy determines the MP3 Player to be in Fair condition and the value to be $14
+The store buys the MP3 Player in Fair condition for $14
+Alice has come into the store looking to sell a CABLES
+Shaggy determines the 5 meter cable to be in Very Good condition and the value to be $40
+The store buys the 5 meter cable in Very Good condition for $40
+Shaggy cleans the store without incident
+Shaggy locks up and goes home for the night
+Shaggy has arrived at the store on Day 10
+Shaggy finds no orders delivered today
+Shaggy checks the register to find $3211
+Shaggy does inventory to find we have $865 worth of product
+Shaggy placed an order for 3 HATSs to arrive on Day 11
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $20
+Shaggy offers a 10% discount
+The customer decides not to buy the Harmonica in F#
+Alice has come into the store looking to sell a VINYL
+Shaggy determines the Walking by Beatles Vinyl to be in Poor condition and the value to be $9
+The store buys the Walking by Beatles Vinyl in Poor condition for $9
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $54
+Shaggy offers a 10% discount
+The customer decides not to buy the Record Player
+Shaggy shows the customer the Record Player, selling for $74
+The customer buys the Record Player for $74
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 2 meter cable, selling for $50
+Shaggy offers a 10% discount
+The customer buys the 2 meter cable for $45
+Alice has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Guitar, selling for $78
+Shaggy offers a 10% discount
+The customer buys the Guitar for $70
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 2 meter cable, selling for $58
+The customer buys the 2 meter cable for $58
+Shaggy cleans the store without incident
+Shaggy locks up and goes home for the night
+Velma has arrived at the store on Day 11
+Velma finds an order with 3 CDPLAYERs
+Velma finds an order with 3 HATSs
+Velma checks the register to find $3261
+Velma does inventory to find we have $936 worth of product
+Velma placed an order for 3 GUITARs to arrive on Day 14
+Alice has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $42
+The customer buys the Guitar strings for $42
+Alice has come into the store looking to sell a FLUTE
+Velma determines the Wood Flute to be in Poor condition and the value to be $4
+Velma offers a 10% increase to the price
+The store buys the Wood Flute in Poor condition for $4
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $92
+Velma offers a 10% discount
+The customer buys the CD Player for $82
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $58
+The customer buys the Electric Mandolin for $58
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $82
+Velma offers a 10% discount
+The customer decides not to buy the MP3 Player
+Velma shows the customer the MP3 Player, selling for $82
+Velma offers a 10% discount
+The customer buys the MP3 Player for $73
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 11 watt amp, selling for $88
+The customer buys the 11 watt amp for $88
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $20
+Velma offers a 10% discount
+The customer buys the Harmonica in F# for $18
+Alice has come into the store looking to buy a VINYL
+Velma shows the customer the Walking by Beatles Vinyl, selling for $18
+Velma offers a 10% discount
+The customer decides not to buy the Walking by Beatles Vinyl
+Velma shows the customer the Walking by Beatles Vinyl, selling for $76
+The customer buys the Walking by Beatles Vinyl for $76
+Velma cleans the store without incident
+Velma locks up and goes home for the night
 Velma has arrived at the store on Day 12
 Velma finds no orders delivered today
-Velma checks the register to find $2497
-Velma does inventory to find we have $1020 worth of product
-Velma placed an order for 3 HARMONICAs to arrive on Day 13
-A customer comes in looking to buy a PRACTICEAMPS
+Velma checks the register to find $3694
+Velma does inventory to find we have $713 worth of product
+Velma placed an order for 3 HARMONICAs to arrive on Day 15
+Alice has come into the store looking to sell a SHIRTS
+Velma determines the Large Shirt to be in Fair condition and the value to be $17
+The store buys the Large Shirt in Fair condition for $17
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $54
 Velma offers a 10% discount
-Customer buys 14 watt amp for $34
-A customer comes in looking to buy a CABLES
+The customer buys the Record Player for $48
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 5 meter cable, selling for $84
 Velma offers a 10% discount
-Customer buys 1 meter cable for $34
-A customer comes in looking to buy a GUITAR
+The customer buys the 5 meter cable for $75
+Alice has come into the store looking to sell a HATS
+Velma determines the Medium Hat to be in Fair condition and the value to be $16
+The store buys the Medium Hat in Fair condition for $16
+Alice has come into the store looking to buy a CD
+Velma shows the customer the Walking by Beatles CD, selling for $2
+The customer buys the Walking by Beatles CD for $2
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Medium Hat, selling for $64
+The customer buys the Medium Hat for $64
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Large Hat, selling for $64
 Velma offers a 10% discount
-Customer buys Guitar for $55
-A customer comes in looking to sell a Walking by Beatles Paper Score
-Velma determines the item to be in Good condition and the value to be $21
-The store buys a Walking by Beatles Paper Score in Good condition for $21
-A customer comes in looking to sell a Guitar strings
-Velma determines the item to be in Good condition and the value to be $22
-The store buys a Guitar strings in Good condition for $22
-A customer comes in looking to sell a Guitar
-Velma determines the item to be in Excellent condition and the value to be $41
-The store buys a Guitar in Excellent condition for $41
-A customer comes in looking to buy a SHIRTS
-Velma offers a 10% discount
-Customer buys Medium Shirt for $75
-A customer comes in looking to buy a HATS
-Velma offers a 10% discount
-Customer buys Medium Hat for $36
-A customer comes in looking to buy a GUITAR
-Velma offers a 10% discount
-Customer buys Guitar for $7
-A customer comes in looking to buy a BASS
-Velma offers a 10% discount
-Customer buys Electric Bass for $90
-A customer comes in looking to buy a VINYL
-Velma offers a 10% discount
-Customer buys Walking by Beatles Vinyl for $37
-A customer comes in looking to buy a PAPERSCORE
-Velma offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $25
-A customer comes in looking to sell a 19 watt amp
-Velma determines the item to be in Very Good condition and the value to be $38
+The customer buys the Large Hat for $57
+Alice has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Excellent condition and the value to be $43
+The store buys the Record Player in Excellent condition for $43
+Alice has come into the store looking to sell a FLUTE
+Velma determines the Wood Flute to be in Poor condition and the value to be $9
 Velma offers a 10% increase to the price
-The store buys a 19 watt amp in Very Good condition for $41
-A customer comes in looking to buy a HATS
-The customer buys the Small Hat for $18
+The store buys the Wood Flute in Poor condition for $9
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $82
+Velma offers a 10% discount
+The customer buys the MP3 Player for $73
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Small Hat, selling for $28
+Velma offers a 10% discount
+The customer buys the Small Hat for $25
 Velma cleans the store without incident
 Velma locks up and goes home for the night
 Shaggy has arrived at the store on Day 13
-Shaggy finds an order with 3 HARMONICAs
-Shaggy checks the register to find $2724
-Shaggy does inventory to find we have $968 worth of product
-Shaggy placed an order for 3 HATSs to arrive on Day 16
-Shaggy placed an order for 3 BASSs to arrive on Day 14
-A customer comes in looking to buy a STRINGS
-The customer buys the Guitar strings for $72
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $12
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 19 watt amp for $38
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Very Good condition and the value to be $34
-Shaggy offers a 10% increase to the price
-The store buys a Wood Flute in Very Good condition for $37
-A customer comes in looking to sell a Electric Bass
-Shaggy determines the item to be in Fair condition and the value to be $15
-The store buys a Electric Bass in Fair condition for $15
-A customer comes in looking to buy a MP3PLAYER
+Shaggy finds no orders delivered today
+Shaggy checks the register to find $3953
+Shaggy does inventory to find we have $624 worth of product
+Shaggy placed an order for 3 MP3PLAYERs to arrive on Day 15
+Shaggy placed an order for 3 CABLESs to arrive on Day 15
+Alice has come into the store looking to sell a STRINGS
+Shaggy determines the Guitar strings to be in Good condition and the value to be $21
+The store buys the Guitar strings in Good condition for $21
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $6
 Shaggy offers a 10% discount
-Customer buys MP3 Player for $21
-A customer comes in looking to buy a VINYL
-The customer buys the Walking by Beatles Vinyl for $10
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Fair condition and the value to be $18
-The store buys a Wood Flute in Fair condition for $18
-A customer comes in looking to buy a SHIRTS
-Shaggy offers a 10% discount
-Customer buys Small Shirt for $55
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $24
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 14 watt amp for $100
-A customer comes in looking to sell a Walking by Beatles CD
-Shaggy determines the item to be in Very Good condition and the value to be $33
-Shaggy offers a 10% increase to the price
-The store buys a Walking by Beatles CD in Very Good condition for $36
-A customer comes in looking to buy a PRACTICEAMPS
-Shaggy offers a 10% discount
-Customer buys 19 watt amp for $57
-A customer comes in looking to buy a STRINGS
-Shaggy offers a 10% discount
-Customer buys Guitar strings for $57
+The customer buys the Record Player for $5
+Alice has come into the store looking to sell a BASS
+Shaggy determines the Bass to be in Very Good condition and the value to be $36
+The store buys the Bass in Very Good condition for $36
+Alice has come into the store looking to buy a CABLES
+Shaggy informs the customer we have no CABLES in stock
+Alice has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Bandana, selling for $26
+The customer buys the Bandana for $26
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $58
+The customer buys the Guitar strings for $58
+Alice has come into the store looking to buy a HARMONICA
+Shaggy informs the customer we have no HARMONICA in stock
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy informs the customer we have no RECORDPLAYER in stock
+Alice has come into the store looking to buy a MP3PLAYER
+Shaggy informs the customer we have no MP3PLAYER in stock
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy informs the customer we have no RECORDPLAYER in stock
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
 Velma has arrived at the store on Day 14
-Velma finds an order with 3 BASSs
-Velma checks the register to find $2957
-Velma does inventory to find we have $979 worth of product
-Velma placed an order for 3 PRACTICEAMPSs to arrive on Day 15
-A customer comes in looking to buy a FLUTE
+Velma finds an order with 3 GUITARs
+Velma checks the register to find $3871
+Velma does inventory to find we have $734 worth of product
+Velma placed an order for 3 RECORDPLAYERs to arrive on Day 16
+Alice has come into the store looking to sell a STRINGS
+Velma determines the Guitar strings to be in Excellent condition and the value to be $44
+The store buys the Guitar strings in Excellent condition for $44
+Alice has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Walking by Beatles Paper Score, selling for $68
 Velma offers a 10% discount
-Customer buys Wood Flute for $1
-A customer comes in looking to buy a FLUTE
-Velma offers a 10% discount
-Customer buys Wood Flute for $50
-A customer comes in looking to sell a Guitar
-Velma determines the item to be in Very Good condition and the value to be $33
-The store buys a Guitar in Very Good condition for $33
-A customer comes in looking to buy a VINYL
-Velma offers a 10% discount
-Customer buys Walking by Beatles Vinyl for $9
-A customer comes in looking to sell a Electric Mandolin
-Velma determines the item to be in Excellent condition and the value to be $40
+The customer buys the Walking by Beatles Paper Score for $61
+Alice has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Poor condition and the value to be $10
 Velma offers a 10% increase to the price
-The store buys a Electric Mandolin in Excellent condition for $44
-A customer comes in looking to buy a SHIRTS
-The customer buys the Small Shirt for $26
-A customer comes in looking to buy a CABLES
+The store buys the Record Player in Poor condition for $11
+Alice has come into the store looking to sell a PAPERSCORE
+Velma determines the Walking by Beatles Paper Score to be in Good condition and the value to be $27
+The store buys the Walking by Beatles Paper Score in Good condition for $27
+Alice has come into the store looking to buy a SHIRTS
+Velma shows the customer the Medium Shirt, selling for $54
+The customer buys the Medium Shirt for $54
+Alice has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $94
 Velma offers a 10% discount
-Customer buys 2 meter cable for $39
-A customer comes in looking to sell a 4 meter cable
-Velma determines the item to be in Fair condition and the value to be $18
-Velma offers a 10% increase to the price
-The customer leaves without selling their 4 meter cable
-A customer comes in looking to buy a CABLES
-The customer buys the 6 meter cable for $84
+The customer buys the Guitar strings for $84
+Alice has come into the store looking to buy a MP3PLAYER
+Velma informs the customer we have no MP3PLAYER in stock
 Velma cleans the store without incident
 Velma locks up and goes home for the night
-Velma has arrived at the store on Day 15
-Velma finds an order with 3 PRACTICEAMPSs
-Velma checks the register to find $3005
-Velma does inventory to find we have $1027 worth of product
-A customer comes in looking to buy a CDPLAYER
-The customer buys the CD Player for $76
-A customer comes in looking to buy a MP3PLAYER
-Velma offers a 10% discount
-Customer buys MP3 Player for $1
-A customer comes in looking to buy a SHIRTS
-Velma offers a 10% discount
-Customer buys Large Shirt for $10
-A customer comes in looking to sell a Electric Bass
-Velma determines the item to be in Poor condition and the value to be $7
-Velma offers a 10% increase to the price
-The store buys a Electric Bass in Poor condition for $7
-A customer comes in looking to buy a MANDOLIN
-Velma offers a 10% discount
-Customer buys Electric Mandolin for $46
-A customer comes in looking to buy a SHIRTS
-Velma informs the customer we have no SHIRTS in stock
-Velma cleans the store without incident
-Velma locks up and goes home for the night
-Shaggy has arrived at the store on Day 16
-Shaggy finds an order with 3 HATSs
-Shaggy checks the register to find $3053
-Shaggy does inventory to find we have $1043 worth of product
-Shaggy placed an order for 3 SHIRTSs to arrive on Day 19
-A customer comes in looking to sell a MP3 Player
-Shaggy determines the item to be in Very Good condition and the value to be $39
-The store buys a MP3 Player in Very Good condition for $39
-A customer comes in looking to buy a PAPERSCORE
+Shaggy has arrived at the store on Day 15
+Shaggy finds an order with 3 HARMONICAs
+Shaggy finds an order with 3 MP3PLAYERs
+Shaggy finds an order with 3 CABLESs
+Shaggy checks the register to find $3804
+Shaggy does inventory to find we have $868 worth of product
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 4 meter cable, selling for $36
 Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $75
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Very Good condition and the value to be $35
-The store buys a Wood Flute in Very Good condition for $35
-A customer comes in looking to buy a PAPERSCORE
+The customer buys the 4 meter cable for $32
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Electric Guitar, selling for $68
+The customer buys the Electric Guitar for $68
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $18
 Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $73
-A customer comes in looking to buy a FLUTE
+The customer buys the Walking by Beatles Paper Score for $16
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Guitar, selling for $94
+The customer buys the Guitar for $94
+Alice has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Bandana, selling for $52
+The customer buys the Bandana for $52
+Alice has come into the store looking to sell a MANDOLIN
+Shaggy determines the Electric Mandolin to be in Very Good condition and the value to be $37
+The store buys the Electric Mandolin in Very Good condition for $37
+Alice has come into the store looking to buy a BASS
+Shaggy shows the customer the Electric Bass, selling for $70
 Shaggy offers a 10% discount
-Customer buys Wood Flute for $72
-A customer comes in looking to buy a PAPERSCORE
-Shaggy informs the customer we have no PAPERSCORE in stock
-A customer comes in looking to sell a Guitar
-Shaggy determines the item to be in Very Good condition and the value to be $30
+The customer buys the Electric Bass for $63
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Guitar, selling for $66
+The customer buys the Guitar for $66
+Alice has come into the store looking to sell a MANDOLIN
+Shaggy determines the Mandolin to be in Good condition and the value to be $22
 Shaggy offers a 10% increase to the price
-The store buys a Guitar in Very Good condition for $33
-A customer comes in looking to buy a CD
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-The customer buys the Walking by Beatles CD for $98
-A customer comes in looking to buy a SHIRTS
-Shaggy informs the customer we have no SHIRTS in stock
-A customer comes in looking to buy a CDPLAYER
-The customer buys the CD Player for $16
-A customer comes in looking to buy a GUITAR
-The customer buys the Guitar for $42
-A customer comes in looking to buy a HARMONICA
-Shaggy offers a 10% discount
-Customer buys Harmonica in F# for $57
+The store buys the Mandolin in Good condition for $24
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $6
+The customer buys the Harmonica in F# for $6
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
+Velma has arrived at the store on Day 16
+Velma finds an order with 3 RECORDPLAYERs
+Velma checks the register to find $4071
+Velma does inventory to find we have $808 worth of product
+Velma placed an order for 3 GUITARs to arrive on Day 19
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $68
+Velma offers a 10% discount
+The customer buys the Record Player for $61
+Alice has come into the store looking to buy a HATS
+Velma shows the customer the Medium Hat, selling for $32
+Velma offers a 10% discount
+The customer buys the Medium Hat for $28
+Alice has come into the store looking to sell a SHIRTS
+Velma determines the Small Shirt to be in Excellent condition and the value to be $41
+The store buys the Small Shirt in Excellent condition for $41
+Alice has come into the store looking to sell a BANDANAS
+Velma determines the Bandana to be in Fair condition and the value to be $17
+Velma offers a 10% increase to the price
+The store buys the Bandana in Fair condition for $18
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $62
+The customer buys the Record Player for $62
+Alice has come into the store looking to sell a PAPERSCORE
+Velma determines the Walking by Beatles Paper Score to be in Good condition and the value to be $29
+The store buys the Walking by Beatles Paper Score in Good condition for $29
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $12
+The customer buys the Electric Mandolin for $12
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $36
+Velma offers a 10% discount
+The customer buys the CD Player for $32
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $12
+The customer buys the MP3 Player for $12
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Electric Mandolin, selling for $52
+The customer buys the Electric Mandolin for $52
+Alice has come into the store looking to sell a CDPLAYER
+Velma determines the CD Player to be in Excellent condition and the value to be $41
+The store buys the CD Player in Excellent condition for $41
+Velma cleans the store without incident
+Velma locks up and goes home for the night
 Shaggy has arrived at the store on Day 17
 Shaggy finds no orders delivered today
-Shaggy checks the register to find $3379
-Shaggy does inventory to find we have $828 worth of product
-Shaggy placed an order for 3 PAPERSCOREs to arrive on Day 18
-A customer comes in looking to sell a Record Player
-Shaggy determines the item to be in Very Good condition and the value to be $34
-The store buys a Record Player in Very Good condition for $34
-A customer comes in looking to buy a STRINGS
+Shaggy checks the register to find $4201
+Shaggy does inventory to find we have $812 worth of product
+Shaggy placed an order for 3 HATSs to arrive on Day 20
+Alice has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Alice has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $40
 Shaggy offers a 10% discount
-Customer buys Guitar strings for $30
-A customer comes in looking to sell a Harmonica in F#
-Shaggy determines the item to be in Excellent condition and the value to be $46
-The store buys a Harmonica in F# in Excellent condition for $46
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 19 watt amp for $16
-A customer comes in looking to buy a CD
+The customer buys the Walking by Beatles Paper Score for $36
+Alice has come into the store looking to buy a MP3PLAYER
+Shaggy shows the customer the MP3 Player, selling for $30
+The customer buys the MP3 Player for $30
+Alice has come into the store looking to sell a CD
+Shaggy determines the Walking by Beatles CD to be in Poor condition and the value to be $2
+The store buys the Walking by Beatles CD in Poor condition for $2
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy shows the customer the CD Player, selling for $92
 Shaggy offers a 10% discount
-Customer buys Walking by Beatles CD for $7
-A customer comes in looking to buy a MP3PLAYER
-The customer buys the MP3 Player for $56
+The customer decides not to buy the CD Player
+Shaggy shows the customer the CD Player, selling for $74
+The customer buys the CD Player for $74
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $48
+The customer buys the Walking by Beatles Paper Score for $48
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $28
+Shaggy offers a 10% discount
+The customer buys the Record Player for $25
+Alice has come into the store looking to sell a FLUTE
+Shaggy determines the Wood Flute to be in Fair condition and the value to be $12
+The store buys the Wood Flute in Fair condition for $12
+Alice has come into the store looking to sell a MP3PLAYER
+Shaggy determines the MP3 Player to be in Good condition and the value to be $27
+Shaggy offers a 10% increase to the price
+The store buys the MP3 Player in Good condition for $29
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
 Shaggy has arrived at the store on Day 18
-Shaggy finds an order with 3 PAPERSCOREs
-Shaggy checks the register to find $3309
-Shaggy does inventory to find we have $955 worth of product
-A customer comes in looking to sell a 14 watt amp
-Shaggy determines the item to be in Poor condition and the value to be $8
-The store buys a 14 watt amp in Poor condition for $8
-A customer comes in looking to buy a MP3PLAYER
-The customer buys the MP3 Player for $14
-A customer comes in looking to buy a MP3PLAYER
-Shaggy informs the customer we have no MP3PLAYER in stock
-A customer comes in looking to buy a GUITAR
-The customer buys the Guitar for $56
-A customer comes in looking to buy a HATS
-The customer buys the Large Hat for $96
-A customer comes in looking to buy a BASS
-The customer buys the Electric Bass for $68
-A customer comes in looking to buy a PAPERSCORE
+Shaggy finds no orders delivered today
+Shaggy checks the register to find $4371
+Shaggy does inventory to find we have $814 worth of product
+Shaggy placed an order for 3 PAPERSCOREs to arrive on Day 19
+Alice has come into the store looking to sell a CDPLAYER
+Shaggy determines the CD Player to be in Good condition and the value to be $25
+The store buys the CD Player in Good condition for $25
+Alice has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Bandana, selling for $74
 Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $82
-A customer comes in looking to buy a FLUTE
-Shaggy offers a 10% discount
-Customer buys Wood Flute for $72
-A customer comes in looking to sell a Record Player
-Shaggy determines the item to be in Excellent condition and the value to be $42
-The store buys a Record Player in Excellent condition for $42
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Excellent condition and the value to be $46
+The customer buys the Bandana for $66
+Alice has come into the store looking to sell a GUITAR
+Shaggy determines the Electric Guitar to be in Poor condition and the value to be $8
 Shaggy offers a 10% increase to the price
-The customer leaves without selling their Wood Flute
-A customer comes in looking to buy a SHIRTS
-Shaggy informs the customer we have no SHIRTS in stock
-A customer comes in looking to buy a MANDOLIN
-The customer buys the Mandolin for $62
-Shaggy cleans the store without incident
+The customer leaves without selling their Electric Guitar
+Alice has come into the store looking to sell a MANDOLIN
+Shaggy determines the Mandolin to be in Excellent condition and the value to be $48
+The store buys the Mandolin in Excellent condition for $48
+Alice has come into the store looking to sell a VINYL
+Shaggy determines the Walking by Beatles Vinyl to be in Fair condition and the value to be $13
+The store buys the Walking by Beatles Vinyl in Fair condition for $13
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $90
+The customer buys the Harmonica in F# for $90
+Alice has come into the store looking to buy a CD
+Shaggy shows the customer the Walking by Beatles CD, selling for $60
+Shaggy offers a 10% discount
+The customer buys the Walking by Beatles CD for $54
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy shows the customer the CD Player, selling for $92
+The customer buys the CD Player for $92
+Alice has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Bandana, selling for $66
+The customer buys the Bandana for $66
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $68
+Shaggy offers a 10% discount
+The customer buys the Guitar strings for $61
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy shows the customer the CD Player, selling for $86
+Shaggy offers a 10% discount
+The customer buys the CD Player for $77
+Alice has come into the store looking to buy a BANDANAS
+Shaggy informs the customer we have no BANDANAS in stock
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy informs the customer we have no CDPLAYER in stock
+Oh no! Shaggy broke a 14 watt amp while cleaning
+It's condition has worsened to Very Good, and its list price has lowered to $12
 Shaggy locks up and goes home for the night
 Velma has arrived at the store on Day 19
-Velma finds an order with 3 SHIRTSs
-Velma checks the register to find $3636
-Velma does inventory to find we have $851 worth of product
-Velma placed an order for 3 MP3PLAYERs to arrive on Day 20
-A customer comes in looking to buy a VINYL
-The customer buys the Walking by Beatles Vinyl for $32
-A customer comes in looking to buy a RECORDPLAYER
+Velma finds an order with 3 GUITARs
+Velma finds an order with 3 PAPERSCOREs
+Velma checks the register to find $4704
+Velma does inventory to find we have $725 worth of product
+Velma placed an order for 3 CDPLAYERs to arrive on Day 20
+Velma placed an order for 3 BANDANASs to arrive on Day 22
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 4 meter cable, selling for $28
 Velma offers a 10% discount
-Customer buys Record Player for $30
-A customer comes in looking to buy a SHIRTS
+The customer buys the 4 meter cable for $25
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $48
+The customer buys the Record Player for $48
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $56
 Velma offers a 10% discount
-Customer buys Medium Shirt for $1
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 18 watt amp for $54
-A customer comes in looking to buy a PAPERSCORE
-The customer buys the Walking by Beatles Paper Score for $60
-A customer comes in looking to sell a CD Player
-Velma determines the item to be in Fair condition and the value to be $11
-The store buys a CD Player in Fair condition for $11
-A customer comes in looking to sell a Walking by Beatles CD
-Velma determines the item to be in Very Good condition and the value to be $38
-Velma offers a 10% increase to the price
-The store buys a Walking by Beatles CD in Very Good condition for $41
-A customer comes in looking to sell a Bandana
-Velma determines the item to be in Good condition and the value to be $23
-The store buys a Bandana in Good condition for $23
-A customer comes in looking to buy a MANDOLIN
+The customer buys the Wood Flute for $50
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Bass, selling for $76
+The customer buys the Bass for $76
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Bass, selling for $44
 Velma offers a 10% discount
-Customer buys Electric Mandolin for $72
-A customer comes in looking to buy a BANDANAS
-The customer buys the Bandana for $42
-A customer comes in looking to buy a MP3PLAYER
-Velma informs the customer we have no MP3PLAYER in stock
-A customer comes in looking to sell a Walking by Beatles CD
-Velma determines the item to be in Excellent condition and the value to be $41
-Velma offers a 10% increase to the price
-The store buys a Walking by Beatles CD in Excellent condition for $45
-A customer comes in looking to buy a BANDANAS
+The customer decides not to buy the Bass
+Velma shows the customer the Bass, selling for $14
 Velma offers a 10% discount
-Customer buys Bandana for $68
+The customer decides not to buy the Bass
+Alice has come into the store looking to sell a CABLES
+Velma determines the 3 meter cable to be in Fair condition and the value to be $20
+The store buys the 3 meter cable in Fair condition for $20
 Velma cleans the store without incident
 Velma locks up and goes home for the night
 Velma has arrived at the store on Day 20
-Velma finds an order with 3 MP3PLAYERs
-Velma checks the register to find $3768
-Velma does inventory to find we have $822 worth of product
-Velma placed an order for 3 VINYLs to arrive on Day 22
-Velma placed an order for 3 MANDOLINs to arrive on Day 23
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $42
-A customer comes in looking to buy a GUITAR
-The customer buys the Guitar for $70
-A customer comes in looking to buy a PAPERSCORE
+Velma finds an order with 3 HATSs
+Velma finds an order with 3 CDPLAYERs
+Velma checks the register to find $4704
+Velma does inventory to find we have $838 worth of product
+Velma placed an order for 3 RECORDPLAYERs to arrive on Day 23
+Alice has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Poor condition and the value to be $4
+The store buys the Record Player in Poor condition for $4
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $12
+The customer buys the Wood Flute for $12
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 14 watt amp, selling for $12
+The customer buys the 14 watt amp for $12
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Electric Guitar, selling for $26
 Velma offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $41
-A customer comes in looking to buy a VINYL
-Velma informs the customer we have no VINYL in stock
-A customer comes in looking to buy a HATS
+The customer buys the Electric Guitar for $23
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 11 watt amp, selling for $6
+The customer buys the 11 watt amp for $6
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 2 meter cable, selling for $90
 Velma offers a 10% discount
-Customer buys Small Hat for $48
-A customer comes in looking to buy a CDPLAYER
-The customer buys the CD Player for $70
-A customer comes in looking to buy a GUITAR
-The customer buys the Guitar for $6
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Velma determines the item to be in Poor condition and the value to be $6
-The store buys a Walking by Beatles Vinyl in Poor condition for $6
+The customer buys the 2 meter cable for $81
 Velma cleans the store without incident
 Velma locks up and goes home for the night
 Velma has arrived at the store on Day 21
 Velma finds no orders delivered today
-Velma checks the register to find $4039
-Velma does inventory to find we have $682 worth of product
-Velma placed an order for 3 PAPERSCOREs to arrive on Day 24
-Velma placed an order for 3 GUITARs to arrive on Day 24
-A customer comes in looking to sell a Bandana
-Velma determines the item to be in Good condition and the value to be $21
-The store buys a Bandana in Good condition for $21
-A customer comes in looking to buy a STRINGS
+Velma checks the register to find $4834
+Velma does inventory to find we have $784 worth of product
+Velma placed an order for 3 PRACTICEAMPSs to arrive on Day 24
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $64
 Velma offers a 10% discount
-Customer buys Guitar strings for $30
-A customer comes in looking to buy a RECORDPLAYER
+The customer buys the Wood Flute for $57
+Alice has come into the store looking to buy a PRACTICEAMPS
+Velma informs the customer we have no PRACTICEAMPS in stock
+Alice has come into the store looking to buy a SHIRTS
+Velma shows the customer the Large Shirt, selling for $82
+The customer buys the Large Shirt for $82
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Guitar, selling for $46
+The customer buys the Guitar for $46
+Alice has come into the store looking to sell a CABLES
+Velma determines the 4 meter cable to be in Fair condition and the value to be $16
+The store buys the 4 meter cable in Fair condition for $16
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $44
 Velma offers a 10% discount
-The customer leaves without buying anything
-The customer buys the Record Player for $100
-A customer comes in looking to buy a RECORDPLAYER
-Velma offers a 10% discount
-Customer buys Record Player for $59
-A customer comes in looking to buy a HATS
-Velma offers a 10% discount
-Customer buys Medium Hat for $5
-A customer comes in looking to buy a HARMONICA
-The customer buys the Harmonica in F# for $70
-A customer comes in looking to buy a PRACTICEAMPS
-Velma offers a 10% discount
-Customer buys 14 watt amp for $88
-A customer comes in looking to buy a PAPERSCORE
-Velma informs the customer we have no PAPERSCORE in stock
-A customer comes in looking to sell a Record Player
-Velma determines the item to be in Good condition and the value to be $26
-Velma offers a 10% increase to the price
-The store buys a Record Player in Good condition for $28
-A customer comes in looking to buy a CABLES
-The customer buys the 2 meter cable for $20
+The customer buys the Harmonica in F# for $39
 Velma cleans the store without incident
 Velma locks up and goes home for the night
 Shaggy has arrived at the store on Day 22
-Shaggy finds an order with 3 VINYLs
-Shaggy checks the register to find $4324
-Shaggy does inventory to find we have $548 worth of product
-Shaggy placed an order for 3 HATSs to arrive on Day 24
-Shaggy placed an order for 3 STRINGSs to arrive on Day 25
-Shaggy placed an order for 3 CABLESs to arrive on Day 24
+Shaggy finds an order with 3 BANDANASs
+Shaggy checks the register to find $4934
+Shaggy does inventory to find we have $787 worth of product
 Shaggy placed an order for 3 HARMONICAs to arrive on Day 23
-A customer comes in looking to sell a 2 meter cable
-Shaggy determines the item to be in Excellent condition and the value to be $49
-The store buys a 2 meter cable in Excellent condition for $49
-A customer comes in looking to buy a BANDANAS
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $40
 Shaggy offers a 10% discount
-Customer buys Bandana for $45
-A customer comes in looking to buy a VINYL
-The customer buys the Walking by Beatles Vinyl for $8
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $26
-A customer comes in looking to buy a HATS
-Shaggy informs the customer we have no HATS in stock
-A customer comes in looking to buy a STRINGS
-Shaggy informs the customer we have no STRINGS in stock
-A customer comes in looking to buy a MANDOLIN
-Shaggy informs the customer we have no MANDOLIN in stock
-A customer comes in looking to buy a PAPERSCORE
-Shaggy informs the customer we have no PAPERSCORE in stock
-A customer comes in looking to buy a HARMONICA
+The customer buys the Record Player for $36
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $10
+The customer buys the Walking by Beatles Paper Score for $10
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Large Shirt, selling for $98
+Shaggy offers a 10% discount
+The customer buys the Large Shirt for $88
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Electric Guitar, selling for $66
+The customer buys the Electric Guitar for $66
+Alice has come into the store looking to buy a HARMONICA
 Shaggy informs the customer we have no HARMONICA in stock
-A customer comes in looking to buy a BASS
-The customer buys the Bass for $96
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Small Shirt, selling for $94
+The customer buys the Small Shirt for $94
+Alice has come into the store looking to sell a BANDANAS
+Shaggy determines the Bandana to be in Poor condition and the value to be $3
+Shaggy offers a 10% increase to the price
+The store buys the Bandana in Poor condition for $3
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $4
+The customer buys the Walking by Beatles Paper Score for $4
+Alice has come into the store looking to sell a CDPLAYER
+Shaggy determines the CD Player to be in Fair condition and the value to be $18
+Shaggy offers a 10% increase to the price
+The customer leaves without selling their CD Player
+Alice has come into the store looking to buy a FLUTE
+Shaggy shows the customer the Wood Flute, selling for $76
+Shaggy offers a 10% discount
+The customer buys the Wood Flute for $68
+Alice has come into the store looking to buy a HARMONICA
+Shaggy informs the customer we have no HARMONICA in stock
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
 Velma has arrived at the store on Day 23
-Velma finds an order with 3 MANDOLINs
+Velma finds an order with 3 RECORDPLAYERs
 Velma finds an order with 3 HARMONICAs
-Velma checks the register to find $4276
-Velma does inventory to find we have $649 worth of product
-A customer comes in looking to sell a Bandana
-Velma determines the item to be in Excellent condition and the value to be $40
-Velma offers a 10% increase to the price
-The store buys a Bandana in Excellent condition for $44
-A customer comes in looking to buy a BASS
+Velma checks the register to find $5067
+Velma does inventory to find we have $869 worth of product
+Velma placed an order for 3 FLUTEs to arrive on Day 26
+Velma placed an order for 3 SHIRTSs to arrive on Day 24
+Velma placed an order for 3 GUITARs to arrive on Day 24
+Alice has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Walking by Beatles Paper Score, selling for $22
 Velma offers a 10% discount
-Customer buys Bass for $68
-A customer comes in looking to sell a Guitar strings
-Velma determines the item to be in Good condition and the value to be $26
-The store buys a Guitar strings in Good condition for $26
-A customer comes in looking to buy a RECORDPLAYER
-Velma offers a 10% discount
-Customer buys Record Player for $32
-A customer comes in looking to buy a CABLES
-Velma offers a 10% discount
-Customer buys 2 meter cable for $30
-A customer comes in looking to buy a MANDOLIN
-Velma offers a 10% discount
-The customer leaves without buying anything
-Velma offers a 10% discount
-Customer buys Mandolin for $7
-A customer comes in looking to sell a Bass
-Velma determines the item to be in Fair condition and the value to be $17
-The store buys a Bass in Fair condition for $17
-A customer comes in looking to sell a Electric Bass
-Velma determines the item to be in Poor condition and the value to be $2
-The store buys a Electric Bass in Poor condition for $2
-A customer comes in looking to buy a GUITAR
+The customer buys the Walking by Beatles Paper Score for $19
+Alice has come into the store looking to buy a GUITAR
 Velma informs the customer we have no GUITAR in stock
-A customer comes in looking to buy a PRACTICEAMPS
+Alice has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $8
 Velma offers a 10% discount
-Customer buys 14 watt amp for $79
+The customer buys the Guitar strings for $7
+Alice has come into the store looking to buy a PAPERSCORE
+Velma informs the customer we have no PAPERSCORE in stock
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Bass, selling for $44
+Velma offers a 10% discount
+The customer buys the Bass for $39
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $90
+Velma offers a 10% discount
+The customer decides not to buy the CD Player
+Velma shows the customer the CD Player, selling for $30
+Velma offers a 10% discount
+The customer buys the CD Player for $27
+Alice has come into the store looking to buy a GUITAR
+Velma informs the customer we have no GUITAR in stock
+Alice has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Mandolin, selling for $100
+The customer buys the Mandolin for $100
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 3 meter cable, selling for $76
+Velma offers a 10% discount
+The customer buys the 3 meter cable for $68
+Alice has come into the store looking to buy a BANDANAS
+Velma shows the customer the Bandana, selling for $30
+The customer buys the Bandana for $30
+Alice has come into the store looking to sell a VINYL
+Velma determines the Walking by Beatles Vinyl to be in Excellent condition and the value to be $40
+Velma offers a 10% increase to the price
+The store buys the Walking by Beatles Vinyl in Excellent condition for $44
+Alice has come into the store looking to sell a MP3PLAYER
+Velma determines the MP3 Player to be in Good condition and the value to be $20
+The store buys the MP3 Player in Good condition for $20
 Velma cleans the store without incident
 Velma locks up and goes home for the night
 Shaggy has arrived at the store on Day 24
-Shaggy finds an order with 3 PAPERSCOREs
+Shaggy finds an order with 3 PRACTICEAMPSs
+Shaggy finds an order with 3 SHIRTSs
 Shaggy finds an order with 3 GUITARs
-Shaggy finds an order with 3 HATSs
-Shaggy finds an order with 3 CABLESs
-Shaggy checks the register to find $4171
-Shaggy does inventory to find we have $814 worth of product
-Shaggy placed an order for 3 RECORDPLAYERs to arrive on Day 27
-Shaggy placed an order for 3 PRACTICEAMPSs to arrive on Day 25
-A customer comes in looking to buy a PRACTICEAMPS
-Shaggy informs the customer we have no PRACTICEAMPS in stock
-A customer comes in looking to buy a BASS
-The customer buys the Bass for $42
-A customer comes in looking to buy a BANDANAS
+Shaggy checks the register to find $5111
+Shaggy does inventory to find we have $954 worth of product
+Shaggy placed an order for 3 STRINGSs to arrive on Day 27
+Shaggy placed an order for 3 PAPERSCOREs to arrive on Day 27
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Guitar, selling for $20
+The customer buys the Guitar for $20
+Alice has come into the store looking to sell a PAPERSCORE
+Shaggy determines the Walking by Beatles Paper Score to be in Excellent condition and the value to be $49
+The store buys the Walking by Beatles Paper Score in Excellent condition for $49
+Alice has come into the store looking to sell a CABLES
+Shaggy determines the 4 meter cable to be in Good condition and the value to be $30
+The store buys the 4 meter cable in Good condition for $30
+Alice has come into the store looking to buy a MP3PLAYER
+Shaggy shows the customer the MP3 Player, selling for $32
 Shaggy offers a 10% discount
-Customer buys Bandana for $19
-A customer comes in looking to sell a Electric Mandolin
-Shaggy determines the item to be in Excellent condition and the value to be $41
-Shaggy offers a 10% increase to the price
-The store buys a Electric Mandolin in Excellent condition for $45
-A customer comes in looking to buy a MANDOLIN
+The customer buys the MP3 Player for $28
+Alice has come into the store looking to buy a CDPLAYER
+Shaggy shows the customer the CD Player, selling for $90
 Shaggy offers a 10% discount
-Customer buys Mandolin for $57
-A customer comes in looking to sell a Electric Mandolin
-Shaggy determines the item to be in Very Good condition and the value to be $40
-The store buys a Electric Mandolin in Very Good condition for $40
-A customer comes in looking to buy a CDPLAYER
-The customer buys the CD Player for $48
+The customer decides not to buy the CD Player
+Shaggy shows the customer the CD Player, selling for $18
+The customer buys the CD Player for $18
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Large Shirt, selling for $44
+The customer buys the Large Shirt for $44
+Alice has come into the store looking to sell a CD
+Shaggy determines the Walking by Beatles CD to be in Fair condition and the value to be $10
+The store buys the Walking by Beatles CD in Fair condition for $10
+Alice has come into the store looking to buy a HATS
+Shaggy shows the customer the Large Hat, selling for $98
+Shaggy offers a 10% discount
+The customer buys the Large Hat for $88
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Electric Guitar, selling for $4
+Shaggy offers a 10% discount
+The customer buys the Electric Guitar for $3
+Alice has come into the store looking to buy a HATS
+Shaggy shows the customer the Small Hat, selling for $46
+Shaggy offers a 10% discount
+The customer buys the Small Hat for $41
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $94
+The customer buys the Harmonica in F# for $94
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
 Shaggy has arrived at the store on Day 25
-Shaggy finds an order with 3 STRINGSs
-Shaggy finds an order with 3 PRACTICEAMPSs
-Shaggy checks the register to find $4092
-Shaggy does inventory to find we have $912 worth of product
-Shaggy placed an order for 3 CDPLAYERs to arrive on Day 28
-A customer comes in looking to buy a CDPLAYER
-Shaggy informs the customer we have no CDPLAYER in stock
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 19 watt amp for $60
-A customer comes in looking to buy a HATS
-The customer buys the Medium Hat for $76
-A customer comes in looking to sell a Walking by Beatles Vinyl
-Shaggy determines the item to be in Good condition and the value to be $20
-The store buys a Walking by Beatles Vinyl in Good condition for $20
-A customer comes in looking to buy a MP3PLAYER
-Shaggy offers a 10% discount
-Customer buys MP3 Player for $75
-A customer comes in looking to sell a Electric Bass
-Shaggy determines the item to be in Good condition and the value to be $23
-Shaggy offers a 10% increase to the price
-The store buys a Electric Bass in Good condition for $25
-A customer comes in looking to buy a STRINGS
-Shaggy offers a 10% discount
-Customer buys Guitar strings for $7
-A customer comes in looking to sell a Walking by Beatles Paper Score
-Shaggy determines the item to be in Good condition and the value to be $21
-Shaggy offers a 10% increase to the price
-The store buys a Walking by Beatles Paper Score in Good condition for $23
-A customer comes in looking to buy a PAPERSCORE
-Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $61
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
-Shaggy has arrived at the store on Day 26
 Shaggy finds no orders delivered today
-Shaggy checks the register to find $4303
-Shaggy does inventory to find we have $860 worth of product
-A customer comes in looking to buy a STRINGS
-The customer buys the Guitar strings for $46
-A customer comes in looking to sell a Record Player
-Shaggy determines the item to be in Excellent condition and the value to be $49
-The store buys a Record Player in Excellent condition for $49
-A customer comes in looking to buy a CABLES
-The customer buys the 2 meter cable for $24
-A customer comes in looking to buy a SHIRTS
-The customer buys the Small Shirt for $60
-A customer comes in looking to buy a PAPERSCORE
+Shaggy checks the register to find $5358
+Shaggy does inventory to find we have $850 worth of product
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $76
 Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $30
-Shaggy cleans the store without incident
+The customer buys the Harmonica in F# for $68
+Alice has come into the store looking to buy a BASS
+Shaggy shows the customer the Bass, selling for $14
+Shaggy offers a 10% discount
+The customer decides not to buy the Bass
+Alice has come into the store looking to buy a STRINGS
+Shaggy informs the customer we have no STRINGS in stock
+Alice has come into the store looking to buy a CABLES
+Shaggy shows the customer the 4 meter cable, selling for $26
+The customer buys the 4 meter cable for $26
+Alice has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Harmonica in F#, selling for $100
+Shaggy offers a 10% discount
+The customer buys the Harmonica in F# for $90
+Alice has come into the store looking to buy a FLUTE
+Shaggy informs the customer we have no FLUTE in stock
+Alice has come into the store looking to sell a MANDOLIN
+Shaggy determines the Electric Mandolin to be in Poor condition and the value to be $6
+Shaggy offers a 10% increase to the price
+The store buys the Electric Mandolin in Poor condition for $6
+Alice has come into the store looking to sell a BANDANAS
+Shaggy determines the Bandana to be in Good condition and the value to be $22
+The store buys the Bandana in Good condition for $22
+Alice has come into the store looking to sell a MANDOLIN
+Shaggy determines the Electric Mandolin to be in Good condition and the value to be $24
+The store buys the Electric Mandolin in Good condition for $24
+Oh no! Shaggy broke a 19 watt amp while cleaning
+It's condition has worsened to Very Good, and its list price has lowered to $32
 Shaggy locks up and goes home for the night
-Velma has arrived at the store on Day 27
-Velma finds an order with 3 RECORDPLAYERs
-Velma checks the register to find $4370
-Velma does inventory to find we have $833 worth of product
-A customer comes in looking to buy a BANDANAS
+Velma has arrived at the store on Day 26
+Velma finds an order with 3 FLUTEs
+Velma checks the register to find $5390
+Velma does inventory to find we have $919 worth of product
+Velma placed an order for 3 HARMONICAs to arrive on Day 28
+Alice has come into the store looking to buy a CDPLAYER
+Velma shows the customer the CD Player, selling for $90
+The customer buys the CD Player for $90
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $54
 Velma offers a 10% discount
-Customer buys Bandana for $12
-A customer comes in looking to buy a HARMONICA
+The customer buys the MP3 Player for $48
+Alice has come into the store looking to buy a STRINGS
+Velma informs the customer we have no STRINGS in stock
+Alice has come into the store looking to buy a BANDANAS
+Velma shows the customer the Bandana, selling for $86
 Velma offers a 10% discount
-Customer buys Harmonica in F# for $77
-A customer comes in looking to buy a FLUTE
-The customer buys the Wood Flute for $16
-A customer comes in looking to buy a HATS
-The customer buys the Large Hat for $46
-A customer comes in looking to sell a Walking by Beatles CD
-Velma determines the item to be in Fair condition and the value to be $18
-Velma offers a 10% increase to the price
-The customer leaves without selling their Walking by Beatles CD
-A customer comes in looking to buy a CD
-The customer buys the Walking by Beatles CD for $8
-A customer comes in looking to sell a 14 watt amp
-Velma determines the item to be in Fair condition and the value to be $13
-The store buys a 14 watt amp in Fair condition for $13
-A customer comes in looking to buy a GUITAR
+The customer buys the Bandana for $77
+Alice has come into the store looking to buy a GUITAR
+Velma shows the customer the Electric Guitar, selling for $82
 Velma offers a 10% discount
-Customer buys Electric Guitar for $39
-A customer comes in looking to sell a Electric Mandolin
-Velma determines the item to be in Good condition and the value to be $22
-Velma offers a 10% increase to the price
-The customer leaves without selling their Electric Mandolin
-A customer comes in looking to sell a Record Player
-Velma determines the item to be in Good condition and the value to be $20
-Velma offers a 10% increase to the price
-The store buys a Record Player in Good condition for $22
-A customer comes in looking to buy a GUITAR
-The customer buys the Electric Guitar for $8
-A customer comes in looking to buy a SHIRTS
-The customer buys the Large Shirt for $84
-A customer comes in looking to buy a SHIRTS
-Velma informs the customer we have no SHIRTS in stock
+The customer decides not to buy the Electric Guitar
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $44
+Velma offers a 10% discount
+The customer buys the MP3 Player for $39
+Alice has come into the store looking to buy a FLUTE
+Velma shows the customer the Wood Flute, selling for $76
+Velma offers a 10% discount
+The customer buys the Wood Flute for $68
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 4 meter cable, selling for $28
+The customer buys the 4 meter cable for $28
+Alice has come into the store looking to buy a HARMONICA
+Velma informs the customer we have no HARMONICA in stock
+Alice has come into the store looking to sell a GUITAR
+Velma determines the Electric Guitar to be in Fair condition and the value to be $13
+The store buys the Electric Guitar in Fair condition for $13
 Velma cleans the store without incident
 Velma locks up and goes home for the night
-Shaggy has arrived at the store on Day 28
-Shaggy finds an order with 3 CDPLAYERs
-Shaggy checks the register to find $4530
-Shaggy does inventory to find we have $826 worth of product
-Shaggy placed an order for 3 FLUTEs to arrive on Day 31
-Shaggy placed an order for 3 SHIRTSs to arrive on Day 30
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 10 watt amp for $48
-A customer comes in looking to buy a CABLES
-The customer buys the 1 meter cable for $48
-A customer comes in looking to sell a Guitar
-Shaggy determines the item to be in Fair condition and the value to be $11
-Shaggy offers a 10% increase to the price
-The store buys a Guitar in Fair condition for $12
-A customer comes in looking to buy a SHIRTS
-Shaggy informs the customer we have no SHIRTS in stock
-A customer comes in looking to sell a 10 watt amp
-Shaggy determines the item to be in Excellent condition and the value to be $50
-The store buys a 10 watt amp in Excellent condition for $50
-A customer comes in looking to buy a MANDOLIN
+Shaggy has arrived at the store on Day 27
+Shaggy finds an order with 3 STRINGSs
+Shaggy finds an order with 3 PAPERSCOREs
+Shaggy checks the register to find $5570
+Shaggy does inventory to find we have $915 worth of product
+Shaggy placed an order for 3 MP3PLAYERs to arrive on Day 29
+Shaggy placed an order for 3 CDPLAYERs to arrive on Day 29
+Shaggy placed an order for 3 CABLESs to arrive on Day 28
+Alice has come into the store looking to buy a FLUTE
+Shaggy shows the customer the Wood Flute, selling for $60
 Shaggy offers a 10% discount
-The customer leaves without buying anything
-The customer buys the Electric Mandolin for $42
+The customer decides not to buy the Wood Flute
+Shaggy shows the customer the Wood Flute, selling for $64
+Shaggy offers a 10% discount
+The customer buys the Wood Flute for $57
+Alice has come into the store looking to buy a VINYL
+Shaggy shows the customer the Walking by Beatles Vinyl, selling for $18
+Shaggy offers a 10% discount
+The customer buys the Walking by Beatles Vinyl for $16
+Alice has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Bandana, selling for $100
+The customer buys the Bandana for $100
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $76
+The customer buys the Guitar strings for $76
+Alice has come into the store looking to buy a HATS
+Shaggy shows the customer the Large Hat, selling for $76
+Shaggy offers a 10% discount
+The customer buys the Large Hat for $68
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $86
+Shaggy offers a 10% discount
+The customer decides not to buy the Walking by Beatles Paper Score
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $30
+Shaggy offers a 10% discount
+The customer decides not to buy the Walking by Beatles Paper Score
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $32
+The customer buys the Walking by Beatles Paper Score for $32
+Alice has come into the store looking to sell a PAPERSCORE
+Shaggy determines the Walking by Beatles Paper Score to be in Very Good condition and the value to be $31
+The store buys the Walking by Beatles Paper Score in Very Good condition for $31
+Alice has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Alice has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Mandolin, selling for $34
+The customer buys the Mandolin for $34
+Alice has come into the store looking to sell a FLUTE
+Shaggy determines the Wood Flute to be in Good condition and the value to be $30
+The store buys the Wood Flute in Good condition for $30
+Alice has come into the store looking to sell a FLUTE
+Shaggy determines the Wood Flute to be in Very Good condition and the value to be $38
+The store buys the Wood Flute in Very Good condition for $38
+Alice has come into the store looking to sell a SHIRTS
+Shaggy determines the Medium Shirt to be in Very Good condition and the value to be $33
+Shaggy offers a 10% increase to the price
+The store buys the Medium Shirt in Very Good condition for $36
+Alice has come into the store looking to buy a BASS
+Shaggy shows the customer the Bass, selling for $14
+Shaggy offers a 10% discount
+The customer buys the Bass for $12
+Alice has come into the store looking to buy a FLUTE
+Shaggy shows the customer the Wood Flute, selling for $60
+Shaggy offers a 10% discount
+The customer buys the Wood Flute for $54
 Shaggy cleans the store without incident
+Shaggy locks up and goes home for the night
+Shaggy has arrived at the store on Day 28
+Shaggy finds an order with 3 HARMONICAs
+Shaggy finds an order with 3 CABLESs
+Shaggy checks the register to find $5654
+Shaggy does inventory to find we have $1074 worth of product
+Shaggy placed an order for 3 HATSs to arrive on Day 31
+Shaggy placed an order for 3 BASSs to arrive on Day 30
+Alice has come into the store looking to sell a PAPERSCORE
+Shaggy determines the Walking by Beatles Paper Score to be in Fair condition and the value to be $18
+Shaggy offers a 10% increase to the price
+The store buys the Walking by Beatles Paper Score in Fair condition for $19
+Alice has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Electric Guitar, selling for $82
+The customer buys the Electric Guitar for $82
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $86
+The customer buys the Walking by Beatles Paper Score for $86
+Alice has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 13 watt amp, selling for $52
+Shaggy offers a 10% discount
+The customer decides not to buy the 13 watt amp
+Shaggy shows the customer the 19 watt amp, selling for $32
+The customer buys the 19 watt amp for $32
+Alice has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Electric Mandolin, selling for $96
+Shaggy offers a 10% discount
+The customer buys the Electric Mandolin for $86
+Alice has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Guitar strings, selling for $8
+Shaggy offers a 10% discount
+The customer buys the Guitar strings for $7
+Oh no! Shaggy broke a Electric Mandolin while cleaning
+It's condition has worsened to Fair, and its list price has lowered to $2
 Shaggy locks up and goes home for the night
 Shaggy has arrived at the store on Day 29
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $4606
-Shaggy does inventory to find we have $793 worth of product
-A customer comes in looking to buy a PRACTICEAMPS
-Shaggy offers a 10% discount
-Customer buys 16 watt amp for $61
-A customer comes in looking to buy a STRINGS
-The customer buys the Guitar strings for $78
-A customer comes in looking to buy a BANDANAS
-Shaggy offers a 10% discount
-Customer buys Bandana for $72
-A customer comes in looking to sell a CD Player
-Shaggy determines the item to be in Poor condition and the value to be $3
-The store buys a CD Player in Poor condition for $3
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $22
-A customer comes in looking to sell a Bandana
-Shaggy determines the item to be in Poor condition and the value to be $4
-The store buys a Bandana in Poor condition for $4
-A customer comes in looking to sell a Electric Bass
-Shaggy determines the item to be in Excellent condition and the value to be $41
+Shaggy finds an order with 3 MP3PLAYERs
+Shaggy finds an order with 3 CDPLAYERs
+Shaggy checks the register to find $5701
+Shaggy does inventory to find we have $1169 worth of product
+Alice has come into the store looking to sell a MP3PLAYER
+Shaggy determines the MP3 Player to be in Very Good condition and the value to be $32
 Shaggy offers a 10% increase to the price
-The store buys a Electric Bass in Excellent condition for $45
-A customer comes in looking to buy a GUITAR
+The store buys the MP3 Player in Very Good condition for $35
+Alice has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 13 watt amp, selling for $52
+The customer buys the 13 watt amp for $52
+Alice has come into the store looking to sell a GUITAR
+Shaggy determines the Guitar to be in Fair condition and the value to be $12
+Shaggy offers a 10% increase to the price
+The store buys the Guitar in Fair condition for $13
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Medium Shirt, selling for $44
+The customer buys the Medium Shirt for $44
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Walking by Beatles Paper Score, selling for $30
+The customer buys the Walking by Beatles Paper Score for $30
+Alice has come into the store looking to buy a CD
+Shaggy shows the customer the Walking by Beatles CD, selling for $94
 Shaggy offers a 10% discount
-Customer buys Guitar for $9
-A customer comes in looking to buy a MANDOLIN
-The customer buys the Mandolin for $36
-A customer comes in looking to buy a CD
-The customer buys the Walking by Beatles CD for $8
+The customer buys the Walking by Beatles CD for $84
+Alice has come into the store looking to sell a CDPLAYER
+Shaggy determines the CD Player to be in Poor condition and the value to be $6
+Shaggy offers a 10% increase to the price
+The customer leaves without selling their CD Player
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $88
+Shaggy offers a 10% discount
+The customer buys the Record Player for $79
+Alice has come into the store looking to buy a SHIRTS
+Shaggy shows the customer the Medium Shirt, selling for $20
+Shaggy offers a 10% discount
+The customer buys the Medium Shirt for $18
+Alice has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Alice has come into the store looking to sell a MP3PLAYER
+Shaggy determines the MP3 Player to be in Very Good condition and the value to be $37
+The store buys the MP3 Player in Very Good condition for $37
+Alice has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Electric Mandolin, selling for $2
+Shaggy offers a 10% discount
+The customer buys the Electric Mandolin for $1
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
-Shaggy has arrived at the store on Day 30
-Shaggy finds an order with 3 SHIRTSs
-Shaggy checks the register to find $4791
-Shaggy does inventory to find we have $766 worth of product
-A customer comes in looking to buy a PRACTICEAMPS
-The customer buys the 14 watt amp for $60
-A customer comes in looking to sell a Medium Shirt
-Shaggy determines the item to be in Fair condition and the value to be $10
-The store buys a Medium Shirt in Fair condition for $10
-A customer comes in looking to buy a MANDOLIN
-The customer buys the Electric Mandolin for $10
-A customer comes in looking to buy a CDPLAYER
-Shaggy offers a 10% discount
-Customer buys CD Player for $39
-A customer comes in looking to buy a RECORDPLAYER
-The customer buys the Record Player for $8
-A customer comes in looking to buy a PRACTICEAMPS
-Shaggy offers a 10% discount
-The customer leaves without buying anything
-A customer comes in looking to buy a PAPERSCORE
-Shaggy offers a 10% discount
-Customer buys Walking by Beatles Paper Score for $23
-A customer comes in looking to sell a Wood Flute
-Shaggy determines the item to be in Very Good condition and the value to be $39
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Wood Flute
-A customer comes in looking to sell a CD Player
-Shaggy determines the item to be in Very Good condition and the value to be $39
-Shaggy offers a 10% increase to the price
-The store buys a CD Player in Very Good condition for $42
-A customer comes in looking to sell a Small Hat
-Shaggy determines the item to be in Fair condition and the value to be $18
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Small Hat
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
+Velma has arrived at the store on Day 30
+Velma finds an order with 3 BASSs
+Velma checks the register to find $5837
+Velma does inventory to find we have $1143 worth of product
+Velma placed an order for 3 MANDOLINs to arrive on Day 31
+Alice has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $14
+Velma offers a 10% discount
+The customer buys the Record Player for $12
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 4 meter cable, selling for $84
+Velma offers a 10% discount
+The customer decides not to buy the 4 meter cable
+Velma shows the customer the 1 meter cable, selling for $36
+The customer buys the 1 meter cable for $36
+Alice has come into the store looking to sell a SHIRTS
+Velma determines the Large Shirt to be in Excellent condition and the value to be $45
+The store buys the Large Shirt in Excellent condition for $45
+Alice has come into the store looking to sell a STRINGS
+Velma determines the Guitar strings to be in Excellent condition and the value to be $41
+Velma offers a 10% increase to the price
+The store buys the Guitar strings in Excellent condition for $45
+Alice has come into the store looking to sell a BASS
+Velma determines the Electric Bass to be in Fair condition and the value to be $12
+Velma offers a 10% increase to the price
+The customer leaves without selling their Electric Bass
+Alice has come into the store looking to buy a BASS
+Velma shows the customer the Electric Bass, selling for $48
+Velma offers a 10% discount
+The customer decides not to buy the Electric Bass
+Velma shows the customer the Bass, selling for $50
+The customer buys the Bass for $50
+Alice has come into the store looking to sell a PRACTICEAMPS
+Velma determines the 19 watt amp to be in Poor condition and the value to be $7
+Velma offers a 10% increase to the price
+The store buys the 19 watt amp in Poor condition for $7
+Alice has come into the store looking to buy a HARMONICA
+Velma shows the customer the Harmonica in F#, selling for $98
+The customer buys the Harmonica in F# for $98
+Velma cleans the store without incident
+Velma locks up and goes home for the night
+Items left in inventory: 
+Walking by Beatles Vinyl for $26
+Walking by Beatles Vinyl for $64
+Bandana for $92
+Record Player for $88
+Walking by Beatles Vinyl for $72
+17 watt amp for $58
+Walking by Beatles CD for $34
+Bandana for $42
+Electric Guitar for $56
+Guitar strings for $88
+Walking by Beatles Paper Score for $80
+Walking by Beatles Paper Score for $86
+Wood Flute for $74
+Wood Flute for $92
+Medium Shirt for $80
+Harmonica in F# for $64
+Harmonica in F# for $84
+4 meter cable for $84
+2 meter cable for $94
+Walking by Beatles Paper Score for $48
+MP3 Player for $86
+MP3 Player for $92
+MP3 Player for $80
+CD Player for $74
+CD Player for $86
+CD Player for $36
+MP3 Player for $4
+Guitar for $86
+MP3 Player for $14
+Electric Bass for $48
+Electric Bass for $76
+Large Shirt for $60
+Guitar strings for $6
+19 watt amp for $54
+Items sold: 
+11 watt amp for $28 on Day 1
+Electric Mandolin for $52 on Day 1
+Harmonica in F# for $52 on Day 1
+4 meter cable for $78 on Day 1
+MP3 Player for $92 on Day 1
+CD Player for $73 on Day 1
+11 watt amp for $62 on Day 1
+Harmonica in F# for $18 on Day 1
+Walking by Beatles CD for $78 on Day 1
+Walking by Beatles CD for $48 on Day 1
+Walking by Beatles Vinyl for $64 on Day 2
+Large Shirt for $86 on Day 2
+Record Player for $92 on Day 2
+MP3 Player for $42 on Day 2
+Medium Hat for $39 on Day 2
+Walking by Beatles Paper Score for $8 on Day 2
+Electric Guitar for $66 on Day 2
+17 watt amp for $34 on Day 2
+Guitar strings for $98 on Day 3
+Bandana for $50 on Day 3
+Bass for $72 on Day 3
+Harmonica in F# for $10 on Day 3
+Electric Mandolin for $42 on Day 3
+Harmonica in F# for $81 on Day 3
+Walking by Beatles Vinyl for $24 on Day 3
+Record Player for $34 on Day 3
+Walking by Beatles Vinyl for $59 on Day 3
+Electric Mandolin for $81 on Day 4
+Large Shirt for $18 on Day 4
+Guitar strings for $60 on Day 4
+11 watt amp for $23 on Day 4
+CD Player for $22 on Day 4
+Electric Bass for $88 on Day 4
+14 watt amp for $70 on Day 4
+Medium Shirt for $88 on Day 4
+Guitar strings for $72 on Day 4
+3 meter cable for $8 on Day 4
+Walking by Beatles CD for $94 on Day 5
+Guitar strings for $76 on Day 5
+Walking by Beatles Paper Score for $8 on Day 5
+4 meter cable for $92 on Day 5
+Walking by Beatles Paper Score for $61 on Day 6
+Guitar for $25 on Day 6
+Electric Bass for $82 on Day 6
+Walking by Beatles CD for $52 on Day 6
+Wood Flute for $18 on Day 6
+Wood Flute for $82 on Day 6
+Walking by Beatles Paper Score for $86 on Day 7
+Large Hat for $14 on Day 7
+Electric Mandolin for $62 on Day 7
+Medium Shirt for $64 on Day 8
+Harmonica in F# for $61 on Day 8
+Walking by Beatles CD for $57 on Day 8
+Electric Guitar for $36 on Day 8
+CD Player for $14 on Day 8
+Harmonica in F# for $74 on Day 8
+Medium Hat for $96 on Day 9
+Wood Flute for $59 on Day 9
+Walking by Beatles Paper Score for $50 on Day 9
+Large Hat for $25 on Day 9
+Record Player for $74 on Day 10
+2 meter cable for $45 on Day 10
+Guitar for $70 on Day 10
+2 meter cable for $58 on Day 10
+Guitar strings for $42 on Day 11
+CD Player for $82 on Day 11
+Electric Mandolin for $58 on Day 11
+MP3 Player for $73 on Day 11
+11 watt amp for $88 on Day 11
+Harmonica in F# for $18 on Day 11
+Walking by Beatles Vinyl for $76 on Day 11
+Record Player for $48 on Day 12
+5 meter cable for $75 on Day 12
+Walking by Beatles CD for $2 on Day 12
+Medium Hat for $64 on Day 12
+Large Hat for $57 on Day 12
+MP3 Player for $73 on Day 12
+Small Hat for $25 on Day 12
+Record Player for $5 on Day 13
+Bandana for $26 on Day 13
+Guitar strings for $58 on Day 13
+Walking by Beatles Paper Score for $61 on Day 14
+Medium Shirt for $54 on Day 14
+Guitar strings for $84 on Day 14
+4 meter cable for $32 on Day 15
+Electric Guitar for $68 on Day 15
+Walking by Beatles Paper Score for $16 on Day 15
+Guitar for $94 on Day 15
+Bandana for $52 on Day 15
+Electric Bass for $63 on Day 15
+Guitar for $66 on Day 15
+Harmonica in F# for $6 on Day 15
+Record Player for $61 on Day 16
+Medium Hat for $28 on Day 16
+Record Player for $62 on Day 16
+Electric Mandolin for $12 on Day 16
+CD Player for $32 on Day 16
+MP3 Player for $12 on Day 16
+Electric Mandolin for $52 on Day 16
+Walking by Beatles Paper Score for $36 on Day 17
+MP3 Player for $30 on Day 17
+CD Player for $74 on Day 17
+Walking by Beatles Paper Score for $48 on Day 17
+Record Player for $25 on Day 17
+Bandana for $66 on Day 18
+Harmonica in F# for $90 on Day 18
+Walking by Beatles CD for $54 on Day 18
+CD Player for $92 on Day 18
+Bandana for $66 on Day 18
+Guitar strings for $61 on Day 18
+CD Player for $77 on Day 18
+4 meter cable for $25 on Day 19
+Record Player for $48 on Day 19
+Wood Flute for $50 on Day 19
+Bass for $76 on Day 19
+Wood Flute for $12 on Day 20
+14 watt amp for $12 on Day 20
+Electric Guitar for $23 on Day 20
+11 watt amp for $6 on Day 20
+2 meter cable for $81 on Day 20
+Wood Flute for $57 on Day 21
+Large Shirt for $82 on Day 21
+Guitar for $46 on Day 21
+Harmonica in F# for $39 on Day 21
+Record Player for $36 on Day 22
+Walking by Beatles Paper Score for $10 on Day 22
+Large Shirt for $88 on Day 22
+Electric Guitar for $66 on Day 22
+Small Shirt for $94 on Day 22
+Walking by Beatles Paper Score for $4 on Day 22
+Wood Flute for $68 on Day 22
+Walking by Beatles Paper Score for $19 on Day 23
+Guitar strings for $7 on Day 23
+Bass for $39 on Day 23
+CD Player for $27 on Day 23
+Mandolin for $100 on Day 23
+3 meter cable for $68 on Day 23
+Bandana for $30 on Day 23
+Guitar for $20 on Day 24
+MP3 Player for $28 on Day 24
+CD Player for $18 on Day 24
+Large Shirt for $44 on Day 24
+Large Hat for $88 on Day 24
+Electric Guitar for $3 on Day 24
+Small Hat for $41 on Day 24
+Harmonica in F# for $94 on Day 24
+Harmonica in F# for $68 on Day 25
+4 meter cable for $26 on Day 25
+Harmonica in F# for $90 on Day 25
+CD Player for $90 on Day 26
+MP3 Player for $48 on Day 26
+Bandana for $77 on Day 26
+MP3 Player for $39 on Day 26
+Wood Flute for $68 on Day 26
+4 meter cable for $28 on Day 26
+Wood Flute for $57 on Day 27
+Walking by Beatles Vinyl for $16 on Day 27
+Bandana for $100 on Day 27
+Guitar strings for $76 on Day 27
+Large Hat for $68 on Day 27
+Walking by Beatles Paper Score for $32 on Day 27
+Mandolin for $34 on Day 27
+Bass for $12 on Day 27
+Wood Flute for $54 on Day 27
+Electric Guitar for $82 on Day 28
+Walking by Beatles Paper Score for $86 on Day 28
+19 watt amp for $32 on Day 28
+Electric Mandolin for $86 on Day 28
+Guitar strings for $7 on Day 28
+13 watt amp for $52 on Day 29
+Medium Shirt for $44 on Day 29
+Walking by Beatles Paper Score for $30 on Day 29
+Walking by Beatles CD for $84 on Day 29
+Record Player for $79 on Day 29
+Medium Shirt for $18 on Day 29
+Electric Mandolin for $1 on Day 29
+Record Player for $12 on Day 30
+1 meter cable for $36 on Day 30
+Bass for $50 on Day 30
+Harmonica in F# for $98 on Day 30
+The store sold $9320 worth of items this month
+The store has $5936 in the register
+$1000 was withdrawn from the bank
