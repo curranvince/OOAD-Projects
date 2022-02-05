@@ -36,11 +36,11 @@ class Music extends Item {
     String album_;
 
     Music () {
-        band_ = "Beatles";
-        album_ = "Walking";
+        String[] combo = Utility.GetMusicTitle();
+        album_ = combo[0];
+        band_ = combo[1];
         name_ += album_ + " by " + band_;
     }
-    
 }
 
 class CD extends Music { 
