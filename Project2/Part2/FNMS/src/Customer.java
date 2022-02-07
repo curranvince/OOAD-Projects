@@ -8,11 +8,5 @@ public class Customer {
         item_ = Utility.GetRandomItemType();
     }
 
-    public void DisplayRequest() {
-        if (buying_) {
-            System.out.println(name_ + " has come into the store looking to buy a " + item_.name());
-        } else {
-            System.out.println(name_ + " has come into the store looking to sell a " + item_.name());
-        }
-    }
+    public void DisplayRequest() { System.out.println(name_ + " has come into the store looking to " + (buying_ ? "buy" : "sell") + " a " + item_.name()); }
 }

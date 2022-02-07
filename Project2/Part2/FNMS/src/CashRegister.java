@@ -1,9 +1,9 @@
 public class CashRegister {
-    int money_;
+    private int money_;
 
-    CashRegister() {
-        money_ = 0;
-    }
+    CashRegister() { money_ = 0; }
+    
+    int GetAmount() { return money_; }
     
     void AddMoney(int money) { money_ += money; }
 

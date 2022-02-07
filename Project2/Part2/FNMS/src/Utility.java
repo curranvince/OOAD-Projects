@@ -1,17 +1,6 @@
 import java.util.*;
 import java.util.Random;
-
-class Pair {
-    String album_;
-    String artist_;
-    Pair(String album, String artist) { 
-        album_ = album;
-        artist_ = artist;
-    }
-}
 public class Utility {
-    
-
     static Random random = new Random();
 
     static int GetRandomNum(int range) { return random.nextInt(range); }
@@ -30,7 +19,6 @@ public class Utility {
         for (int i = 0; i < sellers; i++) {
             toServe.add(new Customer(false));
         }
-        
         // shuffle vector so we get customers in random order
         Collections.shuffle(toServe);
         return toServe;

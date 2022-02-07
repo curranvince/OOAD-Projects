@@ -1,5 +1,5 @@
 public class Clerk extends Staff {
-    int break_percentage_;
+    private int break_percentage_;
 
     Clerk(String name, int break_percentage) {
         name_ =  name;
