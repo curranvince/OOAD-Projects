@@ -91,6 +91,7 @@ class Stringed extends Instruments {
     boolean electric_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
+        name_ += Utility.GetStringedBrand() + " ";
         int switcher = Utility.GetRandomNum(2);
         if (switcher == 1) {
             electric_ = true;
@@ -126,8 +127,8 @@ class Flute extends Wind {
     String type_;
 
     Flute() {
-        type_= "Wood";
-        name_ += type_ + " Flute";
+        type_= (Utility.GetRandomNum(2) == 0) ? " Silver " : " Wood ";
+        name_ += Utility.GetFluteBrand() + type_ + "Flute";
         itemType = ItemType.FLUTE;
     }
 }
@@ -136,8 +137,8 @@ class Harmonica extends Wind {
     String key_;
 
     Harmonica() {
-        key_= "F#";
-        name_ += "Harmonica in " + key_;
+        key_= Utility.GetHarmonicaKey();
+        name_ += Utility.GetHarmonicaBrand() + " Harmonica in a key of \"" + key_ + "\"";
         itemType = ItemType.HARMONICA;
     }
 }
@@ -149,7 +150,7 @@ class Hats extends Clothing {
 
     Hats() {
         size_ = Utility.GetRandomSize();
-        name_ += size_.name() + " Hat";
+        name_ += size_.name() + " " + Utility.GetClothingBrand() + " Hat";
         itemType = ItemType.HATS;
     }
 }
@@ -159,14 +160,14 @@ class Shirts extends Clothing {
 
     Shirts() {
         size_ = Utility.GetRandomSize();
-        name_ += size_.name() + " Shirt";
+        name_ += size_.name() + " " + Utility.GetClothingBrand() + " Shirt";
         itemType = ItemType.SHIRTS;
     }
 }
 
 class Bandanas extends Clothing {
     Bandanas() {
-        name_ += "Bandana";
+        name_ +=  Utility.GetBandanaColor() + " Bandana";
         itemType = ItemType.BANDANAS;
     }
 }
@@ -197,7 +198,7 @@ class Strings extends Accessories {
     String type_;
 
     Strings() {
-        type_ = "Guitar";
+        type_ = Utility.GetStringType();
         name_ += type_ + " strings";
         itemType = ItemType.STRINGS;
     }

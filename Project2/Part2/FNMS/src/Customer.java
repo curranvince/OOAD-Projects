@@ -1,10 +1,11 @@
 public class Customer {
-    String name_ = "Alice";
+    String name_;
     boolean buying_;
     ItemType item_;
 
     Customer(boolean buying) {
         buying_ = buying;
+        name_ = Utility.GetRandomName();
         item_ = Utility.GetRandomItemType();
     }
 

@@ -10,9 +10,12 @@ public class Utility {
     static ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
     
     static Vector<Customer> MakeCustomers() {
+        // make vector to return
         Vector<Customer> toServe = new Vector<Customer>();
+        // get random amounts of buyers and sellers in range
         int buyers = Utility.GetRandomNum(4, 11);
         int sellers = Utility.GetRandomNum(1, 5);
+        // create buyers and sellers
         for (int i = 0; i < buyers; i++) {
             toServe.add(new Customer(true));
         }
@@ -25,6 +28,7 @@ public class Utility {
     }
     
     static String GetRandomCondition() {
+        // return a random 'Condition' for an item
         int rando = GetRandomNum(5);
         switch (rando) {
             case 0:
@@ -38,11 +42,12 @@ public class Utility {
             case 4:
                 return "Excellent";
             default:
-                return "ERROR: Utility::GetRandomCondition";
+                return "ERROR: Utility::GetRandomCondition given bad paramater";
         }
     }
     
     static int GetOfferPrice(String condition) {
+        // offer different prices based on given condition
         switch (condition) {
             case "Poor":
                 return GetRandomNum(1, 11);
@@ -55,7 +60,8 @@ public class Utility {
             case "Excellent":
                 return GetRandomNum(40, 51);
             default:
-                return 100000;
+                System.out.println("ERROR: Utility::GetOfferPrice given bad paramter");
+                return 1000000;
         }
     }
 
@@ -70,7 +76,7 @@ public class Utility {
             case "Fair":
                 return "Poor";
             default:
-                return "ERROR: Utility::LowerCondition";
+                return "ERROR: Utility::LowerCondition given bad paramater";
         }
     }
 
@@ -97,7 +103,7 @@ public class Utility {
             {"Blood on the Tracks", "Bob Dylan"},
             {"The Chronic", "Dr. Dre"},
             {"Abbey Road", "The Beatles"},
-            {"Vack to Black", "Amy Winehouse"},
+            {"Back to Black", "Amy Winehouse"},
             {"Lemonade", "Beyonce"},
             {"Are You Experienced", "Jimi Hendrix"},
             {"Enter the Wu-Tang(36 Chambers)", "Wu-Tang Clan"},
@@ -110,5 +116,110 @@ public class Utility {
             {"What's Going On", "Marvin Gaye"}
         };
         return combos[GetRandomNum(combos.length)];
+    }
+
+    static String GetStringedBrand() {
+        String[] brands = {
+            "Gibson",
+            "Guild",
+            "Seagull",
+            "Yamaha",
+            "Ovation",
+            "Washburn",
+            "Fender"
+        };
+        return brands[GetRandomNum(brands.length)];
+    }
+
+    static String GetFluteBrand() {
+        String[] brands = {
+            "Miyazawa",
+            "Emerson",
+            "Gemeinhardt",
+            "Yamaha"
+        };
+        return brands[GetRandomNum(brands.length)];
+    }
+
+    static String GetHarmonicaBrand() {
+        String[] brands = {
+            "Suzuki",
+            "SEYDEL",
+            "Lee Oskar",
+            "Boseno"
+        };
+        return brands[GetRandomNum(brands.length)];
+    }
+
+    static String GetHarmonicaKey() {
+        String[] keys = {
+            "C",
+            "A",
+            "D",
+            "F",
+            "F#",
+            "G"
+        };
+        return keys[GetRandomNum(keys.length)];
+    }
+
+    static String GetClothingBrand() {
+        String[] brands = {
+            "Nirvna",
+            "Pearl Jam",
+            "Led Zeppelin",
+            "The Beatles",
+            "AC/DC",
+            "Aerosmith",
+            "Metallica",
+            "The Notorious B.I.G.",
+            "Tupac",
+            "Red Hot Chili Peppers",
+            "Motley Crue",
+            "The Rolling Stones"
+        };
+        return brands[GetRandomNum(brands.length)];
+    }
+
+    static String GetBandanaColor() {
+        String[] colors = {
+            "Red",
+            "Blue",
+            "Yellow",
+            "Green",
+            "Black"
+        };
+        return colors[GetRandomNum(colors.length)];
+    }
+
+    static String GetStringType() {
+        String[] types = {
+            "Guitar",
+            "Violin",
+            "Mandolin",
+            "Banjo",
+            "Bass",
+            "Cello"
+        };
+        return types[GetRandomNum(types.length)];
+    }
+
+    static String GetRandomName() {
+        String[] names = {
+            "Alice",
+            "Amber",
+            "Emma",
+            "Sam",
+            "Ryan",
+            "Nate",
+            "CJ",
+            "Bruce",
+            "Dom",
+            "Delaney",
+            "Sophie",
+            "Paige",
+            "Mel"
+        };
+        return names[GetRandomNum(names.length)];
     }
 }

@@ -55,13 +55,13 @@ public class Store {
     }
 
     private Clerk GetClerk() { return clerks_.get(clerk_id_); }
-    
     private Clerk GetOffClerk() { return (clerk_id_ == 0) ? clerks_.get(1) : clerks_.get(0); }
 
     private void ArriveAtStore() { 
         System.out.println(GetClerk().name_  + " has arrived at the store on Day " + current_day_); 
+        // check if theres any orders for today
         if (orders_.containsKey(current_day_)) {
-            // need to remove current from map
+            // receive orders for each type
             for (ItemType type : orders_.get(current_day_)) {
                 System.out.println(GetClerk().name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
@@ -71,18 +71,22 @@ public class Store {
                     register_.TakeMoney(inventory_.lastElement().purchase_price_);
                 }
             }
+            // remove orders from the map
             orders_.remove(current_day_);
         } else {
+            // if no orders today then broadcast it
             System.out.println(GetClerk().name_  + " finds no orders delivered today"); 
         }
     }
 
     private boolean CheckRegister() {
+        // broadcast register amount and return if its greater than 75 or not
         System.out.println(GetClerk().name_ + " checks the register to find $" + register_.GetAmount());
         return (register_.GetAmount() >= 75) ? true : false;
     }
 
     private void GoToBank() {
+        // add 1000 to register and broadcast
         System.out.println(GetClerk().name_ + " goes to the bank to withdraw $1000 for the register" );
         register_.AddMoney(1000);
         total_withdrawn_ += 1000;
@@ -130,42 +134,52 @@ public class Store {
         }
     }
 
+    // sell an item to a customer
     private void Sell(Item item, int salePrice) {
+        // add money to register
         register_.AddMoney(salePrice);
+        // update item sale price and day
         item.day_sold_ = current_day_;
         item.sale_price_ = salePrice;
+        // remove item from inventory and add to sold collection
         inventory_.remove(item);
         sold_.add(item);
     }
 
+    // buy an item from a customer
     private void Buy(Item item, int salePrice) {
+        // take money from register and
         register_.TakeMoney(salePrice);
         inventory_.add(item);
     }
 
+    //run a day at the store
     private void OpenTheStore() {
+        // generate customers for the day
         Vector<Customer> customers = Utility.MakeCustomers();
         for (Customer customer : customers) {
+            // see if the customer wants to buy or sell
             customer.DisplayRequest();
             if (customer.buying_) {
                 // see if we have an item for them in stock
                 boolean found = false;
                 for (Item item : inventory_) {
                     if (item.itemType == customer.item_) {
+                        // if we have item in stock, see if theyll buy it (50% chance)
                         found = true;
                         int willBuy = Utility.GetRandomNum(2);
                         System.out.println(GetClerk().name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
                         if (willBuy == 0) {
-                            // customer buys at list price
+                            // sell item to customer at list price
                             System.out.println("The customer buys the " + item.name_ + " for $" + item.list_price_);
                             Sell(item, item.list_price_);
                             break;
                         } else {
-                            // offer discount to get 75% chance of buying
+                            // if they dont buy, offer discount to get 75% chance of buying
                             System.out.println(GetClerk().name_ + " offers a 10% discount");
                             willBuy = Utility.GetRandomNum(4);
                             if (willBuy != 0) {
-                                // customer buys at discount
+                                // sell item to customer at discounted price
                                 int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
                                 System.out.println("The customer buys the " + item.name_ + " for $" + discountPrice);
                                 Sell(item, discountPrice);
@@ -179,32 +193,36 @@ public class Store {
                         }
                     }
                 }
+                // if no item in stock tell the customer we have none
                 if (!found) System.out.println(GetClerk().name_ + " informs the customer we have no " + customer.item_.name() + " in stock");
             } else {
+                // evaluate the customers item
                 Item item = ItemFactory.MakeItem(customer.item_.name());
                 int offerPrice = Utility.GetOfferPrice(item.condition_);
                 System.out.println(GetClerk().name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
+                // if we have enough $, offer to buy the item
                 if (register_.HasEnough(offerPrice)) {
                     int willSell = Utility.GetRandomNum(2);
                     if (willSell == 0) {
-                        // buy at initial value price
+                        // buy item at initial offer price
                         System.out.println("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
                         Buy(item, offerPrice);
                     } else {
-                        // add 10% to price and try again
-                        // offer discount to get 75% chance of buying
+                        // if customer disagrees, offer 10% increase to price and try again
                         System.out.println(GetClerk().name_ + " offers a 10% increase to the price");
                         willSell = Utility.GetRandomNum(4);
                         if (willSell != 0) {
-                            // customer sells at extra offer price
+                            // store buys item at 10% extra price
                             int extraPrice = (int)(offerPrice+(offerPrice*0.1));
                             System.out.println("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
                             Buy(item, extraPrice);
                         } else {
+                            // if the customer disagrees again let them leave
                             System.out.println("The customer leaves without selling their " + item.name_);
                         }
                     }
                 } else {
+                    // if we dont have enough money broadcast that
                     System.out.println("The store doesn't have enough money to buy the " + item.name_);
                 }
             }
@@ -234,7 +252,7 @@ public class Store {
     }
 
     private void OutputResults() {
-        // display inventory
+        // display inventory & its value
         System.out.println("Items left in inventory: ");
         int total = 0;
         for (Item item : inventory_) {
@@ -242,7 +260,7 @@ public class Store {
             total += item.purchase_price_;
         }
         System.out.println("The total value of the remaining inventory is $" + total);
-        // display items sold
+        // display items sold & their value
         total =  0;
         System.out.println("Items sold: ");
         for (Item item : sold_) {
