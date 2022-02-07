@@ -1,6 +1,6 @@
 Program to simulate running a music store for 30 days.
 
-Sample output in Output.txt
+Sample output in src/Output.txt
 
 To run:
 Navigate to src folder in terminal.
