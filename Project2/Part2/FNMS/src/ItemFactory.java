@@ -1,4 +1,5 @@
 public class ItemFactory {
+    private ItemFactory() {};
     
     static public Item MakeItem(String itemType) {
         if (itemType == null) {

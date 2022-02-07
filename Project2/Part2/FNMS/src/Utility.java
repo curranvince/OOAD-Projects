@@ -1,6 +1,8 @@
 import java.util.*;
 import java.util.Random;
 public class Utility {
+    private Utility() {};
+
     static Random random = new Random();
 
     static int GetRandomNum(int range) { return random.nextInt(range); }
