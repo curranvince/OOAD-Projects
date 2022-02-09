@@ -30,10 +30,12 @@ public class Store {
     private int current_day_;
     private int clerk_id_;
     private int total_withdrawn_;
+    private int day_of_week_;
 
     Store() {
         total_withdrawn_ = 0;
         current_day_ = 0;
+        day_of_week_ = 1;
         // store start with 3 of each item
         for (ItemType itemType : ItemType.values()) {
             for (int i = 0; i < 3; i++) {
@@ -121,6 +123,8 @@ public class Store {
             if (!allItemTypes.isEmpty()) {
                 for (ItemType type : allItemTypes) {
                     int deliveryDay = Utility.GetRandomNum(1, 4) + current_day_;
+                    // make sure orders arent delivered on Sunday
+                    if (deliveryDay % 7 == 0) { deliveryDay++;}
                     // if date isnt in order system then add it
                     if (!orders_.containsKey(deliveryDay)) {
                         orders_.put(deliveryDay, new Vector<ItemType>());
@@ -284,23 +288,30 @@ public class Store {
         // each loop represents one day
         for (int i = 0; i < 30; i++) {
             current_day_++;
-            // pick whos working
-            ChooseClerk();
-            // update workers days worked stats
-            GetOffClerk().ResetDaysWorked();
-            GetClerk().IncrementDaysWorked();
-            // accept deliveries
-            ArriveAtStore();
-            // check the register & go to bank if we're broke
-            if (!CheckRegister()) { GoToBank(); }
-            // do inventory and order items
-            DoInventory();
-            // open store
-            OpenTheStore();
-            // clean the store
-            CleanStore();
-            // announce the end of the day
-            System.out.println(GetClerk().name_ + " locks up and goes home for the night");
+            if (day_of_week_ != 7) {
+                // pick whos working
+                ChooseClerk();
+                // update workers days worked stats
+                GetOffClerk().ResetDaysWorked();
+                GetClerk().IncrementDaysWorked();
+                // accept deliveries
+                ArriveAtStore();
+                // check the register & go to bank if we're broke
+                if (!CheckRegister()) { GoToBank(); }
+                // do inventory and order items
+                DoInventory();
+                // open store
+                OpenTheStore();
+                // clean the store
+                CleanStore();
+                // announce the end of the day
+                System.out.println(GetClerk().name_ + " locks up and goes home for the night");
+            } else {
+                // close the store on sundays
+                System.out.println("Today is Day " + current_day_ + ", which is Sunday, so the store is closed.");
+                day_of_week_ = 0;
+            }
+            day_of_week_++;
         }  
         // display final results
         OutputResults();
