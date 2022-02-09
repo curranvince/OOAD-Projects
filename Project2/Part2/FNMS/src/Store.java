@@ -162,6 +162,7 @@ public class Store {
         // take money from register and
         register_.TakeMoney(salePrice);
         item.purchase_price_ = salePrice;
+        item.list_price_ = salePrice*2;
         item.day_arrived = current_day_;
         inventory_.add(item);
     }
