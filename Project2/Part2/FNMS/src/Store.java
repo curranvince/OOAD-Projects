@@ -137,7 +137,11 @@ public class Store {
                     // broadcast who placed an order of what and what day it will arrive
                     System.out.println(GetClerk().name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
                 }
+            } else {
+                System.out.println(GetClerk().name_ + " places no orders today");
             }
+        } else {
+            System.out.println(GetClerk().name_ + " places no orders today");
         }
     }
 
