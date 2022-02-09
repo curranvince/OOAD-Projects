@@ -25,7 +25,7 @@ public class Store {
     private CashRegister register_ = new CashRegister();
     private Vector<Item> inventory_ = new Vector<Item>();
     private Vector<Item> sold_ = new Vector<Item>();
-    private Vector<Clerk> clerks_ = new Vector<Clerk>();
+    private Vector<Staff> clerks_ = new Vector<Staff>();
     private HashMap<Integer, Vector<ItemType>> orders_ = new HashMap<Integer, Vector<ItemType>>();
     private int current_day_;
     private int clerk_id_;
@@ -59,8 +59,8 @@ public class Store {
         }
     }
 
-    private Clerk GetClerk() { return clerks_.get(clerk_id_); }
-    private Clerk GetOffClerk() { return (clerk_id_ == 0) ? clerks_.get(1) : clerks_.get(0); }
+    private Staff GetClerk() { return clerks_.get(clerk_id_); }
+    private Staff GetOffClerk() { return (clerk_id_ == 0) ? clerks_.get(1) : clerks_.get(0); }
 
     private void ArriveAtStore() { 
         System.out.println(GetClerk().name_  + " has arrived at the store on Day " + current_day_); 
@@ -239,7 +239,8 @@ public class Store {
     }
 
     private void CleanStore() {
-        if (!clerks_.get(clerk_id_).Clean()) { 
+        System.out.println("The store closes for the day and " + GetClerk().name_ + " begins cleaning");
+        if (!GetClerk().Clean()) { 
             // pick a random item for the clerk to break
             int breakIndex = Utility.GetRandomNum(inventory_.size());
             Item toBreak = inventory_.get(breakIndex);

@@ -66,8 +66,8 @@ abstract class Item {
 // Example of Iheritance : Music inherits from Item
 // All the classes below are also examples of Inheritance
 abstract class Music extends Item {
-    String band_;
-    String album_;
+    private String band_;
+    private String album_;
 
     Music () {
         String[] combo = Utility.GetMusicTitle();
@@ -122,7 +122,7 @@ class MP3Player extends Players {
 abstract class Instruments extends Item {}
 
 abstract class Stringed extends Instruments { 
-    boolean electric_ = false;
+    private boolean electric_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
         name_ += Utility.GetStringedBrand() + " ";
@@ -158,7 +158,7 @@ class Mandolin extends Stringed {
 abstract class Wind extends Instruments {}
 
 class Flute extends Wind {
-    String type_;
+    private String type_;
 
     Flute() {
         type_= (Utility.GetRandomNum(2) == 0) ? " Silver " : " Wood ";
@@ -168,7 +168,7 @@ class Flute extends Wind {
 }
 
 class Harmonica extends Wind {
-    String key_;
+    private String key_;
 
     Harmonica() {
         key_= Utility.GetHarmonicaKey();
@@ -180,7 +180,7 @@ class Harmonica extends Wind {
 abstract class Clothing extends Item {}
 
 class Hats extends Clothing {
-    Size size_;
+    private Size size_;
 
     Hats() {
         size_ = Utility.GetRandomSize();
@@ -190,7 +190,7 @@ class Hats extends Clothing {
 }
 
 class Shirts extends Clothing {
-    Size size_;
+    private Size size_;
 
     Shirts() {
         size_ = Utility.GetRandomSize();
@@ -209,7 +209,7 @@ class Bandanas extends Clothing {
 abstract class Accessories extends Item {}
 
 class PracticeAmps extends Accessories {
-    int wattage_;
+    private int wattage_;
 
     PracticeAmps() {
         wattage_ = Utility.GetRandomNum(10, 21);
@@ -219,7 +219,7 @@ class PracticeAmps extends Accessories {
 }
 
 class Cables extends Accessories {
-    int length_;
+    private int length_;
 
     Cables() {
         length_ = Utility.GetRandomNum(1, 7);
@@ -229,7 +229,7 @@ class Cables extends Accessories {
 }
 
 class Strings extends Accessories {
-    String type_;
+    private String type_;
 
     Strings() {
         type_ = Utility.GetStringType();
