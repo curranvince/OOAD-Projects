@@ -30,12 +30,10 @@ public class Store {
     private int current_day_;
     private int clerk_id_;
     private int total_withdrawn_;
-    private int day_of_week_;
 
     Store() {
         total_withdrawn_ = 0;
         current_day_ = 0;
-        day_of_week_ = 1;
         // store start with 3 of each item
         for (ItemType itemType : ItemType.values()) {
             for (int i = 0; i < 3; i++) {
@@ -288,7 +286,7 @@ public class Store {
         // each loop represents one day
         for (int i = 0; i < 30; i++) {
             current_day_++;
-            if (day_of_week_ != 7) {
+            if (current_day_ % 7 != 0) {
                 // pick whos working
                 ChooseClerk();
                 // update workers days worked stats
@@ -309,9 +307,7 @@ public class Store {
             } else {
                 // close the store on sundays
                 System.out.println("Today is Day " + current_day_ + ", which is Sunday, so the store is closed.");
-                day_of_week_ = 0;
             }
-            day_of_week_++;
         }  
         // display final results
         OutputResults();
