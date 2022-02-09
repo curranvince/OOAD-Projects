@@ -1,0 +1,16 @@
+There are minimal differences to our class diagram.
+
+Variables remain laregely the same.
+Customer class was changed slightly to hold an itemtype instead
+of an actual item. 
+A field was added to Clerk to hold their chance to break an item.
+
+Inheritance relationships remain the same.
+
+A Utility class was added to ensure we only have one instance of Random,
+and to hide some methods from the Store.
+
+A Factory class was created to simplify/hide creation of Items.
+
+A CashRegister class was added to handle the Stores money.
+
