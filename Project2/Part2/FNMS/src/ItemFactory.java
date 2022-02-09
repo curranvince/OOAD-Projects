@@ -1,3 +1,7 @@
+// Factory to easily create Items
+// Implements polymorphism by returning a subclass as the class
+// IE we can refer to them all as 'Item' but they will
+// take on the behavior of the subclass
 public class ItemFactory {
     private ItemFactory() {};
     

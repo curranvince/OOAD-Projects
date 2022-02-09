@@ -35,6 +35,8 @@ public class Store {
         total_withdrawn_ = 0;
         current_day_ = 0;
         // store start with 3 of each item
+        // Making the items is an example of Identity
+        // Each individual Item represents a real world object
         for (ItemType itemType : ItemType.values()) {
             for (int i = 0; i < 3; i++) {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
@@ -45,8 +47,11 @@ public class Store {
         clerks_.add(new Clerk("Velma", 5));
     }
     
+    // Having the methods in this class private is an example of Encapsulation
     private void ChooseClerk() {
+        // pick one of the two clerks
         int rando = Utility.GetRandomNum(2);
+        // if the clerk has already worked 3 days in a row, have the other clerk work
         if (clerks_.get(rando).days_worked_ < 3) {
             clerk_id_ = rando;
         } else {

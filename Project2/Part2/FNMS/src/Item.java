@@ -3,7 +3,11 @@ enum Size {
     Medium, 
     Large
 }
-public class Item {
+
+// Item is an example of an abstraction
+// You cannot create an 'Item', but must instead create
+// one of its concrete subclasses
+abstract class Item {
     ItemType itemType;
     String name_;
     int purchase_price_;
@@ -15,6 +19,7 @@ public class Item {
 
     Item() {
         name_ = "";
+        // Items have a purchase price $1-50, and list price is double
         purchase_price_ = Utility.GetRandomNum(1, 51);
         list_price_ = 2*purchase_price_;
         day_arrived = 0;
@@ -30,6 +35,7 @@ public class Item {
     }
 
     boolean LowerCondition() {
+        // lower condition of item by one
         switch (condition_) {
             case "Excellent":
                 condition_ = "Very Good";
@@ -44,18 +50,22 @@ public class Item {
                 condition_ = "Poor";
                 break;
             case "Poor":
+                // return false if item breaks
                 return false;
             default:
-                condition_ = "ERROR: Utility::LowerCondition given bad paramater";
-                break;
+                System.out.println("ERROR: Item::LowerCondition given bad paramater");
+                return true;
         }
+        // lower price of item and return true for success
         list_price_ -= (int)list_price_*0.2;
         return true;
     }
     
 }
 
-class Music extends Item {
+// Example of Iheritance : Music inherits from Item
+// All the classes below are also examples of Inheritance
+abstract class Music extends Item {
     String band_;
     String album_;
 
@@ -87,7 +97,7 @@ class PaperScore extends Music {
     }
 }
 
-class Players extends Item {}
+abstract class Players extends Item {}
 
 class CDPlayer extends Players { 
     CDPlayer() { 
@@ -109,9 +119,9 @@ class MP3Player extends Players {
     }
 }
 
-class Instruments extends Item {}
+abstract class Instruments extends Item {}
 
-class Stringed extends Instruments { 
+abstract class Stringed extends Instruments { 
     boolean electric_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
@@ -145,7 +155,7 @@ class Mandolin extends Stringed {
     }
 }
 
-class Wind extends Instruments {}
+abstract class Wind extends Instruments {}
 
 class Flute extends Wind {
     String type_;
@@ -167,7 +177,7 @@ class Harmonica extends Wind {
     }
 }
 
-class Clothing extends Item {}
+abstract class Clothing extends Item {}
 
 class Hats extends Clothing {
     Size size_;
@@ -196,7 +206,7 @@ class Bandanas extends Clothing {
     }
 }
 
-class Accessories extends Item {}
+abstract class Accessories extends Item {}
 
 class PracticeAmps extends Accessories {
     int wattage_;

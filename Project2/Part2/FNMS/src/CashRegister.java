@@ -1,3 +1,6 @@
+// CashRegister class to handle the Stores $
+// Good example of Cohesion because the class has
+// one specifc purpose (handling money)
 public class CashRegister {
     private int money_;
 
