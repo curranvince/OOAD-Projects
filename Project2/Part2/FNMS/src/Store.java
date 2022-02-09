@@ -238,15 +238,13 @@ public class Store {
             // pick a random item for the clerk to break
             int breakIndex = Utility.GetRandomNum(inventory_.size());
             Item toBreak = inventory_.get(breakIndex);
-            if (toBreak.condition_ == "Poor") {
+            if (!toBreak.LowerCondition()) {
                 // remove items with poor condition
                 System.out.println("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning. It has been removed from inventory");
                 inventory_.remove(breakIndex);
             } else {
                 // lower condition and list price of non-poor quality items
                 System.out.println("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning");
-                toBreak.condition_ = Utility.LowerCondition(toBreak.condition_);
-                toBreak.list_price_ -= (int)(toBreak.list_price_*0.2);
                 System.out.println("It's condition has worsened to " + inventory_.get(breakIndex).condition_ + ", and its list price has lowered to $" + inventory_.get(breakIndex).list_price_ );
             }
         } else {

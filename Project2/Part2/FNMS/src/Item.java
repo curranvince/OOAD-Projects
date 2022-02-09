@@ -28,6 +28,30 @@ public class Item {
     void DisplaySold() {
         System.out.println(name_ + " for $" + sale_price_ + " on Day " + day_sold_);
     }
+
+    boolean LowerCondition() {
+        switch (condition_) {
+            case "Excellent":
+                condition_ = "Very Good";
+                break;
+            case "Very Good":
+                condition_ = "Good";
+                break;
+            case "Good":
+                condition_ = "Fair";
+                break;
+            case "Fair":
+                condition_ = "Poor";
+                break;
+            case "Poor":
+                return false;
+            default:
+                condition_ = "ERROR: Utility::LowerCondition given bad paramater";
+                break;
+        }
+        list_price_ -= (int)list_price_*0.2;
+        return true;
+    }
     
 }
 

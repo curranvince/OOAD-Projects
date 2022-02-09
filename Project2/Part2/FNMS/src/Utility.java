@@ -67,21 +67,6 @@ public class Utility {
         }
     }
 
-    static String LowerCondition(String condition) {
-        switch (condition) {
-            case "Excellent":
-                return "Very Good";
-            case "Very Good":
-                return "Good";
-            case "Good":
-                return "Fair";
-            case "Fair":
-                return "Poor";
-            default:
-                return "ERROR: Utility::LowerCondition given bad paramater";
-        }
-    }
-
     static String[] GetMusicTitle() {
         String[][] combos = {
             {"Ten", "Pearl Jam"},
