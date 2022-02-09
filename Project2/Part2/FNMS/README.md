@@ -1,4 +1,5 @@
 Program to simulate running a music store for 30 days.
+Java Version 8
 
 Sample output in src/Output.txt
 
