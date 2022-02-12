@@ -18,4 +18,4 @@ Assumptions:
 - When we buy an item from a customer, it gets listed at 2X the
 purchase price. 
 
-Contributors: Vince Curran, Logan Park, Kevin Vu
+Contributors: Vince Curran, Logan Park, Kevin Vo
