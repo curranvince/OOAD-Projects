@@ -51,7 +51,7 @@ abstract class Store {
     // Having the methods in this class private is an example of Encapsulation
     private void ChooseClerk() {
         // pick one of the two clerks
-        int rando = Utility.GetRandomNum(2);
+        int rando = Utility.GetRandomNum(clerks_.size());
         // if the clerk has already worked 3 days in a row, have the other clerk work
         if (clerks_.get(rando).days_worked_ < 3) {
             clerk_id_ = rando;
