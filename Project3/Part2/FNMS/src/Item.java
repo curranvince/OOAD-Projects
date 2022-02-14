@@ -61,7 +61,12 @@ abstract class Item {
         return true;
     }
     
+    void Tune() {};
+    void Untune() {};
+    void FlipTune() {};
 }
+
+
 
 // Example of Iheritance : Music inherits from Item
 // All the classes below are also examples of Inheritance
@@ -97,7 +102,13 @@ class PaperScore extends Music {
     }
 }
 
-abstract class Players extends Item {}
+abstract class Players extends Item {
+    private boolean equalized_ = false;
+
+    void Tune() { equalized_ = true; }
+    void Untune() { equalized_ = false; }
+    void FlipTune() { equalized_ = !equalized_; }
+}
 
 class CDPlayer extends Players { 
     CDPlayer() { 
@@ -123,6 +134,7 @@ abstract class Instruments extends Item {}
 
 abstract class Stringed extends Instruments { 
     private boolean electric_ = false;
+    private boolean tuned_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
         name_ += Utility.GetStringedBrand() + " ";
@@ -132,6 +144,10 @@ abstract class Stringed extends Instruments {
             name_ += "Electric ";
         }
     }
+
+    void Tune() { tuned_ = true; }
+    void Untune() { tuned_ = false; }
+    void FlipTune() { tuned_ = !tuned_; }
 }
 
 class Guitar extends Stringed {
@@ -155,7 +171,13 @@ class Mandolin extends Stringed {
     }
 }
 
-abstract class Wind extends Instruments {}
+abstract class Wind extends Instruments {
+    private boolean adjusted_ = false;
+
+    void Tune() { adjusted_ = true; }
+    void Untune() { adjusted_ = false; }
+    void FlipTune() { adjusted_ = !adjusted_; }
+}
 
 class Flute extends Wind {
     private String type_;

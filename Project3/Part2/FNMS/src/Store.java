@@ -21,15 +21,15 @@ enum ItemType {
     STRINGS
 }
 
-public class Store {
-    private CashRegister register_ = new CashRegister();
-    private Vector<Item> inventory_ = new Vector<Item>();
-    private Vector<Item> sold_ = new Vector<Item>();
-    private Vector<Staff> clerks_ = new Vector<Staff>();
-    private HashMap<Integer, Vector<ItemType>> orders_ = new HashMap<Integer, Vector<ItemType>>();
-    private int current_day_;
-    private int clerk_id_;
-    private int total_withdrawn_;
+abstract class Store {
+    protected CashRegister register_ = new CashRegister();
+    protected Vector<Item> inventory_ = new Vector<Item>();
+    protected Vector<Item> sold_ = new Vector<Item>();
+    protected Vector<Staff> clerks_ = new Vector<Staff>();
+    protected HashMap<Integer, Vector<ItemType>> orders_ = new HashMap<Integer, Vector<ItemType>>();
+    protected int current_day_;
+    protected int clerk_id_;
+    protected int total_withdrawn_;
 
     Store() {
         total_withdrawn_ = 0;
@@ -43,8 +43,9 @@ public class Store {
             }
         }
         // make clerks witht their break chances
-        clerks_.add(new Clerk("Shaggy", 20));
-        clerks_.add(new Clerk("Velma", 5));
+        clerks_.add(new Clerk("Shaggy", 20, new ManualTune()));
+        clerks_.add(new Clerk("Velma", 5, new HaphazardTune()));
+        clerks_.add(new Clerk("Daphne", 10, new ElectronicTune()));
     }
     
     // Having the methods in this class private is an example of Encapsulation
@@ -146,7 +147,7 @@ public class Store {
     }
 
     // sell an item to a customer
-    private void Sell(Item item, int salePrice) {
+    protected void Sell(Item item, int salePrice) {
         // add money to register
         register_.AddMoney(salePrice);
         // update item sale price and day
@@ -322,5 +323,21 @@ public class Store {
         }  
         // display final results
         OutputResults();
+    }
+}
+
+class StoreDecorator extends Store {
+    StoreDecorator() { super(); }
+    // decorated version of sell an item to a customer
+    protected void Sell(Item item, int salePrice) {
+        //System.out.println("Decorating sell method");
+        // add money to register
+        register_.AddMoney(salePrice);
+        // update item sale price and day
+        item.day_sold_ = current_day_;
+        item.sale_price_ = salePrice;
+        // remove item from inventory and add to sold collection
+        inventory_.remove(item);
+        sold_.add(item);
     }
 }
