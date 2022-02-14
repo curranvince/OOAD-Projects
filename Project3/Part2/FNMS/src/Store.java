@@ -326,6 +326,7 @@ abstract class Store {
     }
 }
 
+// This is an example of a Decorator
 class StoreDecorator extends Store {
     StoreDecorator() { super(); }
     // decorated version of sell an item to a customer

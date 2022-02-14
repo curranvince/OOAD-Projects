@@ -1,6 +1,8 @@
+// The Tune interface and its subclasses is an example of the Strategy pattern. 
 interface Tune { public void Tune(Item item); }
 
 class ManualTune implements Tune {
+    // 80% chance to tune, 20% chance to untune
     public void Tune(Item item) { 
         if (Utility.GetRandomNum(10) < 8) {
             item.Tune();
@@ -11,10 +13,12 @@ class ManualTune implements Tune {
 }
 
 class HaphazardTune implements Tune {
+    // 50% chance to flip tune
     public void Tune(Item item) { if (Utility.GetRandomNum(2) == 0) item.FlipTune(); }
 }
 
 class ElectronicTune implements Tune {
+    // automatically tune
     public void Tune(Item item) { item.Tune(); }
 }
 

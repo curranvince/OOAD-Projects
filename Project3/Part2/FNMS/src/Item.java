@@ -60,7 +60,7 @@ abstract class Item {
         list_price_ -= (int)list_price_*0.2;
         return true;
     }
-    
+    // these methods do nothing unless the item has the required properties
     void Tune() {};
     void Untune() {};
     void FlipTune() {};

@@ -1,3 +1,4 @@
+// These Subscribers are an example of the Observer pattern. 
 interface Subscriber {
     public Update(String context);
 }
