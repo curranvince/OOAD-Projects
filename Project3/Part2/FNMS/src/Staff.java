@@ -24,10 +24,12 @@ class ElectronicTune implements Tune {
 
 abstract class Staff {
     String name_;
-    int days_worked_ = 0;
+    private int days_worked_ = 0;
 
+    Staff(String name) { name_ = name; }
     public void ResetDaysWorked() { days_worked_ = 0; }
     public void IncrementDaysWorked() { days_worked_ += 1; }
+    public int GetDaysWorked() { return days_worked_; }
     public boolean Clean() { return true; }
 }
 
@@ -39,7 +41,7 @@ class Clerk extends Staff {
     private Tune tune_;
 
     Clerk(String name, int break_percentage, Tune tune) {
-        name_ =  name;
+        super(name);
         break_percentage_ = break_percentage;
         tune_ = tune;
     }

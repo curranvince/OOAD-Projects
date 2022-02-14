@@ -7,6 +7,14 @@ public class Utility {
 
     static int GetRandomNum(int range) { return random.nextInt(range); }
     static int GetRandomNum(int min, int max) { return random.nextInt(max-min)+min; }
+    static int GetRandomNumEx(int min, int max, int exclude) {
+        int rando = random.nextInt(max-min);
+        while (rando == exclude) {
+            if (rando < max) rando++;
+            else rando = min;
+        }
+        return rando;
+    }
 
     static Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
     static ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
