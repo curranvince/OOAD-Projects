@@ -1,10 +1,11 @@
 Daphne arrived at the store
-Daphne added 6 items to inventory
-Daphne checked register to find $1927
-Daphne found 46 items in inventory
-Daphne found our inventory is worth $1285
+Daphne added 3 items to inventory
+Daphne checked register to find $2118
+Daphne damaged 3 items while tuning
+Daphne found 35 items in inventory
+Daphne found our inventory is worth $1023
 Daphne ordered 3 items
-Daphne sold 9 items
+Daphne sold 4 items
 Daphne purchased 3 items
-Daphne broke 0 item(s) while cleaning
+Daphne damaged 0 item(s) while cleaning
 Daphne went home for the day

@@ -44,9 +44,9 @@ abstract class Store implements Utility {
             }
         }
         // make clerks witht their break chances
-        clerks_.add(new Clerk("Shaggy", 20, new ManualTune()));
-        clerks_.add(new Clerk("Velma", 5, new HaphazardTune()));
-        clerks_.add(new Clerk("Daphne", 10, new ElectronicTune()));
+        clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
+        clerks_.add(new Clerk("Velma", 5, new ElectronicTune()));
+        clerks_.add(new Clerk("Daphne", 10, new ManualTune()));
         // set output stream
         try {
             File file = new File("Output.txt");
@@ -70,6 +70,7 @@ abstract class Store implements Utility {
         int rando = GetRandomNum(clerks_.size());
         // if the clerk has already worked 3 days in a row, have someone else work
         clerk_id_ = (clerks_.get(rando).GetDaysWorked() < 3) ? rando : GetRandomNumEx(0, clerks_.size(), rando);
+        // TO DO : handle clerk being sick
         // increment days worked for todays clerked
         GetClerk().IncrementDaysWorked();
         // reset other clerks days worked
@@ -124,17 +125,27 @@ abstract class Store implements Utility {
         Set<ItemType> allItemTypes = new HashSet<ItemType>();
         Collections.addAll(allItemTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
         Set<ItemType> foundTypes = new HashSet<ItemType>(); 
-        int total = 0;
-        int totalitems = 0;
-        for (Item item : inventory_) {
+        int total, totalitems, damaged;
+        total = totalitems = damaged = 0;
+        Iterator<Item> it = inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
+        while (it.hasNext()) {
+            Item item = it.next();
             // for every type we have, remove it so we are left with only types we dont have in stock
             if (!foundTypes.contains(item.itemType)) foundTypes.add(item.itemType);
+            // tune certain items
+            if (item.itemType == ItemType.CDPLAYER || item.itemType == ItemType.MP3PLAYER || item.itemType == ItemType.RECORDPLAYER || item.itemType == ItemType.GUITAR || item.itemType == ItemType.MANDOLIN || item.itemType == ItemType.BASS || item.itemType == ItemType.FLUTE || item.itemType == ItemType.HARMONICA) {
+                if (!GetClerk().Tune(item)) {
+                    if (item.condition_ == "Broken") it.remove();
+                    damaged++;
+                }
+            }
             // add value of item to total
             total += item.purchase_price_;
             totalitems++;
         }
         // broadcast total value of inventory
-        Print(clerks_.get(clerk_id_).name_ + " does inventory to find we have $" + total + " worth of product");
+        Publish("brokeintuning", damaged);
+        Print(GetClerk().name_ + " does inventory to find we have $" + total + " worth of product");
         Publish("totalitems", totalitems);
         Publish("totalitemsprice", total);
         // find missing items through difference of the all set and the found set
@@ -375,20 +386,13 @@ abstract class Store implements Utility {
     }
 }
 
-// TO DO
-// This is an example of a Decorator
+// This is an example of the Decorator pattern
 class StoreDecorator extends Store {
     StoreDecorator() { super(); }
     // decorated version of sell an item to a customer
     protected void Sell(Item item, int salePrice) {
-        //Print("Decorating sell method");
-        // add money to register
-        register_.AddMoney(salePrice);
-        // update item sale price and day
-        item.day_sold_ = current_day_;
-        item.sale_price_ = salePrice;
-        // remove item from inventory and add to sold collection
-        inventory_.remove(item);
-        sold_.add(item);
+        super.Sell(item, salePrice); // https://docs.oracle.com/javase/tutorial/java/IandI/super.html
+        // TO DO : finish decorating method
+
     }
 }

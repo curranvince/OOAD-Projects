@@ -59,7 +59,7 @@ class Logger implements Subscriber {
                 Write(clerk, "found our inventory is worth $" + data);
                 break;
             case "brokeintuning":
-                Write(clerk, "broke " + data + " items while tuning");
+                Write(clerk, "damaged " + data + " items while tuning");
                 break;
             case "itemsordered":
                 Write(clerk, "ordered " + data + " items");
@@ -71,7 +71,7 @@ class Logger implements Subscriber {
                 Write(clerk, "purchased " + data + " items");
                 break;
             case "damagedcleaning":
-                Write(clerk, "broke " + data + " item(s) while cleaning");
+                Write(clerk, "damaged " + data + " item(s) while cleaning");
                 break;
             case "leftstore":
                 Write(clerk, "went home for the day");

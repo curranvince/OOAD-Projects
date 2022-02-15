@@ -38,19 +38,25 @@ abstract class Item implements Utility {
         // lower condition of item by one
         switch (condition_) {
             case "Excellent":
+                Print(name_ + "'s condition has lowered from Excellent to Very Good");
                 condition_ = "Very Good";
                 break;
             case "Very Good":
+                Print(name_ + "'s condition has lowered from Very Good to Good");
                 condition_ = "Good";
                 break;
             case "Good":
+                Print(name_ + "'s condition has lowered from Good to Fair");
                 condition_ = "Fair";
                 break;
             case "Fair":
+                Print(name_ + "'s condition has lowered from Fair to Poor");
                 condition_ = "Poor";
                 break;
             case "Poor":
+                Print(name_ + " has been broken!");
                 // return false if item breaks
+                condition_ = "Broken";
                 return false;
             default:
                 Print("ERROR: Item::LowerCondition given bad paramater");
@@ -63,7 +69,7 @@ abstract class Item implements Utility {
     // these methods do nothing unless the item has the required properties
     void Tune() {};
     void Untune() {};
-    void FlipTune() {};
+    boolean IsTuned() { return false; }
 }
 
 
@@ -107,7 +113,7 @@ abstract class Players extends Item {
 
     void Tune() { equalized_ = true; }
     void Untune() { equalized_ = false; }
-    void FlipTune() { equalized_ = !equalized_; }
+    boolean IsTuned() { return equalized_; }
 }
 
 class CDPlayer extends Players { 
@@ -115,6 +121,7 @@ class CDPlayer extends Players {
         name_ += "CD Player"; 
         itemType = ItemType.CDPLAYER;
     }
+
 }
 
 class RecordPlayer extends Players {
@@ -148,7 +155,7 @@ abstract class Stringed extends Instruments {
 
     void Tune() { tuned_ = true; }
     void Untune() { tuned_ = false; }
-    void FlipTune() { tuned_ = !tuned_; }
+    boolean IsTuned() { return tuned_; }
 }
 
 class Guitar extends Stringed {
@@ -177,7 +184,7 @@ abstract class Wind extends Instruments {
 
     void Tune() { adjusted_ = true; }
     void Untune() { adjusted_ = false; }
-    void FlipTune() { adjusted_ = !adjusted_; }
+    boolean IsTuned() { return adjusted_; }
 }
 
 class Flute extends Wind {

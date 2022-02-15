@@ -1,25 +1,49 @@
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
-interface Tune extends Utility { public void Tune(Item item); }
+interface Tune extends Utility { public int Tune(Item item); }
 
 class ManualTune implements Tune {
     // 80% chance to tune, 20% chance to untune
-    public void Tune(Item item) { 
-        if (GetRandomNum(10) < 8) {
-            item.Tune();
-        }  else {
-            item.Untune(); 
-        } 
+    public int Tune(Item item) { 
+        if (!item.IsTuned()) {
+            if (GetRandomNum(10) > 1) {
+                item.Tune();
+                return 1;
+            }
+        } else {
+            if (GetRandomNum(10) > 7) {
+                item.Untune();
+                return -1;
+            }
+        }
+        return 0;
     }
 }
 
 class HaphazardTune implements Tune {
     // 50% chance to flip tune
-    public void Tune(Item item) { if (GetRandomNum(2) == 0) item.FlipTune(); }
+    public int Tune(Item item) { 
+        if (GetRandomNum(2) == 0) {
+            if (item.IsTuned()) {
+                item.Untune();
+                return -1;
+            } else {
+                item.Tune();
+                return 1;
+            }
+        }
+        return 0;
+    }
 }
 
 class ElectronicTune implements Tune {
     // automatically tune
-    public void Tune(Item item) { item.Tune(); }
+    public int Tune(Item item) { 
+        if (!item.IsTuned()) {
+            item.Tune();
+            return 1;
+        }
+        return 0;
+    }
 }
 
 abstract class Staff implements Utility {
@@ -31,6 +55,7 @@ abstract class Staff implements Utility {
     public void IncrementDaysWorked() { days_worked_ += 1; }
     public int GetDaysWorked() { return days_worked_; }
     public boolean Clean() { return true; }
+    public boolean Tune(Item item) { return true; }
 }
 
 class Clerk extends Staff {
@@ -51,5 +76,25 @@ class Clerk extends Staff {
         return (GetRandomNum(100) > break_percentage_); 
     }
 
-    public void Tune(Item item) { tune_.Tune(item); }
+    public boolean Tune(Item item) { 
+        Print(name_ + " is attempting to tune the " + item.name_);
+        switch (tune_.Tune(item)) {
+            case -1:
+                Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
+                if (GetRandomNum(10) == 0) {
+                    Print(name_ + " has done such a bad job tuning they damaged the item");
+                    if (item.LowerCondition() == false) item = null;
+                }
+                return false;
+            case 0:
+                Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (item.IsTuned() ? "tuned" : "untuned"));
+                return true;
+            case 1:
+                Print(name_ + " has successfully tuned the " + item.name_);
+                return true;
+            default:
+                Print("Error: Tune returned bad value");
+                return true;
+        }
+    }
 }
