@@ -294,11 +294,11 @@ abstract class Store implements Utility {
                 Print("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning");
                 Print("It's condition has worsened to " + inventory_.get(breakIndex).condition_ + ", and its list price has lowered to $" + inventory_.get(breakIndex).list_price_ );
             }
-            Publish("broke", 1);
+            Publish("damagedcleaning", 1);
         } else {
             // nothing breaks
             Print(GetClerk().name_ + " cleans the store without incident");
-            Publish("broke", 0);
+            Publish("damagedcleaning", 0);
         }
     }
 

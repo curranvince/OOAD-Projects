@@ -1,9 +1,10 @@
-Velma arrived at the store
-Velma added 0 items to inventory
-Velma checked register to find $1855
-Velma found 39 items in inventory
-Velma found our inventory is worth $989
-Velma ordered 3 items
-Velma sold 8 items
-Velma purchased 3 items
-Velma went home for the day
+Shaggy arrived at the store
+Shaggy added 0 items to inventory
+Shaggy checked register to find $1729
+Shaggy found 38 items in inventory
+Shaggy found our inventory is worth $982
+Shaggy ordered 3 items
+Shaggy sold 6 items
+Shaggy purchased 4 items
+Shaggy broke 1 item(s) while cleaning
+Shaggy went home for the day
