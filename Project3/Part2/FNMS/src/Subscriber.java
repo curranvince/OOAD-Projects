@@ -8,13 +8,11 @@ interface Subscriber extends Utility {
 
 class Logger implements Subscriber { 
     private FileWriter writer_;
-    private int current_day_;
 
     Logger(int current_day) {
-        current_day_ = current_day;
         // create file for current day https://www.w3schools.com/java/java_files_create.asp
         try {
-            File file = new File("Logs/Logger-" + current_day_ + ".txt");
+            File file = new File("Logs/Logger-" + current_day + ".txt");
             file.getParentFile().mkdirs(); //https://stackoverflow.com/questions/6142901/how-to-create-a-file-in-a-directory-in-java
             file.createNewFile();
             writer_ = new FileWriter(file);
