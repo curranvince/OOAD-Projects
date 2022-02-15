@@ -121,17 +121,16 @@ abstract class Store implements Utility {
     }
 
     private void DoInventory() {
-        // vector to keep track of all types
-        Set<ItemType> allItemTypes = new HashSet<ItemType>();
-        Collections.addAll(allItemTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
-        Set<ItemType> foundTypes = new HashSet<ItemType>(); 
-        int total, totalitems, damaged;
-        total = totalitems = damaged = 0;
+        // vector to keep track of what types we need to order (start with all and remove)
+        Set<ItemType> orderTypes = new HashSet<ItemType>();
+        Collections.addAll(orderTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
+        int total, totalitems, damaged, orders;
+        total = totalitems = damaged = orders = 0;
         Iterator<Item> it = inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
         while (it.hasNext()) {
             Item item = it.next();
-            // for every type we have, remove it so we are left with only types we dont have in stock
-            if (!foundTypes.contains(item.itemType)) foundTypes.add(item.itemType);
+            // remove this type from the list of oens we need to order
+            if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
             if (item.itemType == ItemType.CDPLAYER || item.itemType == ItemType.MP3PLAYER || item.itemType == ItemType.RECORDPLAYER || item.itemType == ItemType.GUITAR || item.itemType == ItemType.MANDOLIN || item.itemType == ItemType.BASS || item.itemType == ItemType.FLUTE || item.itemType == ItemType.HARMONICA) {
                 if (!GetClerk().Tune(item)) {
@@ -148,33 +147,16 @@ abstract class Store implements Utility {
         Print(GetClerk().name_ + " does inventory to find we have $" + total + " worth of product");
         Publish("totalitems", totalitems);
         Publish("totalitemsprice", total);
-        // find missing items through difference of the all set and the found set
-        int orders = 0;
-        allItemTypes.removeAll(foundTypes);
-        if (!allItemTypes.isEmpty()) {
+        
+        if (!orderTypes.isEmpty()) {
             // remove items weve already ordered
             for (Vector<ItemType> vec : orders_.values()) {
-                for (ItemType orderedItem : vec) {
-                    allItemTypes.remove(orderedItem);
-                }
-                if (allItemTypes.isEmpty()) break;
+                for (ItemType orderedItem : vec) { orderTypes.remove(orderedItem); }
+                if (orderTypes.isEmpty()) break;
             }
             // place orders
-            if (!allItemTypes.isEmpty()) {
-                for (ItemType type : allItemTypes) {
-                    int deliveryDay = GetRandomNum(1, 4) + current_day_;
-                    // make sure orders arent delivered on Sunday
-                    if (deliveryDay % 7 == 0) { deliveryDay++;}
-                    // if date isnt in order system then add it
-                    if (!orders_.containsKey(deliveryDay)) {
-                        orders_.put(deliveryDay, new Vector<ItemType>());
-                    } 
-                    // add order to delivery day
-                    orders_.get(deliveryDay).add(type);
-                    // broadcast who placed an order of what and what day it will arrive
-                    Print(GetClerk().name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
-                    orders += 3;
-                }
+            if (!orderTypes.isEmpty()) {
+                orders = PlaceOrders(orderTypes);
             } else {
                 Print(GetClerk().name_ + " places no orders today");
             }
@@ -182,6 +164,23 @@ abstract class Store implements Utility {
             Print(GetClerk().name_ + " places no orders today");
         }
         Publish("itemsordered", orders);
+    }
+
+    private int PlaceOrders(Set<ItemType> orderTypes) {
+        int orders = 0;
+        for (ItemType type : orderTypes) {
+            int deliveryDay = GetRandomNum(1, 4) + current_day_;
+            // make sure orders arent delivered on Sunday
+            if (deliveryDay % 7 == 0) { deliveryDay++; }
+            // if date isnt in order system then add it
+            if (!orders_.containsKey(deliveryDay)) { orders_.put(deliveryDay, new Vector<ItemType>()); } 
+            // add order to delivery day
+            orders_.get(deliveryDay).add(type);
+            // broadcast who placed an order of what and what day it will arrive
+            Print(GetClerk().name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
+            orders += 3;
+        }
+        return orders;
     }
 
     // sell an item to a customer
