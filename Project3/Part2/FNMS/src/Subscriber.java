@@ -22,9 +22,18 @@ class Logger implements Subscriber {
         }
     }
 
+    private void Write(String msg) { 
+        try {
+            writer_.write(msg + "\n");
+        } catch (IOException e) {
+            Print("Error: Logger failed to write to file");
+            e.printStackTrace();
+        } 
+    }
+
     private void Write(Staff clerk, String msg) { 
         try {
-            writer_.write(clerk.name_ + " " + msg);
+            writer_.write(clerk.name_ + " " + msg + "\n");
         } catch (IOException e) {
             Print("Error: Logger failed to write to file");
             e.printStackTrace();
@@ -62,11 +71,13 @@ class Logger implements Subscriber {
                 Write(clerk, "purchased " + data + " items");
                 break;
             case "damagedcleaning":
-                Write(clerk, "broke " + data + " items while cleaning");
+                Write(clerk, "broke " + data + " item(s) while cleaning");
                 break;
             case "leftstore":
                 Write(clerk, "went home for the day");
                 break;
+            case "sunday":
+                Write("The store was closed today");
             default:
                 break;
         }

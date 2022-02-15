@@ -1,0 +1,9 @@
+Shaggy arrived at the store
+Shaggy added 3 items to inventory
+Shaggy checked register to find $2749
+Shaggy found 31 items in inventory
+Shaggy found our inventory is worth $802
+Shaggy ordered 3 items
+Shaggy sold 4 items
+Shaggy purchased 0 items
+Shaggy went home for the day

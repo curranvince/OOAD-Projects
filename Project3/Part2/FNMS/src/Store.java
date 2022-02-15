@@ -66,7 +66,7 @@ abstract class Store implements Utility {
 
     // Having the methods in this class private is an example of Encapsulation
     private void ChooseClerk() {
-        // pick one of the two clerks
+        // pick one of the clerks
         int rando = GetRandomNum(clerks_.size());
         // if the clerk has already worked 3 days in a row, have someone else work
         clerk_id_ = (clerks_.get(rando).GetDaysWorked() < 3) ? rando : GetRandomNumEx(0, clerks_.size(), rando);
@@ -79,7 +79,9 @@ abstract class Store implements Utility {
     }
 
     private void ArriveAtStore() { 
+        Publish("arrival", 0);
         Print(GetClerk().name_  + " has arrived at the store on Day " + current_day_); 
+        int orders_received = 0;
         // check if theres any orders for today
         if (orders_.containsKey(current_day_)) {
             // receive orders for each type
@@ -90,6 +92,7 @@ abstract class Store implements Utility {
                     toAdd.day_arrived = current_day_;
                     inventory_.add(toAdd);
                     register_.TakeMoney(inventory_.lastElement().purchase_price_);
+                    orders_received++;
                 }
             }
             // remove orders from the map
@@ -98,9 +101,11 @@ abstract class Store implements Utility {
             // if no orders today then broadcast it
             Print(GetClerk().name_  + " finds no orders delivered today"); 
         }
+        Publish("itemsadded", orders_received);
     }
 
     private boolean CheckRegister() {
+        Publish("checkedregister", register_.GetAmount());
         // broadcast register amount and return if its greater than 75 or not
         Print(GetClerk().name_ + " checks the register to find $" + register_.GetAmount());
         return (register_.GetAmount() >= 75) ? true : false;
@@ -108,6 +113,7 @@ abstract class Store implements Utility {
 
     private void GoToBank() {
         // add 1000 to register and broadcast
+        Publish("checkedregister", register_.GetAmount());
         Print(GetClerk().name_ + " goes to the bank to withdraw $1000 for the register" );
         register_.AddMoney(1000);
         total_withdrawn_ += 1000;
@@ -119,16 +125,20 @@ abstract class Store implements Utility {
         Collections.addAll(allItemTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
         Set<ItemType> foundTypes = new HashSet<ItemType>(); 
         int total = 0;
+        int totalitems = 0;
         for (Item item : inventory_) {
-            // for every type we have remove it so were left with only types we dont have in stock
+            // for every type we have, remove it so we are left with only types we dont have in stock
             if (!foundTypes.contains(item.itemType)) foundTypes.add(item.itemType);
             // add value of item to total
             total += item.purchase_price_;
+            totalitems++;
         }
         // broadcast total value of inventory
         Print(clerks_.get(clerk_id_).name_ + " does inventory to find we have $" + total + " worth of product");
-        
+        Publish("totalitems", totalitems);
+        Publish("totalitemsprice", total);
         // find missing items through difference of the all set and the found set
+        int orders = 0;
         allItemTypes.removeAll(foundTypes);
         if (!allItemTypes.isEmpty()) {
             // remove items weve already ordered
@@ -152,6 +162,7 @@ abstract class Store implements Utility {
                     orders_.get(deliveryDay).add(type);
                     // broadcast who placed an order of what and what day it will arrive
                     Print(GetClerk().name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
+                    orders += 3;
                 }
             } else {
                 Print(GetClerk().name_ + " places no orders today");
@@ -159,6 +170,7 @@ abstract class Store implements Utility {
         } else {
             Print(GetClerk().name_ + " places no orders today");
         }
+        Publish("itemsordered", orders);
     }
 
     // sell an item to a customer
@@ -186,6 +198,8 @@ abstract class Store implements Utility {
     //run a day at the store
     private void OpenTheStore() {
         // generate customers for the day
+        int itemssold = 0;
+        int itemsbought = 0;
         Vector<Customer> customers = MakeCustomers();
         for (Customer customer : customers) {
             // see if the customer wants to buy or sell
@@ -203,6 +217,7 @@ abstract class Store implements Utility {
                             // sell item to customer at list price
                             Print("The customer buys the " + item.name_ + " for $" + item.list_price_);
                             Sell(item, item.list_price_);
+                            itemssold++;
                             break;
                         } else {
                             // if they dont buy, offer discount to get 75% chance of buying
@@ -213,6 +228,7 @@ abstract class Store implements Utility {
                                 int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
                                 Print("The customer buys the " + item.name_ + " for $" + discountPrice);
                                 Sell(item, discountPrice);
+                                itemssold++;
                                 break;
                             } else {
                                 Print("The customer decides not to buy the " + item.name_);
@@ -237,6 +253,7 @@ abstract class Store implements Utility {
                         // buy item at initial offer price
                         Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
                         Buy(item, offerPrice);
+                        itemsbought++;
                     } else {
                         // if customer disagrees, offer 10% increase to price and try again
                         Print(GetClerk().name_ + " offers a 10% increase to the price");
@@ -246,6 +263,7 @@ abstract class Store implements Utility {
                             int extraPrice = (int)(offerPrice+(offerPrice*0.1));
                             Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
                             Buy(item, extraPrice);
+                            itemsbought++;
                         } else {
                             // if the customer disagrees again let them leave
                             Print("The customer leaves without selling their " + item.name_);
@@ -257,6 +275,8 @@ abstract class Store implements Utility {
                 }
             }
         }
+        Publish("itemsold", itemssold);
+        Publish("itemsbought", itemsbought);
     }
 
     private void CleanStore() {
@@ -274,16 +294,26 @@ abstract class Store implements Utility {
                 Print("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning");
                 Print("It's condition has worsened to " + inventory_.get(breakIndex).condition_ + ", and its list price has lowered to $" + inventory_.get(breakIndex).list_price_ );
             }
+            Publish("broke", 1);
         } else {
             // nothing breaks
             Print(GetClerk().name_ + " cleans the store without incident");
+            Publish("broke", 0);
         }
     }
 
     // every night, broadcast who left, show the trackers data, and close the logger
     private void CloseStore() {
         Print(GetClerk().name_ + " locks up and goes home for the night");
+        Publish("leftstore", 0);
         subscribers_[0].ShowData(current_day_);
+        subscribers_[1].Close();
+    }
+
+    private void HandleSunday() {
+        // close the store on sundays
+        Print("Today is Day " + current_day_ + ", which is Sunday, so the store is closed");
+        Publish("sunday", 0);
         subscribers_[1].Close();
     }
 
@@ -336,7 +366,7 @@ abstract class Store implements Utility {
                 CloseStore();
             } else {
                 // close the store on sundays
-                Print("Today is Day " + current_day_ + ", which is Sunday, so the store is closed.");
+                HandleSunday();
             }
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  

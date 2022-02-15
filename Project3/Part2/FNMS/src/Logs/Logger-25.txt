@@ -1,0 +1,9 @@
+Velma arrived at the store
+Velma added 0 items to inventory
+Velma checked register to find $4219
+Velma found 32 items in inventory
+Velma found our inventory is worth $896
+Velma ordered 6 items
+Velma sold 3 items
+Velma purchased 2 items
+Velma went home for the day

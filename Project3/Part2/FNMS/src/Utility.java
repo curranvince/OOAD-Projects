@@ -11,7 +11,7 @@ public interface Utility {
     default int GetRandomNumEx(int min, int max, int exclude) {
         int rando = random.nextInt(max-min) + min;
         while (rando == exclude) {
-            if (rando < max) rando++;
+            if (rando < (max-1)) rando++;
             else rando = min;
         }
         return rando;

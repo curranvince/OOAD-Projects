@@ -1,0 +1,9 @@
+Daphne arrived at the store
+Daphne added 0 items to inventory
+Daphne checked register to find $1520
+Daphne found 44 items in inventory
+Daphne found our inventory is worth $1091
+Daphne ordered 0 items
+Daphne sold 6 items
+Daphne purchased 4 items
+Daphne went home for the day
