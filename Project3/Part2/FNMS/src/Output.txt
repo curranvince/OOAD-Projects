@@ -1,132 +1,156 @@
-Shaggy has arrived at the store on Day 1
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $0
-Shaggy goes to the bank to withdraw $1000 for the register
-Shaggy does inventory to find we have $1273 worth of product
-Shaggy places no orders today
-CJ has come into the store looking to buy a CABLES
-Shaggy shows the customer the 6 meter cable, selling for $24
-The customer buys the 6 meter cable for $24
-Ryan has come into the store looking to buy a HATS
-Shaggy shows the customer the Medium The Rolling Stones Hat, selling for $60
-The customer buys the Medium The Rolling Stones Hat for $60
-Delaney has come into the store looking to buy a HATS
-Shaggy shows the customer the Small AC/DC Hat, selling for $40
-Shaggy offers a 10% discount
-The customer buys the Small AC/DC Hat for $36
-Alice has come into the store looking to buy a FLUTE
-Shaggy shows the customer the Yamaha Silver Flute, selling for $16
-Shaggy offers a 10% discount
-The customer decides not to buy the Yamaha Silver Flute
-Shaggy shows the customer the Gemeinhardt Silver Flute, selling for $36
-Shaggy offers a 10% discount
-The customer decides not to buy the Gemeinhardt Silver Flute
-Shaggy shows the customer the Yamaha Silver Flute, selling for $44
-Shaggy offers a 10% discount
-The customer buys the Yamaha Silver Flute for $39
-Sophie has come into the store looking to buy a BASS
-Shaggy shows the customer the Yamaha Bass, selling for $74
-Shaggy offers a 10% discount
-The customer buys the Yamaha Bass for $66
-Bruce has come into the store looking to buy a GUITAR
-Shaggy shows the customer the Guild Guitar, selling for $50
-Shaggy offers a 10% discount
-The customer buys the Guild Guitar for $45
-Nate has come into the store looking to sell a HATS
-Shaggy determines the Small Led Zeppelin Hat to be in Good condition and the value to be $21
-The store buys the Small Led Zeppelin Hat in Good condition for $21
-Amber has come into the store looking to buy a PRACTICEAMPS
-Shaggy shows the customer the 10 watt amp, selling for $54
-The customer buys the 10 watt amp for $54
-Alice has come into the store looking to buy a GUITAR
-Shaggy shows the customer the Yamaha Electric Guitar, selling for $36
-Shaggy offers a 10% discount
-The customer decides not to buy the Yamaha Electric Guitar
-Shaggy shows the customer the Yamaha Electric Guitar, selling for $48
-Shaggy offers a 10% discount
-The customer buys the Yamaha Electric Guitar for $43
-The store closes for the day and Shaggy begins cleaning
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
+Daphne has arrived at the store on Day 1
+Daphne finds no orders delivered today
+Daphne checks the register to find $0
+Daphne goes to the bank to withdraw $1000 for the register
+Daphne does inventory to find we have $1404 worth of product
+Daphne places no orders today
+Amber has come into the store looking to buy a HARMONICA
+Daphne shows the customer the Boseno Harmonica in a key of "D", selling for $82
+The customer buys the Boseno Harmonica in a key of "D" for $82
+Dom has come into the store looking to buy a GUITAR
+Daphne shows the customer the Seagull Electric Guitar, selling for $32
+Daphne offers a 10% discount
+The customer decides not to buy the Seagull Electric Guitar
+Daphne shows the customer the Fender Electric Guitar, selling for $62
+Daphne offers a 10% discount
+The customer buys the Fender Electric Guitar for $55
+CJ has come into the store looking to buy a FLUTE
+Daphne shows the customer the Yamaha Wood Flute, selling for $78
+The customer buys the Yamaha Wood Flute for $78
+Alice has come into the store looking to buy a CDPLAYER
+Daphne shows the customer the CD Player, selling for $46
+The customer buys the CD Player for $46
+Sam has come into the store looking to sell a MANDOLIN
+Daphne determines the Yamaha Electric Mandolin to be in Good condition and the value to be $23
+Daphne offers a 10% increase to the price
+The store buys the Yamaha Electric Mandolin in Good condition for $25
+Sam has come into the store looking to buy a HATS
+Daphne shows the customer the Large Led Zeppelin Hat, selling for $50
+Daphne offers a 10% discount
+The customer decides not to buy the Large Led Zeppelin Hat
+Daphne shows the customer the Small Led Zeppelin Hat, selling for $94
+Daphne offers a 10% discount
+The customer buys the Small Led Zeppelin Hat for $84
+Amber has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Very Good condition and the value to be $32
+The store buys the CD Player in Very Good condition for $32
+Sam has come into the store looking to buy a VINYL
+Daphne shows the customer the Exile on Main Street by The Rolling Stones Vinyl, selling for $26
+The customer buys the Exile on Main Street by The Rolling Stones Vinyl for $26
+Amber has come into the store looking to buy a GUITAR
+Daphne shows the customer the Seagull Electric Guitar, selling for $32
+The customer buys the Seagull Electric Guitar for $32
+Delaney has come into the store looking to buy a PRACTICEAMPS
+Daphne shows the customer the 14 watt amp, selling for $100
+Daphne offers a 10% discount
+The customer buys the 14 watt amp for $90
+Mel has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $2
+The customer buys the MP3 Player for $2
+Paige has come into the store looking to sell a BASS
+Daphne determines the Seagull Bass to be in Excellent condition and the value to be $50
+The store buys the Seagull Bass in Excellent condition for $50
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Daphne has arrived at the store on Day 2
-Daphne finds no orders delivered today
-Daphne checks the register to find $1346
-Daphne does inventory to find we have $1097 worth of product
-Daphne places no orders today
-CJ has come into the store looking to buy a HATS
-Daphne shows the customer the Small Nirvna Hat, selling for $4
-Daphne offers a 10% discount
-The customer decides not to buy the Small Nirvna Hat
-Daphne shows the customer the Small Led Zeppelin Hat, selling for $42
-The customer buys the Small Led Zeppelin Hat for $42
-CJ has come into the store looking to buy a SHIRTS
-Daphne shows the customer the Medium The Beatles Shirt, selling for $4
-Daphne offers a 10% discount
-The customer buys the Medium The Beatles Shirt for $3
-Sophie has come into the store looking to sell a HATS
-Daphne determines the Large Pearl Jam Hat to be in Excellent condition and the value to be $50
-The store buys the Large Pearl Jam Hat in Excellent condition for $50
-Emma has come into the store looking to buy a GUITAR
-Daphne shows the customer the Yamaha Electric Guitar, selling for $36
-Daphne offers a 10% discount
-The customer buys the Yamaha Electric Guitar for $32
-Paige has come into the store looking to buy a VINYL
-Daphne shows the customer the To Pimp A ButterFly by Kendrick Lamar Vinyl, selling for $28
-The customer buys the To Pimp A ButterFly by Kendrick Lamar Vinyl for $28
-CJ has come into the store looking to sell a HARMONICA
-Daphne determines the Boseno Harmonica in a key of "D" to be in Very Good condition and the value to be $39
-The store buys the Boseno Harmonica in a key of "D" in Very Good condition for $39
-Sophie has come into the store looking to sell a CABLES
-Daphne determines the 1 meter cable to be in Very Good condition and the value to be $31
-Daphne offers a 10% increase to the price
-The customer leaves without selling their 1 meter cable
-Bruce has come into the store looking to buy a GUITAR
-Daphne informs the customer we have no GUITAR in stock
-Nate has come into the store looking to buy a HATS
-Daphne shows the customer the Small Nirvna Hat, selling for $4
-Daphne offers a 10% discount
-The customer buys the Small Nirvna Hat for $3
-Dom has come into the store looking to buy a PAPERSCORE
-Daphne shows the customer the Lemonade by Beyonce Paper Score, selling for $2
-The customer buys the Lemonade by Beyonce Paper Score for $2
-The store closes for the day and Daphne begins cleaning
-Daphne cleans the store without incident
-Daphne locks up and goes home for the night
+Shaggy has arrived at the store on Day 2
+Shaggy finds no orders delivered today
+Shaggy checks the register to find $1388
+Shaggy does inventory to find we have $1250 worth of product
+Shaggy places no orders today
+Sam has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $50
+The customer buys the Record Player for $50
+Mel has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Washburn Mandolin, selling for $52
+The customer buys the Washburn Mandolin for $52
+Sam has come into the store looking to buy a BASS
+Shaggy shows the customer the Seagull Electric Bass, selling for $86
+Shaggy offers a 10% discount
+The customer decides not to buy the Seagull Electric Bass
+Shaggy shows the customer the Seagull Electric Bass, selling for $10
+The customer buys the Seagull Electric Bass for $10
+Amber has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Ovation Electric Mandolin, selling for $36
+Shaggy offers a 10% discount
+The customer buys the Ovation Electric Mandolin for $32
+Nate has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 15 watt amp, selling for $56
+The customer buys the 15 watt amp for $56
+Dom has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Gibson Guitar, selling for $26
+The customer buys the Gibson Guitar for $26
+Paige has come into the store looking to sell a PAPERSCORE
+Shaggy determines the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score to be in Poor condition and the value to be $3
+Shaggy offers a 10% increase to the price
+The store buys the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score in Poor condition for $3
+Amber has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $74
+Shaggy offers a 10% discount
+The customer buys the Record Player for $66
+Alice has come into the store looking to sell a HATS
+Shaggy determines the Small Motley Crue Hat to be in Poor condition and the value to be $2
+Shaggy offers a 10% increase to the price
+The customer leaves without selling their Small Motley Crue Hat
+Sophie has come into the store looking to buy a CD
+Shaggy shows the customer the Ten by Pearl Jam CD, selling for $48
+The customer buys the Ten by Pearl Jam CD for $48
+The store closes for the day and Shaggy begins cleaning
+Shaggy cleans the store without incident
+Shaggy locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Velma has arrived at the store on Day 3
 Velma finds no orders delivered today
-Velma checks the register to find $1367
-Velma does inventory to find we have $1128 worth of product
-Velma placed an order for 3 GUITARs to arrive on Day 6
-Dom has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Seagull Mandolin, selling for $28
-The customer buys the Seagull Mandolin for $28
-Bruce has come into the store looking to buy a BANDANAS
-Velma shows the customer the Black Bandana, selling for $82
-The customer buys the Black Bandana for $82
-Emma has come into the store looking to sell a HATS
-Velma determines the Medium Nirvna Hat to be in Excellent condition and the value to be $40
+Velma checks the register to find $1725
+Velma does inventory to find we have $1077 worth of product
+Velma placed an order for 3 GUITARs to arrive on Day 5
+Nate has come into the store looking to sell a MANDOLIN
+Velma determines the Washburn Electric Mandolin to be in Very Good condition and the value to be $30
 Velma offers a 10% increase to the price
-The store buys the Medium Nirvna Hat in Excellent condition for $44
-Mel has come into the store looking to buy a SHIRTS
-Velma shows the customer the Medium Aerosmith Shirt, selling for $20
+The store buys the Washburn Electric Mandolin in Very Good condition for $33
+CJ has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Good condition and the value to be $26
+The store buys the Record Player in Good condition for $26
+Paige has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Abbey Road by The Beatles Paper Score, selling for $68
 Velma offers a 10% discount
-The customer decides not to buy the Medium Aerosmith Shirt
-Velma shows the customer the Small Red Hot Chili Peppers Shirt, selling for $78
+The customer buys the Abbey Road by The Beatles Paper Score for $61
+Delaney has come into the store looking to buy a HARMONICA
+Velma shows the customer the Lee Oskar Harmonica in a key of "G", selling for $4
 Velma offers a 10% discount
-The customer buys the Small Red Hot Chili Peppers Shirt for $70
-Dom has come into the store looking to buy a FLUTE
-Velma shows the customer the Yamaha Silver Flute, selling for $16
-The customer buys the Yamaha Silver Flute for $16
-Sophie has come into the store looking to buy a GUITAR
-Velma informs the customer we have no GUITAR in stock
+The customer buys the Lee Oskar Harmonica in a key of "G" for $3
+Emma has come into the store looking to sell a BASS
+Velma determines the Ovation Bass to be in Fair condition and the value to be $12
+The store buys the Ovation Bass in Fair condition for $12
+Amber has come into the store looking to buy a CABLES
+Velma shows the customer the 5 meter cable, selling for $30
+The customer buys the 5 meter cable for $30
+Ryan has come into the store looking to buy a MANDOLIN
+Velma shows the customer the Seagull Electric Mandolin, selling for $48
+The customer buys the Seagull Electric Mandolin for $48
+Delaney has come into the store looking to sell a BASS
+Velma determines the Yamaha Bass to be in Excellent condition and the value to be $45
+Velma offers a 10% increase to the price
+The store buys the Yamaha Bass in Excellent condition for $49
+Bruce has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 10 watt amp, selling for $28
+The customer buys the 10 watt amp for $28
+Delaney has come into the store looking to buy a PRACTICEAMPS
+Velma informs the customer we have no PRACTICEAMPS in stock
+Bruce has come into the store looking to buy a HARMONICA
+Velma shows the customer the Boseno Harmonica in a key of "G", selling for $90
+The customer buys the Boseno Harmonica in a key of "G" for $90
+CJ has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $88
+Velma offers a 10% discount
+The customer buys the Record Player for $79
 The store closes for the day and Velma begins cleaning
 Velma cleans the store without incident
 Velma locks up and goes home for the night
@@ -134,101 +158,58 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Velma has arrived at the store on Day 4
-Velma finds no orders delivered today
-Velma checks the register to find $1519
-Velma does inventory to find we have $1070 worth of product
-Velma places no orders today
-CJ has come into the store looking to buy a CD
-Velma shows the customer the Supa Dupa Fly by Missy Elliott CD, selling for $72
-The customer buys the Supa Dupa Fly by Missy Elliott CD for $72
-Mel has come into the store looking to buy a STRINGS
-Velma shows the customer the Banjo strings, selling for $28
-The customer buys the Banjo strings for $28
-Nate has come into the store looking to buy a CABLES
-Velma shows the customer the 6 meter cable, selling for $2
-Velma offers a 10% discount
-The customer buys the 6 meter cable for $1
-Dom has come into the store looking to buy a HATS
-Velma shows the customer the Large Pearl Jam Hat, selling for $100
-Velma offers a 10% discount
-The customer buys the Large Pearl Jam Hat for $90
-Sophie has come into the store looking to buy a PRACTICEAMPS
-Velma shows the customer the 13 watt amp, selling for $100
-Velma offers a 10% discount
-The customer decides not to buy the 13 watt amp
-Velma shows the customer the 11 watt amp, selling for $18
-The customer buys the 11 watt amp for $18
-Mel has come into the store looking to buy a SHIRTS
-Velma shows the customer the Medium Aerosmith Shirt, selling for $20
-The customer buys the Medium Aerosmith Shirt for $20
-Nate has come into the store looking to buy a STRINGS
-Velma shows the customer the Banjo strings, selling for $30
-Velma offers a 10% discount
-The customer buys the Banjo strings for $27
-Alice has come into the store looking to buy a FLUTE
-Velma shows the customer the Gemeinhardt Silver Flute, selling for $36
-Velma offers a 10% discount
-The customer buys the Gemeinhardt Silver Flute for $32
-Mel has come into the store looking to sell a CD
-Velma determines the Legend by Bob Marley and the Wailers CD to be in Very Good condition and the value to be $39
-The store buys the Legend by Bob Marley and the Wailers CD in Very Good condition for $39
-Alice has come into the store looking to buy a SHIRTS
-Velma informs the customer we have no SHIRTS in stock
-Paige has come into the store looking to sell a HATS
-Velma determines the Medium Red Hot Chili Peppers Hat to be in Excellent condition and the value to be $45
-Velma offers a 10% increase to the price
-The store buys the Medium Red Hot Chili Peppers Hat in Excellent condition for $49
-Amber has come into the store looking to buy a CD
-Velma shows the customer the The Chronic by Dr. Dre CD, selling for $92
-The customer buys the The Chronic by Dr. Dre CD for $92
-The store closes for the day and Velma begins cleaning
-Velma cleans the store without incident
-Velma locks up and goes home for the night
-Clerk      Items Sold      Items Purchased      Items Damaged 
-Velma      0      0      0
-Shaggy     0      0      0
-Daphne     0      0      0
-Daphne has arrived at the store on Day 5
+Daphne has arrived at the store on Day 4
 Daphne finds no orders delivered today
-Daphne checks the register to find $1811
-Daphne does inventory to find we have $959 worth of product
-Daphne placed an order for 3 FLUTEs to arrive on Day 6
-Daphne placed an order for 3 SHIRTSs to arrive on Day 6
-Paige has come into the store looking to buy a CD
-Daphne shows the customer the What's Going On by Marvin Gaye CD, selling for $14
+Daphne checks the register to find $1944
+Daphne does inventory to find we have $1019 worth of product
+Daphne placed an order for 3 PRACTICEAMPSs to arrive on Day 8
+Daphne placed an order for 3 HARMONICAs to arrive on Day 8
+Dom has come into the store looking to buy a CABLES
+Daphne shows the customer the 1 meter cable, selling for $94
+The customer buys the 1 meter cable for $94
+Alice has come into the store looking to sell a MP3PLAYER
+Daphne determines the MP3 Player to be in Good condition and the value to be $21
+The store buys the MP3 Player in Good condition for $21
+Mel has come into the store looking to buy a STRINGS
+Daphne shows the customer the Mandolin strings, selling for $98
 Daphne offers a 10% discount
-The customer buys the What's Going On by Marvin Gaye CD for $12
-Ryan has come into the store looking to buy a CD
-Daphne shows the customer the Legend by Bob Marley and the Wailers CD, selling for $78
-The customer buys the Legend by Bob Marley and the Wailers CD for $78
-Ryan has come into the store looking to sell a CDPLAYER
-Daphne determines the CD Player to be in Very Good condition and the value to be $39
-The store buys the CD Player in Very Good condition for $39
-Sophie has come into the store looking to sell a SHIRTS
-Daphne determines the Small Pearl Jam Shirt to be in Poor condition and the value to be $6
-The store buys the Small Pearl Jam Shirt in Poor condition for $6
-Sophie has come into the store looking to buy a BASS
-Daphne shows the customer the Fender Bass, selling for $78
+The customer decides not to buy the Mandolin strings
+Daphne shows the customer the Cello strings, selling for $22
 Daphne offers a 10% discount
-The customer buys the Fender Bass for $70
-Ryan has come into the store looking to buy a HATS
-Daphne shows the customer the Medium Nirvna Hat, selling for $88
+The customer buys the Cello strings for $19
+CJ has come into the store looking to buy a BASS
+Daphne shows the customer the Seagull Electric Bass, selling for $86
 Daphne offers a 10% discount
-The customer decides not to buy the Medium Nirvna Hat
-Daphne shows the customer the Medium Red Hot Chili Peppers Hat, selling for $98
-The customer buys the Medium Red Hot Chili Peppers Hat for $98
-Amber has come into the store looking to buy a CDPLAYER
-Daphne shows the customer the CD Player, selling for $38
+The customer buys the Seagull Electric Bass for $77
+CJ has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $22
 Daphne offers a 10% discount
-The customer buys the CD Player for $34
-Emma has come into the store looking to buy a MP3PLAYER
-Daphne shows the customer the MP3 Player, selling for $86
-The customer buys the MP3 Player for $86
-Ryan has come into the store looking to sell a STRINGS
-Daphne determines the Cello strings to be in Good condition and the value to be $24
-Daphne offers a 10% increase to the price
-The customer leaves without selling their Cello strings
+The customer buys the MP3 Player for $19
+Nate has come into the store looking to sell a BASS
+Daphne determines the Gibson Electric Bass to be in Fair condition and the value to be $19
+The store buys the Gibson Electric Bass in Fair condition for $19
+Dom has come into the store looking to buy a CABLES
+Daphne shows the customer the 3 meter cable, selling for $62
+The customer buys the 3 meter cable for $62
+Mel has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Small Tupac Shirt, selling for $34
+The customer buys the Small Tupac Shirt for $34
+Alice has come into the store looking to sell a SHIRTS
+Daphne determines the Small The Notorious B.I.G. Shirt to be in Fair condition and the value to be $11
+The store buys the Small The Notorious B.I.G. Shirt in Fair condition for $11
+Paige has come into the store looking to sell a FLUTE
+Daphne determines the Miyazawa Silver Flute to be in Excellent condition and the value to be $47
+The store buys the Miyazawa Silver Flute in Excellent condition for $47
+Sam has come into the store looking to buy a GUITAR
+Daphne informs the customer we have no GUITAR in stock
+CJ has come into the store looking to buy a RECORDPLAYER
+Daphne shows the customer the Record Player, selling for $52
+The customer buys the Record Player for $52
+Delaney has come into the store looking to buy a CD
+Daphne shows the customer the To Pimp A ButterFly by Kendrick Lamar CD, selling for $96
+The customer buys the To Pimp A ButterFly by Kendrick Lamar CD for $96
+Emma has come into the store looking to buy a GUITAR
+Daphne informs the customer we have no GUITAR in stock
 The store closes for the day and Daphne begins cleaning
 Daphne cleans the store without incident
 Daphne locks up and goes home for the night
@@ -236,216 +217,287 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Shaggy has arrived at the store on Day 6
-Shaggy finds an order with 3 GUITARs
-Shaggy finds an order with 3 FLUTEs
-Shaggy finds an order with 3 SHIRTSs
-Shaggy checks the register to find $1850
-Shaggy does inventory to find we have $1102 worth of product
-Shaggy placed an order for 3 CDs to arrive on Day 8
-Emma has come into the store looking to buy a CDPLAYER
-Shaggy shows the customer the CD Player, selling for $30
-Shaggy offers a 10% discount
-The customer decides not to buy the CD Player
-Shaggy shows the customer the CD Player, selling for $78
-The customer buys the CD Player for $78
-Ryan has come into the store looking to buy a CABLES
-Shaggy shows the customer the 5 meter cable, selling for $52
-The customer buys the 5 meter cable for $52
-Dom has come into the store looking to sell a PAPERSCORE
-Shaggy determines the Are You Experienced by Jimi Hendrix Paper Score to be in Fair condition and the value to be $20
-The store buys the Are You Experienced by Jimi Hendrix Paper Score in Fair condition for $20
-Ryan has come into the store looking to buy a CD
-Shaggy informs the customer we have no CD in stock
+Daphne has arrived at the store on Day 5
+Daphne finds an order with 3 GUITARs
+Daphne checks the register to find $2240
+Daphne does inventory to find we have $942 worth of product
+Daphne placed an order for 3 RECORDPLAYERs to arrive on Day 6
+Daphne placed an order for 3 CABLESs to arrive on Day 8
+Delaney has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Large AC/DC Shirt, selling for $100
+The customer buys the Large AC/DC Shirt for $100
+Emma has come into the store looking to sell a BANDANAS
+Daphne determines the Red Bandana to be in Fair condition and the value to be $18
+The store buys the Red Bandana in Fair condition for $18
+Emma has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $38
+The customer buys the MP3 Player for $38
+Paige has come into the store looking to buy a PAPERSCORE
+Daphne shows the customer the Supa Dupa Fly by Missy Elliott Paper Score, selling for $8
+Daphne offers a 10% discount
+The customer decides not to buy the Supa Dupa Fly by Missy Elliott Paper Score
+Daphne shows the customer the Supa Dupa Fly by Missy Elliott Paper Score, selling for $92
+Daphne offers a 10% discount
+The customer buys the Supa Dupa Fly by Missy Elliott Paper Score for $82
+Paige has come into the store looking to buy a PAPERSCORE
+Daphne shows the customer the Supa Dupa Fly by Missy Elliott Paper Score, selling for $8
+Daphne offers a 10% discount
+The customer buys the Supa Dupa Fly by Missy Elliott Paper Score for $7
+Delaney has come into the store looking to sell a STRINGS
+Daphne determines the Guitar strings to be in Excellent condition and the value to be $50
+Daphne offers a 10% increase to the price
+The store buys the Guitar strings in Excellent condition for $55
+Sophie has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Medium Red Hot Chili Peppers Shirt, selling for $60
+Daphne offers a 10% discount
+The customer buys the Medium Red Hot Chili Peppers Shirt for $54
+Mel has come into the store looking to sell a PRACTICEAMPS
+Daphne determines the 19 watt amp to be in Poor condition and the value to be $4
+Daphne offers a 10% increase to the price
+The store buys the 19 watt amp in Poor condition for $4
+Delaney has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Poor condition and the value to be $5
+The store buys the CD Player in Poor condition for $5
+The store closes for the day and Daphne begins cleaning
+Oh no! Daphne broke a Red Bandana while cleaning
+It's condition has worsened to Poor, and its list price has lowered to $28
+Daphne locks up and goes home for the night
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Velma      0      0      0
+Shaggy     0      0      0
+Daphne     0      0      0
+Daphne has arrived at the store on Day 6
+Daphne finds an order with 3 RECORDPLAYERs
+Daphne checks the register to find $2399
+Daphne does inventory to find we have $915 worth of product
+Daphne places no orders today
+Paige has come into the store looking to buy a CABLES
+Daphne informs the customer we have no CABLES in stock
+Emma has come into the store looking to sell a PRACTICEAMPS
+Daphne determines the 13 watt amp to be in Good condition and the value to be $27
+Daphne offers a 10% increase to the price
+The store buys the 13 watt amp in Good condition for $29
+Mel has come into the store looking to buy a CD
+Daphne shows the customer the Rumors by Fleetwood Mac CD, selling for $60
+Daphne offers a 10% discount
+The customer decides not to buy the Rumors by Fleetwood Mac CD
+Delaney has come into the store looking to sell a BANDANAS
+Daphne determines the Green Bandana to be in Poor condition and the value to be $8
+Daphne offers a 10% increase to the price
+The store buys the Green Bandana in Poor condition for $8
+Nate has come into the store looking to buy a CD
+Daphne shows the customer the Rumors by Fleetwood Mac CD, selling for $60
+Daphne offers a 10% discount
+The customer decides not to buy the Rumors by Fleetwood Mac CD
+Paige has come into the store looking to sell a BANDANAS
+Daphne determines the Blue Bandana to be in Good condition and the value to be $23
+Daphne offers a 10% increase to the price
+The store buys the Blue Bandana in Good condition for $25
 Bruce has come into the store looking to buy a CABLES
-Shaggy informs the customer we have no CABLES in stock
-Emma has come into the store looking to sell a BASS
-Shaggy determines the Yamaha Electric Bass to be in Poor condition and the value to be $2
-The store buys the Yamaha Electric Bass in Poor condition for $2
-The store closes for the day and Shaggy begins cleaning
-Oh no! Shaggy broke a Gibson Electric Guitar while cleaning
-It's condition has worsened to Poor, and its list price has lowered to $43
-Shaggy locks up and goes home for the night
+Daphne informs the customer we have no CABLES in stock
+Ryan has come into the store looking to buy a HARMONICA
+Daphne informs the customer we have no HARMONICA in stock
+Sophie has come into the store looking to buy a HATS
+Daphne shows the customer the Large Led Zeppelin Hat, selling for $50
+The customer buys the Large Led Zeppelin Hat for $50
+Mel has come into the store looking to buy a PAPERSCORE
+Daphne shows the customer the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score, selling for $6
+The customer buys the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score for $6
+Mel has come into the store looking to buy a CD
+Daphne shows the customer the Rumors by Fleetwood Mac CD, selling for $60
+The customer buys the Rumors by Fleetwood Mac CD for $60
+CJ has come into the store looking to buy a HARMONICA
+Daphne informs the customer we have no HARMONICA in stock
+Sophie has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Excellent condition and the value to be $43
+Daphne offers a 10% increase to the price
+The store buys the CD Player in Excellent condition for $47
+Alice has come into the store looking to buy a STRINGS
+Daphne shows the customer the Mandolin strings, selling for $98
+Daphne offers a 10% discount
+The customer buys the Mandolin strings for $88
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Today is Day 7, which is Sunday, so the store is closed.
 Velma has arrived at the store on Day 8
-Velma finds an order with 3 CDs
-Velma checks the register to find $1860
-Velma does inventory to find we have $1157 worth of product
-Velma placed an order for 3 CABLESs to arrive on Day 10
-Dom has come into the store looking to sell a CD
-Velma determines the Purple Rain by Prince and the Revolution CD to be in Excellent condition and the value to be $43
-The store buys the Purple Rain by Prince and the Revolution CD in Excellent condition for $43
-CJ has come into the store looking to sell a PAPERSCORE
-Velma determines the Lemonade by Beyonce Paper Score to be in Very Good condition and the value to be $33
-The store buys the Lemonade by Beyonce Paper Score in Very Good condition for $33
-Paige has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Guild Mandolin, selling for $26
-The customer buys the Guild Mandolin for $26
-Nate has come into the store looking to buy a CDPLAYER
-Velma shows the customer the CD Player, selling for $30
+Velma finds an order with 3 PRACTICEAMPSs
+Velma finds an order with 3 HARMONICAs
+Velma finds an order with 3 CABLESs
+Velma checks the register to find $2231
+Velma does inventory to find we have $1180 worth of product
+Velma placed an order for 3 CDs to arrive on Day 9
+Velma placed an order for 3 PAPERSCOREs to arrive on Day 11
+Ryan has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $28
+The customer buys the Record Player for $28
+Ryan has come into the store looking to buy a FLUTE
+Velma shows the customer the Yamaha Silver Flute, selling for $86
+The customer buys the Yamaha Silver Flute for $86
+Dom has come into the store looking to sell a CABLES
+Velma determines the 6 meter cable to be in Fair condition and the value to be $20
+The store buys the 6 meter cable in Fair condition for $20
+Paige has come into the store looking to buy a SHIRTS
+Velma shows the customer the Small The Notorious B.I.G. Shirt, selling for $22
 Velma offers a 10% discount
-The customer buys the CD Player for $27
-Nate has come into the store looking to buy a CD
-Velma shows the customer the Ten by Pearl Jam CD, selling for $6
-The customer buys the Ten by Pearl Jam CD for $6
-Paige has come into the store looking to buy a PRACTICEAMPS
-Velma shows the customer the 13 watt amp, selling for $100
-The customer buys the 13 watt amp for $100
-Bruce has come into the store looking to buy a VINYL
-Velma shows the customer the Master of Puppets by Metallica Vinyl, selling for $56
-Velma offers a 10% discount
-The customer buys the Master of Puppets by Metallica Vinyl for $50
-Paige has come into the store looking to sell a BANDANAS
-Velma determines the Red Bandana to be in Good condition and the value to be $28
-Velma offers a 10% increase to the price
-The store buys the Red Bandana in Good condition for $30
-Dom has come into the store looking to sell a HATS
-Velma determines the Medium Pearl Jam Hat to be in Good condition and the value to be $24
-Velma offers a 10% increase to the price
-The store buys the Medium Pearl Jam Hat in Good condition for $26
+The customer buys the Small The Notorious B.I.G. Shirt for $19
 Amber has come into the store looking to buy a BASS
-Velma shows the customer the Guild Electric Bass, selling for $50
-The customer buys the Guild Electric Bass for $50
-Sophie has come into the store looking to buy a HARMONICA
-Velma shows the customer the Lee Oskar Harmonica in a key of "F#", selling for $54
+Velma shows the customer the Fender Bass, selling for $92
+The customer buys the Fender Bass for $92
+Bruce has come into the store looking to buy a PAPERSCORE
+Velma informs the customer we have no PAPERSCORE in stock
+Sam has come into the store looking to sell a SHIRTS
+Velma determines the Large Led Zeppelin Shirt to be in Very Good condition and the value to be $39
+The store buys the Large Led Zeppelin Shirt in Very Good condition for $39
+Sophie has come into the store looking to buy a BASS
+Velma shows the customer the Seagull Bass, selling for $100
 Velma offers a 10% discount
-The customer buys the Lee Oskar Harmonica in a key of "F#" for $48
-Nate has come into the store looking to buy a CD
-Velma shows the customer the Back to Black by Amy Winehouse CD, selling for $94
-Velma offers a 10% discount
-The customer buys the Back to Black by Amy Winehouse CD for $84
-Bruce has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Seagull Electric Mandolin, selling for $22
-Velma offers a 10% discount
-The customer buys the Seagull Electric Mandolin for $19
+The customer buys the Seagull Bass for $90
+Delaney has come into the store looking to sell a CDPLAYER
+Velma determines the CD Player to be in Very Good condition and the value to be $35
+Velma offers a 10% increase to the price
+The store buys the CD Player in Very Good condition for $38
 The store closes for the day and Velma begins cleaning
-Velma cleans the store without incident
+Oh no! Velma broke a Record Player while cleaning
+It's condition has worsened to Very Good, and its list price has lowered to $17
 Velma locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Shaggy has arrived at the store on Day 9
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $2138
-Shaggy does inventory to find we have $1070 worth of product
-Shaggy placed an order for 3 PRACTICEAMPSs to arrive on Day 11
-Shaggy placed an order for 3 MANDOLINs to arrive on Day 10
-Ryan has come into the store looking to buy a HATS
-Shaggy shows the customer the Medium Nirvna Hat, selling for $88
-The customer buys the Medium Nirvna Hat for $88
-Mel has come into the store looking to sell a CABLES
-Shaggy determines the 3 meter cable to be in Fair condition and the value to be $10
-Shaggy offers a 10% increase to the price
-The store buys the 3 meter cable in Fair condition for $11
-Alice has come into the store looking to buy a FLUTE
-Shaggy shows the customer the Miyazawa Silver Flute, selling for $92
-The customer buys the Miyazawa Silver Flute for $92
-CJ has come into the store looking to buy a MANDOLIN
-Shaggy informs the customer we have no MANDOLIN in stock
-CJ has come into the store looking to buy a RECORDPLAYER
-Shaggy shows the customer the Record Player, selling for $26
-The customer buys the Record Player for $26
+Daphne has arrived at the store on Day 9
+Daphne finds an order with 3 CDs
+Daphne checks the register to find $2384
+Daphne does inventory to find we have $1178 worth of product
+Daphne places no orders today
+CJ has come into the store looking to buy a BASS
+Daphne shows the customer the Ovation Bass, selling for $24
+The customer buys the Ovation Bass for $24
 Sophie has come into the store looking to buy a GUITAR
-Shaggy shows the customer the Yamaha Electric Guitar, selling for $40
-Shaggy offers a 10% discount
-The customer buys the Yamaha Electric Guitar for $36
-Bruce has come into the store looking to buy a MANDOLIN
-Shaggy informs the customer we have no MANDOLIN in stock
-Nate has come into the store looking to buy a VINYL
-Shaggy shows the customer the Back to Black by Amy Winehouse Vinyl, selling for $94
-The customer buys the Back to Black by Amy Winehouse Vinyl for $94
-CJ has come into the store looking to sell a HATS
-Shaggy determines the Large Tupac Hat to be in Good condition and the value to be $28
-The store buys the Large Tupac Hat in Good condition for $28
-The store closes for the day and Shaggy begins cleaning
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
+Daphne shows the customer the Fender Electric Guitar, selling for $24
+The customer buys the Fender Electric Guitar for $24
+Bruce has come into the store looking to buy a RECORDPLAYER
+Daphne shows the customer the Record Player, selling for $30
+Daphne offers a 10% discount
+The customer buys the Record Player for $27
+Delaney has come into the store looking to sell a PRACTICEAMPS
+Daphne determines the 19 watt amp to be in Very Good condition and the value to be $35
+The store buys the 19 watt amp in Very Good condition for $35
+Delaney has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $42
+Daphne offers a 10% discount
+The customer decides not to buy the MP3 Player
+Emma has come into the store looking to buy a BASS
+Daphne shows the customer the Yamaha Bass, selling for $98
+Daphne offers a 10% discount
+The customer buys the Yamaha Bass for $88
+Emma has come into the store looking to buy a CD
+Daphne shows the customer the Appetite for Destruction by Guns N' Roses CD, selling for $40
+The customer buys the Appetite for Destruction by Guns N' Roses CD for $40
+Sophie has come into the store looking to buy a STRINGS
+Daphne shows the customer the Mandolin strings, selling for $50
+Daphne offers a 10% discount
+The customer buys the Mandolin strings for $45
+Amber has come into the store looking to sell a HARMONICA
+Daphne determines the Lee Oskar Harmonica in a key of "F" to be in Fair condition and the value to be $13
+Daphne offers a 10% increase to the price
+The store buys the Lee Oskar Harmonica in a key of "F" in Fair condition for $14
+CJ has come into the store looking to buy a HATS
+Daphne shows the customer the Small Metallica Hat, selling for $86
+Daphne offers a 10% discount
+The customer buys the Small Metallica Hat for $77
+Paige has come into the store looking to buy a BANDANAS
+Daphne shows the customer the Yellow Bandana, selling for $16
+Daphne offers a 10% discount
+The customer decides not to buy the Yellow Bandana
+Daphne shows the customer the Blue Bandana, selling for $32
+Daphne offers a 10% discount
+The customer decides not to buy the Blue Bandana
+Daphne shows the customer the Yellow Bandana, selling for $50
+The customer buys the Yellow Bandana for $50
+Paige has come into the store looking to sell a BASS
+Daphne determines the Gibson Bass to be in Very Good condition and the value to be $36
+The store buys the Gibson Bass in Very Good condition for $36
+Mel has come into the store looking to buy a BASS
+Daphne shows the customer the Gibson Electric Bass, selling for $38
+The customer buys the Gibson Electric Bass for $38
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Daphne has arrived at the store on Day 10
-Daphne finds an order with 3 CABLESs
-Daphne finds an order with 3 MANDOLINs
-Daphne checks the register to find $2311
-Daphne does inventory to find we have $1063 worth of product
-Daphne placed an order for 3 VINYLs to arrive on Day 12
-Emma has come into the store looking to sell a RECORDPLAYER
-Daphne determines the Record Player to be in Excellent condition and the value to be $47
+Daphne finds no orders delivered today
+Daphne checks the register to find $2712
+Daphne does inventory to find we have $1043 worth of product
+Daphne placed an order for 3 HATSs to arrive on Day 13
+CJ has come into the store looking to buy a FLUTE
+Daphne shows the customer the Yamaha Wood Flute, selling for $42
+The customer buys the Yamaha Wood Flute for $42
+Sam has come into the store looking to sell a STRINGS
+Daphne determines the Violin strings to be in Good condition and the value to be $22
+The store buys the Violin strings in Good condition for $22
+Amber has come into the store looking to buy a PAPERSCORE
+Daphne informs the customer we have no PAPERSCORE in stock
+Bruce has come into the store looking to sell a HATS
+Daphne determines the Medium The Beatles Hat to be in Good condition and the value to be $27
+The store buys the Medium The Beatles Hat in Good condition for $27
+Dom has come into the store looking to buy a CD
+Daphne shows the customer the Purple Rain by Prince and the Revolution CD, selling for $84
+The customer buys the Purple Rain by Prince and the Revolution CD for $84
+Nate has come into the store looking to sell a GUITAR
+Daphne determines the Yamaha Electric Guitar to be in Excellent condition and the value to be $48
 Daphne offers a 10% increase to the price
-The store buys the Record Player in Excellent condition for $51
-CJ has come into the store looking to buy a STRINGS
-Daphne shows the customer the Bass strings, selling for $40
-The customer buys the Bass strings for $40
-Sophie has come into the store looking to buy a HATS
-Daphne shows the customer the Medium Pearl Jam Hat, selling for $52
-Daphne offers a 10% discount
-The customer decides not to buy the Medium Pearl Jam Hat
-Daphne shows the customer the Large Tupac Hat, selling for $56
-Daphne offers a 10% discount
-The customer decides not to buy the Large Tupac Hat
-Ryan has come into the store looking to sell a CDPLAYER
-Daphne determines the CD Player to be in Good condition and the value to be $25
-The store buys the CD Player in Good condition for $25
-Dom has come into the store looking to buy a VINYL
-Daphne informs the customer we have no VINYL in stock
-Nate has come into the store looking to buy a MP3PLAYER
-Daphne shows the customer the MP3 Player, selling for $100
-Daphne offers a 10% discount
-The customer buys the MP3 Player for $90
-Sophie has come into the store looking to sell a GUITAR
-Daphne determines the Guild Electric Guitar to be in Poor condition and the value to be $4
-The store buys the Guild Electric Guitar in Poor condition for $4
+The store buys the Yamaha Electric Guitar in Excellent condition for $52
+Paige has come into the store looking to buy a CD
+Daphne shows the customer the Purple Rain by Prince and the Revolution CD, selling for $6
+The customer buys the Purple Rain by Prince and the Revolution CD for $6
 The store closes for the day and Daphne begins cleaning
-Oh no! Daphne broke a MP3 Player while cleaning. It has been removed from inventory
+Daphne cleans the store without incident
 Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Velma has arrived at the store on Day 11
-Velma finds an order with 3 PRACTICEAMPSs
-Velma checks the register to find $2303
-Velma does inventory to find we have $1081 worth of product
-Velma placed an order for 3 MP3PLAYERs to arrive on Day 13
-Velma placed an order for 3 STRINGSs to arrive on Day 13
-Nate has come into the store looking to sell a CDPLAYER
-Velma determines the CD Player to be in Excellent condition and the value to be $41
-The store buys the CD Player in Excellent condition for $41
-Paige has come into the store looking to buy a GUITAR
-Velma shows the customer the Gibson Electric Guitar, selling for $43
-Velma offers a 10% discount
-The customer decides not to buy the Gibson Electric Guitar
-Velma shows the customer the Fender Electric Guitar, selling for $62
-Velma offers a 10% discount
-The customer decides not to buy the Fender Electric Guitar
-Velma shows the customer the Guild Electric Guitar, selling for $8
-The customer buys the Guild Electric Guitar for $8
-Mel has come into the store looking to buy a HATS
-Velma shows the customer the Medium Pearl Jam Hat, selling for $52
-Velma offers a 10% discount
-The customer buys the Medium Pearl Jam Hat for $46
-CJ has come into the store looking to buy a CABLES
+Velma finds an order with 3 PAPERSCOREs
+Velma checks the register to find $2625
+Velma does inventory to find we have $1196 worth of product
+Velma placed an order for 3 CDs to arrive on Day 13
+Alice has come into the store looking to buy a CABLES
 Velma shows the customer the 3 meter cable, selling for $22
 Velma offers a 10% discount
-The customer buys the 3 meter cable for $19
-Ryan has come into the store looking to sell a VINYL
-Velma determines the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl to be in Poor condition and the value to be $4
-The store buys the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl in Poor condition for $4
-Paige has come into the store looking to buy a HATS
-Velma shows the customer the Large Tupac Hat, selling for $56
-The customer buys the Large Tupac Hat for $56
-Paige has come into the store looking to buy a CDPLAYER
-Velma shows the customer the CD Player, selling for $78
+The customer decides not to buy the 3 meter cable
+Velma shows the customer the 4 meter cable, selling for $94
 Velma offers a 10% discount
-The customer buys the CD Player for $70
-Dom has come into the store looking to buy a HATS
-Velma informs the customer we have no HATS in stock
+The customer buys the 4 meter cable for $84
+Dom has come into the store looking to buy a CABLES
+Velma shows the customer the 3 meter cable, selling for $22
+The customer buys the 3 meter cable for $22
+Sam has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $42
+Velma offers a 10% discount
+The customer decides not to buy the MP3 Player
+Sophie has come into the store looking to sell a CABLES
+Velma determines the 3 meter cable to be in Poor condition and the value to be $7
+Velma offers a 10% increase to the price
+The store buys the 3 meter cable in Poor condition for $7
+Delaney has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $42
+The customer buys the MP3 Player for $42
+Dom has come into the store looking to buy a HARMONICA
+Velma shows the customer the Boseno Harmonica in a key of "C", selling for $80
+Velma offers a 10% discount
+The customer decides not to buy the Boseno Harmonica in a key of "C"
+Velma shows the customer the Lee Oskar Harmonica in a key of "A", selling for $60
+Velma offers a 10% discount
+The customer buys the Lee Oskar Harmonica in a key of "A" for $54
 The store closes for the day and Velma begins cleaning
 Velma cleans the store without incident
 Velma locks up and goes home for the night
@@ -453,71 +505,73 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Shaggy has arrived at the store on Day 12
-Shaggy finds an order with 3 VINYLs
-Shaggy checks the register to find $2412
-Shaggy does inventory to find we have $1063 worth of product
-Shaggy placed an order for 3 HATSs to arrive on Day 15
-CJ has come into the store looking to buy a STRINGS
-Shaggy informs the customer we have no STRINGS in stock
-Sam has come into the store looking to sell a BANDANAS
-Shaggy determines the Yellow Bandana to be in Very Good condition and the value to be $34
-The store buys the Yellow Bandana in Very Good condition for $34
-Sam has come into the store looking to buy a CDPLAYER
-Shaggy shows the customer the CD Player, selling for $50
-The customer buys the CD Player for $50
-Nate has come into the store looking to buy a MANDOLIN
-Shaggy shows the customer the Guild Electric Mandolin, selling for $20
-Shaggy offers a 10% discount
-The customer buys the Guild Electric Mandolin for $18
-Mel has come into the store looking to sell a PRACTICEAMPS
-Shaggy determines the 15 watt amp to be in Poor condition and the value to be $1
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their 15 watt amp
-Paige has come into the store looking to buy a STRINGS
-Shaggy informs the customer we have no STRINGS in stock
-Bruce has come into the store looking to buy a MANDOLIN
-Shaggy shows the customer the Gibson Mandolin, selling for $20
-The customer buys the Gibson Mandolin for $20
-The store closes for the day and Shaggy begins cleaning
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
+Velma has arrived at the store on Day 12
+Velma finds no orders delivered today
+Velma checks the register to find $2820
+Velma does inventory to find we have $1094 worth of product
+Velma placed an order for 3 MP3PLAYERs to arrive on Day 13
+Nate has come into the store looking to buy a CD
+Velma informs the customer we have no CD in stock
+Paige has come into the store looking to sell a MANDOLIN
+Velma determines the Washburn Mandolin to be in Poor condition and the value to be $5
+The store buys the Washburn Mandolin in Poor condition for $5
+Dom has come into the store looking to buy a SHIRTS
+Velma shows the customer the Large Led Zeppelin Shirt, selling for $78
+Velma offers a 10% discount
+The customer buys the Large Led Zeppelin Shirt for $70
+Emma has come into the store looking to buy a SHIRTS
+Velma informs the customer we have no SHIRTS in stock
+Mel has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Blond by Frank Ocean Paper Score, selling for $94
+The customer buys the Blond by Frank Ocean Paper Score for $94
+Amber has come into the store looking to sell a FLUTE
+Velma determines the Emerson Silver Flute to be in Good condition and the value to be $27
+Velma offers a 10% increase to the price
+The store buys the Emerson Silver Flute in Good condition for $29
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Shaggy has arrived at the store on Day 13
+Shaggy finds an order with 3 HATSs
+Shaggy finds an order with 3 CDs
 Shaggy finds an order with 3 MP3PLAYERs
-Shaggy finds an order with 3 STRINGSs
-Shaggy checks the register to find $2285
-Shaggy does inventory to find we have $1233 worth of product
-Shaggy places no orders today
-Amber has come into the store looking to buy a FLUTE
-Shaggy shows the customer the Emerson Silver Flute, selling for $88
-The customer buys the Emerson Silver Flute for $88
-Emma has come into the store looking to buy a CABLES
-Shaggy shows the customer the 6 meter cable, selling for $98
-The customer buys the 6 meter cable for $98
-CJ has come into the store looking to sell a CD
-Shaggy determines the Paranoid by Black Sabbath CD to be in Good condition and the value to be $20
-The store buys the Paranoid by Black Sabbath CD in Good condition for $20
-Ryan has come into the store looking to sell a BASS
-Shaggy determines the Guild Bass to be in Very Good condition and the value to be $31
-The store buys the Guild Bass in Very Good condition for $31
-Dom has come into the store looking to buy a STRINGS
-Shaggy shows the customer the Bass strings, selling for $94
-The customer buys the Bass strings for $94
-Nate has come into the store looking to buy a FLUTE
-Shaggy shows the customer the Miyazawa Wood Flute, selling for $70
+Shaggy checks the register to find $2728
+Shaggy does inventory to find we have $1264 worth of product
+Shaggy placed an order for 3 SHIRTSs to arrive on Day 15
+Nate has come into the store looking to buy a CABLES
+Shaggy shows the customer the 5 meter cable, selling for $90
 Shaggy offers a 10% discount
-The customer decides not to buy the Miyazawa Wood Flute
-Delaney has come into the store looking to sell a HATS
-Shaggy determines the Large Nirvna Hat to be in Excellent condition and the value to be $48
-The store buys the Large Nirvna Hat in Excellent condition for $48
-Mel has come into the store looking to sell a HATS
-Shaggy determines the Large The Rolling Stones Hat to be in Fair condition and the value to be $16
-Shaggy offers a 10% increase to the price
-The customer leaves without selling their Large The Rolling Stones Hat
+The customer buys the 5 meter cable for $81
+Alice has come into the store looking to buy a PAPERSCORE
+Shaggy shows the customer the Back to Black by Amy Winehouse Paper Score, selling for $76
+The customer buys the Back to Black by Amy Winehouse Paper Score for $76
+Nate has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Gibson Electric Guitar, selling for $72
+The customer buys the Gibson Electric Guitar for $72
+Emma has come into the store looking to sell a BANDANAS
+Shaggy determines the Yellow Bandana to be in Good condition and the value to be $26
+The store buys the Yellow Bandana in Good condition for $26
+Bruce has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $17
+Shaggy offers a 10% discount
+The customer buys the Record Player for $15
+Emma has come into the store looking to buy a VINYL
+Shaggy shows the customer the Ready to Die by The Notorious B.I.G. Vinyl, selling for $12
+The customer buys the Ready to Die by The Notorious B.I.G. Vinyl for $12
+Sophie has come into the store looking to sell a STRINGS
+Shaggy determines the Guitar strings to be in Fair condition and the value to be $16
+The store buys the Guitar strings in Fair condition for $16
+Amber has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Boseno Harmonica in a key of "C", selling for $80
+Shaggy offers a 10% discount
+The customer buys the Boseno Harmonica in a key of "C" for $72
+Mel has come into the store looking to sell a CD
+Shaggy determines the Rumors by Fleetwood Mac CD to be in Very Good condition and the value to be $32
+The store buys the Rumors by Fleetwood Mac CD in Very Good condition for $32
 The store closes for the day and Shaggy begins cleaning
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
@@ -526,76 +580,88 @@ Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Today is Day 14, which is Sunday, so the store is closed.
-Daphne has arrived at the store on Day 15
-Daphne finds an order with 3 HATSs
-Daphne checks the register to find $2361
-Daphne does inventory to find we have $1297 worth of product
-Daphne places no orders today
-Ryan has come into the store looking to sell a HARMONICA
-Daphne determines the Boseno Harmonica in a key of "C" to be in Fair condition and the value to be $14
-Daphne offers a 10% increase to the price
-The store buys the Boseno Harmonica in a key of "C" in Fair condition for $15
-Amber has come into the store looking to sell a CD
-Daphne determines the Ten by Pearl Jam CD to be in Very Good condition and the value to be $36
-The store buys the Ten by Pearl Jam CD in Very Good condition for $36
-Paige has come into the store looking to sell a VINYL
-Daphne determines the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl to be in Good condition and the value to be $27
-Daphne offers a 10% increase to the price
-The store buys the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl in Good condition for $29
-Nate has come into the store looking to buy a VINYL
-Daphne shows the customer the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl, selling for $8
-The customer buys the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl for $8
-Sophie has come into the store looking to buy a MP3PLAYER
-Daphne shows the customer the MP3 Player, selling for $34
-The customer buys the MP3 Player for $34
-Alice has come into the store looking to buy a HARMONICA
-Daphne shows the customer the Lee Oskar Harmonica in a key of "F#", selling for $28
-Daphne offers a 10% discount
-The customer buys the Lee Oskar Harmonica in a key of "F#" for $25
+Velma has arrived at the store on Day 15
+Velma finds an order with 3 SHIRTSs
+Velma checks the register to find $2869
+Velma does inventory to find we have $1275 worth of product
+Velma placed an order for 3 RECORDPLAYERs to arrive on Day 18
+Emma has come into the store looking to buy a HATS
+Velma shows the customer the Medium The Beatles Hat, selling for $54
+Velma offers a 10% discount
+The customer buys the Medium The Beatles Hat for $48
+Alice has come into the store looking to buy a CABLES
+Velma shows the customer the 6 meter cable, selling for $40
+Velma offers a 10% discount
+The customer buys the 6 meter cable for $36
+Emma has come into the store looking to buy a FLUTE
+Velma shows the customer the Miyazawa Silver Flute, selling for $94
+The customer buys the Miyazawa Silver Flute for $94
+Alice has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $110
+The customer buys the Guitar strings for $110
+Sam has come into the store looking to sell a HARMONICA
+Velma determines the SEYDEL Harmonica in a key of "D" to be in Excellent condition and the value to be $50
+The store buys the SEYDEL Harmonica in a key of "D" in Excellent condition for $50
+Ryan has come into the store looking to buy a BASS
+Velma shows the customer the Gibson Bass, selling for $72
+Velma offers a 10% discount
+The customer decides not to buy the Gibson Bass
+Delaney has come into the store looking to buy a BASS
+Velma shows the customer the Gibson Bass, selling for $72
+The customer buys the Gibson Bass for $72
+Mel has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score, selling for $66
+The customer buys the Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score for $66
+Nate has come into the store looking to buy a STRINGS
+Velma shows the customer the Violin strings, selling for $44
+The customer buys the Violin strings for $44
 Bruce has come into the store looking to buy a BASS
-Daphne shows the customer the Yamaha Electric Bass, selling for $4
-The customer buys the Yamaha Electric Bass for $4
-Ryan has come into the store looking to buy a RECORDPLAYER
-Daphne shows the customer the Record Player, selling for $100
-Daphne offers a 10% discount
-The customer buys the Record Player for $90
-Dom has come into the store looking to sell a BASS
-Daphne determines the Ovation Electric Bass to be in Poor condition and the value to be $1
-The store buys the Ovation Electric Bass in Poor condition for $1
-The store closes for the day and Daphne begins cleaning
-Daphne cleans the store without incident
-Daphne locks up and goes home for the night
+Velma informs the customer we have no BASS in stock
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Velma has arrived at the store on Day 16
 Velma finds no orders delivered today
-Velma checks the register to find $2441
-Velma does inventory to find we have $1291 worth of product
-Velma places no orders today
-Sophie has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $96
-The customer buys the Record Player for $96
-Sam has come into the store looking to buy a FLUTE
-Velma shows the customer the Miyazawa Wood Flute, selling for $70
-The customer buys the Miyazawa Wood Flute for $70
-Mel has come into the store looking to buy a BANDANAS
-Velma shows the customer the Yellow Bandana, selling for $32
-The customer buys the Yellow Bandana for $32
-CJ has come into the store looking to sell a GUITAR
-Velma determines the Washburn Electric Guitar to be in Excellent condition and the value to be $43
-The store buys the Washburn Electric Guitar in Excellent condition for $43
-Emma has come into the store looking to buy a HATS
-Velma shows the customer the Large Nirvna Hat, selling for $96
-The customer buys the Large Nirvna Hat for $96
-Paige has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $102
-The customer buys the Record Player for $102
-Delaney has come into the store looking to sell a CABLES
-Velma determines the 5 meter cable to be in Fair condition and the value to be $19
+Velma checks the register to find $3289
+Velma does inventory to find we have $1085 worth of product
+Velma placed an order for 3 BASSs to arrive on Day 17
+Velma placed an order for 3 PAPERSCOREs to arrive on Day 18
+Nate has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Excellent condition and the value to be $42
 Velma offers a 10% increase to the price
-The customer leaves without selling their 5 meter cable
+The store buys the Record Player in Excellent condition for $46
+Amber has come into the store looking to buy a HATS
+Velma shows the customer the Small AC/DC Hat, selling for $90
+Velma offers a 10% discount
+The customer buys the Small AC/DC Hat for $81
+Delaney has come into the store looking to buy a FLUTE
+Velma shows the customer the Emerson Silver Flute, selling for $58
+Velma offers a 10% discount
+The customer buys the Emerson Silver Flute for $52
+Mel has come into the store looking to buy a STRINGS
+Velma shows the customer the Guitar strings, selling for $32
+The customer buys the Guitar strings for $32
+Delaney has come into the store looking to buy a HARMONICA
+Velma shows the customer the Suzuki Harmonica in a key of "C", selling for $74
+Velma offers a 10% discount
+The customer decides not to buy the Suzuki Harmonica in a key of "C"
+Velma shows the customer the Lee Oskar Harmonica in a key of "F", selling for $28
+Velma offers a 10% discount
+The customer buys the Lee Oskar Harmonica in a key of "F" for $25
+Emma has come into the store looking to buy a BASS
+Velma informs the customer we have no BASS in stock
+CJ has come into the store looking to buy a FLUTE
+Velma informs the customer we have no FLUTE in stock
+Amber has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $18
+Velma offers a 10% discount
+The customer buys the MP3 Player for $16
+Nate has come into the store looking to buy a FLUTE
+Velma informs the customer we have no FLUTE in stock
 The store closes for the day and Velma begins cleaning
 Velma cleans the store without incident
 Velma locks up and goes home for the night
@@ -604,40 +670,47 @@ Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Daphne has arrived at the store on Day 17
-Daphne finds no orders delivered today
-Daphne checks the register to find $2794
-Daphne does inventory to find we have $1136 worth of product
-Daphne placed an order for 3 RECORDPLAYERs to arrive on Day 19
-Daphne placed an order for 3 FLUTEs to arrive on Day 19
+Daphne finds an order with 3 BASSs
+Daphne checks the register to find $3361
+Daphne does inventory to find we have $1106 worth of product
+Daphne placed an order for 3 STRINGSs to arrive on Day 19
+Daphne placed an order for 3 FLUTEs to arrive on Day 20
+Amber has come into the store looking to buy a RECORDPLAYER
+Daphne shows the customer the Record Player, selling for $92
+Daphne offers a 10% discount
+The customer buys the Record Player for $82
+Paige has come into the store looking to buy a RECORDPLAYER
+Daphne informs the customer we have no RECORDPLAYER in stock
+Emma has come into the store looking to buy a PRACTICEAMPS
+Daphne shows the customer the 19 watt amp, selling for $8
+Daphne offers a 10% discount
+The customer decides not to buy the 19 watt amp
+Daphne shows the customer the 13 watt amp, selling for $58
+Daphne offers a 10% discount
+The customer decides not to buy the 13 watt amp
+Daphne shows the customer the 14 watt amp, selling for $22
+The customer buys the 14 watt amp for $22
 Sophie has come into the store looking to buy a HARMONICA
-Daphne shows the customer the Lee Oskar Harmonica in a key of "A", selling for $40
-The customer buys the Lee Oskar Harmonica in a key of "A" for $40
-CJ has come into the store looking to sell a CDPLAYER
-Daphne determines the CD Player to be in Good condition and the value to be $24
-Daphne offers a 10% increase to the price
-The customer leaves without selling their CD Player
-Mel has come into the store looking to sell a PAPERSCORE
-Daphne determines the The Miseducation of Lauryn Hill by Lauryn Hill Paper Score to be in Poor condition and the value to be $6
-Daphne offers a 10% increase to the price
-The store buys the The Miseducation of Lauryn Hill by Lauryn Hill Paper Score in Poor condition for $6
-Dom has come into the store looking to buy a CDPLAYER
-Daphne shows the customer the CD Player, selling for $82
+Daphne shows the customer the Suzuki Harmonica in a key of "C", selling for $74
+The customer buys the Suzuki Harmonica in a key of "C" for $74
+Sophie has come into the store looking to buy a MANDOLIN
+Daphne shows the customer the Yamaha Electric Mandolin, selling for $50
+The customer buys the Yamaha Electric Mandolin for $50
+Paige has come into the store looking to buy a FLUTE
+Daphne informs the customer we have no FLUTE in stock
+Delaney has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Small AC/DC Shirt, selling for $88
+The customer buys the Small AC/DC Shirt for $88
+Sam has come into the store looking to sell a PRACTICEAMPS
+Daphne determines the 19 watt amp to be in Good condition and the value to be $28
+The store buys the 19 watt amp in Good condition for $28
+CJ has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $12
 Daphne offers a 10% discount
-The customer buys the CD Player for $73
-Ryan has come into the store looking to buy a SHIRTS
-Daphne shows the customer the Small Pearl Jam Shirt, selling for $12
-Daphne offers a 10% discount
-The customer decides not to buy the Small Pearl Jam Shirt
-Daphne shows the customer the Large Metallica Shirt, selling for $46
-Daphne offers a 10% discount
-The customer buys the Large Metallica Shirt for $41
-Emma has come into the store looking to buy a HATS
-Daphne shows the customer the Small Tupac Hat, selling for $88
-The customer buys the Small Tupac Hat for $88
-Sophie has come into the store looking to sell a MP3PLAYER
-Daphne determines the MP3 Player to be in Good condition and the value to be $23
-Daphne offers a 10% increase to the price
-The store buys the MP3 Player in Good condition for $25
+The customer buys the MP3 Player for $10
+Paige has come into the store looking to buy a CABLES
+Daphne shows the customer the 3 meter cable, selling for $14
+The customer buys the 3 meter cable for $14
 The store closes for the day and Daphne begins cleaning
 Daphne cleans the store without incident
 Daphne locks up and goes home for the night
@@ -645,87 +718,90 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Velma has arrived at the store on Day 18
-Velma finds no orders delivered today
-Velma checks the register to find $3005
-Velma does inventory to find we have $1039 worth of product
-Velma placed an order for 3 CDPLAYERs to arrive on Day 19
-Dom has come into the store looking to buy a GUITAR
-Velma shows the customer the Gibson Electric Guitar, selling for $43
-The customer buys the Gibson Electric Guitar for $43
-CJ has come into the store looking to buy a VINYL
-Velma shows the customer the Illmatic by Nas Vinyl, selling for $20
-The customer buys the Illmatic by Nas Vinyl for $20
-Emma has come into the store looking to buy a GUITAR
-Velma shows the customer the Fender Electric Guitar, selling for $62
-The customer buys the Fender Electric Guitar for $62
-Emma has come into the store looking to sell a PAPERSCORE
-Velma determines the The Black Album by Jay-Z Paper Score to be in Good condition and the value to be $27
-The store buys the The Black Album by Jay-Z Paper Score in Good condition for $27
-CJ has come into the store looking to buy a BASS
-Velma shows the customer the Guild Bass, selling for $62
-The customer buys the Guild Bass for $62
-Nate has come into the store looking to buy a CABLES
-Velma shows the customer the 6 meter cable, selling for $84
-Velma offers a 10% discount
-The customer buys the 6 meter cable for $75
-Ryan has come into the store looking to sell a CDPLAYER
-Velma determines the CD Player to be in Fair condition and the value to be $10
-The store buys the CD Player in Fair condition for $10
-Amber has come into the store looking to sell a MANDOLIN
-Velma determines the Gibson Mandolin to be in Fair condition and the value to be $20
-The store buys the Gibson Mandolin in Fair condition for $20
-Dom has come into the store looking to buy a SHIRTS
-Velma shows the customer the Small Pearl Jam Shirt, selling for $12
-Velma offers a 10% discount
-The customer buys the Small Pearl Jam Shirt for $10
-Amber has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Guild Electric Mandolin, selling for $10
-The customer buys the Guild Electric Mandolin for $10
-Ryan has come into the store looking to buy a CABLES
-Velma shows the customer the 6 meter cable, selling for $16
-The customer buys the 6 meter cable for $16
-Amber has come into the store looking to buy a MP3PLAYER
-Velma shows the customer the MP3 Player, selling for $42
-The customer buys the MP3 Player for $42
-The store closes for the day and Velma begins cleaning
-Oh no! Velma broke a Paranoid by Black Sabbath CD while cleaning
-It's condition has worsened to Fair, and its list price has lowered to $76
-Velma locks up and goes home for the night
+Daphne has arrived at the store on Day 18
+Daphne finds an order with 3 RECORDPLAYERs
+Daphne finds an order with 3 PAPERSCOREs
+Daphne checks the register to find $3518
+Daphne does inventory to find we have $1113 worth of product
+Daphne placed an order for 3 CABLESs to arrive on Day 22
+Alice has come into the store looking to buy a CDPLAYER
+Daphne shows the customer the CD Player, selling for $90
+Daphne offers a 10% discount
+The customer buys the CD Player for $81
+CJ has come into the store looking to sell a MANDOLIN
+Daphne determines the Gibson Mandolin to be in Poor condition and the value to be $5
+The store buys the Gibson Mandolin in Poor condition for $5
+Emma has come into the store looking to buy a HARMONICA
+Daphne shows the customer the SEYDEL Harmonica in a key of "D", selling for $100
+Daphne offers a 10% discount
+The customer decides not to buy the SEYDEL Harmonica in a key of "D"
+Bruce has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Excellent condition and the value to be $47
+Daphne offers a 10% increase to the price
+The store buys the CD Player in Excellent condition for $51
+Bruce has come into the store looking to buy a HATS
+Daphne shows the customer the Medium Red Hot Chili Peppers Hat, selling for $62
+The customer buys the Medium Red Hot Chili Peppers Hat for $62
+Dom has come into the store looking to sell a RECORDPLAYER
+Daphne determines the Record Player to be in Poor condition and the value to be $7
+Daphne offers a 10% increase to the price
+The store buys the Record Player in Poor condition for $7
+Amber has come into the store looking to buy a PAPERSCORE
+Daphne shows the customer the My Beautiful Dark Twisted Fantasy by Kanye West Paper Score, selling for $26
+Daphne offers a 10% discount
+The customer buys the My Beautiful Dark Twisted Fantasy by Kanye West Paper Score for $23
+Alice has come into the store looking to buy a GUITAR
+Daphne shows the customer the Ovation Electric Guitar, selling for $22
+The customer buys the Ovation Electric Guitar for $22
+Amber has come into the store looking to buy a RECORDPLAYER
+Daphne shows the customer the Record Player, selling for $94
+Daphne offers a 10% discount
+The customer decides not to buy the Record Player
+Daphne shows the customer the Record Player, selling for $72
+The customer buys the Record Player for $72
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Velma has arrived at the store on Day 19
-Velma finds an order with 3 RECORDPLAYERs
-Velma finds an order with 3 FLUTEs
-Velma finds an order with 3 CDPLAYERs
-Velma checks the register to find $3061
-Velma does inventory to find we have $1142 worth of product
-Velma placed an order for 3 CABLESs to arrive on Day 22
-Nate has come into the store looking to buy a HATS
-Velma shows the customer the Medium Motley Crue Hat, selling for $88
-The customer buys the Medium Motley Crue Hat for $88
-Sam has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $50
+Velma finds an order with 3 STRINGSs
+Velma checks the register to find $3633
+Velma does inventory to find we have $1122 worth of product
+Velma places no orders today
+Alice has come into the store looking to sell a STRINGS
+Velma determines the Guitar strings to be in Poor condition and the value to be $7
+Velma offers a 10% increase to the price
+The store buys the Guitar strings in Poor condition for $7
+Delaney has come into the store looking to sell a FLUTE
+Velma determines the Emerson Wood Flute to be in Good condition and the value to be $30
+The store buys the Emerson Wood Flute in Good condition for $30
+Alice has come into the store looking to buy a MP3PLAYER
+Velma shows the customer the MP3 Player, selling for $78
+The customer buys the MP3 Player for $78
+Mel has come into the store looking to buy a CD
+Velma shows the customer the What's Going On by Marvin Gaye CD, selling for $40
 Velma offers a 10% discount
-The customer buys the Record Player for $45
-Paige has come into the store looking to buy a BANDANAS
-Velma shows the customer the Red Bandana, selling for $62
-The customer buys the Red Bandana for $62
-Amber has come into the store looking to sell a GUITAR
-Velma determines the Gibson Electric Guitar to be in Fair condition and the value to be $14
-The store buys the Gibson Electric Guitar in Fair condition for $14
-Mel has come into the store looking to sell a GUITAR
-Velma determines the Fender Electric Guitar to be in Very Good condition and the value to be $40
-The store buys the Fender Electric Guitar in Very Good condition for $40
-Bruce has come into the store looking to buy a SHIRTS
-Velma shows the customer the Medium Aerosmith Shirt, selling for $82
-The customer buys the Medium Aerosmith Shirt for $82
-CJ has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $48
-Velma offers a 10% discount
-The customer buys the Record Player for $43
+The customer buys the What's Going On by Marvin Gaye CD for $36
+Bruce has come into the store looking to sell a HARMONICA
+Velma determines the Lee Oskar Harmonica in a key of "F#" to be in Fair condition and the value to be $17
+Velma offers a 10% increase to the price
+The store buys the Lee Oskar Harmonica in a key of "F#" in Fair condition for $18
+Sam has come into the store looking to sell a HATS
+Velma determines the Large Tupac Hat to be in Excellent condition and the value to be $41
+Velma offers a 10% increase to the price
+The store buys the Large Tupac Hat in Excellent condition for $45
+Nate has come into the store looking to buy a BASS
+Velma shows the customer the Fender Electric Bass, selling for $18
+The customer buys the Fender Electric Bass for $18
+Dom has come into the store looking to buy a RECORDPLAYER
+Velma shows the customer the Record Player, selling for $94
+The customer buys the Record Player for $94
+Ryan has come into the store looking to buy a PRACTICEAMPS
+Velma shows the customer the 19 watt amp, selling for $8
+The customer buys the 19 watt amp for $8
 The store closes for the day and Velma begins cleaning
 Velma cleans the store without incident
 Velma locks up and goes home for the night
@@ -733,97 +809,46 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Shaggy has arrived at the store on Day 20
-Shaggy finds no orders delivered today
-Shaggy checks the register to find $3327
-Shaggy does inventory to find we have $1031 worth of product
-Shaggy places no orders today
-Sophie has come into the store looking to buy a CDPLAYER
-Shaggy shows the customer the CD Player, selling for $20
-The customer buys the CD Player for $20
-Alice has come into the store looking to buy a HARMONICA
-Shaggy shows the customer the Boseno Harmonica in a key of "D", selling for $78
-The customer buys the Boseno Harmonica in a key of "D" for $78
-Amber has come into the store looking to buy a CABLES
-Shaggy informs the customer we have no CABLES in stock
-Dom has come into the store looking to buy a RECORDPLAYER
-Shaggy shows the customer the Record Player, selling for $44
-The customer buys the Record Player for $44
-Emma has come into the store looking to buy a FLUTE
-Shaggy shows the customer the Yamaha Silver Flute, selling for $48
-The customer buys the Yamaha Silver Flute for $48
-Amber has come into the store looking to sell a CDPLAYER
-Shaggy determines the CD Player to be in Excellent condition and the value to be $45
-The store buys the CD Player in Excellent condition for $45
-Amber has come into the store looking to buy a VINYL
-Shaggy shows the customer the Lemonade by Beyonce Vinyl, selling for $8
-Shaggy offers a 10% discount
-The customer buys the Lemonade by Beyonce Vinyl for $7
-Nate has come into the store looking to buy a RECORDPLAYER
-Shaggy informs the customer we have no RECORDPLAYER in stock
-The store closes for the day and Shaggy begins cleaning
-Shaggy cleans the store without incident
-Shaggy locks up and goes home for the night
-Clerk      Items Sold      Items Purchased      Items Damaged 
-Velma      0      0      0
-Shaggy     0      0      0
-Daphne     0      0      0
-Today is Day 21, which is Sunday, so the store is closed.
-Daphne has arrived at the store on Day 22
-Daphne finds an order with 3 CABLESs
-Daphne checks the register to find $3370
-Daphne does inventory to find we have $1086 worth of product
-Daphne placed an order for 3 RECORDPLAYERs to arrive on Day 23
-Ryan has come into the store looking to buy a FLUTE
-Daphne shows the customer the Yamaha Wood Flute, selling for $90
+Daphne has arrived at the store on Day 20
+Daphne finds an order with 3 FLUTEs
+Daphne checks the register to find $3731
+Daphne does inventory to find we have $1139 worth of product
+Daphne placed an order for 3 MP3PLAYERs to arrive on Day 22
+Mel has come into the store looking to buy a CD
+Daphne shows the customer the The Black Album by Jay-Z CD, selling for $94
 Daphne offers a 10% discount
-The customer buys the Yamaha Wood Flute for $81
-Emma has come into the store looking to buy a PAPERSCORE
-Daphne shows the customer the Back in Black by AC/DC Paper Score, selling for $94
+The customer decides not to buy the The Black Album by Jay-Z CD
+Daphne shows the customer the Illmatic by Nas CD, selling for $22
+The customer buys the Illmatic by Nas CD for $22
+Alice has come into the store looking to buy a BASS
+Daphne shows the customer the Gibson Electric Bass, selling for $92
 Daphne offers a 10% discount
-The customer buys the Back in Black by AC/DC Paper Score for $84
-CJ has come into the store looking to sell a STRINGS
-Daphne determines the Mandolin strings to be in Fair condition and the value to be $20
-The store buys the Mandolin strings in Fair condition for $20
-Amber has come into the store looking to buy a CDPLAYER
-Daphne shows the customer the CD Player, selling for $6
+The customer decides not to buy the Gibson Electric Bass
+Daphne shows the customer the Guild Electric Bass, selling for $66
+The customer buys the Guild Electric Bass for $66
+Alice has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Large The Notorious B.I.G. Shirt, selling for $54
+The customer buys the Large The Notorious B.I.G. Shirt for $54
+Ryan has come into the store looking to sell a MP3PLAYER
+Daphne determines the MP3 Player to be in Fair condition and the value to be $19
+The store buys the MP3 Player in Fair condition for $19
+Alice has come into the store looking to buy a FLUTE
+Daphne shows the customer the Emerson Wood Flute, selling for $60
 Daphne offers a 10% discount
-The customer buys the CD Player for $5
-CJ has come into the store looking to buy a HARMONICA
-Daphne shows the customer the Boseno Harmonica in a key of "C", selling for $30
-The customer buys the Boseno Harmonica in a key of "C" for $30
-Delaney has come into the store looking to buy a MANDOLIN
-Daphne shows the customer the Gibson Mandolin, selling for $40
-The customer buys the Gibson Mandolin for $40
-Paige has come into the store looking to buy a VINYL
-Daphne shows the customer the The Wall by Pink Floyd Vinyl, selling for $62
-Daphne offers a 10% discount
-The customer decides not to buy the The Wall by Pink Floyd Vinyl
-Daphne shows the customer the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl, selling for $58
-Daphne offers a 10% discount
-The customer decides not to buy the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl
-Dom has come into the store looking to sell a MP3PLAYER
-Daphne determines the MP3 Player to be in Good condition and the value to be $23
-The store buys the MP3 Player in Good condition for $23
-Delaney has come into the store looking to sell a VINYL
-Daphne determines the Nevermind by Nirvana Vinyl to be in Poor condition and the value to be $9
+The customer buys the Emerson Wood Flute for $54
+Alice has come into the store looking to sell a BANDANAS
+Daphne determines the Red Bandana to be in Poor condition and the value to be $7
+The store buys the Red Bandana in Poor condition for $7
+CJ has come into the store looking to sell a HARMONICA
+Daphne determines the Lee Oskar Harmonica in a key of "C" to be in Poor condition and the value to be $10
 Daphne offers a 10% increase to the price
-The store buys the Nevermind by Nirvana Vinyl in Poor condition for $9
-Sam has come into the store looking to buy a SHIRTS
-Daphne shows the customer the Medium Aerosmith Shirt, selling for $54
-Daphne offers a 10% discount
-The customer buys the Medium Aerosmith Shirt for $48
-Amber has come into the store looking to buy a CD
-Daphne shows the customer the Paranoid by Black Sabbath CD, selling for $76
-The customer buys the Paranoid by Black Sabbath CD for $76
-Alice has come into the store looking to sell a STRINGS
-Daphne determines the Cello strings to be in Poor condition and the value to be $10
-Daphne offers a 10% increase to the price
-The store buys the Cello strings in Poor condition for $11
-Dom has come into the store looking to buy a PAPERSCORE
-Daphne shows the customer the Legend by Bob Marley and the Wailers Paper Score, selling for $80
-Daphne offers a 10% discount
-The customer buys the Legend by Bob Marley and the Wailers Paper Score for $72
+The store buys the Lee Oskar Harmonica in a key of "C" in Poor condition for $11
+Bruce has come into the store looking to buy a HATS
+Daphne shows the customer the Small The Beatles Hat, selling for $28
+The customer buys the Small The Beatles Hat for $28
+Mel has come into the store looking to buy a CD
+Daphne shows the customer the The Black Album by Jay-Z CD, selling for $94
+The customer buys the The Black Album by Jay-Z CD for $94
 The store closes for the day and Daphne begins cleaning
 Daphne cleans the store without incident
 Daphne locks up and goes home for the night
@@ -831,79 +856,159 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Shaggy has arrived at the store on Day 23
-Shaggy finds an order with 3 RECORDPLAYERs
-Shaggy checks the register to find $3677
-Shaggy does inventory to find we have $970 worth of product
-Shaggy placed an order for 3 HARMONICAs to arrive on Day 26
-Shaggy placed an order for 3 SHIRTSs to arrive on Day 25
-Shaggy placed an order for 3 MANDOLINs to arrive on Day 25
-Sophie has come into the store looking to sell a STRINGS
-Shaggy determines the Bass strings to be in Poor condition and the value to be $2
-The store buys the Bass strings in Poor condition for $2
-Nate has come into the store looking to buy a STRINGS
-Shaggy shows the customer the Mandolin strings, selling for $84
-The customer buys the Mandolin strings for $84
-Alice has come into the store looking to sell a GUITAR
-Shaggy determines the Fender Electric Guitar to be in Poor condition and the value to be $8
-The store buys the Fender Electric Guitar in Poor condition for $8
-Alice has come into the store looking to buy a CD
-Shaggy shows the customer the Purple Rain by Prince and the Revolution CD, selling for $86
-The customer buys the Purple Rain by Prince and the Revolution CD for $86
-Nate has come into the store looking to buy a RECORDPLAYER
-Shaggy shows the customer the Record Player, selling for $20
-The customer buys the Record Player for $20
-Mel has come into the store looking to sell a HATS
-Shaggy determines the Small Metallica Hat to be in Good condition and the value to be $24
-The store buys the Small Metallica Hat in Good condition for $24
-CJ has come into the store looking to buy a MANDOLIN
-Shaggy informs the customer we have no MANDOLIN in stock
-Nate has come into the store looking to sell a RECORDPLAYER
-Shaggy determines the Record Player to be in Excellent condition and the value to be $44
-The store buys the Record Player in Excellent condition for $44
+Today is Day 21, which is Sunday, so the store is closed.
+Shaggy has arrived at the store on Day 22
+Shaggy finds an order with 3 CABLESs
+Shaggy finds an order with 3 MP3PLAYERs
+Shaggy checks the register to find $3832
+Shaggy does inventory to find we have $1194 worth of product
+Shaggy places no orders today
+Emma has come into the store looking to buy a PRACTICEAMPS
+Shaggy shows the customer the 13 watt amp, selling for $58
+Shaggy offers a 10% discount
+The customer buys the 13 watt amp for $52
+Amber has come into the store looking to sell a VINYL
+Shaggy determines the The Black Album by Jay-Z Vinyl to be in Poor condition and the value to be $4
+Shaggy offers a 10% increase to the price
+The store buys the The Black Album by Jay-Z Vinyl in Poor condition for $4
+Delaney has come into the store looking to buy a CABLES
+Shaggy shows the customer the 4 meter cable, selling for $82
+Shaggy offers a 10% discount
+The customer decides not to buy the 4 meter cable
+Shaggy shows the customer the 2 meter cable, selling for $18
+Shaggy offers a 10% discount
+The customer buys the 2 meter cable for $16
+Sam has come into the store looking to sell a SHIRTS
+Shaggy determines the Large Pearl Jam Shirt to be in Excellent condition and the value to be $47
+The store buys the Large Pearl Jam Shirt in Excellent condition for $47
+Mel has come into the store looking to buy a BANDANAS
+Shaggy shows the customer the Yellow Bandana, selling for $16
+Shaggy offers a 10% discount
+The customer decides not to buy the Yellow Bandana
+Shaggy shows the customer the Blue Bandana, selling for $32
+The customer buys the Blue Bandana for $32
+CJ has come into the store looking to sell a RECORDPLAYER
+Shaggy determines the Record Player to be in Good condition and the value to be $28
+The store buys the Record Player in Good condition for $28
+Alice has come into the store looking to buy a VINYL
+Shaggy shows the customer the Songs in the Key of Life by Stevie Wonder Vinyl, selling for $64
+The customer buys the Songs in the Key of Life by Stevie Wonder Vinyl for $64
+Mel has come into the store looking to buy a BASS
+Shaggy shows the customer the Gibson Electric Bass, selling for $92
+The customer buys the Gibson Electric Bass for $92
+Paige has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Yamaha Electric Guitar, selling for $104
+The customer buys the Yamaha Electric Guitar for $104
+Ryan has come into the store looking to buy a HATS
+Shaggy shows the customer the Large Tupac Hat, selling for $90
+The customer buys the Large Tupac Hat for $90
+Mel has come into the store looking to buy a MANDOLIN
+Shaggy shows the customer the Washburn Electric Mandolin, selling for $66
+Shaggy offers a 10% discount
+The customer buys the Washburn Electric Mandolin for $59
+Ryan has come into the store looking to buy a STRINGS
+Shaggy shows the customer the Violin strings, selling for $48
+The customer buys the Violin strings for $48
 The store closes for the day and Shaggy begins cleaning
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Velma      0      0      0
+Shaggy     0      0      0
+Daphne     0      0      0
+Daphne has arrived at the store on Day 23
+Daphne finds no orders delivered today
+Daphne checks the register to find $4310
+Daphne does inventory to find we have $987 worth of product
+Daphne placed an order for 3 HATSs to arrive on Day 26
+Daphne placed an order for 3 BASSs to arrive on Day 25
+Daphne placed an order for 3 GUITARs to arrive on Day 25
+Mel has come into the store looking to buy a FLUTE
+Daphne shows the customer the Emerson Wood Flute, selling for $50
+Daphne offers a 10% discount
+The customer buys the Emerson Wood Flute for $45
+Sam has come into the store looking to sell a BASS
+Daphne determines the Yamaha Electric Bass to be in Very Good condition and the value to be $38
+The store buys the Yamaha Electric Bass in Very Good condition for $38
+Alice has come into the store looking to buy a STRINGS
+Daphne shows the customer the Bass strings, selling for $72
+Daphne offers a 10% discount
+The customer buys the Bass strings for $64
+Paige has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Large Tupac Shirt, selling for $84
+Daphne offers a 10% discount
+The customer decides not to buy the Large Tupac Shirt
+Daphne shows the customer the Large Pearl Jam Shirt, selling for $94
+Daphne offers a 10% discount
+The customer buys the Large Pearl Jam Shirt for $84
+Bruce has come into the store looking to buy a GUITAR
+Daphne informs the customer we have no GUITAR in stock
+Amber has come into the store looking to buy a BASS
+Daphne shows the customer the Yamaha Electric Bass, selling for $76
+Daphne offers a 10% discount
+The customer decides not to buy the Yamaha Electric Bass
+Alice has come into the store looking to sell a VINYL
+Daphne determines the Lemonade by Beyonce Vinyl to be in Poor condition and the value to be $5
+Daphne offers a 10% increase to the price
+The store buys the Lemonade by Beyonce Vinyl in Poor condition for $5
+Dom has come into the store looking to buy a VINYL
+Daphne shows the customer the The Black Album by Jay-Z Vinyl, selling for $8
+Daphne offers a 10% discount
+The customer buys the The Black Album by Jay-Z Vinyl for $7
+Bruce has come into the store looking to buy a CABLES
+Daphne shows the customer the 4 meter cable, selling for $82
+The customer buys the 4 meter cable for $82
+Sam has come into the store looking to buy a FLUTE
+Daphne shows the customer the Yamaha Wood Flute, selling for $2
+Daphne offers a 10% discount
+The customer buys the Yamaha Wood Flute for $1
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Daphne has arrived at the store on Day 24
 Daphne finds no orders delivered today
-Daphne checks the register to find $3789
-Daphne does inventory to find we have $953 worth of product
+Daphne checks the register to find $4550
+Daphne does inventory to find we have $876 worth of product
 Daphne places no orders today
-Sophie has come into the store looking to buy a MP3PLAYER
-Daphne shows the customer the MP3 Player, selling for $20
-The customer buys the MP3 Player for $20
-CJ has come into the store looking to buy a BANDANAS
-Daphne shows the customer the Red Bandana, selling for $60
+Nate has come into the store looking to buy a VINYL
+Daphne shows the customer the Lemonade by Beyonce Vinyl, selling for $10
+The customer buys the Lemonade by Beyonce Vinyl for $10
+Amber has come into the store looking to sell a HARMONICA
+Daphne determines the SEYDEL Harmonica in a key of "C" to be in Good condition and the value to be $21
+The store buys the SEYDEL Harmonica in a key of "C" in Good condition for $21
+Nate has come into the store looking to buy a MP3PLAYER
+Daphne shows the customer the MP3 Player, selling for $38
 Daphne offers a 10% discount
-The customer buys the Red Bandana for $54
-Amber has come into the store looking to buy a PAPERSCORE
-Daphne shows the customer the Are You Experienced by Jimi Hendrix Paper Score, selling for $40
+The customer decides not to buy the MP3 Player
+Daphne shows the customer the MP3 Player, selling for $80
+The customer buys the MP3 Player for $80
+Ryan has come into the store looking to buy a RECORDPLAYER
+Daphne shows the customer the Record Player, selling for $52
 Daphne offers a 10% discount
-The customer buys the Are You Experienced by Jimi Hendrix Paper Score for $36
-Bruce has come into the store looking to buy a GUITAR
-Daphne shows the customer the Washburn Electric Guitar, selling for $86
+The customer buys the Record Player for $46
+Dom has come into the store looking to buy a CD
+Daphne shows the customer the Rumors by Fleetwood Mac CD, selling for $64
 Daphne offers a 10% discount
-The customer buys the Washburn Electric Guitar for $77
-Delaney has come into the store looking to sell a FLUTE
-Daphne determines the Yamaha Wood Flute to be in Fair condition and the value to be $16
-The store buys the Yamaha Wood Flute in Fair condition for $16
-Emma has come into the store looking to buy a STRINGS
-Daphne shows the customer the Banjo strings, selling for $88
+The customer buys the Rumors by Fleetwood Mac CD for $57
+Amber has come into the store looking to buy a HARMONICA
+Daphne shows the customer the SEYDEL Harmonica in a key of "D", selling for $100
+The customer buys the SEYDEL Harmonica in a key of "D" for $100
+Bruce has come into the store looking to buy a BANDANAS
+Daphne shows the customer the Yellow Bandana, selling for $16
 Daphne offers a 10% discount
-The customer buys the Banjo strings for $79
-Mel has come into the store looking to buy a FLUTE
-Daphne shows the customer the Miyazawa Silver Flute, selling for $90
-Daphne offers a 10% discount
-The customer decides not to buy the Miyazawa Silver Flute
-Daphne shows the customer the Yamaha Wood Flute, selling for $32
-The customer buys the Yamaha Wood Flute for $32
-Sophie has come into the store looking to sell a HARMONICA
-Daphne determines the Suzuki Harmonica in a key of "F#" to be in Poor condition and the value to be $5
-The store buys the Suzuki Harmonica in a key of "F#" in Poor condition for $5
+The customer buys the Yellow Bandana for $14
+Sam has come into the store looking to buy a CDPLAYER
+Daphne shows the customer the CD Player, selling for $36
+The customer buys the CD Player for $36
+Mel has come into the store looking to buy a PRACTICEAMPS
+Daphne shows the customer the 16 watt amp, selling for $10
+The customer buys the 16 watt amp for $10
+Paige has come into the store looking to buy a VINYL
+Daphne informs the customer we have no VINYL in stock
 The store closes for the day and Daphne begins cleaning
 Daphne cleans the store without incident
 Daphne locks up and goes home for the night
@@ -911,157 +1016,37 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Daphne has arrived at the store on Day 25
-Daphne finds an order with 3 SHIRTSs
-Daphne finds an order with 3 MANDOLINs
-Daphne checks the register to find $3911
-Daphne does inventory to find we have $966 worth of product
-Daphne places no orders today
-CJ has come into the store looking to buy a RECORDPLAYER
-Daphne shows the customer the Record Player, selling for $26
-Daphne offers a 10% discount
-The customer buys the Record Player for $23
-Amber has come into the store looking to buy a BASS
-Daphne shows the customer the Ovation Electric Bass, selling for $2
-Daphne offers a 10% discount
-The customer buys the Ovation Electric Bass for $1
-Dom has come into the store looking to buy a CDPLAYER
-Daphne shows the customer the CD Player, selling for $66
-The customer buys the CD Player for $66
-Emma has come into the store looking to buy a PRACTICEAMPS
-Daphne shows the customer the 13 watt amp, selling for $12
-The customer buys the 13 watt amp for $12
-Nate has come into the store looking to sell a PAPERSCORE
-Daphne determines the Straight Outta Compton by N.W.A. Paper Score to be in Excellent condition and the value to be $47
-Daphne offers a 10% increase to the price
-The store buys the Straight Outta Compton by N.W.A. Paper Score in Excellent condition for $51
-Amber has come into the store looking to buy a SHIRTS
-Daphne shows the customer the Large Tupac Shirt, selling for $58
-The customer buys the Large Tupac Shirt for $58
-Alice has come into the store looking to buy a SHIRTS
-Daphne shows the customer the Small Tupac Shirt, selling for $14
-Daphne offers a 10% discount
-The customer buys the Small Tupac Shirt for $12
-Sophie has come into the store looking to buy a VINYL
-Daphne shows the customer the The Wall by Pink Floyd Vinyl, selling for $62
-Daphne offers a 10% discount
-The customer buys the The Wall by Pink Floyd Vinyl for $55
-Sam has come into the store looking to buy a PRACTICEAMPS
-Daphne shows the customer the 15 watt amp, selling for $72
-Daphne offers a 10% discount
-The customer buys the 15 watt amp for $64
-Amber has come into the store looking to buy a PRACTICEAMPS
-Daphne shows the customer the 20 watt amp, selling for $32
-The customer buys the 20 watt amp for $32
-Bruce has come into the store looking to buy a STRINGS
-Daphne shows the customer the Mandolin strings, selling for $40
-The customer buys the Mandolin strings for $40
-The store closes for the day and Daphne begins cleaning
-Daphne cleans the store without incident
-Daphne locks up and goes home for the night
-Clerk      Items Sold      Items Purchased      Items Damaged 
-Velma      0      0      0
-Shaggy     0      0      0
-Daphne     0      0      0
-Velma has arrived at the store on Day 26
-Velma finds an order with 3 HARMONICAs
-Velma checks the register to find $4160
-Velma does inventory to find we have $888 worth of product
-Velma placed an order for 3 BASSs to arrive on Day 27
-Velma placed an order for 3 PRACTICEAMPSs to arrive on Day 29
-Delaney has come into the store looking to buy a PAPERSCORE
-Velma shows the customer the Lemonade by Beyonce Paper Score, selling for $66
-Velma offers a 10% discount
-The customer buys the Lemonade by Beyonce Paper Score for $59
-Sophie has come into the store looking to buy a VINYL
-Velma shows the customer the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl, selling for $58
-Velma offers a 10% discount
-The customer buys the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl for $52
-Bruce has come into the store looking to buy a CDPLAYER
-Velma shows the customer the CD Player, selling for $12
-Velma offers a 10% discount
-The customer buys the CD Player for $10
-Emma has come into the store looking to buy a PRACTICEAMPS
-Velma informs the customer we have no PRACTICEAMPS in stock
-Mel has come into the store looking to buy a CABLES
-Velma shows the customer the 5 meter cable, selling for $32
-The customer buys the 5 meter cable for $32
-Dom has come into the store looking to buy a CABLES
-Velma shows the customer the 1 meter cable, selling for $92
-Velma offers a 10% discount
-The customer buys the 1 meter cable for $82
-Ryan has come into the store looking to sell a BASS
-Velma determines the Guild Electric Bass to be in Excellent condition and the value to be $47
-Velma offers a 10% increase to the price
-The customer leaves without selling their Guild Electric Bass
-Paige has come into the store looking to sell a FLUTE
-Velma determines the Emerson Wood Flute to be in Very Good condition and the value to be $36
-Velma offers a 10% increase to the price
-The store buys the Emerson Wood Flute in Very Good condition for $39
-Emma has come into the store looking to buy a SHIRTS
-Velma shows the customer the Medium Red Hot Chili Peppers Shirt, selling for $18
-Velma offers a 10% discount
-The customer decides not to buy the Medium Red Hot Chili Peppers Shirt
-Amber has come into the store looking to buy a VINYL
-Velma shows the customer the Nevermind by Nirvana Vinyl, selling for $18
-The customer buys the Nevermind by Nirvana Vinyl for $18
-Nate has come into the store looking to sell a HATS
-Velma determines the Large The Rolling Stones Hat to be in Fair condition and the value to be $20
-Velma offers a 10% increase to the price
-The store buys the Large The Rolling Stones Hat in Fair condition for $22
-The store closes for the day and Velma begins cleaning
-Velma cleans the store without incident
-Velma locks up and goes home for the night
-Clerk      Items Sold      Items Purchased      Items Damaged 
-Velma      0      0      0
-Shaggy     0      0      0
-Daphne     0      0      0
-Shaggy has arrived at the store on Day 27
+Shaggy has arrived at the store on Day 25
 Shaggy finds an order with 3 BASSs
-Shaggy checks the register to find $4280
-Shaggy does inventory to find we have $882 worth of product
+Shaggy finds an order with 3 GUITARs
+Shaggy checks the register to find $4778
+Shaggy does inventory to find we have $817 worth of product
 Shaggy placed an order for 3 VINYLs to arrive on Day 29
-Emma has come into the store looking to sell a MANDOLIN
-Shaggy determines the Yamaha Electric Mandolin to be in Poor condition and the value to be $6
-The store buys the Yamaha Electric Mandolin in Poor condition for $6
-Sophie has come into the store looking to buy a PRACTICEAMPS
-Shaggy informs the customer we have no PRACTICEAMPS in stock
-Amber has come into the store looking to buy a VINYL
+Shaggy placed an order for 3 CDs to arrive on Day 26
+Amber has come into the store looking to buy a GUITAR
+Shaggy shows the customer the Seagull Guitar, selling for $4
+Shaggy offers a 10% discount
+The customer buys the Seagull Guitar for $3
+Nate has come into the store looking to buy a CD
+Shaggy informs the customer we have no CD in stock
+Nate has come into the store looking to buy a VINYL
 Shaggy informs the customer we have no VINYL in stock
-Alice has come into the store looking to buy a CABLES
-Shaggy shows the customer the 4 meter cable, selling for $94
-Shaggy offers a 10% discount
-The customer buys the 4 meter cable for $84
-Nate has come into the store looking to buy a CABLES
-Shaggy informs the customer we have no CABLES in stock
-Delaney has come into the store looking to buy a STRINGS
-Shaggy shows the customer the Cello strings, selling for $22
-The customer buys the Cello strings for $22
-Dom has come into the store looking to buy a STRINGS
-Shaggy shows the customer the Bass strings, selling for $4
-Shaggy offers a 10% discount
-The customer decides not to buy the Bass strings
-Ryan has come into the store looking to buy a MANDOLIN
-Shaggy shows the customer the Guild Mandolin, selling for $98
-Shaggy offers a 10% discount
-The customer decides not to buy the Guild Mandolin
-Shaggy shows the customer the Guild Electric Mandolin, selling for $70
-Shaggy offers a 10% discount
-The customer buys the Guild Electric Mandolin for $63
-CJ has come into the store looking to sell a RECORDPLAYER
-Shaggy determines the Record Player to be in Fair condition and the value to be $16
+Bruce has come into the store looking to sell a BASS
+Shaggy determines the Seagull Bass to be in Good condition and the value to be $27
 Shaggy offers a 10% increase to the price
-The store buys the Record Player in Fair condition for $17
-Emma has come into the store looking to sell a BASS
-Shaggy determines the Washburn Bass to be in Good condition and the value to be $26
+The customer leaves without selling their Seagull Bass
+Bruce has come into the store looking to sell a BASS
+Shaggy determines the Gibson Bass to be in Good condition and the value to be $22
 Shaggy offers a 10% increase to the price
-The store buys the Washburn Bass in Good condition for $28
-Emma has come into the store looking to buy a HARMONICA
-Shaggy shows the customer the Suzuki Harmonica in a key of "F#", selling for $10
-The customer buys the Suzuki Harmonica in a key of "F#" for $10
-Nate has come into the store looking to buy a BANDANAS
-Shaggy shows the customer the Yellow Bandana, selling for $68
-The customer buys the Yellow Bandana for $68
+The store buys the Gibson Bass in Good condition for $24
+Paige has come into the store looking to buy a MP3PLAYER
+Shaggy shows the customer the MP3 Player, selling for $38
+Shaggy offers a 10% discount
+The customer buys the MP3 Player for $34
+Dom has come into the store looking to buy a HARMONICA
+Shaggy shows the customer the Lee Oskar Harmonica in a key of "F#", selling for $36
+Shaggy offers a 10% discount
+The customer buys the Lee Oskar Harmonica in a key of "F#" for $32
 The store closes for the day and Shaggy begins cleaning
 Shaggy cleans the store without incident
 Shaggy locks up and goes home for the night
@@ -1069,51 +1054,88 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Today is Day 28, which is Sunday, so the store is closed.
-Velma has arrived at the store on Day 29
-Velma finds an order with 3 PRACTICEAMPSs
-Velma finds an order with 3 VINYLs
-Velma checks the register to find $4334
-Velma does inventory to find we have $943 worth of product
-Velma placed an order for 3 BANDANASs to arrive on Day 31
-Velma placed an order for 3 CABLESs to arrive on Day 30
-Ryan has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Guild Mandolin, selling for $98
+Daphne has arrived at the store on Day 26
+Daphne finds an order with 3 HATSs
+Daphne finds an order with 3 CDs
+Daphne checks the register to find $4654
+Daphne does inventory to find we have $971 worth of product
+Daphne places no orders today
+CJ has come into the store looking to buy a PAPERSCORE
+Daphne shows the customer the The Wall by Pink Floyd Paper Score, selling for $42
+The customer buys the The Wall by Pink Floyd Paper Score for $42
+Mel has come into the store looking to buy a CD
+Daphne shows the customer the Back to Black by Amy Winehouse CD, selling for $14
+The customer buys the Back to Black by Amy Winehouse CD for $14
+Dom has come into the store looking to sell a HARMONICA
+Daphne determines the SEYDEL Harmonica in a key of "D" to be in Excellent condition and the value to be $47
+Daphne offers a 10% increase to the price
+The store buys the SEYDEL Harmonica in a key of "D" in Excellent condition for $51
+Emma has come into the store looking to buy a SHIRTS
+Daphne shows the customer the Large Tupac Shirt, selling for $84
+The customer buys the Large Tupac Shirt for $84
+Delaney has come into the store looking to buy a HATS
+Daphne shows the customer the Large Tupac Hat, selling for $78
+The customer buys the Large Tupac Hat for $78
+Emma has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Excellent condition and the value to be $48
+Daphne offers a 10% increase to the price
+The customer leaves without selling their CD Player
+Nate has come into the store looking to buy a BASS
+Daphne shows the customer the Yamaha Electric Bass, selling for $76
+Daphne offers a 10% discount
+The customer buys the Yamaha Electric Bass for $68
+Sophie has come into the store looking to buy a MANDOLIN
+Daphne shows the customer the Washburn Mandolin, selling for $10
+Daphne offers a 10% discount
+The customer buys the Washburn Mandolin for $9
+CJ has come into the store looking to sell a HARMONICA
+Daphne determines the Suzuki Harmonica in a key of "D" to be in Excellent condition and the value to be $44
+Daphne offers a 10% increase to the price
+The store buys the Suzuki Harmonica in a key of "D" in Excellent condition for $48
+Paige has come into the store looking to buy a HATS
+Daphne shows the customer the Medium The Beatles Hat, selling for $48
+The customer buys the Medium The Beatles Hat for $48
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Velma      0      0      0
+Shaggy     0      0      0
+Daphne     0      0      0
+Velma has arrived at the store on Day 27
+Velma finds no orders delivered today
+Velma checks the register to find $4898
+Velma does inventory to find we have $894 worth of product
+Velma placed an order for 3 SHIRTSs to arrive on Day 29
+Mel has come into the store looking to buy a FLUTE
+Velma shows the customer the Yamaha Wood Flute, selling for $20
 Velma offers a 10% discount
-The customer buys the Guild Mandolin for $88
-CJ has come into the store looking to buy a CABLES
-Velma informs the customer we have no CABLES in stock
-Alice has come into the store looking to sell a PAPERSCORE
-Velma determines the The Black Album by Jay-Z Paper Score to be in Very Good condition and the value to be $36
+The customer buys the Yamaha Wood Flute for $18
+Mel has come into the store looking to buy a BANDANAS
+Velma shows the customer the Red Bandana, selling for $28
+Velma offers a 10% discount
+The customer buys the Red Bandana for $25
+Alice has come into the store looking to sell a VINYL
+Velma determines the The Chronic by Dr. Dre Vinyl to be in Poor condition and the value to be $9
 Velma offers a 10% increase to the price
-The customer leaves without selling their The Black Album by Jay-Z Paper Score
-Delaney has come into the store looking to buy a SHIRTS
-Velma shows the customer the Medium Red Hot Chili Peppers Shirt, selling for $18
+The customer leaves without selling their The Chronic by Dr. Dre Vinyl
+Mel has come into the store looking to buy a VINYL
+Velma informs the customer we have no VINYL in stock
+Emma has come into the store looking to buy a PAPERSCORE
+Velma shows the customer the Abbey Road by The Beatles Paper Score, selling for $24
 Velma offers a 10% discount
-The customer buys the Medium Red Hot Chili Peppers Shirt for $16
-Bruce has come into the store looking to buy a GUITAR
-Velma shows the customer the Gibson Electric Guitar, selling for $28
-Velma offers a 10% discount
-The customer buys the Gibson Electric Guitar for $25
-Ryan has come into the store looking to buy a CD
-Velma shows the customer the Paranoid by Black Sabbath CD, selling for $40
-The customer buys the Paranoid by Black Sabbath CD for $40
-Ryan has come into the store looking to buy a STRINGS
-Velma shows the customer the Bass strings, selling for $4
-The customer buys the Bass strings for $4
-Alice has come into the store looking to buy a BASS
-Velma shows the customer the Yamaha Electric Bass, selling for $2
-The customer buys the Yamaha Electric Bass for $2
-Sam has come into the store looking to sell a CABLES
-Velma determines the 2 meter cable to be in Poor condition and the value to be $3
+The customer buys the Abbey Road by The Beatles Paper Score for $21
+Dom has come into the store looking to sell a MANDOLIN
+Velma determines the Gibson Mandolin to be in Very Good condition and the value to be $32
+The store buys the Gibson Mandolin in Very Good condition for $32
+CJ has come into the store looking to sell a VINYL
+Velma determines the Master of Puppets by Metallica Vinyl to be in Excellent condition and the value to be $46
 Velma offers a 10% increase to the price
-The store buys the 2 meter cable in Poor condition for $3
-Mel has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $86
-The customer buys the Record Player for $86
-CJ has come into the store looking to buy a MANDOLIN
-Velma shows the customer the Seagull Electric Mandolin, selling for $52
-The customer buys the Seagull Electric Mandolin for $52
+The store buys the Master of Puppets by Metallica Vinyl in Excellent condition for $50
+Dom has come into the store looking to sell a CDPLAYER
+Velma determines the CD Player to be in Excellent condition and the value to be $46
+Velma offers a 10% increase to the price
+The customer leaves without selling their CD Player
 The store closes for the day and Velma begins cleaning
 Velma cleans the store without incident
 Velma locks up and goes home for the night
@@ -1121,237 +1143,258 @@ Clerk      Items Sold      Items Purchased      Items Damaged
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
-Velma has arrived at the store on Day 30
-Velma finds an order with 3 CABLESs
-Velma checks the register to find $4564
-Velma does inventory to find we have $862 worth of product
-Velma placed an order for 3 STRINGSs to arrive on Day 32
-Velma placed an order for 3 SHIRTSs to arrive on Day 31
-Delaney has come into the store looking to sell a CDPLAYER
-Velma determines the CD Player to be in Very Good condition and the value to be $31
-The store buys the CD Player in Very Good condition for $31
-Mel has come into the store looking to buy a MP3PLAYER
-Velma shows the customer the MP3 Player, selling for $50
-The customer buys the MP3 Player for $50
-Paige has come into the store looking to buy a HATS
-Velma shows the customer the Medium Led Zeppelin Hat, selling for $34
-Velma offers a 10% discount
-The customer decides not to buy the Medium Led Zeppelin Hat
-Velma shows the customer the Small Metallica Hat, selling for $48
-The customer buys the Small Metallica Hat for $48
-Nate has come into the store looking to buy a MP3PLAYER
-Velma shows the customer the MP3 Player, selling for $46
-Velma offers a 10% discount
-The customer buys the MP3 Player for $41
-Alice has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $88
-Velma offers a 10% discount
-The customer buys the Record Player for $79
+Today is Day 28, which is Sunday, so the store is closed.
+Daphne has arrived at the store on Day 29
+Daphne finds an order with 3 VINYLs
+Daphne finds an order with 3 SHIRTSs
+Daphne checks the register to find $4830
+Daphne does inventory to find we have $986 worth of product
+Daphne placed an order for 3 FLUTEs to arrive on Day 30
+Daphne placed an order for 3 PAPERSCOREs to arrive on Day 31
+Delaney has come into the store looking to buy a GUITAR
+Daphne shows the customer the Washburn Guitar, selling for $36
+Daphne offers a 10% discount
+The customer buys the Washburn Guitar for $32
+Sophie has come into the store looking to buy a HATS
+Daphne shows the customer the Medium The Beatles Hat, selling for $88
+Daphne offers a 10% discount
+The customer buys the Medium The Beatles Hat for $79
+Sophie has come into the store looking to buy a PRACTICEAMPS
+Daphne shows the customer the 12 watt amp, selling for $74
+Daphne offers a 10% discount
+The customer buys the 12 watt amp for $66
+Sam has come into the store looking to sell a PRACTICEAMPS
+Daphne determines the 11 watt amp to be in Very Good condition and the value to be $33
+Daphne offers a 10% increase to the price
+The store buys the 11 watt amp in Very Good condition for $36
+Sam has come into the store looking to buy a MANDOLIN
+Daphne shows the customer the Gibson Mandolin, selling for $10
+The customer buys the Gibson Mandolin for $10
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne locks up and goes home for the night
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Velma      0      0      0
+Shaggy     0      0      0
+Daphne     0      0      0
+Shaggy has arrived at the store on Day 30
+Shaggy finds an order with 3 FLUTEs
+Shaggy checks the register to find $4894
+Shaggy does inventory to find we have $1005 worth of product
+Shaggy placed an order for 3 HATSs to arrive on Day 33
+Bruce has come into the store looking to buy a HATS
+Shaggy informs the customer we have no HATS in stock
+Nate has come into the store looking to sell a VINYL
+Shaggy determines the Supa Dupa Fly by Missy Elliott Vinyl to be in Good condition and the value to be $26
+The store buys the Supa Dupa Fly by Missy Elliott Vinyl in Good condition for $26
+Emma has come into the store looking to buy a RECORDPLAYER
+Shaggy shows the customer the Record Player, selling for $14
+The customer buys the Record Player for $14
+Emma has come into the store looking to buy a VINYL
+Shaggy shows the customer the Master of Puppets by Metallica Vinyl, selling for $100
+Shaggy offers a 10% discount
+The customer buys the Master of Puppets by Metallica Vinyl for $90
 Sophie has come into the store looking to buy a CD
-Velma shows the customer the Ten by Pearl Jam CD, selling for $72
-The customer buys the Ten by Pearl Jam CD for $72
-Amber has come into the store looking to buy a PAPERSCORE
-Velma shows the customer the The Miseducation of Lauryn Hill by Lauryn Hill Paper Score, selling for $12
-The customer buys the The Miseducation of Lauryn Hill by Lauryn Hill Paper Score for $12
-Dom has come into the store looking to buy a RECORDPLAYER
-Velma shows the customer the Record Player, selling for $34
-The customer buys the Record Player for $34
-Ryan has come into the store looking to buy a PRACTICEAMPS
-Velma shows the customer the 16 watt amp, selling for $38
-Velma offers a 10% discount
-The customer buys the 16 watt amp for $34
-Paige has come into the store looking to buy a HARMONICA
-Velma shows the customer the SEYDEL Harmonica in a key of "F#", selling for $60
-Velma offers a 10% discount
-The customer decides not to buy the SEYDEL Harmonica in a key of "F#"
-Velma shows the customer the SEYDEL Harmonica in a key of "A", selling for $26
-Velma offers a 10% discount
-The customer buys the SEYDEL Harmonica in a key of "A" for $23
-The store closes for the day and Velma begins cleaning
-Velma cleans the store without incident
-Velma locks up and goes home for the night
+Shaggy shows the customer the Are You Experienced by Jimi Hendrix CD, selling for $50
+Shaggy offers a 10% discount
+The customer buys the Are You Experienced by Jimi Hendrix CD for $45
+The store closes for the day and Shaggy begins cleaning
+Shaggy cleans the store without incident
+Shaggy locks up and goes home for the night
 Clerk      Items Sold      Items Purchased      Items Damaged 
 Velma      0      0      0
 Shaggy     0      0      0
 Daphne     0      0      0
 Items left in inventory: 
-Medium Led Zeppelin Hat for $34
-The Black Album by Jay-Z Paper Score for $54
-Miyazawa Silver Flute for $90
-Fender Electric Guitar for $80
-CD Player for $90
-Fender Electric Guitar for $16
-Straight Outta Compton by N.W.A. Paper Score for $102
-SEYDEL Harmonica in a key of "F#" for $60
-Boseno Harmonica in a key of "G" for $40
-Emerson Wood Flute for $78
-Large The Rolling Stones Hat for $44
-Seagull Electric Bass for $76
-Gibson Bass for $66
-Yamaha Electric Mandolin for $12
-Washburn Bass for $56
-16 watt amp for $76
-13 watt amp for $40
-Supa Dupa Fly by Missy Elliott Vinyl for $20
-Rumors by Fleetwood Mac Vinyl for $18
-Blood on the Tracks by Bob Dylan Vinyl for $92
-2 meter cable for $6
-2 meter cable for $54
-4 meter cable for $44
-4 meter cable for $62
-CD Player for $62
-The total value of the remaining inventory is $686
+CD Player for $64
+CD Player for $10
+Green Bandana for $16
+Blue Bandana for $50
+CD Player for $94
+CD Player for $76
+19 watt amp for $70
+Yellow Bandana for $52
+19 watt amp for $56
+CD Player for $102
+Bass strings for $44
+Guitar strings for $14
+Red Bandana for $14
+Lee Oskar Harmonica in a key of "C" for $22
+5 meter cable for $42
+MP3 Player for $42
+MP3 Player for $96
+Record Player for $56
+SEYDEL Harmonica in a key of "C" for $42
+Seagull Electric Bass for $66
+Washburn Bass for $44
+Gibson Electric Bass for $44
+Yamaha Guitar for $14
+Gibson Bass for $48
+Nevermind by Nirvana CD for $60
+SEYDEL Harmonica in a key of "D" for $102
+Suzuki Harmonica in a key of "D" for $96
+Gibson Mandolin for $64
+Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl for $2
+Purple Rain by Prince and the Revolution Vinyl for $38
+To Pimp A ButterFly by Kendrick Lamar Vinyl for $14
+Large Aerosmith Shirt for $20
+Large Metallica Shirt for $20
+Medium The Rolling Stones Shirt for $6
+11 watt amp for $72
+Miyazawa Silver Flute for $68
+Yamaha Silver Flute for $6
+Emerson Wood Flute for $100
+Supa Dupa Fly by Missy Elliott Vinyl for $52
+The total value of the remaining inventory is $949
 Items sold: 
-6 meter cable for $24 on Day 1
-Medium The Rolling Stones Hat for $60 on Day 1
-Small AC/DC Hat for $36 on Day 1
-Yamaha Silver Flute for $39 on Day 1
-Yamaha Bass for $66 on Day 1
-Guild Guitar for $45 on Day 1
-10 watt amp for $54 on Day 1
-Yamaha Electric Guitar for $43 on Day 1
-Small Led Zeppelin Hat for $42 on Day 2
-Medium The Beatles Shirt for $3 on Day 2
-Yamaha Electric Guitar for $32 on Day 2
-To Pimp A ButterFly by Kendrick Lamar Vinyl for $28 on Day 2
-Small Nirvna Hat for $3 on Day 2
-Lemonade by Beyonce Paper Score for $2 on Day 2
-Seagull Mandolin for $28 on Day 3
-Black Bandana for $82 on Day 3
-Small Red Hot Chili Peppers Shirt for $70 on Day 3
-Yamaha Silver Flute for $16 on Day 3
-Supa Dupa Fly by Missy Elliott CD for $72 on Day 4
-Banjo strings for $28 on Day 4
-6 meter cable for $1 on Day 4
-Large Pearl Jam Hat for $90 on Day 4
-11 watt amp for $18 on Day 4
-Medium Aerosmith Shirt for $20 on Day 4
-Banjo strings for $27 on Day 4
-Gemeinhardt Silver Flute for $32 on Day 4
-The Chronic by Dr. Dre CD for $92 on Day 4
-What's Going On by Marvin Gaye CD for $12 on Day 5
-Legend by Bob Marley and the Wailers CD for $78 on Day 5
-Fender Bass for $70 on Day 5
-Medium Red Hot Chili Peppers Hat for $98 on Day 5
-CD Player for $34 on Day 5
-MP3 Player for $86 on Day 5
-CD Player for $78 on Day 6
-5 meter cable for $52 on Day 6
-Guild Mandolin for $26 on Day 8
-CD Player for $27 on Day 8
-Ten by Pearl Jam CD for $6 on Day 8
-13 watt amp for $100 on Day 8
-Master of Puppets by Metallica Vinyl for $50 on Day 8
-Guild Electric Bass for $50 on Day 8
-Lee Oskar Harmonica in a key of "F#" for $48 on Day 8
-Back to Black by Amy Winehouse CD for $84 on Day 8
-Seagull Electric Mandolin for $19 on Day 8
-Medium Nirvna Hat for $88 on Day 9
-Miyazawa Silver Flute for $92 on Day 9
-Record Player for $26 on Day 9
-Yamaha Electric Guitar for $36 on Day 9
-Back to Black by Amy Winehouse Vinyl for $94 on Day 9
-Bass strings for $40 on Day 10
-MP3 Player for $90 on Day 10
-Guild Electric Guitar for $8 on Day 11
-Medium Pearl Jam Hat for $46 on Day 11
-3 meter cable for $19 on Day 11
-Large Tupac Hat for $56 on Day 11
-CD Player for $70 on Day 11
-CD Player for $50 on Day 12
-Guild Electric Mandolin for $18 on Day 12
-Gibson Mandolin for $20 on Day 12
-Emerson Silver Flute for $88 on Day 13
-6 meter cable for $98 on Day 13
-Bass strings for $94 on Day 13
-Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Vinyl for $8 on Day 15
-MP3 Player for $34 on Day 15
-Lee Oskar Harmonica in a key of "F#" for $25 on Day 15
-Yamaha Electric Bass for $4 on Day 15
-Record Player for $90 on Day 15
-Record Player for $96 on Day 16
-Miyazawa Wood Flute for $70 on Day 16
-Yellow Bandana for $32 on Day 16
-Large Nirvna Hat for $96 on Day 16
-Record Player for $102 on Day 16
-Lee Oskar Harmonica in a key of "A" for $40 on Day 17
-CD Player for $73 on Day 17
-Large Metallica Shirt for $41 on Day 17
-Small Tupac Hat for $88 on Day 17
-Gibson Electric Guitar for $43 on Day 18
-Illmatic by Nas Vinyl for $20 on Day 18
-Fender Electric Guitar for $62 on Day 18
-Guild Bass for $62 on Day 18
-6 meter cable for $75 on Day 18
-Small Pearl Jam Shirt for $10 on Day 18
-Guild Electric Mandolin for $10 on Day 18
-6 meter cable for $16 on Day 18
-MP3 Player for $42 on Day 18
-Medium Motley Crue Hat for $88 on Day 19
-Record Player for $45 on Day 19
-Red Bandana for $62 on Day 19
-Medium Aerosmith Shirt for $82 on Day 19
-Record Player for $43 on Day 19
-CD Player for $20 on Day 20
-Boseno Harmonica in a key of "D" for $78 on Day 20
-Record Player for $44 on Day 20
-Yamaha Silver Flute for $48 on Day 20
-Lemonade by Beyonce Vinyl for $7 on Day 20
-Yamaha Wood Flute for $81 on Day 22
-Back in Black by AC/DC Paper Score for $84 on Day 22
-CD Player for $5 on Day 22
-Boseno Harmonica in a key of "C" for $30 on Day 22
-Gibson Mandolin for $40 on Day 22
-Medium Aerosmith Shirt for $48 on Day 22
-Paranoid by Black Sabbath CD for $76 on Day 22
-Legend by Bob Marley and the Wailers Paper Score for $72 on Day 22
-Mandolin strings for $84 on Day 23
-Purple Rain by Prince and the Revolution CD for $86 on Day 23
-Record Player for $20 on Day 23
-MP3 Player for $20 on Day 24
-Red Bandana for $54 on Day 24
-Are You Experienced by Jimi Hendrix Paper Score for $36 on Day 24
-Washburn Electric Guitar for $77 on Day 24
-Banjo strings for $79 on Day 24
-Yamaha Wood Flute for $32 on Day 24
-Record Player for $23 on Day 25
-Ovation Electric Bass for $1 on Day 25
-CD Player for $66 on Day 25
-13 watt amp for $12 on Day 25
-Large Tupac Shirt for $58 on Day 25
-Small Tupac Shirt for $12 on Day 25
-The Wall by Pink Floyd Vinyl for $55 on Day 25
-15 watt amp for $64 on Day 25
-20 watt amp for $32 on Day 25
-Mandolin strings for $40 on Day 25
-Lemonade by Beyonce Paper Score for $59 on Day 26
-The Miseducation of Lauryn Hill by Lauryn Hill Vinyl for $52 on Day 26
-CD Player for $10 on Day 26
-5 meter cable for $32 on Day 26
-1 meter cable for $82 on Day 26
-Nevermind by Nirvana Vinyl for $18 on Day 26
-4 meter cable for $84 on Day 27
-Cello strings for $22 on Day 27
-Guild Electric Mandolin for $63 on Day 27
-Suzuki Harmonica in a key of "F#" for $10 on Day 27
-Yellow Bandana for $68 on Day 27
-Guild Mandolin for $88 on Day 29
-Medium Red Hot Chili Peppers Shirt for $16 on Day 29
-Gibson Electric Guitar for $25 on Day 29
-Paranoid by Black Sabbath CD for $40 on Day 29
-Bass strings for $4 on Day 29
-Yamaha Electric Bass for $2 on Day 29
-Record Player for $86 on Day 29
-Seagull Electric Mandolin for $52 on Day 29
-MP3 Player for $50 on Day 30
-Small Metallica Hat for $48 on Day 30
-MP3 Player for $41 on Day 30
-Record Player for $79 on Day 30
-Ten by Pearl Jam CD for $72 on Day 30
-The Miseducation of Lauryn Hill by Lauryn Hill Paper Score for $12 on Day 30
-Record Player for $34 on Day 30
-16 watt amp for $34 on Day 30
-SEYDEL Harmonica in a key of "A" for $23 on Day 30
-The store sold $7153 worth of items this month
-The store has $4926 in the register
+Boseno Harmonica in a key of "D" for $82 on Day 1
+Fender Electric Guitar for $55 on Day 1
+Yamaha Wood Flute for $78 on Day 1
+CD Player for $46 on Day 1
+Small Led Zeppelin Hat for $84 on Day 1
+Exile on Main Street by The Rolling Stones Vinyl for $26 on Day 1
+Seagull Electric Guitar for $32 on Day 1
+14 watt amp for $90 on Day 1
+MP3 Player for $2 on Day 1
+Record Player for $50 on Day 2
+Washburn Mandolin for $52 on Day 2
+Seagull Electric Bass for $10 on Day 2
+Ovation Electric Mandolin for $32 on Day 2
+15 watt amp for $56 on Day 2
+Gibson Guitar for $26 on Day 2
+Record Player for $66 on Day 2
+Ten by Pearl Jam CD for $48 on Day 2
+Abbey Road by The Beatles Paper Score for $61 on Day 3
+Lee Oskar Harmonica in a key of "G" for $3 on Day 3
+5 meter cable for $30 on Day 3
+Seagull Electric Mandolin for $48 on Day 3
+10 watt amp for $28 on Day 3
+Boseno Harmonica in a key of "G" for $90 on Day 3
+Record Player for $79 on Day 3
+1 meter cable for $94 on Day 4
+Cello strings for $19 on Day 4
+Seagull Electric Bass for $77 on Day 4
+MP3 Player for $19 on Day 4
+3 meter cable for $62 on Day 4
+Small Tupac Shirt for $34 on Day 4
+Record Player for $52 on Day 4
+To Pimp A ButterFly by Kendrick Lamar CD for $96 on Day 4
+Large AC/DC Shirt for $100 on Day 5
+MP3 Player for $38 on Day 5
+Supa Dupa Fly by Missy Elliott Paper Score for $82 on Day 5
+Supa Dupa Fly by Missy Elliott Paper Score for $7 on Day 5
+Medium Red Hot Chili Peppers Shirt for $54 on Day 5
+Large Led Zeppelin Hat for $50 on Day 6
+Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score for $6 on Day 6
+Rumors by Fleetwood Mac CD for $60 on Day 6
+Mandolin strings for $88 on Day 6
+Record Player for $28 on Day 8
+Yamaha Silver Flute for $86 on Day 8
+Small The Notorious B.I.G. Shirt for $19 on Day 8
+Fender Bass for $92 on Day 8
+Seagull Bass for $90 on Day 8
+Ovation Bass for $24 on Day 9
+Fender Electric Guitar for $24 on Day 9
+Record Player for $27 on Day 9
+Yamaha Bass for $88 on Day 9
+Appetite for Destruction by Guns N' Roses CD for $40 on Day 9
+Mandolin strings for $45 on Day 9
+Small Metallica Hat for $77 on Day 9
+Yellow Bandana for $50 on Day 9
+Gibson Electric Bass for $38 on Day 9
+Yamaha Wood Flute for $42 on Day 10
+Purple Rain by Prince and the Revolution CD for $84 on Day 10
+Purple Rain by Prince and the Revolution CD for $6 on Day 10
+4 meter cable for $84 on Day 11
+3 meter cable for $22 on Day 11
+MP3 Player for $42 on Day 11
+Lee Oskar Harmonica in a key of "A" for $54 on Day 11
+Large Led Zeppelin Shirt for $70 on Day 12
+Blond by Frank Ocean Paper Score for $94 on Day 12
+5 meter cable for $81 on Day 13
+Back to Black by Amy Winehouse Paper Score for $76 on Day 13
+Gibson Electric Guitar for $72 on Day 13
+Record Player for $15 on Day 13
+Ready to Die by The Notorious B.I.G. Vinyl for $12 on Day 13
+Boseno Harmonica in a key of "C" for $72 on Day 13
+Medium The Beatles Hat for $48 on Day 15
+6 meter cable for $36 on Day 15
+Miyazawa Silver Flute for $94 on Day 15
+Guitar strings for $110 on Day 15
+Gibson Bass for $72 on Day 15
+Enter the Wu-Tang(36 Chambers) by Wu-Tang Clan Paper Score for $66 on Day 15
+Violin strings for $44 on Day 15
+Small AC/DC Hat for $81 on Day 16
+Emerson Silver Flute for $52 on Day 16
+Guitar strings for $32 on Day 16
+Lee Oskar Harmonica in a key of "F" for $25 on Day 16
+MP3 Player for $16 on Day 16
+Record Player for $82 on Day 17
+14 watt amp for $22 on Day 17
+Suzuki Harmonica in a key of "C" for $74 on Day 17
+Yamaha Electric Mandolin for $50 on Day 17
+Small AC/DC Shirt for $88 on Day 17
+MP3 Player for $10 on Day 17
+3 meter cable for $14 on Day 17
+CD Player for $81 on Day 18
+Medium Red Hot Chili Peppers Hat for $62 on Day 18
+My Beautiful Dark Twisted Fantasy by Kanye West Paper Score for $23 on Day 18
+Ovation Electric Guitar for $22 on Day 18
+Record Player for $72 on Day 18
+MP3 Player for $78 on Day 19
+What's Going On by Marvin Gaye CD for $36 on Day 19
+Fender Electric Bass for $18 on Day 19
+Record Player for $94 on Day 19
+19 watt amp for $8 on Day 19
+Illmatic by Nas CD for $22 on Day 20
+Guild Electric Bass for $66 on Day 20
+Large The Notorious B.I.G. Shirt for $54 on Day 20
+Emerson Wood Flute for $54 on Day 20
+Small The Beatles Hat for $28 on Day 20
+The Black Album by Jay-Z CD for $94 on Day 20
+13 watt amp for $52 on Day 22
+2 meter cable for $16 on Day 22
+Blue Bandana for $32 on Day 22
+Songs in the Key of Life by Stevie Wonder Vinyl for $64 on Day 22
+Gibson Electric Bass for $92 on Day 22
+Yamaha Electric Guitar for $104 on Day 22
+Large Tupac Hat for $90 on Day 22
+Washburn Electric Mandolin for $59 on Day 22
+Violin strings for $48 on Day 22
+Emerson Wood Flute for $45 on Day 23
+Bass strings for $64 on Day 23
+Large Pearl Jam Shirt for $84 on Day 23
+The Black Album by Jay-Z Vinyl for $7 on Day 23
+4 meter cable for $82 on Day 23
+Yamaha Wood Flute for $1 on Day 23
+Lemonade by Beyonce Vinyl for $10 on Day 24
+MP3 Player for $80 on Day 24
+Record Player for $46 on Day 24
+Rumors by Fleetwood Mac CD for $57 on Day 24
+SEYDEL Harmonica in a key of "D" for $100 on Day 24
+Yellow Bandana for $14 on Day 24
+CD Player for $36 on Day 24
+16 watt amp for $10 on Day 24
+Seagull Guitar for $3 on Day 25
+MP3 Player for $34 on Day 25
+Lee Oskar Harmonica in a key of "F#" for $32 on Day 25
+The Wall by Pink Floyd Paper Score for $42 on Day 26
+Back to Black by Amy Winehouse CD for $14 on Day 26
+Large Tupac Shirt for $84 on Day 26
+Large Tupac Hat for $78 on Day 26
+Yamaha Electric Bass for $68 on Day 26
+Washburn Mandolin for $9 on Day 26
+Medium The Beatles Hat for $48 on Day 26
+Yamaha Wood Flute for $18 on Day 27
+Red Bandana for $25 on Day 27
+Abbey Road by The Beatles Paper Score for $21 on Day 27
+Washburn Guitar for $32 on Day 29
+Medium The Beatles Hat for $79 on Day 29
+12 watt amp for $66 on Day 29
+Gibson Mandolin for $10 on Day 29
+Record Player for $14 on Day 30
+Master of Puppets by Metallica Vinyl for $90 on Day 30
+Are You Experienced by Jimi Hendrix CD for $45 on Day 30
+The store sold $7499 worth of items this month
+The store has $5017 in the register
 $1000 was withdrawn from the bank

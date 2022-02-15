@@ -183,11 +183,11 @@ abstract class Store implements Utility {
         for (Customer customer : customers) {
             // see if the customer wants to buy or sell
             customer.DisplayRequest();
-            if (customer.buying_) {
+            if (customer.IsBuying()) {
                 // see if we have an item for them in stock
                 boolean found = false;
                 for (Item item : inventory_) {
-                    if (item.itemType == customer.item_) {
+                    if (item.itemType == customer.GetItemType()) {
                         // if we have item in stock, see if theyll buy it (50% chance)
                         found = true;
                         int willBuy = GetRandomNum(2);
@@ -217,10 +217,10 @@ abstract class Store implements Utility {
                     }
                 }
                 // if no item in stock tell the customer we have none
-                if (!found) Print(GetClerk().name_ + " informs the customer we have no " + customer.item_.name() + " in stock");
+                if (!found) Print(GetClerk().name_ + " informs the customer we have no " + customer.GetItemType().name() + " in stock");
             } else {
                 // evaluate the customers item
-                Item item = ItemFactory.MakeItem(customer.item_.name());
+                Item item = ItemFactory.MakeItem(customer.GetItemType().name());
                 int offerPrice = GetOfferPrice(item.condition_);
                 Print(GetClerk().name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 // if we have enough $, offer to buy the item
