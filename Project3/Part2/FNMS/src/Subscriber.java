@@ -2,7 +2,7 @@ import java.io.*;
 // These Subscribers are an example of the Observer pattern. 
 interface Subscriber extends Utility {
     public void Update(String context, Staff clerk, int data);
-    public void ShowData();
+    public void ShowData(int current_day);
     public void Close();
 }
 
@@ -82,11 +82,11 @@ class Logger implements Subscriber {
         }
     }
 
-    public void ShowData() {}
+    public void ShowData(int current_day) {}
 }
 
 class Tracker implements Subscriber {
-    int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
+    private int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
     // [0][] for Velma, [1][] for Shaggy, [2][] for Daphne
     // [][0] for sold, [][1] for purchased, [][2] for damaged
 
@@ -113,11 +113,12 @@ class Tracker implements Subscriber {
         }
     }
 
-    public void ShowData() {
+    public void ShowData(int current_day) {
+        Print("\nTracker : Day " + current_day);
         Print("Clerk      Items Sold      Items Purchased      Items Damaged ");
-        Print("Velma      " + stats_[0][0] + "      " + stats_[0][1] + "      " + stats_[0][2]);
-        Print("Shaggy     " + stats_[1][0] + "      " + stats_[1][1] + "      " + stats_[1][2]);
-        Print("Daphne     " + stats_[2][0] + "      " + stats_[2][1] + "      " + stats_[2][2]);
+        Print("Velma      " + stats_[0][0] + "               " + stats_[0][1] + "                    " + stats_[0][2]);
+        Print("Shaggy     " + stats_[1][0] + "               " + stats_[1][1] + "                    " + stats_[1][2]);
+        Print("Daphne     " + stats_[2][0] + "               " + stats_[2][1] + "                    " + stats_[2][2] + "\n");
     }
 
     public void Close() {}

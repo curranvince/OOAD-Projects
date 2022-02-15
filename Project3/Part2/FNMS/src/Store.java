@@ -35,8 +35,6 @@ abstract class Store implements Utility {
     Store() {
         total_withdrawn_ = 0;
         current_day_ = 0;
-        // create subscribers
-        subscribers_[0] = new Tracker();
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
@@ -49,6 +47,15 @@ abstract class Store implements Utility {
         clerks_.add(new Clerk("Shaggy", 20, new ManualTune()));
         clerks_.add(new Clerk("Velma", 5, new HaphazardTune()));
         clerks_.add(new Clerk("Daphne", 10, new ElectronicTune()));
+        // set output stream
+        try {
+            File file = new File("Output.txt");
+            file.createNewFile();
+            System.setOut(new PrintStream(file));
+        } catch (IOException e) {
+            Print("Error: Store could not set output to Output.txt");
+            e.printStackTrace();
+        }
     }
     
     // methods to handle outputs
@@ -276,7 +283,7 @@ abstract class Store implements Utility {
     // every night, broadcast who left, show the trackers data, and close the logger
     private void CloseStore() {
         Print(GetClerk().name_ + " locks up and goes home for the night");
-        subscribers_[0].ShowData();
+        subscribers_[0].ShowData(current_day_);
         subscribers_[1].Close();
     }
 
@@ -303,19 +310,14 @@ abstract class Store implements Utility {
     }
 
     void RunSimulation(int n) {
-        // set output stream
-        try {
-            File file = new File("Output.txt");
-            file.createNewFile();
-            System.setOut(new PrintStream(file));
-        } catch (IOException e) {
-            Print("Error: Store could not set output to Output.txt");
-            e.printStackTrace();
-        }
+        Print(" *** BEGINNING SIMULATION *** \n");
+        // create Tracker
+        subscribers_[0] = new Tracker();
         // each loop represents one day
         for (int i = 0; i < n; i++) {
-            // iterate day and create days logger
+            // iterate day and create daily logger
             current_day_++;
+            Print(" ***SIMULATION : DAY " + current_day_ + " BEGINNING***");
             subscribers_[1] = new Logger(current_day_);
             if (current_day_ % 7 != 0) {
                 // pick whos working
@@ -336,9 +338,11 @@ abstract class Store implements Utility {
                 // close the store on sundays
                 Print("Today is Day " + current_day_ + ", which is Sunday, so the store is closed.");
             }
+            Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
         // display final results
         OutputResults();
+        Print("\n *** SIMULATION COMPLETE *** ");
     }
 }
 
