@@ -302,7 +302,7 @@ abstract class Store implements Utility {
         Print("$" + total_withdrawn_ + " was withdrawn from the bank");
     }
 
-    void RunSimulation() {
+    void RunSimulation(int n) {
         // set output stream
         try {
             File file = new File("Output.txt");
@@ -313,7 +313,7 @@ abstract class Store implements Utility {
             e.printStackTrace();
         }
         // each loop represents one day
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < n; i++) {
             // iterate day and create days logger
             current_day_++;
             subscribers_[1] = new Logger(current_day_);

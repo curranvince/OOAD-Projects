@@ -10,7 +10,6 @@ CLASSES = \
 	Utility.java \
 	Item.java \
 	ItemFactory.java \
-	Clerk.java \
 	Staff.java \
 	Customer.java \
 	CashRegister.java \
@@ -25,8 +24,12 @@ classes: $(CLASSES:.java=.class)
 
 run: $(MAIN).class
 	$(JVM) $(MAIN) $(FILE)
+
 clean:
-	$(RM) *.class
+	$(RM) *.class 
+
+cleanall:
+	$(RM) *.class Logs/*.txt
 
 # Adapted from
 # http://profesores.elo.utfsm.cl/~agv/elo329/Java/javamakefile.html
