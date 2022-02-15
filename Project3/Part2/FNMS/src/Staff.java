@@ -46,7 +46,10 @@ class Clerk extends Staff {
         tune_ = tune;
     }
 
-    public boolean Clean() { return (GetRandomNum(100) > break_percentage_); }
+    public boolean Clean() { 
+        Print("The store closes for the day and " + name_ + " begins cleaning");
+        return (GetRandomNum(100) > break_percentage_); 
+    }
 
     public void Tune(Item item) { tune_.Tune(item); }
 }

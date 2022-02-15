@@ -280,19 +280,18 @@ abstract class Store implements Utility {
     }
 
     private void CleanStore() {
-        Print("The store closes for the day and " + GetClerk().name_ + " begins cleaning");
         if (!GetClerk().Clean()) { 
             // pick a random item for the clerk to break
             int breakIndex = GetRandomNum(inventory_.size());
             Item toBreak = inventory_.get(breakIndex);
+            Print("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning");
             if (!toBreak.LowerCondition()) {
                 // remove items with poor condition
-                Print("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning. It has been removed from inventory");
+                Print("It was already in poor condition, so it has been removed from inventory");
                 inventory_.remove(breakIndex);
             } else {
                 // lower condition and list price of non-poor quality items
-                Print("Oh no! " + GetClerk().name_ + " broke a " + toBreak.name_ + " while cleaning");
-                Print("It's condition has worsened to " + inventory_.get(breakIndex).condition_ + ", and its list price has lowered to $" + inventory_.get(breakIndex).list_price_ );
+                Print("It's condition has worsened to " + toBreak.condition_ + ", and its list price has lowered to $" + toBreak.list_price_ );
             }
             Publish("damagedcleaning", 1);
         } else {

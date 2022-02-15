@@ -1,10 +1,10 @@
-Shaggy arrived at the store
-Shaggy added 0 items to inventory
-Shaggy checked register to find $1729
-Shaggy found 38 items in inventory
-Shaggy found our inventory is worth $982
-Shaggy ordered 3 items
-Shaggy sold 6 items
-Shaggy purchased 4 items
-Shaggy broke 1 item(s) while cleaning
-Shaggy went home for the day
+Daphne arrived at the store
+Daphne added 0 items to inventory
+Daphne checked register to find $1898
+Daphne found 35 items in inventory
+Daphne found our inventory is worth $952
+Daphne ordered 3 items
+Daphne sold 5 items
+Daphne purchased 3 items
+Daphne broke 1 item(s) while cleaning
+Daphne went home for the day

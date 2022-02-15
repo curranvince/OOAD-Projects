@@ -1,10 +1,10 @@
-Velma arrived at the store
-Velma added 6 items to inventory
-Velma checked register to find $3281
-Velma found 40 items in inventory
-Velma found our inventory is worth $1127
-Velma ordered 3 items
-Velma sold 5 items
-Velma purchased 2 items
-Velma broke 1 item(s) while cleaning
-Velma went home for the day
+Daphne arrived at the store
+Daphne added 6 items to inventory
+Daphne checked register to find $3759
+Daphne found 36 items in inventory
+Daphne found our inventory is worth $839
+Daphne ordered 3 items
+Daphne sold 7 items
+Daphne purchased 2 items
+Daphne broke 0 item(s) while cleaning
+Daphne went home for the day
