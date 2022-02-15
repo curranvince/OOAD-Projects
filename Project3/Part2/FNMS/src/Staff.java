@@ -1,10 +1,10 @@
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
-interface Tune { public void Tune(Item item); }
+interface Tune extends Utility { public void Tune(Item item); }
 
 class ManualTune implements Tune {
     // 80% chance to tune, 20% chance to untune
     public void Tune(Item item) { 
-        if (Utility.GetRandomNum(10) < 8) {
+        if (GetRandomNum(10) < 8) {
             item.Tune();
         }  else {
             item.Untune(); 
@@ -14,7 +14,7 @@ class ManualTune implements Tune {
 
 class HaphazardTune implements Tune {
     // 50% chance to flip tune
-    public void Tune(Item item) { if (Utility.GetRandomNum(2) == 0) item.FlipTune(); }
+    public void Tune(Item item) { if (GetRandomNum(2) == 0) item.FlipTune(); }
 }
 
 class ElectronicTune implements Tune {
@@ -22,7 +22,7 @@ class ElectronicTune implements Tune {
     public void Tune(Item item) { item.Tune(); }
 }
 
-abstract class Staff {
+abstract class Staff implements Utility {
     String name_;
     private int days_worked_ = 0;
 
@@ -46,7 +46,7 @@ class Clerk extends Staff {
         tune_ = tune;
     }
 
-    public boolean Clean() { return (Utility.GetRandomNum(100) > break_percentage_); }
+    public boolean Clean() { return (GetRandomNum(100) > break_percentage_); }
 
     public void Tune(Item item) { tune_.Tune(item); }
 }

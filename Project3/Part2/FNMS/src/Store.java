@@ -21,7 +21,7 @@ enum ItemType {
     STRINGS
 }
 
-abstract class Store {
+abstract class Store implements Utility {
     protected Subscriber[] subscribers_ = new Subscriber[2];
     protected CashRegister register_ = new CashRegister();
     protected Vector<Item> inventory_ = new Vector<Item>();
@@ -53,7 +53,6 @@ abstract class Store {
     
     // methods to handle outputs
     private void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, GetClerk(), data); }
-    private void Print(String str) { System.out.println(str); }
     
     // methods to get workers
     private Staff GetClerk() { return clerks_.get(clerk_id_); }
@@ -61,9 +60,9 @@ abstract class Store {
     // Having the methods in this class private is an example of Encapsulation
     private void ChooseClerk() {
         // pick one of the two clerks
-        int rando = Utility.GetRandomNum(clerks_.size());
+        int rando = GetRandomNum(clerks_.size());
         // if the clerk has already worked 3 days in a row, have someone else work
-        clerk_id_ = (clerks_.get(rando).GetDaysWorked() < 3) ? rando : Utility.GetRandomNumEx(0, clerks_.size(), rando);
+        clerk_id_ = (clerks_.get(rando).GetDaysWorked() < 3) ? rando : GetRandomNumEx(0, clerks_.size(), rando);
         // increment days worked for todays clerked
         GetClerk().IncrementDaysWorked();
         // reset other clerks days worked
@@ -135,7 +134,7 @@ abstract class Store {
             // place orders
             if (!allItemTypes.isEmpty()) {
                 for (ItemType type : allItemTypes) {
-                    int deliveryDay = Utility.GetRandomNum(1, 4) + current_day_;
+                    int deliveryDay = GetRandomNum(1, 4) + current_day_;
                     // make sure orders arent delivered on Sunday
                     if (deliveryDay % 7 == 0) { deliveryDay++;}
                     // if date isnt in order system then add it
@@ -180,7 +179,7 @@ abstract class Store {
     //run a day at the store
     private void OpenTheStore() {
         // generate customers for the day
-        Vector<Customer> customers = Utility.MakeCustomers();
+        Vector<Customer> customers = MakeCustomers();
         for (Customer customer : customers) {
             // see if the customer wants to buy or sell
             customer.DisplayRequest();
@@ -191,7 +190,7 @@ abstract class Store {
                     if (item.itemType == customer.item_) {
                         // if we have item in stock, see if theyll buy it (50% chance)
                         found = true;
-                        int willBuy = Utility.GetRandomNum(2);
+                        int willBuy = GetRandomNum(2);
                         Print(GetClerk().name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
                         if (willBuy == 0) {
                             // sell item to customer at list price
@@ -201,7 +200,7 @@ abstract class Store {
                         } else {
                             // if they dont buy, offer discount to get 75% chance of buying
                             Print(GetClerk().name_ + " offers a 10% discount");
-                            willBuy = Utility.GetRandomNum(4);
+                            willBuy = GetRandomNum(4);
                             if (willBuy != 0) {
                                 // sell item to customer at discounted price
                                 int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
@@ -222,11 +221,11 @@ abstract class Store {
             } else {
                 // evaluate the customers item
                 Item item = ItemFactory.MakeItem(customer.item_.name());
-                int offerPrice = Utility.GetOfferPrice(item.condition_);
+                int offerPrice = GetOfferPrice(item.condition_);
                 Print(GetClerk().name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 // if we have enough $, offer to buy the item
                 if (register_.HasEnough(offerPrice)) {
-                    int willSell = Utility.GetRandomNum(2);
+                    int willSell = GetRandomNum(2);
                     if (willSell == 0) {
                         // buy item at initial offer price
                         Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
@@ -234,7 +233,7 @@ abstract class Store {
                     } else {
                         // if customer disagrees, offer 10% increase to price and try again
                         Print(GetClerk().name_ + " offers a 10% increase to the price");
-                        willSell = Utility.GetRandomNum(4);
+                        willSell = GetRandomNum(4);
                         if (willSell != 0) {
                             // store buys item at 10% extra price
                             int extraPrice = (int)(offerPrice+(offerPrice*0.1));
@@ -257,7 +256,7 @@ abstract class Store {
         Print("The store closes for the day and " + GetClerk().name_ + " begins cleaning");
         if (!GetClerk().Clean()) { 
             // pick a random item for the clerk to break
-            int breakIndex = Utility.GetRandomNum(inventory_.size());
+            int breakIndex = GetRandomNum(inventory_.size());
             Item toBreak = inventory_.get(breakIndex);
             if (!toBreak.LowerCondition()) {
                 // remove items with poor condition
@@ -272,6 +271,13 @@ abstract class Store {
             // nothing breaks
             Print(GetClerk().name_ + " cleans the store without incident");
         }
+    }
+
+    // every night, broadcast who left, show the trackers data, and close the logger
+    private void CloseStore() {
+        Print(GetClerk().name_ + " locks up and goes home for the night");
+        subscribers_[0].ShowData();
+        subscribers_[1].Close();
     }
 
     private void OutputResults() {
@@ -308,6 +314,7 @@ abstract class Store {
         }
         // each loop represents one day
         for (int i = 0; i < 30; i++) {
+            // iterate day and create days logger
             current_day_++;
             subscribers_[1] = new Logger(current_day_);
             if (current_day_ % 7 != 0) {
@@ -319,12 +326,12 @@ abstract class Store {
                 if (!CheckRegister()) { GoToBank(); }
                 // do inventory and order items
                 DoInventory();
-                // open store
+                // run the store day
                 OpenTheStore();
                 // clean the store
                 CleanStore();
-                // announce the end of the day
-                Print(GetClerk().name_ + " locks up and goes home for the night");
+                // end the day
+                CloseStore();
             } else {
                 // close the store on sundays
                 Print("Today is Day " + current_day_ + ", which is Sunday, so the store is closed.");
@@ -335,6 +342,7 @@ abstract class Store {
     }
 }
 
+// TO DO
 // This is an example of a Decorator
 class StoreDecorator extends Store {
     StoreDecorator() { super(); }

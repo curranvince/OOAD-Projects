@@ -1,13 +1,13 @@
-public class Customer {
+public class Customer implements Utility {
     String name_;
     boolean buying_;
     ItemType item_;
 
     Customer(boolean buying) {
         buying_ = buying;
-        name_ = Utility.GetRandomName();
-        item_ = Utility.GetRandomItemType();
+        name_ = GetRandomName();
+        item_ = GetRandomItemType();
     }
 
-    public void DisplayRequest() { System.out.println(name_ + " has come into the store looking to " + (buying_ ? "buy" : "sell") + " a " + item_.name()); }
+    public void DisplayRequest() { Print(name_ + " has come into the store looking to " + (buying_ ? "buy" : "sell") + " a " + item_.name()); }
 }

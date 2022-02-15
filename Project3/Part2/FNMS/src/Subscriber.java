@@ -1,11 +1,12 @@
 import java.io.*;
 // These Subscribers are an example of the Observer pattern. 
-interface Subscriber {
+interface Subscriber extends Utility {
     public void Update(String context, Staff clerk, int data);
     public void ShowData();
+    public void Close();
 }
 
-class Logger implements Subscriber{ 
+class Logger implements Subscriber { 
     private FileWriter writer_;
     private int current_day_;
 
@@ -18,7 +19,7 @@ class Logger implements Subscriber{
             file.createNewFile();
             writer_ = new FileWriter(file);
         } catch (IOException e) {
-            System.out.println("Error: Logger failed to create file");
+            Print("Error: Logger failed to create file");
             e.printStackTrace();
         }
     }
@@ -27,7 +28,7 @@ class Logger implements Subscriber{
         try {
             writer_.write(clerk.name_ + " " + msg);
         } catch (IOException e) {
-            System.out.println("Error: Logger failed to write to file");
+            Print("Error: Logger failed to write to file");
             e.printStackTrace();
         } 
     }
@@ -73,11 +74,19 @@ class Logger implements Subscriber{
         }
     }
 
+    public void Close() {
+        try {
+            writer_.close();
+        } catch (IOException e) {
+            Print("Error: Failed to close Loggers file writer");
+        }
+    }
+
     public void ShowData() {}
 }
 
 class Tracker implements Subscriber {
-    int[][] stats_ = new int[3][];
+    int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
     // [0][] for Velma, [1][] for Shaggy, [2][] for Daphne
     // [][0] for sold, [][1] for purchased, [][2] for damaged
 
@@ -105,9 +114,11 @@ class Tracker implements Subscriber {
     }
 
     public void ShowData() {
-        System.out.println("Clerk      Items Sold      Items Purchased      Items Damaged ");
-        System.out.println("Velma      " + stats_[0][0] + "      " + stats_[0][1] + "      " + stats_[0][2]);
-        System.out.println("Shaggy      " + stats_[1][0] + "      " + stats_[1][1] + "      " + stats_[1][2]);
-        System.out.println("Daphne      " + stats_[2][0] + "      " + stats_[2][1] + "      " + stats_[2][2]);
+        Print("Clerk      Items Sold      Items Purchased      Items Damaged ");
+        Print("Velma      " + stats_[0][0] + "      " + stats_[0][1] + "      " + stats_[0][2]);
+        Print("Shaggy     " + stats_[1][0] + "      " + stats_[1][1] + "      " + stats_[1][2]);
+        Print("Daphne     " + stats_[2][0] + "      " + stats_[2][1] + "      " + stats_[2][2]);
     }
+
+    public void Close() {}
 }

@@ -1,14 +1,15 @@
 import java.util.*;
 import java.util.Random;
-public class Utility {
-    private Utility() {};
 
-    static Random random = new Random();
+public interface Utility {
+    Random random = new Random();
 
-    static int GetRandomNum(int range) { return random.nextInt(range); }
-    static int GetRandomNum(int min, int max) { return random.nextInt(max-min)+min; }
-    static int GetRandomNumEx(int min, int max, int exclude) {
-        int rando = random.nextInt(max-min);
+    default void Print(String str) { System.out.println(str); }
+
+    default int GetRandomNum(int range) { return random.nextInt(range); }
+    default int GetRandomNum(int min, int max) { return random.nextInt(max-min) + min; }
+    default int GetRandomNumEx(int min, int max, int exclude) {
+        int rando = random.nextInt(max-min) + min;
         while (rando == exclude) {
             if (rando < max) rando++;
             else rando = min;
@@ -16,15 +17,15 @@ public class Utility {
         return rando;
     }
 
-    static Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
-    static ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
+    default Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
+    default ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
     
-    static Vector<Customer> MakeCustomers() {
+    default Vector<Customer> MakeCustomers() {
         // make vector to return
         Vector<Customer> toServe = new Vector<Customer>();
         // get random amounts of buyers and sellers in range
-        int buyers = Utility.GetRandomNum(4, 11);
-        int sellers = Utility.GetRandomNum(1, 5);
+        int buyers = GetRandomNum(4, 11);
+        int sellers = GetRandomNum(1, 5);
         // create buyers and sellers
         for (int i = 0; i < buyers; i++) {
             toServe.add(new Customer(true));
@@ -37,7 +38,7 @@ public class Utility {
         return toServe;
     }
     
-    static String GetRandomCondition() {
+    default String GetRandomCondition() {
         // return a random 'Condition' for an item
         int rando = GetRandomNum(5);
         switch (rando) {
@@ -56,7 +57,7 @@ public class Utility {
         }
     }
     
-    static int GetOfferPrice(String condition) {
+    default int GetOfferPrice(String condition) {
         // offer different prices based on given condition
         switch (condition) {
             case "Poor":
@@ -70,12 +71,12 @@ public class Utility {
             case "Excellent":
                 return GetRandomNum(40, 51);
             default:
-                System.out.println("ERROR: Utility::GetOfferPrice given bad paramter");
+                Print("ERROR: Utility::GetOfferPrice given bad paramter");
                 return 1000000;
         }
     }
 
-    static String[] GetMusicTitle() {
+    default String[] GetMusicTitle() {
         String[][] combos = {
             {"Ten", "Pearl Jam"},
             {"The Black Album", "Jay-Z"},
@@ -113,7 +114,7 @@ public class Utility {
         return combos[GetRandomNum(combos.length)];
     }
 
-    static String GetStringedBrand() {
+    default String GetStringedBrand() {
         String[] brands = {
             "Gibson",
             "Guild",
@@ -126,7 +127,7 @@ public class Utility {
         return brands[GetRandomNum(brands.length)];
     }
 
-    static String GetFluteBrand() {
+    default String GetFluteBrand() {
         String[] brands = {
             "Miyazawa",
             "Emerson",
@@ -136,7 +137,7 @@ public class Utility {
         return brands[GetRandomNum(brands.length)];
     }
 
-    static String GetHarmonicaBrand() {
+    default String GetHarmonicaBrand() {
         String[] brands = {
             "Suzuki",
             "SEYDEL",
@@ -146,7 +147,7 @@ public class Utility {
         return brands[GetRandomNum(brands.length)];
     }
 
-    static String GetHarmonicaKey() {
+    default String GetHarmonicaKey() {
         String[] keys = {
             "C",
             "A",
@@ -158,7 +159,7 @@ public class Utility {
         return keys[GetRandomNum(keys.length)];
     }
 
-    static String GetClothingBrand() {
+    default String GetClothingBrand() {
         String[] brands = {
             "Nirvna",
             "Pearl Jam",
@@ -176,7 +177,7 @@ public class Utility {
         return brands[GetRandomNum(brands.length)];
     }
 
-    static String GetBandanaColor() {
+    default String GetBandanaColor() {
         String[] colors = {
             "Red",
             "Blue",
@@ -187,7 +188,7 @@ public class Utility {
         return colors[GetRandomNum(colors.length)];
     }
 
-    static String GetStringType() {
+    default String GetStringType() {
         String[] types = {
             "Guitar",
             "Violin",
@@ -199,7 +200,7 @@ public class Utility {
         return types[GetRandomNum(types.length)];
     }
 
-    static String GetRandomName() {
+    default String GetRandomName() {
         String[] names = {
             "Alice",
             "Amber",

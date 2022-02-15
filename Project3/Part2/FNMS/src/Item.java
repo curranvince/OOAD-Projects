@@ -7,7 +7,7 @@ enum Size {
 // Item is an example of an abstraction
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
-abstract class Item {
+abstract class Item implements Utility {
     ItemType itemType;
     String name_;
     int purchase_price_;
@@ -20,18 +20,18 @@ abstract class Item {
     Item() {
         name_ = "";
         // Items have a purchase price $1-50, and list price is double
-        purchase_price_ = Utility.GetRandomNum(1, 51);
+        purchase_price_ = GetRandomNum(1, 51);
         list_price_ = 2*purchase_price_;
         day_arrived = 0;
-        condition_ = Utility.GetRandomCondition();
+        condition_ = GetRandomCondition();
     };
 
     void Display() {
-        System.out.println(name_ + " for $" + list_price_);
+        Print(name_ + " for $" + list_price_);
     }
 
     void DisplaySold() {
-        System.out.println(name_ + " for $" + sale_price_ + " on Day " + day_sold_);
+        Print(name_ + " for $" + sale_price_ + " on Day " + day_sold_);
     }
 
     boolean LowerCondition() {
@@ -53,7 +53,7 @@ abstract class Item {
                 // return false if item breaks
                 return false;
             default:
-                System.out.println("ERROR: Item::LowerCondition given bad paramater");
+                Print("ERROR: Item::LowerCondition given bad paramater");
                 return true;
         }
         // lower price of item and return true for success
@@ -75,7 +75,7 @@ abstract class Music extends Item {
     private String album_;
 
     Music () {
-        String[] combo = Utility.GetMusicTitle();
+        String[] combo = GetMusicTitle();
         album_ = combo[0];
         band_ = combo[1];
         name_ += album_ + " by " + band_;
@@ -123,6 +123,7 @@ class RecordPlayer extends Players {
         itemType = ItemType.RECORDPLAYER;
     }
 }
+
 class MP3Player extends Players {
     MP3Player() { 
         name_ += "MP3 Player";
@@ -137,8 +138,8 @@ abstract class Stringed extends Instruments {
     private boolean tuned_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
-        name_ += Utility.GetStringedBrand() + " ";
-        int switcher = Utility.GetRandomNum(2);
+        name_ += GetStringedBrand() + " ";
+        int switcher = GetRandomNum(2);
         if (switcher == 1) {
             electric_ = true;
             name_ += "Electric ";
@@ -183,8 +184,8 @@ class Flute extends Wind {
     private String type_;
 
     Flute() {
-        type_= (Utility.GetRandomNum(2) == 0) ? " Silver " : " Wood ";
-        name_ += Utility.GetFluteBrand() + type_ + "Flute";
+        type_= (GetRandomNum(2) == 0) ? " Silver " : " Wood ";
+        name_ += GetFluteBrand() + type_ + "Flute";
         itemType = ItemType.FLUTE;
     }
 }
@@ -193,8 +194,8 @@ class Harmonica extends Wind {
     private String key_;
 
     Harmonica() {
-        key_= Utility.GetHarmonicaKey();
-        name_ += Utility.GetHarmonicaBrand() + " Harmonica in a key of \"" + key_ + "\"";
+        key_= GetHarmonicaKey();
+        name_ += GetHarmonicaBrand() + " Harmonica in a key of \"" + key_ + "\"";
         itemType = ItemType.HARMONICA;
     }
 }
@@ -205,8 +206,8 @@ class Hats extends Clothing {
     private Size size_;
 
     Hats() {
-        size_ = Utility.GetRandomSize();
-        name_ += size_.name() + " " + Utility.GetClothingBrand() + " Hat";
+        size_ = GetRandomSize();
+        name_ += size_.name() + " " + GetClothingBrand() + " Hat";
         itemType = ItemType.HATS;
     }
 }
@@ -215,15 +216,15 @@ class Shirts extends Clothing {
     private Size size_;
 
     Shirts() {
-        size_ = Utility.GetRandomSize();
-        name_ += size_.name() + " " + Utility.GetClothingBrand() + " Shirt";
+        size_ = GetRandomSize();
+        name_ += size_.name() + " " + GetClothingBrand() + " Shirt";
         itemType = ItemType.SHIRTS;
     }
 }
 
 class Bandanas extends Clothing {
     Bandanas() {
-        name_ +=  Utility.GetBandanaColor() + " Bandana";
+        name_ +=  GetBandanaColor() + " Bandana";
         itemType = ItemType.BANDANAS;
     }
 }
@@ -234,7 +235,7 @@ class PracticeAmps extends Accessories {
     private int wattage_;
 
     PracticeAmps() {
-        wattage_ = Utility.GetRandomNum(10, 21);
+        wattage_ = GetRandomNum(10, 21);
         name_ += wattage_ + " watt amp";
         itemType = ItemType.PRACTICEAMPS;
     }
@@ -244,7 +245,7 @@ class Cables extends Accessories {
     private int length_;
 
     Cables() {
-        length_ = Utility.GetRandomNum(1, 7);
+        length_ = GetRandomNum(1, 7);
         name_ += length_ + " meter cable";
         itemType = ItemType.CABLES;
     }
@@ -254,7 +255,7 @@ class Strings extends Accessories {
     private String type_;
 
     Strings() {
-        type_ = Utility.GetStringType();
+        type_ = GetStringType();
         name_ += type_ + " strings";
         itemType = ItemType.STRINGS;
     }
