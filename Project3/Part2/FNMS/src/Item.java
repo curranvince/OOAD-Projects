@@ -1,3 +1,9 @@
+// TO DO
+// Add new items
+//  - create class
+//  - add to itemtype enum
+//  - add to factory
+
 enum Size {
     Small, 
     Medium, 

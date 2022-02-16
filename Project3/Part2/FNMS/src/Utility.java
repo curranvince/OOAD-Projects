@@ -1,3 +1,6 @@
+//TO DO
+// Alter number of customers arriving
+
 import java.util.*;
 import java.util.Random;
 

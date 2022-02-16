@@ -1,3 +1,8 @@
+//TO DO
+// Stop selling clothing (and buying from customers)
+// Clerk may be sick
+// Decorate sell method (at very bottom)
+
 import java.util.*;
 import java.io.*;
 
@@ -70,7 +75,7 @@ abstract class Store implements Utility {
         int rando = GetRandomNum(clerks_.size());
         // if the clerk has already worked 3 days in a row, have someone else work
         clerk_id_ = (clerks_.get(rando).GetDaysWorked() < 3) ? rando : GetRandomNumEx(0, clerks_.size(), rando);
-        // TO DO : handle clerk being sick
+// TO DO handle clerk being sick
         // increment days worked for todays clerked
         GetClerk().IncrementDaysWorked();
         // reset other clerks days worked
@@ -169,6 +174,8 @@ abstract class Store implements Utility {
     private int PlaceOrders(Set<ItemType> orderTypes) {
         int orders = 0;
         for (ItemType type : orderTypes) {
+//TO DO 
+// stop ordering items we no longer sell
             int deliveryDay = GetRandomNum(1, 4) + current_day_;
             // make sure orders arent delivered on Sunday
             if (deliveryDay % 7 == 0) { deliveryDay++; }
@@ -254,6 +261,9 @@ abstract class Store implements Utility {
             } else {
                 // evaluate the customers item
                 Item item = ItemFactory.MakeItem(customer.GetItemType().name());
+// TO DO
+// Check if we still sell the item, if we dont: tell customer
+// we dont want the item and do not buy it from them
                 int offerPrice = GetOfferPrice(item.condition_);
                 Print(GetClerk().name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
                 // if we have enough $, offer to buy the item
@@ -391,7 +401,7 @@ class StoreDecorator extends Store {
     // decorated version of sell an item to a customer
     protected void Sell(Item item, int salePrice) {
         super.Sell(item, salePrice); // https://docs.oracle.com/javase/tutorial/java/IandI/super.html
-        // TO DO : finish decorating method
+// TO DO : finish decorating method
 
     }
 }
