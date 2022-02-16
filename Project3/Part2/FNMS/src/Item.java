@@ -4,12 +4,6 @@
 //  - add to itemtype enum
 //  - add to factory
 
-enum Size {
-    Small, 
-    Medium, 
-    Large
-}
-
 // Item is an example of an abstraction
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
@@ -22,6 +16,32 @@ abstract class Item implements Utility {
     String condition_;
     int sale_price_;
     int day_sold_;
+
+    public enum ItemType {
+        PAPERSCORE,
+        CD,
+        VINYL,
+        CDPLAYER,
+        RECORDPLAYER,
+        MP3PLAYER,
+        GUITAR,
+        BASS,
+        MANDOLIN,
+        FLUTE,
+        HARMONICA,
+        HATS,
+        SHIRTS,
+        BANDANAS,
+        PRACTICEAMPS,
+        CABLES,
+        STRINGS
+    }
+
+    public enum Size {
+        Small, 
+        Medium, 
+        Large
+    }
 
     Item() {
         name_ = "";
@@ -76,6 +96,7 @@ abstract class Item implements Utility {
     void Tune() {};
     void Untune() {};
     boolean IsTuned() { return false; }
+    boolean NeedsTuning() { return false; }
 }
 
 
@@ -120,6 +141,7 @@ abstract class Players extends Item {
     void Tune() { equalized_ = true; }
     void Untune() { equalized_ = false; }
     boolean IsTuned() { return equalized_; }
+    boolean NeedsTuning() { return true; }
 }
 
 class CDPlayer extends Players { 
@@ -162,6 +184,7 @@ abstract class Stringed extends Instruments {
     void Tune() { tuned_ = true; }
     void Untune() { tuned_ = false; }
     boolean IsTuned() { return tuned_; }
+    boolean NeedsTuning() { return true; }
 }
 
 class Guitar extends Stringed {
@@ -191,6 +214,7 @@ abstract class Wind extends Instruments {
     void Tune() { adjusted_ = true; }
     void Untune() { adjusted_ = false; }
     boolean IsTuned() { return adjusted_; }
+    boolean NeedsTuning() { return true; }
 }
 
 class Flute extends Wind {

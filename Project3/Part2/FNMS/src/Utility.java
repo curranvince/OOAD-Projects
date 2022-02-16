@@ -20,8 +20,8 @@ public interface Utility {
         return rando;
     }
 
-    default Size GetRandomSize() { return Size.values()[GetRandomNum(3)]; }
-    default ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(17)]; }
+    default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(3)]; }
+    default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(17)]; }
     
     default Vector<Customer> MakeCustomers() {
         // make vector to return

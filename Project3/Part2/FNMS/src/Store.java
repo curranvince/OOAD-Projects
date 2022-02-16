@@ -6,33 +6,13 @@
 import java.util.*;
 import java.io.*;
 
-enum ItemType {
-    PAPERSCORE,
-    CD,
-    VINYL,
-    CDPLAYER,
-    RECORDPLAYER,
-    MP3PLAYER,
-    GUITAR,
-    BASS,
-    MANDOLIN,
-    FLUTE,
-    HARMONICA,
-    HATS,
-    SHIRTS,
-    BANDANAS,
-    PRACTICEAMPS,
-    CABLES,
-    STRINGS
-}
-
 abstract class Store implements Utility {
     protected Subscriber[] subscribers_ = new Subscriber[2];
     protected CashRegister register_ = new CashRegister();
     protected Vector<Item> inventory_ = new Vector<Item>();
     protected Vector<Item> sold_ = new Vector<Item>();
     protected Vector<Staff> clerks_ = new Vector<Staff>();
-    protected HashMap<Integer, Vector<ItemType>> orders_ = new HashMap<Integer, Vector<ItemType>>();
+    protected HashMap<Integer, Vector<Item.ItemType>> orders_ = new HashMap<Integer, Vector<Item.ItemType>>();
     protected int current_day_;
     protected int clerk_id_;
     protected int total_withdrawn_;
@@ -43,7 +23,7 @@ abstract class Store implements Utility {
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
-        for (ItemType itemType : ItemType.values()) {
+        for (Item.ItemType itemType : Item.ItemType.values()) {
             for (int i = 0; i < 3; i++) {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
             }
@@ -91,7 +71,7 @@ abstract class Store implements Utility {
         // check if theres any orders for today
         if (orders_.containsKey(current_day_)) {
             // receive orders for each type
-            for (ItemType type : orders_.get(current_day_)) {
+            for (Item.ItemType type : orders_.get(current_day_)) {
                 Print(GetClerk().name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
@@ -127,8 +107,8 @@ abstract class Store implements Utility {
 
     private void DoInventory() {
         // vector to keep track of what types we need to order (start with all and remove)
-        Set<ItemType> orderTypes = new HashSet<ItemType>();
-        Collections.addAll(orderTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
+        Set<Item.ItemType> orderTypes = new HashSet<Item.ItemType>();
+        Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
         int total, totalitems, damaged, orders;
         total = totalitems = damaged = orders = 0;
         Iterator<Item> it = inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
@@ -137,7 +117,7 @@ abstract class Store implements Utility {
             // remove this type from the list of oens we need to order
             if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
-            if (item.itemType == ItemType.CDPLAYER || item.itemType == ItemType.MP3PLAYER || item.itemType == ItemType.RECORDPLAYER || item.itemType == ItemType.GUITAR || item.itemType == ItemType.MANDOLIN || item.itemType == ItemType.BASS || item.itemType == ItemType.FLUTE || item.itemType == ItemType.HARMONICA) {
+            if (item.NeedsTuning()) {
                 if (!GetClerk().Tune(item)) {
                     if (item.condition_ == "Broken") it.remove();
                     damaged++;
@@ -155,8 +135,8 @@ abstract class Store implements Utility {
         
         if (!orderTypes.isEmpty()) {
             // remove items weve already ordered
-            for (Vector<ItemType> vec : orders_.values()) {
-                for (ItemType orderedItem : vec) { orderTypes.remove(orderedItem); }
+            for (Vector<Item.ItemType> vec : orders_.values()) {
+                for (Item.ItemType orderedItem : vec) { orderTypes.remove(orderedItem); }
                 if (orderTypes.isEmpty()) break;
             }
             // place orders
@@ -171,16 +151,16 @@ abstract class Store implements Utility {
         Publish("itemsordered", orders);
     }
 
-    private int PlaceOrders(Set<ItemType> orderTypes) {
+    private int PlaceOrders(Set<Item.ItemType> orderTypes) {
         int orders = 0;
-        for (ItemType type : orderTypes) {
+        for (Item.ItemType type : orderTypes) {
 //TO DO 
 // stop ordering items we no longer sell
             int deliveryDay = GetRandomNum(1, 4) + current_day_;
             // make sure orders arent delivered on Sunday
             if (deliveryDay % 7 == 0) { deliveryDay++; }
             // if date isnt in order system then add it
-            if (!orders_.containsKey(deliveryDay)) { orders_.put(deliveryDay, new Vector<ItemType>()); } 
+            if (!orders_.containsKey(deliveryDay)) { orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
             // add order to delivery day
             orders_.get(deliveryDay).add(type);
             // broadcast who placed an order of what and what day it will arrive
