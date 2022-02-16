@@ -1,11 +1,11 @@
 Velma arrived at the store
-Velma added 6 items to inventory
-Velma checked register to find $3550
+Velma added 0 items to inventory
+Velma checked register to find $2936
 Velma damaged 0 items while tuning
-Velma found 44 items in inventory
-Velma found our inventory is worth $913
-Velma ordered 9 items
-Velma sold 7 items
-Velma purchased 1 items
+Velma found 45 items in inventory
+Velma found our inventory is worth $1213
+Velma ordered 6 items
+Velma sold 8 items
+Velma purchased 2 items
 Velma damaged 0 item(s) while cleaning
 Velma went home for the day

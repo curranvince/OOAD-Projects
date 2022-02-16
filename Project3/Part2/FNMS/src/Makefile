@@ -10,7 +10,7 @@ CLASSES = \
 	Utility.java \
 	Item.java \
 	ItemFactory.java \
-	Staff.java \
+	Clerk.java \
 	Customer.java \
 	CashRegister.java \
 	Store.java \
