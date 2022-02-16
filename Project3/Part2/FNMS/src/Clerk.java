@@ -49,19 +49,20 @@ class ElectronicTune implements Tune {
 }
 
 abstract class Staff implements Utility {
+    protected String name_;
     protected Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
-
-    public String name_;
+    
     private int days_worked_ = 0;
 
     Staff(String name) { name_ = name; }
 
+    public String GetName() { return name_; }
     public void IncrementDaysWorked() { days_worked_++; }
     public int GetDaysWorked() { return days_worked_; }
     public void ResetDaysWorked() { days_worked_ = 0; }
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
-    
+
     protected void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, this, data); }
 }
 
@@ -121,6 +122,7 @@ public class Clerk extends Staff {
 
     // sell an item to a customer
     private void Sell(Item item, int salePrice) {
+        Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register
         Store.register_.AddMoney(salePrice);
         // update item sale price and day
@@ -133,12 +135,80 @@ public class Clerk extends Staff {
 
     // buy an item from a customer
     private void Buy(Item item, int salePrice) {
+        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
         // take money from register and
         Store.register_.TakeMoney(salePrice);
         item.purchase_price_ = salePrice;
         item.list_price_ = salePrice*2;
         item.day_arrived = Simulation.current_day_;
         Store.inventory_.add(item);
+    }
+
+    private boolean TryToSell(Item item) {
+        boolean sold = false;
+        int willBuy = GetRandomNum(2);
+        Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
+        if (willBuy == 0) {
+            // sell item to customer at list price
+            Sell(item, item.list_price_);
+            sold = true;
+        } else {
+            // if they dont buy, offer discount to get 75% chance of buying
+            Print(name_ + " offers a 10% discount");
+            willBuy = GetRandomNum(4);
+            if (willBuy != 0) {
+                // sell item to customer at discounted price
+                int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
+                Print("The customer buys the " + item.name_ + " for $" + discountPrice);
+                Sell(item, discountPrice);
+                sold = true;
+            } else {
+                Print("The customer decides not to buy the " + item.name_);
+            }
+        }
+        return sold;
+    }
+
+    private boolean TryToBuy(Item item) {
+// TO DO
+// Check if we still sell the item, if we dont: tell customer
+// we dont want the item and do not buy it from them
+        boolean bought = false;
+        int offerPrice = GetOfferPrice(item.condition_);
+        Print(name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
+        // if we have enough $, offer to buy the item
+        if (Store.register_.HasEnough(offerPrice)) {
+            int willSell = GetRandomNum(2);
+            if (willSell == 0) {
+                // buy item at initial offer price
+                Buy(item, offerPrice);
+                bought = true;
+            } else {
+                // if customer disagrees, offer 10% increase to price and try again
+                Print(name_ + " offers a 10% increase to the price");
+                willSell = GetRandomNum(4);
+                if (willSell != 0) {
+                    // store buys item at 10% extra price
+                    int extraPrice = (int)(offerPrice+(offerPrice*0.1));
+                    Buy(item, extraPrice);
+                    bought = true;
+                } else {
+                    // if the customer disagrees again let them leave
+                    Print("The customer leaves without selling their " + item.name_);
+                }
+            }
+        } else {
+            // if we dont have enough money broadcast that
+            Print("The store doesn't have enough money to buy the " + item.name_);
+        }
+        return bought;
+    }
+
+    private Item CheckForItem(Item.ItemType itemType) {
+        for (Item item : Store.inventory_) {
+            if (item.itemType == itemType) return item;
+        }
+        return null;
     }
 
     //run a day at the store
@@ -152,76 +222,13 @@ public class Clerk extends Staff {
             customer.DisplayRequest();
             if (customer.IsBuying()) {
                 // see if we have an item for them in stock
-                boolean found = false;
-                for (Item item : Store.inventory_) {
-                    if (item.itemType == customer.GetItemType()) {
-                        // if we have item in stock, see if theyll buy it (50% chance)
-                        found = true;
-                        int willBuy = GetRandomNum(2);
-                        Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
-                        if (willBuy == 0) {
-                            // sell item to customer at list price
-                            Print("The customer buys the " + item.name_ + " for $" + item.list_price_);
-                            Sell(item, item.list_price_);
-                            itemssold++;
-                            break;
-                        } else {
-                            // if they dont buy, offer discount to get 75% chance of buying
-                            Print(name_ + " offers a 10% discount");
-                            willBuy = GetRandomNum(4);
-                            if (willBuy != 0) {
-                                // sell item to customer at discounted price
-                                int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
-                                Print("The customer buys the " + item.name_ + " for $" + discountPrice);
-                                Sell(item, discountPrice);
-                                itemssold++;
-                                break;
-                            } else {
-                                Print("The customer decides not to buy the " + item.name_);
-                                // no break assumes we want to show the customer each of something we have in stock, not just one
-                                // add break here to show customer only one item if they don't buy the first
-                                // break;
-                            }
-                        }
-                    }
-                }
-                // if no item in stock tell the customer we have none
-                if (!found) Print(name_ + " informs the customer we have no " + customer.GetItemType().name() + " in stock");
-            } else {
-                // evaluate the customers item
-                Item item = ItemFactory.MakeItem(customer.GetItemType().name());
-// TO DO
-// Check if we still sell the item, if we dont: tell customer
-// we dont want the item and do not buy it from them
-                int offerPrice = GetOfferPrice(item.condition_);
-                Print(name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
-                // if we have enough $, offer to buy the item
-                if (Store.register_.HasEnough(offerPrice)) {
-                    int willSell = GetRandomNum(2);
-                    if (willSell == 0) {
-                        // buy item at initial offer price
-                        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + offerPrice);
-                        Buy(item, offerPrice);
-                        itemsbought++;
-                    } else {
-                        // if customer disagrees, offer 10% increase to price and try again
-                        Print(name_ + " offers a 10% increase to the price");
-                        willSell = GetRandomNum(4);
-                        if (willSell != 0) {
-                            // store buys item at 10% extra price
-                            int extraPrice = (int)(offerPrice+(offerPrice*0.1));
-                            Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + extraPrice);
-                            Buy(item, extraPrice);
-                            itemsbought++;
-                        } else {
-                            // if the customer disagrees again let them leave
-                            Print("The customer leaves without selling their " + item.name_);
-                        }
-                    }
+                if (CheckForItem(customer.GetItemType()) != null) {
+                    if (TryToSell(CheckForItem(customer.GetItemType()))) itemssold++;
                 } else {
-                    // if we dont have enough money broadcast that
-                    Print("The store doesn't have enough money to buy the " + item.name_);
+                    Print(name_ + " informs the customer we have no " + customer.GetItemType().name() + " in stock");
                 }
+            } else {
+                if (TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()))) itemsbought++;
             }
         }
         Publish("itemsold", itemssold);
