@@ -1,5 +1,6 @@
 import java.util.*;
 abstract class Staff extends Publisher implements Utility {
+    protected Store store_;
     protected String name_;
     private int days_worked_ = 0;
     

@@ -1,10 +1,9 @@
 import java.io.*;
-
+// Takes inspiration from Professors source code for Project 2
 public class Simulation implements Utility {
     Store store_ = new Store();
     static int current_day_ = 0;
 
-    private Staff GetClerk() { return store_.GetClerk(); }
     private void SetOutputStream() {
         // set system out to Output.txt
         try {
@@ -23,8 +22,8 @@ public class Simulation implements Utility {
         // display items sold & their value
         store_.DisplayInventory(false);
         // display money stats
-        Print("The store has $" + Store.register_.GetAmount() + " in the register");
-        Print("$" + Store.total_withdrawn_ + " was withdrawn from the bank");
+        Print("The store has $" + store_.register_.GetAmount() + " in the register");
+        Print("$" + store_.total_withdrawn_ + " was withdrawn from the bank");
     }
 
     public void RunSimulation(int n) {
@@ -41,23 +40,10 @@ public class Simulation implements Utility {
             Subscriber dailyLogger = new Logger(current_day_);
             store_.Subscribe(dailyLogger);
             if (current_day_ % 7 != 0) {
-                // pick whos working
-                store_.ChooseClerk();
-                // accept deliveries
-                GetClerk().ArriveAtStore();
-                // check the register & go to bank if we're broke
-                if (!GetClerk().CheckRegister()) { GetClerk().GoToBank(); }
-                // do inventory and order items
-                GetClerk().PlaceOrders(GetClerk().DoInventory());
-                // run the store day
-                store_.Open();
-                // clean the store
-                GetClerk().CleanStore();
-                // end the day
-                GetClerk().CloseStore();
+                store_.OpenToday();
             } else {
                 // close the store on sundays
-                store_.HandleSunday();
+                store_.ClosedToday();
             }
             // close daily logger and show tracker at end of every day
             store_.Unsubscribe(dailyLogger);

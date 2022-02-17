@@ -1,11 +1,11 @@
 Shaggy arrived at the store
 Shaggy added 0 items to inventory
-Shaggy checked register to find $1240
-Shaggy damaged 7 items while tuning
-Shaggy found 30 items in inventory
-Shaggy found our inventory is worth $706
+Shaggy checked register to find $1836
+Shaggy damaged 6 items while tuning
+Shaggy found 21 items in inventory
+Shaggy found our inventory is worth $503
 Shaggy ordered 0 items
-Shaggy sold 9 items
-Shaggy purchased 4 items
+Shaggy sold 7 items
+Shaggy purchased 3 items
 Shaggy damaged 0 item(s) while cleaning
-Shaggy went home for the day
+Shaggy left the store

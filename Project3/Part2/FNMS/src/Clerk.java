@@ -59,30 +59,31 @@ public class Clerk extends Staff {
     private int break_percentage_;
     private Tune tune_;
     
-    public Clerk(String name, int break_percentage, Tune tune) {
+    public Clerk(String name, int break_percentage, Tune tune, Store store) {
         name_ = name;
         break_percentage_ = break_percentage;
         tune_ = tune;
+        store_ = store;
     }    
     
     public void ArriveAtStore() { 
         super.ArriveAtStore();
         int orders_received = 0;
         // check if theres any orders for today
-        if (Store.orders_.containsKey(Simulation.current_day_)) {
+        if (store_.orders_.containsKey(Simulation.current_day_)) {
             // receive orders for each type
-            for (Item.ItemType type : Store.orders_.get(Simulation.current_day_)) {
+            for (Item.ItemType type : store_.orders_.get(Simulation.current_day_)) {
                 Print(name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
                     toAdd.day_arrived = Simulation.current_day_;
-                    Store.inventory_.add(toAdd);
-                    Store.register_.TakeMoney(Store.inventory_.lastElement().purchase_price_);
+                    store_.inventory_.add(toAdd);
+                    store_.register_.TakeMoney(store_.inventory_.lastElement().purchase_price_);
                     orders_received++;
                 }
             }
             // remove orders from the map
-            Store.orders_.remove(Simulation.current_day_);
+            store_.orders_.remove(Simulation.current_day_);
         } else {
             // if no orders today then broadcast it
             Print(name_  + " finds no orders delivered today"); 
@@ -91,22 +92,22 @@ public class Clerk extends Staff {
     }
 
     public boolean CheckRegister() {
-        Publish("checkedregister", Store.register_.GetAmount());
+        Publish("checkedregister", store_.register_.GetAmount());
         // broadcast register amount and return if its greater than 75 or not
-        Print(name_ + " checks the register to find $" + Store.register_.GetAmount());
-        return (Store.register_.GetAmount() >= 75) ? true : false;
+        Print(name_ + " checks the register to find $" + store_.register_.GetAmount());
+        return (store_.register_.GetAmount() >= 75) ? true : false;
     }
 
     public void GoToBank() {
         // add 1000 to register and broadcast
         Print(name_ + " goes to the bank to withdraw $1000 for the register" );
-        Store.register_.AddMoney(1000);
-        Store.total_withdrawn_ += 1000;
-        Publish("checkedregister", Store.register_.GetAmount());
+        store_.register_.AddMoney(1000);
+        store_.total_withdrawn_ += 1000;
+        Publish("checkedregister", store_.register_.GetAmount());
     }
 
     public Item CheckForItem(Item.ItemType itemType) {
-        for (Item item : Store.inventory_) {
+        for (Item item : store_.inventory_) {
             if (item.itemType == itemType) return item;
         }
         return null;
@@ -116,22 +117,22 @@ public class Clerk extends Staff {
     private void Sell(Item item, int salePrice) {
         Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register, update item stats, update inventories
-        Store.register_.AddMoney(salePrice);
+        store_.register_.AddMoney(salePrice);
         item.day_sold_ = Simulation.current_day_;
         item.sale_price_ = salePrice;
-        Store.inventory_.remove(item);
-        Store.sold_.add(item);
+        store_.inventory_.remove(item);
+        store_.sold_.add(item);
     }
 
     // buy an item from a customer
     private void Buy(Item item, int salePrice) {
         Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
         // take money from register, update item stats, update inventories
-        Store.register_.TakeMoney(salePrice);
+        store_.register_.TakeMoney(salePrice);
         item.purchase_price_ = salePrice;
         item.list_price_ = salePrice*2;
         item.day_arrived = Simulation.current_day_;
-        Store.inventory_.add(item);
+        store_.inventory_.add(item);
     }
 
     public boolean TryToSell(Item item) {
@@ -165,7 +166,7 @@ public class Clerk extends Staff {
         int offerPrice = GetOfferPrice(item.condition_);
         Print(name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
         // if we have enough $, offer to buy the item
-        if (Store.register_.HasEnough(offerPrice)) {
+        if (store_.register_.HasEnough(offerPrice)) {
             int willSell = GetRandomNum(2);
             if (willSell == 0) {
                 // buy item at initial offer price
@@ -219,7 +220,7 @@ public class Clerk extends Staff {
         Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
         int total, totalitems, damaged, orders;
         total = totalitems = damaged = orders = 0;
-        Iterator<Item> it = Store.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
+        Iterator<Item> it = store_.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
         while (it.hasNext()) {
             Item item = it.next();
             // remove this type from the list of types we need to order
@@ -252,7 +253,7 @@ public class Clerk extends Staff {
         int orders = 0;
         if (!orderTypes.isEmpty()) {
             // remove items weve already ordered
-            for (Vector<Item.ItemType> vec : Store.orders_.values()) {
+            for (Vector<Item.ItemType> vec : store_.orders_.values()) {
                 for (Item.ItemType orderedItem : vec) { orderTypes.remove(orderedItem); }
                 if (orderTypes.isEmpty()) break;
             }
@@ -265,9 +266,9 @@ public class Clerk extends Staff {
                     // make sure orders arent delivered on Sunday
                     if (deliveryDay % 7 == 0) { deliveryDay++; }
                     // if date isnt in order system then add it
-                    if (!Store.orders_.containsKey(deliveryDay)) { Store.orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
+                    if (!store_.orders_.containsKey(deliveryDay)) { store_.orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
                     // add order to delivery day
-                    Store.orders_.get(deliveryDay).add(type);
+                    store_.orders_.get(deliveryDay).add(type);
                     // broadcast who placed an order of what and what day it will arrive
                     Print(name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
                     orders += 3;
@@ -286,13 +287,13 @@ public class Clerk extends Staff {
         Print("The store closes for the day and " + name_ + " begins cleaning");
         if (GetRandomNum(100) < break_percentage_) { 
             // pick a random item for the clerk to break
-            int breakIndex = GetRandomNum(Store.inventory_.size());
-            Item toBreak = Store.inventory_.get(breakIndex);
+            int breakIndex = GetRandomNum(store_.inventory_.size());
+            Item toBreak = store_.inventory_.get(breakIndex);
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
             if (!toBreak.LowerCondition()) {
                 // remove items with poor condition
                 Print("It was already in poor condition, so it has been removed from inventory");
-                Store.inventory_.remove(breakIndex);
+                store_.inventory_.remove(breakIndex);
             } else {
                 // lower condition and list price of non-poor quality items
                 Print("It's condition has worsened to " + toBreak.condition_ + ", and its list price has lowered to $" + toBreak.list_price_ );

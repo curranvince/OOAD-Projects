@@ -31,45 +31,43 @@ class Logger implements Subscriber {
         } 
     }
 
-    private void Write(String clerk, String msg) { Write(clerk + " " + msg); }
-
     public void Update(String context, String clerk, int data) {
         // consume information
         switch (context) {
             case "arrival": 
-                Write(clerk, "arrived at the store");
+                Write(clerk + " arrived at the store");
                 break;
             case "itemsadded":
-                Write(clerk, "added " + data + " items to inventory");
+                Write(clerk + " added " + data + " items to inventory");
                 break;
             case "checkedregister":
-                Write(clerk, "checked register to find $" + data);
+                Write(clerk + " checked register to find $" + data);
                 break;
             case "totalitems":
-                Write(clerk, "found " + data + " items in inventory");
+                Write(clerk + " found " + data + " items in inventory");
                 break;
             case "totalitemsprice":
-                Write(clerk, "found our inventory is worth $" + data);
+                Write(clerk + " found our inventory is worth $" + data);
                 break;
             case "brokeintuning":
-                Write(clerk, "damaged " + data + " items while tuning");
+                Write(clerk + " damaged " + data + " items while tuning");
                 break;
             case "itemsordered":
-                Write(clerk, "ordered " + data + " items");
+                Write(clerk + " ordered " + data + " items");
                 break;
             case "itemsold":
-                Write(clerk, "sold " + data + " items");
+                Write(clerk + " sold " + data + " items");
                 break;
             case "itemsbought":
-                Write(clerk, "purchased " + data + " items");
+                Write(clerk + " purchased " + data + " items");
                 break;
             case "damagedcleaning":
-                Write(clerk, "damaged " + data + " item(s) while cleaning");
+                Write(clerk + " damaged " + data + " item(s) while cleaning");
                 break;
             case "leftstore":
-                Write(clerk, "went home for the day");
+                Write(clerk + " left the store");
                 break;
-            case "sunday":
+            case "closed":
                 Write("The store was closed today");
             default:
                 break;
