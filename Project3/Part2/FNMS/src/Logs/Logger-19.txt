@@ -1,11 +1,11 @@
-Daphne arrived at the store
-Daphne added 3 items to inventory
-Daphne checked register to find $3192
-Daphne damaged 2 items while tuning
-Daphne found 36 items in inventory
-Daphne found our inventory is worth $967
-Daphne ordered 6 items
-Daphne sold 6 items
-Daphne purchased 2 items
-Daphne damaged 0 item(s) while cleaning
-Daphne went home for the day
+Velma arrived at the store
+Velma added 3 items to inventory
+Velma checked register to find $2828
+Velma damaged 0 items while tuning
+Velma found 49 items in inventory
+Velma found our inventory is worth $1260
+Velma ordered 0 items
+Velma sold 9 items
+Velma purchased 1 items
+Velma damaged 0 item(s) while cleaning
+Velma went home for the day

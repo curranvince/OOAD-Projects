@@ -1,10 +1,24 @@
+import java.io.*;
+
 public class Simulation implements Utility {
     Store store_ = new Store();
     static int current_day_ = 0;
 
     private Staff GetClerk() { return store_.GetClerk(); }
+    private void SetOutputStream() {
+        // set system out to Output.txt
+        try {
+            File file = new File("Output.txt");
+            file.createNewFile();
+            System.setOut(new PrintStream(file));
+        } catch (IOException e) {
+            Print("Error: Simulation could not set output to Output.txt");
+            e.printStackTrace();
+        }
+    }
 
     public void RunSimulation(int n) {
+        SetOutputStream();
         Print(" *** BEGINNING SIMULATION *** \n");
         // create Tracker
         Subscriber tracker = new Tracker();

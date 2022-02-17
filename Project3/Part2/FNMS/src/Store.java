@@ -28,15 +28,6 @@ class Store implements Utility {
         clerks_.add(shaggy);
         clerks_.add(new Clerk("Velma", 5, new ElectronicTune()));
         clerks_.add(new Clerk("Daphne", 10, new ManualTune()));
-        // set output stream
-        try {
-            File file = new File("Output.txt");
-            file.createNewFile();
-            System.setOut(new PrintStream(file));
-        } catch (IOException e) {
-            Print("Error: Store could not set output to Output.txt");
-            e.printStackTrace();
-        }
     }
     
     public void Subscribe(Subscriber subscriber) { 
