@@ -10,10 +10,13 @@ CLASSES = \
 	Utility.java \
 	Item.java \
 	ItemFactory.java \
+	Staff.java \
 	Clerk.java \
+	ClerkSellFactory.java \
 	Customer.java \
 	CashRegister.java \
 	Store.java \
+	Simulation.java \
 	App.java
 
 MAIN = App

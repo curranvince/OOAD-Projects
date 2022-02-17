@@ -1,14 +1,9 @@
-//TO DO
-// Stop selling clothing (and buying from customers)
-// Clerk may be sick
-// Decorate sell method (at very bottom)
-
 import java.util.*;
 import java.io.*;
 
 class Store implements Utility {
     private int clerk_id_;
-    private Vector<Clerk> clerks_ = new Vector<Clerk>();
+    private Vector<Staff> clerks_ = new Vector<Staff>();
     protected Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
     
     static int total_withdrawn_ = 0;
@@ -28,7 +23,9 @@ class Store implements Utility {
             }
         }
         // make clerks witht their break chances
-        clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
+        //clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
+        Staff shaggy = new ClerkSellDecorator(new Clerk());
+        clerks_.add(shaggy);
         clerks_.add(new Clerk("Velma", 5, new ElectronicTune()));
         clerks_.add(new Clerk("Daphne", 10, new ManualTune()));
         // set output stream
@@ -57,7 +54,7 @@ class Store implements Utility {
     private void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, GetClerk(), data); }
     
     // methods to get workers
-    public Clerk GetClerk() { return clerks_.get(clerk_id_); }
+    public Staff GetClerk() { return clerks_.get(clerk_id_); }
 
     // Having the methods in this class private is an example of Encapsulation
     public void ChooseClerk() {
@@ -72,6 +69,29 @@ class Store implements Utility {
         for (int i = 0; i < clerks_.size(); i++) {
             if (i != clerk_id_) clerks_.get(i).ResetDaysWorked();
         }
+    }
+
+    public void Open() {
+        // generate customers for the day
+        int itemssold = 0;
+        int itemsbought = 0;
+        for (Customer customer : MakeCustomers()) {
+            // see if the customer wants to buy or sell
+            customer.DisplayRequest();
+            if (customer.IsBuying()) {
+                // have clerk check for item in stock
+                if (GetClerk().CheckForItem(customer.GetItemType()) != null) {
+                    // if we do, have clerk try to sell item
+                    if (GetClerk().TryToSell(GetClerk().CheckForItem(customer.GetItemType()))) itemssold++;
+                } else {
+                    Print(GetClerk().GetName()+ " informs the customer we have no " + customer.GetItemType().name() + " in stock");
+                }
+            } else {
+                if (GetClerk().TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()))) itemsbought++;
+            }
+        }
+        Publish("itemsold", itemssold);
+        Publish("itemsbought", itemsbought);
     }
 
     public void HandleSunday() {

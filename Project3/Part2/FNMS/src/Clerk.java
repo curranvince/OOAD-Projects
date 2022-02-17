@@ -1,3 +1,7 @@
+//TO DO
+// Stop selling clothing (and buying from customers)
+// Clerk may be sick
+// Decorate sell method
 import java.util.*;
 import java.io.*;
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
@@ -48,13 +52,27 @@ class ElectronicTune implements Tune {
     }
 }
 
-abstract class Staff implements Utility {
-    protected String name_;
-    protected Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
-    
+public class Clerk implements Staff {
+    // This is an example of Encapsulation
+    // Only the clerk has info about their break percentage
+    // and can 'do' things with  it
+    private String name_;
     private int days_worked_ = 0;
+    private int break_percentage_;
+    private Tune tune_;
+    private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
 
-    Staff(String name) { name_ = name; }
+    public Clerk() {
+        name_ = "Shaggy";
+        break_percentage_ = 20;
+        tune_ = new HaphazardTune();
+    }
+
+    public Clerk(String name, int break_percentage, Tune tune) {
+        name_ = name;
+        break_percentage_ = break_percentage;
+        tune_ = tune;
+    }
 
     public String GetName() { return name_; }
     public void IncrementDaysWorked() { days_worked_++; }
@@ -63,22 +81,8 @@ abstract class Staff implements Utility {
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
 
-    protected void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, this, data); }
-}
-
-public class Clerk extends Staff {
-    // This is an example of Encapsulation
-    // Only the clerk has info about their break percentage
-    // and can 'do' things with  it
-    private int break_percentage_;
-    private Tune tune_;
-
-    Clerk(String name, int break_percentage, Tune tune) {
-        super(name);
-        break_percentage_ = break_percentage;
-        tune_ = tune;
-    }
-
+    private void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, this, data); }
+    
     public void ArriveAtStore() { 
         Publish("arrival", 0);
         Print(name_  + " has arrived at the store on Day " + Simulation.current_day_); 
@@ -121,7 +125,7 @@ public class Clerk extends Staff {
     }
 
     // sell an item to a customer
-    private void Sell(Item item, int salePrice) {
+    public void Sell(Item item, int salePrice) {
         Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register
         Store.register_.AddMoney(salePrice);
@@ -134,7 +138,7 @@ public class Clerk extends Staff {
     }
 
     // buy an item from a customer
-    private void Buy(Item item, int salePrice) {
+    public void Buy(Item item, int salePrice) {
         Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
         // take money from register and
         Store.register_.TakeMoney(salePrice);
@@ -144,13 +148,13 @@ public class Clerk extends Staff {
         Store.inventory_.add(item);
     }
 
-    private boolean TryToSell(Item item) {
+    public boolean TryToSell(Item item) {
         boolean sold = false;
         int willBuy = GetRandomNum(2);
         Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
         if (willBuy == 0) {
             // sell item to customer at list price
-            Sell(item, item.list_price_);
+            this.Sell(item, item.list_price_);
             sold = true;
         } else {
             // if they dont buy, offer discount to get 75% chance of buying
@@ -158,7 +162,7 @@ public class Clerk extends Staff {
             willBuy = GetRandomNum(4);
             if (willBuy != 0) {
                 // sell item to customer at discounted price
-                Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
+                this.Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
                 sold = true;
             } else {
                 Print("The customer decides not to buy the " + item.name_);
@@ -167,7 +171,7 @@ public class Clerk extends Staff {
         return sold;
     }
     
-    private boolean TryToBuy(Item item) {
+    public boolean TryToBuy(Item item) {
 // TO DO
 // Check if we still sell the item, if we dont: tell customer
 // we dont want the item and do not buy it from them
@@ -201,34 +205,11 @@ public class Clerk extends Staff {
         return bought;
     }
 
-    private Item CheckForItem(Item.ItemType itemType) {
+    public Item CheckForItem(Item.ItemType itemType) {
         for (Item item : Store.inventory_) {
             if (item.itemType == itemType) return item;
         }
         return null;
-    }
-
-    //run a day at the store
-    public void OpenTheStore() {
-        // generate customers for the day
-        int itemssold = 0;
-        int itemsbought = 0;
-        for (Customer customer : MakeCustomers()) {
-            // see if the customer wants to buy or sell
-            customer.DisplayRequest();
-            if (customer.IsBuying()) {
-                // see if we have an item for them in stock
-                if (CheckForItem(customer.GetItemType()) != null) {
-                    if (TryToSell(CheckForItem(customer.GetItemType()))) itemssold++;
-                } else {
-                    Print(name_ + " informs the customer we have no " + customer.GetItemType().name() + " in stock");
-                }
-            } else {
-                if (TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()))) itemsbought++;
-            }
-        }
-        Publish("itemsold", itemssold);
-        Publish("itemsbought", itemsbought);
     }
 
     private boolean Tune(Item item) { 

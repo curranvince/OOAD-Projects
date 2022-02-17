@@ -33,7 +33,7 @@ class Logger implements Subscriber {
 
     private void Write(Staff clerk, String msg) { 
         try {
-            writer_.write(clerk.name_ + " " + msg + "\n");
+            writer_.write(clerk.GetName() + " " + msg + "\n");
         } catch (IOException e) {
             Print("Error: Logger failed to write to file");
             e.printStackTrace();
@@ -101,8 +101,8 @@ class Tracker implements Subscriber {
 
     public void Update(String context, Staff clerk, int data) {
         int clerk_index = 0;
-        if (clerk.name_ == "Shaggy") clerk_index = 1;
-        else if (clerk.name_ == "Daphne") clerk_index = 2;
+        if (clerk.GetName() == "Shaggy") clerk_index = 1;
+        else if (clerk.GetName() == "Daphne") clerk_index = 2;
 
         switch (context) {
             case "brokeintuning":

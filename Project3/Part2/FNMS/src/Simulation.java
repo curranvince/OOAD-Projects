@@ -2,7 +2,7 @@ public class Simulation implements Utility {
     Store store_ = new Store();
     static int current_day_ = 0;
 
-    private Clerk GetClerk() { return store_.GetClerk(); }
+    private Staff GetClerk() { return store_.GetClerk(); }
 
     public void RunSimulation(int n) {
         Print(" *** BEGINNING SIMULATION *** \n");
@@ -26,7 +26,7 @@ public class Simulation implements Utility {
                 // do inventory and order items
                 GetClerk().PlaceOrders(GetClerk().DoInventory());
                 // run the store day
-                GetClerk().OpenTheStore();
+                store_.Open();
                 // clean the store
                 GetClerk().CleanStore();
                 // end the day
