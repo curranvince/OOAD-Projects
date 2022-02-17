@@ -4,7 +4,7 @@ import java.io.*;
 class Store implements Utility {
     private int clerk_id_;
     private Vector<Staff> clerks_ = new Vector<Staff>();
-    protected Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
+    private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
     
     static int total_withdrawn_ = 0;
     static CashRegister register_ = new CashRegister();
@@ -24,10 +24,9 @@ class Store implements Utility {
         }
         // make clerks witht their break chances
         //clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
-        Staff shaggy = new ClerkSellDecorator(new Clerk());
-        clerks_.add(shaggy);
-        clerks_.add(new Clerk("Velma", 5, new ElectronicTune()));
-        clerks_.add(new Clerk("Daphne", 10, new ManualTune()));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune())));
     }
     
     public void Subscribe(Subscriber subscriber) { 
@@ -38,7 +37,6 @@ class Store implements Utility {
     public void Unsubscribe(Subscriber unsubscriber) { 
         subscribers_.remove(unsubscriber); 
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
-        unsubscriber.Close();
     }
 
     // methods to handle outputs
@@ -62,6 +60,24 @@ class Store implements Utility {
         }
     }
 
+    private Vector<Customer> MakeCustomers() {
+        // make vector to return
+        Vector<Customer> toServe = new Vector<Customer>();
+        // get random amounts of buyers and sellers in range
+        int buyers = GetRandomNum(4, 11);
+        int sellers = GetRandomNum(1, 5);
+        // create buyers and sellers
+        for (int i = 0; i < buyers; i++) {
+            toServe.add(new Customer(true));
+        }
+        for (int i = 0; i < sellers; i++) {
+            toServe.add(new Customer(false));
+        }
+        // shuffle vector so we get customers in random order
+        Collections.shuffle(toServe);
+        return toServe;
+    }
+
     public void Open() {
         // generate customers for the day
         int itemssold = 0;
@@ -78,6 +94,7 @@ class Store implements Utility {
                     Print(GetClerk().GetName()+ " informs the customer we have no " + customer.GetItemType().name() + " in stock");
                 }
             } else {
+                // clerk tries to buy customers item
                 if (GetClerk().TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()))) itemsbought++;
             }
         }
@@ -91,25 +108,14 @@ class Store implements Utility {
         Publish("sunday", 0);
     }
 
-    public void OutputResults() {
-        // display inventory & its value
-        Print("Items left in inventory: ");
+    public void DisplayInventory(boolean sold) {
         int total = 0;
-        for (Item item : inventory_) {
+        Print("Items in " +  (sold ? "sold" : "remaining") + " inventory: ");
+        Vector<Item> items = (sold ? sold_ : inventory_);
+        for (Item item : items) {
             item.Display();
             total += item.purchase_price_;
         }
-        Print("The total value of the remaining inventory is $" + total);
-        // display items sold & their value
-        total =  0;
-        Print("Items sold: ");
-        for (Item item : sold_) {
-            item.DisplaySold();
-            total += item.sale_price_;
-        }
-        Print("The store sold $" + total + " worth of items this month");
-        // display money stats
-        Print("The store has $" + register_.GetAmount() + " in the register");
-        Print("$" + total_withdrawn_ + " was withdrawn from the bank");
+        Print("The total value of the " + (sold ? "sold" : "remaining") + "  inventory is $" + total);
     }
 }

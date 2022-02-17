@@ -174,8 +174,7 @@ abstract class Stringed extends Instruments {
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
         name_ += GetStringedBrand() + " ";
-        int switcher = GetRandomNum(2);
-        if (switcher == 1) {
+        if (GetRandomNum(2) == 1) {
             electric_ = true;
             name_ += "Electric ";
         }

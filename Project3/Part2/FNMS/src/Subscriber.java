@@ -31,14 +31,7 @@ class Logger implements Subscriber {
         } 
     }
 
-    private void Write(Staff clerk, String msg) { 
-        try {
-            writer_.write(clerk.GetName() + " " + msg + "\n");
-        } catch (IOException e) {
-            Print("Error: Logger failed to write to file");
-            e.printStackTrace();
-        } 
-    }
+    private void Write(Staff clerk, String msg) { Write(clerk.GetName() + " " + msg); }
 
     public void Update(String context, Staff clerk, int data) {
         // consume information

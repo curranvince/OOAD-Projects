@@ -23,24 +23,6 @@ public interface Utility {
     default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(3)]; }
     default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(17)]; }
     
-    default Vector<Customer> MakeCustomers() {
-        // make vector to return
-        Vector<Customer> toServe = new Vector<Customer>();
-        // get random amounts of buyers and sellers in range
-        int buyers = GetRandomNum(4, 11);
-        int sellers = GetRandomNum(1, 5);
-        // create buyers and sellers
-        for (int i = 0; i < buyers; i++) {
-            toServe.add(new Customer(true));
-        }
-        for (int i = 0; i < sellers; i++) {
-            toServe.add(new Customer(false));
-        }
-        // shuffle vector so we get customers in random order
-        Collections.shuffle(toServe);
-        return toServe;
-    }
-    
     default String GetRandomCondition() {
         // return a random 'Condition' for an item
         int rando = GetRandomNum(5);

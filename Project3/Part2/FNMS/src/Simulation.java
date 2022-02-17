@@ -17,6 +17,16 @@ public class Simulation implements Utility {
         }
     }
 
+    private void OutputResults() {
+        // display inventory & its value
+        store_.DisplayInventory(true); 
+        // display items sold & their value
+        store_.DisplayInventory(false);
+        // display money stats
+        Print("The store has $" + Store.register_.GetAmount() + " in the register");
+        Print("$" + Store.total_withdrawn_ + " was withdrawn from the bank");
+    }
+
     public void RunSimulation(int n) {
         SetOutputStream();
         Print(" *** BEGINNING SIMULATION *** \n");
@@ -50,11 +60,12 @@ public class Simulation implements Utility {
                 store_.HandleSunday();
             }
             store_.Unsubscribe(dailyLogger);
+            dailyLogger.Close();
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
-        // display final results
-        store_.OutputResults();
         store_.Unsubscribe(tracker);
+        // display final results
+        OutputResults();
         Print("\n *** SIMULATION COMPLETE *** ");
     }
 }

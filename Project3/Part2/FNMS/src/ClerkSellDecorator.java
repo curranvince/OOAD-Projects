@@ -52,7 +52,7 @@ class ClerkSellDecorator extends StaffDecorator {
 // TO DO
 // make extra attempts to sell depending on itemtype
             if (item.itemType == Item.ItemType.GUITAR) {
-                System.out.println("SHAG SOLD A TAR");
+            
                 return true;
             } else {
                 return true;
