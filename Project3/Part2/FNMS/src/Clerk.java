@@ -149,7 +149,7 @@ public class Clerk extends AbstractClerk {
     }
 
     // sell an item to a customer
-    private void Sell(Item item, int salePrice) {
+    private int Sell(Item item, int salePrice) {
         Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register, update item stats, update inventories
         store_.register_.AddMoney(salePrice);
@@ -157,19 +157,25 @@ public class Clerk extends AbstractClerk {
         item.sale_price_ = salePrice;
         store_.inventory_.remove(item);
         store_.sold_.add(item);
+        return -1;
     }
 
     // buy an item from a customer
-    private void Buy(Item item, int salePrice) {
-        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
-        // take money from register, update item stats, update inventories
-        store_.register_.TakeMoney(salePrice);
-        item.purchase_price_ = salePrice;
-        item.list_price_ = salePrice*2;
-        item.day_arrived = Simulation.current_day_;
-        store_.inventory_.add(item);
+    private int Buy(Item item, int salePrice) {
+        if (store_.register_.HasEnough(salePrice)) {
+            Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
+            // take money from register, update item stats, update inventories
+            store_.register_.TakeMoney(salePrice);
+            item.purchase_price_ = salePrice;
+            item.list_price_ = salePrice*2;
+            item.day_arrived = Simulation.current_day_;
+            store_.inventory_.add(item);
+            return 1;
+        }  
+        Print("Unfortunately, the store doesn't have enough money to buy the " + item.name_);
+        return 0;
     }
-
+/*
     private int TryToSell(Item item) {
         if (item == null) { return 0; }
         int sold = 0;
@@ -227,9 +233,27 @@ public class Clerk extends AbstractClerk {
         }
         return bought;
     }
+*/
+    public int TryTransaction(Item item, boolean buying) {
+        if (item == null) { return 0; }
+        int transactions = 0;
+        int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
+        Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
+        int accepts = GetRandomNum(2);
+        if (accepts == 0) {
+            transactions += buying ? (Buy(item, price)) : (Sell(item, price));
+        } else {
+            accepts = GetRandomNum(4);
+            if (accepts != 0) {
+                price = buying ? ((int)(price+(price*0.1))) : ((int)(price-(price*0.1)));
+                transactions += buying ? (Buy(item, price)) : (Sell(item, price));
+            }
+        }
+        return transactions;
+    }
 
     public int HandleCustomer(Customer customer) {
-        return (customer.DisplayRequest() == 1) ? TryToSell(CheckForItem(customer.GetItemType())) : TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()));
+        return (customer.DisplayRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(ItemFactory.MakeItem(customer.GetItemType().name()), true);
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
             case -1: 
