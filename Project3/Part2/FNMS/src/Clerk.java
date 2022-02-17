@@ -3,7 +3,7 @@
 // Clerk may be sick
 // Decorate sell method
 import java.util.*;
-import java.io.*;
+
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
 interface Tune extends Utility { public int Tune(Item item); }
 
@@ -52,7 +52,7 @@ class ElectronicTune implements Tune {
     }
 }
 
-public class Clerk extends Staff {
+public class Clerk extends AbstractClerk {
     // This is an example of Encapsulation
     // Only the clerk has info about their break percentage
     // and can 'do' things with  it
@@ -226,20 +226,18 @@ public class Clerk extends Staff {
             // remove this type from the list of types we need to order
             if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
-            if (item.NeedsTuning()) {
+            if (item.NeedsTuning() && !Tune(item)) {
                 if (!Tune(item)) {
                     damaged++;
-                    if (item.condition_ == "Broken") { it.remove(); }
-                    else { 
-                        total += item.purchase_price_;
-                        totalitems++;
+                    if (item.condition_ == "Broken") { 
+                        it.remove(); 
+                        break;
                     }
                 } 
-            } else {
-                // add value of item to total
-                total += item.purchase_price_;
-                totalitems++;
             }
+            // add value of item to total
+            total += item.purchase_price_;
+            totalitems++;
         }
         // broadcast total value of inventory
         Publish("brokeintuning", damaged);
@@ -273,12 +271,9 @@ public class Clerk extends Staff {
                     Print(name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
                     orders += 3;
                 }
-            } else {
-                Print(name_ + " places no orders today");
-            }
-        } else {
-            Print(name_ + " places no orders today");
-        }
+            } 
+        } 
+        Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
         Publish("itemsordered", orders);
         return orders;
     }

@@ -1,13 +1,12 @@
 // TO DO DECORATE SELL METHOD
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
 // https://refactoring.guru/design-patterns/decorator/java/example
-import java.util.*;
-import java.io.*;
+import java.util.Set;
 
-abstract class StaffDecorator extends Staff {
-    protected Staff decoratedStaff_;
+abstract class ClerkDecorator extends AbstractClerk {
+    protected AbstractClerk decoratedStaff_;
 
-    public StaffDecorator(Staff decoratedStaff) { 
+    public ClerkDecorator(AbstractClerk decoratedStaff) { 
         this.decoratedStaff_ = decoratedStaff; 
     }
     
@@ -29,9 +28,9 @@ abstract class StaffDecorator extends Staff {
     public void CloseStore() { decoratedStaff_.CloseStore(); }
 }
 
-class StaffSellDecorator extends StaffDecorator {
-    public StaffSellDecorator(Staff staff) { 
-        super(staff); 
+class ClerkSellDecorator extends ClerkDecorator {
+    public ClerkSellDecorator(AbstractClerk clerk) { 
+        super(clerk); 
     }
     
     public boolean TryToSell(Item item) { 

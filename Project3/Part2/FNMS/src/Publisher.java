@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Vector;
 
 abstract class Publisher {
     private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();

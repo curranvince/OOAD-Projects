@@ -44,10 +44,10 @@ class Logger implements Subscriber {
                 Write(clerk + " checked register to find $" + data);
                 break;
             case "totalitems":
-                Write(clerk + " found " + data + " items in inventory");
+                Write(clerk + " counted " + data + " items in inventory");
                 break;
             case "totalitemsprice":
-                Write(clerk + " found our inventory is worth $" + data);
+                Write(clerk + " found the store's inventory is worth $" + data);
                 break;
             case "brokeintuning":
                 Write(clerk + " damaged " + data + " items while tuning");

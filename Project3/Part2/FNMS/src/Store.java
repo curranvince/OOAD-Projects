@@ -1,11 +1,13 @@
+// TO DO
+// Alter number of buyers arriving to store
+
 import java.util.*;
-import java.io.*;
 
 class Store extends Publisher implements Utility {
     private int clerk_id_;
-    private Vector<Staff> clerks_ = new Vector<Staff>();
+    private Vector<AbstractClerk> clerks_ = new Vector<AbstractClerk>();
     private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
-    private Staff activeClerk_;
+    private AbstractClerk activeClerk_;
 
     public int total_withdrawn_ = 0;
     public CashRegister register_ = new CashRegister();
@@ -17,6 +19,7 @@ class Store extends Publisher implements Utility {
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
+        int counter = 0;
         for (Item.ItemType itemType : Item.ItemType.values()) {
             for (int i = 0; i < 3; i++) {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
@@ -24,9 +27,9 @@ class Store extends Publisher implements Utility {
         }
         // make decorated clerks with break chances & tuning algorithms
         //clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
-        clerks_.add(new StaffSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune(), this)));
-        clerks_.add(new StaffSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
-        clerks_.add(new StaffSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune(), this)));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
     
     @Override
@@ -41,7 +44,7 @@ class Store extends Publisher implements Utility {
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
     }
     
-    protected void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
+    private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
     // methods to get workers
     //public Staff GetClerk() { return activeClerk_; }
