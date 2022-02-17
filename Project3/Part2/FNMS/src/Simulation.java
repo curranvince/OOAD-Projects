@@ -2,9 +2,11 @@ import java.io.*;
 // Takes inspiration from Professors source code for Project 2
 public class Simulation implements Utility {
     Store store_ = new Store();
-    static int current_day_ = 0;
+    static int current_day_;
 
     private void SetOutputStream() {
+        // make sure sim starts at 0
+        Simulation.current_day_ = 0;
         // set system out to Output.txt
         try {
             File file = new File("Output.txt");

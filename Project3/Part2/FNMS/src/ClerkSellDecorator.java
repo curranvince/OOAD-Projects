@@ -9,19 +9,19 @@ abstract class ClerkDecorator extends AbstractClerk {
     public ClerkDecorator(AbstractClerk decoratedStaff) { 
         this.decoratedStaff_ = decoratedStaff; 
     }
-    
+    // Staff methods
     public String GetName() { return decoratedStaff_.GetName(); }
     public void IncrementDaysWorked() { decoratedStaff_.IncrementDaysWorked(); }
     public int GetDaysWorked() { return decoratedStaff_.GetDaysWorked(); }
     public void ResetDaysWorked() { decoratedStaff_.ResetDaysWorked(); }
+    // Publisher methods
     public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
     public void Unsubscribe(Subscriber unsubscriber) { decoratedStaff_.Unsubscribe(unsubscriber); }
+    // Clerk methods
     public void ArriveAtStore() { decoratedStaff_.ArriveAtStore(); }
     public boolean CheckRegister() { return decoratedStaff_.CheckRegister(); }
     public void GoToBank() { decoratedStaff_.GoToBank(); }
-    public Item CheckForItem(Item.ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
-    public boolean TryToSell(Item item) { return decoratedStaff_.TryToSell(item); }
-    public boolean TryToBuy(Item item) { return decoratedStaff_.TryToBuy(item); }
+    public int HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
     public Set<Item.ItemType> DoInventory() { return decoratedStaff_.DoInventory(); }
     public int PlaceOrders(Set<Item.ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
@@ -33,17 +33,14 @@ class ClerkSellDecorator extends ClerkDecorator {
         super(clerk); 
     }
     
-    public boolean TryToSell(Item item) { 
-        if (super.TryToSell(item)) {
+    public int HandleCustomer(Customer customer) {
+        int result = super.HandleCustomer(customer);
+        if (result < 0) {
+            if (customer.GetItemType() == Item.ItemType.GUITAR) {
 // TO DO
-// make extra attempts to sell depending on itemtype
-            if (item.itemType == Item.ItemType.GUITAR) {
-                //System.out.println("STILL DECORATED");
-                return true;
-            } else {
-                return true;
+// DECORATE SELL METHOD
             }
         }
-        return false;
+        return result;
     }
 }

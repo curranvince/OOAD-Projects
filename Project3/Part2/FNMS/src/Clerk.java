@@ -4,67 +4,17 @@
 // Decorate sell method
 import java.util.*;
 
-// The Tune interface and its subclasses is an example of the Strategy pattern. 
-interface Tune extends Utility { public int Tune(Item item); }
-
-class ManualTune implements Tune {
-    // 80% chance to tune, 20% chance to untune
-    public int Tune(Item item) { 
-        if (!item.IsTuned()) {
-            if (GetRandomNum(10) > 1) {
-                item.Tune();
-                return 1;
-            }
-        } else {
-            if (GetRandomNum(10) > 7) {
-                item.Untune();
-                return -1;
-            }
-        }
-        return 0;
-    }
-}
-
-class HaphazardTune implements Tune {
-    // 50% chance to flip tune
-    public int Tune(Item item) { 
-        if (GetRandomNum(2) == 0) {
-            if (item.IsTuned()) {
-                item.Untune();
-                return -1;
-            } else {
-                item.Tune();
-                return 1;
-            }
-        }
-        return 0;
-    }
-}
-
-class ElectronicTune implements Tune {
-    // automatically tune
-    public int Tune(Item item) { 
-        if (!item.IsTuned()) {
-            item.Tune();
-            return 1;
-        }
-        return 0;
-    }
-}
-
 public class Clerk extends AbstractClerk {
     // This is an example of Encapsulation
     // Only the clerk has info about their break percentage
     // and can 'do' things with  it
-    private int break_percentage_;
-    private Tune tune_;
     
     public Clerk(String name, int break_percentage, Tune tune, Store store) {
         name_ = name;
         break_percentage_ = break_percentage;
         tune_ = tune;
         store_ = store;
-    }    
+    }  
     
     public void ArriveAtStore() { 
         super.ArriveAtStore();
@@ -79,8 +29,8 @@ public class Clerk extends AbstractClerk {
                     toAdd.day_arrived = Simulation.current_day_;
                     store_.inventory_.add(toAdd);
                     store_.register_.TakeMoney(store_.inventory_.lastElement().purchase_price_);
-                    orders_received++;
                 }
+                orders_received += 3;
             }
             // remove orders from the map
             store_.orders_.remove(Simulation.current_day_);
@@ -106,112 +56,15 @@ public class Clerk extends AbstractClerk {
         Publish("checkedregister", store_.register_.GetAmount());
     }
 
-    public Item CheckForItem(Item.ItemType itemType) {
+    private Item CheckForItem(Item.ItemType itemType) {
         for (Item item : store_.inventory_) {
-            if (item.itemType == itemType) return item;
+            if (item.itemType == itemType) {
+                Print(name_ + " found a " + item.name_ + " in the inventory");
+                return item;
+            }
         }
+        Print(name_ + " finds no " + itemType.name() + " in the inventory");
         return null;
-    }
-
-    // sell an item to a customer
-    private void Sell(Item item, int salePrice) {
-        Print("The customer buys the " + item.name_ + " for $" + salePrice);
-        // add money to register, update item stats, update inventories
-        store_.register_.AddMoney(salePrice);
-        item.day_sold_ = Simulation.current_day_;
-        item.sale_price_ = salePrice;
-        store_.inventory_.remove(item);
-        store_.sold_.add(item);
-    }
-
-    // buy an item from a customer
-    private void Buy(Item item, int salePrice) {
-        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
-        // take money from register, update item stats, update inventories
-        store_.register_.TakeMoney(salePrice);
-        item.purchase_price_ = salePrice;
-        item.list_price_ = salePrice*2;
-        item.day_arrived = Simulation.current_day_;
-        store_.inventory_.add(item);
-    }
-
-    public boolean TryToSell(Item item) {
-        boolean sold = false;
-        int willBuy = GetRandomNum(2);
-        Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
-        if (willBuy == 0) {
-            // sell item to customer at list price
-            Sell(item, item.list_price_);
-            sold = true;
-        } else {
-            // if they dont buy, offer discount to get 75% chance of buying
-            Print(name_ + " offers a 10% discount");
-            willBuy = GetRandomNum(4);
-            if (willBuy != 0) {
-                // sell item to customer at discounted price
-                Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
-                sold = true;
-            } else {
-                Print("The customer decides not to buy the " + item.name_);
-            }
-        }
-        return sold;
-    }
-    
-    public boolean TryToBuy(Item item) {
-// TO DO
-// Check if we still sell the item, if we dont: tell customer
-// we dont want the item and do not buy it from them
-        boolean bought = false;
-        int offerPrice = GetOfferPrice(item.condition_);
-        Print(name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
-        // if we have enough $, offer to buy the item
-        if (store_.register_.HasEnough(offerPrice)) {
-            int willSell = GetRandomNum(2);
-            if (willSell == 0) {
-                // buy item at initial offer price
-                Buy(item, offerPrice);
-                bought = true;
-            } else {
-                // if customer disagrees, offer 10% increase to price and try again
-                Print(name_ + " offers a 10% increase to the price");
-                willSell = GetRandomNum(4);
-                if (willSell != 0) {
-                    // store buys item at 10% extra price
-                    Buy(item, (int)(offerPrice+(offerPrice*0.1)));
-                    bought = true;
-                } else {
-                    // if the customer disagrees again let them leave
-                    Print("The customer leaves without selling their " + item.name_);
-                }
-            }
-        } else {
-            // if we dont have enough money broadcast that
-            Print("The store doesn't have enough money to buy the " + item.name_);
-        }
-        return bought;
-    }
-
-    private boolean Tune(Item item) { 
-        Print(name_ + " is attempting to tune the " + item.name_);
-        switch (tune_.Tune(item)) {
-            case -1:
-                Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
-                if (GetRandomNum(10) == 0) {
-                    Print(name_ + " has done such a bad job tuning they damaged the item");
-                    if (item.LowerCondition() == false) item = null;
-                }
-                return false;
-            case 0:
-                Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (item.IsTuned() ? "tuned" : "untuned"));
-                return true;
-            case 1:
-                Print(name_ + " has successfully tuned the " + item.name_);
-                return true;
-            default:
-                Print("Error: Tune returned bad value");
-                return true;
-        }
     }
 
     public Set<Item.ItemType> DoInventory() {
@@ -227,13 +80,8 @@ public class Clerk extends AbstractClerk {
             if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
             if (item.NeedsTuning() && !Tune(item)) {
-                if (!Tune(item)) {
-                    damaged++;
-                    if (item.condition_ == "Broken") { 
-                        it.remove(); 
-                        break;
-                    }
-                } 
+                damaged++;
+                if (item.condition_ == "Broken") { it.remove(); }
             }
             // add value of item to total
             total += item.purchase_price_;
@@ -276,6 +124,122 @@ public class Clerk extends AbstractClerk {
         Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
         Publish("itemsordered", orders);
         return orders;
+    }
+
+    private boolean Tune(Item item) { 
+        Print(name_ + " is attempting to tune the " + item.name_);
+        switch (tune_.Tune(item)) {
+            case -1:
+                Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
+                if (GetRandomNum(10) == 0) {
+                    Print(name_ + " has done such a bad job tuning they damaged the item");
+                    if (item.LowerCondition() == false) item = null;
+                }
+                return false;
+            case 0:
+                Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (item.IsTuned() ? "tuned" : "untuned"));
+                return true;
+            case 1:
+                Print(name_ + " has successfully tuned the " + item.name_);
+                return true;
+            default:
+                Print("Error: Tune returned bad value");
+                return true;
+        }
+    }
+
+    // sell an item to a customer
+    private void Sell(Item item, int salePrice) {
+        Print("The customer buys the " + item.name_ + " for $" + salePrice);
+        // add money to register, update item stats, update inventories
+        store_.register_.AddMoney(salePrice);
+        item.day_sold_ = Simulation.current_day_;
+        item.sale_price_ = salePrice;
+        store_.inventory_.remove(item);
+        store_.sold_.add(item);
+    }
+
+    // buy an item from a customer
+    private void Buy(Item item, int salePrice) {
+        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
+        // take money from register, update item stats, update inventories
+        store_.register_.TakeMoney(salePrice);
+        item.purchase_price_ = salePrice;
+        item.list_price_ = salePrice*2;
+        item.day_arrived = Simulation.current_day_;
+        store_.inventory_.add(item);
+    }
+
+    private int TryToSell(Item item) {
+        if (item == null) { return 0; }
+        int sold = 0;
+        int willBuy = GetRandomNum(2);
+        Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
+        if (willBuy == 0) {
+            // sell item to customer at list price
+            Sell(item, item.list_price_);
+            sold--;
+        } else {
+            // if they dont buy, offer discount to get 75% chance of buying
+            Print(name_ + " offers a 10% discount");
+            willBuy = GetRandomNum(4);
+            if (willBuy != 0) {
+                // sell item to customer at discounted price
+                Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
+                sold--;
+            } else {
+                Print("The customer decides not to buy the " + item.name_);
+            }
+        } 
+        return sold;
+    }
+    
+    private int TryToBuy(Item item) {
+// TO DO
+// Check if we still sell the item, if we dont: tell customer
+// we dont want the item and do not buy it from them
+        int bought = 0;
+        int offerPrice = GetOfferPrice(item.condition_);
+        Print(name_ + " determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $" + offerPrice );
+        // if we have enough $, offer to buy the item
+        if (store_.register_.HasEnough(offerPrice)) {
+            int willSell = GetRandomNum(2);
+            if (willSell == 0) {
+                // buy item at initial offer price
+                Buy(item, offerPrice);
+                bought++;
+            } else {
+                // if customer disagrees, offer 10% increase to price and try again
+                Print(name_ + " offers a 10% increase to the price");
+                willSell = GetRandomNum(4);
+                if (willSell != 0) {
+                    // store buys item at 10% extra price
+                    Buy(item, (int)(offerPrice+(offerPrice*0.1)));
+                    bought++;
+                } else {
+                    // if the customer disagrees again let them leave
+                    Print("The customer leaves without selling their " + item.name_);
+                }
+            }
+        } else {
+            // if we dont have enough money broadcast that
+            Print("The store doesn't have enough money to buy the " + item.name_);
+        }
+        return bought;
+    }
+
+    public int HandleCustomer(Customer customer) {
+        return (customer.DisplayRequest() == 1) ? TryToSell(CheckForItem(customer.GetItemType())) : TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()));
+        /* alternate implementation for adding in more customer requests (ie 'trade')
+        switch (customer.DisplayRequest()) {
+            case -1: 
+                return TryToSell(CheckForItem(customer.GetItemType()));
+            case 1:
+                return TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()));
+            default:
+                Print("ERROR: Clerk.HandleCustomer given bad value")
+        }
+        */
     }
 
     public void CleanStore() {

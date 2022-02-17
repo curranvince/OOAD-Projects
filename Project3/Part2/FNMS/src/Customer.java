@@ -1,15 +1,31 @@
-public class Customer implements Utility {
-    private String name_;
-    private boolean buying_;
-    private Item.ItemType itemtype_;
+abstract class Customer implements Utility {
+    protected String name_;
+    protected int request_;
+    protected Item.ItemType itemtype_;
 
-    public Customer(boolean buying) {
-        buying_ = buying;
+    public Item.ItemType GetItemType() { return itemtype_; }
+    
+    public int DisplayRequest() { 
+        Print(name_ + " has come into the store looking to " + ((request_ == 1) ? "buy" : "sell") + " a " + itemtype_.name()); 
+        return request_;
+    }
+
+    Customer() {
         name_ = GetRandomName();
         itemtype_ = GetRandomItemType();
     }
+}
 
-    public boolean IsBuying() { return buying_; }
-    public Item.ItemType GetItemType() { return itemtype_; }
-    public void DisplayRequest() { Print(name_ + " has come into the store looking to " + (buying_ ? "buy" : "sell") + " a " + itemtype_.name()); }
+class Buyer extends Customer {
+    public Buyer() {
+        super();
+        request_ = 1;
+    }
+}
+
+class Seller extends Customer {
+    public Seller() {
+        super();
+        request_ = -1;
+    }
 }

@@ -2,6 +2,7 @@
 // Alter number of buyers arriving to store
 
 import java.util.*;
+import java.lang.Math;
 
 class Store extends Publisher implements Utility {
     private int clerk_id_;
@@ -46,15 +47,12 @@ class Store extends Publisher implements Utility {
     
     private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
-    // methods to get workers
-    //public Staff GetClerk() { return activeClerk_; }
-
     public void OpenToday() {
-        ChooseClerk();
+        this.ChooseClerk();
         activeClerk_.ArriveAtStore();
         if (!activeClerk_.CheckRegister()) activeClerk_.GoToBank();
         activeClerk_.PlaceOrders(activeClerk_.DoInventory());
-        HaveCustomers();
+        this.Opens();
         activeClerk_.CleanStore();
         activeClerk_.CloseStore();
     }
@@ -81,37 +79,23 @@ class Store extends Publisher implements Utility {
         int buyers = GetRandomNum(4, 11);
         int sellers = GetRandomNum(1, 5);
         // create buyers and sellers
-        for (int i = 0; i < buyers; i++) {
-            toServe.add(new Customer(true));
-        }
-        for (int i = 0; i < sellers; i++) {
-            toServe.add(new Customer(false));
-        }
+        for (int i = 0; i < buyers; i++) { toServe.add(new Buyer()); }
+        for (int i = 0; i < sellers; i++) { toServe.add(new Seller()); }
         // shuffle vector so we get customers in random order
         Collections.shuffle(toServe);
         return toServe;
     }
 
-    public void HaveCustomers() {
-        // generate customers for the day
-        int itemssold = 0;
-        int itemsbought = 0;
+    public void Opens() {
+        int itemssold, itemsbought;
+        itemssold = itemsbought = 0;
+        
         for (Customer customer : GenerateCustomers()) {
-            // see if the customer wants to buy or sell
-            customer.DisplayRequest();
-            if (customer.IsBuying()) {
-                // have clerk check for item in stock
-                if (activeClerk_.CheckForItem(customer.GetItemType()) != null) {
-                    // if we do, have clerk try to sell item
-                    if (activeClerk_.TryToSell(activeClerk_.CheckForItem(customer.GetItemType()))) itemssold++;
-                } else {
-                    Print(activeClerk_.GetName()+ " informs the customer we have no " + customer.GetItemType().name() + " in stock");
-                }
-            } else {
-                // clerk tries to buy customers item
-                if (activeClerk_.TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()))) itemsbought++;
-            }
+            int result = activeClerk_.HandleCustomer(customer);
+            if (result > 0) itemsbought += result; 
+            else if (result < 0) itemssold += Math.abs(result);
         }
+        
         Publish("itemsold", itemssold);
         Publish("itemsbought", itemsbought);
     }
@@ -130,6 +114,6 @@ class Store extends Publisher implements Utility {
             item.Display();
             total += item.purchase_price_;
         }
-        Print("The total value of the " + (sold ? "sold" : "remaining") + "  inventory is $" + total);
+        Print("The total value of the " + (sold ? "sold" : "remaining") + " inventory is $" + total);
     }
 }
