@@ -20,6 +20,7 @@ abstract class StaffDecorator extends Staff {
     public void ArriveAtStore() { decoratedStaff_.ArriveAtStore(); }
     public boolean CheckRegister() { return decoratedStaff_.CheckRegister(); }
     public void GoToBank() { decoratedStaff_.GoToBank(); }
+    public Item CheckForItem(Item.ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public boolean TryToSell(Item item) { return decoratedStaff_.TryToSell(item); }
     public boolean TryToBuy(Item item) { return decoratedStaff_.TryToBuy(item); }
     public Set<Item.ItemType> DoInventory() { return decoratedStaff_.DoInventory(); }

@@ -41,7 +41,6 @@ class Store extends Publisher implements Utility {
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
     }
     
-
     protected void Publish(String context, int data) { super.Publish(context, GetClerk().GetName(), data); }
 
     // methods to get workers
