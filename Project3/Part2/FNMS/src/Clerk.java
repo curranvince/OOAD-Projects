@@ -158,9 +158,7 @@ public class Clerk extends Staff {
             willBuy = GetRandomNum(4);
             if (willBuy != 0) {
                 // sell item to customer at discounted price
-                int discountPrice = (int)(item.list_price_-(item.list_price_*0.1));
-                Print("The customer buys the " + item.name_ + " for $" + discountPrice);
-                Sell(item, discountPrice);
+                Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
                 sold = true;
             } else {
                 Print("The customer decides not to buy the " + item.name_);
@@ -168,7 +166,7 @@ public class Clerk extends Staff {
         }
         return sold;
     }
-
+    
     private boolean TryToBuy(Item item) {
 // TO DO
 // Check if we still sell the item, if we dont: tell customer
@@ -189,8 +187,7 @@ public class Clerk extends Staff {
                 willSell = GetRandomNum(4);
                 if (willSell != 0) {
                     // store buys item at 10% extra price
-                    int extraPrice = (int)(offerPrice+(offerPrice*0.1));
-                    Buy(item, extraPrice);
+                    Buy(item, (int)(offerPrice+(offerPrice*0.1)));
                     bought = true;
                 } else {
                     // if the customer disagrees again let them leave
@@ -216,8 +213,7 @@ public class Clerk extends Staff {
         // generate customers for the day
         int itemssold = 0;
         int itemsbought = 0;
-        Vector<Customer> customers = MakeCustomers();
-        for (Customer customer : customers) {
+        for (Customer customer : MakeCustomers()) {
             // see if the customer wants to buy or sell
             customer.DisplayRequest();
             if (customer.IsBuying()) {

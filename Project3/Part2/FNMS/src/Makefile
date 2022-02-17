@@ -29,7 +29,7 @@ clean:
 	$(RM) *.class 
 
 cleanall:
-	$(RM) *.class Logs/*.txt
+	$(RM) *.class Logs/*.txt Output.txt
 
 # Adapted from
 # http://profesores.elo.utfsm.cl/~agv/elo329/Java/javamakefile.html
