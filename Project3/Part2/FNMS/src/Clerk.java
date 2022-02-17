@@ -9,10 +9,10 @@ public class Clerk extends AbstractClerk {
     // Only the clerk has info about their break percentage
     // and can 'do' things with  it
     
-    public Clerk(String name, int break_percentage, Tune tune, Store store) {
+    public Clerk(String name, int break_percentage, TuneStrategy tune, Store store) {
         name_ = name;
         break_percentage_ = break_percentage;
-        tune_ = tune;
+        tune_strategy_ = tune;
         store_ = store;
     }  
     
@@ -54,17 +54,6 @@ public class Clerk extends AbstractClerk {
         store_.register_.AddMoney(1000);
         store_.total_withdrawn_ += 1000;
         Publish("checkedregister", store_.register_.GetAmount());
-    }
-
-    private Item CheckForItem(Item.ItemType itemType) {
-        for (Item item : store_.inventory_) {
-            if (item.itemType == itemType) {
-                Print(name_ + " found a " + item.name_ + " in the inventory");
-                return item;
-            }
-        }
-        Print(name_ + " finds no " + itemType.name() + " in the inventory");
-        return null;
     }
 
     public Set<Item.ItemType> DoInventory() {
@@ -128,12 +117,12 @@ public class Clerk extends AbstractClerk {
 
     private boolean Tune(Item item) { 
         Print(name_ + " is attempting to tune the " + item.name_);
-        switch (tune_.Tune(item)) {
+        switch (tune_strategy_.Execute(item)) {
             case -1:
                 Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
                 if (GetRandomNum(10) == 0) {
                     Print(name_ + " has done such a bad job tuning they damaged the item");
-                    if (item.LowerCondition() == false) item = null;
+                    item.LowerCondition();
                 }
                 return false;
             case 0:
@@ -175,6 +164,7 @@ public class Clerk extends AbstractClerk {
         Print("Unfortunately, the store doesn't have enough money to buy the " + item.name_);
         return 0;
     }
+
 /*
     private int TryToSell(Item item) {
         if (item == null) { return 0; }
@@ -201,8 +191,8 @@ public class Clerk extends AbstractClerk {
     }
     
     private int TryToBuy(Item item) {
-// TO DO
-// Check if we still sell the item, if we dont: tell customer
+TO DO
+Check if we still sell the item, if we dont: tell customer
 // we dont want the item and do not buy it from them
         int bought = 0;
         int offerPrice = GetOfferPrice(item.condition_);
@@ -234,26 +224,37 @@ public class Clerk extends AbstractClerk {
         return bought;
     }
 */
-    public int TryTransaction(Item item, boolean buying) {
+
+    private int TryTransaction(Item item, boolean buying) {
         if (item == null) { return 0; }
-        int transactions = 0;
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
-        int accepts = GetRandomNum(2);
-        if (accepts == 0) {
-            transactions += buying ? (Buy(item, price)) : (Sell(item, price));
+        if (GetRandomNum(2) == 0) {
+            return (buying ? Buy(item, price) : Sell(item, price));
         } else {
-            accepts = GetRandomNum(4);
-            if (accepts != 0) {
-                price = buying ? ((int)(price+(price*0.1))) : ((int)(price-(price*0.1)));
-                transactions += buying ? (Buy(item, price)) : (Sell(item, price));
+            Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
+            if (GetRandomNum(4) != 0) {
+                return (buying ? Buy(item, (int)(price+(price*0.1))) : Sell(item, (int)(price-(price*0.1))));
+            } else {
+                Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
             }
         }
-        return transactions;
+        return 0;
+    }
+
+    private Item CheckForItem(Item.ItemType itemType) {
+        for (Item item : store_.inventory_) {
+            if (item.itemType == itemType) {
+                Print(name_ + " found a " + item.name_ + " in the inventory");
+                return item;
+            }
+        }
+        Print(name_ + " finds no " + itemType.name() + " in the inventory");
+        return null;
     }
 
     public int HandleCustomer(Customer customer) {
-        return (customer.DisplayRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(ItemFactory.MakeItem(customer.GetItemType().name()), true);
+        return (customer.MakeRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(ItemFactory.MakeItem(customer.GetItemType().name()), true);
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
             case -1: 
@@ -273,14 +274,8 @@ public class Clerk extends AbstractClerk {
             int breakIndex = GetRandomNum(store_.inventory_.size());
             Item toBreak = store_.inventory_.get(breakIndex);
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
-            if (!toBreak.LowerCondition()) {
-                // remove items with poor condition
-                Print("It was already in poor condition, so it has been removed from inventory");
-                store_.inventory_.remove(breakIndex);
-            } else {
-                // lower condition and list price of non-poor quality items
-                Print("It's condition has worsened to " + toBreak.condition_ + ", and its list price has lowered to $" + toBreak.list_price_ );
-            }
+            // lower condition of item and remove if it fully breaks
+            if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
             Publish("damagedcleaning", 1);
         } else {
             // nothing breaks

@@ -61,6 +61,8 @@ abstract class Item implements Utility {
     }
 
     boolean LowerCondition() {
+        // lower price of item
+        list_price_ -= (int)list_price_*0.2;
         // lower condition of item by one
         switch (condition_) {
             case "Excellent":
@@ -80,18 +82,19 @@ abstract class Item implements Utility {
                 condition_ = "Poor";
                 break;
             case "Poor":
-                Print(name_ + " has been broken!");
-                // return false if item breaks
+                Print(name_ + " condition has lowered enough to be broken!");
+                Print(name_ + " has been removed from inventory");
                 condition_ = "Broken";
+                // return false if item breaks
                 return false;
             default:
                 Print("ERROR: Item::LowerCondition given bad paramater");
-                return true;
+                break;
         }
-        // lower price of item and return true for success
-        list_price_ -= (int)list_price_*0.2;
+        Print(name_ + " list price has lowered to " + list_price_);
         return true;
     }
+
     // these methods do nothing unless the item has the required properties
     void Tune() {};
     void Untune() {};

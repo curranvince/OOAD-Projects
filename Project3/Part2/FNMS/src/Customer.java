@@ -5,7 +5,7 @@ abstract class Customer implements Utility {
 
     public Item.ItemType GetItemType() { return itemtype_; }
     
-    public int DisplayRequest() { 
+    public int MakeRequest() { 
         Print(name_ + " has come into the store looking to " + ((request_ == 1) ? "buy" : "sell") + " a " + itemtype_.name()); 
         return request_;
     }
