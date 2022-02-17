@@ -52,40 +52,21 @@ class ElectronicTune implements Tune {
     }
 }
 
-public class Clerk implements Staff {
+public class Clerk extends Staff {
     // This is an example of Encapsulation
     // Only the clerk has info about their break percentage
     // and can 'do' things with  it
-    private String name_;
-    private int days_worked_ = 0;
     private int break_percentage_;
     private Tune tune_;
-    private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
-
-    public Clerk() {
-        name_ = "Shaggy";
-        break_percentage_ = 20;
-        tune_ = new HaphazardTune();
-    }
-
+    
     public Clerk(String name, int break_percentage, Tune tune) {
         name_ = name;
         break_percentage_ = break_percentage;
         tune_ = tune;
-    }
-
-    public String GetName() { return name_; }
-    public void IncrementDaysWorked() { days_worked_++; }
-    public int GetDaysWorked() { return days_worked_; }
-    public void ResetDaysWorked() { days_worked_ = 0; }
-    public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
-    public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
-
-    private void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, this, data); }
+    }    
     
     public void ArriveAtStore() { 
-        Publish("arrival", 0);
-        Print(name_  + " has arrived at the store on Day " + Simulation.current_day_); 
+        super.ArriveAtStore();
         int orders_received = 0;
         // check if theres any orders for today
         if (Store.orders_.containsKey(Simulation.current_day_)) {
@@ -109,52 +90,13 @@ public class Clerk implements Staff {
         Publish("itemsadded", orders_received);
     }
 
-    public boolean CheckRegister() {
-        Publish("checkedregister", Store.register_.GetAmount());
-        // broadcast register amount and return if its greater than 75 or not
-        Print(name_ + " checks the register to find $" + Store.register_.GetAmount());
-        return (Store.register_.GetAmount() >= 75) ? true : false;
-    }
-
-    public void GoToBank() {
-        // add 1000 to register and broadcast
-        Print(name_ + " goes to the bank to withdraw $1000 for the register" );
-        Store.register_.AddMoney(1000);
-        Store.total_withdrawn_ += 1000;
-        Publish("checkedregister", Store.register_.GetAmount());
-    }
-
-    // sell an item to a customer
-    public void Sell(Item item, int salePrice) {
-        Print("The customer buys the " + item.name_ + " for $" + salePrice);
-        // add money to register
-        Store.register_.AddMoney(salePrice);
-        // update item sale price and day
-        item.day_sold_ = Simulation.current_day_;
-        item.sale_price_ = salePrice;
-        // remove item from inventory and add to sold collection
-        Store.inventory_.remove(item);
-        Store.sold_.add(item);
-    }
-
-    // buy an item from a customer
-    public void Buy(Item item, int salePrice) {
-        Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
-        // take money from register and
-        Store.register_.TakeMoney(salePrice);
-        item.purchase_price_ = salePrice;
-        item.list_price_ = salePrice*2;
-        item.day_arrived = Simulation.current_day_;
-        Store.inventory_.add(item);
-    }
-
     public boolean TryToSell(Item item) {
         boolean sold = false;
         int willBuy = GetRandomNum(2);
         Print(name_ + " shows the customer the " + item.name_  + ", selling for $" + item.list_price_);
         if (willBuy == 0) {
             // sell item to customer at list price
-            this.Sell(item, item.list_price_);
+            Sell(item, item.list_price_);
             sold = true;
         } else {
             // if they dont buy, offer discount to get 75% chance of buying
@@ -162,7 +104,7 @@ public class Clerk implements Staff {
             willBuy = GetRandomNum(4);
             if (willBuy != 0) {
                 // sell item to customer at discounted price
-                this.Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
+                Sell(item, (int)(item.list_price_-(item.list_price_*0.1)));
                 sold = true;
             } else {
                 Print("The customer decides not to buy the " + item.name_);
@@ -205,13 +147,6 @@ public class Clerk implements Staff {
         return bought;
     }
 
-    public Item CheckForItem(Item.ItemType itemType) {
-        for (Item item : Store.inventory_) {
-            if (item.itemType == itemType) return item;
-        }
-        return null;
-    }
-
     private boolean Tune(Item item) { 
         Print(name_ + " is attempting to tune the " + item.name_);
         switch (tune_.Tune(item)) {
@@ -243,18 +178,23 @@ public class Clerk implements Staff {
         Iterator<Item> it = Store.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
         while (it.hasNext()) {
             Item item = it.next();
-            // remove this type from the list of oens we need to order
+            // remove this type from the list of types we need to order
             if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
             if (item.NeedsTuning()) {
                 if (!Tune(item)) {
-                    if (item.condition_ == "Broken") it.remove();
                     damaged++;
-                }
+                    if (item.condition_ == "Broken") { it.remove(); }
+                    else { 
+                        total += item.purchase_price_;
+                        totalitems++;
+                    }
+                } 
+            } else {
+                // add value of item to total
+                total += item.purchase_price_;
+                totalitems++;
             }
-            // add value of item to total
-            total += item.purchase_price_;
-            totalitems++;
         }
         // broadcast total value of inventory
         Publish("brokeintuning", damaged);
@@ -319,12 +259,5 @@ public class Clerk implements Staff {
             Print(name_ + " cleans the store without incident");
             Publish("damagedcleaning", 0);
         }
-    }
-
-    // every night, broadcast who left, show the trackers data, and close the logger
-    public void CloseStore() {
-        Print(name_ + " locks up and goes home for the night");
-        Publish("leftstore", 0);
-        subscribers_.get(0).ShowData(Simulation.current_day_);
     }
 }

@@ -12,7 +12,7 @@ CLASSES = \
 	ItemFactory.java \
 	Staff.java \
 	Clerk.java \
-	ClerkSellFactory.java \
+	ClerkSellDecorator.java \
 	Customer.java \
 	CashRegister.java \
 	Store.java \

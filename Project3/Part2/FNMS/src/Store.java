@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Store implements Utility {
+class Store extends Publisher implements Utility {
     private int clerk_id_;
     private Vector<Staff> clerks_ = new Vector<Staff>();
     private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
@@ -22,26 +22,28 @@ class Store implements Utility {
                 Store.inventory_.add(ItemFactory.MakeItem(itemType.name()));
             }
         }
-        // make clerks witht their break chances
+        // make decorated clerks with break chances & tuning algorithms
         //clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune())));
+        clerks_.add(new StaffSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune())));
+        clerks_.add(new StaffSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
+        clerks_.add(new StaffSellDecorator(new Clerk("Daphne", 10, new ManualTune())));
     }
     
+    @Override
     public void Subscribe(Subscriber subscriber) { 
-        subscribers_.add(subscriber); 
+        super.Subscribe(subscriber);
         for (Staff clerk : clerks_) clerk.Subscribe(subscriber);
     } 
 
+    @Override
     public void Unsubscribe(Subscriber unsubscriber) { 
-        subscribers_.remove(unsubscriber); 
+        super.Unsubscribe(unsubscriber);
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
     }
-
-    // methods to handle outputs
-    private void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, GetClerk(), data); }
     
+
+    protected void Publish(String context, int data) { super.Publish(context, GetClerk().GetName(), data); }
+
     // methods to get workers
     public Staff GetClerk() { return clerks_.get(clerk_id_); }
 

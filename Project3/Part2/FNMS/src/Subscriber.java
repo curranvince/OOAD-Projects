@@ -1,8 +1,8 @@
 import java.io.*;
 // These Subscribers are an example of the Observer pattern. 
 interface Subscriber extends Utility {
-    public void Update(String context, Staff clerk, int data);
-    public void ShowData(int current_day);
+    public void Update(String context, String name, int data);
+    public void ShowData();
     public void Close();
 }
 
@@ -31,9 +31,9 @@ class Logger implements Subscriber {
         } 
     }
 
-    private void Write(Staff clerk, String msg) { Write(clerk.GetName() + " " + msg); }
+    private void Write(String clerk, String msg) { Write(clerk + " " + msg); }
 
-    public void Update(String context, Staff clerk, int data) {
+    public void Update(String context, String clerk, int data) {
         // consume information
         switch (context) {
             case "arrival": 
@@ -84,18 +84,18 @@ class Logger implements Subscriber {
         }
     }
 
-    public void ShowData(int current_day) {}
+    public void ShowData() {}
 }
 
 class Tracker implements Subscriber {
     private int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
-    // [0][] for Velma, [1][] for Shaggy, [2][] for Daphne
+    // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
     // [][0] for sold, [][1] for purchased, [][2] for damaged
 
-    public void Update(String context, Staff clerk, int data) {
+    public void Update(String context, String name, int data) {
         int clerk_index = 0;
-        if (clerk.GetName() == "Shaggy") clerk_index = 1;
-        else if (clerk.GetName() == "Daphne") clerk_index = 2;
+        if (name == "Velma") clerk_index = 1;
+        else if (name == "Daphne") clerk_index = 2;
 
         switch (context) {
             case "brokeintuning":
@@ -115,11 +115,11 @@ class Tracker implements Subscriber {
         }
     }
 
-    public void ShowData(int current_day) {
-        Print("\nTracker : Day " + current_day);
+    public void ShowData() {
+        Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Items Sold      Items Purchased      Items Damaged ");
-        Print("Velma      " + stats_[0][0] + "               " + stats_[0][1] + "                    " + stats_[0][2]);
-        Print("Shaggy     " + stats_[1][0] + "               " + stats_[1][1] + "                    " + stats_[1][2]);
+        Print("Shaggy     " + stats_[0][0] + "               " + stats_[0][1] + "                    " + stats_[0][2]);
+        Print("Velma      " + stats_[1][0] + "               " + stats_[1][1] + "                    " + stats_[1][2]);
         Print("Daphne     " + stats_[2][0] + "               " + stats_[2][1] + "                    " + stats_[2][2] + "\n");
     }
 

@@ -59,8 +59,10 @@ public class Simulation implements Utility {
                 // close the store on sundays
                 store_.HandleSunday();
             }
+            // close daily logger and show tracker at end of every day
             store_.Unsubscribe(dailyLogger);
             dailyLogger.Close();
+            tracker.ShowData();
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
         store_.Unsubscribe(tracker);
