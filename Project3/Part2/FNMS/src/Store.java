@@ -5,7 +5,6 @@ import java.util.*;
 import java.lang.Math;
 
 class Store extends Publisher implements Utility {
-    private int clerk_id_;
     private Vector<AbstractClerk> clerks_ = new Vector<AbstractClerk>();
     private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
     private AbstractClerk activeClerk_;
