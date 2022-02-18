@@ -1,11 +1,12 @@
 import java.io.*;
-// These Subscribers are an example of the Observer pattern. 
+// These Subscribers are an example of the Observer pattern
 interface Subscriber extends Utility {
     public void Update(String context, String name, int data);
     public void ShowData();
     public void Close();
 }
 
+// Logger keeps track of all information for a single day and writes it to its own file
 class Logger implements Subscriber { 
     private FileWriter writer_;
 
@@ -22,6 +23,7 @@ class Logger implements Subscriber {
         }
     }
 
+    // make writing cleaner
     private void Write(String msg) { 
         try {
             writer_.write(msg + "\n");
@@ -31,8 +33,8 @@ class Logger implements Subscriber {
         } 
     }
 
+    // consume context/data and write it to file
     public void Update(String context, String clerk, int data) {
-        // consume information
         switch (context) {
             case "arrival": 
                 Write(clerk + " arrived at the store");
@@ -74,6 +76,7 @@ class Logger implements Subscriber {
         }
     }
 
+    // close the writer when logger closes
     public void Close() {
         try {
             writer_.close();
@@ -82,14 +85,18 @@ class Logger implements Subscriber {
         }
     }
 
+    // holds no data
     public void ShowData() {}
 }
 
+// Tracker exists for an entire simulation and 
+// adds up cumulative stats for each clerk
 class Tracker implements Subscriber {
     private int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
     // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
     // [][0] for sold, [][1] for purchased, [][2] for damaged
 
+    // for data we're interested in, add to the data table
     public void Update(String context, String name, int data) {
         int clerk_index = 0;
         if (name == "Velma") clerk_index = 1;
@@ -113,6 +120,7 @@ class Tracker implements Subscriber {
         }
     }
 
+    // print the data table
     public void ShowData() {
         Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Items Sold      Items Purchased      Items Damaged ");
@@ -121,5 +129,6 @@ class Tracker implements Subscriber {
         Print("Daphne     " + stats_[2][0] + "               " + stats_[2][1] + "                    " + stats_[2][2] + "\n");
     }
 
-    public void Close() {}
+    // clear data table on close
+    public void Close() { stats_ = null; }
 }

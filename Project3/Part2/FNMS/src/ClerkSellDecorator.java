@@ -1,6 +1,7 @@
 // TO DO DECORATE SELL METHOD
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
 // https://refactoring.guru/design-patterns/decorator/java/example
+// This is an example of the Decorator pattern
 import java.util.Set;
 
 abstract class ClerkDecorator extends AbstractClerk {
@@ -28,6 +29,7 @@ abstract class ClerkDecorator extends AbstractClerk {
     public void CloseStore() { decoratedStaff_.CloseStore(); }
 }
 
+// concrete class to implement new methods/overwrites
 class ClerkSellDecorator extends ClerkDecorator {
     public ClerkSellDecorator(AbstractClerk clerk) { 
         super(clerk); 

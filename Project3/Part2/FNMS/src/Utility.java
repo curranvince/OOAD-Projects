@@ -1,10 +1,11 @@
 import java.util.Random;
 
 public interface Utility {
+    // So theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
-
+    // Make print easier
     default void Print(String str) { System.out.println(str); }
-
+    // Make getting rand nums easier
     default int GetRandomNum(int range) { return random.nextInt(range); }
     default int GetRandomNum(int min, int max) { return random.nextInt(max-min) + min; }
     default int GetRandomNumEx(int min, int max, int exclude) {
@@ -15,10 +16,12 @@ public interface Utility {
         }
         return rando;
     }
-
+    
+    // return random member of Item enums
     default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(3)]; }
     default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(17)]; }
     
+    // return a random Item condition
     default String GetRandomCondition() {
         // return a random 'Condition' for an item
         int rando = GetRandomNum(5);
@@ -38,6 +41,7 @@ public interface Utility {
         }
     }
     
+    // return an offer price based off a given item condition
     default int GetOfferPrice(String condition) {
         // offer different prices based on given condition
         switch (condition) {
@@ -168,8 +172,8 @@ public interface Utility {
         };
         return colors[GetRandomNum(colors.length)];
     }
-
-    default String GetStringType() {
+    
+    default String GetStringsType() {
         String[] types = {
             "Guitar",
             "Violin",
@@ -179,24 +183,5 @@ public interface Utility {
             "Cello"
         };
         return types[GetRandomNum(types.length)];
-    }
-
-    default String GetRandomName() {
-        String[] names = {
-            "Alice",
-            "Amber",
-            "Emma",
-            "Sam",
-            "Ryan",
-            "Nate",
-            "CJ",
-            "Bruce",
-            "Dom",
-            "Delaney",
-            "Sophie",
-            "Paige",
-            "Mel"
-        };
-        return names[GetRandomNum(names.length)];
     }
 }

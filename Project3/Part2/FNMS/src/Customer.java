@@ -1,8 +1,15 @@
+// Customer can be extended to make customers with new types of requests, like trade or fix
 abstract class Customer implements Utility {
+    // all customers have a name, request, and type of item they're interested in
     protected String name_;
     protected int request_;
     protected Item.ItemType itemtype_;
 
+    Customer() {
+        name_ = CreateName();
+        itemtype_ = GetRandomItemType();
+    }
+    
     public Item.ItemType GetItemType() { return itemtype_; }
     
     public int MakeRequest() { 
@@ -10,9 +17,23 @@ abstract class Customer implements Utility {
         return request_;
     }
 
-    Customer() {
-        name_ = GetRandomName();
-        itemtype_ = GetRandomItemType();
+    private String CreateName() {
+        String[] names = {
+            "Alice",
+            "Amber",
+            "Emma",
+            "Sam",
+            "Ryan",
+            "Nate",
+            "CJ",
+            "Bruce",
+            "Dom",
+            "Delaney",
+            "Sophie",
+            "Paige",
+            "Mel"
+        };
+        return names[GetRandomNum(names.length)];
     }
 }
 

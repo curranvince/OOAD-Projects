@@ -48,6 +48,7 @@ class ElectronicTune implements TuneStrategy {
     }
 }
 
+// extended by both Clerk and ClerkDecorator
 abstract class AbstractClerk extends Staff {
     protected int break_percentage_;
     protected TuneStrategy tune_strategy_;

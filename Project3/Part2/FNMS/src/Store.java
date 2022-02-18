@@ -26,18 +26,19 @@ class Store extends Publisher implements Utility {
             }
         }
         // make decorated clerks with break chances & tuning algorithms
-        //clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune()));
         clerks_.add(new ClerkSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune(), this)));
         clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
         clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
     
+    // override subscribe to also have all workers also be subscribed to
     @Override
     public void Subscribe(Subscriber subscriber) { 
         super.Subscribe(subscriber);
         for (Staff clerk : clerks_) clerk.Subscribe(subscriber);
     } 
 
+    // override ubsubscribe to also have all workers also be unsubscribed from
     @Override
     public void Unsubscribe(Subscriber unsubscriber) { 
         super.Unsubscribe(unsubscriber);
@@ -46,7 +47,12 @@ class Store extends Publisher implements Utility {
     
     private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
+    // method for an entire open store day
     public void OpenToday() {
+        // choose a clerk, have them check register & go to bank if needed
+        // have clerk do inventory and order items if necessary
+        // let the store open, clerk handles customers
+        // have clerk clean and close the store
         this.ChooseClerk();
         activeClerk_.ArriveAtStore();
         if (!activeClerk_.CheckRegister()) activeClerk_.GoToBank();
@@ -85,26 +91,29 @@ class Store extends Publisher implements Utility {
         return toServe;
     }
 
+    // store opens for the day
     public void Opens() {
         int itemssold, itemsbought;
         itemssold = itemsbought = 0;
-        
+        // make custoemrs and have clerk handle their request
         for (Customer customer : GenerateCustomers()) {
             int result = activeClerk_.HandleCustomer(customer);
             if (result > 0) itemsbought += result; 
             else if (result < 0) itemssold += Math.abs(result);
         }
-        
+        // publish number of items sold and bought throughout day
         Publish("itemsold", itemssold);
         Publish("itemsbought", itemsbought);
     }
 
+    // announce that the store is closed
     public void ClosedToday() {
-        // handle the store being closed
         Print("Today is Day " + Simulation.current_day_ + ", which is Sunday, so the store is closed");
         Publish("closed", 0);
     }
 
+    // show one of the inventories and its value
+    // true for remainging items, false for sold items
     public void DisplayInventory(boolean sold) {
         int total = 0;
         Print("Items in " +  (sold ? "sold" : "remaining") + " inventory: ");

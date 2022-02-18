@@ -5,7 +5,7 @@ public class Simulation implements Utility {
     static int current_day_;
 
     private void SetOutputStream() {
-        // make sure sim starts at 0
+        // make sure sim always starts at 0
         Simulation.current_day_ = 0;
         // set system out to Output.txt
         try {
@@ -19,6 +19,7 @@ public class Simulation implements Utility {
     }
 
     private void OutputResults() {
+        Print(" *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***");
         // display inventory & its value
         store_.DisplayInventory(true); 
         // display items sold & their value
@@ -26,6 +27,7 @@ public class Simulation implements Utility {
         // display money stats
         Print("The store has $" + store_.register_.GetAmount() + " in the register");
         Print("$" + store_.total_withdrawn_ + " was withdrawn from the bank");
+        Print("\n *** SIMULATION COMPLETE *** ");
     }
 
     public void RunSimulation(int n) {
@@ -34,28 +36,25 @@ public class Simulation implements Utility {
         // create Tracker
         Subscriber tracker = new Tracker();
         store_.Subscribe(tracker);
-        // each loop represents one day
+        // run however many days are input
         for (int i = 0; i < n; i++) {
             // iterate day and create daily logger
             current_day_++;
             Print(" ***SIMULATION : DAY " + current_day_ + " BEGINNING***");
             Subscriber dailyLogger = new Logger(current_day_);
             store_.Subscribe(dailyLogger);
-            if (current_day_ % 7 != 0) {
-                store_.OpenToday();
-            } else {
-                // close the store on sundays
-                store_.ClosedToday();
-            }
+            // open store on every day except sunday
+            if (current_day_ % 7 != 0) { store_.OpenToday();
+            } else { store_.ClosedToday(); }
             // close daily logger and show tracker at end of every day
             store_.Unsubscribe(dailyLogger);
             dailyLogger.Close();
             tracker.ShowData();
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
+        // unsubscribe from tracker and display final results
         store_.Unsubscribe(tracker);
-        // display final results
+        tracker.Close();
         OutputResults();
-        Print("\n *** SIMULATION COMPLETE *** ");
     }
 }

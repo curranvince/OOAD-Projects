@@ -294,7 +294,7 @@ class Strings extends Accessories {
     private String type_;
 
     Strings() {
-        type_ = GetStringType();
+        type_ = GetStringsType();
         name_ += type_ + " strings";
         itemType = ItemType.STRINGS;
     }

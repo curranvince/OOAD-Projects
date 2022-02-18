@@ -1,4 +1,4 @@
-// Factory to easily create Items
+// Factory to easily create Items && hide their creation
 // Implements polymorphism by returning a subclass as the class
 // IE we can refer to them all as 'Item' but they will
 // take on the behavior of the subclass
