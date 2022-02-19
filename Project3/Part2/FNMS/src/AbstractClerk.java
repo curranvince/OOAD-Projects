@@ -57,6 +57,10 @@ abstract class AbstractClerk extends Staff {
     abstract public void GoToBank();
     abstract public Set<Item.ItemType> DoInventory();
     abstract public int PlaceOrders(Set<Item.ItemType> orderTypes);
+    abstract public int Sell(Item item, int salePrice);
+    abstract public int Buy(Item item, int salePrice);
+    abstract public Item CheckForItem(Item.ItemType itemType);
+    abstract public int TryTransaction(Item item, boolean buying);
     abstract public int HandleCustomer(Customer customer);
     abstract public void CleanStore();
 }

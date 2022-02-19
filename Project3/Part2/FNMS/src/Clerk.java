@@ -144,7 +144,7 @@ public class Clerk extends AbstractClerk {
     }
 
     // sell an item to a customer
-    private int Sell(Item item, int salePrice) {
+    public int Sell(Item item, int salePrice) {
         Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register, update item stats, update inventories
         store_.register_.AddMoney(salePrice);
@@ -156,7 +156,7 @@ public class Clerk extends AbstractClerk {
     }
 
     // buy an item from a customer
-    private int Buy(Item item, int salePrice) {
+    public int Buy(Item item, int salePrice) {
         if (store_.register_.HasEnough(salePrice)) {
             Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
             // take money from register, update item stats, update inventories
@@ -173,7 +173,7 @@ public class Clerk extends AbstractClerk {
 
 //TO DO
 //Check if we still sell the item, if we dont: tell customer
-    private int TryTransaction(Item item, boolean buying) {
+    public int TryTransaction(Item item, boolean buying) {
         if (item == null) { return 0; }
 // if (!store_.StillSells(item.ItemType)) {Print(), return 0} 
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
@@ -191,7 +191,7 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
-    private Item CheckForItem(Item.ItemType itemType) {
+    public Item CheckForItem(Item.ItemType itemType) {
         for (Item item : store_.inventory_) {
             if (item.itemType == itemType) {
                 Print(name_ + " found a " + item.name_ + " in the inventory");
@@ -203,7 +203,7 @@ public class Clerk extends AbstractClerk {
     }
 
     public int HandleCustomer(Customer customer) {
-        return (customer.MakeRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(ItemFactory.MakeItem(customer.GetItemType().name()), true);
+        return ((customer.MakeRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
             case -1: 

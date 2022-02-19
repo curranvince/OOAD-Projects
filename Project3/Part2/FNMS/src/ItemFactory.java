@@ -6,20 +6,22 @@ public class ItemFactory {
     private ItemFactory() {};
     
     static public Item MakeItem(String itemType) {
-        if (itemType == null) {
-            return null;
-        } else if (itemType.equalsIgnoreCase("PAPERSCORE")) {
+        if (itemType.equalsIgnoreCase("PAPERSCORE")) {
             return new PaperScore();
         } else if (itemType.equalsIgnoreCase("CD")) {
             return new CD();
         } else if (itemType.equalsIgnoreCase("VINYL")) {
             return new Vinyl();
+        } else if (itemType.equalsIgnoreCase("CASSETTE")) {
+            return new Cassette();
         } else if (itemType.equalsIgnoreCase("CDPLAYER")) {
             return new CDPlayer();
         } else if (itemType.equalsIgnoreCase("RECORDPLAYER")) {
             return new RecordPlayer();
         } else if (itemType.equalsIgnoreCase("MP3PLAYER")) {
             return new MP3Player();
+        } else if (itemType.equalsIgnoreCase("CASSETTEPLAYER")) {
+            return new CassettePlayer();
         } else if (itemType.equalsIgnoreCase("GUITAR")) {
             return new Guitar();
         } else if (itemType.equalsIgnoreCase("BASS")) {
@@ -30,6 +32,8 @@ public class ItemFactory {
             return new Flute();
         } else if (itemType.equalsIgnoreCase("HARMONICA")) {
             return new Harmonica();
+        } else if (itemType.equalsIgnoreCase("SAXOPHONE")) {
+            return new Saxophone();
         } else if (itemType.equalsIgnoreCase("HATS")) {
             return new Hats();
         } else if (itemType.equalsIgnoreCase("SHIRTS")) {
@@ -42,7 +46,10 @@ public class ItemFactory {
             return new Cables();
         } else if (itemType.equalsIgnoreCase("STRINGS")) {
             return new Strings();
+        } else if (itemType.equalsIgnoreCase("GIGBAG")) {
+            return new GigBag();
         } 
+        System.out.println("ERROR: ItemFactory given bad value : \"" + itemType + "\" : Item not instantiated");
         return null;
     }
 }

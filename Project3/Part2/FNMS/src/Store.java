@@ -99,6 +99,7 @@ class Store extends Publisher implements Utility {
             int result = activeClerk_.HandleCustomer(customer);
             if (result > 0) itemsbought += result; 
             else if (result < 0) itemssold += Math.abs(result);
+            customer.LeaveStore();
         }
         // publish number of items sold and bought throughout day
         Publish("itemsold", itemssold);

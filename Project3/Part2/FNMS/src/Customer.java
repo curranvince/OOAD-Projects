@@ -3,20 +3,23 @@ abstract class Customer implements Utility {
     // all customers have a name, request, and type of item they're interested in
     protected String name_;
     protected int request_;
-    protected Item.ItemType itemtype_;
+    protected Item item_;
 
     Customer() {
         name_ = CreateName();
-        itemtype_ = GetRandomItemType();
+        item_ = ItemFactory.MakeItem(GetRandomItemType().name());
     }
     
-    public Item.ItemType GetItemType() { return itemtype_; }
+    public Item GetItem() { return item_; }
+    public Item.ItemType GetItemType() { return item_.itemType; }
     
     public int MakeRequest() { 
-        Print(name_ + " has come into the store looking to " + ((request_ == 1) ? "buy" : "sell") + " a " + itemtype_.name()); 
+        Print(name_ + " has come into the store looking to " + ((request_ == 1) ? "buy" : "sell") + " a " + item_.itemType.name()); 
         return request_;
     }
 
+    public void LeaveStore() { Print(name_ + " leaves the store"); }
+    
     private String CreateName() {
         String[] names = {
             "Alice",

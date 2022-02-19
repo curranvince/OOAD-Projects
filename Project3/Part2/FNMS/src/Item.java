@@ -9,7 +9,7 @@ import java.util.Vector;
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
 abstract class Item implements Utility {
-    Vector<Component> components_ = new Vector<Component>();
+    Vector<Component> components_;
     ItemType itemType;
     String name_;
     int purchase_price_;
@@ -20,23 +20,27 @@ abstract class Item implements Utility {
     int day_sold_;
 
     public enum ItemType {
-        PAPERSCORE,
-        CD,
-        VINYL,
-        CDPLAYER,
-        RECORDPLAYER,
-        MP3PLAYER,
-        GUITAR,
-        BASS,
-        MANDOLIN,
-        FLUTE,
-        HARMONICA,
-        HATS,
-        SHIRTS,
-        BANDANAS,
-        PRACTICEAMPS,
-        CABLES,
-        STRINGS
+        PAPERSCORE,     // 0 Music
+        CD,             // 1
+        VINYL,          // 2
+        CASSETTE,       // 3
+        CDPLAYER,       // 4 Players
+        RECORDPLAYER,   // 5  
+        MP3PLAYER,      // 6
+        CASSETTEPLAYER, // 7
+        GUITAR,         // 8  Instruments Stringed
+        BASS,           // 9
+        MANDOLIN,       // 10
+        FLUTE,          // 11 Instruments Wind
+        HARMONICA,      // 12
+        SAXOPHONE,      // 13
+        HATS,           // 14 Clothing
+        SHIRTS,         // 15
+        BANDANAS,       // 16
+        PRACTICEAMPS,   // 17 Accessories 
+        CABLES,         // 18
+        STRINGS,        // 19
+        GIGBAG,         // 20
     }
 
     public enum Size {
@@ -46,6 +50,7 @@ abstract class Item implements Utility {
     }
 
     Item() {
+        components_ = new Vector<Component>();
         name_ = "";
         // Items have a purchase price $1-50, and list price is double
         purchase_price_ = GetRandomNum(1, 51);
@@ -58,11 +63,14 @@ abstract class Item implements Utility {
     // https://stackoverflow.com/questions/10531513/how-to-identify-object-types-in-java
     // https://stackoverflow.com/questions/24600489/get-the-type-of-generic-t
     // https://stackoverflow.com/questions/14524751/cast-object-to-generic-type-for-returning
+    // https://stackoverflow.com/questions/2693180/what-is-unchecked-cast-and-how-do-i-check-it
 
-    void AddComponent(Component component) {
-        components_.add(component);
-    }
-
+    // add a component to an item
+    void AddComponent(Component component) { components_.add(component); }
+    
+    // get a component from an item
+    // suppress the 'typesafe' warning because the code IS typesafe
+    @SuppressWarnings("unchecked")
     <T> T GetComponent(Class<T> type) {
         for (Component c : components_) {
             if (type == c.getClass()) {
@@ -72,14 +80,14 @@ abstract class Item implements Utility {
         return null;
     }
 
-    void Display() {
-        Print(name_ + " for $" + list_price_);
-    }
+    // display an items name and list price
+    void Display() { Print(name_ + " for $" + list_price_); }
 
-    void DisplaySold() {
-        Print(name_ + " for $" + sale_price_ + " on Day " + day_sold_);
-    }
+    // display the day an item sold and the price
+    void DisplaySold() { Print(name_ + " for $" + sale_price_ + " on Day " + day_sold_); }
 
+    // lower the condition of an item, including its list price
+    // if the item breaks return false, else return true
     boolean LowerCondition() {
         // lower price of item
         list_price_ -= (int)list_price_*0.2;
@@ -114,12 +122,6 @@ abstract class Item implements Utility {
         Print(name_ + " list price has lowered to " + list_price_);
         return true;
     }
-
-    // these methods do nothing unless the item has the required properties
-    void Tune() {};
-    void Untune() {};
-    boolean IsTuned() { return false; }
-    boolean NeedsTuning() { return false; }
 }
 
 
@@ -151,10 +153,18 @@ class Vinyl extends Music {
         itemType = ItemType.VINYL;
     }
 }
+
 class PaperScore extends Music {
     PaperScore() { 
         name_ += " Paper Score"; 
         itemType = ItemType.PAPERSCORE;
+    }
+}
+
+class Cassette extends Music {
+    Cassette() {
+        name_ += " Cassette";
+        itemType = ItemType.CASSETTE;
     }
 }
 
@@ -181,6 +191,13 @@ class MP3Player extends Players {
     MP3Player() { 
         name_ += "MP3 Player";
         itemType = ItemType.MP3PLAYER;
+    }
+}
+
+class CassettePlayer extends Players {
+    CassettePlayer() {
+        name_ += "Cassette Player";
+        itemType = ItemType.CASSETTEPLAYER;
     }
 }
 
@@ -243,6 +260,16 @@ class Harmonica extends Wind {
     }
 }
 
+class Saxophone extends Wind {
+    private String type_;
+
+    Saxophone() {
+        type_= (GetRandomNum(2) == 0) ? " Soprano " : " Alto ";
+        name_ += GetFluteBrand() + type_ + "Saxophone";
+        itemType = ItemType.SAXOPHONE;
+    }
+}
+
 abstract class Clothing extends Item {}
 
 class Hats extends Clothing {
@@ -301,5 +328,12 @@ class Strings extends Accessories {
         type_ = GetStringsType();
         name_ += type_ + " strings";
         itemType = ItemType.STRINGS;
+    }
+}
+
+class GigBag extends Accessories {
+    GigBag() {
+        name_ += "Gig Bag";
+        itemType = ItemType.GIGBAG;
     }
 }
