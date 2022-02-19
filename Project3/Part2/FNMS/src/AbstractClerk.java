@@ -1,19 +1,19 @@
 import java.util.Set;
 
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
-interface TuneStrategy extends Utility { public int Execute(Item item); }
+interface TuneStrategy extends Utility { public int Execute(Tuneable tuneable); }
 
 class ManualTune implements TuneStrategy {
     // 80% chance to tune, 20% chance to untune
-    public int Execute(Item item) { 
-        if (!item.IsTuned()) {
+    public int Execute(Tuneable tuneable) { 
+        if (!tuneable.IsTuned()) {
             if (GetRandomNum(10) > 1) {
-                item.Tune();
+                tuneable.Tune();
                 return 1;
             }
         } else {
             if (GetRandomNum(10) > 7) {
-                item.Untune();
+                tuneable.Untune();
                 return -1;
             }
         }
@@ -23,13 +23,13 @@ class ManualTune implements TuneStrategy {
 
 class HaphazardTune implements TuneStrategy {
     // 50% chance to flip tune
-    public int Execute(Item item) { 
+    public int Execute(Tuneable tuneable) { 
         if (GetRandomNum(2) == 0) {
-            if (item.IsTuned()) {
-                item.Untune();
+            if (tuneable.IsTuned()) {
+                tuneable.Untune();
                 return -1;
             } else {
-                item.Tune();
+                tuneable.Tune();
                 return 1;
             }
         }
@@ -39,9 +39,9 @@ class HaphazardTune implements TuneStrategy {
 
 class ElectronicTune implements TuneStrategy {
     // automatically tune
-    public int Execute(Item item) { 
-        if (!item.IsTuned()) {
-            item.Tune();
+    public int Execute(Tuneable tuneable) { 
+        if (!tuneable.IsTuned()) {
+            tuneable.Tune();
             return 1;
         }
         return 0;

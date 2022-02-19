@@ -60,17 +60,19 @@ public class Clerk extends AbstractClerk {
         // vector to keep track of what types we need to order (start with all and remove)
         Set<Item.ItemType> orderTypes = new HashSet<Item.ItemType>();
         Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
-        int total, totalitems, damaged, orders;
-        total = totalitems = damaged = orders = 0;
+        int total, totalitems, damaged;
+        total = totalitems = damaged = 0;
         Iterator<Item> it = store_.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
         while (it.hasNext()) {
             Item item = it.next();
             // remove this type from the list of types we need to order
             if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
             // tune certain items
-            if (item.NeedsTuning() && !Tune(item)) {
-                damaged++;
-                if (item.condition_ == "Broken") { it.remove(); }
+            if (item.GetComponent(Tuneable.class) != null) {
+                if (!Tune(item)) {
+                    damaged++;
+                    if (item.condition_ == "Broken") { it.remove(); }
+                }
             }
             // add value of item to total
             total += item.purchase_price_;
@@ -115,26 +117,30 @@ public class Clerk extends AbstractClerk {
         return orders;
     }
 
-    private boolean Tune(Item item) { 
-        Print(name_ + " is attempting to tune the " + item.name_);
-        switch (tune_strategy_.Execute(item)) {
-            case -1:
-                Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
-                if (GetRandomNum(10) == 0) {
-                    Print(name_ + " has done such a bad job tuning they damaged the item");
-                    item.LowerCondition();
-                }
-                return false;
-            case 0:
-                Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (item.IsTuned() ? "tuned" : "untuned"));
-                return true;
-            case 1:
-                Print(name_ + " has successfully tuned the " + item.name_);
-                return true;
-            default:
-                Print("Error: Tune returned bad value");
-                return true;
+    private boolean Tune(Item item) {
+        Tuneable tuneable = item.GetComponent(Tuneable.class);
+        if (tuneable != null) {
+            Print(name_ + " is attempting to tune the " + item.name_);
+            switch (tune_strategy_.Execute(tuneable)) {
+                case -1:
+                    Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
+                    if (GetRandomNum(10) == 0) {
+                        Print(name_ + " has done such a bad job tuning they damaged the item");
+                        item.LowerCondition();
+                    }
+                    return false;
+                case 0:
+                    Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (tuneable.IsTuned() ? "tuned" : "untuned"));
+                    return true;
+                case 1:
+                    Print(name_ + " has successfully tuned the " + item.name_);
+                    return true;
+                default:
+                    Print("Error: Tune returned bad value");
+                    return true;
+            }
         }
+        return true;
     }
 
     // sell an item to a customer

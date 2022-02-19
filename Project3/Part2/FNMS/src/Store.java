@@ -6,7 +6,6 @@ import java.lang.Math;
 
 class Store extends Publisher implements Utility {
     private Vector<AbstractClerk> clerks_ = new Vector<AbstractClerk>();
-    private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
     private AbstractClerk activeClerk_;
 
     public int total_withdrawn_ = 0;
@@ -19,7 +18,6 @@ class Store extends Publisher implements Utility {
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
-        int counter = 0;
         for (Item.ItemType itemType : Item.ItemType.values()) {
             for (int i = 0; i < 3; i++) {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
@@ -45,6 +43,7 @@ class Store extends Publisher implements Utility {
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
     }
     
+    // override publish to automatically send name of active clerk
     private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
     // method for an entire open store day

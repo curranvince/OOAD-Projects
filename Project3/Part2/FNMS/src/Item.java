@@ -1,3 +1,4 @@
+import java.util.Vector;
 // TO DO
 // Add new items
 //  - create class
@@ -8,6 +9,7 @@
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
 abstract class Item implements Utility {
+    Vector<Component> components_ = new Vector<Component>();
     ItemType itemType;
     String name_;
     int purchase_price_;
@@ -51,6 +53,24 @@ abstract class Item implements Utility {
         day_arrived = 0;
         condition_ = GetRandomCondition();
     };
+
+    // Resources that helped with the Add/Get Component methods
+    // https://stackoverflow.com/questions/10531513/how-to-identify-object-types-in-java
+    // https://stackoverflow.com/questions/24600489/get-the-type-of-generic-t
+    // https://stackoverflow.com/questions/14524751/cast-object-to-generic-type-for-returning
+
+    void AddComponent(Component component) {
+        components_.add(component);
+    }
+
+    <T> T GetComponent(Class<T> type) {
+        for (Component c : components_) {
+            if (type == c.getClass()) {
+                return (T)c;
+            }
+        }
+        return null;
+    }
 
     void Display() {
         Print(name_ + " for $" + list_price_);
@@ -139,12 +159,7 @@ class PaperScore extends Music {
 }
 
 abstract class Players extends Item {
-    private boolean equalized_ = false;
-
-    void Tune() { equalized_ = true; }
-    void Untune() { equalized_ = false; }
-    boolean IsTuned() { return equalized_; }
-    boolean NeedsTuning() { return true; }
+    Players() { AddComponent(new Tuneable()); }
 }
 
 class CDPlayer extends Players { 
@@ -172,21 +187,15 @@ class MP3Player extends Players {
 abstract class Instruments extends Item {}
 
 abstract class Stringed extends Instruments { 
-    private boolean electric_ = false;
-    private boolean tuned_ = false;
     // assuming theres a 50/50 chance any Stringed instrument is electric
     Stringed() {
         name_ += GetStringedBrand() + " ";
+        AddComponent(new Tuneable());
         if (GetRandomNum(2) == 1) {
-            electric_ = true;
+            AddComponent(new Electric());
             name_ += "Electric ";
         }
     }
-
-    void Tune() { tuned_ = true; }
-    void Untune() { tuned_ = false; }
-    boolean IsTuned() { return tuned_; }
-    boolean NeedsTuning() { return true; }
 }
 
 class Guitar extends Stringed {
@@ -211,12 +220,7 @@ class Mandolin extends Stringed {
 }
 
 abstract class Wind extends Instruments {
-    private boolean adjusted_ = false;
-
-    void Tune() { adjusted_ = true; }
-    void Untune() { adjusted_ = false; }
-    boolean IsTuned() { return adjusted_; }
-    boolean NeedsTuning() { return true; }
+    Wind() { AddComponent(new Tuneable()); }
 }
 
 class Flute extends Wind {
