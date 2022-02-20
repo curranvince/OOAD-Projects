@@ -1,6 +1,8 @@
 IMPORTANT : PROJECT HAS BEEN UPDATED TO USE MAVEN
 THIS IS REQUIRED TO BUILD (Makefile can be provided if NECESSARY)
 
+Project runs Java 8 (1.8)
+
 To use the Maven build tools, run these commands from /FNMSProject
 
 Compile:
