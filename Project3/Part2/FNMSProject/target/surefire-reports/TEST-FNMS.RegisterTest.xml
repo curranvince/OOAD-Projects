@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="FNMS.AppTest" time="0.037" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="FNMS.RegisterTest" time="0.032" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/test-classes:/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/classes:/Users/vincentcurran/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vincentcurran/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/test-classes:/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/classes:/Users/vincentcurran/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vincentcurran/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vincentcurran/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/Users/vincentcurran/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/vincentcurran/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/Users/vincentcurran/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/vincentcurran/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/Users/vincentcurran/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:"/>
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
@@ -12,10 +12,10 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/17.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire/surefirebooter3177543454915185194.jar /Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire 2022-02-20T14-12-58_768-jvmRun1 surefire1001113398319810027tmp surefire_03334968086211488970tmp"/>
+    <property name="sun.java.command" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire/surefirebooter11303444766257583170.jar /Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire 2022-02-20T15-14-35_248-jvmRun1 surefire6372643474270128236tmp surefire_08484318797232951444tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/test-classes:/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/classes:/Users/vincentcurran/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vincentcurran/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="surefire.test.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/test-classes:/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/classes:/Users/vincentcurran/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vincentcurran/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vincentcurran/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/Users/vincentcurran/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/vincentcurran/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/Users/vincentcurran/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/vincentcurran/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/Users/vincentcurran/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/vincentcurran"/>
     <property name="user.language" value="en"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire/surefirebooter3177543454915185194.jar"/>
+    <property name="surefire.real.class.path" value="/Users/vincentcurran/Desktop/CS4448_OOAD/OOAD-Projects/Project3/Part2/FNMSProject/target/surefire/surefirebooter11303444766257583170.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.2+0"/>
@@ -55,5 +55,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="FNMS.AppTest" time="0.001"/>
+  <testcase name="testAdd" classname="FNMS.RegisterTest" time="0.004"/>
+  <testcase name="testInit" classname="FNMS.RegisterTest" time="0"/>
+  <testcase name="testTake" classname="FNMS.RegisterTest" time="0"/>
 </testsuite>

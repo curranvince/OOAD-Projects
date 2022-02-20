@@ -158,10 +158,9 @@ public class Clerk extends AbstractClerk {
 
     // buy an item from a customer
     public int Buy(Item item, int salePrice) {
-        if (store_.register_.HasEnough(salePrice)) {
+        if (store_.register_.TakeMoney(salePrice)) {
             Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
             // take money from register, update item stats, update inventories
-            store_.register_.TakeMoney(salePrice);
             item.purchase_price_ = salePrice;
             item.list_price_ = salePrice*2;
             item.day_arrived = Simulation.current_day_;

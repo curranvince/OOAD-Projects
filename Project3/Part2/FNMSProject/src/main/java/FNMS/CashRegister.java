@@ -1,7 +1,8 @@
+package FNMS;
+
 // CashRegister class to handle the Stores $
 // Good example of Cohesion because the class has
 // one specifc purpose (handling money/doing simple math)
-package FNMS;
 public class CashRegister {
     private int money_;
 
@@ -11,7 +12,11 @@ public class CashRegister {
     
     void AddMoney(int money) { money_ += money; }
 
-    boolean HasEnough(int money) { return ((money_ - money) > 0); }
-
-    void TakeMoney(int money) { money_ -= money; }
+    boolean TakeMoney(int money) { 
+        if ((money_ - money) >= 0) {
+            money_ -= money; 
+            return true;
+        }
+        return false;
+    }
 }
