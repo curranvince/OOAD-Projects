@@ -1,0 +1,3400 @@
+ *** BEGINNING SIMULATION *** 
+
+ ***SIMULATION : DAY 1 BEGINNING***
+Daphne has arrived at the store on Day 1
+Daphne finds no orders delivered today
+Daphne checks the register to find $0
+Daphne goes to the bank to withdraw $1000 for the register
+Daphne is attempting to tune the CD Player
+Daphne has successfully tuned the CD Player
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still untuned
+Daphne is attempting to tune the CD Player
+Daphne has successfully tuned the CD Player
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Yamaha Electric Guitar
+Daphne has successfully tuned the Yamaha Electric Guitar
+Daphne is attempting to tune the Ovation Guitar
+Daphne has not changed the state of the Ovation Guitar, it is still untuned
+Daphne is attempting to tune the Guild Guitar
+Daphne has successfully tuned the Guild Guitar
+Daphne is attempting to tune the Guild Bass
+Daphne has successfully tuned the Guild Bass
+Daphne is attempting to tune the Seagull Bass
+Daphne has successfully tuned the Seagull Bass
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has successfully tuned the Guild Electric Bass
+Daphne is attempting to tune the Guild Electric Mandolin
+Daphne has successfully tuned the Guild Electric Mandolin
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has successfully tuned the Fender Electric Mandolin
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still untuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has successfully tuned the Emerson Wood Flute
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has successfully tuned the Miyazawa Wood Flute
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has successfully tuned the Yamaha Silver Flute
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "D"
+Daphne has successfully tuned the SEYDEL Harmonica in a key of "D"
+Daphne is attempting to tune the Boseno Harmonica in a key of "F#"
+Daphne has successfully tuned the Boseno Harmonica in a key of "F#"
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "F"
+Daphne has successfully tuned the SEYDEL Harmonica in a key of "F"
+Daphne is attempting to tune the Gemeinhardt Alto Saxophone
+Daphne has not changed the state of the Gemeinhardt Alto Saxophone, it is still untuned
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has successfully tuned the Yamaha Alto Saxophone
+Daphne is attempting to tune the Gemeinhardt Soprano Saxophone
+Daphne has successfully tuned the Gemeinhardt Soprano Saxophone
+Daphne does inventory to find we have $1572 worth of product
+Daphne placed 0 order(s) today
+Bruce has come into the store looking to sell a VINYL
+Daphne determines the To Pimp A ButterFly by Kendrick Lamar Vinyl to be in Poor condition and the value to be $2
+Daphne offers a 10% increase to the original price
+The store buys the To Pimp A ButterFly by Kendrick Lamar Vinyl in Poor condition for $2
+Bruce leaves the store
+Sophie has come into the store looking to sell a PAPERSCORE
+Daphne determines the Illmatic by Nas Paper Score to be in Fair condition and the value to be $17
+The store buys the Illmatic by Nas Paper Score in Fair condition for $17
+Sophie leaves the store
+Delaney has come into the store looking to buy a CD
+Daphne found a Ten by Pearl Jam CD in the inventory
+Daphne shows the customer the Ten by Pearl Jam CD, selling for $18
+Daphne offers a 10% discount to the original price
+The customer buys the Ten by Pearl Jam CD for $16
+Delaney leaves the store
+Dom has come into the store looking to buy a CASSETTE
+Daphne found a Supa Dupa Fly by Missy Elliott Cassette in the inventory
+Daphne shows the customer the Supa Dupa Fly by Missy Elliott Cassette, selling for $66
+Daphne offers a 10% discount to the original price
+The customer buys the Supa Dupa Fly by Missy Elliott Cassette for $59
+Dom leaves the store
+Paige has come into the store looking to buy a CD
+Daphne found a Songs in the Key of Life by Stevie Wonder CD in the inventory
+Daphne shows the customer the Songs in the Key of Life by Stevie Wonder CD, selling for $44
+The customer buys the Songs in the Key of Life by Stevie Wonder CD for $44
+Paige leaves the store
+Nate has come into the store looking to sell a CASSETTEPLAYER
+Daphne determines the Cassette Player to be in Good condition and the value to be $28
+The store buys the Cassette Player in Good condition for $28
+Nate leaves the store
+Emma has come into the store looking to buy a SHIRTS
+Daphne found a Large The Beatles Shirt in the inventory
+Daphne shows the customer the Large The Beatles Shirt, selling for $24
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Large The Beatles Shirt
+Emma leaves the store
+CJ has come into the store looking to buy a BANDANAS
+Daphne found a Black Bandana in the inventory
+Daphne shows the customer the Black Bandana, selling for $86
+The customer buys the Black Bandana for $86
+CJ leaves the store
+Paige has come into the store looking to buy a BANDANAS
+Daphne found a Yellow Bandana in the inventory
+Daphne shows the customer the Yellow Bandana, selling for $80
+The customer buys the Yellow Bandana for $80
+Paige leaves the store
+Ryan has come into the store looking to sell a HARMONICA
+Daphne determines the Boseno Harmonica in a key of "C" to be in Good condition and the value to be $20
+Daphne offers a 10% increase to the original price
+The store buys the Boseno Harmonica in a key of "C" in Good condition for $22
+Ryan leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 1
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      0               0                    0
+Daphne     5               4                    0
+
+ ***SIMULATION : DAY 1 HAS ENDED***
+
+ ***SIMULATION : DAY 2 BEGINNING***
+Daphne has arrived at the store on Day 2
+Daphne finds no orders delivered today
+Daphne checks the register to find $1216
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still untuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Yamaha Electric Guitar
+Daphne has not changed the state of the Yamaha Electric Guitar, it is still tuned
+Daphne is attempting to tune the Ovation Guitar
+Daphne has successfully tuned the Ovation Guitar
+Daphne is attempting to tune the Guild Guitar
+Daphne has not changed the state of the Guild Guitar, it is still tuned
+Daphne is attempting to tune the Guild Bass
+Daphne has not changed the state of the Guild Bass, it is still tuned
+Daphne is attempting to tune the Seagull Bass
+Daphne has not changed the state of the Seagull Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has not changed the state of the Guild Electric Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Mandolin
+Daphne has not changed the state of the Guild Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has not changed the state of the Fender Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has successfully tuned the Yamaha Mandolin
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has done a bad job tuning, and untuned the Emerson Wood Flute
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has done a bad job tuning, and untuned the Miyazawa Wood Flute
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "D"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "D", it is still tuned
+Daphne is attempting to tune the Boseno Harmonica in a key of "F#"
+Daphne has not changed the state of the Boseno Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "F"
+Daphne has done a bad job tuning, and untuned the SEYDEL Harmonica in a key of "F"
+Daphne is attempting to tune the Gemeinhardt Alto Saxophone
+Daphne has successfully tuned the Gemeinhardt Alto Saxophone
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Gemeinhardt Soprano Saxophone
+Daphne has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Boseno Harmonica in a key of "C"
+Daphne has not changed the state of the Boseno Harmonica in a key of "C", it is still untuned
+Daphne does inventory to find we have $1494 worth of product
+Daphne placed 0 order(s) today
+Alice has come into the store looking to buy a GUITAR
+Daphne found a Yamaha Electric Guitar in the inventory
+Daphne shows the customer the Yamaha Electric Guitar, selling for $52
+The customer buys the Yamaha Electric Guitar for $52
+The customer decides they also want to buy a CABLES
+Daphne found a 1 meter cable in the inventory
+The customer buys the 1 meter cable for $100
+Alice leaves the store
+Bruce has come into the store looking to buy a HARMONICA
+Daphne found a SEYDEL Harmonica in a key of "D" in the inventory
+Daphne shows the customer the SEYDEL Harmonica in a key of "D", selling for $16
+Daphne offers a 10% discount to the original price
+The customer buys the SEYDEL Harmonica in a key of "D" for $14
+Bruce leaves the store
+Sam has come into the store looking to sell a CD
+Daphne determines the Abbey Road by The Beatles CD to be in Good condition and the value to be $22
+Daphne offers a 10% increase to the original price
+The store buys the Abbey Road by The Beatles CD in Good condition for $24
+Sam leaves the store
+Paige has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $18
+The customer buys the Cassette Player for $18
+Paige leaves the store
+Sam has come into the store looking to sell a FLUTE
+Daphne determines the Emerson Wood Flute to be in Very Good condition and the value to be $36
+The store buys the Emerson Wood Flute in Very Good condition for $36
+Sam leaves the store
+CJ has come into the store looking to buy a SAXOPHONE
+Daphne found a Gemeinhardt Alto Saxophone in the inventory
+Daphne shows the customer the Gemeinhardt Alto Saxophone, selling for $20
+Daphne offers a 10% discount to the original price
+The customer buys the Gemeinhardt Alto Saxophone for $18
+CJ leaves the store
+Bruce has come into the store looking to buy a HATS
+Daphne found a Small Nirvna Hat in the inventory
+Daphne shows the customer the Small Nirvna Hat, selling for $38
+The customer buys the Small Nirvna Hat for $38
+Bruce leaves the store
+Delaney has come into the store looking to buy a HARMONICA
+Daphne found a Boseno Harmonica in a key of "F#" in the inventory
+Daphne shows the customer the Boseno Harmonica in a key of "F#", selling for $54
+Daphne offers a 10% discount to the original price
+The customer buys the Boseno Harmonica in a key of "F#" for $48
+Delaney leaves the store
+Paige has come into the store looking to buy a HATS
+Daphne found a Large Red Hot Chili Peppers Hat in the inventory
+Daphne shows the customer the Large Red Hot Chili Peppers Hat, selling for $74
+Daphne offers a 10% discount to the original price
+The customer buys the Large Red Hot Chili Peppers Hat for $66
+Paige leaves the store
+Sophie has come into the store looking to buy a CASSETTE
+Daphne found a 21 by Adele Cassette in the inventory
+Daphne shows the customer the 21 by Adele Cassette, selling for $14
+Daphne offers a 10% discount to the original price
+The customer buys the 21 by Adele Cassette for $12
+Sophie leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 2
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      0               0                    0
+Daphne     14               6                    3
+
+ ***SIMULATION : DAY 2 HAS ENDED***
+
+ ***SIMULATION : DAY 3 BEGINNING***
+Velma has arrived at the store on Day 3
+Velma finds no orders delivered today
+Velma checks the register to find $1522
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Ovation Guitar
+Velma has not changed the state of the Ovation Guitar, it is still tuned
+Velma is attempting to tune the Guild Guitar
+Velma has not changed the state of the Guild Guitar, it is still tuned
+Velma is attempting to tune the Guild Bass
+Velma has not changed the state of the Guild Bass, it is still tuned
+Velma is attempting to tune the Seagull Bass
+Velma has not changed the state of the Seagull Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Bass
+Velma has not changed the state of the Guild Electric Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Mandolin
+Velma has not changed the state of the Guild Electric Mandolin, it is still tuned
+Velma is attempting to tune the Fender Electric Mandolin
+Velma has not changed the state of the Fender Electric Mandolin, it is still tuned
+Velma is attempting to tune the Yamaha Mandolin
+Velma has not changed the state of the Yamaha Mandolin, it is still tuned
+Velma is attempting to tune the Emerson Wood Flute
+Velma has successfully tuned the Emerson Wood Flute
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has successfully tuned the Miyazawa Wood Flute
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has not changed the state of the Yamaha Silver Flute, it is still tuned
+Velma is attempting to tune the SEYDEL Harmonica in a key of "F"
+Velma has successfully tuned the SEYDEL Harmonica in a key of "F"
+Velma is attempting to tune the Yamaha Alto Saxophone
+Velma has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Velma is attempting to tune the Gemeinhardt Soprano Saxophone
+Velma has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Boseno Harmonica in a key of "C"
+Velma has successfully tuned the Boseno Harmonica in a key of "C"
+Velma is attempting to tune the Emerson Wood Flute
+Velma has successfully tuned the Emerson Wood Flute
+Velma does inventory to find we have $1361 worth of product
+Velma placed 0 order(s) today
+Emma has come into the store looking to buy a FLUTE
+Velma found a Emerson Wood Flute in the inventory
+Velma shows the customer the Emerson Wood Flute, selling for $34
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Emerson Wood Flute
+Emma leaves the store
+Emma has come into the store looking to buy a HARMONICA
+Velma found a SEYDEL Harmonica in a key of "F" in the inventory
+Velma shows the customer the SEYDEL Harmonica in a key of "F", selling for $22
+The customer buys the SEYDEL Harmonica in a key of "F" for $22
+Emma leaves the store
+Sophie has come into the store looking to buy a MP3PLAYER
+Velma found a MP3 Player in the inventory
+Velma shows the customer the MP3 Player, selling for $72
+Velma offers a 10% discount to the original price
+The customer buys the MP3 Player for $64
+Sophie leaves the store
+Sam has come into the store looking to buy a HARMONICA
+Velma found a Boseno Harmonica in a key of "C" in the inventory
+Velma shows the customer the Boseno Harmonica in a key of "C", selling for $44
+The customer buys the Boseno Harmonica in a key of "C" for $44
+Sam leaves the store
+Ryan has come into the store looking to buy a SHIRTS
+Velma found a Large The Beatles Shirt in the inventory
+Velma shows the customer the Large The Beatles Shirt, selling for $24
+The customer buys the Large The Beatles Shirt for $24
+Ryan leaves the store
+CJ has come into the store looking to sell a CD
+Velma determines the Are You Experienced by Jimi Hendrix CD to be in Poor condition and the value to be $2
+The store buys the Are You Experienced by Jimi Hendrix CD in Poor condition for $2
+CJ leaves the store
+Alice has come into the store looking to buy a GUITAR
+Velma found a Ovation Guitar in the inventory
+Velma shows the customer the Ovation Guitar, selling for $76
+Velma offers a 10% discount to the original price
+The customer buys the Ovation Guitar for $68
+Alice leaves the store
+Nate has come into the store looking to buy a BANDANAS
+Velma found a Red Bandana in the inventory
+Velma shows the customer the Red Bandana, selling for $50
+The customer buys the Red Bandana for $50
+Nate leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 3
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      6               1                    0
+Daphne     14               6                    3
+
+ ***SIMULATION : DAY 3 HAS ENDED***
+
+ ***SIMULATION : DAY 4 BEGINNING***
+Velma has arrived at the store on Day 4
+Velma finds no orders delivered today
+Velma checks the register to find $1792
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Guild Guitar
+Velma has not changed the state of the Guild Guitar, it is still tuned
+Velma is attempting to tune the Guild Bass
+Velma has not changed the state of the Guild Bass, it is still tuned
+Velma is attempting to tune the Seagull Bass
+Velma has not changed the state of the Seagull Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Bass
+Velma has not changed the state of the Guild Electric Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Mandolin
+Velma has not changed the state of the Guild Electric Mandolin, it is still tuned
+Velma is attempting to tune the Fender Electric Mandolin
+Velma has not changed the state of the Fender Electric Mandolin, it is still tuned
+Velma is attempting to tune the Yamaha Mandolin
+Velma has not changed the state of the Yamaha Mandolin, it is still tuned
+Velma is attempting to tune the Emerson Wood Flute
+Velma has not changed the state of the Emerson Wood Flute, it is still tuned
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has not changed the state of the Yamaha Silver Flute, it is still tuned
+Velma is attempting to tune the Yamaha Alto Saxophone
+Velma has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Velma is attempting to tune the Gemeinhardt Soprano Saxophone
+Velma has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Emerson Wood Flute
+Velma has not changed the state of the Emerson Wood Flute, it is still tuned
+Velma does inventory to find we have $1219 worth of product
+Velma placed an order for 3 BANDANASs to arrive on Day 5
+Velma placed an order for 3 HARMONICAs to arrive on Day 6
+Velma placed 6 order(s) today
+Emma has come into the store looking to buy a GUITAR
+Velma found a Guild Guitar in the inventory
+Velma shows the customer the Guild Guitar, selling for $86
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Guild Guitar
+Emma leaves the store
+Emma has come into the store looking to buy a FLUTE
+Velma found a Emerson Wood Flute in the inventory
+Velma shows the customer the Emerson Wood Flute, selling for $34
+Velma offers a 10% discount to the original price
+The customer buys the Emerson Wood Flute for $30
+Emma leaves the store
+Amber has come into the store looking to buy a CASSETTE
+Velma found a Supa Dupa Fly by Missy Elliott Cassette in the inventory
+Velma shows the customer the Supa Dupa Fly by Missy Elliott Cassette, selling for $68
+The customer buys the Supa Dupa Fly by Missy Elliott Cassette for $68
+Amber leaves the store
+Emma has come into the store looking to buy a RECORDPLAYER
+Velma found a Record Player in the inventory
+Velma shows the customer the Record Player, selling for $32
+The customer buys the Record Player for $32
+Emma leaves the store
+Nate has come into the store looking to buy a CASSETTE
+Velma finds no CASSETTE in the inventory
+Nate leaves the store
+Emma has come into the store looking to sell a PAPERSCORE
+Velma determines the Red by Taylor Swift Paper Score to be in Fair condition and the value to be $14
+Velma offers a 10% increase to the original price
+The store buys the Red by Taylor Swift Paper Score in Fair condition for $15
+Emma leaves the store
+Sam has come into the store looking to buy a CASSETTEPLAYER
+Velma found a Cassette Player in the inventory
+Velma shows the customer the Cassette Player, selling for $2
+The customer buys the Cassette Player for $2
+Sam leaves the store
+Sophie has come into the store looking to buy a CD
+Velma found a Songs in the Key of Life by Stevie Wonder CD in the inventory
+Velma shows the customer the Songs in the Key of Life by Stevie Wonder CD, selling for $78
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Songs in the Key of Life by Stevie Wonder CD
+Sophie leaves the store
+Amber has come into the store looking to buy a HARMONICA
+Velma finds no HARMONICA in the inventory
+Amber leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 4
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      10               2                    0
+Daphne     14               6                    3
+
+ ***SIMULATION : DAY 4 HAS ENDED***
+
+ ***SIMULATION : DAY 5 BEGINNING***
+Daphne has arrived at the store on Day 5
+Daphne finds an order with 3 BANDANASs
+Daphne checks the register to find $1851
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has done a bad job tuning, and untuned the Cassette Player
+Daphne is attempting to tune the Guild Guitar
+Daphne has not changed the state of the Guild Guitar, it is still tuned
+Daphne is attempting to tune the Guild Bass
+Daphne has not changed the state of the Guild Bass, it is still tuned
+Daphne is attempting to tune the Seagull Bass
+Daphne has not changed the state of the Seagull Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has not changed the state of the Guild Electric Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Mandolin
+Daphne has not changed the state of the Guild Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has not changed the state of the Fender Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Gemeinhardt Soprano Saxophone
+Daphne has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne does inventory to find we have $1224 worth of product
+Daphne placed an order for 3 CASSETTEs to arrive on Day 6
+Daphne placed 3 order(s) today
+Sam has come into the store looking to buy a VINYL
+Daphne found a Back in Black by AC/DC Vinyl in the inventory
+Daphne shows the customer the Back in Black by AC/DC Vinyl, selling for $96
+Daphne offers a 10% discount to the original price
+The customer buys the Back in Black by AC/DC Vinyl for $86
+Sam leaves the store
+Alice has come into the store looking to buy a CASSETTE
+Daphne finds no CASSETTE in the inventory
+Alice leaves the store
+Paige has come into the store looking to buy a HATS
+Daphne found a Small The Rolling Stones Hat in the inventory
+Daphne shows the customer the Small The Rolling Stones Hat, selling for $2
+The customer buys the Small The Rolling Stones Hat for $2
+Paige leaves the store
+Amber has come into the store looking to sell a BASS
+Daphne determines the Seagull Electric Bass to be in Good condition and the value to be $25
+The store buys the Seagull Electric Bass in Good condition for $25
+Amber leaves the store
+CJ has come into the store looking to buy a SAXOPHONE
+Daphne found a Yamaha Alto Saxophone in the inventory
+Daphne shows the customer the Yamaha Alto Saxophone, selling for $30
+Daphne offers a 10% discount to the original price
+The customer buys the Yamaha Alto Saxophone for $27
+CJ leaves the store
+Nate has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Very Good condition and the value to be $39
+The store buys the CD Player in Very Good condition for $39
+Nate leaves the store
+Dom has come into the store looking to sell a HATS
+Daphne determines the Large Tupac Hat to be in Very Good condition and the value to be $38
+Daphne offers a 10% increase to the original price
+The customer still does not want to sell the Large Tupac Hat
+Dom leaves the store
+Amber has come into the store looking to sell a GUITAR
+Daphne determines the Seagull Guitar to be in Good condition and the value to be $28
+The store buys the Seagull Guitar in Good condition for $28
+Amber leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 5
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      10               2                    0
+Daphne     17               9                    4
+
+ ***SIMULATION : DAY 5 HAS ENDED***
+
+ ***SIMULATION : DAY 6 BEGINNING***
+Velma has arrived at the store on Day 6
+Velma finds an order with 3 HARMONICAs
+Velma finds an order with 3 CASSETTEs
+Velma checks the register to find $1731
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has successfully tuned the Cassette Player
+Velma is attempting to tune the Guild Guitar
+Velma has not changed the state of the Guild Guitar, it is still tuned
+Velma is attempting to tune the Guild Bass
+Velma has not changed the state of the Guild Bass, it is still tuned
+Velma is attempting to tune the Seagull Bass
+Velma has not changed the state of the Seagull Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Bass
+Velma has not changed the state of the Guild Electric Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Mandolin
+Velma has not changed the state of the Guild Electric Mandolin, it is still tuned
+Velma is attempting to tune the Fender Electric Mandolin
+Velma has not changed the state of the Fender Electric Mandolin, it is still tuned
+Velma is attempting to tune the Yamaha Mandolin
+Velma has not changed the state of the Yamaha Mandolin, it is still tuned
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has not changed the state of the Yamaha Silver Flute, it is still tuned
+Velma is attempting to tune the Gemeinhardt Soprano Saxophone
+Velma has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Emerson Wood Flute
+Velma has not changed the state of the Emerson Wood Flute, it is still tuned
+Velma is attempting to tune the Seagull Electric Bass
+Velma has successfully tuned the Seagull Electric Bass
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the Seagull Guitar
+Velma has successfully tuned the Seagull Guitar
+Velma is attempting to tune the SEYDEL Harmonica in a key of "G"
+Velma has successfully tuned the SEYDEL Harmonica in a key of "G"
+Velma is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Velma has successfully tuned the Lee Oskar Harmonica in a key of "G"
+Velma is attempting to tune the Suzuki Harmonica in a key of "D"
+Velma has successfully tuned the Suzuki Harmonica in a key of "D"
+Velma does inventory to find we have $1395 worth of product
+Velma placed an order for 3 HATSs to arrive on Day 8
+Velma placed 3 order(s) today
+Nate has come into the store looking to buy a BASS
+Velma found a Guild Bass in the inventory
+Velma shows the customer the Guild Bass, selling for $62
+Velma offers a 10% discount to the original price
+The customer buys the Guild Bass for $55
+Nate leaves the store
+Bruce has come into the store looking to buy a GUITAR
+Velma found a Guild Guitar in the inventory
+Velma shows the customer the Guild Guitar, selling for $86
+Velma offers a 10% discount to the original price
+The customer buys the Guild Guitar for $77
+Bruce leaves the store
+Mel has come into the store looking to buy a GUITAR
+Velma found a Seagull Guitar in the inventory
+Velma shows the customer the Seagull Guitar, selling for $56
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Seagull Guitar
+Mel leaves the store
+Bruce has come into the store looking to buy a CD
+Velma found a Songs in the Key of Life by Stevie Wonder CD in the inventory
+Velma shows the customer the Songs in the Key of Life by Stevie Wonder CD, selling for $78
+The customer buys the Songs in the Key of Life by Stevie Wonder CD for $78
+Bruce leaves the store
+Emma has come into the store looking to buy a PAPERSCORE
+Velma found a Master of Puppets by Metallica Paper Score in the inventory
+Velma shows the customer the Master of Puppets by Metallica Paper Score, selling for $18
+The customer buys the Master of Puppets by Metallica Paper Score for $18
+Emma leaves the store
+Dom has come into the store looking to buy a BANDANAS
+Velma found a Yellow Bandana in the inventory
+Velma shows the customer the Yellow Bandana, selling for $68
+Velma offers a 10% discount to the original price
+The customer buys the Yellow Bandana for $61
+Dom leaves the store
+Ryan has come into the store looking to buy a HARMONICA
+Velma found a SEYDEL Harmonica in a key of "G" in the inventory
+Velma shows the customer the SEYDEL Harmonica in a key of "G", selling for $70
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the SEYDEL Harmonica in a key of "G"
+Ryan leaves the store
+Nate has come into the store looking to buy a RECORDPLAYER
+Velma found a Record Player in the inventory
+Velma shows the customer the Record Player, selling for $44
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Record Player
+Nate leaves the store
+Alice has come into the store looking to sell a CASSETTE
+Velma determines the Back to Black by Amy Winehouse Cassette to be in Good condition and the value to be $22
+Velma offers a 10% increase to the original price
+The customer still does not want to sell the Back to Black by Amy Winehouse Cassette
+Alice leaves the store
+CJ has come into the store looking to buy a BANDANAS
+Velma found a Yellow Bandana in the inventory
+Velma shows the customer the Yellow Bandana, selling for $32
+Velma offers a 10% discount to the original price
+The customer buys the Yellow Bandana for $28
+CJ leaves the store
+Paige has come into the store looking to buy a CDPLAYER
+Velma found a CD Player in the inventory
+Velma shows the customer the CD Player, selling for $62
+The customer buys the CD Player for $62
+Paige leaves the store
+Mel has come into the store looking to sell a HATS
+Velma determines the Large The Notorious B.I.G. Hat to be in Poor condition and the value to be $2
+The store buys the Large The Notorious B.I.G. Hat in Poor condition for $2
+Mel leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 6
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      17               3                    0
+Daphne     17               9                    4
+
+ ***SIMULATION : DAY 6 HAS ENDED***
+
+ ***SIMULATION : DAY 7 BEGINNING***
+Today is Day 7, which is Sunday, so the store is closed
+
+Tracker : Day 7
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      17               3                    0
+Daphne     17               9                    4
+
+ ***SIMULATION : DAY 7 HAS ENDED***
+
+ ***SIMULATION : DAY 8 BEGINNING***
+Daphne has arrived at the store on Day 8
+Daphne finds an order with 3 HATSs
+Daphne checks the register to find $1969
+Daphne is attempting to tune the CD Player
+Daphne has done a bad job tuning, and untuned the CD Player
+Daphne is attempting to tune the CD Player
+Daphne has done a bad job tuning, and untuned the CD Player
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has done a bad job tuning, and untuned the Record Player
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has done a bad job tuning, and untuned the Cassette Player
+Daphne is attempting to tune the Seagull Bass
+Daphne has not changed the state of the Seagull Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has not changed the state of the Guild Electric Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Mandolin
+Daphne has not changed the state of the Guild Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has not changed the state of the Fender Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Gemeinhardt Soprano Saxophone
+Daphne has not changed the state of the Gemeinhardt Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Seagull Guitar
+Daphne has not changed the state of the Seagull Guitar, it is still tuned
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Daphne does inventory to find we have $1333 worth of product
+Daphne placed 0 order(s) today
+Sophie has come into the store looking to buy a SHIRTS
+Daphne found a Large Nirvna Shirt in the inventory
+Daphne shows the customer the Large Nirvna Shirt, selling for $46
+Daphne offers a 10% discount to the original price
+The customer buys the Large Nirvna Shirt for $41
+Sophie leaves the store
+Delaney has come into the store looking to buy a SAXOPHONE
+Daphne found a Gemeinhardt Soprano Saxophone in the inventory
+Daphne shows the customer the Gemeinhardt Soprano Saxophone, selling for $84
+The customer buys the Gemeinhardt Soprano Saxophone for $84
+Delaney leaves the store
+Mel has come into the store looking to buy a GUITAR
+Daphne found a Seagull Guitar in the inventory
+Daphne shows the customer the Seagull Guitar, selling for $56
+The customer buys the Seagull Guitar for $56
+The customer decides they also want to buy a GIGBAG
+Daphne found a Gig Bag in the inventory
+The customer buys the Gig Bag for $46
+The customer decides they also want to buy a CABLES
+Daphne found a 4 meter cable in the inventory
+The customer buys the 4 meter cable for $8
+The customer decides they also want to buy a STRINGS
+Daphne found a Violin strings in the inventory
+The customer buys the Violin strings for $36
+The customer decides they also want to buy a STRINGS
+Daphne found a Violin strings in the inventory
+The customer buys the Violin strings for $64
+The customer decides they also want to buy a STRINGS
+Daphne found a Bass strings in the inventory
+The customer buys the Bass strings for $8
+Mel leaves the store
+CJ has come into the store looking to buy a PAPERSCORE
+Daphne found a Appetite for Destruction by Guns N' Roses Paper Score in the inventory
+Daphne shows the customer the Appetite for Destruction by Guns N' Roses Paper Score, selling for $94
+The customer buys the Appetite for Destruction by Guns N' Roses Paper Score for $94
+CJ leaves the store
+Emma has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $54
+Daphne offers a 10% discount to the original price
+The customer buys the Cassette Player for $48
+Emma leaves the store
+Nate has come into the store looking to buy a SAXOPHONE
+Daphne finds no SAXOPHONE in the inventory
+Nate leaves the store
+Emma has come into the store looking to buy a GUITAR
+Daphne finds no GUITAR in the inventory
+Emma leaves the store
+Nate has come into the store looking to sell a CASSETTEPLAYER
+Daphne determines the Cassette Player to be in Very Good condition and the value to be $31
+Daphne offers a 10% increase to the original price
+The store buys the Cassette Player in Very Good condition for $34
+Nate leaves the store
+Bruce has come into the store looking to buy a HATS
+Daphne found a Large The Notorious B.I.G. Hat in the inventory
+Daphne shows the customer the Large The Notorious B.I.G. Hat, selling for $4
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Large The Notorious B.I.G. Hat
+Bruce leaves the store
+CJ has come into the store looking to buy a SHIRTS
+Daphne found a Medium Aerosmith Shirt in the inventory
+Daphne shows the customer the Medium Aerosmith Shirt, selling for $30
+The customer buys the Medium Aerosmith Shirt for $30
+CJ leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 8
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      17               3                    0
+Daphne     28               10                    8
+
+ ***SIMULATION : DAY 8 HAS ENDED***
+
+ ***SIMULATION : DAY 9 BEGINNING***
+Velma has arrived at the store on Day 9
+Velma finds no orders delivered today
+Velma checks the register to find $2450
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the Seagull Bass
+Velma has not changed the state of the Seagull Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Bass
+Velma has not changed the state of the Guild Electric Bass, it is still tuned
+Velma is attempting to tune the Guild Electric Mandolin
+Velma has not changed the state of the Guild Electric Mandolin, it is still tuned
+Velma is attempting to tune the Fender Electric Mandolin
+Velma has not changed the state of the Fender Electric Mandolin, it is still tuned
+Velma is attempting to tune the Yamaha Mandolin
+Velma has not changed the state of the Yamaha Mandolin, it is still tuned
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has not changed the state of the Yamaha Silver Flute, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Emerson Wood Flute
+Velma has not changed the state of the Emerson Wood Flute, it is still tuned
+Velma is attempting to tune the Seagull Electric Bass
+Velma has not changed the state of the Seagull Electric Bass, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the SEYDEL Harmonica in a key of "G"
+Velma has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Velma is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Velma has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still tuned
+Velma is attempting to tune the Suzuki Harmonica in a key of "D"
+Velma has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has successfully tuned the Cassette Player
+Velma does inventory to find we have $1104 worth of product
+Velma placed an order for 3 SAXOPHONEs to arrive on Day 12
+Velma placed an order for 3 GUITARs to arrive on Day 12
+Velma placed an order for 3 STRINGSs to arrive on Day 11
+Velma placed an order for 3 SHIRTSs to arrive on Day 11
+Velma placed 12 order(s) today
+Emma has come into the store looking to buy a HATS
+Velma found a Large The Notorious B.I.G. Hat in the inventory
+Velma shows the customer the Large The Notorious B.I.G. Hat, selling for $4
+The customer buys the Large The Notorious B.I.G. Hat for $4
+Emma leaves the store
+Ryan has come into the store looking to sell a BANDANAS
+Velma determines the Blue Bandana to be in Excellent condition and the value to be $45
+Velma offers a 10% increase to the original price
+The store buys the Blue Bandana in Excellent condition for $49
+Ryan leaves the store
+Delaney has come into the store looking to sell a RECORDPLAYER
+Velma determines the Record Player to be in Good condition and the value to be $29
+Velma offers a 10% increase to the original price
+The store buys the Record Player in Good condition for $31
+Delaney leaves the store
+Mel has come into the store looking to sell a GUITAR
+Velma determines the Ovation Electric Guitar to be in Good condition and the value to be $22
+Velma offers a 10% increase to the original price
+The customer still does not want to sell the Ovation Electric Guitar
+Mel leaves the store
+Paige has come into the store looking to buy a PAPERSCORE
+Velma found a Red by Taylor Swift Paper Score in the inventory
+Velma shows the customer the Red by Taylor Swift Paper Score, selling for $28
+Velma offers a 10% discount to the original price
+The customer buys the Red by Taylor Swift Paper Score for $25
+Paige leaves the store
+Ryan has come into the store looking to buy a CASSETTE
+Velma found a Illmatic by Nas Cassette in the inventory
+Velma shows the customer the Illmatic by Nas Cassette, selling for $92
+The customer buys the Illmatic by Nas Cassette for $92
+Ryan leaves the store
+Ryan has come into the store looking to buy a SAXOPHONE
+Velma finds no SAXOPHONE in the inventory
+Ryan leaves the store
+CJ has come into the store looking to buy a BANDANAS
+Velma found a Green Bandana in the inventory
+Velma shows the customer the Green Bandana, selling for $16
+The customer buys the Green Bandana for $16
+CJ leaves the store
+CJ has come into the store looking to buy a BANDANAS
+Velma found a Blue Bandana in the inventory
+Velma shows the customer the Blue Bandana, selling for $98
+The customer buys the Blue Bandana for $98
+CJ leaves the store
+Amber has come into the store looking to buy a PAPERSCORE
+Velma found a Illmatic by Nas Paper Score in the inventory
+Velma shows the customer the Illmatic by Nas Paper Score, selling for $34
+The customer buys the Illmatic by Nas Paper Score for $34
+Amber leaves the store
+Ryan has come into the store looking to buy a HARMONICA
+Velma found a SEYDEL Harmonica in a key of "G" in the inventory
+Velma shows the customer the SEYDEL Harmonica in a key of "G", selling for $70
+Velma offers a 10% discount to the original price
+The customer buys the SEYDEL Harmonica in a key of "G" for $63
+Ryan leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 9
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      24               5                    0
+Daphne     28               10                    8
+
+ ***SIMULATION : DAY 9 HAS ENDED***
+
+ ***SIMULATION : DAY 10 BEGINNING***
+Daphne has arrived at the store on Day 10
+Daphne finds no orders delivered today
+Daphne checks the register to find $2702
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Seagull Bass
+Daphne has done a bad job tuning, and untuned the Seagull Bass
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has done a bad job tuning, and untuned the Guild Electric Bass
+Daphne is attempting to tune the Guild Electric Mandolin
+Daphne has not changed the state of the Guild Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has done a bad job tuning, and untuned the Fender Electric Mandolin
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has done a bad job tuning, and untuned the Lee Oskar Harmonica in a key of "G"
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne does inventory to find we have $1013 worth of product
+Daphne placed an order for 3 BANDANASs to arrive on Day 11
+Daphne placed 3 order(s) today
+Alice has come into the store looking to buy a CASSETTE
+Daphne found a Ten by Pearl Jam Cassette in the inventory
+Daphne shows the customer the Ten by Pearl Jam Cassette, selling for $30
+The customer buys the Ten by Pearl Jam Cassette for $30
+Alice leaves the store
+Paige has come into the store looking to buy a GUITAR
+Daphne finds no GUITAR in the inventory
+Paige leaves the store
+Alice has come into the store looking to buy a SAXOPHONE
+Daphne finds no SAXOPHONE in the inventory
+Alice leaves the store
+Mel has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $56
+The customer buys the Cassette Player for $56
+Mel leaves the store
+Delaney has come into the store looking to sell a HARMONICA
+Daphne determines the SEYDEL Harmonica in a key of "G" to be in Good condition and the value to be $28
+The store buys the SEYDEL Harmonica in a key of "G" in Good condition for $28
+Delaney leaves the store
+Sam has come into the store looking to sell a PAPERSCORE
+Daphne determines the Back to Black by Amy Winehouse Paper Score to be in Excellent condition and the value to be $50
+Daphne offers a 10% increase to the original price
+The store buys the Back to Black by Amy Winehouse Paper Score in Excellent condition for $55
+Sam leaves the store
+Nate has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $98
+Daphne offers a 10% discount to the original price
+The customer buys the MP3 Player for $88
+Nate leaves the store
+Ryan has come into the store looking to buy a CD
+Daphne found a Abbey Road by The Beatles CD in the inventory
+Daphne shows the customer the Abbey Road by The Beatles CD, selling for $48
+The customer buys the Abbey Road by The Beatles CD for $48
+Ryan leaves the store
+Amber has come into the store looking to sell a CD
+Daphne determines the Songs in the Key of Life by Stevie Wonder CD to be in Excellent condition and the value to be $42
+Daphne offers a 10% increase to the original price
+The store buys the Songs in the Key of Life by Stevie Wonder CD in Excellent condition for $46
+Amber leaves the store
+Mel has come into the store looking to sell a CASSETTEPLAYER
+Daphne determines the Cassette Player to be in Fair condition and the value to be $17
+The store buys the Cassette Player in Fair condition for $17
+Mel leaves the store
+Ryan has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $50
+The customer buys the MP3 Player for $50
+Ryan leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 10
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     0               0                    0
+Velma      24               5                    0
+Daphne     33               14                    12
+
+ ***SIMULATION : DAY 10 HAS ENDED***
+
+ ***SIMULATION : DAY 11 BEGINNING***
+Shaggy has arrived at the store on Day 11
+Shaggy finds an order with 3 STRINGSs
+Shaggy finds an order with 3 SHIRTSs
+Shaggy finds an order with 3 BANDANASs
+Shaggy checks the register to find $2596
+Shaggy is attempting to tune the CD Player
+Shaggy has done a bad job tuning, and untuned the CD Player
+Shaggy has done such a bad job tuning they damaged the item
+CD Player's condition has lowered from Excellent to Very Good
+CD Player list price has lowered to 78
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the Seagull Bass
+Shaggy has successfully tuned the Seagull Bass
+Shaggy is attempting to tune the Guild Electric Bass
+Shaggy has not changed the state of the Guild Electric Bass, it is still untuned
+Shaggy is attempting to tune the Guild Electric Mandolin
+Shaggy has done a bad job tuning, and untuned the Guild Electric Mandolin
+Shaggy has done such a bad job tuning they damaged the item
+Guild Electric Mandolin condition has lowered enough to be broken!
+Guild Electric Mandolin has been removed from inventory
+Shaggy is attempting to tune the Fender Electric Mandolin
+Shaggy has not changed the state of the Fender Electric Mandolin, it is still untuned
+Shaggy is attempting to tune the Yamaha Mandolin
+Shaggy has done a bad job tuning, and untuned the Yamaha Mandolin
+Shaggy is attempting to tune the Miyazawa Wood Flute
+Shaggy has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Shaggy is attempting to tune the Yamaha Silver Flute
+Shaggy has not changed the state of the Yamaha Silver Flute, it is still tuned
+Shaggy is attempting to tune the Emerson Wood Flute
+Shaggy has done a bad job tuning, and untuned the Emerson Wood Flute
+Shaggy is attempting to tune the Seagull Electric Bass
+Shaggy has not changed the state of the Seagull Electric Bass, it is still tuned
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still tuned
+Shaggy is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Shaggy has successfully tuned the Lee Oskar Harmonica in a key of "G"
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "D"
+Shaggy has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has not changed the state of the Cassette Player, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the SEYDEL Harmonica in a key of "G"
+Shaggy has not changed the state of the SEYDEL Harmonica in a key of "G", it is still untuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has successfully tuned the Cassette Player
+Shaggy does inventory to find we have $1250 worth of product
+Shaggy placed an order for 3 MP3PLAYERs to arrive on Day 12
+Shaggy placed 3 order(s) today
+Nate has come into the store looking to buy a CD
+Shaggy found a Are You Experienced by Jimi Hendrix CD in the inventory
+Shaggy shows the customer the Are You Experienced by Jimi Hendrix CD, selling for $4
+Shaggy offers a 10% discount to the original price
+The customer buys the Are You Experienced by Jimi Hendrix CD for $3
+Nate leaves the store
+Amber has come into the store looking to buy a BANDANAS
+Shaggy found a Red Bandana in the inventory
+Shaggy shows the customer the Red Bandana, selling for $20
+Shaggy offers a 10% discount to the original price
+The customer buys the Red Bandana for $18
+Amber leaves the store
+Nate has come into the store looking to buy a PAPERSCORE
+Shaggy found a Red by Taylor Swift Paper Score in the inventory
+Shaggy shows the customer the Red by Taylor Swift Paper Score, selling for $30
+Shaggy offers a 10% discount to the original price
+The customer buys the Red by Taylor Swift Paper Score for $27
+Nate leaves the store
+Ryan has come into the store looking to sell a MANDOLIN
+Shaggy determines the Gibson Electric Mandolin to be in Excellent condition and the value to be $44
+The store buys the Gibson Electric Mandolin in Excellent condition for $44
+Ryan leaves the store
+Sophie has come into the store looking to buy a SHIRTS
+Shaggy found a Large The Notorious B.I.G. Shirt in the inventory
+Shaggy shows the customer the Large The Notorious B.I.G. Shirt, selling for $30
+The customer buys the Large The Notorious B.I.G. Shirt for $30
+Sophie leaves the store
+Alice has come into the store looking to buy a RECORDPLAYER
+Shaggy found a Record Player in the inventory
+Shaggy shows the customer the Record Player, selling for $44
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the Record Player
+Alice leaves the store
+Bruce has come into the store looking to buy a CASSETTEPLAYER
+Shaggy found a Cassette Player in the inventory
+Shaggy shows the customer the Cassette Player, selling for $68
+The customer buys the Cassette Player for $68
+Bruce leaves the store
+CJ has come into the store looking to buy a CASSETTE
+Shaggy found a Blood on the Tracks by Bob Dylan Cassette in the inventory
+Shaggy shows the customer the Blood on the Tracks by Bob Dylan Cassette, selling for $6
+The customer buys the Blood on the Tracks by Bob Dylan Cassette for $6
+CJ leaves the store
+Dom has come into the store looking to sell a VINYL
+Shaggy determines the The Black Album by Jay-Z Vinyl to be in Very Good condition and the value to be $33
+The store buys the The Black Album by Jay-Z Vinyl in Very Good condition for $33
+Dom leaves the store
+Dom has come into the store looking to sell a HARMONICA
+Shaggy determines the Suzuki Harmonica in a key of "F#" to be in Excellent condition and the value to be $41
+Shaggy offers a 10% increase to the original price
+The store buys the Suzuki Harmonica in a key of "F#" in Excellent condition for $45
+Dom leaves the store
+Sophie has come into the store looking to buy a HATS
+Shaggy found a Small Metallica Hat in the inventory
+Shaggy shows the customer the Small Metallica Hat, selling for $100
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the Small Metallica Hat
+Sophie leaves the store
+The store closes for the day and Shaggy begins cleaning
+Oh no! Shaggy broke a Small Metallica Hat while cleaning
+Small Metallica Hat condition has lowered enough to be broken!
+Small Metallica Hat has been removed from inventory
+Shaggy leaves the store
+
+Tracker : Day 11
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     6               3                    8
+Velma      24               5                    0
+Daphne     33               14                    12
+
+ ***SIMULATION : DAY 11 HAS ENDED***
+
+ ***SIMULATION : DAY 12 BEGINNING***
+Daphne has arrived at the store on Day 12
+Daphne finds an order with 3 SAXOPHONEs
+Daphne finds an order with 3 GUITARs
+Daphne finds an order with 3 MP3PLAYERs
+Daphne checks the register to find $2433
+Daphne is attempting to tune the CD Player
+Daphne has successfully tuned the CD Player
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the Seagull Bass
+Daphne has not changed the state of the Seagull Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has not changed the state of the Guild Electric Bass, it is still untuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has successfully tuned the Fender Electric Mandolin
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has successfully tuned the Yamaha Mandolin
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has successfully tuned the Emerson Wood Flute
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has successfully tuned the SEYDEL Harmonica in a key of "G"
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Gibson Electric Mandolin
+Daphne has successfully tuned the Gibson Electric Mandolin
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still untuned
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has not changed the state of the Yamaha Alto Saxophone, it is still untuned
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has successfully tuned the Yamaha Soprano Saxophone
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still untuned
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has successfully tuned the Ovation Electric Guitar
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still untuned
+Daphne is attempting to tune the Seagull Guitar
+Daphne has not changed the state of the Seagull Guitar, it is still untuned
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne does inventory to find we have $1410 worth of product
+Daphne placed an order for 3 CASSETTEs to arrive on Day 13
+Daphne placed 3 order(s) today
+Sam has come into the store looking to buy a CD
+Daphne found a Songs in the Key of Life by Stevie Wonder CD in the inventory
+Daphne shows the customer the Songs in the Key of Life by Stevie Wonder CD, selling for $92
+Daphne offers a 10% discount to the original price
+The customer buys the Songs in the Key of Life by Stevie Wonder CD for $82
+Sam leaves the store
+Mel has come into the store looking to buy a CDPLAYER
+Daphne found a CD Player in the inventory
+Daphne shows the customer the CD Player, selling for $78
+Daphne offers a 10% discount to the original price
+The customer buys the CD Player for $70
+Mel leaves the store
+CJ has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $48
+Daphne offers a 10% discount to the original price
+The customer buys the MP3 Player for $43
+CJ leaves the store
+Bruce has come into the store looking to buy a SHIRTS
+Daphne found a Medium The Rolling Stones Shirt in the inventory
+Daphne shows the customer the Medium The Rolling Stones Shirt, selling for $80
+The customer buys the Medium The Rolling Stones Shirt for $80
+Bruce leaves the store
+Sophie has come into the store looking to sell a FLUTE
+Daphne determines the Miyazawa Silver Flute to be in Good condition and the value to be $29
+Daphne offers a 10% increase to the original price
+The store buys the Miyazawa Silver Flute in Good condition for $31
+Sophie leaves the store
+Emma has come into the store looking to buy a CDPLAYER
+Daphne found a CD Player in the inventory
+Daphne shows the customer the CD Player, selling for $8
+The customer buys the CD Player for $8
+Emma leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 12
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     6               3                    8
+Velma      24               5                    0
+Daphne     38               15                    12
+
+ ***SIMULATION : DAY 12 HAS ENDED***
+
+ ***SIMULATION : DAY 13 BEGINNING***
+Daphne has arrived at the store on Day 13
+Daphne finds an order with 3 CASSETTEs
+Daphne checks the register to find $2613
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Seagull Bass
+Daphne has not changed the state of the Seagull Bass, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has successfully tuned the Guild Electric Bass
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has not changed the state of the Fender Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has done a bad job tuning, and untuned the Emerson Wood Flute
+Daphne has done such a bad job tuning they damaged the item
+Emerson Wood Flute's condition has lowered from Very Good to Good
+Emerson Wood Flute list price has lowered to 57
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has done a bad job tuning, and untuned the Seagull Electric Bass
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has done a bad job tuning, and untuned the Suzuki Harmonica in a key of "D"
+Daphne is attempting to tune the Record Player
+Daphne has done a bad job tuning, and untuned the Record Player
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Gibson Electric Mandolin
+Daphne has done a bad job tuning, and untuned the Gibson Electric Mandolin
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has successfully tuned the Suzuki Harmonica in a key of "F#"
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has successfully tuned the Yamaha Alto Saxophone
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has done a bad job tuning, and untuned the Yamaha Soprano Saxophone
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has successfully tuned the Miyazawa Alto Saxophone
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has not changed the state of the Ovation Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has successfully tuned the Seagull Electric Guitar
+Daphne is attempting to tune the Seagull Guitar
+Daphne has successfully tuned the Seagull Guitar
+Daphne is attempting to tune the MP3 Player
+Daphne has done a bad job tuning, and untuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has done a bad job tuning, and untuned the MP3 Player
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has successfully tuned the Miyazawa Silver Flute
+Daphne does inventory to find we have $1350 worth of product
+Daphne placed an order for 3 CDs to arrive on Day 16
+Daphne placed 3 order(s) today
+Sam has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $16
+The customer buys the MP3 Player for $16
+Sam leaves the store
+Delaney has come into the store looking to sell a GUITAR
+Daphne determines the Seagull Electric Guitar to be in Excellent condition and the value to be $41
+The store buys the Seagull Electric Guitar in Excellent condition for $41
+Delaney leaves the store
+Alice has come into the store looking to buy a PAPERSCORE
+Daphne found a Back to Black by Amy Winehouse Paper Score in the inventory
+Daphne shows the customer the Back to Black by Amy Winehouse Paper Score, selling for $110
+Daphne offers a 10% discount to the original price
+The customer buys the Back to Black by Amy Winehouse Paper Score for $99
+Alice leaves the store
+Dom has come into the store looking to buy a BASS
+Daphne found a Seagull Bass in the inventory
+Daphne shows the customer the Seagull Bass, selling for $54
+The customer buys the Seagull Bass for $54
+Dom leaves the store
+Sophie has come into the store looking to buy a RECORDPLAYER
+Daphne found a Record Player in the inventory
+Daphne shows the customer the Record Player, selling for $44
+The customer buys the Record Player for $44
+Sophie leaves the store
+Paige has come into the store looking to buy a VINYL
+Daphne found a Red by Taylor Swift Vinyl in the inventory
+Daphne shows the customer the Red by Taylor Swift Vinyl, selling for $50
+Daphne offers a 10% discount to the original price
+The customer buys the Red by Taylor Swift Vinyl for $45
+Paige leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 13
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     6               3                    8
+Velma      24               5                    0
+Daphne     43               16                    20
+
+ ***SIMULATION : DAY 13 HAS ENDED***
+
+ ***SIMULATION : DAY 14 BEGINNING***
+Today is Day 14, which is Sunday, so the store is closed
+
+Tracker : Day 14
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     6               3                    8
+Velma      24               5                    0
+Daphne     43               16                    20
+
+ ***SIMULATION : DAY 14 HAS ENDED***
+
+ ***SIMULATION : DAY 15 BEGINNING***
+Daphne has arrived at the store on Day 15
+Daphne finds no orders delivered today
+Daphne checks the register to find $2830
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Guild Electric Bass
+Daphne has not changed the state of the Guild Electric Bass, it is still tuned
+Daphne is attempting to tune the Fender Electric Mandolin
+Daphne has not changed the state of the Fender Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Yamaha Mandolin
+Daphne has not changed the state of the Yamaha Mandolin, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has done a bad job tuning, and untuned the Miyazawa Wood Flute
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has successfully tuned the Emerson Wood Flute
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has successfully tuned the Seagull Electric Bass
+Daphne is attempting to tune the CD Player
+Daphne has done a bad job tuning, and untuned the CD Player
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has done a bad job tuning, and untuned the Lee Oskar Harmonica in a key of "G"
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has successfully tuned the Suzuki Harmonica in a key of "D"
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Gibson Electric Mandolin
+Daphne has not changed the state of the Gibson Electric Mandolin, it is still untuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has successfully tuned the Yamaha Soprano Saxophone
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has not changed the state of the Ovation Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Guitar
+Daphne has not changed the state of the Seagull Guitar, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has done a bad job tuning, and untuned the Miyazawa Silver Flute
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has successfully tuned the Seagull Electric Guitar
+Daphne does inventory to find we have $1254 worth of product
+Daphne placed an order for 3 PAPERSCOREs to arrive on Day 18
+Daphne placed 3 order(s) today
+Paige has come into the store looking to buy a SHIRTS
+Daphne found a Small Led Zeppelin Shirt in the inventory
+Daphne shows the customer the Small Led Zeppelin Shirt, selling for $86
+Daphne offers a 10% discount to the original price
+The customer buys the Small Led Zeppelin Shirt for $77
+Paige leaves the store
+Sophie has come into the store looking to sell a CASSETTEPLAYER
+Daphne determines the Cassette Player to be in Poor condition and the value to be $4
+Daphne offers a 10% increase to the original price
+The store buys the Cassette Player in Poor condition for $4
+Sophie leaves the store
+Emma has come into the store looking to buy a RECORDPLAYER
+Daphne found a Record Player in the inventory
+Daphne shows the customer the Record Player, selling for $84
+The customer buys the Record Player for $84
+Emma leaves the store
+Paige has come into the store looking to buy a MANDOLIN
+Daphne found a Fender Electric Mandolin in the inventory
+Daphne shows the customer the Fender Electric Mandolin, selling for $38
+The customer buys the Fender Electric Mandolin for $38
+The customer decides they also want to buy a PRACTICEAMPS
+Daphne found a 19 watt amp in the inventory
+The customer buys the 19 watt amp for $24
+Paige leaves the store
+Emma has come into the store looking to sell a CASSETTEPLAYER
+Daphne determines the Cassette Player to be in Good condition and the value to be $28
+Daphne offers a 10% increase to the original price
+The store buys the Cassette Player in Good condition for $30
+Emma leaves the store
+Dom has come into the store looking to buy a CASSETTE
+Daphne found a Ten by Pearl Jam Cassette in the inventory
+Daphne shows the customer the Ten by Pearl Jam Cassette, selling for $34
+Daphne offers a 10% discount to the original price
+The customer buys the Ten by Pearl Jam Cassette for $30
+Dom leaves the store
+Mel has come into the store looking to buy a HATS
+Daphne found a Small Aerosmith Hat in the inventory
+Daphne shows the customer the Small Aerosmith Hat, selling for $88
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Small Aerosmith Hat
+Mel leaves the store
+Mel has come into the store looking to sell a SAXOPHONE
+Daphne determines the Emerson Alto Saxophone to be in Excellent condition and the value to be $40
+Daphne offers a 10% increase to the original price
+The store buys the Emerson Alto Saxophone in Excellent condition for $44
+Mel leaves the store
+Paige has come into the store looking to buy a MANDOLIN
+Daphne found a Yamaha Mandolin in the inventory
+Daphne shows the customer the Yamaha Mandolin, selling for $96
+The customer buys the Yamaha Mandolin for $96
+The customer decides they also want to buy a GIGBAG
+Daphne found a Gig Bag in the inventory
+The customer buys the Gig Bag for $14
+Paige leaves the store
+Nate has come into the store looking to buy a FLUTE
+Daphne found a Miyazawa Wood Flute in the inventory
+Daphne shows the customer the Miyazawa Wood Flute, selling for $86
+Daphne offers a 10% discount to the original price
+The customer buys the Miyazawa Wood Flute for $77
+Nate leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 15
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     6               3                    8
+Velma      24               5                    0
+Daphne     51               19                    24
+
+ ***SIMULATION : DAY 15 HAS ENDED***
+
+ ***SIMULATION : DAY 16 BEGINNING***
+Shaggy has arrived at the store on Day 16
+Shaggy finds an order with 3 CDs
+Shaggy checks the register to find $3122
+Shaggy is attempting to tune the Guild Electric Bass
+Shaggy has done a bad job tuning, and untuned the Guild Electric Bass
+Shaggy is attempting to tune the Yamaha Silver Flute
+Shaggy has done a bad job tuning, and untuned the Yamaha Silver Flute
+Shaggy is attempting to tune the Emerson Wood Flute
+Shaggy has not changed the state of the Emerson Wood Flute, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Bass
+Shaggy has not changed the state of the Seagull Electric Bass, it is still tuned
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still untuned
+Shaggy is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Shaggy has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still untuned
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "D"
+Shaggy has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the SEYDEL Harmonica in a key of "G"
+Shaggy has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has done a bad job tuning, and untuned the Cassette Player
+Shaggy is attempting to tune the Gibson Electric Mandolin
+Shaggy has not changed the state of the Gibson Electric Mandolin, it is still untuned
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "F#"
+Shaggy has done a bad job tuning, and untuned the Suzuki Harmonica in a key of "F#"
+Shaggy is attempting to tune the Yamaha Alto Saxophone
+Shaggy has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Yamaha Soprano Saxophone
+Shaggy has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Shaggy is attempting to tune the Miyazawa Alto Saxophone
+Shaggy has done a bad job tuning, and untuned the Miyazawa Alto Saxophone
+Shaggy is attempting to tune the Ovation Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Ovation Electric Guitar
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Guitar
+Shaggy is attempting to tune the Seagull Guitar
+Shaggy has not changed the state of the Seagull Guitar, it is still tuned
+Shaggy is attempting to tune the MP3 Player
+Shaggy has not changed the state of the MP3 Player, it is still tuned
+Shaggy is attempting to tune the Miyazawa Silver Flute
+Shaggy has successfully tuned the Miyazawa Silver Flute
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has not changed the state of the Seagull Electric Guitar, it is still tuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has not changed the state of the Cassette Player, it is still untuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has successfully tuned the Cassette Player
+Shaggy is attempting to tune the Emerson Alto Saxophone
+Shaggy has successfully tuned the Emerson Alto Saxophone
+Shaggy does inventory to find we have $1171 worth of product
+Shaggy placed an order for 3 SHIRTSs to arrive on Day 19
+Shaggy placed 3 order(s) today
+Sophie has come into the store looking to sell a CDPLAYER
+Shaggy determines the CD Player to be in Good condition and the value to be $24
+The store buys the CD Player in Good condition for $24
+Sophie leaves the store
+Bruce has come into the store looking to buy a CDPLAYER
+Shaggy found a CD Player in the inventory
+Shaggy shows the customer the CD Player, selling for $78
+Shaggy offers a 10% discount to the original price
+The customer buys the CD Player for $70
+Bruce leaves the store
+Dom has come into the store looking to sell a HATS
+Shaggy determines the Small The Beatles Hat to be in Good condition and the value to be $26
+The store buys the Small The Beatles Hat in Good condition for $26
+Dom leaves the store
+Nate has come into the store looking to buy a BANDANAS
+Shaggy found a Yellow Bandana in the inventory
+Shaggy shows the customer the Yellow Bandana, selling for $70
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the Yellow Bandana
+Nate leaves the store
+Emma has come into the store looking to buy a CDPLAYER
+Shaggy found a CD Player in the inventory
+Shaggy shows the customer the CD Player, selling for $48
+Shaggy offers a 10% discount to the original price
+The customer buys the CD Player for $43
+Emma leaves the store
+Amber has come into the store looking to buy a CASSETTE
+Shaggy found a Back to Black by Amy Winehouse Cassette in the inventory
+Shaggy shows the customer the Back to Black by Amy Winehouse Cassette, selling for $100
+The customer buys the Back to Black by Amy Winehouse Cassette for $100
+Amber leaves the store
+Delaney has come into the store looking to buy a BASS
+Shaggy found a Guild Electric Bass in the inventory
+Shaggy shows the customer the Guild Electric Bass, selling for $64
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the Guild Electric Bass
+Delaney leaves the store
+CJ has come into the store looking to buy a BASS
+Shaggy found a Guild Electric Bass in the inventory
+Shaggy shows the customer the Guild Electric Bass, selling for $64
+Shaggy offers a 10% discount to the original price
+The customer buys the Guild Electric Bass for $57
+CJ leaves the store
+The store closes for the day and Shaggy begins cleaning
+Shaggy cleans the store without incident
+Shaggy leaves the store
+
+Tracker : Day 16
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     10               5                    16
+Velma      24               5                    0
+Daphne     51               19                    24
+
+ ***SIMULATION : DAY 16 HAS ENDED***
+
+ ***SIMULATION : DAY 17 BEGINNING***
+Daphne has arrived at the store on Day 17
+Daphne finds no orders delivered today
+Daphne checks the register to find $3342
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has successfully tuned the Yamaha Silver Flute
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still untuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has done a bad job tuning, and untuned the Suzuki Harmonica in a key of "D"
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Gibson Electric Mandolin
+Daphne has successfully tuned the Gibson Electric Mandolin
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still untuned
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has done a bad job tuning, and untuned the Yamaha Alto Saxophone
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has successfully tuned the Miyazawa Alto Saxophone
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has successfully tuned the Ovation Electric Guitar
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has successfully tuned the Seagull Electric Guitar
+Daphne is attempting to tune the Seagull Guitar
+Daphne has not changed the state of the Seagull Guitar, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has done a bad job tuning, and untuned the MP3 Player
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has done a bad job tuning, and untuned the Emerson Alto Saxophone
+Daphne does inventory to find we have $1076 worth of product
+Daphne placed an order for 3 CDPLAYERs to arrive on Day 19
+Daphne placed 3 order(s) today
+Sophie has come into the store looking to buy a MANDOLIN
+Daphne found a Gibson Electric Mandolin in the inventory
+Daphne shows the customer the Gibson Electric Mandolin, selling for $88
+The customer buys the Gibson Electric Mandolin for $88
+The customer decides they also want to buy a CABLES
+Daphne found a 3 meter cable in the inventory
+The customer buys the 3 meter cable for $24
+The customer decides they also want to buy a STRINGS
+Daphne found a Guitar strings in the inventory
+The customer buys the Guitar strings for $28
+The customer decides they also want to buy a STRINGS
+Daphne found a Guitar strings in the inventory
+The customer buys the Guitar strings for $4
+Sophie leaves the store
+Dom has come into the store looking to buy a CDPLAYER
+Daphne finds no CDPLAYER in the inventory
+Dom leaves the store
+Dom has come into the store looking to buy a CASSETTE
+Daphne found a Nevermind by Nirvana Cassette in the inventory
+Daphne shows the customer the Nevermind by Nirvana Cassette, selling for $10
+The customer buys the Nevermind by Nirvana Cassette for $10
+Dom leaves the store
+Delaney has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $34
+Daphne offers a 10% discount to the original price
+The customer buys the Cassette Player for $30
+Delaney leaves the store
+Sam has come into the store looking to buy a RECORDPLAYER
+Daphne found a Record Player in the inventory
+Daphne shows the customer the Record Player, selling for $62
+The customer buys the Record Player for $62
+Sam leaves the store
+Delaney has come into the store looking to buy a CDPLAYER
+Daphne finds no CDPLAYER in the inventory
+Delaney leaves the store
+Ryan has come into the store looking to buy a HATS
+Daphne found a Small Aerosmith Hat in the inventory
+Daphne shows the customer the Small Aerosmith Hat, selling for $88
+Daphne offers a 10% discount to the original price
+The customer buys the Small Aerosmith Hat for $79
+Ryan leaves the store
+Emma has come into the store looking to sell a SAXOPHONE
+Daphne determines the Emerson Soprano Saxophone to be in Fair condition and the value to be $10
+The store buys the Emerson Soprano Saxophone in Fair condition for $10
+Emma leaves the store
+CJ has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $40
+The customer buys the MP3 Player for $40
+CJ leaves the store
+Alice has come into the store looking to buy a RECORDPLAYER
+Daphne finds no RECORDPLAYER in the inventory
+Alice leaves the store
+Alice has come into the store looking to sell a CDPLAYER
+Daphne determines the CD Player to be in Fair condition and the value to be $10
+The store buys the CD Player in Fair condition for $10
+Alice leaves the store
+Mel has come into the store looking to sell a HATS
+Daphne determines the Large The Notorious B.I.G. Hat to be in Very Good condition and the value to be $34
+Daphne offers a 10% increase to the original price
+The store buys the Large The Notorious B.I.G. Hat in Very Good condition for $37
+Mel leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 17
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     10               5                    16
+Velma      24               5                    0
+Daphne     60               22                    28
+
+ ***SIMULATION : DAY 17 HAS ENDED***
+
+ ***SIMULATION : DAY 18 BEGINNING***
+Daphne has arrived at the store on Day 18
+Daphne finds an order with 3 PAPERSCOREs
+Daphne checks the register to find $3553
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has done a bad job tuning, and untuned the Yamaha Silver Flute
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Daphne has successfully tuned the Lee Oskar Harmonica in a key of "G"
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "D", it is still untuned
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has successfully tuned the Suzuki Harmonica in a key of "F#"
+Daphne is attempting to tune the Yamaha Alto Saxophone
+Daphne has successfully tuned the Yamaha Alto Saxophone
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has not changed the state of the Ovation Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Guitar
+Daphne has not changed the state of the Seagull Guitar, it is still tuned
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has done a bad job tuning, and untuned the Seagull Electric Guitar
+Daphne is attempting to tune the Cassette Player
+Daphne has done a bad job tuning, and untuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has done a bad job tuning, and untuned the Cassette Player
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has successfully tuned the Emerson Alto Saxophone
+Daphne is attempting to tune the Emerson Soprano Saxophone
+Daphne has successfully tuned the Emerson Soprano Saxophone
+Daphne is attempting to tune the CD Player
+Daphne has successfully tuned the CD Player
+Daphne does inventory to find we have $1041 worth of product
+Daphne placed an order for 3 CABLESs to arrive on Day 19
+Daphne placed an order for 3 RECORDPLAYERs to arrive on Day 20
+Daphne placed an order for 3 CASSETTEs to arrive on Day 19
+Daphne placed an order for 3 MANDOLINs to arrive on Day 22
+Daphne placed an order for 3 MP3PLAYERs to arrive on Day 20
+Daphne placed 15 order(s) today
+Mel has come into the store looking to buy a RECORDPLAYER
+Daphne finds no RECORDPLAYER in the inventory
+Mel leaves the store
+Mel has come into the store looking to buy a CDPLAYER
+Daphne found a CD Player in the inventory
+Daphne shows the customer the CD Player, selling for $20
+Daphne offers a 10% discount to the original price
+The customer buys the CD Player for $18
+Mel leaves the store
+Paige has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $8
+The customer buys the Cassette Player for $8
+Paige leaves the store
+Bruce has come into the store looking to sell a BANDANAS
+Daphne determines the Yellow Bandana to be in Good condition and the value to be $25
+The store buys the Yellow Bandana in Good condition for $25
+Bruce leaves the store
+Emma has come into the store looking to buy a CDPLAYER
+Daphne finds no CDPLAYER in the inventory
+Emma leaves the store
+Ryan has come into the store looking to buy a BANDANAS
+Daphne found a Yellow Bandana in the inventory
+Daphne shows the customer the Yellow Bandana, selling for $70
+Daphne offers a 10% discount to the original price
+The customer buys the Yellow Bandana for $63
+Ryan leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 18
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     10               5                    16
+Velma      24               5                    0
+Daphne     63               23                    32
+
+ ***SIMULATION : DAY 18 HAS ENDED***
+
+ ***SIMULATION : DAY 19 BEGINNING***
+Shaggy has arrived at the store on Day 19
+Shaggy finds an order with 3 SHIRTSs
+Shaggy finds an order with 3 CDPLAYERs
+Shaggy finds an order with 3 CABLESs
+Shaggy finds an order with 3 CASSETTEs
+Shaggy checks the register to find $3329
+Shaggy is attempting to tune the Yamaha Silver Flute
+Shaggy has not changed the state of the Yamaha Silver Flute, it is still untuned
+Shaggy is attempting to tune the Emerson Wood Flute
+Shaggy has done a bad job tuning, and untuned the Emerson Wood Flute
+Shaggy is attempting to tune the Seagull Electric Bass
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Bass
+Shaggy is attempting to tune the Lee Oskar Harmonica in a key of "G"
+Shaggy has not changed the state of the Lee Oskar Harmonica in a key of "G", it is still tuned
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "D"
+Shaggy has successfully tuned the Suzuki Harmonica in a key of "D"
+Shaggy is attempting to tune the SEYDEL Harmonica in a key of "G"
+Shaggy has done a bad job tuning, and untuned the SEYDEL Harmonica in a key of "G"
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "F#"
+Shaggy has done a bad job tuning, and untuned the Suzuki Harmonica in a key of "F#"
+Shaggy is attempting to tune the Yamaha Alto Saxophone
+Shaggy has not changed the state of the Yamaha Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Yamaha Soprano Saxophone
+Shaggy has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Shaggy is attempting to tune the Miyazawa Alto Saxophone
+Shaggy has done a bad job tuning, and untuned the Miyazawa Alto Saxophone
+Shaggy is attempting to tune the Ovation Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Ovation Electric Guitar
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Guitar
+Shaggy is attempting to tune the Seagull Guitar
+Shaggy has not changed the state of the Seagull Guitar, it is still tuned
+Shaggy is attempting to tune the Miyazawa Silver Flute
+Shaggy has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has successfully tuned the Seagull Electric Guitar
+Shaggy is attempting to tune the Cassette Player
+Shaggy has successfully tuned the Cassette Player
+Shaggy is attempting to tune the Emerson Alto Saxophone
+Shaggy has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Emerson Soprano Saxophone
+Shaggy has done a bad job tuning, and untuned the Emerson Soprano Saxophone
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still untuned
+Shaggy is attempting to tune the CD Player
+Shaggy has successfully tuned the CD Player
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still untuned
+Shaggy does inventory to find we have $1305 worth of product
+Shaggy placed 0 order(s) today
+Alice has come into the store looking to buy a SAXOPHONE
+Shaggy found a Yamaha Alto Saxophone in the inventory
+Shaggy shows the customer the Yamaha Alto Saxophone, selling for $96
+The customer buys the Yamaha Alto Saxophone for $96
+Alice leaves the store
+Mel has come into the store looking to buy a HARMONICA
+Shaggy found a Lee Oskar Harmonica in a key of "G" in the inventory
+Shaggy shows the customer the Lee Oskar Harmonica in a key of "G", selling for $62
+Shaggy offers a 10% discount to the original price
+The customer buys the Lee Oskar Harmonica in a key of "G" for $55
+Mel leaves the store
+Delaney has come into the store looking to sell a SAXOPHONE
+Shaggy determines the Miyazawa Soprano Saxophone to be in Very Good condition and the value to be $33
+Shaggy offers a 10% increase to the original price
+The customer still does not want to sell the Miyazawa Soprano Saxophone
+Delaney leaves the store
+Emma has come into the store looking to buy a BANDANAS
+Shaggy found a Black Bandana in the inventory
+Shaggy shows the customer the Black Bandana, selling for $68
+The customer buys the Black Bandana for $68
+Emma leaves the store
+Bruce has come into the store looking to buy a VINYL
+Shaggy found a The Miseducation of Lauryn Hill by Lauryn Hill Vinyl in the inventory
+Shaggy shows the customer the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl, selling for $90
+The customer buys the The Miseducation of Lauryn Hill by Lauryn Hill Vinyl for $90
+Bruce leaves the store
+Paige has come into the store looking to buy a CD
+Shaggy found a Red by Taylor Swift CD in the inventory
+Shaggy shows the customer the Red by Taylor Swift CD, selling for $34
+The customer buys the Red by Taylor Swift CD for $34
+Paige leaves the store
+Mel has come into the store looking to buy a MP3PLAYER
+Shaggy finds no MP3PLAYER in the inventory
+Mel leaves the store
+Nate has come into the store looking to sell a FLUTE
+Shaggy determines the Miyazawa Wood Flute to be in Good condition and the value to be $21
+The store buys the Miyazawa Wood Flute in Good condition for $21
+Nate leaves the store
+Paige has come into the store looking to sell a HATS
+Shaggy determines the Large Pearl Jam Hat to be in Fair condition and the value to be $19
+The store buys the Large Pearl Jam Hat in Fair condition for $19
+Paige leaves the store
+Dom has come into the store looking to buy a VINYL
+Shaggy found a To Pimp A ButterFly by Kendrick Lamar Vinyl in the inventory
+Shaggy shows the customer the To Pimp A ButterFly by Kendrick Lamar Vinyl, selling for $4
+Shaggy offers a 10% discount to the original price
+The customer buys the To Pimp A ButterFly by Kendrick Lamar Vinyl for $3
+Dom leaves the store
+Bruce has come into the store looking to buy a GUITAR
+Shaggy found a Ovation Electric Guitar in the inventory
+Shaggy shows the customer the Ovation Electric Guitar, selling for $28
+Shaggy offers a 10% discount to the original price
+The customer buys the Ovation Electric Guitar for $25
+The customer decides they also want to buy a CABLES
+Shaggy found a 1 meter cable in the inventory
+The customer buys the 1 meter cable for $84
+The customer decides they also want to buy a CABLES
+Shaggy found a 5 meter cable in the inventory
+The customer buys the 5 meter cable for $94
+Bruce leaves the store
+Nate has come into the store looking to buy a CASSETTEPLAYER
+Shaggy found a Cassette Player in the inventory
+Shaggy shows the customer the Cassette Player, selling for $60
+Shaggy offers a 10% discount to the original price
+The customer buys the Cassette Player for $54
+Nate leaves the store
+Delaney has come into the store looking to buy a CD
+Shaggy found a To Pimp A ButterFly by Kendrick Lamar CD in the inventory
+Shaggy shows the customer the To Pimp A ButterFly by Kendrick Lamar CD, selling for $66
+The customer buys the To Pimp A ButterFly by Kendrick Lamar CD for $66
+Delaney leaves the store
+The store closes for the day and Shaggy begins cleaning
+Shaggy cleans the store without incident
+Shaggy leaves the store
+
+Tracker : Day 19
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     21               7                    24
+Velma      24               5                    0
+Daphne     63               23                    32
+
+ ***SIMULATION : DAY 19 HAS ENDED***
+
+ ***SIMULATION : DAY 20 BEGINNING***
+Velma has arrived at the store on Day 20
+Velma finds an order with 3 RECORDPLAYERs
+Velma finds an order with 3 MP3PLAYERs
+Velma checks the register to find $3768
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has successfully tuned the Yamaha Silver Flute
+Velma is attempting to tune the Emerson Wood Flute
+Velma has successfully tuned the Emerson Wood Flute
+Velma is attempting to tune the Seagull Electric Bass
+Velma has successfully tuned the Seagull Electric Bass
+Velma is attempting to tune the Suzuki Harmonica in a key of "D"
+Velma has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Velma is attempting to tune the SEYDEL Harmonica in a key of "G"
+Velma has successfully tuned the SEYDEL Harmonica in a key of "G"
+Velma is attempting to tune the Suzuki Harmonica in a key of "F#"
+Velma has successfully tuned the Suzuki Harmonica in a key of "F#"
+Velma is attempting to tune the Yamaha Soprano Saxophone
+Velma has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Velma is attempting to tune the Miyazawa Alto Saxophone
+Velma has successfully tuned the Miyazawa Alto Saxophone
+Velma is attempting to tune the Seagull Electric Guitar
+Velma has successfully tuned the Seagull Electric Guitar
+Velma is attempting to tune the Seagull Guitar
+Velma has not changed the state of the Seagull Guitar, it is still tuned
+Velma is attempting to tune the Miyazawa Silver Flute
+Velma has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Velma is attempting to tune the Seagull Electric Guitar
+Velma has not changed the state of the Seagull Electric Guitar, it is still tuned
+Velma is attempting to tune the Emerson Alto Saxophone
+Velma has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Velma is attempting to tune the Emerson Soprano Saxophone
+Velma has successfully tuned the Emerson Soprano Saxophone
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has successfully tuned the CD Player
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has successfully tuned the Miyazawa Wood Flute
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the MP3 Player
+Velma has successfully tuned the MP3 Player
+Velma is attempting to tune the MP3 Player
+Velma has successfully tuned the MP3 Player
+Velma is attempting to tune the MP3 Player
+Velma has successfully tuned the MP3 Player
+Velma does inventory to find we have $1192 worth of product
+Velma placed an order for 3 CASSETTEPLAYERs to arrive on Day 22
+Velma placed 3 order(s) today
+Amber has come into the store looking to buy a MP3PLAYER
+Velma found a MP3 Player in the inventory
+Velma shows the customer the MP3 Player, selling for $40
+Velma offers a 10% discount to the original price
+The customer buys the MP3 Player for $36
+Amber leaves the store
+Paige has come into the store looking to buy a MP3PLAYER
+Velma found a MP3 Player in the inventory
+Velma shows the customer the MP3 Player, selling for $46
+The customer buys the MP3 Player for $46
+Paige leaves the store
+CJ has come into the store looking to buy a RECORDPLAYER
+Velma found a Record Player in the inventory
+Velma shows the customer the Record Player, selling for $40
+The customer buys the Record Player for $40
+CJ leaves the store
+Sam has come into the store looking to buy a VINYL
+Velma found a The Black Album by Jay-Z Vinyl in the inventory
+Velma shows the customer the The Black Album by Jay-Z Vinyl, selling for $66
+The customer buys the The Black Album by Jay-Z Vinyl for $66
+Sam leaves the store
+Amber has come into the store looking to sell a HARMONICA
+Velma determines the Lee Oskar Harmonica in a key of "A" to be in Fair condition and the value to be $18
+The store buys the Lee Oskar Harmonica in a key of "A" in Fair condition for $18
+Amber leaves the store
+Sophie has come into the store looking to sell a MP3PLAYER
+Velma determines the MP3 Player to be in Very Good condition and the value to be $39
+Velma offers a 10% increase to the original price
+The customer still does not want to sell the MP3 Player
+Sophie leaves the store
+Alice has come into the store looking to buy a CD
+Velma found a 21 by Adele CD in the inventory
+Velma shows the customer the 21 by Adele CD, selling for $40
+The customer buys the 21 by Adele CD for $40
+Alice leaves the store
+Nate has come into the store looking to buy a VINYL
+Velma finds no VINYL in the inventory
+Nate leaves the store
+Amber has come into the store looking to buy a CASSETTEPLAYER
+Velma finds no CASSETTEPLAYER in the inventory
+Amber leaves the store
+Emma has come into the store looking to buy a HATS
+Velma found a Large Pearl Jam Hat in the inventory
+Velma shows the customer the Large Pearl Jam Hat, selling for $90
+The customer buys the Large Pearl Jam Hat for $90
+Emma leaves the store
+Emma has come into the store looking to buy a CDPLAYER
+Velma found a CD Player in the inventory
+Velma shows the customer the CD Player, selling for $8
+The customer buys the CD Player for $8
+Emma leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 20
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     21               7                    24
+Velma      31               6                    0
+Daphne     63               23                    32
+
+ ***SIMULATION : DAY 20 HAS ENDED***
+
+ ***SIMULATION : DAY 21 BEGINNING***
+Today is Day 21, which is Sunday, so the store is closed
+
+Tracker : Day 21
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     21               7                    24
+Velma      31               6                    0
+Daphne     63               23                    32
+
+ ***SIMULATION : DAY 21 HAS ENDED***
+
+ ***SIMULATION : DAY 22 BEGINNING***
+Daphne has arrived at the store on Day 22
+Daphne finds an order with 3 MANDOLINs
+Daphne finds an order with 3 CASSETTEPLAYERs
+Daphne checks the register to find $3904
+Daphne is attempting to tune the Yamaha Silver Flute
+Daphne has not changed the state of the Yamaha Silver Flute, it is still tuned
+Daphne is attempting to tune the Emerson Wood Flute
+Daphne has not changed the state of the Emerson Wood Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Bass
+Daphne has not changed the state of the Seagull Electric Bass, it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "D", it is still tuned
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has done a bad job tuning, and untuned the SEYDEL Harmonica in a key of "G"
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Yamaha Soprano Saxophone
+Daphne has not changed the state of the Yamaha Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Seagull Guitar
+Daphne has done a bad job tuning, and untuned the Seagull Guitar
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Emerson Soprano Saxophone
+Daphne has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has done a bad job tuning, and untuned the MP3 Player
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Daphne has successfully tuned the Lee Oskar Harmonica in a key of "A"
+Daphne is attempting to tune the Gibson Mandolin
+Daphne has successfully tuned the Gibson Mandolin
+Daphne is attempting to tune the Ovation Electric Mandolin
+Daphne has successfully tuned the Ovation Electric Mandolin
+Daphne is attempting to tune the Seagull Electric Mandolin
+Daphne has successfully tuned the Seagull Electric Mandolin
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne does inventory to find we have $1217 worth of product
+Daphne placed an order for 3 VINYLs to arrive on Day 25
+Daphne placed an order for 3 CDs to arrive on Day 23
+Daphne placed 6 order(s) today
+Bruce has come into the store looking to buy a CD
+Daphne finds no CD in the inventory
+Bruce leaves the store
+Amber has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $50
+The customer buys the Cassette Player for $50
+Amber leaves the store
+Amber has come into the store looking to buy a CD
+Daphne finds no CD in the inventory
+Amber leaves the store
+Bruce has come into the store looking to sell a FLUTE
+Daphne determines the Gemeinhardt Silver Flute to be in Poor condition and the value to be $1
+Daphne offers a 10% increase to the original price
+The customer still does not want to sell the Gemeinhardt Silver Flute
+Bruce leaves the store
+Bruce has come into the store looking to sell a HARMONICA
+Daphne determines the Boseno Harmonica in a key of "F#" to be in Very Good condition and the value to be $34
+Daphne offers a 10% increase to the original price
+The store buys the Boseno Harmonica in a key of "F#" in Very Good condition for $37
+Bruce leaves the store
+Alice has come into the store looking to buy a SHIRTS
+Daphne found a Medium Red Hot Chili Peppers Shirt in the inventory
+Daphne shows the customer the Medium Red Hot Chili Peppers Shirt, selling for $80
+The customer buys the Medium Red Hot Chili Peppers Shirt for $80
+Alice leaves the store
+Mel has come into the store looking to buy a FLUTE
+Daphne found a Yamaha Silver Flute in the inventory
+Daphne shows the customer the Yamaha Silver Flute, selling for $48
+The customer buys the Yamaha Silver Flute for $48
+Mel leaves the store
+Ryan has come into the store looking to buy a GUITAR
+Daphne found a Seagull Electric Guitar in the inventory
+Daphne shows the customer the Seagull Electric Guitar, selling for $38
+Daphne offers a 10% discount to the original price
+The customer buys the Seagull Electric Guitar for $34
+The customer decides they also want to buy a GIGBAG
+Daphne found a Gig Bag in the inventory
+The customer buys the Gig Bag for $36
+The customer decides they also want to buy a STRINGS
+Daphne found a Banjo strings in the inventory
+The customer buys the Banjo strings for $78
+The customer decides they also want to buy a STRINGS
+Daphne finds no STRINGS in the inventory
+Ryan leaves the store
+Nate has come into the store looking to sell a RECORDPLAYER
+Daphne determines the Record Player to be in Poor condition and the value to be $2
+The store buys the Record Player in Poor condition for $2
+Nate leaves the store
+CJ has come into the store looking to buy a MANDOLIN
+Daphne found a Gibson Mandolin in the inventory
+Daphne shows the customer the Gibson Mandolin, selling for $56
+Daphne offers a 10% discount to the original price
+The customer buys the Gibson Mandolin for $50
+CJ leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 22
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     21               7                    24
+Velma      31               6                    0
+Daphne     70               25                    35
+
+ ***SIMULATION : DAY 22 HAS ENDED***
+
+ ***SIMULATION : DAY 23 BEGINNING***
+Shaggy has arrived at the store on Day 23
+Shaggy finds an order with 3 CDs
+Shaggy checks the register to find $4152
+Shaggy is attempting to tune the Emerson Wood Flute
+Shaggy has not changed the state of the Emerson Wood Flute, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Bass
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Bass
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "D"
+Shaggy has done a bad job tuning, and untuned the Suzuki Harmonica in a key of "D"
+Shaggy is attempting to tune the SEYDEL Harmonica in a key of "G"
+Shaggy has not changed the state of the SEYDEL Harmonica in a key of "G", it is still untuned
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "F#"
+Shaggy has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Shaggy is attempting to tune the Yamaha Soprano Saxophone
+Shaggy has done a bad job tuning, and untuned the Yamaha Soprano Saxophone
+Shaggy is attempting to tune the Miyazawa Alto Saxophone
+Shaggy has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Seagull Guitar
+Shaggy has successfully tuned the Seagull Guitar
+Shaggy is attempting to tune the Miyazawa Silver Flute
+Shaggy has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has not changed the state of the Seagull Electric Guitar, it is still tuned
+Shaggy is attempting to tune the Emerson Alto Saxophone
+Shaggy has done a bad job tuning, and untuned the Emerson Alto Saxophone
+Shaggy is attempting to tune the Emerson Soprano Saxophone
+Shaggy has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Shaggy is attempting to tune the CD Player
+Shaggy has done a bad job tuning, and untuned the CD Player
+Shaggy is attempting to tune the CD Player
+Shaggy has not changed the state of the CD Player, it is still tuned
+Shaggy is attempting to tune the Miyazawa Wood Flute
+Shaggy has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has not changed the state of the Record Player, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the MP3 Player
+Shaggy has successfully tuned the MP3 Player
+Shaggy is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Shaggy has not changed the state of the Lee Oskar Harmonica in a key of "A", it is still tuned
+Shaggy is attempting to tune the Ovation Electric Mandolin
+Shaggy has not changed the state of the Ovation Electric Mandolin, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Mandolin
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Mandolin
+Shaggy is attempting to tune the Cassette Player
+Shaggy has not changed the state of the Cassette Player, it is still tuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has done a bad job tuning, and untuned the Cassette Player
+Shaggy is attempting to tune the Boseno Harmonica in a key of "F#"
+Shaggy has successfully tuned the Boseno Harmonica in a key of "F#"
+Shaggy is attempting to tune the Record Player
+Shaggy has not changed the state of the Record Player, it is still untuned
+Shaggy does inventory to find we have $1152 worth of product
+Shaggy placed an order for 3 GIGBAGs to arrive on Day 26
+Shaggy placed an order for 3 STRINGSs to arrive on Day 26
+Shaggy placed 6 order(s) today
+Dom has come into the store looking to sell a CASSETTEPLAYER
+Shaggy determines the Cassette Player to be in Excellent condition and the value to be $50
+Shaggy offers a 10% increase to the original price
+The store buys the Cassette Player in Excellent condition for $55
+Dom leaves the store
+Paige has come into the store looking to buy a GUITAR
+Shaggy found a Seagull Guitar in the inventory
+Shaggy shows the customer the Seagull Guitar, selling for $14
+Shaggy offers a 10% discount to the original price
+The customer buys the Seagull Guitar for $12
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+Paige leaves the store
+Nate has come into the store looking to sell a VINYL
+Shaggy determines the 21 by Adele Vinyl to be in Poor condition and the value to be $10
+Shaggy offers a 10% increase to the original price
+The store buys the 21 by Adele Vinyl in Poor condition for $11
+Nate leaves the store
+Sophie has come into the store looking to buy a FLUTE
+Shaggy found a Emerson Wood Flute in the inventory
+Shaggy shows the customer the Emerson Wood Flute, selling for $57
+The customer buys the Emerson Wood Flute for $57
+Sophie leaves the store
+Alice has come into the store looking to buy a VINYL
+Shaggy found a 21 by Adele Vinyl in the inventory
+Shaggy shows the customer the 21 by Adele Vinyl, selling for $22
+Shaggy offers a 10% discount to the original price
+The customer buys the 21 by Adele Vinyl for $19
+Alice leaves the store
+Mel has come into the store looking to sell a PAPERSCORE
+Shaggy determines the Back in Black by AC/DC Paper Score to be in Fair condition and the value to be $20
+Shaggy offers a 10% increase to the original price
+The store buys the Back in Black by AC/DC Paper Score in Fair condition for $22
+Mel leaves the store
+CJ has come into the store looking to buy a BANDANAS
+Shaggy found a Yellow Bandana in the inventory
+Shaggy shows the customer the Yellow Bandana, selling for $50
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the Yellow Bandana
+CJ leaves the store
+Mel has come into the store looking to buy a HATS
+Shaggy found a Small The Beatles Hat in the inventory
+Shaggy shows the customer the Small The Beatles Hat, selling for $52
+The customer buys the Small The Beatles Hat for $52
+Mel leaves the store
+Bruce has come into the store looking to buy a CDPLAYER
+Shaggy found a CD Player in the inventory
+Shaggy shows the customer the CD Player, selling for $92
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the CD Player
+Bruce leaves the store
+Paige has come into the store looking to buy a SAXOPHONE
+Shaggy found a Yamaha Soprano Saxophone in the inventory
+Shaggy shows the customer the Yamaha Soprano Saxophone, selling for $76
+The customer buys the Yamaha Soprano Saxophone for $76
+Paige leaves the store
+Sam has come into the store looking to buy a BASS
+Shaggy found a Seagull Electric Bass in the inventory
+Shaggy shows the customer the Seagull Electric Bass, selling for $50
+Shaggy offers a 10% discount to the original price
+The customer buys the Seagull Electric Bass for $45
+The customer decides they also want to buy a CABLES
+Shaggy found a 1 meter cable in the inventory
+The customer buys the 1 meter cable for $24
+The customer decides they also want to buy a CABLES
+Shaggy finds no CABLES in the inventory
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+The customer decides they also want to buy a STRINGS
+Shaggy finds no STRINGS in the inventory
+Sam leaves the store
+Mel has come into the store looking to buy a CDPLAYER
+Shaggy found a CD Player in the inventory
+Shaggy shows the customer the CD Player, selling for $92
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the CD Player
+Mel leaves the store
+The store closes for the day and Shaggy begins cleaning
+Oh no! Shaggy broke a Lee Oskar Harmonica in a key of "A" while cleaning
+Lee Oskar Harmonica in a key of "A"'s condition has lowered from Fair to Poor
+Lee Oskar Harmonica in a key of "A" list price has lowered to 28
+Shaggy leaves the store
+
+Tracker : Day 23
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     28               10                    33
+Velma      31               6                    0
+Daphne     70               25                    35
+
+ ***SIMULATION : DAY 23 HAS ENDED***
+
+ ***SIMULATION : DAY 24 BEGINNING***
+Daphne has arrived at the store on Day 24
+Daphne finds no orders delivered today
+Daphne checks the register to find $4349
+Daphne is attempting to tune the Suzuki Harmonica in a key of "D"
+Daphne has successfully tuned the Suzuki Harmonica in a key of "D"
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has successfully tuned the SEYDEL Harmonica in a key of "G"
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has not changed the state of the Seagull Electric Guitar, it is still tuned
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has successfully tuned the Emerson Alto Saxophone
+Daphne is attempting to tune the Emerson Soprano Saxophone
+Daphne has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has successfully tuned the CD Player
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has done a bad job tuning, and untuned the Miyazawa Wood Flute
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Daphne has done a bad job tuning, and untuned the Lee Oskar Harmonica in a key of "A"
+Daphne is attempting to tune the Ovation Electric Mandolin
+Daphne has done a bad job tuning, and untuned the Ovation Electric Mandolin
+Daphne has done such a bad job tuning they damaged the item
+Ovation Electric Mandolin's condition has lowered from Excellent to Very Good
+Ovation Electric Mandolin list price has lowered to 75
+Daphne is attempting to tune the Seagull Electric Mandolin
+Daphne has successfully tuned the Seagull Electric Mandolin
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Boseno Harmonica in a key of "F#"
+Daphne has not changed the state of the Boseno Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still untuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne does inventory to find we have $1085 worth of product
+Daphne placed an order for 3 CABLESs to arrive on Day 26
+Daphne placed an order for 3 BASSs to arrive on Day 26
+Daphne placed 6 order(s) today
+Sam has come into the store looking to buy a GUITAR
+Daphne found a Seagull Electric Guitar in the inventory
+Daphne shows the customer the Seagull Electric Guitar, selling for $82
+Daphne offers a 10% discount to the original price
+The customer buys the Seagull Electric Guitar for $73
+The customer decides they also want to buy a GIGBAG
+Daphne finds no GIGBAG in the inventory
+The customer decides they also want to buy a STRINGS
+Daphne finds no STRINGS in the inventory
+Sam leaves the store
+Alice has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $100
+The customer buys the Cassette Player for $100
+Alice leaves the store
+Sophie has come into the store looking to sell a HATS
+Daphne determines the Small The Beatles Hat to be in Very Good condition and the value to be $31
+The store buys the Small The Beatles Hat in Very Good condition for $31
+Sophie leaves the store
+Ryan has come into the store looking to buy a BANDANAS
+Daphne found a Yellow Bandana in the inventory
+Daphne shows the customer the Yellow Bandana, selling for $50
+Daphne offers a 10% discount to the original price
+The customer buys the Yellow Bandana for $45
+Ryan leaves the store
+Bruce has come into the store looking to buy a BASS
+Daphne finds no BASS in the inventory
+Bruce leaves the store
+Sophie has come into the store looking to buy a HATS
+Daphne found a Large The Notorious B.I.G. Hat in the inventory
+Daphne shows the customer the Large The Notorious B.I.G. Hat, selling for $74
+The customer buys the Large The Notorious B.I.G. Hat for $74
+Sophie leaves the store
+Emma has come into the store looking to buy a PAPERSCORE
+Daphne found a Born to Run by Bruce Springsteen Paper Score in the inventory
+Daphne shows the customer the Born to Run by Bruce Springsteen Paper Score, selling for $94
+The customer buys the Born to Run by Bruce Springsteen Paper Score for $94
+Emma leaves the store
+Delaney has come into the store looking to buy a GUITAR
+Daphne finds no GUITAR in the inventory
+Delaney leaves the store
+Emma has come into the store looking to buy a CASSETTE
+Daphne found a Rumors by Fleetwood Mac Cassette in the inventory
+Daphne shows the customer the Rumors by Fleetwood Mac Cassette, selling for $36
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Rumors by Fleetwood Mac Cassette
+Emma leaves the store
+Paige has come into the store looking to buy a HARMONICA
+Daphne found a Suzuki Harmonica in a key of "D" in the inventory
+Daphne shows the customer the Suzuki Harmonica in a key of "D", selling for $26
+The customer buys the Suzuki Harmonica in a key of "D" for $26
+Paige leaves the store
+The store closes for the day and Daphne begins cleaning
+Oh no! Daphne broke a Back to Black by Amy Winehouse Paper Score while cleaning
+Back to Black by Amy Winehouse Paper Score's condition has lowered from Fair to Poor
+Back to Black by Amy Winehouse Paper Score list price has lowered to 68
+Daphne leaves the store
+
+Tracker : Day 24
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     28               10                    33
+Velma      31               6                    0
+Daphne     76               26                    39
+
+ ***SIMULATION : DAY 24 HAS ENDED***
+
+ ***SIMULATION : DAY 25 BEGINNING***
+Daphne has arrived at the store on Day 25
+Daphne finds an order with 3 VINYLs
+Daphne checks the register to find $4686
+Daphne is attempting to tune the SEYDEL Harmonica in a key of "G"
+Daphne has not changed the state of the SEYDEL Harmonica in a key of "G", it is still tuned
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Miyazawa Silver Flute
+Daphne has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Emerson Soprano Saxophone
+Daphne has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Daphne is attempting to tune the CD Player
+Daphne has done a bad job tuning, and untuned the CD Player
+Daphne is attempting to tune the CD Player
+Daphne has not changed the state of the CD Player, it is still tuned
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has successfully tuned the Miyazawa Wood Flute
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still tuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Daphne has successfully tuned the Lee Oskar Harmonica in a key of "A"
+Daphne is attempting to tune the Ovation Electric Mandolin
+Daphne has successfully tuned the Ovation Electric Mandolin
+Daphne is attempting to tune the Seagull Electric Mandolin
+Daphne has not changed the state of the Seagull Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has not changed the state of the Cassette Player, it is still tuned
+Daphne is attempting to tune the Boseno Harmonica in a key of "F#"
+Daphne has not changed the state of the Boseno Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still untuned
+Daphne is attempting to tune the Cassette Player
+Daphne has done a bad job tuning, and untuned the Cassette Player
+Daphne does inventory to find we have $947 worth of product
+Daphne placed an order for 3 GUITARs to arrive on Day 26
+Daphne placed an order for 3 BANDANASs to arrive on Day 27
+Daphne placed 6 order(s) today
+Sam has come into the store looking to buy a MP3PLAYER
+Daphne found a MP3 Player in the inventory
+Daphne shows the customer the MP3 Player, selling for $70
+The customer buys the MP3 Player for $70
+Sam leaves the store
+Sophie has come into the store looking to buy a BANDANAS
+Daphne finds no BANDANAS in the inventory
+Sophie leaves the store
+Emma has come into the store looking to buy a BASS
+Daphne finds no BASS in the inventory
+Emma leaves the store
+Emma has come into the store looking to sell a SHIRTS
+Daphne determines the Large The Beatles Shirt to be in Good condition and the value to be $22
+The store buys the Large The Beatles Shirt in Good condition for $22
+Emma leaves the store
+Bruce has come into the store looking to sell a SHIRTS
+Daphne determines the Large The Beatles Shirt to be in Good condition and the value to be $30
+Daphne offers a 10% increase to the original price
+The store buys the Large The Beatles Shirt in Good condition for $33
+Bruce leaves the store
+Mel has come into the store looking to buy a HARMONICA
+Daphne found a SEYDEL Harmonica in a key of "G" in the inventory
+Daphne shows the customer the SEYDEL Harmonica in a key of "G", selling for $56
+Daphne offers a 10% discount to the original price
+The customer buys the SEYDEL Harmonica in a key of "G" for $50
+Mel leaves the store
+Sam has come into the store looking to buy a HARMONICA
+Daphne found a Suzuki Harmonica in a key of "F#" in the inventory
+Daphne shows the customer the Suzuki Harmonica in a key of "F#", selling for $90
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Suzuki Harmonica in a key of "F#"
+Sam leaves the store
+Dom has come into the store looking to buy a MP3PLAYER
+Daphne finds no MP3PLAYER in the inventory
+Dom leaves the store
+Mel has come into the store looking to buy a BANDANAS
+Daphne finds no BANDANAS in the inventory
+Mel leaves the store
+Bruce has come into the store looking to buy a GUITAR
+Daphne finds no GUITAR in the inventory
+Bruce leaves the store
+Emma has come into the store looking to buy a CDPLAYER
+Daphne found a CD Player in the inventory
+Daphne shows the customer the CD Player, selling for $92
+The customer buys the CD Player for $92
+Emma leaves the store
+Emma has come into the store looking to buy a SHIRTS
+Daphne found a Medium Nirvna Shirt in the inventory
+Daphne shows the customer the Medium Nirvna Shirt, selling for $18
+The customer buys the Medium Nirvna Shirt for $18
+Emma leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 25
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     28               10                    33
+Velma      31               6                    0
+Daphne     80               28                    41
+
+ ***SIMULATION : DAY 25 HAS ENDED***
+
+ ***SIMULATION : DAY 26 BEGINNING***
+Velma has arrived at the store on Day 26
+Velma finds an order with 3 GIGBAGs
+Velma finds an order with 3 STRINGSs
+Velma finds an order with 3 CABLESs
+Velma finds an order with 3 BASSs
+Velma finds an order with 3 GUITARs
+Velma checks the register to find $4435
+Velma is attempting to tune the Suzuki Harmonica in a key of "F#"
+Velma has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Velma is attempting to tune the Miyazawa Alto Saxophone
+Velma has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Velma is attempting to tune the Miyazawa Silver Flute
+Velma has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Velma is attempting to tune the Emerson Alto Saxophone
+Velma has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Velma is attempting to tune the Emerson Soprano Saxophone
+Velma has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Velma is attempting to tune the CD Player
+Velma has not changed the state of the CD Player, it is still tuned
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Velma has not changed the state of the Lee Oskar Harmonica in a key of "A", it is still tuned
+Velma is attempting to tune the Ovation Electric Mandolin
+Velma has not changed the state of the Ovation Electric Mandolin, it is still tuned
+Velma is attempting to tune the Seagull Electric Mandolin
+Velma has not changed the state of the Seagull Electric Mandolin, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Boseno Harmonica in a key of "F#"
+Velma has not changed the state of the Boseno Harmonica in a key of "F#", it is still tuned
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the Cassette Player
+Velma has successfully tuned the Cassette Player
+Velma is attempting to tune the Washburn Bass
+Velma has successfully tuned the Washburn Bass
+Velma is attempting to tune the Gibson Electric Bass
+Velma has successfully tuned the Gibson Electric Bass
+Velma is attempting to tune the Fender Bass
+Velma has successfully tuned the Fender Bass
+Velma is attempting to tune the Seagull Electric Guitar
+Velma has successfully tuned the Seagull Electric Guitar
+Velma is attempting to tune the Washburn Guitar
+Velma has successfully tuned the Washburn Guitar
+Velma is attempting to tune the Ovation Electric Guitar
+Velma has successfully tuned the Ovation Electric Guitar
+Velma does inventory to find we have $1310 worth of product
+Velma placed an order for 3 MP3PLAYERs to arrive on Day 29
+Velma placed 3 order(s) today
+CJ has come into the store looking to buy a CASSETTE
+Velma found a Rumors by Fleetwood Mac Cassette in the inventory
+Velma shows the customer the Rumors by Fleetwood Mac Cassette, selling for $36
+The customer buys the Rumors by Fleetwood Mac Cassette for $36
+CJ leaves the store
+Mel has come into the store looking to sell a BANDANAS
+Velma determines the Black Bandana to be in Good condition and the value to be $21
+Velma offers a 10% increase to the original price
+The store buys the Black Bandana in Good condition for $23
+Mel leaves the store
+Ryan has come into the store looking to buy a CASSETTE
+Velma found a The Chronic by Dr. Dre Cassette in the inventory
+Velma shows the customer the The Chronic by Dr. Dre Cassette, selling for $12
+The customer buys the The Chronic by Dr. Dre Cassette for $12
+Ryan leaves the store
+CJ has come into the store looking to buy a HARMONICA
+Velma found a Suzuki Harmonica in a key of "F#" in the inventory
+Velma shows the customer the Suzuki Harmonica in a key of "F#", selling for $90
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Suzuki Harmonica in a key of "F#"
+CJ leaves the store
+Amber has come into the store looking to buy a SHIRTS
+Velma found a Medium The Notorious B.I.G. Shirt in the inventory
+Velma shows the customer the Medium The Notorious B.I.G. Shirt, selling for $40
+The customer buys the Medium The Notorious B.I.G. Shirt for $40
+Amber leaves the store
+Delaney has come into the store looking to buy a CASSETTE
+Velma found a Ready to Die by The Notorious B.I.G. Cassette in the inventory
+Velma shows the customer the Ready to Die by The Notorious B.I.G. Cassette, selling for $24
+Velma offers a 10% discount to the original price
+The customer buys the Ready to Die by The Notorious B.I.G. Cassette for $21
+Delaney leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 26
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     28               10                    33
+Velma      35               7                    0
+Daphne     80               28                    41
+
+ ***SIMULATION : DAY 26 HAS ENDED***
+
+ ***SIMULATION : DAY 27 BEGINNING***
+Shaggy has arrived at the store on Day 27
+Shaggy finds an order with 3 BANDANASs
+Shaggy checks the register to find $4435
+Shaggy is attempting to tune the Suzuki Harmonica in a key of "F#"
+Shaggy has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Shaggy is attempting to tune the Miyazawa Alto Saxophone
+Shaggy has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Miyazawa Silver Flute
+Shaggy has not changed the state of the Miyazawa Silver Flute, it is still tuned
+Shaggy is attempting to tune the Emerson Alto Saxophone
+Shaggy has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Shaggy is attempting to tune the Emerson Soprano Saxophone
+Shaggy has done a bad job tuning, and untuned the Emerson Soprano Saxophone
+Shaggy is attempting to tune the CD Player
+Shaggy has done a bad job tuning, and untuned the CD Player
+Shaggy is attempting to tune the Miyazawa Wood Flute
+Shaggy has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has not changed the state of the Record Player, it is still tuned
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Shaggy has not changed the state of the Lee Oskar Harmonica in a key of "A", it is still tuned
+Shaggy is attempting to tune the Ovation Electric Mandolin
+Shaggy has not changed the state of the Ovation Electric Mandolin, it is still tuned
+Shaggy is attempting to tune the Seagull Electric Mandolin
+Shaggy has not changed the state of the Seagull Electric Mandolin, it is still tuned
+Shaggy is attempting to tune the Cassette Player
+Shaggy has done a bad job tuning, and untuned the Cassette Player
+Shaggy is attempting to tune the Boseno Harmonica in a key of "F#"
+Shaggy has done a bad job tuning, and untuned the Boseno Harmonica in a key of "F#"
+Shaggy is attempting to tune the Record Player
+Shaggy has done a bad job tuning, and untuned the Record Player
+Shaggy is attempting to tune the Cassette Player
+Shaggy has done a bad job tuning, and untuned the Cassette Player
+Shaggy is attempting to tune the Washburn Bass
+Shaggy has done a bad job tuning, and untuned the Washburn Bass
+Shaggy has done such a bad job tuning they damaged the item
+Washburn Bass's condition has lowered from Very Good to Good
+Washburn Bass list price has lowered to 44
+Shaggy is attempting to tune the Gibson Electric Bass
+Shaggy has done a bad job tuning, and untuned the Gibson Electric Bass
+Shaggy is attempting to tune the Fender Bass
+Shaggy has done a bad job tuning, and untuned the Fender Bass
+Shaggy is attempting to tune the Seagull Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Seagull Electric Guitar
+Shaggy has done such a bad job tuning they damaged the item
+Seagull Electric Guitar's condition has lowered from Fair to Poor
+Seagull Electric Guitar list price has lowered to 59
+Shaggy is attempting to tune the Washburn Guitar
+Shaggy has not changed the state of the Washburn Guitar, it is still tuned
+Shaggy is attempting to tune the Ovation Electric Guitar
+Shaggy has done a bad job tuning, and untuned the Ovation Electric Guitar
+Shaggy does inventory to find we have $1363 worth of product
+Shaggy placed an order for 3 CASSETTEs to arrive on Day 29
+Shaggy placed 3 order(s) today
+Emma has come into the store looking to buy a VINYL
+Shaggy found a What's Going On by Marvin Gaye Vinyl in the inventory
+Shaggy shows the customer the What's Going On by Marvin Gaye Vinyl, selling for $28
+Shaggy offers a 10% discount to the original price
+The customer buys the What's Going On by Marvin Gaye Vinyl for $25
+Emma leaves the store
+Sam has come into the store looking to buy a FLUTE
+Shaggy found a Miyazawa Silver Flute in the inventory
+Shaggy shows the customer the Miyazawa Silver Flute, selling for $62
+Shaggy offers a 10% discount to the original price
+The customer buys the Miyazawa Silver Flute for $55
+Sam leaves the store
+Nate has come into the store looking to sell a BANDANAS
+Shaggy determines the Red Bandana to be in Very Good condition and the value to be $39
+Shaggy offers a 10% increase to the original price
+The store buys the Red Bandana in Very Good condition for $42
+Nate leaves the store
+CJ has come into the store looking to buy a MANDOLIN
+Shaggy found a Ovation Electric Mandolin in the inventory
+Shaggy shows the customer the Ovation Electric Mandolin, selling for $75
+The customer buys the Ovation Electric Mandolin for $75
+The customer decides they also want to buy a GIGBAG
+Shaggy found a Gig Bag in the inventory
+The customer buys the Gig Bag for $24
+CJ leaves the store
+Mel has come into the store looking to sell a GUITAR
+Shaggy determines the Ovation Electric Guitar to be in Excellent condition and the value to be $50
+The store buys the Ovation Electric Guitar in Excellent condition for $50
+Mel leaves the store
+CJ has come into the store looking to buy a SHIRTS
+Shaggy found a Large The Beatles Shirt in the inventory
+Shaggy shows the customer the Large The Beatles Shirt, selling for $44
+Shaggy offers a 10% discount to the original price
+The customer buys the Large The Beatles Shirt for $39
+CJ leaves the store
+Dom has come into the store looking to buy a PAPERSCORE
+Shaggy found a Back to Black by Amy Winehouse Paper Score in the inventory
+Shaggy shows the customer the Back to Black by Amy Winehouse Paper Score, selling for $68
+Shaggy offers a 10% discount to the original price
+The customer buys the Back to Black by Amy Winehouse Paper Score for $61
+Dom leaves the store
+Nate has come into the store looking to buy a HATS
+Shaggy found a Large Pearl Jam Hat in the inventory
+Shaggy shows the customer the Large Pearl Jam Hat, selling for $38
+The customer buys the Large Pearl Jam Hat for $38
+Nate leaves the store
+Sophie has come into the store looking to buy a CDPLAYER
+Shaggy found a CD Player in the inventory
+Shaggy shows the customer the CD Player, selling for $64
+The customer buys the CD Player for $64
+Sophie leaves the store
+CJ has come into the store looking to buy a CD
+Shaggy found a The Chronic by Dr. Dre CD in the inventory
+Shaggy shows the customer the The Chronic by Dr. Dre CD, selling for $18
+Shaggy offers a 10% discount to the original price
+The customer still does not want to buy the The Chronic by Dr. Dre CD
+CJ leaves the store
+Bruce has come into the store looking to buy a SHIRTS
+Shaggy found a Large The Beatles Shirt in the inventory
+Shaggy shows the customer the Large The Beatles Shirt, selling for $66
+Shaggy offers a 10% discount to the original price
+The customer buys the Large The Beatles Shirt for $59
+Bruce leaves the store
+The store closes for the day and Shaggy begins cleaning
+Shaggy cleans the store without incident
+Shaggy leaves the store
+
+Tracker : Day 27
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     37               12                    45
+Velma      35               7                    0
+Daphne     80               28                    41
+
+ ***SIMULATION : DAY 27 HAS ENDED***
+
+ ***SIMULATION : DAY 28 BEGINNING***
+Today is Day 28, which is Sunday, so the store is closed
+
+Tracker : Day 28
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     37               12                    45
+Velma      35               7                    0
+Daphne     80               28                    41
+
+ ***SIMULATION : DAY 28 HAS ENDED***
+
+ ***SIMULATION : DAY 29 BEGINNING***
+Daphne has arrived at the store on Day 29
+Daphne finds an order with 3 MP3PLAYERs
+Daphne finds an order with 3 CASSETTEs
+Daphne checks the register to find $4616
+Daphne is attempting to tune the Suzuki Harmonica in a key of "F#"
+Daphne has not changed the state of the Suzuki Harmonica in a key of "F#", it is still tuned
+Daphne is attempting to tune the Miyazawa Alto Saxophone
+Daphne has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Emerson Alto Saxophone
+Daphne has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Daphne is attempting to tune the Emerson Soprano Saxophone
+Daphne has successfully tuned the Emerson Soprano Saxophone
+Daphne is attempting to tune the Miyazawa Wood Flute
+Daphne has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still tuned
+Daphne is attempting to tune the Record Player
+Daphne has not changed the state of the Record Player, it is still untuned
+Daphne is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Daphne has not changed the state of the Lee Oskar Harmonica in a key of "A", it is still tuned
+Daphne is attempting to tune the Seagull Electric Mandolin
+Daphne has not changed the state of the Seagull Electric Mandolin, it is still tuned
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Boseno Harmonica in a key of "F#"
+Daphne has successfully tuned the Boseno Harmonica in a key of "F#"
+Daphne is attempting to tune the Record Player
+Daphne has successfully tuned the Record Player
+Daphne is attempting to tune the Cassette Player
+Daphne has successfully tuned the Cassette Player
+Daphne is attempting to tune the Washburn Bass
+Daphne has successfully tuned the Washburn Bass
+Daphne is attempting to tune the Gibson Electric Bass
+Daphne has successfully tuned the Gibson Electric Bass
+Daphne is attempting to tune the Fender Bass
+Daphne has successfully tuned the Fender Bass
+Daphne is attempting to tune the Seagull Electric Guitar
+Daphne has successfully tuned the Seagull Electric Guitar
+Daphne is attempting to tune the Washburn Guitar
+Daphne has not changed the state of the Washburn Guitar, it is still tuned
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has not changed the state of the Ovation Electric Guitar, it is still untuned
+Daphne is attempting to tune the Ovation Electric Guitar
+Daphne has successfully tuned the Ovation Electric Guitar
+Daphne is attempting to tune the MP3 Player
+Daphne has not changed the state of the MP3 Player, it is still untuned
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne is attempting to tune the MP3 Player
+Daphne has successfully tuned the MP3 Player
+Daphne does inventory to find we have $1369 worth of product
+Daphne placed an order for 3 CDPLAYERs to arrive on Day 31
+Daphne placed an order for 3 SHIRTSs to arrive on Day 32
+Daphne placed 6 order(s) today
+Nate has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $4
+Daphne offers a 10% discount to the original price
+The customer buys the Cassette Player for $3
+Nate leaves the store
+Mel has come into the store looking to buy a BANDANAS
+Daphne found a Black Bandana in the inventory
+Daphne shows the customer the Black Bandana, selling for $46
+The customer buys the Black Bandana for $46
+Mel leaves the store
+Amber has come into the store looking to buy a HATS
+Daphne found a Small The Beatles Hat in the inventory
+Daphne shows the customer the Small The Beatles Hat, selling for $62
+Daphne offers a 10% discount to the original price
+The customer buys the Small The Beatles Hat for $55
+Amber leaves the store
+CJ has come into the store looking to buy a CASSETTEPLAYER
+Daphne found a Cassette Player in the inventory
+Daphne shows the customer the Cassette Player, selling for $110
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Cassette Player
+CJ leaves the store
+Emma has come into the store looking to buy a MANDOLIN
+Daphne found a Seagull Electric Mandolin in the inventory
+Daphne shows the customer the Seagull Electric Mandolin, selling for $40
+The customer buys the Seagull Electric Mandolin for $40
+Emma leaves the store
+Dom has come into the store looking to sell a HARMONICA
+Daphne determines the Boseno Harmonica in a key of "F#" to be in Fair condition and the value to be $17
+Daphne offers a 10% increase to the original price
+The customer still does not want to sell the Boseno Harmonica in a key of "F#"
+Dom leaves the store
+CJ has come into the store looking to sell a FLUTE
+Daphne determines the Yamaha Silver Flute to be in Very Good condition and the value to be $38
+Daphne offers a 10% increase to the original price
+The store buys the Yamaha Silver Flute in Very Good condition for $41
+CJ leaves the store
+Bruce has come into the store looking to sell a CASSETTE
+Daphne determines the Red by Taylor Swift Cassette to be in Fair condition and the value to be $10
+Daphne offers a 10% increase to the original price
+The store buys the Red by Taylor Swift Cassette in Fair condition for $11
+Bruce leaves the store
+Mel has come into the store looking to buy a RECORDPLAYER
+Daphne found a Record Player in the inventory
+Daphne shows the customer the Record Player, selling for $92
+The customer buys the Record Player for $92
+Mel leaves the store
+Bruce has come into the store looking to sell a HARMONICA
+Daphne determines the Suzuki Harmonica in a key of "G" to be in Excellent condition and the value to be $50
+Daphne offers a 10% increase to the original price
+The store buys the Suzuki Harmonica in a key of "G" in Excellent condition for $55
+Bruce leaves the store
+Nate has come into the store looking to buy a HATS
+Daphne finds no HATS in the inventory
+Nate leaves the store
+Ryan has come into the store looking to buy a VINYL
+Daphne found a Back to Black by Amy Winehouse Vinyl in the inventory
+Daphne shows the customer the Back to Black by Amy Winehouse Vinyl, selling for $6
+Daphne offers a 10% discount to the original price
+The customer still does not want to buy the Back to Black by Amy Winehouse Vinyl
+Ryan leaves the store
+Nate has come into the store looking to buy a HARMONICA
+Daphne found a Suzuki Harmonica in a key of "F#" in the inventory
+Daphne shows the customer the Suzuki Harmonica in a key of "F#", selling for $90
+The customer buys the Suzuki Harmonica in a key of "F#" for $90
+Nate leaves the store
+The store closes for the day and Daphne begins cleaning
+Daphne cleans the store without incident
+Daphne leaves the store
+
+Tracker : Day 29
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     37               12                    45
+Velma      35               7                    0
+Daphne     86               31                    41
+
+ ***SIMULATION : DAY 29 HAS ENDED***
+
+ ***SIMULATION : DAY 30 BEGINNING***
+Velma has arrived at the store on Day 30
+Velma finds no orders delivered today
+Velma checks the register to find $4835
+Velma is attempting to tune the Miyazawa Alto Saxophone
+Velma has not changed the state of the Miyazawa Alto Saxophone, it is still tuned
+Velma is attempting to tune the Emerson Alto Saxophone
+Velma has not changed the state of the Emerson Alto Saxophone, it is still tuned
+Velma is attempting to tune the Emerson Soprano Saxophone
+Velma has not changed the state of the Emerson Soprano Saxophone, it is still tuned
+Velma is attempting to tune the Miyazawa Wood Flute
+Velma has not changed the state of the Miyazawa Wood Flute, it is still tuned
+Velma is attempting to tune the Record Player
+Velma has successfully tuned the Record Player
+Velma is attempting to tune the Lee Oskar Harmonica in a key of "A"
+Velma has not changed the state of the Lee Oskar Harmonica in a key of "A", it is still tuned
+Velma is attempting to tune the Boseno Harmonica in a key of "F#"
+Velma has not changed the state of the Boseno Harmonica in a key of "F#", it is still tuned
+Velma is attempting to tune the Record Player
+Velma has not changed the state of the Record Player, it is still tuned
+Velma is attempting to tune the Cassette Player
+Velma has not changed the state of the Cassette Player, it is still tuned
+Velma is attempting to tune the Washburn Bass
+Velma has not changed the state of the Washburn Bass, it is still tuned
+Velma is attempting to tune the Gibson Electric Bass
+Velma has not changed the state of the Gibson Electric Bass, it is still tuned
+Velma is attempting to tune the Fender Bass
+Velma has not changed the state of the Fender Bass, it is still tuned
+Velma is attempting to tune the Seagull Electric Guitar
+Velma has not changed the state of the Seagull Electric Guitar, it is still tuned
+Velma is attempting to tune the Washburn Guitar
+Velma has not changed the state of the Washburn Guitar, it is still tuned
+Velma is attempting to tune the Ovation Electric Guitar
+Velma has successfully tuned the Ovation Electric Guitar
+Velma is attempting to tune the Ovation Electric Guitar
+Velma has not changed the state of the Ovation Electric Guitar, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has successfully tuned the MP3 Player
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the MP3 Player
+Velma has not changed the state of the MP3 Player, it is still tuned
+Velma is attempting to tune the Yamaha Silver Flute
+Velma has successfully tuned the Yamaha Silver Flute
+Velma is attempting to tune the Suzuki Harmonica in a key of "G"
+Velma has successfully tuned the Suzuki Harmonica in a key of "G"
+Velma does inventory to find we have $1309 worth of product
+Velma placed an order for 3 HATSs to arrive on Day 31
+Velma placed an order for 3 MANDOLINs to arrive on Day 31
+Velma placed 6 order(s) today
+Nate has come into the store looking to buy a CASSETTEPLAYER
+Velma found a Cassette Player in the inventory
+Velma shows the customer the Cassette Player, selling for $110
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Cassette Player
+Nate leaves the store
+Amber has come into the store looking to buy a CDPLAYER
+Velma finds no CDPLAYER in the inventory
+Amber leaves the store
+Mel has come into the store looking to buy a RECORDPLAYER
+Velma found a Record Player in the inventory
+Velma shows the customer the Record Player, selling for $92
+The customer buys the Record Player for $92
+Mel leaves the store
+Amber has come into the store looking to buy a BANDANAS
+Velma found a Red Bandana in the inventory
+Velma shows the customer the Red Bandana, selling for $24
+The customer buys the Red Bandana for $24
+Amber leaves the store
+Paige has come into the store looking to buy a CASSETTE
+Velma found a Back to Black by Amy Winehouse Cassette in the inventory
+Velma shows the customer the Back to Black by Amy Winehouse Cassette, selling for $80
+The customer buys the Back to Black by Amy Winehouse Cassette for $80
+Paige leaves the store
+Delaney has come into the store looking to buy a BANDANAS
+Velma found a Yellow Bandana in the inventory
+Velma shows the customer the Yellow Bandana, selling for $72
+Velma offers a 10% discount to the original price
+The customer still does not want to buy the Yellow Bandana
+Delaney leaves the store
+Delaney has come into the store looking to buy a PAPERSCORE
+Velma found a Paranoid by Black Sabbath Paper Score in the inventory
+Velma shows the customer the Paranoid by Black Sabbath Paper Score, selling for $14
+The customer buys the Paranoid by Black Sabbath Paper Score for $14
+Delaney leaves the store
+Bruce has come into the store looking to sell a PAPERSCORE
+Velma determines the To Pimp A ButterFly by Kendrick Lamar Paper Score to be in Excellent condition and the value to be $48
+Velma offers a 10% increase to the original price
+The store buys the To Pimp A ButterFly by Kendrick Lamar Paper Score in Excellent condition for $52
+Bruce leaves the store
+CJ has come into the store looking to sell a VINYL
+Velma determines the The Wall by Pink Floyd Vinyl to be in Good condition and the value to be $29
+The store buys the The Wall by Pink Floyd Vinyl in Good condition for $29
+CJ leaves the store
+Sam has come into the store looking to buy a SHIRTS
+Velma finds no SHIRTS in the inventory
+Sam leaves the store
+Delaney has come into the store looking to buy a BANDANAS
+Velma found a Yellow Bandana in the inventory
+Velma shows the customer the Yellow Bandana, selling for $72
+The customer buys the Yellow Bandana for $72
+Delaney leaves the store
+The store closes for the day and Velma begins cleaning
+Velma cleans the store without incident
+Velma leaves the store
+
+Tracker : Day 30
+Clerk      Items Sold      Items Purchased      Items Damaged 
+Shaggy     37               12                    45
+Velma      40               9                    0
+Daphne     86               31                    41
+
+ ***SIMULATION : DAY 30 HAS ENDED***
+
+ *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***
+Items in sold inventory: 
+Ten by Pearl Jam CD for $18
+Supa Dupa Fly by Missy Elliott Cassette for $66
+Songs in the Key of Life by Stevie Wonder CD for $44
+Black Bandana for $86
+Yellow Bandana for $80
+Yamaha Electric Guitar for $52
+1 meter cable for $100
+SEYDEL Harmonica in a key of "D" for $16
+Cassette Player for $18
+Gemeinhardt Alto Saxophone for $20
+Small Nirvna Hat for $38
+Boseno Harmonica in a key of "F#" for $54
+Large Red Hot Chili Peppers Hat for $74
+21 by Adele Cassette for $14
+SEYDEL Harmonica in a key of "F" for $22
+MP3 Player for $72
+Boseno Harmonica in a key of "C" for $44
+Large The Beatles Shirt for $24
+Ovation Guitar for $76
+Red Bandana for $50
+Emerson Wood Flute for $34
+Supa Dupa Fly by Missy Elliott Cassette for $68
+Record Player for $32
+Cassette Player for $2
+Back in Black by AC/DC Vinyl for $96
+Small The Rolling Stones Hat for $2
+Yamaha Alto Saxophone for $30
+Guild Bass for $62
+Guild Guitar for $86
+Songs in the Key of Life by Stevie Wonder CD for $78
+Master of Puppets by Metallica Paper Score for $18
+Yellow Bandana for $68
+Yellow Bandana for $32
+CD Player for $62
+Large Nirvna Shirt for $46
+Gemeinhardt Soprano Saxophone for $84
+Seagull Guitar for $56
+Gig Bag for $46
+4 meter cable for $8
+Violin strings for $36
+Violin strings for $64
+Bass strings for $8
+Appetite for Destruction by Guns N' Roses Paper Score for $94
+Cassette Player for $54
+Medium Aerosmith Shirt for $30
+Large The Notorious B.I.G. Hat for $4
+Red by Taylor Swift Paper Score for $28
+Illmatic by Nas Cassette for $92
+Green Bandana for $16
+Blue Bandana for $98
+Illmatic by Nas Paper Score for $34
+SEYDEL Harmonica in a key of "G" for $70
+Ten by Pearl Jam Cassette for $30
+Cassette Player for $56
+MP3 Player for $98
+Abbey Road by The Beatles CD for $48
+MP3 Player for $50
+Are You Experienced by Jimi Hendrix CD for $4
+Red Bandana for $20
+Red by Taylor Swift Paper Score for $30
+Large The Notorious B.I.G. Shirt for $30
+Cassette Player for $68
+Blood on the Tracks by Bob Dylan Cassette for $6
+Songs in the Key of Life by Stevie Wonder CD for $92
+CD Player for $78
+MP3 Player for $48
+Medium The Rolling Stones Shirt for $80
+CD Player for $8
+MP3 Player for $16
+Back to Black by Amy Winehouse Paper Score for $110
+Seagull Bass for $54
+Record Player for $44
+Red by Taylor Swift Vinyl for $50
+Small Led Zeppelin Shirt for $86
+Record Player for $84
+Fender Electric Mandolin for $38
+19 watt amp for $24
+Ten by Pearl Jam Cassette for $34
+Yamaha Mandolin for $96
+Gig Bag for $14
+Miyazawa Wood Flute for $86
+CD Player for $78
+CD Player for $48
+Back to Black by Amy Winehouse Cassette for $100
+Guild Electric Bass for $64
+Gibson Electric Mandolin for $88
+3 meter cable for $24
+Guitar strings for $28
+Guitar strings for $4
+Nevermind by Nirvana Cassette for $10
+Cassette Player for $34
+Record Player for $62
+Small Aerosmith Hat for $88
+MP3 Player for $40
+CD Player for $20
+Cassette Player for $8
+Yellow Bandana for $70
+Yamaha Alto Saxophone for $96
+Lee Oskar Harmonica in a key of "G" for $62
+Black Bandana for $68
+The Miseducation of Lauryn Hill by Lauryn Hill Vinyl for $90
+Red by Taylor Swift CD for $34
+To Pimp A ButterFly by Kendrick Lamar Vinyl for $4
+Ovation Electric Guitar for $28
+1 meter cable for $84
+5 meter cable for $94
+Cassette Player for $60
+To Pimp A ButterFly by Kendrick Lamar CD for $66
+MP3 Player for $40
+MP3 Player for $46
+Record Player for $40
+The Black Album by Jay-Z Vinyl for $66
+21 by Adele CD for $40
+Large Pearl Jam Hat for $90
+CD Player for $8
+Cassette Player for $50
+Medium Red Hot Chili Peppers Shirt for $80
+Yamaha Silver Flute for $48
+Seagull Electric Guitar for $38
+Gig Bag for $36
+Banjo strings for $78
+Gibson Mandolin for $56
+Seagull Guitar for $14
+Emerson Wood Flute for $57
+21 by Adele Vinyl for $22
+Small The Beatles Hat for $52
+Yamaha Soprano Saxophone for $76
+Seagull Electric Bass for $50
+1 meter cable for $24
+Seagull Electric Guitar for $82
+Cassette Player for $100
+Yellow Bandana for $50
+Large The Notorious B.I.G. Hat for $74
+Born to Run by Bruce Springsteen Paper Score for $94
+Suzuki Harmonica in a key of "D" for $26
+MP3 Player for $70
+SEYDEL Harmonica in a key of "G" for $56
+CD Player for $92
+Medium Nirvna Shirt for $18
+Rumors by Fleetwood Mac Cassette for $36
+The Chronic by Dr. Dre Cassette for $12
+Medium The Notorious B.I.G. Shirt for $40
+Ready to Die by The Notorious B.I.G. Cassette for $24
+What's Going On by Marvin Gaye Vinyl for $28
+Miyazawa Silver Flute for $62
+Ovation Electric Mandolin for $75
+Gig Bag for $24
+Large The Beatles Shirt for $44
+Back to Black by Amy Winehouse Paper Score for $68
+Large Pearl Jam Hat for $38
+CD Player for $64
+Large The Beatles Shirt for $66
+Cassette Player for $4
+Black Bandana for $46
+Small The Beatles Hat for $62
+Seagull Electric Mandolin for $40
+Record Player for $92
+Suzuki Harmonica in a key of "F#" for $90
+Record Player for $92
+Red Bandana for $24
+Back to Black by Amy Winehouse Cassette for $80
+Paranoid by Black Sabbath Paper Score for $14
+Yellow Bandana for $72
+The total value of the sold inventory is $4191
+Items in remaining inventory: 
+16 watt amp for $76
+18 watt amp for $18
+Miyazawa Alto Saxophone for $30
+Emerson Alto Saxophone for $88
+Emerson Soprano Saxophone for $20
+Miyazawa Wood Flute for $42
+Lee Oskar Harmonica in a key of "A" for $28
+Boseno Harmonica in a key of "F#" for $74
+Record Player for $4
+The Chronic by Dr. Dre CD for $18
+The Chronic by Dr. Dre CD for $60
+Are You Experienced by Jimi Hendrix CD for $100
+Cassette Player for $110
+Back in Black by AC/DC Paper Score for $44
+Back to Black by Amy Winehouse Vinyl for $6
+The Miseducation of Lauryn Hill by Lauryn Hill Vinyl for $54
+Gig Bag for $62
+Gig Bag for $84
+Banjo strings for $62
+Banjo strings for $52
+Guitar strings for $48
+4 meter cable for $82
+6 meter cable for $82
+2 meter cable for $18
+Washburn Bass for $44
+Gibson Electric Bass for $100
+Fender Bass for $6
+Seagull Electric Guitar for $59
+Washburn Guitar for $4
+Ovation Electric Guitar for $98
+Blue Bandana for $76
+Red Bandana for $84
+Ovation Electric Guitar for $100
+MP3 Player for $32
+MP3 Player for $26
+MP3 Player for $68
+Nevermind by Nirvana Cassette for $92
+Abbey Road by The Beatles Cassette for $36
+Yamaha Silver Flute for $82
+Red by Taylor Swift Cassette for $22
+Suzuki Harmonica in a key of "G" for $110
+To Pimp A ButterFly by Kendrick Lamar Paper Score for $104
+The Wall by Pink Floyd Vinyl for $58
+The total value of the remaining inventory is $1249
+The store has $5036 in the register
+$1000 was withdrawn from the bank
+
+ *** SIMULATION COMPLETE *** 
