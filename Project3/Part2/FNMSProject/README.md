@@ -1,0 +1,19 @@
+IMPORTANT : PROJECT HAS BEEN UPDATED TO USE MAVEN
+THIS IS REQUIRED TO BUILD (Makefile can be provided if NECESSARY)
+
+To use the Maven build tools, run these commands from /FNMSProject
+
+Compile:
+mvn compile
+
+Test:
+mvn test
+
+Run (please compile first!):
+mvn exec:java
+
+* Output will be created in a new directory \FNMSProject\output
+* Running again will overwrite previous output
+
+Clean:
+mvn clean
