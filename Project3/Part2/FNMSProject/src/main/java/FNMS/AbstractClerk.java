@@ -2,6 +2,8 @@ package FNMS;
 
 import java.util.Set;
 
+import FNMS.Customer.RequestType;
+
 // The Tune interface and its subclasses is an example of the Strategy pattern. 
 interface TuneStrategy extends Utility { public int Execute(Tuneable tuneable); }
 
@@ -63,7 +65,7 @@ abstract class AbstractClerk extends Staff {
     abstract public int Sell(Item item, int salePrice);
     abstract public int Buy(Item item, int salePrice);
     abstract public Item CheckForItem(Item.ItemType itemType);
-    abstract public int TryTransaction(Item item, boolean buying);
-    abstract public int HandleCustomer(Customer customer);
+    abstract public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying);
+    abstract public Pair<RequestType, Integer> HandleCustomer(Customer customer);
     abstract public void CleanStore();
 }

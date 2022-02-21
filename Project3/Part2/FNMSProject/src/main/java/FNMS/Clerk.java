@@ -162,7 +162,7 @@ public class Clerk extends AbstractClerk {
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
         if (item.itemType == ItemType.HATS || item.itemType == ItemType.BANDANAS || item.itemType == ItemType.SHIRTS) UpdateDiscontinuedItems();
-        return -1;
+        return 1;
     }
 
     // buy an item from a customer
@@ -180,21 +180,21 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
-    public int TryTransaction(Item item, boolean buying) {
-        if (item == null) { return 0; }
+    public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) {
+        if (item == null) { return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0)); }
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
         if (GetRandomNum(2) == 0) {
-            return (buying ? Buy(item, price) : Sell(item, price));
+            return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, price)) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, price)));
         } else {
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
             if (GetRandomNum(4) != 0) {
-                return (buying ? Buy(item, (int)(price+(price*0.1))) : Sell(item, (int)(price-(price*0.1))));
+                return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, (int)(price+(price*0.1)))) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, (int)(price-(price*0.1)))));
             } else {
                 Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
             }
         }
-        return 0;
+        return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0));
     }
 
     public Item CheckForItem(Item.ItemType itemType) {
@@ -208,11 +208,11 @@ public class Clerk extends AbstractClerk {
         return null;
     }
 
-    public int HandleCustomer(Customer customer) {
+    public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         RequestType request = customer.MakeRequest();
         if (store_.discontinued_.contains(customer.GetItemType())) { 
             Print(name_ + " tells the customer we no longer deal in " + customer.GetItemType()); 
-            return 0;
+            return new Pair<RequestType, Integer>(request, 0);
         } 
         return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
         /* alternate implementation for adding in more customer requests (ie 'trade')

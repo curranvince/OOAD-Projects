@@ -5,7 +5,8 @@
 package FNMS;
 
 import java.util.*;
-import java.lang.Math;
+
+import FNMS.Customer.RequestType;
 
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
@@ -116,9 +117,17 @@ class Store extends Publisher implements Utility {
         itemssold = itemsbought = 0;
         // make custoemrs and have clerk handle their request
         for (Customer customer : GenerateCustomers()) {
-            int result = activeClerk_.HandleCustomer(customer);
-            if (result > 0) itemsbought += result; 
-            else if (result < 0) itemssold += Math.abs(result);
+            Pair<RequestType, Integer> results = activeClerk_.HandleCustomer(customer);
+            switch (results.getKey()) {
+                case Buy:
+                    itemssold += results.getValue();
+                    break;
+                case Sell:
+                    itemsbought += results.getValue();
+                    break;
+                default:
+                    break;
+            }
             customer.LeaveStore();
         }
         // publish number of items sold and bought throughout day

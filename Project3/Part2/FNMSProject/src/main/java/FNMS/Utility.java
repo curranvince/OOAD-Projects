@@ -3,6 +3,20 @@ package FNMS;
 import java.util.Random;
 
 interface Utility {
+    class Pair<K, V> {
+        private K key_;
+        private V value_;
+    
+        Pair(K key, V value) {
+            key_ = key;
+            value_ = value;
+        }
+    
+        public K getKey() { return key_; }
+        public V getValue() { return value_; }
+        public void updateValue(V value) { value_ = value; }
+    }
+    // https://docs.oracle.com/javase/tutorial/java/generics/types.html
     // So theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
     // Make print easier

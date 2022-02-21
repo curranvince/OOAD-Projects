@@ -17,11 +17,11 @@ abstract class Item implements ItemUtility {
     int day_sold_;
 
     public enum ItemType {
-        PAPERSCORE,     // 0 Music
+        PAPERSCORE,     // 0  Music
         CD,             // 1
         VINYL,          // 2
         CASSETTE,       // 3
-        CDPLAYER,       // 4 Players
+        CDPLAYER,       // 4  Players
         RECORDPLAYER,   // 5  
         MP3PLAYER,      // 6
         CASSETTEPLAYER, // 7

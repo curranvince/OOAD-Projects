@@ -2,6 +2,8 @@ package FNMS;
 
 import java.util.Set;
 
+import FNMS.Customer.RequestType;
+
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
 // https://refactoring.guru/design-patterns/decorator/java/example
 // This is an example of the Decorator pattern (both classes in this file make it up)
@@ -27,8 +29,8 @@ abstract class ClerkDecorator extends AbstractClerk {
     public int PlaceOrders(Set<Item.ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
     public int Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
     public int Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
-    public int TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
-    public int HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
+    public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
+    public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
     public Item CheckForItem(Item.ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
@@ -41,9 +43,9 @@ class ClerkSellDecorator extends ClerkDecorator {
     }
 
 // decorated sell method to sell accessories when a stringed instrument is sold
-    public int HandleCustomer(Customer customer) {
-        int result = super.HandleCustomer(customer);
-        if ((result < 0) && (customer.GetItemType().ordinal() > 7) && (customer.GetItemType().ordinal() < 11)) {
+    public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
+        Pair<RequestType, Integer> result = super.HandleCustomer(customer);
+        if ((result.getKey() == RequestType.Buy) && (customer.GetItemType().ordinal() > 7) && (customer.GetItemType().ordinal() < 11)) {
             // if we just sold a stringed instrument
             int chances[] = {10,15,20,30};
             Item.ItemType types[] = { Item.ItemType.GIGBAG, Item.ItemType.PRACTICEAMPS, Item.ItemType.CABLES, Item.ItemType.STRINGS };
@@ -61,7 +63,7 @@ class ClerkSellDecorator extends ClerkDecorator {
                     for (int j = 0; j < num; j++) {
                         Print("The customer decides they also want to buy a " + types[i].name());
                         Item toSell = super.CheckForItem(types[i]);
-                        if (toSell != null)  result += super.Sell(toSell, toSell.list_price_);
+                        if (toSell != null)  result.updateValue(result.getValue()+super.Sell(toSell, toSell.list_price_));
                     }
                 }
             }
