@@ -173,6 +173,7 @@ public class Clerk extends AbstractClerk {
 
 //TO DO
 //Check if we still sell the item, if we dont: tell customer
+// buying represents if the STORE is buying
     public int TryTransaction(Item item, boolean buying) {
         if (item == null) { return 0; }
 // if (!store_.StillSells(item.ItemType)) {Print(), return 0} 
@@ -203,7 +204,7 @@ public class Clerk extends AbstractClerk {
     }
 
     public int HandleCustomer(Customer customer) {
-        return ((customer.MakeRequest() == 1) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
+        return ((customer.MakeRequest() == Customer.RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
             case -1: 

@@ -1,10 +1,16 @@
-// Customer can be extended to make customers with new types of requests, like trade or fix
 package FNMS;
+
+// Customer can be extended to make customers with new types of requests, like trade or fix
 abstract class Customer implements Utility {
     // all customers have a name, request, and type of item they're interested in
     protected String name_;
-    protected int request_;
+    protected RequestType request_;
     protected Item item_;
+
+    public enum RequestType {
+        Buy,
+        Sell
+    }
 
     Customer() {
         name_ = CreateName();
@@ -14,8 +20,8 @@ abstract class Customer implements Utility {
     public Item GetItem() { return item_; }
     public Item.ItemType GetItemType() { return item_.itemType; }
     
-    public int MakeRequest() { 
-        Print(name_ + " has come into the store looking to " + ((request_ == 1) ? "buy" : "sell") + " a " + item_.itemType.name()); 
+    public RequestType MakeRequest() { 
+        Print(name_ + " has come into the store looking to " + ((request_ == RequestType.Buy) ? "buy" : "sell") + " a " + item_.itemType.name()); 
         return request_;
     }
 
@@ -44,13 +50,13 @@ abstract class Customer implements Utility {
 class Buyer extends Customer {
     public Buyer() {
         super();
-        request_ = 1;
+        request_ = RequestType.Buy;
     }
 }
 
 class Seller extends Customer {
     public Seller() {
         super();
-        request_ = -1;
+        request_ = RequestType.Sell;
     }
 }
