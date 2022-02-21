@@ -1,6 +1,10 @@
 package FNMS;
 
 import java.util.Random;
+import java.util.List;
+
+import FNMS.Item.ItemType;
+import FNMS.Item.Size;
 
 interface Utility {
     // Pair class for.. making pairs
@@ -19,13 +23,13 @@ interface Utility {
         public void updateValue(V value) { value_ = value; }
     }
     
-    // So theres only one 'random' instead of instantiating everywhere
+    // make sure theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
     
-    // Make print easier
+    // make printing simpler
     default void Print(String str) { System.out.println(str); }
     
-    // Make getting rand nums easier
+    // simple methods for getting random nums
     default int GetRandomNum(int range) { return random.nextInt(range); }
     default int GetRandomNum(int min, int max) { return random.nextInt(max-min) + min; }
     default int GetRandomNumEx(int min, int max, int exclude) {
@@ -36,10 +40,20 @@ interface Utility {
         }
         return rando;
     }
+    default int GetRandomNumEx(int min, int max, List<Integer> excludes) {
+        int rando = random.nextInt(max-min) + min;
+        while (excludes.contains(rando)) {
+            if (rando < (max-1)) rando++;
+            else rando = min;
+        }
+        return rando;
+    }
     
     // return random member of Item enums
-    default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Item.Size.values().length)]; }
-    default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(Item.ItemType.values().length)]; }
+    default Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Size.values().length)]; }
+    default ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(ItemType.values().length)]; }
+    
+    default boolean IsClothing(ItemType itemType) { return (itemType == ItemType.HATS || itemType == ItemType.BANDANAS || itemType == ItemType.SHIRTS); }
     
     // return a random Item condition
     default String GetRandomCondition() {

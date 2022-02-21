@@ -18,10 +18,10 @@ abstract class Customer implements Utility {
     }
     
     public Item GetItem() { return item_; }
-    public Item.ItemType GetItemType() { return item_.itemType; }
+    public Item.ItemType GetItemType() { return item_.itemType_; }
     
     public RequestType MakeRequest() { 
-        Print(name_ + " has come into the store looking to " + ((request_ == RequestType.Buy) ? "buy" : "sell") + " a " + item_.itemType.name()); 
+        Print(name_ + " has come into the store looking to " + ((request_ == RequestType.Buy) ? "buy" : "sell") + " a " + item_.itemType_.name()); 
         return request_;
     }
 

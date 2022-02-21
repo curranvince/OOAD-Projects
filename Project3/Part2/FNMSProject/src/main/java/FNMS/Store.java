@@ -82,16 +82,25 @@ class Store extends Publisher implements Utility {
         activeClerk_.CloseStore();
     }
 
-    // Having the methods in this class private is an example of Encapsulation
     public void ChooseClerk() {
-        // pick one of the clerks
-        int rando = GetRandomNum(clerks_.size());
-        // if the clerk has already worked 3 days in a row, have someone else work
-        activeClerk_ = (clerks_.get(rando).GetDaysWorked() < 3) ? clerks_.get(rando) : clerks_.get(GetRandomNumEx(0, clerks_.size(), rando));
-// TO DO handle clerk being sick
-        // increment days worked for todays clerked
+        // 10% chance that one random clerk is sick
+        List<Integer> cantWorkIDs = new ArrayList<>();
+        if (GetRandomNum(10) == 0) {
+            int cantWorkID = GetRandomNum(clerks_.size());
+            cantWorkIDs.add(cantWorkID);
+            Print(clerks_.get(cantWorkID).GetName() + " is sick, so they can't work today");
+        }
+        // check if any clerk worked 3 days in a row
+        for (int i = 0; i < clerks_.size(); i++) {
+            if (clerks_.get(i).GetDaysWorked() == 3) {
+                cantWorkIDs.add(i);
+                Print(clerks_.get(i).GetName() + " has worked three days in a row, so they can't work today");
+            }
+        }
+        // pick from remaining clerks
+        activeClerk_ = clerks_.get(GetRandomNumEx(0, clerks_.size(), cantWorkIDs));
+        // update days worked for all clerks
         activeClerk_.IncrementDaysWorked();
-        // reset other clerks days worked
         for (Staff clerk : clerks_) {
             if (clerk != activeClerk_) clerk.ResetDaysWorked();
         }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 // one of its concrete subclasses
 abstract class Item implements ItemUtility {
     List<Component> components_ = new ArrayList<Component>();
-    ItemType itemType;
+    ItemType itemType_;
     String name_;
     int purchase_price_;
     int list_price_;
@@ -140,28 +140,28 @@ abstract class Music extends Item {
 class CD extends Music { 
     CD() { 
         name_ += " CD"; 
-        itemType = ItemType.CD;
+        itemType_ = ItemType.CD;
     }
 }
 
 class Vinyl extends Music {
     Vinyl() { 
         name_ += " Vinyl"; 
-        itemType = ItemType.VINYL;
+        itemType_ = ItemType.VINYL;
     }
 }
 
 class PaperScore extends Music {
     PaperScore() { 
         name_ += " Paper Score"; 
-        itemType = ItemType.PAPERSCORE;
+        itemType_ = ItemType.PAPERSCORE;
     }
 }
 
 class Cassette extends Music {
     Cassette() {
         name_ += " Cassette";
-        itemType = ItemType.CASSETTE;
+        itemType_ = ItemType.CASSETTE;
     }
 }
 
@@ -172,7 +172,7 @@ abstract class Players extends Item {
 class CDPlayer extends Players { 
     CDPlayer() { 
         name_ += "CD Player"; 
-        itemType = ItemType.CDPLAYER;
+        itemType_ = ItemType.CDPLAYER;
     }
 
 }
@@ -180,21 +180,21 @@ class CDPlayer extends Players {
 class RecordPlayer extends Players {
     RecordPlayer() { 
         name_ += "Record Player";
-        itemType = ItemType.RECORDPLAYER;
+        itemType_ = ItemType.RECORDPLAYER;
     }
 }
 
 class MP3Player extends Players {
     MP3Player() { 
         name_ += "MP3 Player";
-        itemType = ItemType.MP3PLAYER;
+        itemType_ = ItemType.MP3PLAYER;
     }
 }
 
 class CassettePlayer extends Players {
     CassettePlayer() {
         name_ += "Cassette Player";
-        itemType = ItemType.CASSETTEPLAYER;
+        itemType_ = ItemType.CASSETTEPLAYER;
     }
 }
 
@@ -215,21 +215,21 @@ abstract class Stringed extends Instruments {
 class Guitar extends Stringed {
     Guitar() {
         name_ += "Guitar";
-        itemType = ItemType.GUITAR;
+        itemType_ = ItemType.GUITAR;
     }
 }
 
 class Bass extends Stringed {
     Bass() {
         name_ += "Bass";
-        itemType = ItemType.BASS;
+        itemType_ = ItemType.BASS;
     }
 }
 
 class Mandolin extends Stringed {
     Mandolin() {
         name_ += "Mandolin";
-        itemType = ItemType.MANDOLIN;
+        itemType_ = ItemType.MANDOLIN;
     }
 }
 
@@ -243,7 +243,7 @@ class Flute extends Wind {
     Flute() {
         type_= (GetRandomNum(2) == 0) ? " Silver " : " Wood ";
         name_ += GetFluteBrand() + type_ + "Flute";
-        itemType = ItemType.FLUTE;
+        itemType_ = ItemType.FLUTE;
     }
 }
 
@@ -253,7 +253,7 @@ class Harmonica extends Wind {
     Harmonica() {
         key_= GetHarmonicaKey();
         name_ += GetHarmonicaBrand() + " Harmonica in a key of \"" + key_ + "\"";
-        itemType = ItemType.HARMONICA;
+        itemType_ = ItemType.HARMONICA;
     }
 }
 
@@ -263,7 +263,7 @@ class Saxophone extends Wind {
     Saxophone() {
         type_= (GetRandomNum(2) == 0) ? " Soprano " : " Alto ";
         name_ += GetFluteBrand() + type_ + "Saxophone";
-        itemType = ItemType.SAXOPHONE;
+        itemType_ = ItemType.SAXOPHONE;
     }
 }
 
@@ -275,7 +275,7 @@ class Hats extends Clothing {
     Hats() {
         size_ = GetRandomSize();
         name_ += size_.name() + " " + GetClothingBrand() + " Hat";
-        itemType = ItemType.HATS;
+        itemType_ = ItemType.HATS;
     }
 }
 
@@ -285,14 +285,14 @@ class Shirts extends Clothing {
     Shirts() {
         size_ = GetRandomSize();
         name_ += size_.name() + " " + GetClothingBrand() + " Shirt";
-        itemType = ItemType.SHIRTS;
+        itemType_ = ItemType.SHIRTS;
     }
 }
 
 class Bandanas extends Clothing {
     Bandanas() {
         name_ +=  GetBandanaColor() + " Bandana";
-        itemType = ItemType.BANDANAS;
+        itemType_ = ItemType.BANDANAS;
     }
 }
 
@@ -304,7 +304,7 @@ class PracticeAmps extends Accessories {
     PracticeAmps() {
         wattage_ = GetRandomNum(10, 21);
         name_ += wattage_ + " watt amp";
-        itemType = ItemType.PRACTICEAMPS;
+        itemType_ = ItemType.PRACTICEAMPS;
     }
 }
 
@@ -314,7 +314,7 @@ class Cables extends Accessories {
     Cables() {
         length_ = GetRandomNum(1, 7);
         name_ += length_ + " meter cable";
-        itemType = ItemType.CABLES;
+        itemType_ = ItemType.CABLES;
     }
 }
 
@@ -324,13 +324,13 @@ class Strings extends Accessories {
     Strings() {
         type_ = GetStringsType();
         name_ += type_ + " strings";
-        itemType = ItemType.STRINGS;
+        itemType_ = ItemType.STRINGS;
     }
 }
 
 class GigBag extends Accessories {
     GigBag() {
         name_ += "Gig Bag";
-        itemType = ItemType.GIGBAG;
+        itemType_ = ItemType.GIGBAG;
     }
 }

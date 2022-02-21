@@ -13,7 +13,7 @@ public class ItemFactoryTest {
     public void testItems() {
         for (Item.ItemType itemType : Item.ItemType.values()) {
             item = ItemFactory.MakeItem(itemType.name());
-            assertTrue(item.itemType == itemType, "Factory should be able to create items of type" + itemType.name());
+            assertTrue(item.itemType_ == itemType, "Factory should be able to create items of type" + itemType.name());
         }
     }
 }

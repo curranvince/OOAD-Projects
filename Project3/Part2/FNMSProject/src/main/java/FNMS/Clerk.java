@@ -57,7 +57,7 @@ public class Clerk extends AbstractClerk {
     private int GetNumItemsByType(Item.ItemType itemType) {
         int num = 0;
         for (Item item : store_.inventory_) {
-            if (item.itemType == itemType) num++;
+            if (item.itemType_ == itemType) num++;
         }
         return num;
     }
@@ -79,7 +79,7 @@ public class Clerk extends AbstractClerk {
         while (it.hasNext()) {
             Item item = it.next();
             // remove this type from the list of types we need to order
-            if (orderTypes.contains(item.itemType)) orderTypes.remove(item.itemType);
+            if (orderTypes.contains(item.itemType_)) orderTypes.remove(item.itemType_);
             // tune certain items
             if (item.GetComponent(Tuneable.class) != null) {
                 if (!Tune(item)) {
@@ -161,7 +161,7 @@ public class Clerk extends AbstractClerk {
         store_.inventory_.remove(item);
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
-        if (item.itemType == ItemType.HATS || item.itemType == ItemType.BANDANAS || item.itemType == ItemType.SHIRTS) UpdateDiscontinuedItems();
+        if (IsClothing(item.itemType_)) UpdateDiscontinuedItems();
         return 1;
     }
 
@@ -199,7 +199,7 @@ public class Clerk extends AbstractClerk {
 
     public Item CheckForItem(Item.ItemType itemType) {
         for (Item item : store_.inventory_) {
-            if (item.itemType == itemType) {
+            if (item.itemType_ == itemType) {
                 Print(name_ + " found a " + item.name_ + " in the inventory");
                 return item;
             }
@@ -231,12 +231,11 @@ public class Clerk extends AbstractClerk {
         Print("The store closes for the day and " + name_ + " begins cleaning");
         if (GetRandomNum(100) < break_percentage_) { 
             // pick a random item for the clerk to break
-            int breakIndex = GetRandomNum(store_.inventory_.size());
-            Item toBreak = store_.inventory_.get(breakIndex);
+            Item toBreak = store_.inventory_.get(GetRandomNum(store_.inventory_.size()));
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
             // lower condition of item and remove if it fully breaks
             if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
-            if (toBreak.itemType == ItemType.HATS || toBreak.itemType == ItemType.BANDANAS || toBreak.itemType == ItemType.SHIRTS) UpdateDiscontinuedItems();
+            if (IsClothing(toBreak.itemType_)) UpdateDiscontinuedItems();
             Publish("damagedcleaning", 1);
         } else {
             // nothing breaks
