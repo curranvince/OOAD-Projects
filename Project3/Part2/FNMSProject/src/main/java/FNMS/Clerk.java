@@ -25,8 +25,7 @@ public class Clerk extends AbstractClerk {
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
                     toAdd.day_arrived = Simulation.current_day_;
-                    store_.inventory_.add(toAdd);
-                    store_.register_.TakeMoney(toAdd.purchase_price_);
+                    if (store_.register_.TakeMoney(toAdd.purchase_price_)) store_.inventory_.add(toAdd);
                 }
                 orders_received += 3;
             }
