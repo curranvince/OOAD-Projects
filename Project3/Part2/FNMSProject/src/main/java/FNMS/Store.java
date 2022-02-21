@@ -130,7 +130,7 @@ class Store extends Publisher implements Utility {
         // make vector to return
         Vector<Customer> toServe = new Vector<Customer>();
         // get random amounts of buyers and sellers in range
-        int buyers = GetRandomNum(4, 11);
+        int buyers = 2 + GetPoissonRandom(3);
         int sellers = GetRandomNum(1, 5);
         // create buyers and sellers
         for (int i = 0; i < buyers; i++) { toServe.add(new Buyer()); }

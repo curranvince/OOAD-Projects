@@ -41,6 +41,19 @@ interface Utility {
         return rando;
     }
     
+    // https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
+    // https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
+    default int GetPoissonRandom(int mean) {
+        double L = Math.exp(-mean);
+        int k = 0;
+        double p = 1.0;
+        do {
+            p = p*random.nextDouble();
+            k++;
+        } while (p > L);
+        return k-1;
+    }
+
     // return random member of Item enums
     default Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Size.values().length)]; }
     default ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(ItemType.values().length)]; }
