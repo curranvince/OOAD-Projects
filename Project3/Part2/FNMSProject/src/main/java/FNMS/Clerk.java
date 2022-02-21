@@ -179,17 +179,24 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
+    // handle buying or selling
     public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) {
         if (item == null) { return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0)); }
+        // get price based off condition, or list price
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
+        // 50% chance to complete transaction
         if (GetRandomNum(2) == 0) {
+            // buy or sell the item at price
             return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, price)) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, price)));
         } else {
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
+            // 75% chance to complete transaction
             if (GetRandomNum(4) != 0) {
+                // buy or sell item at price +/- 10%
                 return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, (int)(price+(price*0.1)))) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, (int)(price-(price*0.1)))));
             } else {
+                // customer does not want to complete transaction after new price
                 Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
             }
         }
