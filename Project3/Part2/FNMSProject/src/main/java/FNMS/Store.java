@@ -111,15 +111,14 @@ class Store extends Publisher implements Utility {
             cantWorkIDs.add(cantWorkID);
             Print(clerks_.get(cantWorkID).GetName() + " is sick, so they can't work today");
         }
-        // check if any clerk worked 3 days in a row
-        for (int i = 0; i < clerks_.size(); i++) {
-            if (clerks_.get(i).GetDaysWorked() == 3) {
-                cantWorkIDs.add(i);
-                Print(clerks_.get(i).GetName() + " has worked three days in a row, so they can't work today");
-            }
+        // choose a clerk
+        int id = GetRandomNumEx(0, clerks_.size(), cantWorkIDs);
+        activeClerk_ = clerks_.get(id);
+        // if they worked 3 days in a row pick someone else
+        if (activeClerk_.GetDaysWorked() == 3) { 
+            cantWorkIDs.add(id);
+            activeClerk_ = clerks_.get(GetRandomNumEx(0, clerks_.size(), cantWorkIDs));
         }
-        // pick from remaining clerks
-        activeClerk_ = clerks_.get(GetRandomNumEx(0, clerks_.size(), cantWorkIDs));
         // update days worked for all clerks
         activeClerk_.IncrementDaysWorked();
         for (Staff clerk : clerks_) {
