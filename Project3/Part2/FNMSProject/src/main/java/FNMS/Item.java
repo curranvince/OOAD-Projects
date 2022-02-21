@@ -1,12 +1,13 @@
 package FNMS;
 
-import java.util.Vector;
+import java.util.List;
+import java.util.ArrayList;
 
 // Item is an example of an abstraction
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
 abstract class Item implements ItemUtility {
-    Vector<Component> components_;
+    List<Component> components_ = new ArrayList<Component>();
     ItemType itemType;
     String name_;
     int purchase_price_;
@@ -47,7 +48,6 @@ abstract class Item implements ItemUtility {
     }
 
     Item() {
-        components_ = new Vector<Component>();
         name_ = "";
         // Items have a purchase price $1-50, and list price is double
         purchase_price_ = GetRandomNum(1, 51);

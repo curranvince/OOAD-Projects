@@ -20,15 +20,15 @@ abstract class Publisher {
 }
 
 class Store extends Publisher implements Utility {
-    private Vector<AbstractClerk> clerks_ = new Vector<AbstractClerk>();
+    private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private AbstractClerk activeClerk_;
 
     public int total_withdrawn_ = 0;
     public CashRegister register_ = new CashRegister();
-    public Vector<Item> inventory_ = new Vector<Item>();
-    public Vector<Item> sold_ = new Vector<Item>();
-    public Vector<Item.ItemType> discontinued_ = new Vector<Item.ItemType>();
-    public HashMap<Integer, Vector<Item.ItemType>> orders_ = new HashMap<Integer, Vector<Item.ItemType>>();
+    public List<Item> inventory_ = new ArrayList<Item>();
+    public List<Item> sold_ = new ArrayList<Item>();
+    public List<Item.ItemType> discontinued_ = new ArrayList<Item.ItemType>();
+    public HashMap<Integer, List<Item.ItemType>> orders_ = new HashMap<Integer, List<Item.ItemType>>();
     
     Store() {
         // store start with 3 of each item
@@ -146,7 +146,7 @@ class Store extends Publisher implements Utility {
     public void DisplayInventory(boolean sold) {
         int total = 0;
         Print("Items in " +  (sold ? "sold" : "remaining") + " inventory: ");
-        Vector<Item> items = (sold ? sold_ : inventory_);
+        List<Item> items = (sold ? sold_ : inventory_);
         for (Item item : items) {
             item.Display();
             total += item.purchase_price_;

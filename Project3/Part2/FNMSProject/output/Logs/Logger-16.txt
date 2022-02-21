@@ -1,11 +1,11 @@
-Shaggy arrived at the store
-Shaggy added 0 items to inventory
-Shaggy checked register to find $3434
-Shaggy damaged 8 items while tuning
-Shaggy counted 41 items in inventory
-Shaggy found the store's inventory is worth $1022
-Shaggy ordered 3 items
-Shaggy sold 2 items
-Shaggy purchased 2 items
-Shaggy damaged 0 item(s) while cleaning
-Shaggy left the store
+Daphne arrived at the store
+Daphne added 3 items to inventory
+Daphne checked register to find $3751
+Daphne damaged 4 items while tuning
+Daphne counted 44 items in inventory
+Daphne found the store's inventory is worth $1229
+Daphne ordered 0 items
+Daphne sold 8 items
+Daphne purchased 3 items
+Daphne damaged 0 item(s) while cleaning
+Daphne left the store

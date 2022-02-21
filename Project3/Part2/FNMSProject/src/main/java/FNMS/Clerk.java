@@ -26,7 +26,7 @@ public class Clerk extends AbstractClerk {
                     Item toAdd = ItemFactory.MakeItem(type.name());
                     toAdd.day_arrived = Simulation.current_day_;
                     store_.inventory_.add(toAdd);
-                    store_.register_.TakeMoney(store_.inventory_.lastElement().purchase_price_);
+                    store_.register_.TakeMoney(toAdd.purchase_price_);
                 }
                 orders_received += 3;
             }
@@ -104,7 +104,7 @@ public class Clerk extends AbstractClerk {
         // remove discontinued items
         orderTypes.removeAll(store_.discontinued_);
         // remove items weve already ordered
-        for (Vector<Item.ItemType> vec : store_.orders_.values()) { orderTypes.removeAll(vec); }
+        for (List<Item.ItemType> vec : store_.orders_.values()) { orderTypes.removeAll(vec); }
         // place orders
         if (!orderTypes.isEmpty()) { 
             for (Item.ItemType type : orderTypes) {
