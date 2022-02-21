@@ -3,6 +3,8 @@ package FNMS;
 import java.util.Random;
 
 interface Utility {
+    // Pair class for.. making pairs
+    // https://docs.oracle.com/javase/tutorial/java/generics/types.html
     class Pair<K, V> {
         private K key_;
         private V value_;
@@ -16,11 +18,13 @@ interface Utility {
         public V getValue() { return value_; }
         public void updateValue(V value) { value_ = value; }
     }
-    // https://docs.oracle.com/javase/tutorial/java/generics/types.html
+    
     // So theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
+    
     // Make print easier
     default void Print(String str) { System.out.println(str); }
+    
     // Make getting rand nums easier
     default int GetRandomNum(int range) { return random.nextInt(range); }
     default int GetRandomNum(int min, int max) { return random.nextInt(max-min) + min; }
@@ -34,8 +38,8 @@ interface Utility {
     }
     
     // return random member of Item enums
-    default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(3)]; }
-    default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(17)]; }
+    default Item.Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Item.Size.values().length)]; }
+    default Item.ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(Item.ItemType.values().length)]; }
     
     // return a random Item condition
     default String GetRandomCondition() {

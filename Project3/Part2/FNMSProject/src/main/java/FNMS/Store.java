@@ -40,7 +40,7 @@ class Store extends Publisher implements Utility {
             }
         }
         // make decorated clerks with break chances & tuning algorithms
-        clerks_.add(new ClerkSellDecorator(new Clerk("Shaggy", 20, new HaphazardTune(), this)));
+        clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune(), this)); // Shaggy is lazy - so he does not try to sell extra items when Stringed instruments are sold
         clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
         clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
