@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.Test;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
 
 /**
  * Unit tests for Register class

@@ -5,6 +5,7 @@ FNMS/Saxophone.class
 FNMS/Instruments.class
 FNMS/RecordPlayer.class
 FNMS/TuneStrategy.class
+FNMS/Customer$RequestType.class
 FNMS/App.class
 FNMS/Store.class
 FNMS/Wind.class
