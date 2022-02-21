@@ -1,9 +1,10 @@
-// https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
-// https://refactoring.guru/design-patterns/decorator/java/example
-// This is an example of the Decorator pattern
 package FNMS;
+
 import java.util.Set;
 
+// https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
+// https://refactoring.guru/design-patterns/decorator/java/example
+// This is an example of the Decorator pattern (both classes in this file make it up)
 abstract class ClerkDecorator extends AbstractClerk {
     protected AbstractClerk decoratedStaff_;
 

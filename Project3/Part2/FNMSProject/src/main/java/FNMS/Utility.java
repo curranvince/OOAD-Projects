@@ -2,7 +2,7 @@ package FNMS;
 
 import java.util.Random;
 
-public interface Utility {
+interface Utility {
     // So theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
     // Make print easier
@@ -62,7 +62,9 @@ public interface Utility {
                 return 1000000;
         }
     }
+}
 
+interface ItemUtility extends Utility {
     default String[] GetMusicTitle() {
         String[][] combos = {
             {"Ten", "Pearl Jam"},

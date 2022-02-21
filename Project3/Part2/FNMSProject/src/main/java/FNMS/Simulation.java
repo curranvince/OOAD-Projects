@@ -1,6 +1,8 @@
 package FNMS;
+
 import java.io.*;
-// Takes inspiration from Professors source code for Project 2
+
+// Class as a whole inspiration from Professors source code for Project 2
 public class Simulation implements Utility {
     Store store_ = new Store();
     static int current_day_;

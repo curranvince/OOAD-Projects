@@ -1,13 +1,11 @@
 package FNMS;
+
 import java.util.*;
 
 import FNMS.Customer.RequestType;
 import FNMS.Item.ItemType;
 
 public class Clerk extends AbstractClerk {
-    // This is an example of Encapsulation
-    // Only the clerk has info about their break percentage
-    // and can 'do' things with  it
     
     public Clerk(String name, int break_percentage, TuneStrategy tune, Store store) {
         name_ = name;

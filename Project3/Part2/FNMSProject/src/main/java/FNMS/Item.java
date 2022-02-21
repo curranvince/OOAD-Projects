@@ -1,10 +1,11 @@
 package FNMS;
+
 import java.util.Vector;
 
 // Item is an example of an abstraction
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
-abstract class Item implements Utility {
+abstract class Item implements ItemUtility {
     Vector<Component> components_;
     ItemType itemType;
     String name_;

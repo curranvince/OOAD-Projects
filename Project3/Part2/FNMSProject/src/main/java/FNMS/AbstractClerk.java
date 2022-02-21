@@ -50,7 +50,8 @@ class ElectronicTune implements TuneStrategy {
     }
 }
 
-// extended by both Clerk and ClerkDecorator
+// break percentage and tune strategy are examples of encapsulation
+// those data members are hidden from classes which do not inherit AbstractClerk
 abstract class AbstractClerk extends Staff {
     protected int break_percentage_;
     protected TuneStrategy tune_strategy_;
