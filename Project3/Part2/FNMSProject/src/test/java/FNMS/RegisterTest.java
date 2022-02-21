@@ -13,37 +13,37 @@ import org.junit.jupiter.api.DisplayName;
  */
 public class RegisterTest 
 {
-    CashRegister register = new CashRegister();
+    Store store = new Store();
 
     @Test
     @DisplayName("Cash register should initialize with no money")
     public void testInit()
     {
-        assertEquals(0, register.GetAmount(), "Register should have no money");
+        assertEquals(0, store.register_.GetAmount(), "Register should have no money");
     }
 
     @Test
     @DisplayName("Should be able to add money to Cash Register")
     public void testAdd()
     {
-        register.AddMoney(10);
-        assertEquals(10, register.GetAmount(), "Register should have 10");
-        register.AddMoney(10);
-        assertEquals(20, register.GetAmount(), "Register should have 20");
-        register.AddMoney(100);
-        assertEquals(120, register.GetAmount(), "Register should have 120");
-        register.AddMoney(1000);
-        assertEquals(1120, register.GetAmount(), "Register should have 1120");
+        store.register_.AddMoney(10);
+        assertEquals(10, store.register_.GetAmount(), "Register should have 10");
+        store.register_.AddMoney(10);
+        assertEquals(20, store.register_.GetAmount(), "Register should have 20");
+        store.register_.AddMoney(100);
+        assertEquals(120, store.register_.GetAmount(), "Register should have 120");
+        store.register_.AddMoney(1000);
+        assertEquals(1120, store.register_.GetAmount(), "Register should have 1120");
     }
 
     @Test
     @DisplayName("Should be able to take money from Cash Register")
     public void testTake()
     {
-        assertFalse( register.TakeMoney(100), "Should not be able to take money from empty register" );
-        assertEquals( 0, register.GetAmount(), "Register should still be 0 after taking $ when empty" );
-        register.AddMoney(50);
-        register.TakeMoney(20);
-        assertEquals( 30, register.GetAmount(), "Register should equal 30 after adding 50 and taking 20" );
+        assertFalse( store.register_.TakeMoney(100), "Should not be able to take money from empty register" );
+        assertEquals( 0, store.register_.GetAmount(), "Register should still be 0 after taking $ when empty" );
+        store.register_.AddMoney(50);
+        store.register_.TakeMoney(20);
+        assertEquals( 30, store.register_.GetAmount(), "Register should equal 30 after adding 50 and taking 20" );
     }
 }
