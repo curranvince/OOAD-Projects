@@ -9,8 +9,7 @@
   <version>1.0</version>
 
   <name>FNMSProject</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/curranvince/OOAD-Projects</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,7 +17,8 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
-
+  <!-- https://maven.apache.org/plugins-archives/maven-surefire-plugin-2.12.4/examples/junit.html -->
+  <!-- include junit jupiter for nice testing features -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -64,6 +64,7 @@
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
         </plugin>
+        <!-- add exec command so we can run project from cmd line -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
