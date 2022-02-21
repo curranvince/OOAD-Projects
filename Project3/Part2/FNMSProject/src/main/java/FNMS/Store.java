@@ -1,5 +1,7 @@
 // TO DO
 // Alter number of buyers arriving to store
+// Clerks may be sick
+
 package FNMS;
 
 import java.util.*;
@@ -13,8 +15,9 @@ class Store extends Publisher implements Utility {
     public CashRegister register_ = new CashRegister();
     public Vector<Item> inventory_ = new Vector<Item>();
     public Vector<Item> sold_ = new Vector<Item>();
+    public Vector<Item.ItemType> discontinued_ = new Vector<Item.ItemType>();
     public HashMap<Integer, Vector<Item.ItemType>> orders_ = new HashMap<Integer, Vector<Item.ItemType>>();
-
+    
     Store() {
         // store start with 3 of each item
         // Making the items is an example of Identity
@@ -30,6 +33,11 @@ class Store extends Publisher implements Utility {
         clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
     
+    public void Discontiue(Item.ItemType itemType) { 
+        Print("The store has officially discontinued " + itemType);
+        discontinued_.add(itemType); 
+    }
+
     // override subscribe to also have all workers also be subscribed to
     @Override
     public void Subscribe(Subscriber subscriber) { 

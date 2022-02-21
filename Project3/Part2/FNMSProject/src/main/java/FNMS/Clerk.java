@@ -1,9 +1,8 @@
-//TO DO
-// Stop selling clothing (and buying from customers)
-// Clerk may be sick
-// Decorate sell method
 package FNMS;
 import java.util.*;
+
+import FNMS.Customer.RequestType;
+import FNMS.Item.ItemType;
 
 public class Clerk extends AbstractClerk {
     // This is an example of Encapsulation
@@ -57,10 +56,25 @@ public class Clerk extends AbstractClerk {
         Publish("checkedregister", store_.register_.GetAmount());
     }
 
+    private int GetNumItemsByType(Item.ItemType itemType) {
+        int num = 0;
+        for (Item item : store_.inventory_) {
+            if (item.itemType == itemType) num++;
+        }
+        return num;
+    }
+
+    private void UpdateDiscontinuedItems() {
+        ItemType[] types = { ItemType.HATS, ItemType.BANDANAS, ItemType.SHIRTS };
+        for (ItemType type : types) {
+            if (GetNumItemsByType(type) == 0 && !store_.discontinued_.contains(type)) store_.Discontiue(type);
+        }
+    }
+
     public Set<Item.ItemType> DoInventory() {
         // vector to keep track of what types we need to order (start with all and remove)
-        Set<Item.ItemType> orderTypes = new HashSet<Item.ItemType>();
-        Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/
+        Set<Item.ItemType> orderTypes = new HashSet<Item.ItemType>();  
+        Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/      
         int total, totalitems, damaged;
         total = totalitems = damaged = 0;
         Iterator<Item> it = store_.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
@@ -89,29 +103,24 @@ public class Clerk extends AbstractClerk {
 
     public int PlaceOrders(Set<Item.ItemType> orderTypes) {
         int orders = 0;
-        if (!orderTypes.isEmpty()) {
-            // remove items weve already ordered
-            for (Vector<Item.ItemType> vec : store_.orders_.values()) {
-                for (Item.ItemType orderedItem : vec) { orderTypes.remove(orderedItem); }
-                if (orderTypes.isEmpty()) break;
+        // remove discontinued items
+        orderTypes.removeAll(store_.discontinued_);
+        // remove items weve already ordered
+        for (Vector<Item.ItemType> vec : store_.orders_.values()) { orderTypes.removeAll(vec); }
+        // place orders
+        if (!orderTypes.isEmpty()) { 
+            for (Item.ItemType type : orderTypes) {
+                int deliveryDay = GetRandomNum(1, 4) + Simulation.current_day_;
+                // make sure orders arent delivered on Sunday
+                if (deliveryDay % 7 == 0) { deliveryDay++; }
+                // if date isnt in order system then add it
+                if (!store_.orders_.containsKey(deliveryDay)) { store_.orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
+                // add order to delivery day
+                store_.orders_.get(deliveryDay).add(type);
+                // broadcast who placed an order of what and what day it will arrive
+                Print(name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
+                orders += 3;
             }
-            // place orders
-            if (!orderTypes.isEmpty()) {
-                for (Item.ItemType type : orderTypes) {
-        //TO DO 
-        // stop ordering items we no longer sell
-                    int deliveryDay = GetRandomNum(1, 4) + Simulation.current_day_;
-                    // make sure orders arent delivered on Sunday
-                    if (deliveryDay % 7 == 0) { deliveryDay++; }
-                    // if date isnt in order system then add it
-                    if (!store_.orders_.containsKey(deliveryDay)) { store_.orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
-                    // add order to delivery day
-                    store_.orders_.get(deliveryDay).add(type);
-                    // broadcast who placed an order of what and what day it will arrive
-                    Print(name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
-                    orders += 3;
-                }
-            } 
         } 
         Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
         Publish("itemsordered", orders);
@@ -153,6 +162,8 @@ public class Clerk extends AbstractClerk {
         item.sale_price_ = salePrice;
         store_.inventory_.remove(item);
         store_.sold_.add(item);
+        // update discontinued items whenever clothing is sold
+        if (item.itemType == ItemType.HATS || item.itemType == ItemType.BANDANAS || item.itemType == ItemType.SHIRTS) UpdateDiscontinuedItems();
         return -1;
     }
 
@@ -171,12 +182,8 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
-//TO DO
-//Check if we still sell the item, if we dont: tell customer
-// buying represents if the STORE is buying
     public int TryTransaction(Item item, boolean buying) {
         if (item == null) { return 0; }
-// if (!store_.StillSells(item.ItemType)) {Print(), return 0} 
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
         if (GetRandomNum(2) == 0) {
@@ -204,13 +211,18 @@ public class Clerk extends AbstractClerk {
     }
 
     public int HandleCustomer(Customer customer) {
-        return ((customer.MakeRequest() == Customer.RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
+        RequestType request = customer.MakeRequest();
+        if (store_.discontinued_.contains(customer.GetItemType())) { 
+            Print(name_ + " tells the customer we no longer deal in " + customer.GetItemType()); 
+            return 0;
+        } 
+        return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
-            case -1: 
-                return TryToSell(CheckForItem(customer.GetItemType()));
-            case 1:
-                return TryToBuy(ItemFactory.MakeItem(customer.GetItemType().name()));
+            case Customer.RequestType.Buy: 
+                return TryTransaction(CheckForItem(customer.GetItemType()), false);
+            case Customer.RequestType.Sell:
+                return TryTransaction(customer.GetItem(), true));
             default:
                 Print("ERROR: Clerk.HandleCustomer given bad value")
         }
@@ -226,6 +238,7 @@ public class Clerk extends AbstractClerk {
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
             // lower condition of item and remove if it fully breaks
             if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
+            if (toBreak.itemType == ItemType.HATS || toBreak.itemType == ItemType.BANDANAS || toBreak.itemType == ItemType.SHIRTS) UpdateDiscontinuedItems();
             Publish("damagedcleaning", 1);
         } else {
             // nothing breaks
