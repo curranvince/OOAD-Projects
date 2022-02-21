@@ -38,9 +38,7 @@ abstract class ClerkDecorator extends AbstractClerk {
 
 // concrete class to implement new methods/overwrites
 class ClerkSellDecorator extends ClerkDecorator {
-    public ClerkSellDecorator(AbstractClerk clerk) { 
-        super(clerk); 
-    }
+    public ClerkSellDecorator(AbstractClerk clerk) { super(clerk); }
 
 // decorated sell method to sell accessories when a stringed instrument is sold
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
@@ -60,8 +58,8 @@ class ClerkSellDecorator extends ClerkDecorator {
                     int num = 1;
                     if (i == 2) { num = GetRandomNum(1,3); }
                     else if (i == 3) { num = GetRandomNum(1, 4); }
+                    Print("The customer decides they also want to buy " + num + types[i].name());
                     for (int j = 0; j < num; j++) {
-                        Print("The customer decides they also want to buy a " + types[i].name());
                         Item toSell = super.CheckForItem(types[i]);
                         if (toSell != null)  result.updateValue(result.getValue()+super.Sell(toSell, toSell.list_price_));
                     }
