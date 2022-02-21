@@ -1,4 +1,5 @@
 *.class
 *.vscode
 *.DS_Store
+*.lst
 TEST-FNMS.*.xml
