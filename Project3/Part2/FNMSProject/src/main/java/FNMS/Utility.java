@@ -32,14 +32,6 @@ interface Utility {
     // simple methods for getting random nums
     default int GetRandomNum(int range) { return random.nextInt(range); }
     default int GetRandomNum(int min, int max) { return random.nextInt(max-min) + min; }
-    default int GetRandomNumEx(int min, int max, int exclude) {
-        int rando = random.nextInt(max-min) + min;
-        while (rando == exclude) {
-            if (rando < (max-1)) rando++;
-            else rando = min;
-        }
-        return rando;
-    }
     default int GetRandomNumEx(int min, int max, List<Integer> excludes) {
         int rando = random.nextInt(max-min) + min;
         while (excludes.contains(rando)) {
