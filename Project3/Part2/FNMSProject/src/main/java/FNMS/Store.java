@@ -67,7 +67,7 @@ class Store extends Publisher implements Utility {
     }
     
     public void Discontiue(Item.ItemType itemType) { 
-        Print("The store has officially discontinued " + itemType);
+        Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
     }
 
@@ -124,6 +124,13 @@ class Store extends Publisher implements Utility {
         for (Staff clerk : clerks_) {
             if (clerk != activeClerk_) clerk.ResetDaysWorked();
         }
+    }
+
+    public boolean HasClothing() {
+        for (Item item : inventory_) {
+            if (item.itemType_.ordinal() > 13 && item.itemType_.ordinal() < 17) return true;
+        }
+        return false;
     }
 
     private Vector<Customer> GenerateCustomers() {

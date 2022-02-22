@@ -20,7 +20,7 @@ public class Clerk extends AbstractClerk {
         // check if theres any orders for today
         if (store_.orders_.containsKey(Simulation.current_day_)) {
             // receive orders for each type
-            for (Item.ItemType type : store_.orders_.get(Simulation.current_day_)) {
+            for (ItemType type : store_.orders_.get(Simulation.current_day_)) {
                 Print(name_  + " finds an order with 3 " + type.name() + "s");
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
@@ -53,7 +53,7 @@ public class Clerk extends AbstractClerk {
         Publish("checkedregister", store_.register_.GetAmount());
     }
 
-    private int GetNumItemsByType(Item.ItemType itemType) {
+    private int GetNumItemsByType(ItemType itemType) {
         int num = 0;
         for (Item item : store_.inventory_) {
             if (item.itemType_ == itemType) num++;
@@ -61,17 +61,14 @@ public class Clerk extends AbstractClerk {
         return num;
     }
 
-    private void UpdateDiscontinuedItems() {
-        ItemType[] types = { ItemType.HATS, ItemType.BANDANAS, ItemType.SHIRTS };
-        for (ItemType type : types) {
-            if (GetNumItemsByType(type) == 0 && !store_.discontinued_.contains(type)) store_.Discontiue(type);
-        }
+    private void UpdateDiscontinuedItems(ItemType itemType) {
+        if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);
     }
 
-    public Set<Item.ItemType> DoInventory() {
+    public Set<ItemType> DoInventory() {
         // vector to keep track of what types we need to order (start with all and remove)
-        Set<Item.ItemType> orderTypes = new HashSet<Item.ItemType>();  
-        Collections.addAll(orderTypes, Item.ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/      
+        Set<ItemType> orderTypes = new HashSet<ItemType>();  
+        Collections.addAll(orderTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/      
         int total, totalitems, damaged;
         total = totalitems = damaged = 0;
         Iterator<Item> it = store_.inventory_.iterator(); // https://www.w3schools.com/java/java_iterator.asp#:~:text=An%20Iterator%20is%20an%20object,util%20package.
@@ -98,15 +95,15 @@ public class Clerk extends AbstractClerk {
         return orderTypes;
     }
 
-    public int PlaceOrders(Set<Item.ItemType> orderTypes) {
+    public int PlaceOrders(Set<ItemType> orderTypes) {
         int orders = 0;
         // remove discontinued items
         orderTypes.removeAll(store_.discontinued_);
         // remove items weve already ordered
-        for (List<Item.ItemType> vec : store_.orders_.values()) { orderTypes.removeAll(vec); }
+        for (List<ItemType> vec : store_.orders_.values()) { orderTypes.removeAll(vec); }
         // place orders
         if (!orderTypes.isEmpty()) { 
-            for (Item.ItemType type : orderTypes) {
+            for (ItemType type : orderTypes) {
                 int deliveryDay = GetRandomNum(1, 4) + Simulation.current_day_;
                 // make sure orders arent delivered on Sunday
                 if (deliveryDay % 7 == 0) { deliveryDay++; }
@@ -160,7 +157,7 @@ public class Clerk extends AbstractClerk {
         store_.inventory_.remove(item);
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
-        if (IsClothing(item.itemType_)) UpdateDiscontinuedItems();
+        if (item instanceof Clothing) UpdateDiscontinuedItems(item.itemType_);
         return 1;
     }
 
@@ -203,7 +200,7 @@ public class Clerk extends AbstractClerk {
         return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0));
     }
 
-    public Item CheckForItem(Item.ItemType itemType) {
+    public Item CheckForItem(ItemType itemType) {
         for (Item item : store_.inventory_) {
             if (item.itemType_ == itemType) {
                 Print(name_ + " found a " + item.name_ + " in the inventory");
@@ -216,8 +213,9 @@ public class Clerk extends AbstractClerk {
 
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         RequestType request = customer.MakeRequest();
-        if (store_.discontinued_.contains(customer.GetItemType())) { 
-            Print(name_ + " tells the customer we no longer deal in " + customer.GetItemType()); 
+        // if all clothing is discontinued, & customer wants to sell clothing, alert them to no
+        if (store_.discontinued_.size() == 3 && request == RequestType.Sell && customer.item_ instanceof Clothing) { 
+            Print(name_ + " tells the customer we're out of clothing, so we no longer buy it from customers"); 
             return new Pair<RequestType, Integer>(request, 0);
         } 
         return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
@@ -241,7 +239,7 @@ public class Clerk extends AbstractClerk {
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
             // lower condition of item and remove if it fully breaks
             if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
-            if (IsClothing(toBreak.itemType_)) UpdateDiscontinuedItems();
+            if (toBreak instanceof Clothing) UpdateDiscontinuedItems(toBreak.itemType_);
             Publish("damagedcleaning", 1);
         } else {
             // nothing breaks

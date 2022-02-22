@@ -58,8 +58,6 @@ interface Utility {
     default Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Size.values().length)]; }
     default ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(ItemType.values().length)]; }
     
-    default boolean IsClothing(ItemType itemType) { return (itemType == ItemType.HATS || itemType == ItemType.BANDANAS || itemType == ItemType.SHIRTS); }
-    
     // return a random Item condition
     default String GetRandomCondition() {
         // return a random 'Condition' for an item

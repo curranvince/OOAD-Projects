@@ -7,6 +7,7 @@ import FNMS.Customer.RequestType;
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
 // https://refactoring.guru/design-patterns/decorator/java/example
 // This is an example of the Decorator pattern (both classes in this file make it up)
+// MUST implement ALL methods of AbstractClerk 
 abstract class ClerkDecorator extends AbstractClerk {
     protected AbstractClerk decoratedStaff_;
 
@@ -40,14 +41,15 @@ abstract class ClerkDecorator extends AbstractClerk {
 class ClerkSellDecorator extends ClerkDecorator {
     public ClerkSellDecorator(AbstractClerk clerk) { super(clerk); }
 
-// decorated sell method to sell accessories when a stringed instrument is sold
+    // decorated sell method to sell accessories when a stringed instrument is sold
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         Pair<RequestType, Integer> result = super.HandleCustomer(customer);
-        if ((result.getKey() == RequestType.Buy) && (customer.GetItemType().ordinal() > 7) && (customer.GetItemType().ordinal() < 11)) {
-            // if we just sold a stringed instrument
+        // if we just sold a stringed instrument
+        if (result.getKey() == RequestType.Buy && customer.GetItem() instanceof Stringed) {
+            // define chances to sell each type
             int chances[] = {10,15,20,30};
             Item.ItemType types[] = { Item.ItemType.GIGBAG, Item.ItemType.PRACTICEAMPS, Item.ItemType.CABLES, Item.ItemType.STRINGS };
-            // if the item was electric add chances by 10 each
+            // if the item was electric add 10% to each chance
             if (customer.item_.GetComponent(Electric.class) != null ) {
                 for (int i = 0; i < chances.length; i++) { chances[i] += 10; }
             }
