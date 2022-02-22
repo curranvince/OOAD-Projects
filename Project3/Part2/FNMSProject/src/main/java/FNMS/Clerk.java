@@ -213,11 +213,15 @@ public class Clerk extends AbstractClerk {
 
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         RequestType request = customer.MakeRequest();
-        // if all clothing is discontinued, & customer wants to sell clothing, alert them to no
-        if (store_.discontinued_.size() == 3 && request == RequestType.Sell && customer.item_ instanceof Clothing) { 
-            Print(name_ + " tells the customer we're out of clothing, so we no longer buy it from customers"); 
+        // check for item being discontinued
+        if (store_.discontinued_.size() == 3 && customer.item_ instanceof Clothing) { 
+            // if all clothings been discontinued, we no longer buy it from customer or order
+            Print(name_ + " tells the customer we're out of all clothing items, so we no longer buy them from customers or order them"); 
             return new Pair<RequestType, Integer>(request, 0);
-        } 
+        } else if (request == RequestType.Buy && store_.discontinued_.contains(customer.item_.itemType_)) {
+            Print(name_ + " tells the customer we're out of " + customer.GetItemType() + " and will not order anymore, though we will buy them from customers"); 
+            return new Pair<RequestType, Integer>(request, 0);
+        }
         return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
         /* alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
