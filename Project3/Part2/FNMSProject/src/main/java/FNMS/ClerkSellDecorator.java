@@ -31,9 +31,10 @@ abstract class ClerkDecorator extends AbstractClerk {
     public int PlaceOrders(Set<ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
     public int Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
     public int Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
+    public boolean GetSoldChance(Item item, boolean buying, boolean discount) { return decoratedStaff_.GetSoldChance(item, buying, discount); }
+    public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
-    public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
 }
@@ -51,7 +52,7 @@ class ClerkSellDecorator extends ClerkDecorator {
             int chances[] = {10,15,20,30};
             ItemType types[] = { ItemType.GIGBAG, ItemType.PRACTICEAMPS, ItemType.CABLES, ItemType.STRINGS };
             // if the item was electric add 10% to each chance
-            if (customer.item_.GetComponent(Electric.class) != null ) {
+            if (customer.GetItem().GetComponent(Electric.class) != null ) {
                 for (int i = 0; i < chances.length; i++) { chances[i] += 10; }
             }
             // try selling accessories

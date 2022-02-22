@@ -180,9 +180,11 @@ public class Clerk extends AbstractClerk {
         int chance = 50;
         if (discount) chance += 25;
         if (!buying) {
-            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).tuned_) chance += 10;
-            if (item instanceof Stringed) chance += 5;
-            else if (item instanceof Wind) chance += 10;
+            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).tuned_) {
+                chance += 10;
+                if (item instanceof Stringed) chance += 5;
+                else if (item instanceof Wind) chance += 10;
+            }
         }
         return (GetRandomNum(100) < chance);
     }

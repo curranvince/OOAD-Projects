@@ -45,6 +45,7 @@ abstract class AbstractClerk extends Staff {
     abstract public int PlaceOrders(Set<Item.ItemType> orderTypes);
     abstract public int Sell(Item item, int salePrice);
     abstract public int Buy(Item item, int salePrice);
+    abstract public boolean GetSoldChance(Item item, boolean buying, boolean discount);
     abstract public Item CheckForItem(Item.ItemType itemType);
     abstract public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying);
     abstract public Pair<RequestType, Integer> HandleCustomer(Customer customer);
