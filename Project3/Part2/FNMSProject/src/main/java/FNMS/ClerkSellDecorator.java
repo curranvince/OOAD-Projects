@@ -47,7 +47,7 @@ class ClerkSellDecorator extends ClerkDecorator {
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         Pair<RequestType, Integer> result = super.HandleCustomer(customer);
         // if we just sold a stringed instrument
-        if (result.getKey() == RequestType.Buy && customer.GetItem() instanceof Stringed) {
+        if (result.getKey() == RequestType.Buy && result.getValue() == 1 && customer.GetItem() instanceof Stringed) {
             // define chances to sell each type
             int chances[] = {10,15,20,30};
             ItemType types[] = { ItemType.GIGBAG, ItemType.PRACTICEAMPS, ItemType.CABLES, ItemType.STRINGS };
@@ -62,7 +62,7 @@ class ClerkSellDecorator extends ClerkDecorator {
                     int num = 1;
                     if (i == 2) { num = GetRandomNum(1,3); }
                     else if (i == 3) { num = GetRandomNum(1, 4); }
-                    Print("The customer decides they also want to buy " + num + types[i].name());
+                    Print("The customer decides they also want to buy " + num + " " + types[i].name());
                     for (int j = 0; j < num; j++) {
                         Item toSell = super.CheckForItem(types[i]);
                         if (toSell != null)  result.updateValue(result.getValue()+super.Sell(toSell, toSell.list_price_));

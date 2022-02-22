@@ -43,28 +43,28 @@ class Logger implements Subscriber {
                 Write(clerk + " arrived at the store");
                 break;
             case "itemsadded":
-                Write(clerk + " added " + data + " items to inventory");
+                Write(clerk + " added " + data + " item(s) to inventory");
                 break;
             case "checkedregister":
                 Write(clerk + " checked register to find $" + data);
                 break;
             case "totalitems":
-                Write(clerk + " counted " + data + " items in inventory");
+                Write(clerk + " counted " + data + " item(s) in inventory");
                 break;
             case "totalitemsprice":
                 Write(clerk + " found the store's inventory is worth $" + data);
                 break;
             case "brokeintuning":
-                Write(clerk + " damaged " + data + " items while tuning");
+                Write(clerk + " damaged " + data + " item(s) while tuning");
                 break;
             case "itemsordered":
-                Write(clerk + " ordered " + data + " items");
+                Write(clerk + " ordered " + data + " item(s)");
                 break;
             case "itemsold":
-                Write(clerk + " sold " + data + " items");
+                Write(clerk + " sold " + data + " item(s)");
                 break;
             case "itemsbought":
-                Write(clerk + " purchased " + data + " items");
+                Write(clerk + " purchased " + data + " item(s)");
                 break;
             case "damagedcleaning":
                 Write(clerk + " damaged " + data + " item(s) while cleaning");
@@ -95,9 +95,9 @@ class Logger implements Subscriber {
 // Tracker exists for an entire simulation and 
 // adds up cumulative stats for each clerk
 class Tracker implements Subscriber {
-    private int[][] stats_ = {{0,0,0},{0,0,0},{0,0,0}};
+    private int[][] stats_ = {{0,0,0,0},{0,0,0,0},{0,0,0,0}};
     // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
-    // [][0] for sold, [][1] for purchased, [][2] for damaged
+    // [][0] for days worked, [][1] for sold, [][2] for purchased, [][3] for damaged
 
     // for data we're interested in, add to the data table
     public void Update(String context, String name, int data) {
@@ -106,17 +106,20 @@ class Tracker implements Subscriber {
         else if (name == "Daphne") clerk_index = 2;
 
         switch (context) {
-            case "brokeintuning":
-                stats_[clerk_index][2] += data;
-                break;
-            case "itemsold":
+            case "arrival": 
                 stats_[clerk_index][0] += data;
                 break;
-            case "itemsbought":
+            case "brokeintuning":
+                stats_[clerk_index][3] += data;
+                break;
+            case "itemsold":
                 stats_[clerk_index][1] += data;
                 break;
-            case "damagedcleaning":
+            case "itemsbought":
                 stats_[clerk_index][2] += data;
+                break;
+            case "damagedcleaning":
+                stats_[clerk_index][3] += data;
                 break;
             default:
                 break;
@@ -126,10 +129,10 @@ class Tracker implements Subscriber {
     // print the data table
     public void ShowData() {
         Print("\nTracker : Day " + Simulation.current_day_);
-        Print("Clerk      Items Sold      Items Purchased      Items Damaged ");
-        Print("Shaggy     " + stats_[0][0] + "               " + stats_[0][1] + "                    " + stats_[0][2]);
-        Print("Velma      " + stats_[1][0] + "               " + stats_[1][1] + "                    " + stats_[1][2]);
-        Print("Daphne     " + stats_[2][0] + "               " + stats_[2][1] + "                    " + stats_[2][2] + "\n");
+        Print("Clerk      Days Worked       Items Sold      Items Purchased      Items Damaged ");
+        Print("Shaggy     " + stats_[0][0] + "                 " + stats_[0][1] + "               " + stats_[0][2] + "                    " + stats_[0][3]);
+        Print("Velma      " + stats_[1][0] + "                 " + stats_[1][1] + "               " + stats_[1][2] + "                    " + stats_[1][3]);
+        Print("Daphne     " + stats_[2][0] + "                 " + stats_[2][1] + "               " + stats_[2][2] + "                    " + stats_[2][3] + "\n");
     }
 
     // clear data table on close

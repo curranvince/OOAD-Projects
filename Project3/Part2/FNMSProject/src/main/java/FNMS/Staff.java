@@ -23,7 +23,7 @@ abstract class Staff extends Publisher implements Utility {
     // broadcast arriving to store
     public void ArriveAtStore() {
         Print(name_  + " has arrived at the store on Day " + Simulation.current_day_);
-        Publish("arrival", 0);
+        Publish("arrival", 1);
     }
 
     // broadcast leaving

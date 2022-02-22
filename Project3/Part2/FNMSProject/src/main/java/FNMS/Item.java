@@ -7,7 +7,7 @@ import java.util.ArrayList;
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
 abstract class Item implements ItemUtility {
-    List<Component> components_ = new ArrayList<Component>();
+    protected List<Component> components_ = new ArrayList<Component>();
     ItemType itemType_;
     String name_;
     int purchase_price_;
@@ -116,7 +116,7 @@ abstract class Item implements ItemUtility {
                 Print("ERROR: Item::LowerCondition given bad paramater");
                 break;
         }
-        Print(name_ + " list price has lowered to " + list_price_);
+        Print(name_ + " list price has lowered to $" + list_price_);
         return true;
     }
 }

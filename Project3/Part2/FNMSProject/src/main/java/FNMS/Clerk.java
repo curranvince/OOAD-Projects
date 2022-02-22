@@ -21,12 +21,16 @@ public class Clerk extends AbstractClerk {
         if (store_.orders_.containsKey(Simulation.current_day_)) {
             // receive orders for each type
             for (ItemType type : store_.orders_.get(Simulation.current_day_)) {
-                Print(name_  + " finds an order with 3 " + type.name() + "s");
+                int total = 0;
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
                     toAdd.day_arrived = Simulation.current_day_;
-                    if (store_.register_.TakeMoney(toAdd.purchase_price_)) store_.inventory_.add(toAdd);
+                    if (store_.register_.TakeMoney(toAdd.purchase_price_)) {
+                        store_.inventory_.add(toAdd);
+                        total += toAdd.purchase_price_;
+                    }
                 }
+                Print(name_  + " receives an order with 3 " + type.name() + "s, for $" + total);
                 orders_received += 3;
             }
             // remove orders from the map

@@ -188,6 +188,6 @@ class Store extends Publisher implements Utility {
             item.Display();
             total += item.purchase_price_;
         }
-        Print("The total value of the " + (sold ? "sold" : "remaining") + " inventory is $" + total);
+        Print("The total value of the " + (sold ? "sold" : "remaining") + " inventory is $" + total + "\n");
     }
 }
