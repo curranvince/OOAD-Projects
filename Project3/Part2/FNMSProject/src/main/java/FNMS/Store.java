@@ -128,10 +128,11 @@ class Store extends Publisher implements Utility {
 
     public boolean HasClothing() {
         for (Item item : inventory_) {
-            if (item.itemType_.ordinal() > 13 && item.itemType_.ordinal() < 17) return true;
+            if (item instanceof Clothing) return true;
         }
         return false;
     }
+
 
     private Vector<Customer> GenerateCustomers() {
         // make vector to return

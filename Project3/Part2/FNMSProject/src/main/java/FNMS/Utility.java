@@ -55,8 +55,8 @@ interface Utility {
     }
 
     // return random member of Item enums
-    default Size GetRandomSize() { return Item.Size.values()[GetRandomNum(Size.values().length)]; }
-    default ItemType GetRandomItemType() { return Item.ItemType.values()[GetRandomNum(ItemType.values().length)]; }
+    default Size GetRandomSize() { return Size.values()[GetRandomNum(Size.values().length)]; }
+    default ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(ItemType.values().length)]; }
     
     // return a random Item condition
     default String GetRandomCondition() {
@@ -99,6 +99,7 @@ interface Utility {
     }
 }
 
+// interface to make custom names for items
 interface ItemUtility extends Utility {
     default String[] GetMusicTitle() {
         String[][] combos = {

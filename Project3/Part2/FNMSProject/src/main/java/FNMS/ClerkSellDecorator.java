@@ -3,6 +3,7 @@ package FNMS;
 import java.util.Set;
 
 import FNMS.Customer.RequestType;
+import FNMS.Item.ItemType;
 
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
 // https://refactoring.guru/design-patterns/decorator/java/example
@@ -26,13 +27,13 @@ abstract class ClerkDecorator extends AbstractClerk {
     public void ArriveAtStore() { decoratedStaff_.ArriveAtStore(); }
     public boolean CheckRegister() { return decoratedStaff_.CheckRegister(); }
     public void GoToBank() { decoratedStaff_.GoToBank(); }
-    public Set<Item.ItemType> DoInventory() { return decoratedStaff_.DoInventory(); }
-    public int PlaceOrders(Set<Item.ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
+    public Set<ItemType> DoInventory() { return decoratedStaff_.DoInventory(); }
+    public int PlaceOrders(Set<ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
     public int Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
     public int Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
     public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
-    public Item CheckForItem(Item.ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
+    public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
 }
@@ -48,7 +49,7 @@ class ClerkSellDecorator extends ClerkDecorator {
         if (result.getKey() == RequestType.Buy && customer.GetItem() instanceof Stringed) {
             // define chances to sell each type
             int chances[] = {10,15,20,30};
-            Item.ItemType types[] = { Item.ItemType.GIGBAG, Item.ItemType.PRACTICEAMPS, Item.ItemType.CABLES, Item.ItemType.STRINGS };
+            ItemType types[] = { ItemType.GIGBAG, ItemType.PRACTICEAMPS, ItemType.CABLES, ItemType.STRINGS };
             // if the item was electric add 10% to each chance
             if (customer.item_.GetComponent(Electric.class) != null ) {
                 for (int i = 0; i < chances.length; i++) { chances[i] += 10; }

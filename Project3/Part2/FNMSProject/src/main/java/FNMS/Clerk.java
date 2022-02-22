@@ -108,7 +108,7 @@ public class Clerk extends AbstractClerk {
                 // make sure orders arent delivered on Sunday
                 if (deliveryDay % 7 == 0) { deliveryDay++; }
                 // if date isnt in order system then add it
-                if (!store_.orders_.containsKey(deliveryDay)) { store_.orders_.put(deliveryDay, new Vector<Item.ItemType>()); } 
+                if (!store_.orders_.containsKey(deliveryDay)) { store_.orders_.put(deliveryDay, new Vector<ItemType>()); } 
                 // add order to delivery day
                 store_.orders_.get(deliveryDay).add(type);
                 // broadcast who placed an order of what and what day it will arrive
