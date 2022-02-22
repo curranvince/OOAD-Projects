@@ -176,20 +176,31 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
+    public boolean GetSoldChance(Item item, boolean buying, boolean discount) {
+        int chance = 50;
+        if (discount) chance += 25;
+        if (!buying) {
+            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).tuned_) chance += 10;
+            if (item instanceof Stringed) chance += 5;
+            else if (item instanceof Wind) chance += 10;
+        }
+        return (GetRandomNum(100) < chance);
+    }
+
     // handle buying or selling
     public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) {
         if (item == null) { return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0)); }
         // get price based off condition, or list price
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
-        // 50% chance to complete transaction
-        if (GetRandomNum(2) == 0) {
+        // 50% chance to complete transaction (unless tuned)
+        if (GetSoldChance(item, buying, false)) {
             // buy or sell the item at price
             return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, price)) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, price)));
         } else {
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
-            // 75% chance to complete transaction
-            if (GetRandomNum(4) != 0) {
+            // 75% chance to complete transaction (unless tuned)
+            if (GetSoldChance(item, buying, true)) {
                 // buy or sell item at price +/- 10%
                 return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, (int)(price+(price*0.1)))) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, (int)(price-(price*0.1)))));
             } else {
