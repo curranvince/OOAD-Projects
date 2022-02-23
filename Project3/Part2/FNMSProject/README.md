@@ -25,7 +25,7 @@ Clean:
 mvn clean
 
 Assumptions (from project 2):
-* We only show a customer one item of the type they're interested in. Not each one we have in inventory.
+* We only show a customer one item of the type they're interested in buying. Not each one we have in inventory.
 * If we don't have enough money to buy a customers item, broadcast that and let the customer leave.
 * When we buy an item from a customer, it gets listed at 2X the purchase price.
 
