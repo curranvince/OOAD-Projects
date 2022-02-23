@@ -62,21 +62,10 @@ interface Utility {
     // return an offer price based off a given item condition
     default int GetOfferPrice(Item.Condition condition) {
         // offer different prices based on given condition
-        switch (condition) {
-            case poor:
-                return GetRandomNum(1, 11);
-            case fair:
-                return GetRandomNum(10, 21);
-            case good:
-                return GetRandomNum(20, 31);
-            case very_good:
-                return GetRandomNum(30, 41);
-            case excellent:
-                return GetRandomNum(40, 51);
-            default:
-                Print("ERROR: Utility::GetOfferPrice given bad paramter");
-                return 1000000;
-        }
+        int max = (condition.ordinal() * 10) + 1;
+        int min = max - 11;
+        if (min == 0) min++;
+        return (GetRandomNum(min, max));
     }
 }
 
