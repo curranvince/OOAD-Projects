@@ -8,7 +8,7 @@ import FNMS.Item.ItemType;
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
 abstract class Publisher {
-    private Vector<Subscriber> subscribers_ = new Vector<Subscriber>();
+    private List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
 
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
