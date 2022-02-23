@@ -84,7 +84,7 @@ public class Clerk extends AbstractClerk {
             if (item.GetComponent(Tuneable.class) != null) {
                 if (!Tune(item)) {
                     damaged++;
-                    if (item.condition_ == "Broken") { it.remove(); }
+                    if (item.condition_ == Item.Condition.broken) {it.remove(); }
                 }
             }
             // add value of item to total

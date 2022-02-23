@@ -9,7 +9,7 @@ public class ItemFactoryTest {
     Item item;
 
     @Test
-    @DisplayName("Should be able to create items")
+    @DisplayName("Should be able to create store with items")
     public void testItems() {
         for (Item.ItemType itemType : Item.ItemType.values()) {
             item = ItemFactory.MakeItem(itemType.name());

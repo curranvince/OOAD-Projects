@@ -7,6 +7,7 @@ package FNMS;
 import java.util.*;
 
 import FNMS.Customer.RequestType;
+import FNMS.Item.ItemType;
 
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
@@ -48,14 +49,14 @@ class Store extends Publisher implements Utility {
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();
     public List<Item> sold_ = new ArrayList<Item>();
-    public List<Item.ItemType> discontinued_ = new ArrayList<Item.ItemType>();
-    public HashMap<Integer, List<Item.ItemType>> orders_ = new HashMap<Integer, List<Item.ItemType>>();
+    public List<ItemType> discontinued_ = new ArrayList<ItemType>();
+    public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
     
     Store() {
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
-        for (Item.ItemType itemType : Item.ItemType.values()) {
+        for (ItemType itemType : ItemType.values()) {
             for (int i = 0; i < 3; i++) {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
             }
@@ -66,7 +67,7 @@ class Store extends Publisher implements Utility {
         clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
     
-    public void Discontiue(Item.ItemType itemType) { 
+    public void Discontiue(ItemType itemType) { 
         Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
     }

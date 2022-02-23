@@ -10,11 +10,11 @@ abstract class Item implements ItemUtility {
     protected List<Component> components_ = new ArrayList<Component>();
     ItemType itemType_;
     String name_;
+    Condition condition_;
     int purchase_price_;
     int list_price_;
-    int day_arrived;
-    String condition_;
     int sale_price_;
+    int day_arrived;
     int day_sold_;
 
     public enum ItemType {
@@ -41,10 +41,19 @@ abstract class Item implements ItemUtility {
         GIGBAG,         // 20
     }
 
+    public enum Condition {
+        broken,
+        poor,
+        fair,
+        good,
+        very_good,
+        excellent
+    }
+
     public enum Size {
-        Small, 
-        Medium, 
-        Large
+        small, 
+        medium, 
+        large
     }
 
     Item() {
@@ -53,7 +62,9 @@ abstract class Item implements ItemUtility {
         purchase_price_ = GetRandomNum(1, 51);
         list_price_ = 2*purchase_price_;
         day_arrived = 0;
-        condition_ = GetRandomCondition();
+        do {
+            condition_ = GetRandomEnumVal(Condition.class);
+        } while (condition_ == Condition.broken);
     };
 
     // Resources that helped with the Add/Get Component methods
@@ -86,42 +97,19 @@ abstract class Item implements ItemUtility {
     // lower the condition of an item, including its list price
     // if the item breaks return false, else return true
     boolean LowerCondition() {
+        // lower condition of item by one
+        Print(name_ + "'s condition has lowered from " + condition_.name() + " to " + Condition.values()[condition_.ordinal()-1].name());
+        condition_ = Condition.values()[condition_.ordinal()-1];
+        if (condition_ == Condition.broken) {
+            Print(name_ + " has been removed from inventory");
+            return false;
+        }
         // lower price of item
         list_price_ -= (int)list_price_*0.2;
-        // lower condition of item by one
-        switch (condition_) {
-            case "Excellent":
-                Print(name_ + "'s condition has lowered from Excellent to Very Good");
-                condition_ = "Very Good";
-                break;
-            case "Very Good":
-                Print(name_ + "'s condition has lowered from Very Good to Good");
-                condition_ = "Good";
-                break;
-            case "Good":
-                Print(name_ + "'s condition has lowered from Good to Fair");
-                condition_ = "Fair";
-                break;
-            case "Fair":
-                Print(name_ + "'s condition has lowered from Fair to Poor");
-                condition_ = "Poor";
-                break;
-            case "Poor":
-                Print(name_ + " condition has lowered enough to be broken!");
-                Print(name_ + " has been removed from inventory");
-                condition_ = "Broken";
-                // return false if item breaks
-                return false;
-            default:
-                Print("ERROR: Item::LowerCondition given bad paramater");
-                break;
-        }
         Print(name_ + " list price has lowered to $" + list_price_);
         return true;
     }
 }
-
-
 
 // Example of Iheritance : Music inherits from Item
 // All the classes below are also examples of Inheritance
@@ -273,7 +261,7 @@ class Hats extends Clothing {
     private Size size_;
 
     Hats() {
-        size_ = GetRandomSize();
+        size_ = GetRandomEnumVal(Size.class);
         name_ += size_.name() + " " + GetClothingBrand() + " Hat";
         itemType_ = ItemType.HATS;
     }
@@ -283,7 +271,7 @@ class Shirts extends Clothing {
     private Size size_;
 
     Shirts() {
-        size_ = GetRandomSize();
+        size_ = GetRandomEnumVal(Size.class);
         name_ += size_.name() + " " + GetClothingBrand() + " Shirt";
         itemType_ = ItemType.SHIRTS;
     }

@@ -3,9 +3,6 @@ package FNMS;
 import java.util.Random;
 import java.util.List;
 
-import FNMS.Item.ItemType;
-import FNMS.Item.Size;
-
 interface Utility {
     // Pair class for.. making pairs
     // https://docs.oracle.com/javase/tutorial/java/generics/types.html
@@ -54,43 +51,27 @@ interface Utility {
         return k-1;
     }
 
-    // return random member of Item enums
-    default Size GetRandomSize() { return Size.values()[GetRandomNum(Size.values().length)]; }
-    default ItemType GetRandomItemType() { return ItemType.values()[GetRandomNum(ItemType.values().length)]; }
-    
-    // return a random Item condition
-    default String GetRandomCondition() {
-        // return a random 'Condition' for an item
-        int rando = GetRandomNum(5);
-        switch (rando) {
-            case 0:
-                return "Poor";
-            case 1:
-                return "Fair";
-            case 2:
-                return "Good";
-            case 3:
-                return "Very Good";
-            case 4:
-                return "Excellent";
-            default:
-                return "ERROR: Utility::GetRandomCondition given bad paramater";
-        }
+    // taken from profs project 2 code
+    // a utility for getting a random enum value from any enum
+    // https://stackoverflow.com/questions/1972392/pick-a-random-value-from-an-enum
+    default <T extends Enum<?>> T GetRandomEnumVal(Class<T> clazz){
+        int x = new Random().nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
     }
     
     // return an offer price based off a given item condition
-    default int GetOfferPrice(String condition) {
+    default int GetOfferPrice(Item.Condition condition) {
         // offer different prices based on given condition
         switch (condition) {
-            case "Poor":
+            case poor:
                 return GetRandomNum(1, 11);
-            case "Fair":
+            case fair:
                 return GetRandomNum(10, 21);
-            case "Good":
+            case good:
                 return GetRandomNum(20, 31);
-            case "Very Good":
+            case very_good:
                 return GetRandomNum(30, 41);
-            case "Excellent":
+            case excellent:
                 return GetRandomNum(40, 51);
             default:
                 Print("ERROR: Utility::GetOfferPrice given bad paramter");

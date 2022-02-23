@@ -1,5 +1,7 @@
 package FNMS;
 
+import FNMS.Item.ItemType;
+
 // Customer can be extended to make customers with new types of requests, like trade or fix
 abstract class Customer implements Utility {
     // all customers have a name, request, and type of item they're interested in
@@ -14,7 +16,7 @@ abstract class Customer implements Utility {
 
     Customer() {
         name_ = CreateName();
-        item_ = ItemFactory.MakeItem(GetRandomItemType().name());
+        item_ = ItemFactory.MakeItem(GetRandomEnumVal(ItemType.class).name());
     }
     
     public Item GetItem() { return item_; }

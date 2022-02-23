@@ -1,11 +1,11 @@
 Daphne arrived at the store
 Daphne added 0 item(s) to inventory
-Daphne checked register to find $1194
-Daphne damaged 6 item(s) while tuning
+Daphne checked register to find $1291
+Daphne damaged 1 item(s) while tuning
 Daphne counted 59 item(s) in inventory
-Daphne found the store's inventory is worth $1510
+Daphne found the store's inventory is worth $1455
 Daphne ordered 0 item(s)
 Daphne sold 7 item(s)
-Daphne purchased 0 item(s)
+Daphne purchased 2 item(s)
 Daphne damaged 0 item(s) while cleaning
 Daphne left the store
