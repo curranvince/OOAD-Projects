@@ -123,9 +123,9 @@ class Store extends Publisher implements Utility {
         }
     }
 
-    private Vector<Customer> GenerateCustomers() {
+    private List<Customer> GenerateCustomers() {
         // make vector to return
-        Vector<Customer> toServe = new Vector<Customer>();
+        List<Customer> toServe = new ArrayList<Customer>();
         // get random amounts of buyers and sellers in range
         int buyers = 2 + GetPoissonRandom(3);
         int sellers = GetRandomNum(1, 5);
