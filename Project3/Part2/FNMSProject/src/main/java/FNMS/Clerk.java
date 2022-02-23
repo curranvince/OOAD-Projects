@@ -14,6 +14,7 @@ public class Clerk extends AbstractClerk {
         store_ = store;
     }  
     
+    // receive current days orders when arriving to store
     public void ArriveAtStore() { 
         super.ArriveAtStore();
         int orders_received = 0;
@@ -22,6 +23,7 @@ public class Clerk extends AbstractClerk {
             // receive orders for each type
             for (ItemType type : store_.orders_.get(Simulation.current_day_)) {
                 int total = 0;
+                // make 3 concrete items for each type ordered
                 for (int i = 0; i < 3; i++) {
                     Item toAdd = ItemFactory.MakeItem(type.name());
                     toAdd.day_arrived = Simulation.current_day_;
@@ -42,21 +44,22 @@ public class Clerk extends AbstractClerk {
         Publish("itemsadded", orders_received);
     }
 
+    // broadcast register amount and return if its greater than 75 or not
     public boolean CheckRegister() {
-        Publish("checkedregister", store_.register_.GetAmount());
-        // broadcast register amount and return if its greater than 75 or not
         Print(name_ + " checks the register to find $" + store_.register_.GetAmount());
+        Publish("checkedregister", store_.register_.GetAmount());
         return (store_.register_.GetAmount() >= 75) ? true : false;
     }
 
+    // add 1000 to register and broadcast
     public void GoToBank() {
-        // add 1000 to register and broadcast
         Print(name_ + " goes to the bank to withdraw $1000 for the register" );
         store_.register_.AddMoney(1000);
         store_.total_withdrawn_ += 1000;
         Publish("checkedregister", store_.register_.GetAmount());
     }
 
+    // return how many items of a certain type we have
     private int GetNumItemsByType(ItemType itemType) {
         int num = 0;
         for (Item item : store_.inventory_) {
@@ -65,10 +68,37 @@ public class Clerk extends AbstractClerk {
         return num;
     }
 
-    private void UpdateDiscontinuedItems(ItemType itemType) {
+    // discontinue an item
+    private void UpdateDiscontinuedStatus(ItemType itemType) {
         if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);
     }
 
+    // tune item, print result, and return wether item was damaged or not
+    private boolean Tune(Item item) {
+        Tuneable tuneable = item.GetComponent(Tuneable.class);
+        Print(name_ + " is attempting to tune the " + item.name_);
+        switch (tune_strategy_.Execute(item.GetComponent(Tuneable.class))) {
+            case -1:
+                Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
+                if (GetRandomNum(10) == 0) {
+                    Print(name_ + " has done such a bad job tuning they damaged the item");
+                    item.LowerCondition();
+                }
+                return false;
+            case 0:
+                Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (tuneable.IsTuned() ? "tuned" : "untuned"));
+                return true;
+            case 1:
+                Print(name_ + " has successfully tuned the " + item.name_);
+                return true;
+            default:
+                Print("Error: Tune returned bad value");
+                return true;
+        }
+    }
+
+    // go through stores inventory, tuning items as we go
+    // return the set of itemtypes which we do not have
     public Set<ItemType> DoInventory() {
         // vector to keep track of what types we need to order (start with all and remove)
         Set<ItemType> orderTypes = new HashSet<ItemType>();  
@@ -92,13 +122,15 @@ public class Clerk extends AbstractClerk {
             totalitems++;
         }
         // broadcast total value of inventory
-        Publish("brokeintuning", damaged);
         Print(name_ + " does inventory to find we have $" + total + " worth of product");
+        // publish amount of items, value, and how many broken in tuning
+        Publish("brokeintuning", damaged);
         Publish("totalitems", totalitems);
         Publish("totalitemsprice", total);
         return orderTypes;
     }
 
+    // take in a set of itemtypes we don't have, and return # of items ordered
     public int PlaceOrders(Set<ItemType> orderTypes) {
         int orders = 0;
         // remove discontinued items
@@ -120,35 +152,10 @@ public class Clerk extends AbstractClerk {
                 orders += 3;
             }
         } 
+        // print and publish amount of orders placed
         Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
         Publish("itemsordered", orders);
         return orders;
-    }
-
-    private boolean Tune(Item item) {
-        Tuneable tuneable = item.GetComponent(Tuneable.class);
-        if (tuneable != null) {
-            Print(name_ + " is attempting to tune the " + item.name_);
-            switch (tune_strategy_.Execute(tuneable)) {
-                case -1:
-                    Print(name_ + " has done a bad job tuning, and untuned the " + item.name_);
-                    if (GetRandomNum(10) == 0) {
-                        Print(name_ + " has done such a bad job tuning they damaged the item");
-                        item.LowerCondition();
-                    }
-                    return false;
-                case 0:
-                    Print(name_ + " has not changed the state of the " + item.name_ + ", it is still " + (tuneable.IsTuned() ? "tuned" : "untuned"));
-                    return true;
-                case 1:
-                    Print(name_ + " has successfully tuned the " + item.name_);
-                    return true;
-                default:
-                    Print("Error: Tune returned bad value");
-                    return true;
-            }
-        }
-        return true;
     }
 
     // sell an item to a customer
@@ -161,11 +168,11 @@ public class Clerk extends AbstractClerk {
         store_.inventory_.remove(item);
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
-        if (item instanceof Clothing) UpdateDiscontinuedItems(item.itemType_);
+        if (item instanceof Clothing) UpdateDiscontinuedStatus(item.itemType_);
         return 1;
     }
 
-    // buy an item from a customer
+    // buy an item from a customer 
     public int Buy(Item item, int salePrice) {
         if (store_.register_.TakeMoney(salePrice)) {
             Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
@@ -180,11 +187,12 @@ public class Clerk extends AbstractClerk {
         return 0;
     }
 
-    public boolean GetSoldChance(Item item, boolean buying, boolean discount) {
+    // return wether a transaction is accepted
+    public boolean OfferAccepted(Item item, boolean buying, boolean discount) {
         int chance = 50;
         if (discount) chance += 25;
         if (!buying) {
-            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).tuned_) {
+            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).IsTuned()) {
                 chance += 10;
                 if (item instanceof Stringed) chance += 5;
                 else if (item instanceof Wind) chance += 10;
@@ -200,14 +208,14 @@ public class Clerk extends AbstractClerk {
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
         // if customer will buy at initial price
-        if (GetSoldChance(item, buying, false)) {
+        if (OfferAccepted(item, buying, false)) {
             // buy or sell the item at price
             return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, price)) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, price)));
         } else {
             // offer new price more favorable to customer
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
             // if customer will buy at changed price
-            if (GetSoldChance(item, buying, true)) {
+            if (OfferAccepted(item, buying, true)) {
                 // buy or sell item at price +/- 10%
                 return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, (int)(price+(price*0.1)))) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, (int)(price-(price*0.1)))));
             } else {
@@ -263,7 +271,7 @@ public class Clerk extends AbstractClerk {
             Print("Oh no! " + name_ + " broke a " + toBreak.name_ + " while cleaning");
             // lower condition of item and remove if it fully breaks
             if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
-            if (toBreak instanceof Clothing) UpdateDiscontinuedItems(toBreak.itemType_);
+            if (toBreak instanceof Clothing) UpdateDiscontinuedStatus(toBreak.itemType_);
             Publish("damagedcleaning", 1);
         } else {
             // nothing breaks

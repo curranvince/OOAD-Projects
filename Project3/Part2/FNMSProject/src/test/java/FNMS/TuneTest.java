@@ -16,7 +16,7 @@ public class TuneTest {
         for (Item item : store.inventory_) {
             if (item.GetComponent(Tuneable.class) != null) {
                 clerk.tune_strategy_.Execute(item.GetComponent(Tuneable.class));
-                assertTrue(item.GetComponent(Tuneable.class).tuned_ == true, "all electronically tuned items should be tuned");
+                assertTrue(item.GetComponent(Tuneable.class).IsTuned(), "all electronically tuned items should be tuned");
             }
         }
     }

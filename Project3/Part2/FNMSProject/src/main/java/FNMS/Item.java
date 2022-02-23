@@ -67,7 +67,7 @@ abstract class Item implements ItemUtility {
         } while (condition_ == Condition.broken);
     };
 
-    // Resources that helped with the Add/Get Component methods
+    // Resources that helped with the Component system
     // https://stackoverflow.com/questions/10531513/how-to-identify-object-types-in-java
     // https://stackoverflow.com/questions/24600489/get-the-type-of-generic-t
     // https://stackoverflow.com/questions/14524751/cast-object-to-generic-type-for-returning
@@ -97,6 +97,7 @@ abstract class Item implements ItemUtility {
     // lower the condition of an item, including its list price
     // if the item breaks return false, else return true
     boolean LowerCondition() {
+        if (condition_ == Condition.broken) return false; // should never happen but just incase
         // lower condition of item by one
         Print(name_ + "'s condition has lowered from " + condition_.name() + " to " + Condition.values()[condition_.ordinal()-1].name());
         condition_ = Condition.values()[condition_.ordinal()-1];

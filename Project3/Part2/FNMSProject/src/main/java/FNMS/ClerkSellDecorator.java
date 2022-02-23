@@ -31,7 +31,7 @@ abstract class ClerkDecorator extends AbstractClerk {
     public int PlaceOrders(Set<ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
     public int Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
     public int Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
-    public boolean GetSoldChance(Item item, boolean buying, boolean discount) { return decoratedStaff_.GetSoldChance(item, buying, discount); }
+    public boolean OfferAccepted(Item item, boolean buying, boolean discount) { return decoratedStaff_.OfferAccepted(item, buying, discount); }
     public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }

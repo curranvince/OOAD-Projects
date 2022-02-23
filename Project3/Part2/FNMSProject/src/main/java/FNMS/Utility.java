@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.List;
 
 interface Utility {
-    // Pair class for.. making pairs
     // https://docs.oracle.com/javase/tutorial/java/generics/types.html
     class Pair<K, V> {
         private K key_;
@@ -17,7 +16,7 @@ interface Utility {
     
         public K getKey() { return key_; }
         public V getValue() { return value_; }
-        public void updateValue(V value) { value_ = value; }
+        public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
     }
     
     // make sure theres only one 'random' instead of instantiating everywhere
@@ -59,9 +58,8 @@ interface Utility {
         return clazz.getEnumConstants()[x];
     }
     
-    // return an offer price based off a given item condition
+    // return random price based off condition
     default int GetOfferPrice(Item.Condition condition) {
-        // offer different prices based on given condition
         int max = (condition.ordinal() * 10) + 1;
         int min = max - 11;
         if (min == 0) min++;

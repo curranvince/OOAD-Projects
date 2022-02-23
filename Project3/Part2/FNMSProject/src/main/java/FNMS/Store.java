@@ -1,7 +1,3 @@
-// TO DO
-// Alter number of buyers arriving to store
-// Clerks may be sick
-
 package FNMS;
 
 import java.util.*;
@@ -126,14 +122,6 @@ class Store extends Publisher implements Utility {
             if (clerk != activeClerk_) clerk.ResetDaysWorked();
         }
     }
-
-    public boolean HasClothing() {
-        for (Item item : inventory_) {
-            if (item instanceof Clothing) return true;
-        }
-        return false;
-    }
-
 
     private Vector<Customer> GenerateCustomers() {
         // make vector to return

@@ -3,7 +3,7 @@ package FNMS;
 abstract class Component {}
 
 class Tuneable extends Component {
-    boolean tuned_;
+    private boolean tuned_;
 
     Tuneable() { tuned_ = false; }
 
