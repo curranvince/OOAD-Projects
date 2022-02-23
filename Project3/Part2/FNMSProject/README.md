@@ -13,6 +13,8 @@ mvn test
 
 * Outputs to terminal
 * Logs by class can be found in /FNMSProject/target/surefire-reports
+* Note specific test information is only output when tests fail, other than that just says how many pass
+*   This means to see whats being tested look at * Test files in ~/test
 
 Run (please compile first!):
 mvn exec:java
