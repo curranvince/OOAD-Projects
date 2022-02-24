@@ -1,0 +1,11 @@
+Shaggy arrived at the store
+Shaggy added 6 item(s) to inventory
+Shaggy checked register to find $1878
+Shaggy damaged 17 item(s) while tuning
+Shaggy counted 59 item(s) in inventory
+Shaggy found the store's inventory is worth $1577
+Shaggy ordered 0 item(s)
+Shaggy sold 4 item(s)
+Shaggy purchased 3 item(s)
+Shaggy damaged 0 item(s) while cleaning
+Shaggy left the store
