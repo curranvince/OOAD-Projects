@@ -36,23 +36,46 @@ public class District implements Utility {
         }
     }
 
-    public void RunDay() {
+    private void QueueCustomers() {
+        for (int i = 0; i < stores_.size(); i++) {
+            List<Customer> toServe = new ArrayList<Customer>();
+            // get random amounts of buyers and sellers in range
+            int buyers = 2 + GetPoissonRandom(3);
+            int sellers = GetRandomNum(1, 5);
+            // create buyers and sellers
+            for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
+            for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
+            // shuffle vector so we get customers in random order
+            Collections.shuffle(toServe);
+            stores_.get(i).QueueCustomers(toServe);
+            toServe.clear();
+        }
+    }
+
+    public void SimDay() {
         // open new logger and subscribe everyone
         OpenLogger();
+        
         // open or close stores depending on day
         if (Simulation.current_day_ % 7 != 0) { 
             AssignClerks();
+            QueueCustomers();
             for (int i = 0; i < stores_.size(); i++) {
+                Logger.getInstance().UpdateStore(stores_.get(i));
+                Tracker.getInstance().UpdateClerk(stores_.get(i).GetActiveClerk().GetName());
                 stores_.get(i).OpenToday();
+                Logger.getInstance().OutputData();
             }
         } else { 
             ResetDaysWorked();
             for (int i = 0; i < stores_.size(); i++) {
+                Logger.getInstance().UpdateStore(stores_.get(i));
                 stores_.get(i).ClosedToday();
+                Logger.getInstance().OutputData();
             }
         }
         // show tracker at end of each day
-        Tracker.getInstance().ShowData();
+        Tracker.getInstance().OutputData();
         // have stores unsubscribe from logger and close it
         CloseLogger();
     }

@@ -2,8 +2,6 @@ package FNMS;
 
 import java.util.Set;
 
-import FNMS.Customer.RequestType;
-
 // staff members have a name, access to store, and know how many days theyve worked in a row
 // they can publish information to subscribers, and do so when arriving or leaving store
 // can be extended to create Staff members with completely different roles
@@ -19,8 +17,6 @@ abstract class Staff extends Publisher {
     public void ResetDaysWorked() { days_worked_ = 0; }
 
     public void UpdateStore(Store store) { store_ = store; }
-
-    protected void Publish(String context, int data) { super.Publish(context, name_, data); }
    
     // broadcast arriving to store
     public void ArriveAtStore() {
@@ -45,13 +41,12 @@ abstract class AbstractClerk extends Staff {
     abstract public boolean CheckRegister();
     abstract public void GoToBank();
     abstract public Set<Item.ItemType> DoInventory();
-    abstract public int PlaceOrders(Set<Item.ItemType> orderTypes);
-    abstract public int Sell(Item item, int salePrice);
-    abstract public int Buy(Item item, int salePrice);
+    abstract public void PlaceOrders(Set<Item.ItemType> orderTypes);
+    abstract public boolean Sell(Item item, int salePrice);
+    abstract public boolean Buy(Item item, int salePrice);
     abstract public boolean OfferAccepted(Item item, boolean buying, boolean discount);
     abstract public Item CheckForItem(Item.ItemType itemType);
-    abstract public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying);
-    abstract public Pair<RequestType, Integer> HandleCustomer(Customer customer);
+    abstract public boolean TryTransaction(Item item, boolean buying);
     abstract public void CleanStore();
 }
 

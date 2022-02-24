@@ -1,22 +1,20 @@
-Shaggy arrived at the store
-Shaggy added 6 item(s) to inventory
-Shaggy checked register to find $3372
-Shaggy damaged 0 item(s) while tuning
-Shaggy counted 46 item(s) in inventory
-Shaggy found the store's inventory is worth $1374
+Velma found the store's inventory is worth $1655
+Velma added 18 item(s) to North Side Store's inventory
+Velma ordered 0 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma left the North Side Store
+Velma arrived at the North Side Store
+Velma purchased 4 item(s)
+Velma checked register to find $2760
+Velma damaged 0 item(s) while tuning
+Velma counted 60 item(s) in inventory
+Shaggy found the store's inventory is worth $1210
+Shaggy added 3 item(s) to South Side Store's inventory
 Shaggy ordered 6 item(s)
-Shaggy sold 2 item(s)
-Shaggy purchased 2 item(s)
 Shaggy damaged 0 item(s) while cleaning
-Shaggy left the store
-Daphne arrived at the store
-Daphne added 3 item(s) to inventory
-Daphne checked register to find $3007
-Daphne damaged 10 item(s) while tuning
-Daphne counted 50 item(s) in inventory
-Daphne found the store's inventory is worth $1390
-Daphne ordered 6 item(s)
-Daphne sold 4 item(s)
-Daphne purchased 2 item(s)
-Daphne damaged 1 item(s) while cleaning
-Daphne left the store
+Shaggy left the South Side Store
+Shaggy arrived at the South Side Store
+Shaggy purchased 3 item(s)
+Shaggy checked register to find $3373
+Shaggy damaged 0 item(s) while tuning
+Shaggy counted 45 item(s) in inventory

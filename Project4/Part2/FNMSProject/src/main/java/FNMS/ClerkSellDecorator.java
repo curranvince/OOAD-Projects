@@ -2,7 +2,6 @@ package FNMS;
 
 import java.util.Set;
 
-import FNMS.Customer.RequestType;
 import FNMS.Item.ItemType;
 
 // https://www.geeksforgeeks.org/decorator-design-pattern-in-java-with-example/
@@ -29,13 +28,13 @@ abstract class ClerkDecorator extends AbstractClerk {
     public boolean CheckRegister() { return decoratedStaff_.CheckRegister(); }
     public void GoToBank() { decoratedStaff_.GoToBank(); }
     public Set<ItemType> DoInventory() { return decoratedStaff_.DoInventory(); }
-    public int PlaceOrders(Set<ItemType> orderTypes) { return decoratedStaff_.PlaceOrders(orderTypes); }
-    public int Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
-    public int Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
+    public void PlaceOrders(Set<ItemType> orderTypes) { decoratedStaff_.PlaceOrders(orderTypes); }
+    public boolean Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
+    public boolean Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
     public boolean OfferAccepted(Item item, boolean buying, boolean discount) { return decoratedStaff_.OfferAccepted(item, buying, discount); }
     public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
-    public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
-    public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
+    public boolean TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
+    //public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
 }
@@ -45,15 +44,15 @@ class ClerkSellDecorator extends ClerkDecorator {
     public ClerkSellDecorator(AbstractClerk clerk) { super(clerk); }
 
     // decorated sell method to sell accessories when a stringed instrument is sold
-    public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
-        Pair<RequestType, Integer> result = super.HandleCustomer(customer);
+    public boolean TryTransaction(Item item, boolean buying) {
+        boolean result = super.TryTransaction(item, buying);
         // if we just sold a stringed instrument
-        if (result.getKey() == RequestType.Buy && result.getValue() == 1 && customer.GetItem() instanceof Stringed) {
+        if (result && !buying && item instanceof Stringed) {
             // define chances to sell each type
             int chances[] = {10,15,20,30};
             ItemType types[] = { ItemType.GIGBAG, ItemType.PRACTICEAMPS, ItemType.CABLES, ItemType.STRINGS };
             // if the item was electric add 10% to each chance
-            if (customer.GetItem().GetComponent(Electric.class) != null ) {
+            if (item.GetComponent(Electric.class) != null ) {
                 for (int i = 0; i < chances.length; i++) { chances[i] += 10; }
             }
             // try selling accessories
@@ -66,11 +65,11 @@ class ClerkSellDecorator extends ClerkDecorator {
                     Print("The customer decides they also want to buy " + num + " " + types[i].name());
                     for (int j = 0; j < num; j++) {
                         Item toSell = super.CheckForItem(types[i]);
-                        if (toSell != null)  result.updateValue(result.getValue()+super.Sell(toSell, toSell.list_price_));
+                        if (toSell != null) super.Sell(toSell, toSell.list_price_);
                     }
                 }
             }
         }
-        return result;
+        return true;
     }
 }

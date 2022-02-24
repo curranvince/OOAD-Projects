@@ -1,22 +1,20 @@
-Scooby arrived at the store
-Scooby added 0 item(s) to inventory
-Scooby checked register to find $2527
-Scooby damaged 3 item(s) while tuning
-Scooby counted 54 item(s) in inventory
-Scooby found the store's inventory is worth $1598
-Scooby ordered 0 item(s)
-Scooby sold 5 item(s)
-Scooby purchased 1 item(s)
-Scooby damaged 0 item(s) while cleaning
-Scooby left the store
-Shaggy arrived at the store
-Shaggy added 3 item(s) to inventory
-Shaggy checked register to find $2709
-Shaggy damaged 0 item(s) while tuning
-Shaggy counted 47 item(s) in inventory
-Shaggy found the store's inventory is worth $1287
-Shaggy ordered 3 item(s)
-Shaggy sold 3 item(s)
-Shaggy purchased 2 item(s)
-Shaggy damaged 0 item(s) while cleaning
-Shaggy left the store
+Daphne found the store's inventory is worth $1397
+Daphne added 0 item(s) to North Side Store's inventory
+Daphne ordered 3 item(s)
+Daphne damaged 0 item(s) while cleaning
+Daphne left the North Side Store
+Daphne arrived at the North Side Store
+Daphne purchased 1 item(s)
+Daphne checked register to find $2530
+Daphne damaged 9 item(s) while tuning
+Daphne counted 53 item(s) in inventory
+Fred found the store's inventory is worth $1423
+Fred added 0 item(s) to South Side Store's inventory
+Fred ordered 0 item(s)
+Fred damaged 1 item(s) while cleaning
+Fred left the South Side Store
+Fred arrived at the South Side Store
+Fred purchased 2 item(s)
+Fred checked register to find $2591
+Fred damaged 1 item(s) while tuning
+Fred counted 51 item(s) in inventory

@@ -1,11 +1,12 @@
 package FNMS;
 
 import java.io.*;
+import java.util.*;
 
 // These Subscribers are an example of the Observer pattern
 interface Subscriber extends Utility {
-    public void Update(String context, String name, int data);
-    public void ShowData();
+    public void Update(String context, int data);
+    public void OutputData();
     public void Close();
 }
 
@@ -14,6 +15,9 @@ class Logger implements Subscriber {
     // uses lazy instantiation
     private static Logger instance;
     private FileWriter writer_;
+    private Map<String, Integer> data_ = new HashMap<String, Integer>(); // https://www.w3schools.com/java/java_hashmap.asp
+    private Store current_store_ = null;
+    private String name_;
     private int current_ = 0;
 
     private Logger() {}
@@ -33,6 +37,11 @@ class Logger implements Subscriber {
         } 
     }
 
+    public void UpdateStore(Store store) { 
+        current_store_ = store; 
+        name_ = current_store_.GetActiveClerk().GetName();
+    }
+
     // make sure we write to appropriate file
     private void UpdateWriter() {
         if (current_ != Simulation.current_day_) {
@@ -50,49 +59,61 @@ class Logger implements Subscriber {
         }
     }
 
-    // consume context/data and write it to file
-    public void Update(String context, String clerk, int data) {
+    // update data
+    public void Update(String context, int data) {
         UpdateWriter();
-        switch (context) {
-            case "arrival": 
-                Write(clerk + " arrived at the store");
-                break;
-            case "itemsadded":
-                Write(clerk + " added " + data + " item(s) to inventory");
-                break;
-            case "checkedregister":
-                Write(clerk + " checked register to find $" + data);
-                break;
-            case "totalitems":
-                Write(clerk + " counted " + data + " item(s) in inventory");
-                break;
-            case "totalitemsprice":
-                Write(clerk + " found the store's inventory is worth $" + data);
-                break;
-            case "brokeintuning":
-                Write(clerk + " damaged " + data + " item(s) while tuning");
-                break;
-            case "itemsordered":
-                Write(clerk + " ordered " + data + " item(s)");
-                break;
-            case "itemsold":
-                Write(clerk + " sold " + data + " item(s)");
-                break;
-            case "itemsbought":
-                Write(clerk + " purchased " + data + " item(s)");
-                break;
-            case "damagedcleaning":
-                Write(clerk + " damaged " + data + " item(s) while cleaning");
-                break;
-            case "leftstore":
-                Write(clerk + " left the store");
-                break;
-            case "closed":
-                Write("The store was closed today");
-                break;
-            default:
-                break;
+        if (data_.get(context) == null) {
+            data_.put(context, data);
+        } else {
+            data_.put(context, (data_.get(context) + data)); // https://stackoverflow.com/questions/4157972/how-to-update-a-value-given-a-key-in-a-hashmap
         }
+    }
+
+    // write data to file and reset data
+    public void OutputData() {
+        for (String i : data_.keySet()) {
+            switch (i) {
+                case "arrival": 
+                    Write(name_ + " arrived at the " + current_store_.getName());
+                    break;
+                case "itemsadded":
+                    Write(name_ + " added " + data_.get("itemsadded") + " item(s) to " + current_store_.getName() + "'s inventory");
+                    break;
+                case "checkedregister":
+                    Write(name_ + " checked register to find $" + data_.get("checkedregister"));
+                    break;
+                case "totalitems":
+                    Write(name_ + " counted " + data_.get("totalitems") + " item(s) in inventory");
+                    break;
+                case "totalitemsprice":
+                    Write(name_ + " found the store's inventory is worth $" + data_.get("totalitemsprice"));
+                    break;
+                case "brokeintuning":
+                    Write(name_ + " damaged " + data_.get("brokeintuning") + " item(s) while tuning");
+                    break;
+                case "itemsordered":
+                    Write(name_ + " ordered " + data_.get("itemsordered") + " item(s)");
+                    break;
+                case "itemsold":
+                    Write(name_ + " sold " + data_.get("itemssold") + " item(s)");
+                    break;
+                case "itemsbought":
+                    Write(name_ + " purchased " + data_.get("itemsbought") + " item(s)");
+                    break;
+                case "damagedcleaning":
+                    Write(name_ + " damaged " + data_.get("damagedcleaning") + " item(s) while cleaning");
+                    break;
+                case "leftstore":
+                    Write(name_ + " left the " + current_store_.getName());
+                    break;
+                case "closed":
+                    Write("The " + current_store_.getName() + " was closed today");
+                    break;
+                default:
+                    break;
+            }
+        }
+        data_.clear();
     }
 
     // close the writer when logger closes
@@ -103,9 +124,6 @@ class Logger implements Subscriber {
             Print("Error: Failed to close Loggers file writer");
         }
     }
-
-    // holds no data
-    public void ShowData() {}
 }
 
 // Tracker exists for an entire simulation and 
@@ -114,34 +132,36 @@ class Tracker implements Subscriber {
     // Using eager instantiation
     private static final Tracker instance = new Tracker();
     private int[][] stats_ = new int[6][4];
+    private int clerk_index_;
     // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
     // [][0] for days worked, [][1] for sold, [][2] for purchased, [][3] for damaged
     
     private Tracker() {};
     public static Tracker getInstance() { return instance; }
     
-    // for data we're interested in, add to the data table
-    public void Update(String context, String name, int data) {
-        int clerk_index = -1;
+    public void UpdateClerk(String name) {
         for (int i = 0; i < District.clerks_.size(); i++) {
-            if (name == District.clerks_.get(i).GetName()) { clerk_index = i; }
+            if (name == District.clerks_.get(i).GetName()) { clerk_index_ = i; }
         }
-        if (clerk_index == -1) { Print("ERROR: TRACKER COULDNT FIND CLERK"); }
+    }
+    
+    // for data we're interested in, add to the data table
+    public void Update(String context, int data) {
         switch (context) {
             case "arrival": 
-                stats_[clerk_index][0] += data;
+                stats_[clerk_index_][0] += data;
                 break;
             case "brokeintuning":
-                stats_[clerk_index][3] += data;
+                stats_[clerk_index_][3] += data;
                 break;
             case "itemsold":
-                stats_[clerk_index][1] += data;
+                stats_[clerk_index_][1] += data;
                 break;
             case "itemsbought":
-                stats_[clerk_index][2] += data;
+                stats_[clerk_index_][2] += data;
                 break;
             case "damagedcleaning":
-                stats_[clerk_index][3] += data;
+                stats_[clerk_index_][3] += data;
                 break;
             default:
                 break;
@@ -149,7 +169,7 @@ class Tracker implements Subscriber {
     }
 
     // print the data table
-    public void ShowData() {
+    public void OutputData() {
         Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Days Worked       Items Sold      Items Purchased      Items Damaged ");
         for (int i = 0; i < District.clerks_.size(); i++) {

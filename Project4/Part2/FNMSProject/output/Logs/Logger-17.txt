@@ -1,22 +1,19 @@
-Scooby arrived at the store
-Scooby added 0 item(s) to inventory
-Scooby checked register to find $2817
-Scooby damaged 5 item(s) while tuning
-Scooby counted 50 item(s) in inventory
-Scooby found the store's inventory is worth $1468
-Scooby ordered 0 item(s)
-Scooby sold 5 item(s)
-Scooby purchased 3 item(s)
-Scooby damaged 0 item(s) while cleaning
-Scooby left the store
-Fred arrived at the store
-Fred added 0 item(s) to inventory
-Fred checked register to find $2832
-Fred damaged 1 item(s) while tuning
-Fred counted 46 item(s) in inventory
-Fred found the store's inventory is worth $1252
-Fred ordered 6 item(s)
-Fred sold 4 item(s)
-Fred purchased 4 item(s)
+Fred found the store's inventory is worth $1368
+Fred added 3 item(s) to North Side Store's inventory
+Fred ordered 0 item(s)
 Fred damaged 0 item(s) while cleaning
-Fred left the store
+Fred left the North Side Store
+Fred arrived at the North Side Store
+Fred checked register to find $2666
+Fred damaged 2 item(s) while tuning
+Fred counted 49 item(s) in inventory
+Norville found the store's inventory is worth $1437
+Norville added 0 item(s) to South Side Store's inventory
+Norville ordered 0 item(s)
+Norville damaged 0 item(s) while cleaning
+Norville left the South Side Store
+Norville arrived at the South Side Store
+Norville purchased 4 item(s)
+Norville checked register to find $2633
+Norville damaged 7 item(s) while tuning
+Norville counted 51 item(s) in inventory

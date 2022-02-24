@@ -2,19 +2,19 @@ package FNMS;
 
 import java.util.*;
 
-import FNMS.Customer.RequestType;
 import FNMS.Item.ItemType;
 
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
 abstract class Publisher implements Utility {
     protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
+    protected LinkedList<Customer> customers_ = new LinkedList<Customer>();
 
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
     public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
-    protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
+    protected void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, data); }
 }
 
 class Store extends Publisher {
@@ -39,10 +39,10 @@ class Store extends Publisher {
         }
     }
 
-    private AbstractClerk activeClerk_;
-
     private String name_;
     private int total_withdrawn_ = 0;
+    private AbstractClerk activeClerk_;
+   
     public KitFactory kitFactory_;
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();
@@ -66,14 +66,15 @@ class Store extends Publisher {
     public String getName() { return name_; }
     public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }
     public int getWithdrawn() { return total_withdrawn_; }
-    
+
+    public AbstractClerk GetActiveClerk() { return activeClerk_; }
+
+    public void QueueCustomers(List<Customer> customers) { customers_.addAll(customers); }
+
     public void Discontiue(ItemType itemType) { 
         Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
     }
-
-    // override publish to automatically send name of active clerk
-    private void Publish(String context, int data) { Publish(context, activeClerk_.GetName(), data); }
 
     // method for an entire open store day
     public void OpenToday() {
@@ -94,26 +95,23 @@ class Store extends Publisher {
         activeClerk_.UpdateStore(this);
     }
 
-    private List<Customer> GenerateCustomers() {
-        // make vector to return
-        List<Customer> toServe = new ArrayList<Customer>();
-        // get random amounts of buyers and sellers in range
-        int buyers = 2 + GetPoissonRandom(3);
-        int sellers = GetRandomNum(1, 5);
-        // create buyers and sellers
-        for (int i = 0; i < buyers; i++) { toServe.add(new Buyer()); }
-        for (int i = 0; i < sellers; i++) { toServe.add(new Seller()); }
-        // shuffle vector so we get customers in random order
-        Collections.shuffle(toServe);
-        return toServe;
-    }
-
     // store opens for the day
     public void Opens() {
         int itemssold, itemsbought;
         itemssold = itemsbought = 0;
-        // make custoemrs and have clerk handle their request
-        for (Customer customer : GenerateCustomers()) {
+        while (!customers_.isEmpty()) { // https://stackoverflow.com/questions/57715470/iterating-a-list-until-the-list-is-empty
+            Iterator<Customer> it = customers_.listIterator();
+            while (it.hasNext()) {
+                Customer customer = it.next();
+                customer.MakeRequest();
+                customer.LeaveStore();
+                it.remove();
+            }
+        }
+        /*
+        Customer customer = customers_.remove();
+        while (customer != null) {
+            /*
             Pair<RequestType, Integer> results = activeClerk_.HandleCustomer(customer);
             switch (results.getKey()) {
                 case Buy:
@@ -126,10 +124,14 @@ class Store extends Publisher {
                     break;
             }
             customer.LeaveStore();
+            customer.MakeRequest();
+            customer.LeaveStore();
+            customer = customers_.remove();
         }
+        */
         // publish number of items sold and bought throughout day
-        Publish("itemsold", itemssold);
-        Publish("itemsbought", itemsbought);
+        //Publish("itemsold", itemssold);
+        //Publish("itemsbought", itemsbought);
     }
 
     // announce that the store is closed

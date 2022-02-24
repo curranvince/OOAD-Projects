@@ -1,22 +1,20 @@
-Shaggy arrived at the store
-Shaggy added 0 item(s) to inventory
-Shaggy checked register to find $3032
-Shaggy damaged 0 item(s) while tuning
-Shaggy counted 46 item(s) in inventory
-Shaggy found the store's inventory is worth $1424
-Shaggy ordered 0 item(s)
-Shaggy sold 4 item(s)
-Shaggy purchased 1 item(s)
-Shaggy damaged 1 item(s) while cleaning
-Shaggy left the store
-Fred arrived at the store
-Fred added 3 item(s) to inventory
-Fred checked register to find $2811
-Fred damaged 5 item(s) while tuning
-Fred counted 50 item(s) in inventory
-Fred found the store's inventory is worth $1361
-Fred ordered 0 item(s)
-Fred sold 2 item(s)
-Fred purchased 2 item(s)
+Fred found the store's inventory is worth $1408
+Fred added 0 item(s) to North Side Store's inventory
+Fred ordered 3 item(s)
 Fred damaged 0 item(s) while cleaning
-Fred left the store
+Fred left the North Side Store
+Fred arrived at the North Side Store
+Fred purchased 2 item(s)
+Fred checked register to find $2772
+Fred damaged 2 item(s) while tuning
+Fred counted 47 item(s) in inventory
+Velma found the store's inventory is worth $1408
+Velma added 0 item(s) to South Side Store's inventory
+Velma ordered 3 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma left the South Side Store
+Velma arrived at the South Side Store
+Velma purchased 2 item(s)
+Velma checked register to find $2806
+Velma damaged 0 item(s) while tuning
+Velma counted 49 item(s) in inventory

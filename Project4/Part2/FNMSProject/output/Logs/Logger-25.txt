@@ -1,22 +1,19 @@
-Norville arrived at the store
-Norville added 3 item(s) to inventory
-Norville checked register to find $3239
-Norville damaged 1 item(s) while tuning
-Norville counted 59 item(s) in inventory
-Norville found the store's inventory is worth $1643
-Norville ordered 0 item(s)
-Norville sold 3 item(s)
-Norville purchased 1 item(s)
+Velma found the store's inventory is worth $1644
+Velma added 0 item(s) to North Side Store's inventory
+Velma ordered 3 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma left the North Side Store
+Velma arrived at the North Side Store
+Velma purchased 1 item(s)
+Velma checked register to find $3031
+Velma damaged 0 item(s) while tuning
+Velma counted 60 item(s) in inventory
+Norville found the store's inventory is worth $1234
+Norville added 6 item(s) to South Side Store's inventory
+Norville ordered 3 item(s)
 Norville damaged 0 item(s) while cleaning
-Norville left the store
-Daphne arrived at the store
-Daphne added 6 item(s) to inventory
-Daphne checked register to find $3159
-Daphne damaged 5 item(s) while tuning
-Daphne counted 54 item(s) in inventory
-Daphne found the store's inventory is worth $1515
-Daphne ordered 0 item(s)
-Daphne sold 4 item(s)
-Daphne purchased 1 item(s)
-Daphne damaged 1 item(s) while cleaning
-Daphne left the store
+Norville left the South Side Store
+Norville arrived at the South Side Store
+Norville checked register to find $3603
+Norville damaged 4 item(s) while tuning
+Norville counted 47 item(s) in inventory

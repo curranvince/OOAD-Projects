@@ -2,7 +2,6 @@ package FNMS;
 
 import java.util.*;
 
-import FNMS.Customer.RequestType;
 import FNMS.Item.ItemType;
 
 public class Clerk extends AbstractClerk {
@@ -130,7 +129,7 @@ public class Clerk extends AbstractClerk {
     }
 
     // take in a set of itemtypes we don't have, and return # of items ordered
-    public int PlaceOrders(Set<ItemType> orderTypes) {
+    public void PlaceOrders(Set<ItemType> orderTypes) {
         int orders = 0;
         // remove discontinued items
         orderTypes.removeAll(store_.discontinued_);
@@ -154,11 +153,10 @@ public class Clerk extends AbstractClerk {
         // print and publish amount of orders placed
         Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
         Publish("itemsordered", orders);
-        return orders;
     }
 
     // sell an item to a customer
-    public int Sell(Item item, int salePrice) {
+    public boolean Sell(Item item, int salePrice) {
         Print("The customer buys the " + item.name_ + " for $" + salePrice);
         // add money to register, update item stats, update inventories
         store_.register_.AddMoney(salePrice);
@@ -168,11 +166,12 @@ public class Clerk extends AbstractClerk {
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
         if (item instanceof Clothing) UpdateDiscontinuedStatus(item.itemType_);
-        return 1;
+        Publish("itemssold", 1);
+        return true;
     }
 
     // buy an item from a customer 
-    public int Buy(Item item, int salePrice) {
+    public boolean Buy(Item item, int salePrice) {
         if (store_.register_.TakeMoney(salePrice)) {
             Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
             // take money from register, update item stats, update inventories
@@ -180,10 +179,11 @@ public class Clerk extends AbstractClerk {
             item.list_price_ = salePrice*2;
             item.day_arrived = Simulation.current_day_;
             store_.inventory_.add(item);
-            return 1;
+            Publish("itemsbought", 1);
+            return true;
         }  
         Print("Unfortunately, the store doesn't have enough money to buy the " + item.name_);
-        return 0;
+        return false;
     }
 
     // return wether a transaction is accepted
@@ -200,29 +200,45 @@ public class Clerk extends AbstractClerk {
         return (GetRandomNum(100) < chance);
     }
 
+    private boolean CheckDiscontinuedStatus(Item item, boolean buying) {
+        if (store_.discontinued_.size() == 3 && item instanceof Clothing) { 
+            // if all clothings been discontinued, we no longer buy it from customer or order
+            Print(name_ + " tells the customer we're out of all clothing items, so we no longer buy them from customers or order them"); 
+            return true;
+        } else if (!buying && store_.discontinued_.contains(item.itemType_)) {
+            Print(name_ + " tells the customer we're out of " + item.itemType_ + " and will not order anymore, though we will buy them from customers"); 
+            return true;
+        }
+        return false;
+    }
+
     // handle buying or selling
-    public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying) {
-        if (item == null) { return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0)); }
+    public boolean TryTransaction(Item item, boolean buying) {
+        // make sure item exists and then is not discontinued
+        if (item == null) return false;
+        if (CheckDiscontinuedStatus(item, buying)) return false;
         // get price based off condition, or list price
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
         // if customer will buy at initial price
         if (OfferAccepted(item, buying, false)) {
             // buy or sell the item at price
-            return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, price)) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, price)));
+            if (buying) Buy(item, price);
+            else Sell(item, price);
         } else {
             // offer new price more favorable to customer
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
             // if customer will buy at changed price
             if (OfferAccepted(item, buying, true)) {
                 // buy or sell item at price +/- 10%
-                return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, Buy(item, (int)(price+(price*0.1)))) : new Pair<RequestType, Integer>(RequestType.Buy, Sell(item, (int)(price-(price*0.1)))));
+                return (buying ? Buy(item, (int)(price + (price*.1))) : Sell(item, (int)(price - (price*.1))));
             } else {
                 // customer does not want to complete transaction after new price
                 Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
             }
         }
-        return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0));
+        return false;
+        //return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0));
     }
 
     // look through inventory for an itemtype, return first item found of type
@@ -236,21 +252,15 @@ public class Clerk extends AbstractClerk {
         Print(name_ + " finds no " + itemType.name() + " in the inventory");
         return null;
     }
-
+    
+    /*
     // route customers request to appropriate method
     public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
         RequestType request = customer.MakeRequest();
         // check for item being discontinued
-        if (store_.discontinued_.size() == 3 && customer.item_ instanceof Clothing) { 
-            // if all clothings been discontinued, we no longer buy it from customer or order
-            Print(name_ + " tells the customer we're out of all clothing items, so we no longer buy them from customers or order them"); 
-            return new Pair<RequestType, Integer>(request, 0);
-        } else if (request == RequestType.Buy && store_.discontinued_.contains(customer.item_.itemType_)) {
-            Print(name_ + " tells the customer we're out of " + customer.GetItemType() + " and will not order anymore, though we will buy them from customers"); 
-            return new Pair<RequestType, Integer>(request, 0);
-        }
+        
         return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
-        /* alternate implementation for adding in more customer requests (ie 'trade')
+        alternate implementation for adding in more customer requests (ie 'trade')
         switch (customer.DisplayRequest()) {
             case Customer.RequestType.Buy: 
                 return TryTransaction(CheckForItem(customer.GetItemType()), false);
@@ -259,8 +269,9 @@ public class Clerk extends AbstractClerk {
             default:
                 Print("ERROR: Clerk.HandleCustomer given bad value")
         }
-        */
+        
     }
+    */
 
     public void CleanStore() {
         Print("The store closes for the day and " + name_ + " begins cleaning");

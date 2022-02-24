@@ -16,7 +16,7 @@ public class Simulation implements Utility {
             current_day_++;
             Print(" ***SIMULATION : DAY " + current_day_ + " BEGINNING***");
             // run a day
-            district_.RunDay();
+            district_.SimDay();
             //tracker.ShowData();
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
