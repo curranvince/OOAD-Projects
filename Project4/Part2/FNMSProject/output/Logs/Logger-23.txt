@@ -1,11 +1,4 @@
-Velma arrived at the store
-Velma added 0 item(s) to inventory
-Velma checked register to find $3239
-Velma damaged 0 item(s) while tuning
-Velma counted 49 item(s) in inventory
-Velma found the store's inventory is worth $1227
-Velma ordered 0 item(s)
-Velma sold 4 item(s)
-Velma purchased 0 item(s)
-Velma damaged 0 item(s) while cleaning
-Velma left the store
+Shaggy sold 1 item(s)
+Shaggy purchased 3 item(s)
+Scooby sold 6 item(s)
+Scooby purchased 3 item(s)

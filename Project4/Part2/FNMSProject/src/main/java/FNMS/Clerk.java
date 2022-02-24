@@ -7,11 +7,10 @@ import FNMS.Item.ItemType;
 
 public class Clerk extends AbstractClerk {
     
-    public Clerk(String name, int break_percentage, TuneStrategy tune, Store store) {
+    public Clerk(String name, int break_percentage, TuneStrategy tune) { 
         name_ = name;
         break_percentage_ = break_percentage;
-        tune_strategy_ = tune;
-        store_ = store;
+        tune_strategy_ = tune; 
     }  
     
     // receive current days orders when arriving to store

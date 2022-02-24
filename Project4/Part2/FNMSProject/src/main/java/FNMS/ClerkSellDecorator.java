@@ -20,6 +20,7 @@ abstract class ClerkDecorator extends AbstractClerk {
     public void IncrementDaysWorked() { decoratedStaff_.IncrementDaysWorked(); }
     public int GetDaysWorked() { return decoratedStaff_.GetDaysWorked(); }
     public void ResetDaysWorked() { decoratedStaff_.ResetDaysWorked(); }
+    public void UpdateStore(Store store) { decoratedStaff_.UpdateStore(store); }
     // Publisher methods
     public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
     public void Unsubscribe(Subscriber unsubscriber) { decoratedStaff_.Unsubscribe(unsubscriber); }

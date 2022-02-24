@@ -7,7 +7,7 @@ import FNMS.Item.ItemType;
 
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
-abstract class Publisher {
+abstract class Publisher implements Utility {
     private List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
 
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
@@ -16,7 +16,7 @@ abstract class Publisher {
     protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
 }
 
-class Store extends Publisher implements Utility {
+class Store extends Publisher {
     // CashRegister class to handle the Stores $
     // Good example of Cohesion because the class has
     // one specifc purpose (handling money/doing simple math)
@@ -41,14 +41,18 @@ class Store extends Publisher implements Utility {
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private AbstractClerk activeClerk_;
 
+    public String name_;
     public int total_withdrawn_ = 0;
+    public KitFactory kitFactory_;
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();
     public List<Item> sold_ = new ArrayList<Item>();
     public List<ItemType> discontinued_ = new ArrayList<ItemType>();
     public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
     
-    Store() {
+    Store(String name, KitFactory kitFactory) {
+        kitFactory_ = kitFactory;
+        name_ = name;
         // store start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
@@ -57,10 +61,6 @@ class Store extends Publisher implements Utility {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
             }
         }
-        // make decorated clerks with break chances & tuning algorithms
-        clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune(), this)); // Shaggy is lazy - so he does not try to sell extra items when Stringed instruments are sold
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
     
     public void Discontiue(ItemType itemType) { 
@@ -91,7 +91,6 @@ class Store extends Publisher implements Utility {
         // have clerk do inventory and order items if necessary
         // let the store open, clerk handles customers
         // have clerk clean and close the store
-        this.ChooseClerk();
         activeClerk_.ArriveAtStore();
         if (!activeClerk_.CheckRegister()) activeClerk_.GoToBank();
         activeClerk_.PlaceOrders(activeClerk_.DoInventory());
@@ -100,27 +99,9 @@ class Store extends Publisher implements Utility {
         activeClerk_.CloseStore();
     }
 
-    public void ChooseClerk() {
-        // 10% chance that one random clerk is sick
-        List<Integer> cantWorkIDs = new ArrayList<>();
-        if (GetRandomNum(10) == 0) {
-            int cantWorkID = GetRandomNum(clerks_.size());
-            cantWorkIDs.add(cantWorkID);
-            Print(clerks_.get(cantWorkID).GetName() + " is sick, so they can't work today");
-        }
-        // choose a clerk
-        int id = GetRandomNumEx(0, clerks_.size(), cantWorkIDs);
-        activeClerk_ = clerks_.get(id);
-        // if they worked 3 days in a row pick someone else
-        if (activeClerk_.GetDaysWorked() == 3) { 
-            cantWorkIDs.add(id);
-            activeClerk_ = clerks_.get(GetRandomNumEx(0, clerks_.size(), cantWorkIDs));
-        }
-        // update days worked for all clerks
-        activeClerk_.IncrementDaysWorked();
-        for (Staff clerk : clerks_) {
-            if (clerk != activeClerk_) clerk.ResetDaysWorked();
-        }
+    public void UpdateClerk(AbstractClerk clerk) { 
+        activeClerk_ = clerk; 
+        activeClerk_.UpdateStore(this);
     }
 
     private List<Customer> GenerateCustomers() {

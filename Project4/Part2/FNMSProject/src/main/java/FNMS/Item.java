@@ -112,6 +112,8 @@ abstract class Item implements ItemUtility {
     }
 }
 
+class GuitarKit extends Item {} 
+
 // Example of Iheritance : Music inherits from Item
 // All the classes below are also examples of Inheritance
 abstract class Music extends Item {
