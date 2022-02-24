@@ -1,22 +1,22 @@
-Fred arrived at the store
-Fred added 0 item(s) to inventory
-Fred checked register to find $2111
-Fred damaged 2 item(s) while tuning
-Fred counted 48 item(s) in inventory
-Fred found the store's inventory is worth $1179
-Fred ordered 9 item(s)
-Fred sold 6 item(s)
-Fred purchased 2 item(s)
-Fred damaged 0 item(s) while cleaning
-Fred left the store
+Norville arrived at the store
+Norville added 0 item(s) to inventory
+Norville checked register to find $1832
+Norville damaged 4 item(s) while tuning
+Norville counted 51 item(s) in inventory
+Norville found the store's inventory is worth $1376
+Norville ordered 0 item(s)
+Norville sold 5 item(s)
+Norville purchased 4 item(s)
+Norville damaged 0 item(s) while cleaning
+Norville left the store
 Shaggy arrived at the store
 Shaggy added 0 item(s) to inventory
-Shaggy checked register to find $1650
+Shaggy checked register to find $1624
 Shaggy damaged 0 item(s) while tuning
-Shaggy counted 49 item(s) in inventory
-Shaggy found the store's inventory is worth $1287
-Shaggy ordered 3 item(s)
-Shaggy sold 5 item(s)
-Shaggy purchased 3 item(s)
+Shaggy counted 53 item(s) in inventory
+Shaggy found the store's inventory is worth $1304
+Shaggy ordered 0 item(s)
+Shaggy sold 3 item(s)
+Shaggy purchased 2 item(s)
 Shaggy damaged 0 item(s) while cleaning
 Shaggy left the store

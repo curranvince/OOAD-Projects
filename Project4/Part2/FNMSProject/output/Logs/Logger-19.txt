@@ -1,40 +1,22 @@
-Norville arrived at the store
-Norville arrived at the store
-Norville added 0 item(s) to inventory
-Norville added 0 item(s) to inventory
-Norville checked register to find $2823
-Norville checked register to find $2823
-Norville damaged 3 item(s) while tuning
-Norville damaged 3 item(s) while tuning
-Norville counted 55 item(s) in inventory
-Norville counted 55 item(s) in inventory
-Norville found the store's inventory is worth $1446
-Norville found the store's inventory is worth $1446
-Norville ordered 3 item(s)
-Norville ordered 3 item(s)
-Norville sold 2 item(s)
-Norville purchased 2 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville damaged 0 item(s) while cleaning
-Norville left the store
-Norville left the store
-Velma arrived at the store
-Velma arrived at the store
-Velma added 6 item(s) to inventory
-Velma added 6 item(s) to inventory
-Velma checked register to find $2942
-Velma checked register to find $2942
-Velma damaged 0 item(s) while tuning
-Velma damaged 0 item(s) while tuning
-Velma counted 52 item(s) in inventory
-Velma counted 52 item(s) in inventory
-Velma found the store's inventory is worth $1305
-Velma found the store's inventory is worth $1305
-Velma ordered 6 item(s)
-Velma ordered 6 item(s)
-Velma sold 3 item(s)
-Velma purchased 2 item(s)
-Velma damaged 0 item(s) while cleaning
-Velma damaged 0 item(s) while cleaning
-Velma left the store
-Velma left the store
+Shaggy arrived at the store
+Shaggy added 0 item(s) to inventory
+Shaggy checked register to find $3032
+Shaggy damaged 0 item(s) while tuning
+Shaggy counted 46 item(s) in inventory
+Shaggy found the store's inventory is worth $1424
+Shaggy ordered 0 item(s)
+Shaggy sold 4 item(s)
+Shaggy purchased 1 item(s)
+Shaggy damaged 1 item(s) while cleaning
+Shaggy left the store
+Fred arrived at the store
+Fred added 3 item(s) to inventory
+Fred checked register to find $2811
+Fred damaged 5 item(s) while tuning
+Fred counted 50 item(s) in inventory
+Fred found the store's inventory is worth $1361
+Fred ordered 0 item(s)
+Fred sold 2 item(s)
+Fred purchased 2 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the store

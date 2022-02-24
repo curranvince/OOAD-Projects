@@ -20,12 +20,12 @@ abstract class Staff extends Publisher {
 
     public void UpdateStore(Store store) { store_ = store; }
 
-    protected void Publish(String context, int data) { Publish(context, name_, data); }
+    protected void Publish(String context, int data) { super.Publish(context, name_, data); }
    
     // broadcast arriving to store
     public void ArriveAtStore() {
         days_worked_++;
-        Print(name_  + " has arrived at the store on Day " + Simulation.current_day_);
+        Print(name_  + " has arrived at the " + store_.getName() + " on Day " + Simulation.current_day_);
         Publish("arrival", 1);
     }
 

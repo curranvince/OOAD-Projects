@@ -1,31 +1,22 @@
+Shaggy arrived at the store
+Shaggy added 0 item(s) to inventory
+Shaggy checked register to find $1396
+Shaggy damaged 0 item(s) while tuning
+Shaggy counted 58 item(s) in inventory
+Shaggy found the store's inventory is worth $1565
+Shaggy ordered 0 item(s)
+Shaggy sold 6 item(s)
+Shaggy purchased 2 item(s)
+Shaggy damaged 0 item(s) while cleaning
+Shaggy left the store
 Scooby arrived at the store
 Scooby added 0 item(s) to inventory
-Scooby checked register to find $1557
-Scooby damaged 7 item(s) while tuning
-Scooby counted 55 item(s) in inventory
-Scooby found the store's inventory is worth $1433
+Scooby checked register to find $1190
+Scooby damaged 14 item(s) while tuning
+Scooby counted 61 item(s) in inventory
+Scooby found the store's inventory is worth $1475
 Scooby ordered 0 item(s)
-Scooby sold 4 item(s)
+Scooby sold 6 item(s)
 Scooby purchased 3 item(s)
-Scooby damaged 1 item(s) while cleaning
+Scooby damaged 0 item(s) while cleaning
 Scooby left the store
-Velma arrived at the store
-Velma arrived at the store
-Velma added 0 item(s) to inventory
-Velma added 0 item(s) to inventory
-Velma checked register to find $1374
-Velma checked register to find $1374
-Velma damaged 0 item(s) while tuning
-Velma damaged 0 item(s) while tuning
-Velma counted 54 item(s) in inventory
-Velma counted 54 item(s) in inventory
-Velma found the store's inventory is worth $1346
-Velma found the store's inventory is worth $1346
-Velma ordered 0 item(s)
-Velma ordered 0 item(s)
-Velma sold 8 item(s)
-Velma purchased 4 item(s)
-Velma damaged 0 item(s) while cleaning
-Velma damaged 0 item(s) while cleaning
-Velma left the store
-Velma left the store

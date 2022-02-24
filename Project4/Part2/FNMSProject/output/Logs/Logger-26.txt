@@ -1,40 +1,22 @@
-Norville arrived at the store
-Norville arrived at the store
-Norville added 0 item(s) to inventory
-Norville added 0 item(s) to inventory
-Norville checked register to find $3452
-Norville checked register to find $3452
-Norville damaged 5 item(s) while tuning
-Norville damaged 5 item(s) while tuning
-Norville counted 53 item(s) in inventory
-Norville counted 53 item(s) in inventory
-Norville found the store's inventory is worth $1347
-Norville found the store's inventory is worth $1347
-Norville ordered 3 item(s)
-Norville ordered 3 item(s)
-Norville sold 4 item(s)
-Norville purchased 2 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville damaged 0 item(s) while cleaning
-Norville left the store
-Norville left the store
 Velma arrived at the store
-Velma arrived at the store
-Velma added 3 item(s) to inventory
-Velma added 3 item(s) to inventory
-Velma checked register to find $3143
-Velma checked register to find $3143
+Velma added 0 item(s) to inventory
+Velma checked register to find $3367
 Velma damaged 0 item(s) while tuning
-Velma damaged 0 item(s) while tuning
-Velma counted 55 item(s) in inventory
-Velma counted 55 item(s) in inventory
-Velma found the store's inventory is worth $1475
-Velma found the store's inventory is worth $1475
+Velma counted 57 item(s) in inventory
+Velma found the store's inventory is worth $1605
 Velma ordered 0 item(s)
-Velma ordered 0 item(s)
-Velma sold 6 item(s)
-Velma purchased 4 item(s)
-Velma damaged 0 item(s) while cleaning
+Velma sold 0 item(s)
+Velma purchased 2 item(s)
 Velma damaged 0 item(s) while cleaning
 Velma left the store
-Velma left the store
+Scooby arrived at the store
+Scooby added 0 item(s) to inventory
+Scooby checked register to find $3365
+Scooby damaged 11 item(s) while tuning
+Scooby counted 51 item(s) in inventory
+Scooby found the store's inventory is worth $1432
+Scooby ordered 0 item(s)
+Scooby sold 8 item(s)
+Scooby purchased 1 item(s)
+Scooby damaged 1 item(s) while cleaning
+Scooby left the store

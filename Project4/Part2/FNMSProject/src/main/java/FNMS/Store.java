@@ -41,15 +41,15 @@ class Store extends Publisher {
 
     private AbstractClerk activeClerk_;
 
-    public String name_;
-    public int total_withdrawn_ = 0;
+    private String name_;
+    private int total_withdrawn_ = 0;
     public KitFactory kitFactory_;
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();
     public List<Item> sold_ = new ArrayList<Item>();
     public List<ItemType> discontinued_ = new ArrayList<ItemType>();
     public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
-    
+
     Store(String name, KitFactory kitFactory) {
         kitFactory_ = kitFactory;
         name_ = name;
@@ -62,28 +62,18 @@ class Store extends Publisher {
             }
         }
     }
+
+    public String getName() { return name_; }
+    public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }
+    public int getWithdrawn() { return total_withdrawn_; }
     
     public void Discontiue(ItemType itemType) { 
         Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
     }
 
-    /*
-    // override subscribe to also have all workers also be subscribed to
-    @Override
-    public void Subscribe(Subscriber subscriber) { 
-        super.Subscribe(subscriber);
-    } 
-
-    // override ubsubscribe to also have all workers also be unsubscribed from
-    @Override
-    public void Unsubscribe(Subscriber unsubscriber) { 
-        super.Unsubscribe(unsubscriber);
-        for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
-    }
-    */
     // override publish to automatically send name of active clerk
-    private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
+    private void Publish(String context, int data) { Publish(context, activeClerk_.GetName(), data); }
 
     // method for an entire open store day
     public void OpenToday() {
@@ -101,10 +91,6 @@ class Store extends Publisher {
 
     public void UpdateClerk(AbstractClerk clerk) { 
         activeClerk_ = clerk; 
-        activeClerk_.UnsubscribeAll();
-        for (int i = 0; i < subscribers_.size(); i++) {
-            activeClerk_.Subscribe(subscribers_.get(i));
-        }
         activeClerk_.UpdateStore(this);
     }
 

@@ -1,31 +1,22 @@
 Shaggy arrived at the store
-Shaggy added 0 item(s) to inventory
-Shaggy checked register to find $2630
+Shaggy added 6 item(s) to inventory
+Shaggy checked register to find $2567
 Shaggy damaged 0 item(s) while tuning
-Shaggy counted 50 item(s) in inventory
-Shaggy found the store's inventory is worth $1341
-Shaggy ordered 0 item(s)
-Shaggy sold 2 item(s)
-Shaggy purchased 3 item(s)
+Shaggy counted 48 item(s) in inventory
+Shaggy found the store's inventory is worth $1403
+Shaggy ordered 3 item(s)
+Shaggy sold 3 item(s)
+Shaggy purchased 2 item(s)
 Shaggy damaged 0 item(s) while cleaning
 Shaggy left the store
 Norville arrived at the store
-Norville arrived at the store
-Norville added 3 item(s) to inventory
-Norville added 3 item(s) to inventory
-Norville checked register to find $2578
-Norville checked register to find $2578
+Norville added 0 item(s) to inventory
+Norville checked register to find $2539
 Norville damaged 3 item(s) while tuning
-Norville damaged 3 item(s) while tuning
-Norville counted 44 item(s) in inventory
-Norville counted 44 item(s) in inventory
-Norville found the store's inventory is worth $1117
-Norville found the store's inventory is worth $1117
-Norville ordered 3 item(s)
-Norville ordered 3 item(s)
-Norville sold 4 item(s)
-Norville purchased 2 item(s)
+Norville counted 45 item(s) in inventory
+Norville found the store's inventory is worth $1252
+Norville ordered 0 item(s)
+Norville sold 5 item(s)
+Norville purchased 1 item(s)
 Norville damaged 0 item(s) while cleaning
-Norville damaged 0 item(s) while cleaning
-Norville left the store
 Norville left the store
