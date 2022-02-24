@@ -74,6 +74,7 @@ class Logger implements Subscriber {
                 break;
             case "closed":
                 Write("The store was closed today");
+                break;
             default:
                 break;
         }

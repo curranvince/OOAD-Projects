@@ -8,10 +8,11 @@ import FNMS.Item.ItemType;
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
 abstract class Publisher implements Utility {
-    private List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
+    protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
 
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
+    public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
     protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
 }
@@ -38,7 +39,6 @@ class Store extends Publisher {
         }
     }
 
-    private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private AbstractClerk activeClerk_;
 
     public String name_;
@@ -68,11 +68,11 @@ class Store extends Publisher {
         discontinued_.add(itemType); 
     }
 
+    /*
     // override subscribe to also have all workers also be subscribed to
     @Override
     public void Subscribe(Subscriber subscriber) { 
         super.Subscribe(subscriber);
-        for (Staff clerk : clerks_) clerk.Subscribe(subscriber);
     } 
 
     // override ubsubscribe to also have all workers also be unsubscribed from
@@ -81,7 +81,7 @@ class Store extends Publisher {
         super.Unsubscribe(unsubscriber);
         for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
     }
-    
+    */
     // override publish to automatically send name of active clerk
     private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
@@ -101,6 +101,10 @@ class Store extends Publisher {
 
     public void UpdateClerk(AbstractClerk clerk) { 
         activeClerk_ = clerk; 
+        activeClerk_.UnsubscribeAll();
+        for (int i = 0; i < subscribers_.size(); i++) {
+            activeClerk_.Subscribe(subscribers_.get(i));
+        }
         activeClerk_.UpdateStore(this);
     }
 

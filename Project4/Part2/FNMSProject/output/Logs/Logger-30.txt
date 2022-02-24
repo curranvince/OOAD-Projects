@@ -1,4 +1,31 @@
-Norville sold 3 item(s)
-Norville purchased 2 item(s)
-Fred sold 6 item(s)
-Fred purchased 1 item(s)
+Scooby arrived at the store
+Scooby added 0 item(s) to inventory
+Scooby checked register to find $3894
+Scooby damaged 13 item(s) while tuning
+Scooby counted 48 item(s) in inventory
+Scooby found the store's inventory is worth $1217
+Scooby ordered 0 item(s)
+Scooby sold 2 item(s)
+Scooby purchased 2 item(s)
+Scooby damaged 0 item(s) while cleaning
+Scooby left the store
+Daphne arrived at the store
+Daphne arrived at the store
+Daphne added 0 item(s) to inventory
+Daphne added 0 item(s) to inventory
+Daphne checked register to find $3614
+Daphne checked register to find $3614
+Daphne damaged 11 item(s) while tuning
+Daphne damaged 11 item(s) while tuning
+Daphne counted 50 item(s) in inventory
+Daphne counted 50 item(s) in inventory
+Daphne found the store's inventory is worth $1439
+Daphne found the store's inventory is worth $1439
+Daphne ordered 0 item(s)
+Daphne ordered 0 item(s)
+Daphne sold 8 item(s)
+Daphne purchased 4 item(s)
+Daphne damaged 0 item(s) while cleaning
+Daphne damaged 0 item(s) while cleaning
+Daphne left the store
+Daphne left the store

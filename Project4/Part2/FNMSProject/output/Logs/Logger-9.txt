@@ -1,4 +1,22 @@
-Shaggy sold 4 item(s)
-Shaggy purchased 3 item(s)
+Scooby arrived at the store
+Scooby added 0 item(s) to inventory
+Scooby checked register to find $2287
+Scooby damaged 14 item(s) while tuning
+Scooby counted 47 item(s) in inventory
+Scooby found the store's inventory is worth $1309
+Scooby ordered 3 item(s)
 Scooby sold 2 item(s)
 Scooby purchased 2 item(s)
+Scooby damaged 0 item(s) while cleaning
+Scooby left the store
+Fred arrived at the store
+Fred added 0 item(s) to inventory
+Fred checked register to find $2083
+Fred damaged 2 item(s) while tuning
+Fred counted 47 item(s) in inventory
+Fred found the store's inventory is worth $1186
+Fred ordered 3 item(s)
+Fred sold 4 item(s)
+Fred purchased 2 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the store

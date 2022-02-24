@@ -1,4 +1,31 @@
-Daphne sold 5 item(s)
-Daphne purchased 2 item(s)
-Shaggy sold 3 item(s)
-Shaggy purchased 1 item(s)
+Fred arrived at the store
+Fred added 6 item(s) to inventory
+Fred checked register to find $3623
+Fred damaged 0 item(s) while tuning
+Fred counted 54 item(s) in inventory
+Fred found the store's inventory is worth $1360
+Fred ordered 3 item(s)
+Fred sold 7 item(s)
+Fred purchased 1 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the store
+Norville arrived at the store
+Norville arrived at the store
+Norville added 3 item(s) to inventory
+Norville added 3 item(s) to inventory
+Norville checked register to find $3448
+Norville checked register to find $3448
+Norville damaged 3 item(s) while tuning
+Norville damaged 3 item(s) while tuning
+Norville counted 51 item(s) in inventory
+Norville counted 51 item(s) in inventory
+Norville found the store's inventory is worth $1485
+Norville found the store's inventory is worth $1485
+Norville ordered 3 item(s)
+Norville ordered 3 item(s)
+Norville sold 4 item(s)
+Norville purchased 3 item(s)
+Norville damaged 0 item(s) while cleaning
+Norville damaged 0 item(s) while cleaning
+Norville left the store
+Norville left the store

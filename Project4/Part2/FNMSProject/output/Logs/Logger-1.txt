@@ -1,4 +1,44 @@
-Shaggy sold 1 item(s)
-Shaggy purchased 2 item(s)
-Velma sold 5 item(s)
-Velma purchased 4 item(s)
+Daphne arrived at the store
+Daphne arrived at the store
+Daphne added 0 item(s) to inventory
+Daphne added 0 item(s) to inventory
+Daphne checked register to find $0
+Daphne checked register to find $0
+Daphne checked register to find $1000
+Daphne checked register to find $1000
+Daphne damaged 0 item(s) while tuning
+Daphne damaged 0 item(s) while tuning
+Daphne counted 63 item(s) in inventory
+Daphne counted 63 item(s) in inventory
+Daphne found the store's inventory is worth $1701
+Daphne found the store's inventory is worth $1701
+Daphne ordered 0 item(s)
+Daphne ordered 0 item(s)
+Daphne sold 9 item(s)
+Daphne purchased 1 item(s)
+Daphne damaged 0 item(s) while cleaning
+Daphne damaged 0 item(s) while cleaning
+Daphne left the store
+Daphne left the store
+Velma arrived at the store
+Velma arrived at the store
+Velma added 0 item(s) to inventory
+Velma added 0 item(s) to inventory
+Velma checked register to find $0
+Velma checked register to find $0
+Velma checked register to find $1000
+Velma checked register to find $1000
+Velma damaged 0 item(s) while tuning
+Velma damaged 0 item(s) while tuning
+Velma counted 63 item(s) in inventory
+Velma counted 63 item(s) in inventory
+Velma found the store's inventory is worth $1545
+Velma found the store's inventory is worth $1545
+Velma ordered 0 item(s)
+Velma ordered 0 item(s)
+Velma sold 9 item(s)
+Velma purchased 0 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma damaged 0 item(s) while cleaning
+Velma left the store
+Velma left the store

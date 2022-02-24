@@ -1,4 +1,31 @@
-Shaggy sold 3 item(s)
-Shaggy purchased 3 item(s)
-Daphne sold 3 item(s)
+Fred arrived at the store
+Fred added 0 item(s) to inventory
+Fred checked register to find $2838
+Fred damaged 4 item(s) while tuning
+Fred counted 53 item(s) in inventory
+Fred found the store's inventory is worth $1394
+Fred ordered 0 item(s)
+Fred sold 2 item(s)
+Fred purchased 4 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the store
+Daphne arrived at the store
+Daphne arrived at the store
+Daphne added 3 item(s) to inventory
+Daphne added 3 item(s) to inventory
+Daphne checked register to find $2520
+Daphne checked register to find $2520
+Daphne damaged 13 item(s) while tuning
+Daphne damaged 13 item(s) while tuning
+Daphne counted 55 item(s) in inventory
+Daphne counted 55 item(s) in inventory
+Daphne found the store's inventory is worth $1402
+Daphne found the store's inventory is worth $1402
+Daphne ordered 3 item(s)
+Daphne ordered 3 item(s)
+Daphne sold 11 item(s)
 Daphne purchased 2 item(s)
+Daphne damaged 0 item(s) while cleaning
+Daphne damaged 0 item(s) while cleaning
+Daphne left the store
+Daphne left the store

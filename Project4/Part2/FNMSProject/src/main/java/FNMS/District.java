@@ -4,6 +4,7 @@ import java.util.*;
 
 public class District implements Utility {
     Tracker tracker_ = new Tracker();
+    Logger dailyLogger = new Logger(0);
     public List<Store> stores_ = new ArrayList<Store>();
     
     static List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
@@ -31,11 +32,8 @@ public class District implements Utility {
     }
 
     public void RunDay() {
-        // create daily logger and subscribe stores to it
-        Subscriber dailyLogger = new Logger(Simulation.current_day_);
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Subscribe(dailyLogger);
-        }
+        // open new logger and subscribe everyone
+        OpenLogger();
         // open or close stores depending on day
         if (Simulation.current_day_ % 7 != 0) { 
             AssignClerks();
@@ -51,8 +49,26 @@ public class District implements Utility {
         // show tracker at end of each day
         tracker_.ShowData();
         // have stores unsubscribe from logger and close it
+        CloseLogger();
+    }
+
+    private void OpenLogger() {
+        // create daily logger and subscribe stores to it
+        dailyLogger = new Logger(Simulation.current_day_);
+        for (int i = 0; i < stores_.size(); i++) {
+            stores_.get(i).Subscribe(dailyLogger);
+        }
+        for (int i = 0; i < clerks_.size(); i++) {
+            clerks_.get(i).Subscribe(dailyLogger);
+        }
+    }
+
+    private void CloseLogger() {
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Unsubscribe(dailyLogger);
+        }
+        for (int i = 0; i < clerks_.size(); i++) {
+            clerks_.get(i).Unsubscribe(dailyLogger);
         }
         dailyLogger.Close();
     }
