@@ -14,7 +14,7 @@ abstract class Publisher implements Utility {
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
     public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
-    protected void Publish(String context, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, data); }
+    protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
 }
 
 class Store extends Publisher {
@@ -62,6 +62,8 @@ class Store extends Publisher {
             }
         }
     }
+
+    private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
 
     public String getName() { return name_; }
     public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }

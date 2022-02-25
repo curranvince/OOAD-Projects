@@ -1,20 +1,20 @@
 Daphne arrived at the North Side Store
 Daphne added 3 item(s) to North Side Store's inventory
-Daphne checked register to find $2660
-Daphne damaged 15 item(s) while tuning
-Daphne counted 58 item(s) in inventory
-Daphne found the store's inventory is worth $1632
-Daphne ordered 0 item(s)
-Daphne purchased 2 item(s)
+Daphne checked register to find $3518
+Daphne damaged 2 item(s) while tuning
+Daphne counted 38 item(s) in inventory
+Daphne found the store's inventory is worth $1114
+Daphne ordered 9 item(s)
+Daphne purchased 4 item(s)
 Daphne damaged 0 item(s) while cleaning
 Daphne left the North Side Store
-Norville arrived at the South Side Store
-Norville added 0 item(s) to South Side Store's inventory
-Norville checked register to find $3507
-Norville damaged 4 item(s) while tuning
-Norville counted 48 item(s) in inventory
-Norville found the store's inventory is worth $1213
-Norville ordered 0 item(s)
-Norville purchased 4 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville left the South Side Store
+Fred arrived at the South Side Store
+Fred added 3 item(s) to South Side Store's inventory
+Fred checked register to find $3217
+Fred damaged 3 item(s) while tuning
+Fred counted 55 item(s) in inventory
+Fred found the store's inventory is worth $1177
+Fred ordered 0 item(s)
+Fred purchased 1 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the South Side Store

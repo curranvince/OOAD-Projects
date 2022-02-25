@@ -17,7 +17,9 @@ abstract class Staff extends Publisher {
     public void ResetDaysWorked() { days_worked_ = 0; }
 
     public void UpdateStore(Store store) { store_ = store; }
-   
+    
+    protected void Publish(String context, int data) { super.Publish(context, name_, data); }
+
     // broadcast arriving to store
     public void ArriveAtStore() {
         days_worked_++;
@@ -27,7 +29,7 @@ abstract class Staff extends Publisher {
 
     // broadcast leaving
     public void CloseStore() {
-        Print(name_ + " leaves the store");
+        Print(name_ + " leaves the " + store_.getName());
         Publish("leftstore", 0);
     }
 }

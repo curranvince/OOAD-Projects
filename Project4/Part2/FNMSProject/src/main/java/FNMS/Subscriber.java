@@ -5,16 +5,16 @@ import java.util.*;
 
 // These Subscribers are an example of the Observer pattern
 interface Subscriber extends Utility {
-    public void Update(String context, int data);
+    public void Update(String context, String name, int data);
     public void OutputData();
     public void Close();
 }
 
 // Logger keeps track of all information for a single day and writes it to its own file
-class Logger implements Subscriber { 
+class Logger extends FNMS.Utility.MyWriter implements Subscriber { 
     // uses lazy instantiation
     private static Logger instance;
-    private FileWriter writer_;
+    //private FileWriter writer_;
 
     // Resources that helped with setting up the data map
     // https://www.w3schools.com/java/java_hashmap.asp
@@ -30,16 +30,6 @@ class Logger implements Subscriber {
     public static Logger getInstance() {
         if (instance == null) { instance = new Logger(); }
         return instance;
-    }
-
-    // make writing cleaner
-    private void Write(String msg) { 
-        try {
-            writer_.write(msg + "\n");
-        } catch (IOException e) {
-            Print("Error: Logger failed to write to file");
-            e.printStackTrace();
-        } 
     }
 
     public void UpdateStore(Store store) { 
@@ -65,7 +55,7 @@ class Logger implements Subscriber {
     }
 
     // update data
-    public void Update(String context, int data) {
+    public void Update(String context, String name, int data) {
         UpdateWriter();
         if (data_.get(context) == null) {
             data_.put(context, data);
@@ -137,6 +127,7 @@ class Tracker implements Subscriber {
     // Using eager instantiation
     private static final Tracker instance = new Tracker();
     private int[][] stats_ = new int[6][4];
+    private String[] clerk_names_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
     private int clerk_index_;
     // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
     // [][0] for days worked, [][1] for sold, [][2] for purchased, [][3] for damaged
@@ -144,14 +135,10 @@ class Tracker implements Subscriber {
     private Tracker() {};
     public static Tracker getInstance() { return instance; }
     
-    public void UpdateClerk(String name) {
-        for (int i = 0; i < District.clerks_.size(); i++) {
-            if (name == District.clerks_.get(i).GetName()) { clerk_index_ = i; }
-        }
-    }
+    public void UpdateClerk(int clerk_index) { clerk_index_ = clerk_index; }
     
     // for data we're interested in, add to the data table
-    public void Update(String context, int data) {
+    public void Update(String context, String name, int data) {
         switch (context) {
             case "arrival": 
                 stats_[clerk_index_][0] += data;
@@ -177,8 +164,8 @@ class Tracker implements Subscriber {
     public void OutputData() {
         Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Days Worked       Items Sold      Items Purchased      Items Damaged ");
-        for (int i = 0; i < District.clerks_.size(); i++) {
-            Print(District.clerks_.get(i).GetName() + "       " + stats_[i][0] + "                 " + stats_[i][1] + "               " + stats_[i][2] + "                    " + stats_[i][3]);
+        for (int i = 0; i < clerk_names_.length; i++) {
+            Print(clerk_names_[i] + "       " + stats_[i][0] + "                 " + stats_[i][1] + "               " + stats_[i][2] + "                    " + stats_[i][3]);
         }
         Print(""); //skips line
     }

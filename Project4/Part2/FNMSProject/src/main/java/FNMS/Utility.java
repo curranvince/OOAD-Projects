@@ -1,5 +1,6 @@
 package FNMS;
 
+import java.io.*;
 import java.util.Random;
 import java.util.List;
 
@@ -18,12 +19,40 @@ interface Utility {
         public V getValue() { return value_; }
         public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
     }
+
+    class MyWriter {
+        protected FileWriter writer_;
     
+        public MyWriter() {
+            try {
+                File file = new File("output/Output.txt");
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+                writer_ = new FileWriter(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        public void Write(String msg) {
+            try {
+                writer_.write(msg + "\n");
+            } catch (IOException e) {
+                e.printStackTrace();
+            } 
+        }
+    }
+
     // make sure theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
-    
-    // make printing simpler
-    default void Print(String str) { System.out.println(str); }
+    MyWriter writer = new MyWriter();
+
+    // Print everything to Sys.out as well as Output.txt
+    // For easy interaction as well as capture
+    default void Print(String str) {
+        System.out.println(str); 
+        writer.Write(str);
+    }
     
     // simple methods for getting random nums
     default int GetRandomNum(int range) { return random.nextInt(range); }
