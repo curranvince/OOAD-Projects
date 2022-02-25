@@ -11,7 +11,7 @@ interface Subscriber extends Utility {
 }
 
 // Logger keeps track of all information for a single day and writes it to its own file
-class Logger extends FNMS.Utility.MyWriter implements Subscriber { 
+class Logger implements Subscriber { 
     // uses lazy instantiation
     private static Logger instance;
     //private FileWriter writer_;
@@ -24,6 +24,7 @@ class Logger extends FNMS.Utility.MyWriter implements Subscriber {
     private Store current_store_ = null;
     private String name_;
     private int current_ = 0;
+    private FileWriter writer_;
 
     private Logger() {}
     
@@ -54,6 +55,14 @@ class Logger extends FNMS.Utility.MyWriter implements Subscriber {
         }
     }
 
+    private void Write(String msg) {
+        try {
+            writer_.write(msg + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+    }
+
     // update data
     public void Update(String context, String name, int data) {
         UpdateWriter();
@@ -77,6 +86,9 @@ class Logger extends FNMS.Utility.MyWriter implements Subscriber {
                 case "checkedregister":
                     Write(name_ + " checked register to find $" + data_.get("checkedregister"));
                     break;
+                case "wenttobank":
+                    Write(name_ + " went to the bank, then checked register to find $" + data_.get("wenttobank"));
+                    break;
                 case "totalitems":
                     Write(name_ + " counted " + data_.get("totalitems") + " item(s) in inventory");
                     break;
@@ -89,7 +101,7 @@ class Logger extends FNMS.Utility.MyWriter implements Subscriber {
                 case "itemsordered":
                     Write(name_ + " ordered " + data_.get("itemsordered") + " item(s)");
                     break;
-                case "itemsold":
+                case "itemssold":
                     Write(name_ + " sold " + data_.get("itemssold") + " item(s)");
                     break;
                 case "itemsbought":

@@ -1,20 +1,22 @@
-Daphne arrived at the North Side Store
-Daphne added 6 item(s) to North Side Store's inventory
-Daphne checked register to find $3033
-Daphne damaged 7 item(s) while tuning
-Daphne counted 44 item(s) in inventory
-Daphne found the store's inventory is worth $1156
-Daphne ordered 6 item(s)
-Daphne purchased 1 item(s)
-Daphne damaged 0 item(s) while cleaning
-Daphne left the North Side Store
-Scooby arrived at the South Side Store
-Scooby added 0 item(s) to South Side Store's inventory
-Scooby checked register to find $2648
-Scooby damaged 3 item(s) while tuning
-Scooby counted 49 item(s) in inventory
-Scooby found the store's inventory is worth $1212
-Scooby ordered 3 item(s)
-Scooby purchased 3 item(s)
-Scooby damaged 0 item(s) while cleaning
-Scooby left the South Side Store
+Fred arrived at the North Side Store
+Fred added 6 item(s) to North Side Store's inventory
+Fred checked register to find $2386
+Fred damaged 3 item(s) while tuning
+Fred counted 60 item(s) in inventory
+Fred found the store's inventory is worth $1466
+Fred ordered 0 item(s)
+Fred sold 4 item(s)
+Fred purchased 2 item(s)
+Fred damaged 0 item(s) while cleaning
+Fred left the North Side Store
+Norville arrived at the South Side Store
+Norville added 3 item(s) to South Side Store's inventory
+Norville checked register to find $2698
+Norville damaged 1 item(s) while tuning
+Norville counted 54 item(s) in inventory
+Norville found the store's inventory is worth $1329
+Norville ordered 3 item(s)
+Norville purchased 2 item(s)
+Norville sold 5 item(s)
+Norville damaged 0 item(s) while cleaning
+Norville left the South Side Store

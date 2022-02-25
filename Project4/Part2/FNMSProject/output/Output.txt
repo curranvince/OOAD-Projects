@@ -1,0 +1,10 @@
+Nevermind by Nirvana CD's condition has lowered from excellent to very_good
+Nevermind by Nirvana CD list price has lowered to $51
+Nevermind by Nirvana CD's condition has lowered from very_good to good
+Nevermind by Nirvana CD list price has lowered to $40
+Nevermind by Nirvana CD's condition has lowered from good to fair
+Nevermind by Nirvana CD list price has lowered to $32
+Nevermind by Nirvana CD's condition has lowered from fair to poor
+Nevermind by Nirvana CD list price has lowered to $25
+Nevermind by Nirvana CD's condition has lowered from poor to broken
+Nevermind by Nirvana CD has been removed from inventory

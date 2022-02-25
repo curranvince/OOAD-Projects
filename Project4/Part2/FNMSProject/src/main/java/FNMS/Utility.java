@@ -20,39 +20,41 @@ interface Utility {
         public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
     }
 
-    class MyWriter {
-        protected FileWriter writer_;
-    
-        public MyWriter() {
+    // TeeStream idea from
+    // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
+    class TeeStream { 
+        private FileOutputStream fileStream;
+        private OutputStream outStream = System.out;
+        
+        public TeeStream() {
             try {
                 File file = new File("output/Output.txt");
                 file.getParentFile().mkdirs();
                 file.createNewFile();
-                writer_ = new FileWriter(file);
+                fileStream = new FileOutputStream(file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        
+
         public void Write(String msg) {
+            msg = (msg + "\n");
             try {
-                writer_.write(msg + "\n");
+                fileStream.write(msg.getBytes()); // https://www.baeldung.com/java-string-to-byte-array
+                outStream.write(msg.getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
-            } 
+            }
         }
     }
 
     // make sure theres only one 'random' instead of instantiating everywhere
     Random random = new Random();
-    MyWriter writer = new MyWriter();
+    TeeStream teeStream = new TeeStream();
 
     // Print everything to Sys.out as well as Output.txt
     // For easy interaction as well as capture
-    default void Print(String str) {
-        System.out.println(str); 
-        writer.Write(str);
-    }
+    default void Print(String str) { teeStream.Write(str); }
     
     // simple methods for getting random nums
     default int GetRandomNum(int range) { return random.nextInt(range); }

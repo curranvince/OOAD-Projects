@@ -1,20 +1,22 @@
 Fred arrived at the North Side Store
-Fred added 3 item(s) to North Side Store's inventory
-Fred checked register to find $2728
-Fred damaged 2 item(s) while tuning
-Fred counted 37 item(s) in inventory
-Fred found the store's inventory is worth $1041
-Fred ordered 6 item(s)
+Fred added 0 item(s) to North Side Store's inventory
+Fred checked register to find $2100
+Fred damaged 0 item(s) while tuning
+Fred counted 60 item(s) in inventory
+Fred found the store's inventory is worth $1378
+Fred ordered 0 item(s)
+Fred sold 3 item(s)
 Fred purchased 1 item(s)
 Fred damaged 0 item(s) while cleaning
 Fred left the North Side Store
-Scooby arrived at the South Side Store
-Scooby added 9 item(s) to South Side Store's inventory
-Scooby checked register to find $2185
-Scooby damaged 12 item(s) while tuning
-Scooby counted 46 item(s) in inventory
-Scooby found the store's inventory is worth $1248
-Scooby ordered 0 item(s)
-Scooby purchased 2 item(s)
-Scooby damaged 1 item(s) while cleaning
-Scooby left the South Side Store
+Velma arrived at the South Side Store
+Velma added 0 item(s) to South Side Store's inventory
+Velma checked register to find $2307
+Velma damaged 0 item(s) while tuning
+Velma counted 52 item(s) in inventory
+Velma found the store's inventory is worth $1264
+Velma ordered 3 item(s)
+Velma sold 5 item(s)
+Velma purchased 3 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma left the South Side Store

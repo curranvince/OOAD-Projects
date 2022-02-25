@@ -54,7 +54,7 @@ public class Clerk extends AbstractClerk {
         Print(name_ + " goes to the bank to withdraw $1000 for the register" );
         store_.register_.AddMoney(1000);
         store_.updateWithdrawn(1000);
-        Publish("checkedregister", store_.register_.GetAmount());
+        Publish("wenttobank", store_.register_.GetAmount());
     }
 
     // return how many items of a certain type we have

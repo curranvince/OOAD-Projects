@@ -1,20 +1,22 @@
-Shaggy arrived at the North Side Store
-Shaggy added 6 item(s) to North Side Store's inventory
-Shaggy checked register to find $3808
+Daphne arrived at the North Side Store
+Daphne added 0 item(s) to North Side Store's inventory
+Daphne checked register to find $3623
+Daphne damaged 10 item(s) while tuning
+Daphne counted 48 item(s) in inventory
+Daphne found the store's inventory is worth $1223
+Daphne ordered 3 item(s)
+Daphne purchased 3 item(s)
+Daphne sold 3 item(s)
+Daphne damaged 0 item(s) while cleaning
+Daphne left the North Side Store
+Shaggy arrived at the South Side Store
+Shaggy added 3 item(s) to South Side Store's inventory
+Shaggy checked register to find $3553
 Shaggy damaged 0 item(s) while tuning
-Shaggy counted 49 item(s) in inventory
-Shaggy found the store's inventory is worth $1274
-Shaggy ordered 0 item(s)
-Shaggy purchased 2 item(s)
+Shaggy counted 52 item(s) in inventory
+Shaggy found the store's inventory is worth $1354
+Shaggy ordered 6 item(s)
+Shaggy purchased 3 item(s)
+Shaggy sold 2 item(s)
 Shaggy damaged 0 item(s) while cleaning
-Shaggy left the North Side Store
-Norville arrived at the South Side Store
-Norville added 0 item(s) to South Side Store's inventory
-Norville checked register to find $3597
-Norville damaged 4 item(s) while tuning
-Norville counted 55 item(s) in inventory
-Norville found the store's inventory is worth $1111
-Norville ordered 3 item(s)
-Norville purchased 2 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville left the South Side Store
+Shaggy left the South Side Store
