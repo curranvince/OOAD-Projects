@@ -1,22 +1,22 @@
-Shaggy arrived at the North Side Store
-Shaggy added 0 item(s) to North Side Store's inventory
-Shaggy checked register to find $2332
-Shaggy damaged 0 item(s) while tuning
-Shaggy counted 57 item(s) in inventory
-Shaggy found the store's inventory is worth $1278
-Shaggy ordered 0 item(s)
-Shaggy sold 2 item(s)
-Shaggy purchased 3 item(s)
-Shaggy damaged 0 item(s) while cleaning
-Shaggy left the North Side Store
-Norville arrived at the South Side Store
-Norville added 3 item(s) to South Side Store's inventory
-Norville checked register to find $2499
-Norville damaged 4 item(s) while tuning
-Norville counted 50 item(s) in inventory
-Norville found the store's inventory is worth $1254
-Norville ordered 3 item(s)
-Norville sold 4 item(s)
-Norville purchased 3 item(s)
-Norville damaged 1 item(s) while cleaning
-Norville left the South Side Store
+Velma arrived at the North Side Store
+Velma added 9 item(s) to North Side Store's inventory
+Velma checked register to find $3241
+Velma damaged 0 item(s) while tuning
+Velma counted 51 item(s) in inventory
+Velma found the store's inventory is worth $1269
+Velma ordered 0 item(s)
+Velma sold 4 item(s)
+Velma purchased 1 item(s)
+Velma damaged 0 item(s) while cleaning
+Velma left the North Side Store
+Scooby arrived at the South Side Store
+Scooby added 6 item(s) to South Side Store's inventory
+Scooby checked register to find $2688
+Scooby damaged 11 item(s) while tuning
+Scooby counted 44 item(s) in inventory
+Scooby found the store's inventory is worth $994
+Scooby ordered 3 item(s)
+Scooby sold 3 item(s)
+Scooby purchased 1 item(s)
+Scooby damaged 0 item(s) while cleaning
+Scooby left the South Side Store

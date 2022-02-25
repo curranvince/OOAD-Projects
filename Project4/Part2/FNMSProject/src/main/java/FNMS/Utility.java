@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.List;
 
 interface Utility {
+    /*
     // https://docs.oracle.com/javase/tutorial/java/generics/types.html
     class Pair<K, V> {
         private K key_;
@@ -19,7 +20,8 @@ interface Utility {
         public V getValue() { return value_; }
         public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
     }
-
+    */
+    
     // TeeStream idea from
     // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
     class TeeStream { 

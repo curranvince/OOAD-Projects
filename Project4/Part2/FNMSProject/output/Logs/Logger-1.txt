@@ -4,21 +4,21 @@ Velma checked register to find $0
 Velma went to the bank, then checked register to find $1000
 Velma damaged 0 item(s) while tuning
 Velma counted 63 item(s) in inventory
-Velma found the store's inventory is worth $1538
+Velma found the store's inventory is worth $1856
 Velma ordered 0 item(s)
-Velma sold 7 item(s)
 Velma purchased 3 item(s)
+Velma sold 2 item(s)
 Velma damaged 0 item(s) while cleaning
 Velma left the North Side Store
-Daphne arrived at the South Side Store
-Daphne added 0 item(s) to South Side Store's inventory
-Daphne checked register to find $0
-Daphne went to the bank, then checked register to find $1000
-Daphne damaged 0 item(s) while tuning
-Daphne counted 63 item(s) in inventory
-Daphne found the store's inventory is worth $1550
-Daphne ordered 0 item(s)
-Daphne sold 6 item(s)
-Daphne purchased 1 item(s)
-Daphne damaged 0 item(s) while cleaning
-Daphne left the South Side Store
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Scooby checked register to find $0
+Scooby went to the bank, then checked register to find $1000
+Scooby damaged 0 item(s) while tuning
+Scooby counted 63 item(s) in inventory
+Scooby found the store's inventory is worth $1575
+Scooby ordered 0 item(s)
+Scooby purchased 4 item(s)
+Scooby sold 4 item(s)
+Scooby damaged 0 item(s) while cleaning
+Scooby left the South Side Store

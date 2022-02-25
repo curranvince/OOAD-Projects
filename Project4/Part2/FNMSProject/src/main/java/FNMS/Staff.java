@@ -50,6 +50,7 @@ abstract class AbstractClerk extends Staff {
     abstract public Item CheckForItem(Item.ItemType itemType);
     abstract public boolean TryTransaction(Item item, boolean buying);
     abstract public void CleanStore();
+    abstract public String GetTime();
 }
 
 // The Tune interface and its subclasses is an example of the Strategy pattern

@@ -5,17 +5,27 @@ import java.io.*;
 
 // Class as a whole inspiration from Professors source code for Project 2
 public class Simulation implements Utility {
+    static int last_day_;
     static int current_day_;
 
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
+    private Scanner scanner_ = new Scanner(System.in);
 
     public Simulation() {
         // set output stream, generate stores and clerks with initial
         // subscription from the tracker
         GenerateStores();
         GenerateClerks(); 
+    }
+
+    private void SetDaysToRun() {
+        Print("How many days would you like to run the simulation? (10-30)");
+        int daysToRun = scanner_.nextInt();
+        scanner_.nextLine();
+        Print(String.valueOf(daysToRun));
+        last_day_ = daysToRun;
     }
 
     private int GetClerkID(String name) {
@@ -47,10 +57,11 @@ public class Simulation implements Utility {
         }
     }
 
-    public void RunSimulation(int n) {
+    public void RunSimulation() {
+        SetDaysToRun();
         Print(" *** BEGINNING SIMULATION *** \n");
         // run however many days are input
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < last_day_; i++) {
             // iterate day and create daily logger
             current_day_++;
             Print(" ***SIMULATION : DAY " + current_day_ + " BEGINNING***");
@@ -125,18 +136,23 @@ public class Simulation implements Utility {
     }
 
     private void QueueCustomers() {
-        for (int i = 0; i < stores_.size(); i++) {
-            List<Customer> toServe = new ArrayList<Customer>();
-            // get random amounts of buyers and sellers in range
-            int buyers = 2 + GetPoissonRandom(3);
-            int sellers = GetRandomNum(1, 5);
-            // create buyers and sellers
-            for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
-            for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
-            // shuffle vector so we get customers in random order
-            Collections.shuffle(toServe);
-            stores_.get(i).QueueCustomers(toServe);
-            toServe.clear();
+        List<Customer> toServe = new ArrayList<Customer>();
+        if (current_day_ == last_day_) {
+            toServe.add(new User(this));
+            stores_.get(1).QueueCustomers(toServe);
+        } else {
+            for (int i = 0; i < stores_.size(); i++) {
+                // get random amounts of buyers and sellers in range
+                int buyers = 2 + GetPoissonRandom(3);
+                int sellers = GetRandomNum(1, 5);
+                // create buyers and sellers
+                for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
+                for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
+                // shuffle vector so we get customers in random order
+                Collections.shuffle(toServe);
+                stores_.get(i).QueueCustomers(toServe);
+                toServe.clear();
+            }
         }
     }
 
@@ -181,5 +197,16 @@ public class Simulation implements Utility {
         }
         Tracker.getInstance().Close();
         Print("\n *** SIMULATION COMPLETE *** ");
+    }
+    
+    public Store GetStore() {
+        Print("What store would you like to switch to?");
+        String name = scanner_.nextLine();
+        for (int i = 0; i < stores_.size(); i++) {
+            if (stores_.get(i).getName().contains(name)) {
+                return stores_.get(i);
+            }
+        }
+        return null;
     }
 }

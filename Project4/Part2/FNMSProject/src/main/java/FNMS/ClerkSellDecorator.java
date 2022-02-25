@@ -37,6 +37,7 @@ abstract class ClerkDecorator extends AbstractClerk {
     //public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
+    public String GetTime() { return decoratedStaff_.GetTime(); }
 }
 
 // concrete class to implement new methods/overwrites

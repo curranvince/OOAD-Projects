@@ -1,6 +1,8 @@
 package FNMS;
 
 import java.util.*;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import FNMS.Item.ItemType;
 
@@ -288,5 +290,12 @@ public class Clerk extends AbstractClerk {
             Print(name_ + " cleans the store without incident");
             Publish("damagedcleaning", 0);
         }
+    }
+
+    // https://mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/
+    public String GetTime() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime localTime = LocalTime.now();
+        return dtf.format(localTime);
     }
 }

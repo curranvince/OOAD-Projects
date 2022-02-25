@@ -51,3 +51,18 @@ class Seller extends Customer {
         request_ = new SellRequest(clerk);
     }
 }
+
+class User extends Customer {
+    private Store store_;
+
+    User(Simulation simulation) {
+        name_ = "User";
+        request_ = new SwitchRequest(simulation, this);
+    }
+
+    public void SetStore(Store store) { store_ = store; }
+
+    public void SetRequest(Request request) {
+        request_ = request; 
+    }
+}
