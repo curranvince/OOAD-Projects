@@ -1,20 +1,20 @@
-Fred found the store's inventory is worth $1408
+Fred arrived at the North Side Store
 Fred added 0 item(s) to North Side Store's inventory
-Fred ordered 3 item(s)
+Fred checked register to find $2373
+Fred damaged 3 item(s) while tuning
+Fred counted 54 item(s) in inventory
+Fred found the store's inventory is worth $1478
+Fred ordered 0 item(s)
+Fred purchased 2 item(s)
 Fred damaged 0 item(s) while cleaning
 Fred left the North Side Store
-Fred arrived at the North Side Store
-Fred purchased 2 item(s)
-Fred checked register to find $2772
-Fred damaged 2 item(s) while tuning
-Fred counted 47 item(s) in inventory
-Velma found the store's inventory is worth $1408
-Velma added 0 item(s) to South Side Store's inventory
-Velma ordered 3 item(s)
-Velma damaged 0 item(s) while cleaning
-Velma left the South Side Store
-Velma arrived at the South Side Store
-Velma purchased 2 item(s)
-Velma checked register to find $2806
-Velma damaged 0 item(s) while tuning
-Velma counted 49 item(s) in inventory
+Norville arrived at the South Side Store
+Norville added 6 item(s) to South Side Store's inventory
+Norville checked register to find $2798
+Norville damaged 3 item(s) while tuning
+Norville counted 58 item(s) in inventory
+Norville found the store's inventory is worth $1498
+Norville ordered 0 item(s)
+Norville purchased 4 item(s)
+Norville damaged 0 item(s) while cleaning
+Norville left the South Side Store

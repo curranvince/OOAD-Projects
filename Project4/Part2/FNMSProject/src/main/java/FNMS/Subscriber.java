@@ -15,7 +15,12 @@ class Logger implements Subscriber {
     // uses lazy instantiation
     private static Logger instance;
     private FileWriter writer_;
-    private Map<String, Integer> data_ = new HashMap<String, Integer>(); // https://www.w3schools.com/java/java_hashmap.asp
+
+    // Resources that helped with setting up the data map
+    // https://www.w3schools.com/java/java_hashmap.asp
+    // https://stackoverflow.com/questions/663374/java-ordered-map
+    // https://docs.oracle.com/javase/6/docs/api/java/util/LinkedHashMap.html
+    private Map<String, Integer> data_ = new LinkedHashMap<String, Integer>(); 
     private Store current_store_ = null;
     private String name_;
     private int current_ = 0;

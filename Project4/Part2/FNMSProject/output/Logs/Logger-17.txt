@@ -1,19 +1,20 @@
-Fred found the store's inventory is worth $1368
-Fred added 3 item(s) to North Side Store's inventory
-Fred ordered 0 item(s)
-Fred damaged 0 item(s) while cleaning
-Fred left the North Side Store
-Fred arrived at the North Side Store
-Fred checked register to find $2666
-Fred damaged 2 item(s) while tuning
+Shaggy arrived at the North Side Store
+Shaggy added 0 item(s) to North Side Store's inventory
+Shaggy checked register to find $2105
+Shaggy damaged 0 item(s) while tuning
+Shaggy counted 59 item(s) in inventory
+Shaggy found the store's inventory is worth $1569
+Shaggy ordered 0 item(s)
+Shaggy purchased 2 item(s)
+Shaggy damaged 1 item(s) while cleaning
+Shaggy left the North Side Store
+Fred arrived at the South Side Store
+Fred added 3 item(s) to South Side Store's inventory
+Fred checked register to find $2992
+Fred damaged 0 item(s) while tuning
 Fred counted 49 item(s) in inventory
-Norville found the store's inventory is worth $1437
-Norville added 0 item(s) to South Side Store's inventory
-Norville ordered 0 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville left the South Side Store
-Norville arrived at the South Side Store
-Norville purchased 4 item(s)
-Norville checked register to find $2633
-Norville damaged 7 item(s) while tuning
-Norville counted 51 item(s) in inventory
+Fred found the store's inventory is worth $1246
+Fred ordered 3 item(s)
+Fred purchased 3 item(s)
+Fred damaged 1 item(s) while cleaning
+Fred left the South Side Store
