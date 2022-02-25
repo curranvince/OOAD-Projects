@@ -14,25 +14,28 @@ interface Subscriber extends Utility {
 class Logger implements Subscriber { 
     // uses lazy instantiation
     private static Logger instance;
-    //private FileWriter writer_;
 
     // Resources that helped with setting up the data map
     // https://www.w3schools.com/java/java_hashmap.asp
     // https://stackoverflow.com/questions/663374/java-ordered-map
     // https://docs.oracle.com/javase/6/docs/api/java/util/LinkedHashMap.html
     private Map<String, Integer> data_ = new LinkedHashMap<String, Integer>(); 
+    private FileWriter writer_;
+    // store and clerk names for the run
     private Store current_store_ = null;
     private String name_;
+    // what day logger thinks it is
     private int current_ = 0;
-    private FileWriter writer_;
-
+    
     private Logger() {}
     
+    // return the single instance of logger
     public static Logger getInstance() {
         if (instance == null) { instance = new Logger(); }
         return instance;
     }
 
+    // update store and clerk name
     public void UpdateStore(Store store) { 
         current_store_ = store; 
         name_ = current_store_.GetActiveClerk().GetName();
@@ -40,6 +43,7 @@ class Logger implements Subscriber {
 
     // make sure we write to appropriate file
     private void UpdateWriter() {
+        // check if actual day is different from day logger thinks it is
         if (current_ != Simulation.current_day_) {
             // create file for current day https://www.w3schools.com/java/java_files_create.asp
             try {
@@ -55,6 +59,7 @@ class Logger implements Subscriber {
         }
     }
 
+    // simplify write
     private void Write(String msg) {
         try {
             writer_.write(msg + "\n");
@@ -73,7 +78,7 @@ class Logger implements Subscriber {
         }
     }
 
-    // write data to file and reset data
+    // write data to file and clear it
     public void OutputData() {
         for (String i : data_.keySet()) {
             switch (i) {
@@ -123,7 +128,7 @@ class Logger implements Subscriber {
         data_.clear();
     }
 
-    // close the writer when logger closes
+    // close the writer at end of each run
     public void Close() {
         try {
             writer_.close();
