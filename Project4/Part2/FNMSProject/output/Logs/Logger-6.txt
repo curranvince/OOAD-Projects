@@ -1,22 +1,28 @@
+FNMS.CreatedClerkEvent@7c07c264
+FNMS.CreatedClerkEvent@59630881
+FNMS.CreatedClerkEvent@1773d8f5
+FNMS.CreatedClerkEvent@a22ee69
+FNMS.CreatedClerkEvent@48f409ab
+FNMS.CreatedClerkEvent@9922734
 Scooby arrived at the North Side Store
 Scooby added 0 item(s) to North Side Store's inventory
 Shaggy arrived at the South Side Store
 Shaggy added 0 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $2313
-Shaggy checked the South Side Store's register to find $2090
-Scooby damaged 6 item(s) at the North Side Store while tuning
-Scooby counted 44 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $979
-Scooby ordered 3 item(s) for the North Side Store
+Scooby checked the North Side Store's register to find $1964
+Shaggy checked the South Side Store's register to find $1588
+Scooby damaged 8 item(s) at the North Side Store while tuning
+Scooby counted 53 item(s) in North Side Store's' inventory
+Scooby found the North Side Store's' inventory is worth $1417
+Scooby ordered 0 item(s) for the North Side Store
 Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 47 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1120
-Shaggy ordered 3 item(s) for the South Side Store
+Shaggy counted 57 item(s) in South Side Store's' inventory
+Shaggy found the South Side Store's' inventory is worth $1482
+Shaggy ordered 0 item(s) for the South Side Store
+Scooby sold 3 item(s) at the North Side Store
 Scooby bought 4 item(s) at the North Side Store
-Scooby sold 6 item(s) at the North Side Store
-Shaggy bought 2 item(s) at the South Side Store
-Shaggy sold 3 item(s) at the South Side Store
+Shaggy sold 6 item(s) at the South Side Store
+Shaggy bought 3 item(s) at the South Side Store
 Scooby damaged 0 item(s) at the North Side Store while cleaning
-Shaggy damaged 1 item(s) at the South Side Store while cleaning
+Shaggy damaged 0 item(s) at the South Side Store while cleaning
 Scooby left the North Side Store
 Shaggy left the South Side Store

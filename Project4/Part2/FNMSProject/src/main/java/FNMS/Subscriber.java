@@ -91,8 +91,17 @@ class Logger implements Subscriber {
 class Tracker implements Subscriber {
     // Using eager instantiation
     private static final Tracker instance = new Tracker();
+    private List<String> clerk_names_ = new ArrayList<String>();
     private int[][] stats_ = new int[6][4];
-    private String[] clerk_names_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
+
+    private int NameToID(String name) {
+        for (int i = 0; i < clerk_names_.size(); i++) {
+            if (clerk_names_.get(i) == name) return i;
+        }
+        return -1;
+    }
+
+    //private String[] clerk_names_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
     // [][0] for days worked, [][1] for sold, [][2] for purchased, [][3] for damaged
     
     private Tracker() {};
@@ -100,19 +109,23 @@ class Tracker implements Subscriber {
     
     // for data we're interested in, add to the data table
     public void Update(MyEvent event) {
-        if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
-        else if (event instanceof BrokeTuningEvent) stats_[event.GetClerkID()][3] += event.GetData();
-        else if (event instanceof ItemsSoldEvent) stats_[event.GetClerkID()][1] += event.GetData();
-        else if (event instanceof ItemsBoughtEvent) stats_[event.GetClerkID()][2] += event.GetData();
-        else if (event instanceof BrokeCleaningEvent) stats_[event.GetClerkID()][3] += event.GetData();
+        if (event instanceof CreatedClerkEvent) {
+            if (!clerk_names_.contains(event.GetName())) clerk_names_.add(event.GetName());
+        } else {
+            if (event instanceof ArrivalEvent) stats_[NameToID(event.GetName())][0] += event.GetData();
+            else if (event instanceof BrokeTuningEvent) stats_[NameToID(event.GetName())][3] += event.GetData();
+            else if (event instanceof ItemsSoldEvent) stats_[NameToID(event.GetName())][1] += event.GetData();
+            else if (event instanceof ItemsBoughtEvent) stats_[NameToID(event.GetName())][2] += event.GetData();
+            else if (event instanceof BrokeCleaningEvent) stats_[NameToID(event.GetName())][3] += event.GetData();
+        }
     }
     
     // print the data table
     public void OutputData() {
         Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Days Worked       Items Sold      Items Purchased      Items Damaged ");
-        for (int i = 0; i < clerk_names_.length; i++) {
-            Print(clerk_names_[i] + "       " + stats_[i][0] + "                 " + stats_[i][1] + "               " + stats_[i][2] + "                    " + stats_[i][3]);
+        for (int i = 0; i < clerk_names_.size(); i++) {
+            Print(clerk_names_.get(i) + "       " + stats_[i][0] + "                 " + stats_[i][1] + "               " + stats_[i][2] + "                    " + stats_[i][3]);
         }
         Print(""); //skips line
     }

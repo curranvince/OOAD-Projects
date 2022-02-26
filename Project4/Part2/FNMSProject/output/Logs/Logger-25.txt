@@ -1,22 +1,28 @@
-Fred arrived at the North Side Store
-Fred added 0 item(s) to North Side Store's inventory
+FNMS.CreatedClerkEvent@74aa4e7c
+FNMS.CreatedClerkEvent@275d5176
+FNMS.CreatedClerkEvent@245c219a
+FNMS.CreatedClerkEvent@3589644b
+FNMS.CreatedClerkEvent@13760528
+FNMS.CreatedClerkEvent@5e6d20d1
+Shaggy arrived at the North Side Store
+Shaggy added 3 item(s) to North Side Store's inventory
 Velma arrived at the South Side Store
-Velma added 0 item(s) to South Side Store's inventory
-Fred checked the North Side Store's register to find $3158
-Velma checked the South Side Store's register to find $3392
-Fred damaged 4 item(s) at the North Side Store while tuning
-Fred counted 56 item(s) in North Side Store's' inventory
-Fred found the North Side Store's' inventory is worth $1405
-Fred ordered 3 item(s) for the North Side Store
+Velma added 6 item(s) to South Side Store's inventory
+Shaggy checked the North Side Store's register to find $3791
+Velma checked the South Side Store's register to find $3381
+Shaggy damaged 0 item(s) at the North Side Store while tuning
+Shaggy counted 47 item(s) in North Side Store's' inventory
+Shaggy found the North Side Store's' inventory is worth $1210
+Shaggy ordered 0 item(s) for the North Side Store
 Velma damaged 0 item(s) at the South Side Store while tuning
-Velma counted 51 item(s) in South Side Store's' inventory
-Velma found the South Side Store's' inventory is worth $1238
+Velma counted 50 item(s) in South Side Store's' inventory
+Velma found the South Side Store's' inventory is worth $1271
 Velma ordered 0 item(s) for the South Side Store
-Fred sold 6 item(s) at the North Side Store
-Fred bought 3 item(s) at the North Side Store
+Shaggy bought 3 item(s) at the North Side Store
+Shaggy sold 3 item(s) at the North Side Store
+Velma sold 1 item(s) at the South Side Store
 Velma bought 2 item(s) at the South Side Store
-Velma sold 5 item(s) at the South Side Store
-Fred damaged 0 item(s) at the North Side Store while cleaning
+Shaggy damaged 1 item(s) at the North Side Store while cleaning
 Velma damaged 0 item(s) at the South Side Store while cleaning
-Fred left the North Side Store
+Shaggy left the North Side Store
 Velma left the South Side Store

@@ -1,22 +1,28 @@
-Scooby arrived at the North Side Store
-Scooby added 6 item(s) to North Side Store's inventory
-Velma arrived at the South Side Store
-Velma added 0 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $2990
-Velma checked the South Side Store's register to find $2751
-Scooby damaged 5 item(s) at the North Side Store while tuning
-Scooby counted 48 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $965
-Scooby ordered 9 item(s) for the North Side Store
-Velma damaged 0 item(s) at the South Side Store while tuning
-Velma counted 45 item(s) in South Side Store's' inventory
-Velma found the South Side Store's' inventory is worth $1094
-Velma ordered 9 item(s) for the South Side Store
-Scooby sold 4 item(s) at the North Side Store
-Scooby bought 3 item(s) at the North Side Store
-Velma sold 2 item(s) at the South Side Store
-Velma bought 2 item(s) at the South Side Store
-Scooby damaged 0 item(s) at the North Side Store while cleaning
-Velma damaged 0 item(s) at the South Side Store while cleaning
-Scooby left the North Side Store
-Velma left the South Side Store
+FNMS.CreatedClerkEvent@56427635
+FNMS.CreatedClerkEvent@29a519ca
+FNMS.CreatedClerkEvent@60af1d20
+FNMS.CreatedClerkEvent@7c0819dc
+FNMS.CreatedClerkEvent@393e2bb6
+FNMS.CreatedClerkEvent@38540e12
+Fred arrived at the North Side Store
+Fred added 3 item(s) to North Side Store's inventory
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Fred checked the North Side Store's register to find $2631
+Norville checked the South Side Store's register to find $2709
+Fred damaged 4 item(s) at the North Side Store while tuning
+Fred counted 50 item(s) in North Side Store's' inventory
+Fred found the North Side Store's' inventory is worth $1394
+Fred ordered 0 item(s) for the North Side Store
+Norville damaged 1 item(s) at the South Side Store while tuning
+Norville counted 46 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1179
+Norville ordered 9 item(s) for the South Side Store
+Fred sold 7 item(s) at the North Side Store
+Fred bought 2 item(s) at the North Side Store
+Norville sold 6 item(s) at the South Side Store
+Norville bought 4 item(s) at the South Side Store
+Fred damaged 0 item(s) at the North Side Store while cleaning
+Norville damaged 1 item(s) at the South Side Store while cleaning
+Fred left the North Side Store
+Norville left the South Side Store

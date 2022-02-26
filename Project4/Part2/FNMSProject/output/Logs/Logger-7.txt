@@ -1,2 +1,8 @@
+FNMS.CreatedClerkEvent@1d630559
+FNMS.CreatedClerkEvent@7532ee0f
+FNMS.CreatedClerkEvent@6d01dc1a
+FNMS.CreatedClerkEvent@124590c3
+FNMS.CreatedClerkEvent@1709061f
+FNMS.CreatedClerkEvent@7529c067
 The North Side Store was closed today
 The South Side Store was closed today

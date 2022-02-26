@@ -1,22 +1,28 @@
-Daphne arrived at the North Side Store
-Daphne added 0 item(s) to North Side Store's inventory
-Norville arrived at the South Side Store
-Norville added 0 item(s) to South Side Store's inventory
-Daphne checked the North Side Store's register to find $1993
-Norville checked the South Side Store's register to find $1686
-Daphne damaged 13 item(s) at the North Side Store while tuning
-Daphne counted 49 item(s) in North Side Store's' inventory
-Daphne found the North Side Store's' inventory is worth $1144
-Daphne ordered 0 item(s) for the North Side Store
-Norville damaged 6 item(s) at the South Side Store while tuning
-Norville counted 53 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1296
-Norville ordered 0 item(s) for the South Side Store
-Daphne sold 4 item(s) at the North Side Store
-Daphne bought 1 item(s) at the North Side Store
-Norville sold 5 item(s) at the South Side Store
-Norville bought 3 item(s) at the South Side Store
-Daphne damaged 1 item(s) at the North Side Store while cleaning
-Norville damaged 0 item(s) at the South Side Store while cleaning
-Daphne left the North Side Store
-Norville left the South Side Store
+FNMS.CreatedClerkEvent@1d00d1e9
+FNMS.CreatedClerkEvent@d686d4b
+FNMS.CreatedClerkEvent@7db418a1
+FNMS.CreatedClerkEvent@4012c065
+FNMS.CreatedClerkEvent@5b86ce17
+FNMS.CreatedClerkEvent@154ae219
+Velma arrived at the North Side Store
+Velma added 3 item(s) to North Side Store's inventory
+Fred arrived at the South Side Store
+Fred added 0 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $1465
+Fred checked the South Side Store's register to find $1339
+Velma damaged 0 item(s) at the North Side Store while tuning
+Velma counted 60 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1615
+Velma ordered 0 item(s) for the North Side Store
+Fred damaged 4 item(s) at the South Side Store while tuning
+Fred counted 57 item(s) in South Side Store's' inventory
+Fred found the South Side Store's' inventory is worth $1503
+Fred ordered 3 item(s) for the South Side Store
+Velma sold 8 item(s) at the North Side Store
+Velma bought 1 item(s) at the North Side Store
+Fred bought 3 item(s) at the South Side Store
+Fred sold 5 item(s) at the South Side Store
+Velma damaged 0 item(s) at the North Side Store while cleaning
+Fred damaged 0 item(s) at the South Side Store while cleaning
+Velma left the North Side Store
+Fred left the South Side Store

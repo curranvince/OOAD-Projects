@@ -8,18 +8,22 @@ abstract class MyEvent {
     MyEvent(int data, Store store) {
         data_ = data;
         store_ = store;
-        name_ = store_.GetActiveClerk().GetName();
+        if (store_ != null) name_ = store_.GetActiveClerk().GetName();
     }
 
     public void update(int data) { data_ += data; }
     public Store GetStore() { return store_; }
     public int GetData() { return data_; }
-    public int GetClerkID() { return store_.GetActiveClerk().GetID(); }
+    public String GetName() { return name_; }
 
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof MyEvent)) return false;
         MyEvent e = (MyEvent)o;
+        if (e instanceof CreatedClerkEvent) { 
+            if (e.GetName() == this.GetName()) return true;
+            return false;
+        }
         if (e.getClass() == this.getClass() && e.GetStore().getName() == this.GetStore().getName()) return true;
         return false;
     }
@@ -88,4 +92,11 @@ class LeaveEvent extends MyEvent {
 class ClosedEvent extends MyEvent {
     public ClosedEvent(Store store) { super(0, store); }
     public String toString() { return ("The " + store_.getName() + " was closed today"); }
+}
+
+class CreatedClerkEvent extends MyEvent implements Utility {
+    public CreatedClerkEvent(String name) {
+        super(0,null);
+        name_ = name;
+    }
 }
