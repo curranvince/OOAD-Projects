@@ -1,22 +1,22 @@
-Fred arrived at the North Side Store
-Fred added 0 item(s) to North Side Store's inventory
-Fred checked the North Side Store's register to find $2711
-Fred damaged 4 item(s) at the North Side Store while tuning
-Fred counted 61 item(s) in North Side Store's' inventory
-Fred found the North Side Store's' inventory is worth $1370
-Fred ordered 3 item(s) for the North Side Store
-Fred bought 3 item(s) at the North Side Store
-Fred sold 3 item(s) at the North Side Store
-Fred damaged 1 item(s) at the North Side Store while cleaning
-Fred left the North Side Store
-Velma arrived at the South Side Store
-Velma added 3 item(s) to South Side Store's inventory
-Velma checked the South Side Store's register to find $3223
-Velma damaged 0 item(s) at the South Side Store while tuning
-Velma counted 50 item(s) in South Side Store's' inventory
-Velma found the South Side Store's' inventory is worth $1341
-Velma ordered 3 item(s) for the South Side Store
-Velma sold 6 item(s) at the South Side Store
-Velma bought 2 item(s) at the South Side Store
-Velma damaged 0 item(s) at the South Side Store while cleaning
-Velma left the South Side Store
+Shaggy arrived at the North Side Store
+Shaggy added 0 item(s) to North Side Store's inventory
+Shaggy checked the North Side Store's register to find $3156
+Shaggy damaged 0 item(s) at the North Side Store while tuning
+Shaggy counted 55 item(s) in North Side Store's' inventory
+Shaggy found the North Side Store's' inventory is worth $1347
+Shaggy ordered 0 item(s) for the North Side Store
+Shaggy sold 3 item(s) at the North Side Store
+Shaggy bought 1 item(s) at the North Side Store
+Shaggy damaged 0 item(s) at the North Side Store while cleaning
+Shaggy left the North Side Store
+Scooby arrived at the South Side Store
+Scooby added 3 item(s) to South Side Store's inventory
+Scooby checked the South Side Store's register to find $3254
+Scooby damaged 8 item(s) at the South Side Store while tuning
+Scooby counted 56 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1305
+Scooby ordered 3 item(s) for the South Side Store
+Scooby sold 2 item(s) at the South Side Store
+Scooby bought 1 item(s) at the South Side Store
+Scooby damaged 0 item(s) at the South Side Store while cleaning
+Scooby left the South Side Store
