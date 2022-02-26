@@ -96,6 +96,7 @@ class Store extends Publisher {
 
     // store opens for the day
     public void Opens() {
+        Print(activeClerk_.GetName() + " lets customers into the " + name_);
         int itemssold, itemsbought;
         itemssold = itemsbought = 0;
         while (!customers_.isEmpty()) { // https://stackoverflow.com/questions/57715470/iterating-a-list-until-the-list-is-empty
@@ -107,6 +108,7 @@ class Store extends Publisher {
                 it.remove();
             }
         }
+        Print("The line at the " + name_ + " has finally seceded");
     }
 
     // announce that the store is closed

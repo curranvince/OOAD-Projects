@@ -3,7 +3,6 @@ package FNMS;
 import java.util.*;
 import java.io.*;
 
-// Class as a whole inspiration from Professors source code for Project 2
 public class Simulation implements Utility {
     static int last_day_;
     static int current_day_;
@@ -13,9 +12,8 @@ public class Simulation implements Utility {
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
     private Scanner scanner_ = new Scanner(System.in);
 
+    // generate stores and clerks on simulation instantiation
     public Simulation() {
-        // set output stream, generate stores and clerks with initial
-        // subscription from the tracker
         GenerateStores();
         GenerateClerks(); 
     }
@@ -86,17 +84,23 @@ public class Simulation implements Utility {
         if (Simulation.current_day_ % 7 != 0) { 
             AssignClerks();
             if (current_day_ != last_day_) QueueCustomers();
-            for (Store store : stores_) {
-                store.GetActiveClerk().ArriveAtStore();
-                if (!store.GetActiveClerk().CheckRegister()) store.GetActiveClerk().GoToBank();
-                store.GetActiveClerk().PlaceOrders(store.GetActiveClerk().DoInventory());
-                if (current_day_ == last_day_) HandleUser();
-                else store.Opens();
-                store.Opens();
-                store.GetActiveClerk().CleanStore();
-                store.GetActiveClerk().CloseStore();
-                Logger.getInstance().OutputData();
+            // no loop because we want to alternate between stores
+            stores_.get(0).GetActiveClerk().ArriveAtStore();
+            stores_.get(1).GetActiveClerk().ArriveAtStore();
+            if (!stores_.get(0).GetActiveClerk().CheckRegister()) stores_.get(0).GetActiveClerk().GoToBank();
+            if (!stores_.get(1).GetActiveClerk().CheckRegister()) stores_.get(1).GetActiveClerk().GoToBank();
+            stores_.get(0).GetActiveClerk().PlaceOrders(stores_.get(0).GetActiveClerk().DoInventory());
+            stores_.get(1).GetActiveClerk().PlaceOrders(stores_.get(1).GetActiveClerk().DoInventory());
+            if (current_day_ == last_day_) HandleUser();
+            else {
+                stores_.get(0).Opens();
+                stores_.get(1).Opens();
             }
+            stores_.get(0).GetActiveClerk().CleanStore();
+            stores_.get(1).GetActiveClerk().CleanStore();
+            stores_.get(0).GetActiveClerk().CloseStore();
+            stores_.get(1).GetActiveClerk().CloseStore();
+            Logger.getInstance().OutputData();
         } else { 
             ResetDaysWorked();
             for (int i = 0; i < stores_.size(); i++) {

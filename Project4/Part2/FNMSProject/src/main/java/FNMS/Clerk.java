@@ -47,14 +47,14 @@ public class Clerk extends AbstractClerk {
 
     // broadcast register amount and return if its greater than 75 or not
     public boolean CheckRegister() {
-        Print(name_ + " checks the register to find $" + store_.register_.GetAmount());
+        Print(name_ + " checks the " + store_.getName() + "'s register to find $" + store_.register_.GetAmount());
         Publish(new RegisterEvent(store_.register_.GetAmount(), store_));
         return (store_.register_.GetAmount() >= 75) ? true : false;
     }
 
     // add 1000 to register and broadcast
     public void GoToBank() {
-        Print(name_ + " goes to the bank to withdraw $1000 for the register" );
+        Print(name_ + " goes to the bank to withdraw $1000 for the register");
         store_.register_.AddMoney(1000);
         store_.updateWithdrawn(1000);
         Publish(new BankEvent(store_.register_.GetAmount(), store_));
@@ -101,6 +101,7 @@ public class Clerk extends AbstractClerk {
     // go through stores inventory, tuning items as we go
     // return the set of itemtypes which we do not have
     public Set<ItemType> DoInventory() {
+        Print(name_ + " is about to do inventory and and attempt tuning at the " + store_.getName());
         // vector to keep track of what types we need to order (start with all and remove)
         Set<ItemType> orderTypes = new HashSet<ItemType>();  
         Collections.addAll(orderTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/      
@@ -123,7 +124,7 @@ public class Clerk extends AbstractClerk {
             totalitems++;
         }
         // broadcast total value of inventory
-        Print(name_ + " does inventory to find we have $" + total + " worth of product");
+        Print(name_ + " does inventory to find the " + store_.getName() + " has $" + total + " worth of product");
         // publish amount of items, value, and how many broken in tuning
         Publish(new BrokeTuningEvent(damaged, store_));
         Publish(new InventoryEvent(totalitems, store_));
@@ -149,18 +150,18 @@ public class Clerk extends AbstractClerk {
                 // add order to delivery day
                 store_.orders_.get(deliveryDay).add(type);
                 // broadcast who placed an order of what and what day it will arrive
-                Print(name_ + " placed an order for 3 " + type.name() + "s to arrive on Day " + deliveryDay);
+                Print(name_ + " placed an order for 3 " + type.name() + "s to arrive at the " + store_.getName() + "on Day " + deliveryDay);
                 orders += 3;
             }
         } 
         // print and publish amount of orders placed
-        Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
+        Print(name_ + " placed " + String.valueOf(orders) + " order(s) at the " + store_.getName() + " today");
         Publish(new ItemsOrderedEvent(orders, store_));
     }
 
     // sell an item to a customer
     public boolean Sell(Item item, int salePrice) {
-        Print("The customer buys the " + item.name_ + " for $" + salePrice);
+        Print("The customer buys the " + item.name_ + " for $" + salePrice + " from the " + store_.getName());
         // add money to register, update item stats, update inventories
         store_.register_.AddMoney(salePrice);
         item.day_sold_ = Simulation.current_day_;
@@ -176,7 +177,7 @@ public class Clerk extends AbstractClerk {
     // buy an item from a customer 
     public boolean Buy(Item item, int salePrice) {
         if (store_.register_.TakeMoney(salePrice)) {
-            Print("The store buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
+            Print("The " + store_.getName() + " buys the " + item.name_ + " in " + item.condition_ + " condition for $" + salePrice);
             // take money from register, update item stats, update inventories
             item.purchase_price_ = salePrice;
             item.list_price_ = salePrice*2;
@@ -185,7 +186,7 @@ public class Clerk extends AbstractClerk {
             Publish(new ItemsBoughtEvent(store_));
             return true;
         }  
-        Print("Unfortunately, the store doesn't have enough money to buy the " + item.name_);
+        Print("Unfortunately, the " + store_.getName() + " doesn't have enough money to buy the " + item.name_);
         return false;
     }
 
@@ -207,10 +208,10 @@ public class Clerk extends AbstractClerk {
     private boolean CheckDiscontinuedStatus(Item item, boolean buying) {
         if (store_.discontinued_.size() == 3 && item instanceof Clothing) { 
             // if all clothings been discontinued, we no longer buy it from customer or order
-            Print(name_ + " tells the customer we're out of all clothing items, so we no longer buy them from customers or order them"); 
+            Print(name_ + " tells the customer the " + store_.getName() + " is all out clothing items, so it will no longer buy them from customers or order them"); 
             return true;
         } else if (!buying && store_.discontinued_.contains(item.itemType_)) {
-            Print(name_ + " tells the customer we're out of " + item.itemType_ + " and will not order anymore, though we will buy them from customers"); 
+            Print(name_ + " tells the customer the " + store_.getName() +  "is out of " + item.itemType_ + " and will not order anymore, though it will still buy them from customers"); 
             return true;
         }
         return false;
@@ -258,7 +259,7 @@ public class Clerk extends AbstractClerk {
     }
 
     public void CleanStore() {
-        Print("The store closes for the day and " + name_ + " begins cleaning");
+        Print("The " + store_.getName() + " closes for the day and " + name_ + " begins cleaning");
         if (GetRandomNum(100) < break_percentage_) { 
             // pick a random item for the clerk to break
             Item toBreak = store_.inventory_.get(GetRandomNum(store_.inventory_.size()));
