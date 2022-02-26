@@ -5,7 +5,7 @@ import java.util.*;
 
 // These Subscribers are an example of the Observer pattern
 interface Subscriber extends Utility {
-    public void Update(String context, String name, int data);
+    public void Update(MyEvent event);
     public void OutputData();
     public void Close();
 }
@@ -13,17 +13,10 @@ interface Subscriber extends Utility {
 // Logger keeps track of all information for a single day and writes it to its own file
 class Logger implements Subscriber { 
     // uses lazy instantiation
-    private static Logger instance;
-
-    // Resources that helped with setting up the data map
-    // https://www.w3schools.com/java/java_hashmap.asp
-    // https://stackoverflow.com/questions/663374/java-ordered-map
-    // https://docs.oracle.com/javase/6/docs/api/java/util/LinkedHashMap.html
-    private Map<String, Integer> data_ = new LinkedHashMap<String, Integer>(); 
+    private static Logger instance; 
+    // current list of events and file writer
+    private LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();
     private FileWriter writer_;
-    // store and clerk names for the run
-    private Store current_store_ = null;
-    private String name_;
     // what day logger thinks it is
     private int current_ = 0;
     
@@ -35,10 +28,16 @@ class Logger implements Subscriber {
         return instance;
     }
 
-    // update store and clerk name
-    public void UpdateStore(Store store) { 
-        current_store_ = store; 
-        name_ = current_store_.GetActiveClerk().GetName();
+    // update data
+    public void Update(MyEvent event) {
+        boolean updated = false;
+        for (MyEvent event_ : events_) {
+            if (event_.equals(event)) {
+                event_.update(event.GetData());
+                updated = true;
+            }
+        }
+        if (!updated) { events_.add(event); }
     }
 
     // make sure we write to appropriate file
@@ -68,64 +67,13 @@ class Logger implements Subscriber {
         } 
     }
 
-    // update data
-    public void Update(String context, String name, int data) {
-        UpdateWriter();
-        if (data_.get(context) == null) {
-            data_.put(context, data);
-        } else {
-            data_.put(context, (data_.get(context) + data)); // https://stackoverflow.com/questions/4157972/how-to-update-a-value-given-a-key-in-a-hashmap
-        }
-    }
-
     // write data to file and clear it
     public void OutputData() {
-        for (String i : data_.keySet()) {
-            switch (i) {
-                case "arrival": 
-                    Write(name_ + " arrived at the " + current_store_.getName());
-                    break;
-                case "itemsadded":
-                    Write(name_ + " added " + data_.get("itemsadded") + " item(s) to " + current_store_.getName() + "'s inventory");
-                    break;
-                case "checkedregister":
-                    Write(name_ + " checked register to find $" + data_.get("checkedregister"));
-                    break;
-                case "wenttobank":
-                    Write(name_ + " went to the bank, then checked register to find $" + data_.get("wenttobank"));
-                    break;
-                case "totalitems":
-                    Write(name_ + " counted " + data_.get("totalitems") + " item(s) in inventory");
-                    break;
-                case "totalitemsprice":
-                    Write(name_ + " found the store's inventory is worth $" + data_.get("totalitemsprice"));
-                    break;
-                case "brokeintuning":
-                    Write(name_ + " damaged " + data_.get("brokeintuning") + " item(s) while tuning");
-                    break;
-                case "itemsordered":
-                    Write(name_ + " ordered " + data_.get("itemsordered") + " item(s)");
-                    break;
-                case "itemssold":
-                    Write(name_ + " sold " + data_.get("itemssold") + " item(s)");
-                    break;
-                case "itemsbought":
-                    Write(name_ + " purchased " + data_.get("itemsbought") + " item(s)");
-                    break;
-                case "damagedcleaning":
-                    Write(name_ + " damaged " + data_.get("damagedcleaning") + " item(s) while cleaning");
-                    break;
-                case "leftstore":
-                    Write(name_ + " left the " + current_store_.getName());
-                    break;
-                case "closed":
-                    Write("The " + current_store_.getName() + " was closed today");
-                    break;
-                default:
-                    break;
-            }
+        UpdateWriter();
+        for (MyEvent event_ : events_) {
+            Write(event_.toString());
         }
-        data_.clear();
+        events_.clear();
     }
 
     // close the writer at end of each run
@@ -145,38 +93,20 @@ class Tracker implements Subscriber {
     private static final Tracker instance = new Tracker();
     private int[][] stats_ = new int[6][4];
     private String[] clerk_names_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
-    private int clerk_index_;
-    // [0][] for Shaggy, [1][] for Velma, [2][] for Daphne
     // [][0] for days worked, [][1] for sold, [][2] for purchased, [][3] for damaged
     
     private Tracker() {};
     public static Tracker getInstance() { return instance; }
     
-    public void UpdateClerk(int clerk_index) { clerk_index_ = clerk_index; }
-    
     // for data we're interested in, add to the data table
-    public void Update(String context, String name, int data) {
-        switch (context) {
-            case "arrival": 
-                stats_[clerk_index_][0] += data;
-                break;
-            case "brokeintuning":
-                stats_[clerk_index_][3] += data;
-                break;
-            case "itemsold":
-                stats_[clerk_index_][1] += data;
-                break;
-            case "itemsbought":
-                stats_[clerk_index_][2] += data;
-                break;
-            case "damagedcleaning":
-                stats_[clerk_index_][3] += data;
-                break;
-            default:
-                break;
-        }
+    public void Update(MyEvent event) {
+        if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
+        else if (event instanceof BrokeTuningEvent) stats_[event.GetClerkID()][3] += event.GetData();
+        else if (event instanceof ItemsSoldEvent) stats_[event.GetClerkID()][1] += event.GetData();
+        else if (event instanceof ItemsBoughtEvent) stats_[event.GetClerkID()][2] += event.GetData();
+        else if (event instanceof BrokeCleaningEvent) stats_[event.GetClerkID()][3] += event.GetData();
     }
-
+    
     // print the data table
     public void OutputData() {
         Print("\nTracker : Day " + Simulation.current_day_);

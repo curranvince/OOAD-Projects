@@ -8,29 +8,29 @@ import java.util.Set;
 abstract class Staff extends Publisher {
     protected Store store_;
     protected String name_;
+    protected int id_;
     private int days_worked_ = 0;
     
     // methods to access staff members names and worked days stats
     public String GetName() { return name_; }
+    public int GetID() { return id_; }
     public void IncrementDaysWorked() { days_worked_++; }
     public int GetDaysWorked() { return days_worked_; }
     public void ResetDaysWorked() { days_worked_ = 0; }
 
     public void UpdateStore(Store store) { store_ = store; }
-    
-    protected void Publish(String context, int data) { super.Publish(context, name_, data); }
 
     // broadcast arriving to store
     public void ArriveAtStore() {
         days_worked_++;
         Print(name_  + " has arrived at the " + store_.getName() + " on Day " + Simulation.current_day_);
-        Publish("arrival", 1);
+        Publish(new ArrivalEvent(store_));
     }
 
     // broadcast leaving
     public void CloseStore() {
         Print(name_ + " leaves the " + store_.getName());
-        Publish("leftstore", 0);
+        Publish(new LeaveEvent(store_));
     }
 }
 

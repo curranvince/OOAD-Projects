@@ -12,7 +12,7 @@ public class TuneTest {
     @Test
     @DisplayName("Should be able to electronically tune items")
     public void testElectronicTune() {
-        AbstractClerk clerk = new Clerk("Tester", 10, new ElectronicTune());
+        AbstractClerk clerk = new Clerk(0, "Tester", 10, new ElectronicTune());
         for (Item item : store.inventory_) {
             if (item.GetComponent(Tuneable.class) != null) {
                 clerk.tune_strategy_.Execute(item.GetComponent(Tuneable.class));

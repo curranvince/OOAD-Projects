@@ -1,22 +1,22 @@
-Norville arrived at the North Side Store
-Norville added 0 item(s) to North Side Store's inventory
-Norville checked register to find $1340
-Norville damaged 7 item(s) while tuning
-Norville counted 61 item(s) in inventory
-Norville found the store's inventory is worth $1728
-Norville ordered 0 item(s)
-Norville sold 6 item(s)
-Norville purchased 4 item(s)
-Norville damaged 0 item(s) while cleaning
-Norville left the North Side Store
-Scooby arrived at the South Side Store
-Scooby added 0 item(s) to South Side Store's inventory
-Scooby checked register to find $1211
-Scooby damaged 12 item(s) while tuning
-Scooby counted 61 item(s) in inventory
-Scooby found the store's inventory is worth $1510
-Scooby ordered 0 item(s)
-Scooby purchased 4 item(s)
-Scooby sold 3 item(s)
-Scooby damaged 0 item(s) while cleaning
-Scooby left the South Side Store
+Velma arrived at the North Side Store
+Velma added 0 item(s) to North Side Store's inventory
+Velma checked the North Side Store's register to find $1483
+Velma damaged 0 item(s) at the North Side Store while tuning
+Velma counted 56 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1328
+Velma ordered 0 item(s) for the North Side Store
+Velma sold 3 item(s) at the North Side Store
+Velma bought 1 item(s) at the North Side Store
+Velma damaged 0 item(s) at the North Side Store while cleaning
+Velma left the North Side Store
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Norville checked the South Side Store's register to find $1276
+Norville damaged 2 item(s) at the South Side Store while tuning
+Norville counted 58 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1569
+Norville ordered 0 item(s) for the South Side Store
+Norville bought 3 item(s) at the South Side Store
+Norville sold 3 item(s) at the South Side Store
+Norville damaged 0 item(s) at the South Side Store while cleaning
+Norville left the South Side Store

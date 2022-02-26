@@ -46,12 +46,12 @@ public class Simulation implements Utility {
 
     private void GenerateClerks() {
         // make decorated clerks with break chances & tuning algorithms
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new HaphazardTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Norville", 15, new ManualTune())));
-        clerks_.add(new Clerk("Fred", 15, new ManualTune()));
-        clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
-        clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
+        clerks_.add(new ClerkSellDecorator(new Clerk(0, "Velma", 5, new ElectronicTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(1, "Daphne", 10, new HaphazardTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(2, "Norville", 15, new ManualTune())));
+        clerks_.add(new Clerk(3, "Fred", 15, new ManualTune()));
+        clerks_.add(new Clerk(4, "Shaggy", 20, new ElectronicTune()));
+        clerks_.add(new Clerk(5, "Scooby", 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
             clerks_.get(i).Subscribe(Tracker.getInstance());
         }
@@ -73,23 +73,33 @@ public class Simulation implements Utility {
         DisplayResults();
     }
 
+    private void HandleUser() {
+        User user = new User(this);
+        user.MakeRequest();
+
+    }
+
     private void SimDay() {
         // open new logger and subscribe everyone
         OpenLogger();
         // open or close stores depending on day
         if (Simulation.current_day_ % 7 != 0) { 
             AssignClerks();
-            QueueCustomers();
-            for (int i = 0; i < stores_.size(); i++) {
-                Logger.getInstance().UpdateStore(stores_.get(i));
-                Tracker.getInstance().UpdateClerk(GetClerkID(stores_.get(i).GetActiveClerk().GetName()));
-                stores_.get(i).OpenToday();
+            if (current_day_ != last_day_) QueueCustomers();
+            for (Store store : stores_) {
+                store.GetActiveClerk().ArriveAtStore();
+                if (!store.GetActiveClerk().CheckRegister()) store.GetActiveClerk().GoToBank();
+                store.GetActiveClerk().PlaceOrders(store.GetActiveClerk().DoInventory());
+                if (current_day_ == last_day_) HandleUser();
+                else store.Opens();
+                store.Opens();
+                store.GetActiveClerk().CleanStore();
+                store.GetActiveClerk().CloseStore();
                 Logger.getInstance().OutputData();
             }
         } else { 
             ResetDaysWorked();
             for (int i = 0; i < stores_.size(); i++) {
-                Logger.getInstance().UpdateStore(stores_.get(i));
                 stores_.get(i).ClosedToday();
                 Logger.getInstance().OutputData();
             }

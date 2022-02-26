@@ -8,7 +8,8 @@ import FNMS.Item.ItemType;
 
 public class Clerk extends AbstractClerk {
     
-    public Clerk(String name, int break_percentage, TuneStrategy tune) { 
+    public Clerk(int id, String name, int break_percentage, TuneStrategy tune) { 
+        id_ = id;
         name_ = name;
         break_percentage_ = break_percentage;
         tune_strategy_ = tune; 
@@ -41,13 +42,13 @@ public class Clerk extends AbstractClerk {
             // if no orders today then broadcast it
             Print(name_  + " finds no orders delivered today"); 
         }
-        Publish("itemsadded", orders_received);
+        Publish(new ItemsAddedEvent(orders_received, store_));
     }
 
     // broadcast register amount and return if its greater than 75 or not
     public boolean CheckRegister() {
         Print(name_ + " checks the register to find $" + store_.register_.GetAmount());
-        Publish("checkedregister", store_.register_.GetAmount());
+        Publish(new RegisterEvent(store_.register_.GetAmount(), store_));
         return (store_.register_.GetAmount() >= 75) ? true : false;
     }
 
@@ -56,7 +57,7 @@ public class Clerk extends AbstractClerk {
         Print(name_ + " goes to the bank to withdraw $1000 for the register" );
         store_.register_.AddMoney(1000);
         store_.updateWithdrawn(1000);
-        Publish("wenttobank", store_.register_.GetAmount());
+        Publish(new BankEvent(store_.register_.GetAmount(), store_));
     }
 
     // return how many items of a certain type we have
@@ -124,9 +125,9 @@ public class Clerk extends AbstractClerk {
         // broadcast total value of inventory
         Print(name_ + " does inventory to find we have $" + total + " worth of product");
         // publish amount of items, value, and how many broken in tuning
-        Publish("brokeintuning", damaged);
-        Publish("totalitems", totalitems);
-        Publish("totalitemsprice", total);
+        Publish(new BrokeTuningEvent(damaged, store_));
+        Publish(new InventoryEvent(totalitems, store_));
+        Publish(new InventoryValueEvent(total, store_));
         return orderTypes;
     }
 
@@ -154,7 +155,7 @@ public class Clerk extends AbstractClerk {
         } 
         // print and publish amount of orders placed
         Print(name_ + " placed " + String.valueOf(orders) + " order(s) today");
-        Publish("itemsordered", orders);
+        Publish(new ItemsOrderedEvent(orders, store_));
     }
 
     // sell an item to a customer
@@ -168,7 +169,7 @@ public class Clerk extends AbstractClerk {
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
         if (item instanceof Clothing) UpdateDiscontinuedStatus(item.itemType_);
-        Publish("itemssold", 1);
+        Publish(new ItemsSoldEvent(store_));
         return true;
     }
 
@@ -181,7 +182,7 @@ public class Clerk extends AbstractClerk {
             item.list_price_ = salePrice*2;
             item.day_arrived = Simulation.current_day_;
             store_.inventory_.add(item);
-            Publish("itemsbought", 1);
+            Publish(new ItemsBoughtEvent(store_));
             return true;
         }  
         Print("Unfortunately, the store doesn't have enough money to buy the " + item.name_);
@@ -202,6 +203,7 @@ public class Clerk extends AbstractClerk {
         return (GetRandomNum(100) < chance);
     }
 
+    // see if an item is discontinued
     private boolean CheckDiscontinuedStatus(Item item, boolean buying) {
         if (store_.discontinued_.size() == 3 && item instanceof Clothing) { 
             // if all clothings been discontinued, we no longer buy it from customer or order
@@ -254,26 +256,6 @@ public class Clerk extends AbstractClerk {
         Print(name_ + " finds no " + itemType.name() + " in the inventory");
         return null;
     }
-    
-    /*
-    // route customers request to appropriate method
-    public Pair<RequestType, Integer> HandleCustomer(Customer customer) {
-        RequestType request = customer.MakeRequest();
-        // check for item being discontinued
-        
-        return ((request == RequestType.Buy) ? TryTransaction(CheckForItem(customer.GetItemType()), false) : TryTransaction(customer.GetItem(), true));
-        alternate implementation for adding in more customer requests (ie 'trade')
-        switch (customer.DisplayRequest()) {
-            case Customer.RequestType.Buy: 
-                return TryTransaction(CheckForItem(customer.GetItemType()), false);
-            case Customer.RequestType.Sell:
-                return TryTransaction(customer.GetItem(), true));
-            default:
-                Print("ERROR: Clerk.HandleCustomer given bad value")
-        }
-        
-    }
-    */
 
     public void CleanStore() {
         Print("The store closes for the day and " + name_ + " begins cleaning");
@@ -284,11 +266,11 @@ public class Clerk extends AbstractClerk {
             // lower condition of item and remove if it fully breaks
             if (!toBreak.LowerCondition()) { store_.inventory_.remove(toBreak); }
             if (toBreak instanceof Clothing) UpdateDiscontinuedStatus(toBreak.itemType_);
-            Publish("damagedcleaning", 1);
+            Publish(new BrokeCleaningEvent(1, store_));
         } else {
             // nothing breaks
             Print(name_ + " cleans the store without incident");
-            Publish("damagedcleaning", 0);
+            Publish(new BrokeCleaningEvent(0, store_));
         }
     }
 

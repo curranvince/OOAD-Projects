@@ -1,24 +1,24 @@
-Velma arrived at the North Side Store
-Velma added 0 item(s) to North Side Store's inventory
-Velma checked register to find $0
-Velma went to the bank, then checked register to find $1000
-Velma damaged 0 item(s) while tuning
-Velma counted 63 item(s) in inventory
-Velma found the store's inventory is worth $1856
-Velma ordered 0 item(s)
-Velma purchased 3 item(s)
-Velma sold 2 item(s)
-Velma damaged 0 item(s) while cleaning
-Velma left the North Side Store
+Daphne arrived at the North Side Store
+Daphne added 0 item(s) to North Side Store's inventory
+Daphne checked the North Side Store's register to find $0
+Daphne went to the bank, then checked the North Side Store's register to find $1000
+Daphne damaged 0 item(s) at the North Side Store while tuning
+Daphne counted 63 item(s) in North Side Store's' inventory
+Daphne found the North Side Store's' inventory is worth $1531
+Daphne ordered 0 item(s) for the North Side Store
+Daphne bought 1 item(s) at the North Side Store
+Daphne sold 5 item(s) at the North Side Store
+Daphne damaged 0 item(s) at the North Side Store while cleaning
+Daphne left the North Side Store
 Scooby arrived at the South Side Store
 Scooby added 0 item(s) to South Side Store's inventory
-Scooby checked register to find $0
-Scooby went to the bank, then checked register to find $1000
-Scooby damaged 0 item(s) while tuning
-Scooby counted 63 item(s) in inventory
-Scooby found the store's inventory is worth $1575
-Scooby ordered 0 item(s)
-Scooby purchased 4 item(s)
-Scooby sold 4 item(s)
-Scooby damaged 0 item(s) while cleaning
+Scooby checked the South Side Store's register to find $0
+Scooby went to the bank, then checked the South Side Store's register to find $1000
+Scooby damaged 0 item(s) at the South Side Store while tuning
+Scooby counted 63 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1646
+Scooby ordered 0 item(s) for the South Side Store
+Scooby bought 3 item(s) at the South Side Store
+Scooby sold 4 item(s) at the South Side Store
+Scooby damaged 0 item(s) at the South Side Store while cleaning
 Scooby left the South Side Store

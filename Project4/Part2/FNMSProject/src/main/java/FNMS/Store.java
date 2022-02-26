@@ -14,7 +14,7 @@ abstract class Publisher implements Utility {
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
     public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
-    protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
+    protected void Publish(MyEvent event) { for (Subscriber subscriber : subscribers_) subscriber.Update(event); }
 }
 
 class Store extends Publisher {
@@ -63,13 +63,15 @@ class Store extends Publisher {
         }
     }
 
-    private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
-
     public String getName() { return name_; }
     public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }
     public int getWithdrawn() { return total_withdrawn_; }
 
     public AbstractClerk GetActiveClerk() { return activeClerk_; }
+    public void UpdateClerk(AbstractClerk clerk) { 
+        activeClerk_ = clerk; 
+        activeClerk_.UpdateStore(this);
+    }
 
     public void QueueCustomers(List<Customer> customers) { customers_.addAll(customers); }
 
@@ -92,11 +94,6 @@ class Store extends Publisher {
         activeClerk_.CloseStore();
     }
 
-    public void UpdateClerk(AbstractClerk clerk) { 
-        activeClerk_ = clerk; 
-        activeClerk_.UpdateStore(this);
-    }
-
     // store opens for the day
     public void Opens() {
         int itemssold, itemsbought;
@@ -110,36 +107,12 @@ class Store extends Publisher {
                 it.remove();
             }
         }
-        /*
-        Customer customer = customers_.remove();
-        while (customer != null) {
-            /*
-            Pair<RequestType, Integer> results = activeClerk_.HandleCustomer(customer);
-            switch (results.getKey()) {
-                case Buy:
-                    itemssold += results.getValue();
-                    break;
-                case Sell:
-                    itemsbought += results.getValue();
-                    break;
-                default:
-                    break;
-            }
-            customer.LeaveStore();
-            customer.MakeRequest();
-            customer.LeaveStore();
-            customer = customers_.remove();
-        }
-        */
-        // publish number of items sold and bought throughout day
-        //Publish("itemsold", itemssold);
-        //Publish("itemsbought", itemsbought);
     }
 
     // announce that the store is closed
     public void ClosedToday() {
         Print("Today is Day " + Simulation.current_day_ + ", which is Sunday, so the store is closed");
-        Publish("closed", 0);
+        Publish(new ClosedEvent(this));
     }
 
     // show one of the inventories and its value

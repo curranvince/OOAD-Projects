@@ -14,15 +14,17 @@ abstract class ClerkDecorator extends AbstractClerk {
     public ClerkDecorator(AbstractClerk decoratedStaff) { 
         this.decoratedStaff_ = decoratedStaff; 
     }
+    // Publisher methods
+    public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
+    public void Unsubscribe(Subscriber unsubscriber) { decoratedStaff_.Unsubscribe(unsubscriber); }
+    public void Publish(MyEvent event) { decoratedStaff_.Publish(event); }
     // Staff methods
     public String GetName() { return decoratedStaff_.GetName(); }
+    public int GetID() { return decoratedStaff_.GetID(); }
     public void IncrementDaysWorked() { decoratedStaff_.IncrementDaysWorked(); }
     public int GetDaysWorked() { return decoratedStaff_.GetDaysWorked(); }
     public void ResetDaysWorked() { decoratedStaff_.ResetDaysWorked(); }
     public void UpdateStore(Store store) { decoratedStaff_.UpdateStore(store); }
-    // Publisher methods
-    public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
-    public void Unsubscribe(Subscriber unsubscriber) { decoratedStaff_.Unsubscribe(unsubscriber); }
     // Clerk methods
     public void ArriveAtStore() { decoratedStaff_.ArriveAtStore(); }
     public boolean CheckRegister() { return decoratedStaff_.CheckRegister(); }
@@ -34,7 +36,6 @@ abstract class ClerkDecorator extends AbstractClerk {
     public boolean OfferAccepted(Item item, boolean buying, boolean discount) { return decoratedStaff_.OfferAccepted(item, buying, discount); }
     public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
     public boolean TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
-    //public Pair<RequestType, Integer> HandleCustomer(Customer customer) { return decoratedStaff_.HandleCustomer(customer); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
     public String GetTime() { return decoratedStaff_.GetTime(); }
