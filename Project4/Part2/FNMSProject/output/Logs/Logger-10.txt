@@ -1,27 +1,22 @@
-FNMS.CreatedClerkEvent@157882ae
-FNMS.CreatedClerkEvent@a9232ad
-FNMS.CreatedClerkEvent@7aef0f5
-FNMS.CreatedClerkEvent@63e2d23e
-FNMS.CreatedClerkEvent@32de411e
-FNMS.CreatedClerkEvent@29c21ab2
 Velma arrived at the North Side Store
 Velma added 0 item(s) to North Side Store's inventory
-Fred arrived at the South Side Store
-Fred added 3 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $2381
-Fred checked the South Side Store's register to find $2140
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $2105
+Norville checked the South Side Store's register to find $2188
 Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 46 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1351
-Velma ordered 3 item(s) for the North Side Store
-Fred damaged 1 item(s) at the South Side Store while tuning
-Fred counted 54 item(s) in South Side Store's' inventory
-Fred found the South Side Store's' inventory is worth $1288
-Fred ordered 0 item(s) for the South Side Store
+Velma counted 49 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1258
+Velma ordered 0 item(s) for the North Side Store
+Norville damaged 2 item(s) at the South Side Store while tuning
+Norville counted 52 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1455
+Norville ordered 0 item(s) for the South Side Store
+Velma bought 1 item(s) at the North Side Store
 Velma sold 4 item(s) at the North Side Store
-Fred sold 4 item(s) at the South Side Store
-Fred bought 1 item(s) at the South Side Store
+Norville sold 5 item(s) at the South Side Store
+Norville bought 2 item(s) at the South Side Store
 Velma damaged 0 item(s) at the North Side Store while cleaning
-Fred damaged 0 item(s) at the South Side Store while cleaning
+Norville damaged 0 item(s) at the South Side Store while cleaning
 Velma left the North Side Store
-Fred left the South Side Store
+Norville left the South Side Store

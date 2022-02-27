@@ -1,28 +1,22 @@
-FNMS.CreatedClerkEvent@599f2628
-FNMS.CreatedClerkEvent@1964741e
-FNMS.CreatedClerkEvent@776311ac
-FNMS.CreatedClerkEvent@43efe14e
-FNMS.CreatedClerkEvent@63e1317d
-FNMS.CreatedClerkEvent@591f7d9b
-Shaggy arrived at the North Side Store
-Shaggy added 0 item(s) to North Side Store's inventory
-Daphne arrived at the South Side Store
-Daphne added 0 item(s) to South Side Store's inventory
-Shaggy checked the North Side Store's register to find $1261
-Daphne checked the South Side Store's register to find $1231
-Shaggy damaged 0 item(s) at the North Side Store while tuning
-Shaggy counted 61 item(s) in North Side Store's' inventory
-Shaggy found the North Side Store's' inventory is worth $1621
-Shaggy ordered 0 item(s) for the North Side Store
-Daphne damaged 9 item(s) at the South Side Store while tuning
-Daphne counted 59 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1491
-Daphne ordered 0 item(s) for the South Side Store
-Shaggy sold 7 item(s) at the North Side Store
-Shaggy bought 2 item(s) at the North Side Store
-Daphne sold 4 item(s) at the South Side Store
-Daphne bought 2 item(s) at the South Side Store
-Shaggy damaged 0 item(s) at the North Side Store while cleaning
-Daphne damaged 0 item(s) at the South Side Store while cleaning
-Shaggy left the North Side Store
-Daphne left the South Side Store
+Norville arrived at the North Side Store
+Norville added 0 item(s) to North Side Store's inventory
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Norville checked the North Side Store's register to find $1080
+Scooby checked the South Side Store's register to find $1162
+Norville damaged 4 item(s) at the North Side Store while tuning
+Norville counted 64 item(s) in North Side Store's' inventory
+Norville found the North Side Store's' inventory is worth $1595
+Norville ordered 0 item(s) for the North Side Store
+Scooby damaged 6 item(s) at the South Side Store while tuning
+Scooby counted 61 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1773
+Scooby ordered 3 item(s) for the South Side Store
+Norville bought 4 item(s) at the North Side Store
+Norville sold 2 item(s) at the North Side Store
+Scooby bought 1 item(s) at the South Side Store
+Scooby sold 4 item(s) at the South Side Store
+Norville damaged 1 item(s) at the North Side Store while cleaning
+Scooby damaged 0 item(s) at the South Side Store while cleaning
+Norville left the North Side Store
+Scooby left the South Side Store

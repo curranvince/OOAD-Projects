@@ -30,6 +30,7 @@ class Logger implements Subscriber {
 
     // update data
     public void Update(MyEvent event) {
+        if (event instanceof CreatedClerkEvent) return;
         boolean updated = false;
         for (MyEvent event_ : events_) {
             if (event_.equals(event)) {

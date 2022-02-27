@@ -1,28 +1,22 @@
-FNMS.CreatedClerkEvent@45bc4f6c
-FNMS.CreatedClerkEvent@39b1349c
-FNMS.CreatedClerkEvent@422fcf45
-FNMS.CreatedClerkEvent@524137df
-FNMS.CreatedClerkEvent@7521d5d4
-FNMS.CreatedClerkEvent@45040a38
 Velma arrived at the North Side Store
 Velma added 0 item(s) to North Side Store's inventory
-Norville arrived at the South Side Store
-Norville added 3 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $3447
-Norville checked the South Side Store's register to find $3139
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $3217
+Scooby checked the South Side Store's register to find $3172
 Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 52 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1288
-Velma ordered 0 item(s) for the North Side Store
-Norville damaged 0 item(s) at the South Side Store while tuning
-Norville counted 52 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1281
-Norville ordered 3 item(s) for the South Side Store
-Velma sold 5 item(s) at the North Side Store
-Velma bought 2 item(s) at the North Side Store
-Norville sold 9 item(s) at the South Side Store
-Norville bought 3 item(s) at the South Side Store
+Velma counted 48 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1173
+Velma ordered 3 item(s) for the North Side Store
+Scooby damaged 12 item(s) at the South Side Store while tuning
+Scooby counted 56 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1468
+Scooby ordered 0 item(s) for the South Side Store
+Velma bought 4 item(s) at the North Side Store
+Velma sold 2 item(s) at the North Side Store
+Scooby bought 4 item(s) at the South Side Store
+Scooby sold 2 item(s) at the South Side Store
 Velma damaged 0 item(s) at the North Side Store while cleaning
-Norville damaged 0 item(s) at the South Side Store while cleaning
+Scooby damaged 0 item(s) at the South Side Store while cleaning
 Velma left the North Side Store
-Norville left the South Side Store
+Scooby left the South Side Store
