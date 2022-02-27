@@ -1,22 +1,22 @@
-Velma arrived at the North Side Store
-Velma added 0 item(s) to North Side Store's inventory
+Norville arrived at the North Side Store
+Norville added 0 item(s) to North Side Store's inventory
 Shaggy arrived at the South Side Store
 Shaggy added 0 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $1679
-Shaggy checked the South Side Store's register to find $2019
-Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 53 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1496
-Velma ordered 3 item(s) for the North Side Store
+Norville checked the North Side Store's register to find $1821
+Shaggy checked the South Side Store's register to find $2186
+Norville damaged 5 item(s) at the North Side Store while tuning
+Norville counted 54 item(s) in North Side Store's' inventory
+Norville found the North Side Store's' inventory is worth $1399
+Norville ordered 3 item(s) for the North Side Store
 Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 47 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1244
+Shaggy counted 45 item(s) in South Side Store's' inventory
+Shaggy found the South Side Store's' inventory is worth $1131
 Shaggy ordered 0 item(s) for the South Side Store
-Velma sold 10 item(s) at the North Side Store
-Velma bought 2 item(s) at the North Side Store
+Norville sold 2 item(s) at the North Side Store
+Norville bought 1 item(s) at the North Side Store
+Shaggy bought 2 item(s) at the South Side Store
 Shaggy sold 3 item(s) at the South Side Store
-Shaggy bought 1 item(s) at the South Side Store
-Velma damaged 0 item(s) at the North Side Store while cleaning
+Norville damaged 0 item(s) at the North Side Store while cleaning
 Shaggy damaged 0 item(s) at the South Side Store while cleaning
-Velma left the North Side Store
+Norville left the North Side Store
 Shaggy left the South Side Store

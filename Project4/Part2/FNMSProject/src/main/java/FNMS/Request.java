@@ -97,7 +97,7 @@ class BuyKitRequest extends Request {
     }
 
     public void Execute() {
-
+        store_.GetActiveClerk().SellGuitarKit();
     }
 }
 

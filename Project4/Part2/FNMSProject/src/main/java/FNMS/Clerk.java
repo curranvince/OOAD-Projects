@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import FNMS.Item.ItemType;
+import FNMS.KitComponent.GKComponents;
 
 public class Clerk extends AbstractClerk {
     
@@ -286,5 +287,26 @@ public class Clerk extends AbstractClerk {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
         LocalTime localTime = LocalTime.now();
         return dtf.format(localTime);
+    }
+
+    public void SellGuitarKit() {
+        GuitarKit guitarKit = new GuitarKit();
+        List<Component> guitarKitComponents = new ArrayList<Component>();
+        Print(name_ + " is ready to sell the user a guitar kit");
+        for (GKComponents gkcomp : GKComponents.values()) {
+            // create 3 choices for each component
+            List<KitComponent> choices = new ArrayList<KitComponent>();
+            Print("Please choose a " + gkcomp.name());
+            for (int i = 0; i < 3; i++) {
+                choices.add(store_.kitFactory_.CreateComponent(gkcomp.name()));
+                Print(String.valueOf(i) + ": " + choices.get(i).GetName() + " for $" + choices.get(i).GetPrice());
+            }
+            // add choice to components
+            int choice = GetIntFromUser(0,2);
+            guitarKitComponents.add(choices.get(choice));
+        }
+        guitarKit.AddComponents(guitarKitComponents);
+        store_.inventory_.add(guitarKit);
+        Sell(guitarKit, guitarKit.GetPrice());
     }
 }

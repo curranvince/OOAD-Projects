@@ -55,7 +55,6 @@ class Seller extends Customer {
 }
 
 class User extends Customer {
-    private Scanner scanner_ = new Scanner(System.in);
     private Simulation sim_;
     private Store store_;
     private boolean leaves_;
@@ -81,15 +80,9 @@ class User extends Customer {
     private ItemType ChooseItemType() {
         Print("Please choose an ItemType: ");
         for (int i = 0; i < ItemType.values().length; i++) {
-            Print(String.valueOf(i) + ItemType.values()[i]);
+            Print(String.valueOf(i) + ": " + ItemType.values()[i]);
         }
-        int choice = -1; 
-        while (choice < 1 || choice > ItemType.values().length) {
-            choice = scanner_.nextInt();
-            Print(String.valueOf(choice));
-            scanner_.nextLine(); // consume eol char
-        }
-        return ItemType.values()[choice];
+        return ItemType.values()[GetIntFromUser(0, ItemType.values().length-1)];
     }
 
     private void ChooseRequest() {
@@ -101,12 +94,7 @@ class User extends Customer {
         Print("5: Buy an item from the store");
         Print("6: Buy a custom guitar kit");
         Print("7: End the interaction");
-        int choice = -1; 
-        while (choice < 1 || choice > 7) {
-            choice = scanner_.nextInt();
-            Print(String.valueOf(choice));
-            scanner_.nextLine(); // consume eol char
-        }
+        int choice = GetIntFromUser(1, 7); 
         if (choice == 1) { request_ = new SwitchRequest(sim_, this); }
         else if (choice == 2) { request_ = new NameRequest(store_.GetActiveClerk()); }
         else if (choice == 3) { request_ = new TimeRequest(store_.GetActiveClerk()); }

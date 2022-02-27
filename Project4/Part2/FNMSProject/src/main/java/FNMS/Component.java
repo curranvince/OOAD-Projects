@@ -15,80 +15,79 @@ class Tuneable extends Component {
 class Electric extends Component {}
 
 abstract class KitComponent extends Component {
-    String name_;
-    int price_;
+    protected String name_;
+    protected int price_;
+    protected String id_; 
 
-    KitComponent() { price_ = GetRandomNum(5,21); }
+    public enum GKComponents {
+        Pickups,
+        Pickguard,
+        Covers,
+        KnobSet,
+        Bridge,
+        Neck
+    }
+
+    KitComponent() {
+        id_ = String.valueOf(GetRandomChar());
+        price_ = GetRandomNum(5,21); 
+    }
+    public String GetName() { return name_ + " " + id_; }
+    public int GetPrice() { return price_; }
 }
 
-abstract class Pickups extends KitComponent {
-    Pickups() { name_ += "Pickups "; }
+abstract class NorthComponent extends KitComponent {
+    NorthComponent() { name_ = "North "; }
 }
 
-class NorthPickups extends Pickups {
-    NorthPickups() { name_ += "North "; }
+abstract class SouthComponent extends KitComponent {
+    SouthComponent() { name_ = "South "; }
 }
 
-class SouthPickups extends Pickups {
-    SouthPickups() { name_ += "South "; }
+class NorthPickups extends NorthComponent {
+    NorthPickups() { name_ += "Pickups"; }
 }
 
-abstract class Pickguard extends KitComponent {
-    Pickguard() { name_ += "Pickguard "; }
+class SouthPickups extends SouthComponent {
+    SouthPickups() { name_ += "Pickups"; }
 }
 
-class NorthPickguard extends Pickguard {
-    NorthPickguard() { name_ += "North "; }
+class NorthPickguard extends NorthComponent {
+    NorthPickguard() { name_ += "Pickguard"; }
 }
 
-class SouthPickguard extends Pickguard {
-    SouthPickguard() { name_ += "South"; }
+class SouthPickguard extends SouthComponent {
+    SouthPickguard() { name_ += "Pickguard"; }
 }
 
-abstract class Covers extends KitComponent {
-    Covers() { name_ += "Covers "; }
+class NorthCovers extends NorthComponent {
+    NorthCovers() { name_ += "Covers"; }
 }
 
-class NorthCovers extends Covers {
-    NorthCovers() { name_ += "North "; }
+class SouthCovers extends SouthComponent {
+    SouthCovers() { name_ += "Covers"; }
 }
 
-class SouthCovers extends Covers {
-    SouthCovers() { name_ += "South"; }
+class NorthKnobSet extends NorthComponent {
+    NorthKnobSet() { name_ += "Knob Set"; }
 }
 
-abstract class KnobSet extends KitComponent {
-    KnobSet() { name_ += "KnobSet "; }
+class SouthKnobSet extends SouthComponent {
+    SouthKnobSet() { name_ += "Knob Set"; }
 }
 
-class NorthKnobSet extends KnobSet {
-    NorthKnobSet() { name_ += "North "; }
+class NorthBridge extends NorthComponent {
+    NorthBridge() { name_ += "Bridge"; }
 }
 
-class SouthKnobSet extends KnobSet {
-    SouthKnobSet() { name_ += "South"; }
+class SouthBridge extends SouthComponent {
+    SouthBridge() { name_ += "Bridge"; }
 }
 
-abstract class Bridge extends KitComponent {
-    Bridge() { name_ += "Bridge "; }
+class NorthNeck extends NorthComponent {
+    NorthNeck() { name_ += "Neck"; }
 }
 
-class NorthBridge extends Bridge {
-    NorthBridge() { name_ += "North "; }
-}
-
-class SouthBridge extends Bridge {
-    SouthBridge() { name_ += "South"; }
-}
-
-abstract class Neck extends KitComponent {
-    Neck() { name_ += "Neck "; }
-}
-
-class NorthNeck extends Neck {
-    NorthNeck() { name_ += "North "; }
-}
-
-class SouthNeck extends Neck {
-    SouthNeck() { name_ += "South"; }
+class SouthNeck extends SouthComponent {
+    SouthNeck() { name_ += "Neck"; }
 }

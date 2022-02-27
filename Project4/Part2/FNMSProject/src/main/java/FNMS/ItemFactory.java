@@ -36,28 +36,53 @@ public class ItemFactory {
 
 // Abstract factory pattern to create components for the guitar kits
 interface KitFactory {
+    KitComponent CreateComponent(String component);
+    /*
     Pickups CreatePickups();
     Pickguard CreatePickguard();
     Covers CreateCovers();
     KnobSet CreateKnobSet();
     Bridge CreateBridge();
     Neck CreateNeck();
+    */
 }
 
 class NorthKitFactory implements KitFactory {
+    public KitComponent CreateComponent(String component) {
+        if (component.equalsIgnoreCase("PICKUPS")) return new NorthPickups();
+        else if (component.equalsIgnoreCase("PICKGUARD")) return new NorthPickguard();
+        else if (component.equalsIgnoreCase("COVERS")) return new NorthCovers();
+        else if (component.equalsIgnoreCase("KNOBSET")) return new NorthKnobSet();
+        else if (component.equalsIgnoreCase("BRIDGE")) return new NorthBridge();
+        else if (component.equalsIgnoreCase("NECK")) return new NorthNeck();
+        return null;
+    }
+    /*
     public Pickups CreatePickups() { return new NorthPickups(); };
     public Pickguard CreatePickguard() { return new NorthPickguard(); };
     public Covers CreateCovers() { return new NorthCovers(); };
     public KnobSet CreateKnobSet() { return new NorthKnobSet(); };
     public Bridge CreateBridge() { return new NorthBridge(); };
     public Neck CreateNeck() { return new NorthNeck(); };
+    */
 }
 
 class SouthKitFactory implements KitFactory {
+    public KitComponent CreateComponent(String component) {
+        if (component.equalsIgnoreCase("PICKUPS")) return new SouthPickups();
+        else if (component.equalsIgnoreCase("PICKGUARD")) return new SouthPickguard();
+        else if (component.equalsIgnoreCase("COVERS")) return new SouthCovers();
+        else if (component.equalsIgnoreCase("KNOBSET")) return new SouthKnobSet();
+        else if (component.equalsIgnoreCase("BRIDGE")) return new SouthBridge();
+        else if (component.equalsIgnoreCase("NECK")) return new SouthNeck();
+        return null;
+    }
+    /*
     public Pickups CreatePickups() { return new SouthPickups(); };
     public Pickguard CreatePickguard() { return new SouthPickguard(); };
     public Covers CreateCovers() { return new SouthCovers(); };
     public KnobSet CreateKnobSet() { return new SouthKnobSet(); };
     public Bridge CreateBridge() { return new SouthBridge(); };
     public Neck CreateNeck() { return new SouthNeck(); };
+    */
 }

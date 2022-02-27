@@ -2,6 +2,7 @@ package FNMS;
 
 import java.io.*;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.List;
 
 interface Utility {
@@ -22,7 +23,7 @@ interface Utility {
     }
     */
     
-    // TeeStream idea from
+    // TeeStream to write to multiple streams at once idea from
     // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
     class TeeStream { 
         private FileOutputStream fileStream;
@@ -50,9 +51,11 @@ interface Utility {
         }
     }
 
-    // make sure theres only one 'random' instead of instantiating everywhere
-    Random random = new Random();
-    TeeStream teeStream = new TeeStream();
+    // make sure theres only one random and scanner instead of instantiating everywhere
+    final Random random = new Random();
+    final Scanner scanner = new Scanner(System.in);
+    final TeeStream teeStream = new TeeStream();
+    
 
     // Print everything to Sys.out as well as Output.txt
     // For easy interaction as well as capture
@@ -70,6 +73,20 @@ interface Utility {
         return rando;
     }
     
+    // https://stackoverflow.com/questions/2626835/is-there-functionality-to-generate-a-random-character-in-java
+    default char GetRandomChar() { return (char)(random.nextInt(26) + 'a'); }
+   
+    // get int from user with bounds
+    default int GetIntFromUser(int min, int max) {
+        int choice = -1; 
+        while (choice < min || choice > max) {
+            choice = scanner.nextInt();
+            Print(String.valueOf(choice));
+            scanner.nextLine(); // consume eol char
+        }
+        return choice;
+    }
+
     // https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
     // https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
     default int GetPoissonRandom(int mean) {

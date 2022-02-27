@@ -10,7 +10,6 @@ public class Simulation implements Utility {
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
-    private Scanner scanner_ = new Scanner(System.in);
 
     // generate stores and clerks on simulation instantiation
     public Simulation() {
@@ -20,10 +19,7 @@ public class Simulation implements Utility {
 
     private void SetDaysToRun() {
         Print("How many days would you like to run the simulation? (10-30)");
-        int daysToRun = scanner_.nextInt();
-        scanner_.nextLine();
-        Print(String.valueOf(daysToRun));
-        last_day_ = daysToRun;
+        last_day_ = GetIntFromUser(10,30);
     }
 
     private int GetClerkID(String name) {
@@ -214,6 +210,7 @@ public class Simulation implements Utility {
     }
     
     public Store GetStore() {
+        Scanner scanner_ = new Scanner(System.in);
         Print("What store would you like to switch to?");
         String name = scanner_.nextLine();
         for (int i = 0; i < stores_.size(); i++) {
