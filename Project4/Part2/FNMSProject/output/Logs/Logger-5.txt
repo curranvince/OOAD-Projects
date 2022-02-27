@@ -1,21 +1,21 @@
 Fred arrived at the North Side Store
-Fred added 0 item(s) to North Side Store's inventory
+Fred added 3 item(s) to North Side Store's inventory
 Norville arrived at the South Side Store
-Norville added 0 item(s) to South Side Store's inventory
-Fred checked the North Side Store's register to find $1645
-Norville checked the South Side Store's register to find $1693
+Norville added 3 item(s) to South Side Store's inventory
+Fred checked the North Side Store's register to find $1444
+Norville checked the South Side Store's register to find $1892
 Fred damaged 3 item(s) at the North Side Store while tuning
-Fred counted 54 item(s) in North Side Store's' inventory
-Fred found the North Side Store's' inventory is worth $1462
+Fred counted 57 item(s) in North Side Store's' inventory
+Fred found the North Side Store's' inventory is worth $1392
 Fred ordered 3 item(s) for the North Side Store
 Norville damaged 3 item(s) at the South Side Store while tuning
-Norville counted 52 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1375
+Norville counted 53 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1278
 Norville ordered 0 item(s) for the South Side Store
-Fred sold 3 item(s) at the North Side Store
-Fred bought 3 item(s) at the North Side Store
-Norville sold 8 item(s) at the South Side Store
-Norville bought 1 item(s) at the South Side Store
+Fred sold 7 item(s) at the North Side Store
+Fred bought 1 item(s) at the North Side Store
+Norville sold 2 item(s) at the South Side Store
+Norville bought 2 item(s) at the South Side Store
 Fred damaged 0 item(s) at the North Side Store while cleaning
 Norville damaged 0 item(s) at the South Side Store while cleaning
 Fred left the North Side Store
