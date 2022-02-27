@@ -73,7 +73,7 @@ public class Simulation implements Utility {
 
     private void HandleUser() {
         User user = new User(this);
-        user.MakeRequest();
+        user.MakeRequests();
 
     }
 
@@ -218,9 +218,11 @@ public class Simulation implements Utility {
         String name = scanner_.nextLine();
         for (int i = 0; i < stores_.size(); i++) {
             if (stores_.get(i).getName().contains(name)) {
+                Print("Switched to " + stores_.get(i).getName());
                 return stores_.get(i);
             }
         }
+        Print("Couldn't switch stores, please try again before making a different request");
         return null;
     }
 }

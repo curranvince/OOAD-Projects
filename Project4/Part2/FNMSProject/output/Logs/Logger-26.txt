@@ -1,22 +1,22 @@
-Norville arrived at the North Side Store
-Norville added 0 item(s) to North Side Store's inventory
-Velma arrived at the South Side Store
-Velma added 0 item(s) to South Side Store's inventory
-Norville checked the North Side Store's register to find $3856
-Velma checked the South Side Store's register to find $4039
-Norville damaged 2 item(s) at the North Side Store while tuning
-Norville counted 41 item(s) in North Side Store's' inventory
-Norville found the North Side Store's' inventory is worth $982
-Norville ordered 3 item(s) for the North Side Store
-Velma damaged 0 item(s) at the South Side Store while tuning
-Velma counted 48 item(s) in South Side Store's' inventory
-Velma found the South Side Store's' inventory is worth $1231
-Velma ordered 3 item(s) for the South Side Store
-Norville bought 3 item(s) at the North Side Store
-Norville sold 6 item(s) at the North Side Store
-Velma bought 4 item(s) at the South Side Store
-Velma sold 7 item(s) at the South Side Store
-Norville damaged 0 item(s) at the North Side Store while cleaning
-Velma damaged 0 item(s) at the South Side Store while cleaning
-Norville left the North Side Store
-Velma left the South Side Store
+Scooby arrived at the North Side Store
+Scooby added 3 item(s) to North Side Store's inventory
+Daphne arrived at the South Side Store
+Daphne added 3 item(s) to South Side Store's inventory
+Scooby checked the North Side Store's register to find $3722
+Daphne checked the South Side Store's register to find $3138
+Scooby damaged 10 item(s) at the North Side Store while tuning
+Scooby counted 51 item(s) in North Side Store's' inventory
+Scooby found the North Side Store's' inventory is worth $1368
+Scooby ordered 0 item(s) for the North Side Store
+Daphne damaged 21 item(s) at the South Side Store while tuning
+Daphne counted 67 item(s) in South Side Store's' inventory
+Daphne found the South Side Store's' inventory is worth $1665
+Daphne ordered 6 item(s) for the South Side Store
+Scooby sold 5 item(s) at the North Side Store
+Scooby bought 3 item(s) at the North Side Store
+Daphne bought 2 item(s) at the South Side Store
+Daphne sold 4 item(s) at the South Side Store
+Scooby damaged 0 item(s) at the North Side Store while cleaning
+Daphne damaged 1 item(s) at the South Side Store while cleaning
+Scooby left the North Side Store
+Daphne left the South Side Store

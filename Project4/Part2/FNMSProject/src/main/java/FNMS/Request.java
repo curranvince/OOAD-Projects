@@ -10,6 +10,11 @@ class BuyRequest extends Request {
     private AbstractClerk clerk_;
     private ItemType itemType_;
 
+    public BuyRequest(AbstractClerk aclerk, ItemType itemType) {
+        clerk_ = aclerk;
+        itemType_ = itemType;
+    }
+
     public BuyRequest(AbstractClerk aclerk) {
         itemType_ = GetRandomEnumVal(ItemType.class);
         clerk_ = aclerk;
@@ -25,6 +30,11 @@ class BuyRequest extends Request {
 class SellRequest extends Request {
     private AbstractClerk clerk_;
     private Item item_;
+
+    public SellRequest(AbstractClerk aclerk, ItemType itemType) {
+        item_ = ItemFactory.MakeItem(itemType.name());
+        clerk_ = aclerk;
+    }
 
     public SellRequest(AbstractClerk aclerk) {
         item_ = ItemFactory.MakeItem(GetRandomEnumVal(ItemType.class).name());
@@ -47,7 +57,7 @@ class NameRequest extends Request {
         Print("The clerk says their name is " + clerk_.GetName());
     }
 
-    public String toString() { return " find out the clerks name"; }
+    public String toString() { return "find out the clerks name"; }
 }
 
 class TimeRequest extends Request {
@@ -59,7 +69,7 @@ class TimeRequest extends Request {
         Print("The clerk says its " + clerk_.GetTime());
     }
 
-    public String toString() { return " find out the time"; }
+    public String toString() { return "find out the time"; }
 }
 
 class SwitchRequest extends Request {
@@ -76,13 +86,25 @@ class SwitchRequest extends Request {
         user_.SetStore(simulation_.GetStore());
     }
 
-    public String toString() { return " switch stores"; }
+    public String toString() { return "switch stores"; }
 }
 
 class BuyKitRequest extends Request {
-    public void Execute() {}
+    Store store_;
+
+    public BuyKitRequest(Store store) {
+        store_ = store;
+    }
+
+    public void Execute() {
+
+    }
 }
 
 class LeaveRequest extends Request {
-    public void Execute() {}
+    User user_;
+
+    public LeaveRequest(User user) { user_ = user; }
+
+    public void Execute() { user_.Leaves(); }
 }
