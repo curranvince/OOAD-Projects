@@ -99,6 +99,8 @@ class BuyKitRequest extends Request {
     public void Execute() {
         store_.GetActiveClerk().SellGuitarKit();
     }
+
+    public String toString() { return " buy a guitar kit"; }
 }
 
 class LeaveRequest extends Request {
@@ -106,5 +108,9 @@ class LeaveRequest extends Request {
 
     public LeaveRequest(User user) { user_ = user; }
 
-    public void Execute() { user_.Leaves(); }
+    public void Execute() { 
+        user_.Leaves(); 
+    }
+
+    public String toString() { return "to leave"; }
 }

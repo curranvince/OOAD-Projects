@@ -54,6 +54,8 @@ class Seller extends Customer {
     }
 }
 
+// User needs an inventory
+// User needs to be able to decide to buy or not
 class User extends Customer {
     private Simulation sim_;
     private Store store_;
@@ -70,6 +72,7 @@ class User extends Customer {
     public void SetStore(Store store) { store_ = store; }
 
     public void MakeRequests() {
+        // first ask which store, then keep allowing requests until user wants to leave
         MakeRequest();
         while (!leaves_) {
             ChooseRequest();
@@ -78,14 +81,18 @@ class User extends Customer {
     }
 
     private ItemType ChooseItemType() {
+        // present all the itemtypes
         Print("Please choose an ItemType: ");
         for (int i = 0; i < ItemType.values().length; i++) {
             Print(String.valueOf(i) + ": " + ItemType.values()[i]);
         }
+        // return the itemtype user chooses
         return ItemType.values()[GetIntFromUser(0, ItemType.values().length-1)];
     }
 
+    // allow user to choose their next request
     private void ChooseRequest() {
+        // display requests
         Print("Please choose a request to make: ");
         Print("1: Choose Store");
         Print("2: Ask the clerk their name");
@@ -94,6 +101,7 @@ class User extends Customer {
         Print("5: Buy an item from the store");
         Print("6: Buy a custom guitar kit");
         Print("7: End the interaction");
+        // get choice and assign request based off it 
         int choice = GetIntFromUser(1, 7); 
         if (choice == 1) { request_ = new SwitchRequest(sim_, this); }
         else if (choice == 2) { request_ = new NameRequest(store_.GetActiveClerk()); }
