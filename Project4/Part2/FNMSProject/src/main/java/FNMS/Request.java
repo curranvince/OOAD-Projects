@@ -8,20 +8,29 @@ abstract class Request implements Utility {
 
 class BuyRequest extends Request {
     private AbstractClerk clerk_;
+    private Customer customer_;
     private ItemType itemType_;
 
-    public BuyRequest(AbstractClerk aclerk, ItemType itemType) {
+    public BuyRequest(AbstractClerk aclerk, Customer customer, ItemType itemType) {
         clerk_ = aclerk;
+        customer_ = customer;
         itemType_ = itemType;
     }
 
-    public BuyRequest(AbstractClerk aclerk) {
-        itemType_ = GetRandomEnumVal(ItemType.class);
+    public BuyRequest(AbstractClerk aclerk, Customer customer) {
         clerk_ = aclerk;
+        customer_ = customer;
+        itemType_ = GetRandomEnumVal(ItemType.class);
     }
 
     public void Execute() {
-        clerk_.TryTransaction(clerk_.CheckForItem(itemType_), false);
+        Item item = clerk_.CheckForItem(itemType_);
+        if (item != null) {
+            if (clerk_.TryTransaction(customer_, item, false) && customer_ instanceof User) {
+                User user = (User)customer_;
+                user.AddToInventory(item);
+            }
+        }
     }
 
     public String toString() { return "buy a " + itemType_.name(); }
@@ -29,20 +38,26 @@ class BuyRequest extends Request {
 
 class SellRequest extends Request {
     private AbstractClerk clerk_;
+    private Customer customer_;
     private Item item_;
 
-    public SellRequest(AbstractClerk aclerk, ItemType itemType) {
-        item_ = ItemFactory.MakeItem(itemType.name());
+    public SellRequest(AbstractClerk aclerk, Customer customer, Item item) { 
         clerk_ = aclerk;
+        customer_ = customer;
+        item_ = item;
     }
 
-    public SellRequest(AbstractClerk aclerk) {
-        item_ = ItemFactory.MakeItem(GetRandomEnumVal(ItemType.class).name());
+    public SellRequest(AbstractClerk aclerk, Customer customer) {
         clerk_ = aclerk;
+        customer_ = customer;
+        item_ = ItemFactory.MakeItem(GetRandomEnumVal(ItemType.class).name());
     }
 
     public void Execute() {
-        clerk_.TryTransaction(item_, true);
+        if (customer_ instanceof User && clerk_.TryTransaction(customer_, item_, true)) {
+            User user = (User)customer_;
+            user.RemoveFromInventory(item_);
+        }
     }
 
     public String toString() { return "sell a " + item_.name_; }
@@ -91,16 +106,18 @@ class SwitchRequest extends Request {
 
 class BuyKitRequest extends Request {
     Store store_;
+    User user_;
 
-    public BuyKitRequest(Store store) {
+    public BuyKitRequest(Store store, User user) {
         store_ = store;
+        user_ = user;
     }
 
     public void Execute() {
-        store_.GetActiveClerk().SellGuitarKit();
+        user_.AddToInventory(store_.GetActiveClerk().SellGuitarKit());
     }
 
-    public String toString() { return " buy a guitar kit"; }
+    public String toString() { return "buy a guitar kit"; }
 }
 
 class LeaveRequest extends Request {

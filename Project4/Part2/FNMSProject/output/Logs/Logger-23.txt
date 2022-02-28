@@ -1,22 +1,20 @@
-Norville arrived at the North Side Store
-Norville added 3 item(s) to North Side Store's inventory
-Scooby arrived at the South Side Store
-Scooby added 3 item(s) to South Side Store's inventory
-Norville checked the North Side Store's register to find $3183
-Scooby checked the South Side Store's register to find $2915
-Norville damaged 3 item(s) at the North Side Store while tuning
-Norville counted 45 item(s) in North Side Store's' inventory
-Norville found the North Side Store's' inventory is worth $1287
-Norville ordered 3 item(s) for the North Side Store
-Scooby damaged 18 item(s) at the South Side Store while tuning
-Scooby counted 62 item(s) in South Side Store's' inventory
-Scooby found the South Side Store's' inventory is worth $1686
-Scooby ordered 3 item(s) for the South Side Store
-Norville sold 6 item(s) at the North Side Store
-Norville bought 2 item(s) at the North Side Store
-Scooby sold 3 item(s) at the South Side Store
-Scooby bought 1 item(s) at the South Side Store
-Norville damaged 0 item(s) at the North Side Store while cleaning
-Scooby damaged 0 item(s) at the South Side Store while cleaning
-Norville left the North Side Store
-Scooby left the South Side Store
+Velma arrived at the North Side Store
+Velma added 3 item(s) to North Side Store's inventory
+Fred arrived at the South Side Store
+Fred added 9 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $4082
+Fred checked the South Side Store's register to find $3510
+Velma damaged 0 item(s) at the North Side Store while tuning
+Velma counted 37 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1023
+Velma ordered 3 item(s) for the North Side Store
+Fred damaged 0 item(s) at the South Side Store while tuning
+Fred counted 35 item(s) in South Side Store's' inventory
+Fred found the South Side Store's' inventory is worth $1033
+Fred ordered 6 item(s) for the South Side Store
+Velma sold 6 item(s) at the North Side Store
+Fred sold 3 item(s) at the South Side Store
+Velma damaged 0 item(s) at the North Side Store while cleaning
+Fred damaged 0 item(s) at the South Side Store while cleaning
+Velma left the North Side Store
+Fred left the South Side Store

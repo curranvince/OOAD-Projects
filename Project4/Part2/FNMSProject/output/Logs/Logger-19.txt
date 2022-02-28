@@ -1,21 +1,19 @@
 Velma arrived at the North Side Store
-Velma added 0 item(s) to North Side Store's inventory
+Velma added 3 item(s) to North Side Store's inventory
 Scooby arrived at the South Side Store
 Scooby added 3 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $2912
-Scooby checked the South Side Store's register to find $3057
+Velma checked the North Side Store's register to find $4104
+Scooby checked the South Side Store's register to find $3192
 Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 45 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1317
-Velma ordered 0 item(s) for the North Side Store
-Scooby damaged 16 item(s) at the South Side Store while tuning
-Scooby counted 53 item(s) in South Side Store's' inventory
-Scooby found the South Side Store's' inventory is worth $1374
-Scooby ordered 3 item(s) for the South Side Store
-Velma bought 3 item(s) at the North Side Store
-Velma sold 3 item(s) at the North Side Store
+Velma counted 30 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $792
+Velma ordered 3 item(s) for the North Side Store
+Scooby damaged 4 item(s) at the South Side Store while tuning
+Scooby counted 35 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1111
+Scooby ordered 0 item(s) for the South Side Store
+Velma sold 4 item(s) at the North Side Store
 Scooby sold 4 item(s) at the South Side Store
-Scooby bought 2 item(s) at the South Side Store
 Velma damaged 0 item(s) at the North Side Store while cleaning
 Scooby damaged 1 item(s) at the South Side Store while cleaning
 Velma left the North Side Store

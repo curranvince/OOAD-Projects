@@ -46,12 +46,11 @@ abstract class AbstractClerk extends Staff {
     abstract public void PlaceOrders(Set<Item.ItemType> orderTypes);
     abstract public boolean Sell(Item item, int salePrice);
     abstract public boolean Buy(Item item, int salePrice);
-    abstract public boolean OfferAccepted(Item item, boolean buying, boolean discount);
     abstract public Item CheckForItem(Item.ItemType itemType);
-    abstract public boolean TryTransaction(Item item, boolean buying);
+    abstract public boolean TryTransaction(Customer customer, Item item, boolean buying);
     abstract public void CleanStore();
     abstract public String GetTime();
-    abstract public void SellGuitarKit();
+    abstract public Item SellGuitarKit();
 }
 
 // The Tune interface and its subclasses is an example of the Strategy pattern

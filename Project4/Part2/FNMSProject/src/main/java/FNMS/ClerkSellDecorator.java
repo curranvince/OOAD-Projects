@@ -33,13 +33,12 @@ abstract class ClerkDecorator extends AbstractClerk {
     public void PlaceOrders(Set<ItemType> orderTypes) { decoratedStaff_.PlaceOrders(orderTypes); }
     public boolean Sell(Item item, int salePrice) { return decoratedStaff_.Sell(item, salePrice); }
     public boolean Buy(Item item, int salePrice) { return decoratedStaff_.Buy(item, salePrice); }
-    public boolean OfferAccepted(Item item, boolean buying, boolean discount) { return decoratedStaff_.OfferAccepted(item, buying, discount); }
     public Item CheckForItem(ItemType itemType) { return decoratedStaff_.CheckForItem(itemType); }
-    public boolean TryTransaction(Item item, boolean buying) { return decoratedStaff_.TryTransaction(item, buying); }
+    public boolean TryTransaction(Customer customer, Item item, boolean buying) { return decoratedStaff_.TryTransaction(customer, item, buying); }
     public void CleanStore() { decoratedStaff_.CleanStore(); }
     public void CloseStore() { decoratedStaff_.CloseStore(); }
     public String GetTime() { return decoratedStaff_.GetTime(); }
-    public void SellGuitarKit() { decoratedStaff_.SellGuitarKit(); }
+    public Item SellGuitarKit() { return decoratedStaff_.SellGuitarKit(); }
 }
 
 // concrete class to implement new methods/overwrites
@@ -47,8 +46,8 @@ class ClerkSellDecorator extends ClerkDecorator {
     public ClerkSellDecorator(AbstractClerk clerk) { super(clerk); }
 
     // decorated sell method to sell accessories when a stringed instrument is sold
-    public boolean TryTransaction(Item item, boolean buying) {
-        boolean result = super.TryTransaction(item, buying);
+    public boolean TryTransaction(Customer customer, Item item, boolean buying) {
+        boolean result = super.TryTransaction(customer, item, buying);
         // if we just sold a stringed instrument
         if (result && !buying && item instanceof Stringed) {
             // define chances to sell each type
@@ -60,15 +59,39 @@ class ClerkSellDecorator extends ClerkDecorator {
             }
             // try selling accessories
             for (int i = 0; i < chances.length; i++) {
-                if (GetRandomNum(100) < chances[i]) {
-                    // for cables and strings try to sell 2 or 3
-                    int num = 1;
-                    if (i == 2) { num = GetRandomNum(1,3); }
-                    else if (i == 3) { num = GetRandomNum(1, 4); }
-                    Print("The customer decides they also want to buy " + num + " " + types[i].name());
-                    for (int j = 0; j < num; j++) {
-                        Item toSell = super.CheckForItem(types[i]);
-                        if (toSell != null) super.Sell(toSell, toSell.list_price_);
+                if (customer instanceof User) {
+                    Print(super.GetName() + " now wants to sell you a " + types[i].name() + " to go with your " + item.name_);
+                    Print("Would you also like to buy a " + types[i].name() + "? (Y/N)");
+                    if (GetBoolFromUser()) {
+                        int num = 1;
+                        if (i == 2) { 
+                            Print("How many? (1-2)");
+                            num = GetIntFromUser(1,2);
+                        } else if (i == 3) { 
+                            Print("How many? (1-3)");
+                            num = GetIntFromUser(1, 3); 
+                        }
+                        for (int j = 0; j < num; j++) {
+                            Item toSell = super.CheckForItem(types[i]);
+                            if (toSell != null) {
+                                Print("Would you like to buy the " + toSell.name_ + " for $" + toSell.list_price_ + "? (Y/N)");
+                                if (GetBoolFromUser()) {
+                                    super.Sell(toSell, toSell.list_price_);
+                                }
+                            } 
+                        }
+                    } 
+                } else {
+                    if (GetRandomNum(100) < chances[i]) {
+                        // for cables and strings try to sell 2 or 3
+                        int num = 1;
+                        if (i == 2) { num = GetRandomNum(1,3); }
+                        else if (i == 3) { num = GetRandomNum(1, 4); }
+                        Print("The customer decides they also want to buy " + num + " " + types[i].name());
+                        for (int j = 0; j < num; j++) {
+                            Item toSell = super.CheckForItem(types[i]);
+                            if (toSell != null) super.Sell(toSell, toSell.list_price_);
+                        }
                     }
                 }
             }

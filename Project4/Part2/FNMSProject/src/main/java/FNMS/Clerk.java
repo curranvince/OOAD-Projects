@@ -108,7 +108,7 @@ public class Clerk extends AbstractClerk {
     // go through stores inventory, tuning items as we go
     // return the set of itemtypes which we do not have
     public Set<ItemType> DoInventory() {
-        Print(name_ + " is about to do inventory and and attempt tuning at the " + store_.getName());
+        Print(name_ + " is about to do inventory and attempt tuning at the " + store_.getName());
         // vector to keep track of what types we need to order (start with all and remove)
         Set<ItemType> orderTypes = new HashSet<ItemType>();  
         Collections.addAll(orderTypes, ItemType.values()); // https://www.geeksforgeeks.org/java-program-to-convert-array-to-vector/      
@@ -197,20 +197,6 @@ public class Clerk extends AbstractClerk {
         return false;
     }
 
-    // return wether a transaction is accepted
-    public boolean OfferAccepted(Item item, boolean buying, boolean discount) {
-        int chance = 50;
-        if (discount) chance += 25;
-        if (!buying) {
-            if (item.GetComponent(Tuneable.class) != null && item.GetComponent(Tuneable.class).IsTuned()) {
-                chance += 10;
-                if (item instanceof Stringed) chance += 5;
-                else if (item instanceof Wind) chance += 10;
-            }
-        }
-        return (GetRandomNum(100) < chance);
-    }
-
     // see if an item is discontinued
     private boolean CheckDiscontinuedStatus(Item item, boolean buying) {
         if (store_.discontinued_.size() == 3 && item instanceof Clothing) { 
@@ -225,7 +211,7 @@ public class Clerk extends AbstractClerk {
     }
 
     // handle buying or selling
-    public boolean TryTransaction(Item item, boolean buying) {
+    public boolean TryTransaction(Customer customer, Item item, boolean buying) {
         // make sure item exists and then is not discontinued
         if (item == null) return false;
         if (CheckDiscontinuedStatus(item, buying)) return false;
@@ -233,24 +219,22 @@ public class Clerk extends AbstractClerk {
         int price = buying ? GetOfferPrice(item.condition_) : item.list_price_;
         Print(name_ + (buying ? (" determines the " + item.name_ + " to be in " + item.condition_ + " condition and the value to be $") : (" shows the customer the " + item.name_  + ", selling for $")) + price );
         // if customer will buy at initial price
-        if (OfferAccepted(item, buying, false)) {
+        if (customer.AcceptsOffer(item, buying, false)) {
             // buy or sell the item at price
-            if (buying) Buy(item, price);
-            else Sell(item, price);
+            return (buying ? Buy(item, price) : Sell(item, price));
         } else {
             // offer new price more favorable to customer
             Print(name_ + " offers a 10% " + (buying ? "increase" : "discount") + " to the original price");
             // if customer will buy at changed price
-            if (OfferAccepted(item, buying, true)) {
+            if (customer.AcceptsOffer(item, buying, true)) {
                 // buy or sell item at price +/- 10%
                 return (buying ? Buy(item, (int)(price + (price*.1))) : Sell(item, (int)(price - (price*.1))));
             } else {
                 // customer does not want to complete transaction after new price
                 Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
+                return false;
             }
         }
-        return false;
-        //return (buying ? new Pair<RequestType, Integer>(RequestType.Sell, 0) : new Pair<RequestType, Integer>(RequestType.Buy, 0));
     }
 
     // look through inventory for an itemtype, return first item found of type
@@ -289,7 +273,7 @@ public class Clerk extends AbstractClerk {
         return dtf.format(localTime);
     }
 
-    public void SellGuitarKit() {
+    public Item SellGuitarKit() {
         GuitarKit guitarKit = new GuitarKit();
         List<Component> guitarKitComponents = new ArrayList<Component>();
         Print(name_ + " is ready to sell the user a guitar kit");
@@ -308,5 +292,6 @@ public class Clerk extends AbstractClerk {
         guitarKit.AddComponents(guitarKitComponents);
         store_.inventory_.add(guitarKit);
         Sell(guitarKit, guitarKit.GetPrice());
+        return guitarKit;
     }
 }

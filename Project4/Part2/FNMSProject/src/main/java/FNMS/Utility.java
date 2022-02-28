@@ -6,23 +6,6 @@ import java.util.Scanner;
 import java.util.List;
 
 interface Utility {
-    /*
-    // https://docs.oracle.com/javase/tutorial/java/generics/types.html
-    class Pair<K, V> {
-        private K key_;
-        private V value_;
-    
-        Pair(K key, V value) {
-            key_ = key;
-            value_ = value;
-        }
-    
-        public K getKey() { return key_; }
-        public V getValue() { return value_; }
-        public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
-    }
-    */
-    
     // TeeStream to write to multiple streams at once idea from
     // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
     class TeeStream { 
@@ -72,9 +55,6 @@ interface Utility {
         }
         return rando;
     }
-    
-    // https://stackoverflow.com/questions/2626835/is-there-functionality-to-generate-a-random-character-in-java
-    default char GetRandomChar() { return (char)(random.nextInt(26) + 'a'); }
    
     // get int from user with bounds
     default int GetIntFromUser(int min, int max) {
@@ -85,6 +65,17 @@ interface Utility {
             scanner.nextLine(); // consume eol char
         }
         return choice;
+    }
+
+    default boolean GetBoolFromUser() {
+        String input = scanner.nextLine();
+        char c = input.charAt(0);
+        while (c != 'y' && c != 'Y' && c != 'n' && c != 'N') {
+            input = scanner.nextLine();
+            c = input.charAt(0);
+        }
+        if (c == 'y' || c == 'Y') return true;
+        else return false;
     }
 
     // https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java

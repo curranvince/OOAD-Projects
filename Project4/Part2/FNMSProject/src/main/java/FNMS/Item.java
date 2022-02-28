@@ -128,6 +128,8 @@ class GuitarKit extends Item {
                 price += kc.GetPrice();
             }
         }
+        purchase_price_ = price;
+        sale_price_ = price;
         return price;
     }
 } 

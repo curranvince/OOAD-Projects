@@ -67,12 +67,6 @@ public class Simulation implements Utility {
         DisplayResults();
     }
 
-    private void HandleUser() {
-        User user = new User(this);
-        user.MakeRequests();
-
-    }
-
     private void SimDay() {
         // open new logger and subscribe everyone
         OpenLogger();
@@ -87,8 +81,10 @@ public class Simulation implements Utility {
             if (!stores_.get(1).GetActiveClerk().CheckRegister()) stores_.get(1).GetActiveClerk().GoToBank();
             stores_.get(0).GetActiveClerk().PlaceOrders(stores_.get(0).GetActiveClerk().DoInventory());
             stores_.get(1).GetActiveClerk().PlaceOrders(stores_.get(1).GetActiveClerk().DoInventory());
-            if (current_day_ == last_day_) HandleUser();
-            else {
+            if (current_day_ == last_day_) {
+                User user = new User(this);
+                user.MakeRequests();
+            } else {
                 stores_.get(0).Opens();
                 stores_.get(1).Opens();
             }
