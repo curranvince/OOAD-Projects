@@ -6,6 +6,7 @@ import java.io.*;
 public class Simulation implements Utility {
     static int last_day_;
     static int current_day_;
+    static int num_clerks_;
 
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
@@ -40,12 +41,12 @@ public class Simulation implements Utility {
 
     private void GenerateClerks() {
         // make decorated clerks with break chances & tuning algorithms
-        clerks_.add(new ClerkSellDecorator(new Clerk(0, "Velma", 5, new ElectronicTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk(1, "Daphne", 10, new HaphazardTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk(2, "Norville", 15, new ManualTune())));
-        clerks_.add(new Clerk(3, "Fred", 15, new ManualTune()));
-        clerks_.add(new Clerk(4, "Shaggy", 20, new ElectronicTune()));
-        clerks_.add(new Clerk(5, "Scooby", 25, new HaphazardTune()));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new HaphazardTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk("Norville", 15, new ManualTune())));
+        clerks_.add(new Clerk("Fred", 15, new ManualTune()));
+        clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
+        clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
             clerks_.get(i).Subscribe(Tracker.getInstance());
         }

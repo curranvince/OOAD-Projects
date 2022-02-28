@@ -2,10 +2,13 @@ package FNMS;
 
 import FNMS.Item.ItemType;
 
+// these requests are an example of the Command pattern
+// they are the 'order slip' from the example
 abstract class Request implements Utility {
     abstract void Execute();
 }
 
+// customer requests to buy itemtype from clerk (store)
 class BuyRequest extends Request {
     private AbstractClerk clerk_;
     private Customer customer_;
@@ -36,6 +39,7 @@ class BuyRequest extends Request {
     public String toString() { return "buy a " + itemType_.name(); }
 }
 
+// request to sell an item from customer to clerk (store)
 class SellRequest extends Request {
     private AbstractClerk clerk_;
     private Customer customer_;
@@ -54,7 +58,7 @@ class SellRequest extends Request {
     }
 
     public void Execute() {
-        if (customer_ instanceof User && clerk_.TryTransaction(customer_, item_, true)) {
+        if (clerk_.TryTransaction(customer_, item_, true) && customer_ instanceof User) {
             User user = (User)customer_;
             user.RemoveFromInventory(item_);
         }
@@ -63,6 +67,7 @@ class SellRequest extends Request {
     public String toString() { return "sell a " + item_.name_; }
 }
 
+// request the name of a clerk
 class NameRequest extends Request {
     private AbstractClerk clerk_;
 
@@ -75,6 +80,7 @@ class NameRequest extends Request {
     public String toString() { return "find out the clerks name"; }
 }
 
+// request the time from a clerk
 class TimeRequest extends Request {
     private AbstractClerk clerk_;
 
@@ -87,6 +93,7 @@ class TimeRequest extends Request {
     public String toString() { return "find out the time"; }
 }
 
+// request to switch stores
 class SwitchRequest extends Request {
     Simulation simulation_;
     User user_;
@@ -104,6 +111,7 @@ class SwitchRequest extends Request {
     public String toString() { return "switch stores"; }
 }
 
+// request to buy a guitar kit
 class BuyKitRequest extends Request {
     Store store_;
     User user_;
@@ -120,6 +128,7 @@ class BuyKitRequest extends Request {
     public String toString() { return "buy a guitar kit"; }
 }
 
+// request to leave store
 class LeaveRequest extends Request {
     User user_;
 

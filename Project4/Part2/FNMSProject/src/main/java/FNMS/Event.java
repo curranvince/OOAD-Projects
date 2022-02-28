@@ -15,6 +15,7 @@ abstract class MyEvent {
     public Store GetStore() { return store_; }
     public int GetData() { return data_; }
     public String GetName() { return name_; }
+    public int GetClerkID() { return store_.GetActiveClerk().GetID(); }
 
     @Override
     public boolean equals(Object o) {
@@ -30,7 +31,7 @@ abstract class MyEvent {
 }
 
 class ArrivalEvent extends MyEvent {
-    public ArrivalEvent(Store store) { super(0, store); }
+    public ArrivalEvent(Store store) { super(1, store); }
     public String toString() { return (name_ + " arrived at the " + store_.getName()); }
 }
 

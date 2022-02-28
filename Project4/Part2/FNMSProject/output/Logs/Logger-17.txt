@@ -1,20 +1,22 @@
-Daphne arrived at the North Side Store
-Daphne added 0 item(s) to North Side Store's inventory
-Velma arrived at the South Side Store
-Velma added 0 item(s) to South Side Store's inventory
-Daphne checked the North Side Store's register to find $3230
-Velma checked the South Side Store's register to find $3321
-Daphne damaged 10 item(s) at the North Side Store while tuning
-Daphne counted 33 item(s) in North Side Store's' inventory
-Daphne found the North Side Store's' inventory is worth $855
-Daphne ordered 0 item(s) for the North Side Store
-Velma damaged 0 item(s) at the South Side Store while tuning
-Velma counted 30 item(s) in South Side Store's' inventory
-Velma found the South Side Store's' inventory is worth $853
-Velma ordered 6 item(s) for the South Side Store
-Daphne sold 4 item(s) at the North Side Store
-Velma sold 5 item(s) at the South Side Store
-Daphne damaged 0 item(s) at the North Side Store while cleaning
-Velma damaged 0 item(s) at the South Side Store while cleaning
-Daphne left the North Side Store
-Velma left the South Side Store
+Fred arrived at the North Side Store
+Fred added 0 item(s) to North Side Store's inventory
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Fred checked the North Side Store's register to find $3123
+Norville checked the South Side Store's register to find $2352
+Fred damaged 7 item(s) at the North Side Store while tuning
+Fred counted 42 item(s) in North Side Store's' inventory
+Fred found the North Side Store's' inventory is worth $1089
+Fred ordered 6 item(s) for the North Side Store
+Norville damaged 8 item(s) at the South Side Store while tuning
+Norville counted 64 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1684
+Norville ordered 0 item(s) for the South Side Store
+Fred bought 3 item(s) at the North Side Store
+Fred sold 3 item(s) at the North Side Store
+Norville sold 7 item(s) at the South Side Store
+Norville bought 1 item(s) at the South Side Store
+Fred damaged 0 item(s) at the North Side Store while cleaning
+Norville damaged 0 item(s) at the South Side Store while cleaning
+Fred left the North Side Store
+Norville left the South Side Store

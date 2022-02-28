@@ -9,11 +9,12 @@ import FNMS.KitComponent.GKComponents;
 
 public class Clerk extends AbstractClerk {
     
-    public Clerk(int id, String name, int break_percentage, TuneStrategy tune) { 
-        id_ = id;
+    public Clerk(String name, int break_percentage, TuneStrategy tune) { 
+        id_ = Simulation.num_clerks_;
         name_ = name;
         break_percentage_ = break_percentage;
         tune_strategy_ = tune; 
+        Simulation.num_clerks_++;
     }  
     
     @Override 

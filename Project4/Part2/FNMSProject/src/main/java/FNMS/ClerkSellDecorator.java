@@ -59,10 +59,12 @@ class ClerkSellDecorator extends ClerkDecorator {
             }
             // try selling accessories
             for (int i = 0; i < chances.length; i++) {
+                Print(super.GetName() + " now wants to sell the customer a " + types[i].name() + " to go with their " + item.name_);
                 if (customer instanceof User) {
-                    Print(super.GetName() + " now wants to sell you a " + types[i].name() + " to go with your " + item.name_);
+                    // see if user is interested in item type
                     Print("Would you also like to buy a " + types[i].name() + "? (Y/N)");
                     if (GetBoolFromUser()) {
+                        // for cables and strings, allow user to pick how many w/in range
                         int num = 1;
                         if (i == 2) { 
                             Print("How many? (1-2)");
@@ -72,6 +74,7 @@ class ClerkSellDecorator extends ClerkDecorator {
                             num = GetIntFromUser(1, 3); 
                         }
                         for (int j = 0; j < num; j++) {
+                            // get specific items w/ price, ask user if they want it
                             Item toSell = super.CheckForItem(types[i]);
                             if (toSell != null) {
                                 Print("Would you like to buy the " + toSell.name_ + " for $" + toSell.list_price_ + "? (Y/N)");
@@ -88,6 +91,7 @@ class ClerkSellDecorator extends ClerkDecorator {
                         if (i == 2) { num = GetRandomNum(1,3); }
                         else if (i == 3) { num = GetRandomNum(1, 4); }
                         Print("The customer decides they also want to buy " + num + " " + types[i].name());
+                        // sell the extra items
                         for (int j = 0; j < num; j++) {
                             Item toSell = super.CheckForItem(types[i]);
                             if (toSell != null) super.Sell(toSell, toSell.list_price_);

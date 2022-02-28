@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 public class EventTest {
     Store store = new Store("Test Store", new NorthKitFactory());
     Store store2 = new Store("Different Store", new NorthKitFactory());
-    AbstractClerk clerk = new Clerk(0, "Tester", 10, new ElectronicTune());
+    AbstractClerk clerk = new Clerk("Tester", 10, new ElectronicTune());
 
     @Test
     @DisplayName("Should be able say events are equal based off type and store")

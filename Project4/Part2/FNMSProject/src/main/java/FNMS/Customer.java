@@ -10,14 +10,18 @@ abstract class Customer implements Utility {
     protected String name_;
     protected Request request_;
 
+    // all customers are assigned a random name
     Customer() { name_ = CreateName(); }
     
     public String GetName() { return name_; }
+    
+    // execute the customers request
     public void MakeRequest() { 
         Print(name_ + " has come into the store looking to " + request_.toString()); 
         request_.Execute();
     }
     
+    // default behavior to determine if a customer will accept an offer
     public boolean AcceptsOffer(Item item, boolean buying, boolean discount) {
         int chance = 50;
         if (discount) chance += 25;
@@ -31,8 +35,10 @@ abstract class Customer implements Utility {
         return (GetRandomNum(100) < chance);
     }
 
+    // all customers can leave the store
     public void LeaveStore() { Print(name_ + " leaves the store"); }
     
+    // list of random names to choose from
     private String CreateName() {
         String[] names = {
             "Alice",
@@ -53,6 +59,7 @@ abstract class Customer implements Utility {
     }
 }
 
+// buyers use BuyRequest
 class Buyer extends Customer {
     public Buyer(AbstractClerk clerk) {
         super();
@@ -60,6 +67,7 @@ class Buyer extends Customer {
     }
 }
 
+// sellers use SellRequest
 class Seller extends Customer {
     public Seller(AbstractClerk clerk) {
         super();
@@ -68,29 +76,34 @@ class Seller extends Customer {
 }
 
 class User extends Customer {
-    private Simulation sim_;
-    private Store store_;
-    private boolean leaves_;
-    private List<Item> inventory_ = new ArrayList<Item>();
+    private Simulation sim_; // needed to switch between stores
+    private Store store_;    // current store
+    private boolean leaves_; // if users ready to leave
+    private List<Item> inventory_ = new ArrayList<Item>(); // inventory so we can buy/sell between the two stores
    
     User(Simulation simulation) {
         leaves_ = false;
-        name_ = "User";
         sim_ = simulation;
+        name_ = "User";     // call user "User"
+        // users first request is always to pick a store
         request_ = new SwitchRequest(simulation, this);
     }
 
+    // handle 'where' user is and if they're ready to leave
     public void Leaves() { leaves_ = true; }
     public void SetStore(Store store) { store_ = store; }
+    // handling users inventory
     public void RemoveFromInventory(Item item) { inventory_.remove(item); }
     public void AddToInventory(Item item) { inventory_.add(item); }
 
     @Override
     public boolean AcceptsOffer(Item item, boolean buying, boolean discount) {
+        // override accpet offer to allow user to choose
         Print("Would you like to accept this offer? (Y/N)");
         return GetBoolFromUser();
     }
 
+    //handles a users full time in the sim
     public void MakeRequests() {
         // first ask which store, then keep allowing requests until user wants to leave
         MakeRequest();
@@ -122,6 +135,7 @@ class User extends Customer {
         else if (choice == 7) { request_ = new LeaveRequest(this); }
     }
 
+    // allows user to choose an item from their inventory
     private Item ChooseItem() {
         // if inventory is empty allow user to choose an itemtype to add
         if (inventory_.size() == 0) inventory_.add(ItemFactory.MakeItem(ChooseItemType().name()));
@@ -134,6 +148,7 @@ class User extends Customer {
         return (inventory_.get(GetIntFromUser(0,(inventory_.size()-1))));
     }
 
+    // allow user to choose an item type
     private ItemType ChooseItemType() {
         // present all the itemtypes
         Print("Please choose an ItemType: ");

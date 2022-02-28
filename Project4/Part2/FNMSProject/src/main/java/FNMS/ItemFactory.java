@@ -34,7 +34,7 @@ public class ItemFactory {
     }
 }
 
-// Abstract factory pattern to create components for the guitar kits
+// Abstract factory pattern to create items from different groups of related components
 interface KitFactory {
     KitComponent CreateComponent(String component);
     /*

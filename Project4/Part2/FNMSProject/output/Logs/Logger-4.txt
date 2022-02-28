@@ -1,19 +1,21 @@
 Scooby arrived at the North Side Store
 Scooby added 0 item(s) to North Side Store's inventory
 Shaggy arrived at the South Side Store
-Shaggy added 0 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $1815
-Shaggy checked the South Side Store's register to find $1382
-Scooby damaged 10 item(s) at the North Side Store while tuning
-Scooby counted 50 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $1354
-Scooby ordered 0 item(s) for the North Side Store
+Shaggy added 3 item(s) to South Side Store's inventory
+Scooby checked the North Side Store's register to find $1604
+Shaggy checked the South Side Store's register to find $1654
+Scooby damaged 8 item(s) at the North Side Store while tuning
+Scooby counted 55 item(s) in North Side Store's' inventory
+Scooby found the North Side Store's' inventory is worth $1427
+Scooby ordered 3 item(s) for the North Side Store
 Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 51 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1438
+Shaggy counted 57 item(s) in South Side Store's' inventory
+Shaggy found the South Side Store's' inventory is worth $1392
 Shaggy ordered 0 item(s) for the South Side Store
-Scooby sold 4 item(s) at the North Side Store
-Shaggy sold 7 item(s) at the South Side Store
+Scooby sold 7 item(s) at the North Side Store
+Scooby bought 1 item(s) at the North Side Store
+Shaggy sold 3 item(s) at the South Side Store
+Shaggy bought 2 item(s) at the South Side Store
 Scooby damaged 0 item(s) at the North Side Store while cleaning
 Shaggy damaged 0 item(s) at the South Side Store while cleaning
 Scooby left the North Side Store
