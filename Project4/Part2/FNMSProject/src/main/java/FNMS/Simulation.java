@@ -109,14 +109,19 @@ public class Simulation implements Utility {
     private void AssignClerks() {
         // update whos available to work
         UpdateClerkStatus();
+        List<Integer> working = new ArrayList<Integer>();
         // assign clerks to stores
         for (int i = 0; i < stores_.size(); i++) {
             int worker = GetRandomNum(clerks_.size());
-            while (unavailable_clerks_.contains(worker)) {
-                worker = GetRandomNum(clerks_.size());
-            }
+            // if they cant work pick someone else
+            while (unavailable_clerks_.contains(worker)) { worker = GetRandomNum(clerks_.size()); }
+            working.add(worker);
             stores_.get(i).UpdateClerk(clerks_.get(worker));
             unavailable_clerks_.add(worker);
+        }
+        // ensure any clerk whos not working has their days worked reset
+        for (int i = 0; i < clerks_.size(); i++) {
+            if (!working.contains(i)) clerks_.get(i).ResetDaysWorked();
         }
     }
 

@@ -1,20 +1,20 @@
-Norville arrived at the North Side Store
-Norville added 3 item(s) to North Side Store's inventory
+Shaggy arrived at the North Side Store
+Shaggy added 0 item(s) to North Side Store's inventory
 Daphne arrived at the South Side Store
-Daphne added 3 item(s) to South Side Store's inventory
-Norville checked the North Side Store's register to find $2402
-Daphne checked the South Side Store's register to find $1777
-Norville damaged 5 item(s) at the North Side Store while tuning
-Norville counted 40 item(s) in North Side Store's' inventory
-Norville found the North Side Store's' inventory is worth $1213
-Norville ordered 0 item(s) for the North Side Store
-Daphne damaged 5 item(s) at the South Side Store while tuning
-Daphne counted 49 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1378
-Daphne ordered 0 item(s) for the South Side Store
-Norville sold 4 item(s) at the North Side Store
-Daphne sold 6 item(s) at the South Side Store
-Norville damaged 1 item(s) at the North Side Store while cleaning
+Daphne added 0 item(s) to South Side Store's inventory
+Shaggy checked the North Side Store's register to find $2027
+Daphne checked the South Side Store's register to find $1814
+Shaggy damaged 0 item(s) at the North Side Store while tuning
+Shaggy counted 45 item(s) in North Side Store's' inventory
+Shaggy found the North Side Store's' inventory is worth $1191
+Shaggy ordered 3 item(s) for the North Side Store
+Daphne damaged 13 item(s) at the South Side Store while tuning
+Daphne counted 44 item(s) in South Side Store's' inventory
+Daphne found the South Side Store's' inventory is worth $1214
+Daphne ordered 6 item(s) for the South Side Store
+Shaggy sold 5 item(s) at the North Side Store
+Daphne sold 3 item(s) at the South Side Store
+Shaggy damaged 1 item(s) at the North Side Store while cleaning
 Daphne damaged 0 item(s) at the South Side Store while cleaning
-Norville left the North Side Store
+Shaggy left the North Side Store
 Daphne left the South Side Store

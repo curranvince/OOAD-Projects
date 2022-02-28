@@ -2,18 +2,18 @@ Velma arrived at the North Side Store
 Velma added 0 item(s) to North Side Store's inventory
 Daphne arrived at the South Side Store
 Daphne added 0 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $1182
-Daphne checked the South Side Store's register to find $1325
+Velma checked the North Side Store's register to find $1416
+Daphne checked the South Side Store's register to find $1058
 Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 60 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1793
+Velma counted 56 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1561
 Velma ordered 0 item(s) for the North Side Store
-Daphne damaged 11 item(s) at the South Side Store while tuning
-Daphne counted 57 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1575
+Daphne damaged 7 item(s) at the South Side Store while tuning
+Daphne counted 60 item(s) in South Side Store's' inventory
+Daphne found the South Side Store's' inventory is worth $1617
 Daphne ordered 0 item(s) for the South Side Store
-Velma sold 7 item(s) at the North Side Store
-Daphne sold 5 item(s) at the South Side Store
+Velma sold 3 item(s) at the North Side Store
+Daphne sold 4 item(s) at the South Side Store
 Velma damaged 0 item(s) at the North Side Store while cleaning
 Daphne damaged 0 item(s) at the South Side Store while cleaning
 Velma left the North Side Store
