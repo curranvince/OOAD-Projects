@@ -8,7 +8,6 @@ public class Simulation implements Utility {
     static int current_day_;
     static int num_clerks_;
 
-    private MoneyGraph m_graph_ = new MoneyGraph();
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
@@ -37,8 +36,9 @@ public class Simulation implements Utility {
         stores_.add(new Store("South Side Store", new SouthKitFactory()));
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Subscribe(Tracker.getInstance());
+            stores_.get(i).Subscribe(MoneyGraph.getInstance());
+            stores_.get(i).Subscribe(ItemGraph.getInstance());
         }
-        m_graph_.SetStores(stores_);
     }
 
     private void GenerateClerks() {
@@ -51,6 +51,8 @@ public class Simulation implements Utility {
         clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
             clerks_.get(i).Subscribe(Tracker.getInstance());
+            clerks_.get(i).Subscribe(MoneyGraph.getInstance());
+            clerks_.get(i).Subscribe(ItemGraph.getInstance());
         }
     }
 
@@ -180,7 +182,6 @@ public class Simulation implements Utility {
 
     // close daily logger by unsubscribing everyone and clearing its data
     private void CloseLogger() {
-        m_graph_.CollectData();
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Unsubscribe(Logger.getInstance());
         }
@@ -200,7 +201,8 @@ public class Simulation implements Utility {
     // display simulation results
     private void DisplayResults() {
         Print(" *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***");
-        m_graph_.OutputGraph();
+        MoneyGraph.getInstance().OutputData();
+        ItemGraph.getInstance().OutputData();
         for (int i = 0; i < stores_.size(); i++) {
             Print("Results for " + stores_.get(i).getName());
             // display inventory & its value

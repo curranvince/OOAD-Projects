@@ -75,6 +75,11 @@ class ItemsSoldEvent extends MyEvent {
     public String toString() { return (name_ + " sold " + data_ + " item(s) at the "+ store_.getName()); }
 }
 
+class SalePriceEvent extends MyEvent {
+    public SalePriceEvent(int data, Store store) { super(data, store); }
+    public String toString() { return (name_ + " sold $" + data_ + " worth of items at the "+ store_.getName()); }
+}
+
 class ItemsBoughtEvent extends MyEvent {
     public ItemsBoughtEvent(Store store) { super(1, store); }
     public String toString() { return (name_ + " bought " + data_ + " item(s) at the "+ store_.getName()); }
@@ -95,9 +100,13 @@ class ClosedEvent extends MyEvent {
     public String toString() { return ("The " + store_.getName() + " was closed today"); }
 }
 
-class CreatedClerkEvent extends MyEvent implements Utility {
+class CreatedClerkEvent extends MyEvent {
     public CreatedClerkEvent(String name) {
         super(0,null);
         name_ = name;
     }
+}
+
+class EODRegisterEvent extends MyEvent {
+    public EODRegisterEvent(int data, Store store) { super(data, store); }
 }

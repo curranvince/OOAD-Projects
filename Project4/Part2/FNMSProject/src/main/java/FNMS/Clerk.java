@@ -179,6 +179,7 @@ public class Clerk extends AbstractClerk {
         // update discontinued items whenever clothing is sold
         if (item instanceof Clothing) UpdateDiscontinuedStatus(item.itemType_);
         Publish(new ItemsSoldEvent(store_));
+        Publish(new SalePriceEvent(salePrice, store_));
         return true;
     }
 

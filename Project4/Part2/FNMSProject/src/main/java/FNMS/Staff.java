@@ -30,6 +30,7 @@ abstract class Staff extends Publisher {
     // broadcast leaving
     public void CloseStore() {
         Print(name_ + " leaves the " + store_.getName());
+        Publish(new EODRegisterEvent(store_.register_.GetAmount(), store_));
         Publish(new LeaveEvent(store_));
     }
 }

@@ -1,22 +1,24 @@
-Shaggy arrived at the North Side Store
-Shaggy added 3 item(s) to North Side Store's inventory
-Fred arrived at the South Side Store
-Fred added 0 item(s) to South Side Store's inventory
-Shaggy checked the North Side Store's register to find $1896
-Fred checked the South Side Store's register to find $1690
-Shaggy damaged 0 item(s) at the North Side Store while tuning
-Shaggy counted 54 item(s) in North Side Store's' inventory
-Shaggy found the North Side Store's' inventory is worth $1391
-Shaggy ordered 0 item(s) for the North Side Store
-Fred damaged 4 item(s) at the South Side Store while tuning
-Fred counted 56 item(s) in South Side Store's' inventory
-Fred found the South Side Store's' inventory is worth $1543
-Fred ordered 0 item(s) for the South Side Store
-Shaggy sold 4 item(s) at the North Side Store
-Shaggy bought 3 item(s) at the North Side Store
-Fred bought 1 item(s) at the South Side Store
-Fred sold 3 item(s) at the South Side Store
-Shaggy damaged 0 item(s) at the North Side Store while cleaning
-Fred damaged 0 item(s) at the South Side Store while cleaning
-Shaggy left the North Side Store
-Fred left the South Side Store
+Fred arrived at the North Side Store
+Fred added 3 item(s) to North Side Store's inventory
+Daphne arrived at the South Side Store
+Daphne added 6 item(s) to South Side Store's inventory
+Fred checked the North Side Store's register to find $2113
+Daphne checked the South Side Store's register to find $2189
+Fred damaged 5 item(s) at the North Side Store while tuning
+Fred counted 48 item(s) in North Side Store's' inventory
+Fred found the North Side Store's' inventory is worth $1446
+Fred ordered 3 item(s) for the North Side Store
+Daphne damaged 6 item(s) at the South Side Store while tuning
+Daphne counted 49 item(s) in South Side Store's' inventory
+Daphne found the South Side Store's' inventory is worth $1230
+Daphne ordered 0 item(s) for the South Side Store
+Fred sold 7 item(s) at the North Side Store
+Fred sold $386 worth of items at the North Side Store
+Fred bought 3 item(s) at the North Side Store
+Daphne sold 9 item(s) at the South Side Store
+Daphne sold $442 worth of items at the South Side Store
+Daphne bought 2 item(s) at the South Side Store
+Fred damaged 0 item(s) at the North Side Store while cleaning
+Daphne damaged 0 item(s) at the South Side Store while cleaning
+Fred left the North Side Store
+Daphne left the South Side Store
