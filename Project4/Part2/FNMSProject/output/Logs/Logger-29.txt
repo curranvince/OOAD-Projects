@@ -1,22 +1,21 @@
-Fred arrived at the North Side Store
-Fred added 3 item(s) to North Side Store's inventory
-Shaggy arrived at the South Side Store
-Shaggy added 6 item(s) to South Side Store's inventory
-Fred checked the North Side Store's register to find $3647
-Shaggy checked the South Side Store's register to find $3592
-Fred damaged 1 item(s) at the North Side Store while tuning
-Fred counted 50 item(s) in North Side Store's' inventory
-Fred found the North Side Store's' inventory is worth $1212
-Fred ordered 6 item(s) for the North Side Store
-Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 64 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1574
-Shaggy ordered 0 item(s) for the South Side Store
-Fred sold 5 item(s) at the North Side Store
-Fred bought 4 item(s) at the North Side Store
-Shaggy sold 3 item(s) at the South Side Store
-Shaggy bought 1 item(s) at the South Side Store
-Fred damaged 0 item(s) at the North Side Store while cleaning
-Shaggy damaged 0 item(s) at the South Side Store while cleaning
-Fred left the North Side Store
-Shaggy left the South Side Store
+Velma arrived at the North Side Store
+Velma added 3 item(s) to North Side Store's inventory
+Scooby arrived at the South Side Store
+Scooby added 6 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $3202
+Scooby checked the South Side Store's register to find $4259
+Velma damaged 0 item(s) at the North Side Store while tuning
+Velma counted 57 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1384
+Velma ordered 0 item(s) for the North Side Store
+Scooby damaged 9 item(s) at the South Side Store while tuning
+Scooby counted 42 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $969
+Scooby ordered 0 item(s) for the South Side Store
+Velma sold 5 item(s) at the North Side Store
+Velma bought 2 item(s) at the North Side Store
+Scooby sold 4 item(s) at the South Side Store
+Velma damaged 0 item(s) at the North Side Store while cleaning
+Scooby damaged 1 item(s) at the South Side Store while cleaning
+Velma left the North Side Store
+Scooby left the South Side Store

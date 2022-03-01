@@ -250,6 +250,7 @@ public class Clerk extends AbstractClerk {
         return null;
     }
 
+    // clerk cleans the store, has a chance to break something
     public void CleanStore() {
         Print("The " + store_.getName() + " closes for the day and " + name_ + " begins cleaning");
         if (GetRandomNum(100) < break_percentage_) { 
@@ -267,6 +268,7 @@ public class Clerk extends AbstractClerk {
         }
     }
 
+    // return current time as a String
     // https://mkyong.com/java/java-how-to-get-current-date-time-date-and-calender/
     public String GetTime() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -290,6 +292,7 @@ public class Clerk extends AbstractClerk {
             int choice = GetIntFromUser(0,2);
             guitarKitComponents.add(choices.get(choice));
         }
+        // add all components to the guitar, add it to inventory so it gets tracked, & sell it
         guitarKit.AddComponents(guitarKitComponents);
         store_.inventory_.add(guitarKit);
         Sell(guitarKit, guitarKit.GetPrice());

@@ -18,6 +18,17 @@ abstract class Publisher implements Utility {
 }
 
 class Store extends Publisher {
+    private String name_;
+    private int total_withdrawn_ = 0;
+    private AbstractClerk activeClerk_;
+   
+    public KitFactory kitFactory_;
+    public CashRegister register_ = new CashRegister();
+    public List<Item> inventory_ = new ArrayList<Item>();
+    public List<Item> sold_ = new ArrayList<Item>();
+    public List<ItemType> discontinued_ = new ArrayList<ItemType>();
+    public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
+
     // CashRegister class to handle the Stores $
     // Good example of Cohesion because the class has
     // one specifc purpose (handling money/doing simple math)
@@ -39,21 +50,10 @@ class Store extends Publisher {
         }
     }
 
-    private String name_;
-    private int total_withdrawn_ = 0;
-    private AbstractClerk activeClerk_;
-   
-    public KitFactory kitFactory_;
-    public CashRegister register_ = new CashRegister();
-    public List<Item> inventory_ = new ArrayList<Item>();
-    public List<Item> sold_ = new ArrayList<Item>();
-    public List<ItemType> discontinued_ = new ArrayList<ItemType>();
-    public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
-
     Store(String name, KitFactory kitFactory) {
         kitFactory_ = kitFactory;
         name_ = name;
-        // store start with 3 of each item
+        // Stores start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
         for (ItemType itemType : ItemType.values()) {
@@ -78,20 +78,6 @@ class Store extends Publisher {
     public void Discontiue(ItemType itemType) { 
         Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
-    }
-
-    // method for an entire open store day
-    public void OpenToday() {
-        // choose a clerk, have them check register & go to bank if needed
-        // have clerk do inventory and order items if necessary
-        // let the store open, clerk handles customers
-        // have clerk clean and close the store
-        activeClerk_.ArriveAtStore();
-        if (!activeClerk_.CheckRegister()) activeClerk_.GoToBank();
-        activeClerk_.PlaceOrders(activeClerk_.DoInventory());
-        this.Opens();
-        activeClerk_.CleanStore();
-        activeClerk_.CloseStore();
     }
 
     // store opens for the day

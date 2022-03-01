@@ -36,15 +36,7 @@ public class ItemFactory {
 
 // Abstract factory pattern to create items from different groups of related components
 interface KitFactory {
-    KitComponent CreateComponent(String component);
-    /*
-    Pickups CreatePickups();
-    Pickguard CreatePickguard();
-    Covers CreateCovers();
-    KnobSet CreateKnobSet();
-    Bridge CreateBridge();
-    Neck CreateNeck();
-    */
+    abstract KitComponent CreateComponent(String component);
 }
 
 class NorthKitFactory implements KitFactory {
@@ -57,14 +49,6 @@ class NorthKitFactory implements KitFactory {
         else if (component.equalsIgnoreCase("NECK")) return new NorthNeck();
         return null;
     }
-    /*
-    public Pickups CreatePickups() { return new NorthPickups(); };
-    public Pickguard CreatePickguard() { return new NorthPickguard(); };
-    public Covers CreateCovers() { return new NorthCovers(); };
-    public KnobSet CreateKnobSet() { return new NorthKnobSet(); };
-    public Bridge CreateBridge() { return new NorthBridge(); };
-    public Neck CreateNeck() { return new NorthNeck(); };
-    */
 }
 
 class SouthKitFactory implements KitFactory {
@@ -77,12 +61,4 @@ class SouthKitFactory implements KitFactory {
         else if (component.equalsIgnoreCase("NECK")) return new SouthNeck();
         return null;
     }
-    /*
-    public Pickups CreatePickups() { return new SouthPickups(); };
-    public Pickguard CreatePickguard() { return new SouthPickguard(); };
-    public Covers CreateCovers() { return new SouthCovers(); };
-    public KnobSet CreateKnobSet() { return new SouthKnobSet(); };
-    public Bridge CreateBridge() { return new SouthBridge(); };
-    public Neck CreateNeck() { return new SouthNeck(); };
-    */
 }

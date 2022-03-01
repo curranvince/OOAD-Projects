@@ -3,9 +3,15 @@ package FNMS;
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 import java.util.List;
 
 interface Utility {
+    // make sure theres only one random and scanner instead of instantiating everywhere
+    final Random random = new Random();
+    final Scanner scanner = new Scanner(System.in);
+    final TeeStream teeStream = new TeeStream();
+
     // TeeStream to write to multiple streams at once idea from
     // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
     class TeeStream { 
@@ -34,12 +40,6 @@ interface Utility {
         }
     }
 
-    // make sure theres only one random and scanner instead of instantiating everywhere
-    final Random random = new Random();
-    final Scanner scanner = new Scanner(System.in);
-    final TeeStream teeStream = new TeeStream();
-    
-
     // Print everything to Sys.out as well as Output.txt
     // For easy interaction as well as capture
     default void Print(String str) { teeStream.Write(str); }
@@ -57,27 +57,34 @@ interface Utility {
     }
    
     // get int from user with bounds
+    // https://stackoverflow.com/questions/38830142/how-to-handle-invalid-input-when-using-scanner-nextint
     default int GetIntFromUser(int min, int max) {
         int choice = -1; 
         while (choice < min || choice > max) {
-            choice = scanner.nextInt();
-            Print(String.valueOf(choice));
-            scanner.nextLine(); // consume eol char
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // consume eol char
+                Print(String.valueOf(choice)); 
+                if (choice < min || choice > max) Print("Please input a valid integer");
+            } catch (InputMismatchException e) {
+                Print("Please input a valid integer");
+                scanner.nextLine();
+            } 
         }
         return choice;
     }
-
+    
+    // get yes or no from user
     default boolean GetBoolFromUser() {
-        String input = scanner.nextLine();
-        char c = input.charAt(0);
-        while (c != 'y' && c != 'Y' && c != 'n' && c != 'N') {
-            input = scanner.nextLine();
-            c = input.charAt(0);
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.toLowerCase().startsWith("y")) return true;
+            else if (input.toLowerCase().startsWith("n")) return false;
+            else Print("Please input Y or N");
         }
-        if (c == 'y' || c == 'Y') return true;
-        else return false;
     }
 
+    // get a random variate coming from a poisson distribution with given mean
     // https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
     // https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
     default int GetPoissonRandom(int mean) {
@@ -92,7 +99,7 @@ interface Utility {
     }
 
     // taken from profs project 2 code
-    // a utility for getting a random enum value from any enum
+    // utility for getting a random enum value from any enum
     // https://stackoverflow.com/questions/1972392/pick-a-random-value-from-an-enum
     default <T extends Enum<?>> T GetRandomEnumVal(Class<T> clazz){
         int x = new Random().nextInt(clazz.getEnumConstants().length);

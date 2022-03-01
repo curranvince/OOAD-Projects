@@ -107,6 +107,7 @@ public class Simulation implements Utility {
         CloseLogger();
     }
 
+    // pick clerks and assign them to store
     private void AssignClerks() {
         // update whos available to work
         UpdateClerkStatus();
@@ -126,6 +127,7 @@ public class Simulation implements Utility {
         }
     }
 
+    // update which clerks cannot work
     private void UpdateClerkStatus() {
         // reset whos available each day
         unavailable_clerks_ = new ArrayList<Integer>();
@@ -147,29 +149,25 @@ public class Simulation implements Utility {
         }
     }
 
+    // generate customers and queue them at the stores 
     private void QueueCustomers() {
         List<Customer> toServe = new ArrayList<Customer>();
-        if (current_day_ == last_day_) {
-            toServe.add(new User(this));
-            stores_.get(1).QueueCustomers(toServe);
-        } else {
-            for (int i = 0; i < stores_.size(); i++) {
-                // get random amounts of buyers and sellers in range
-                int buyers = 2 + GetPoissonRandom(3);
-                int sellers = GetRandomNum(1, 5);
-                // create buyers and sellers
-                for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
-                for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
-                // shuffle vector so we get customers in random order
-                Collections.shuffle(toServe);
-                stores_.get(i).QueueCustomers(toServe);
-                toServe.clear();
-            }
+        for (int i = 0; i < stores_.size(); i++) {
+            // get random amounts of buyers and sellers in range
+            int buyers = 2 + GetPoissonRandom(3);
+            int sellers = GetRandomNum(1, 5);
+            // create buyers and sellers
+            for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
+            for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
+            // shuffle vector so we get customers in random order
+            Collections.shuffle(toServe);
+            stores_.get(i).QueueCustomers(toServe);
+            toServe.clear();
         }
     }
 
+    // create daily logger and subscribe stores to it
     private void OpenLogger() {
-        // create daily logger and subscribe stores to it
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Subscribe(Logger.getInstance());
         }
@@ -178,6 +176,7 @@ public class Simulation implements Utility {
         }
     }
 
+    // close daily logger by unsubscribing everyone and clearing its data
     private void CloseLogger() {
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Unsubscribe(Logger.getInstance());
@@ -188,12 +187,14 @@ public class Simulation implements Utility {
         Logger.getInstance().Close();
     }
 
+    // reset all clerks days worked
     private void ResetDaysWorked() {
         for (int i = 0; i < clerks_.size(); i++) {
             clerks_.get(i).ResetDaysWorked();
         }
     }
 
+    // display simulation results
     private void DisplayResults() {
         Print(" *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***");
         for (int i = 0; i < stores_.size(); i++) {
@@ -211,17 +212,12 @@ public class Simulation implements Utility {
         Print("\n *** SIMULATION COMPLETE *** ");
     }
     
+    // return a store based off user input (so user can switch stores)
     public Store GetStore() {
-        Scanner scanner_ = new Scanner(System.in);
         Print("What store would you like to switch to?");
-        String name = scanner_.nextLine();
         for (int i = 0; i < stores_.size(); i++) {
-            if (stores_.get(i).getName().contains(name)) {
-                Print("Switched to " + stores_.get(i).getName());
-                return stores_.get(i);
-            }
+            Print(String.valueOf(i) + ": " + stores_.get(i).getName());
         }
-        Print("Couldn't switch stores, please try again before making a different request");
-        return null;
+        return stores_.get(GetIntFromUser(0, (stores_.size()-1)));
     }
 }
