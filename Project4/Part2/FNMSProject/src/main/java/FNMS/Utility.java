@@ -78,6 +78,7 @@ interface Utility {
     default boolean GetBoolFromUser() {
         while (true) {
             String input = scanner.nextLine();
+            Print(input);
             if (input.toLowerCase().startsWith("y")) return true;
             else if (input.toLowerCase().startsWith("n")) return false;
             else Print("Please input Y or N");
