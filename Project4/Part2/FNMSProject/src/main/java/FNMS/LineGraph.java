@@ -27,16 +27,14 @@ abstract class Graph implements Subscriber {
     protected List<Class> interesting_events_ = new ArrayList<Class>();
     protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();
     protected String fileName_;
-    protected int current_ = 0;
 
-    abstract protected void UpdateSeries();
+    abstract public void UpdateSeries();
     abstract protected XYSeriesCollection CreateDataSet();
     abstract protected JFreeChart CreateGraph();
 
     // keep list of events for each day
     final public void Update(MyEvent event) {
         // if day has changed, add data points and clear events
-        if (current_ != Simulation.current_day_) { UpdateSeries(); }
         for (Class clazz : interesting_events_) {
             if (clazz == event.getClass()) {
                 boolean updated = false;
@@ -87,6 +85,7 @@ class MoneyGraph extends Graph {
     // eagerly instantiated singleton
     private static final MoneyGraph instance = new MoneyGraph();
 
+    private List<XYSeries> series_ = new ArrayList<XYSeries>();
     private XYSeries money_ = new XYSeries("Register");
     private XYSeries sales_ = new XYSeries("Item Sales");
     
@@ -99,7 +98,7 @@ class MoneyGraph extends Graph {
     public static MoneyGraph getInstance() { return instance; }
 
     // add the previous days data points to the series & iterate day
-    protected void UpdateSeries() {
+    public void UpdateSeries() {
         int money, sales;
         money = sales = 0;
         for (MyEvent event : events_) {
@@ -109,14 +108,19 @@ class MoneyGraph extends Graph {
                 sales += event.GetData();
             }
         }
-        money_.add(current_, money);
-        sales_.add(current_, sales);
+        money_.add(Simulation.current_day_, money);
+        sales_.add(Simulation.current_day_, sales);
         // clear events to be ready for next day
         events_.clear();
-        current_++;
     }
 
     protected XYSeriesCollection CreateDataSet() {
+        // fill in data for sundays with previous days money
+        for (int i = 2; i < Simulation.last_day_; i++) {
+            if (i % 7 == 0) {
+                money_.update(i, money_.getY(money_.indexOf(i-1)));
+            }
+        }
         XYSeriesCollection dataset = new XYSeriesCollection();
         dataset.addSeries(money_);
         dataset.addSeries(sales_);
@@ -168,7 +172,7 @@ class ItemGraph extends Graph {
     public static ItemGraph getInstance() { return instance; }
 
     // add the previous days data points to the series & iterate day
-    protected void UpdateSeries() {
+    public void UpdateSeries() {
         int inventory, damaged, sold;
         inventory = damaged = sold = 0;
         for (MyEvent event : events_) {
@@ -180,15 +184,21 @@ class ItemGraph extends Graph {
                 sold += event.GetData();
             }
         }
-        inventory_.add(current_, inventory);
-        damaged_.add(current_, damaged);
-        sold_.add(current_, sold);
+        inventory_.add(Simulation.current_day_, inventory);
+        damaged_.add(Simulation.current_day_, damaged);
+        sold_.add(Simulation.current_day_, sold);
         // clear events to be ready for next day
         events_.clear();
-        current_++;
     }
 
     protected XYSeriesCollection CreateDataSet() {
+        // fill in data for sundays with previous days inventory
+        for (int i = 2; i < Simulation.last_day_; i++) {
+            if (i % 7 == 0) {
+                inventory_.update(i, inventory_.getY(inventory_.indexOf(i-1)));
+            }
+        }
+        // add all series to dataset
         XYSeriesCollection dataset = new XYSeriesCollection();
         dataset.addSeries(inventory_);
         dataset.addSeries(damaged_);

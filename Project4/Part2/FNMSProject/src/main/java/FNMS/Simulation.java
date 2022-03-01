@@ -38,6 +38,7 @@ public class Simulation implements Utility {
             stores_.get(i).Subscribe(Tracker.getInstance());
             stores_.get(i).Subscribe(MoneyGraph.getInstance());
             stores_.get(i).Subscribe(ItemGraph.getInstance());
+            stores_.get(i).Subscribe(Logger.getInstance());
         }
     }
 
@@ -53,6 +54,7 @@ public class Simulation implements Utility {
             clerks_.get(i).Subscribe(Tracker.getInstance());
             clerks_.get(i).Subscribe(MoneyGraph.getInstance());
             clerks_.get(i).Subscribe(ItemGraph.getInstance());
+            clerks_.get(i).Subscribe(Logger.getInstance());
         }
     }
 
@@ -74,7 +76,7 @@ public class Simulation implements Utility {
 
     private void SimDay() {
         // open new logger and subscribe everyone
-        OpenLogger();
+        //OpenLogger();
         // open or close stores depending on day
         if (Simulation.current_day_ % 7 != 0) { 
             AssignClerks();
@@ -105,10 +107,15 @@ public class Simulation implements Utility {
                 Logger.getInstance().OutputData();
             }
         }
+        ResetLogger();
+        /*
         // show tracker at end of each day
         Tracker.getInstance().OutputData();
+        // update graphs
+
         // have stores unsubscribe from logger and close it
         CloseLogger();
+        */
     }
 
     // pick clerks and assign them to store
@@ -171,6 +178,7 @@ public class Simulation implements Utility {
     }
 
     // create daily logger and subscribe stores to it
+    /*
     private void OpenLogger() {
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Subscribe(Logger.getInstance());
@@ -178,6 +186,14 @@ public class Simulation implements Utility {
         for (int i = 0; i < clerks_.size(); i++) {
             clerks_.get(i).Subscribe(Logger.getInstance());
         }
+    }
+    */
+
+    private void ResetLogger() {
+        Tracker.getInstance().OutputData();
+        Logger.getInstance().Close();
+        MoneyGraph.getInstance().UpdateSeries();
+        ItemGraph.getInstance().UpdateSeries();
     }
 
     // close daily logger by unsubscribing everyone and clearing its data
