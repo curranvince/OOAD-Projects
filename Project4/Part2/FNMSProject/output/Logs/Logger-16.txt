@@ -1,24 +1,24 @@
-Velma arrived at the North Side Store
-Velma added 3 item(s) to North Side Store's inventory
-Norville arrived at the South Side Store
-Norville added 0 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $3130
-Norville checked the South Side Store's register to find $2681
-Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 51 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1211
-Velma ordered 0 item(s) for the North Side Store
-Norville damaged 2 item(s) at the South Side Store while tuning
-Norville counted 44 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1315
-Norville ordered 3 item(s) for the South Side Store
-Velma sold 13 item(s) at the North Side Store
-Velma sold $540 worth of items at the North Side Store
-Velma bought 3 item(s) at the North Side Store
-Norville sold 7 item(s) at the South Side Store
-Norville sold $468 worth of items at the South Side Store
-Norville bought 2 item(s) at the South Side Store
-Velma damaged 0 item(s) at the North Side Store while cleaning
-Norville damaged 0 item(s) at the South Side Store while cleaning
-Velma left the North Side Store
-Norville left the South Side Store
+Norville arrived at the North Side Store
+Norville added 9 item(s) to North Side Store's inventory
+Velma arrived at the South Side Store
+Velma added 3 item(s) to South Side Store's inventory
+Norville checked the North Side Store's register to find $2994
+Velma checked the South Side Store's register to find $2997
+Norville damaged 3 item(s) at the North Side Store while tuning
+Norville counted 50 item(s) in North Side Store's' inventory
+Norville found the North Side Store's' inventory is worth $1039
+Norville ordered 0 item(s) for the North Side Store
+Velma damaged 0 item(s) at the South Side Store while tuning
+Velma counted 50 item(s) in South Side Store's' inventory
+Velma found the South Side Store's' inventory is worth $1358
+Velma ordered 0 item(s) for the South Side Store
+Norville bought 2 item(s) at the North Side Store
+Norville sold 11 item(s) at the North Side Store
+Norville sold $634 worth of items at the North Side Store
+Velma sold 9 item(s) at the South Side Store
+Velma sold $276 worth of items at the South Side Store
+Velma bought 3 item(s) at the South Side Store
+Norville damaged 0 item(s) at the North Side Store while cleaning
+Velma damaged 0 item(s) at the South Side Store while cleaning
+Norville left the North Side Store
+Velma left the South Side Store

@@ -23,14 +23,22 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.BasicStroke;
 
+// the Graph class is an example of a template
+// https://zetcode.com/java/jfreechart/
+// https://www.javatips.net/blog/create-line-chart-using-jfreechart
+// https://stackoverflow.com/questions/34836338/how-to-save-current-chart-in-chartpanel-as-png-programmatically
 abstract class Graph implements Subscriber {
-    protected List<Class> interesting_events_ = new ArrayList<Class>();
-    protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();
-    protected String fileName_;
+    static final int HEIGHT = 450;
+    static final int WIDTH = 450;
 
-    abstract public void UpdateSeries();
-    abstract protected XYSeriesCollection CreateDataSet();
-    abstract protected JFreeChart CreateGraph();
+    protected List<Class> interesting_events_ = new ArrayList<Class>(); // class types of events we're interested in
+    protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
+    protected List<XYSeries> series_ = new ArrayList<XYSeries>();       // series to be plotted
+    protected String[] graphName_ = new String[3];    // 0 for title, 1 for x title, 2 for y title
+    protected String fileName_;                       // file to print to
+
+    abstract public void UpdateSeries();     // to update the line
+    abstract protected void NormalizeData();
 
     // keep list of events for each day
     final public void Update(MyEvent event) {
@@ -50,6 +58,53 @@ abstract class Graph implements Subscriber {
         }
     }
 
+    // output graph as .png
+    final public void OutputData() {
+        JFreeChart chart = CreateGraph();
+        try {
+            File file = new File("output/Graphs/" + fileName_ + ".png");
+            file.getParentFile().mkdirs();
+            file.createNewFile();
+            OutputStream stream = new FileOutputStream(file);
+            ChartUtils.writeChartAsPNG(stream, chart, HEIGHT, WIDTH);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // fill in missing data & turn series into a dataset
+    private XYSeriesCollection CreateDataSet() {
+        NormalizeData();
+        XYSeriesCollection dataset = new XYSeriesCollection();
+        for (XYSeries series : series_) {
+            dataset.addSeries(series);
+        }
+        return dataset;
+    }
+
+    // create graph from all collected data
+    protected JFreeChart CreateGraph() {
+        // create chart
+        JFreeChart chart = ChartFactory.createXYLineChart(
+            graphName_[0],
+            graphName_[1],
+            graphName_[2],
+            CreateDataSet(),
+            PlotOrientation.VERTICAL,
+            true,
+            true,
+            false
+        );
+        // format and return chart
+        FormatPlot(chart.getXYPlot());
+        chart.getLegend().setFrame(BlockBorder.NONE);
+        chart.setTitle(new TextTitle(graphName_[0] + "(Both Stores)",
+                        new Font("Serif", java.awt.Font.BOLD, 18)
+                )
+        );
+        return chart;
+    }
+
     protected void FormatPlot(XYPlot plot) {
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         // set line color and size
@@ -64,35 +119,25 @@ abstract class Graph implements Subscriber {
         plot.setDomainGridlinePaint(Color.BLACK);
     }
 
-    public void OutputData() {
-        JFreeChart chart = CreateGraph();
-        try {
-            File file = new File("output/Graphs/" + fileName_ + ".png");
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-            OutputStream stream = new FileOutputStream(file);
-            ChartUtils.writeChartAsPNG(stream, chart, 450, 400);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void Close() {
+        events_.clear();
+        series_.clear();
     }
 }
 
-// https://zetcode.com/java/jfreechart/
-// https://www.javatips.net/blog/create-line-chart-using-jfreechart
-// https://stackoverflow.com/questions/34836338/how-to-save-current-chart-in-chartpanel-as-png-programmatically
 class MoneyGraph extends Graph {
     // eagerly instantiated singleton
     private static final MoneyGraph instance = new MoneyGraph();
-
-    private List<XYSeries> series_ = new ArrayList<XYSeries>();
-    private XYSeries money_ = new XYSeries("Register");
-    private XYSeries sales_ = new XYSeries("Item Sales");
     
     private MoneyGraph() {
+        series_.add(new XYSeries("Register"));
+        series_.add(new XYSeries("Item Sales"));
         interesting_events_.add(EODRegisterEvent.class);
         interesting_events_.add(SalePriceEvent.class);
         fileName_ = "MoneyGraph";
+        graphName_[0] = "Money Graph";
+        graphName_[1] = "Days";
+        graphName_[0] = "Amount ($)";
     };
 
     public static MoneyGraph getInstance() { return instance; }
@@ -108,65 +153,38 @@ class MoneyGraph extends Graph {
                 sales += event.GetData();
             }
         }
-        money_.add(Simulation.current_day_, money);
-        sales_.add(Simulation.current_day_, sales);
+        series_.get(0).add(Simulation.current_day_, money);
+        series_.get(1).add(Simulation.current_day_, sales);
         // clear events to be ready for next day
         events_.clear();
     }
 
-    protected XYSeriesCollection CreateDataSet() {
+    protected void NormalizeData() {
         // fill in data for sundays with previous days money
         for (int i = 2; i < Simulation.last_day_; i++) {
             if (i % 7 == 0) {
-                money_.update(i, money_.getY(money_.indexOf(i-1)));
+                series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
             }
         }
-        XYSeriesCollection dataset = new XYSeriesCollection();
-        dataset.addSeries(money_);
-        dataset.addSeries(sales_);
-        return dataset;
     }
-
-    // create graph from all collected data
-    protected JFreeChart CreateGraph() {
-        // create chart
-        JFreeChart chart = ChartFactory.createXYLineChart(
-            "Money Stats",
-            "Day",
-            "Amount ($)",
-            CreateDataSet(),
-            PlotOrientation.VERTICAL,
-            true,
-            true,
-            false
-        );
-        // format and return chart
-        FormatPlot(chart.getXYPlot());
-        chart.getLegend().setFrame(BlockBorder.NONE);
-        chart.setTitle(new TextTitle("Money Stats (Both Stores)",
-                        new Font("Serif", java.awt.Font.BOLD, 18)
-                )
-        );
-        return chart;
-    }
-
-    public void Close() {};
 }
 
 class ItemGraph extends Graph {
     // eagerly instantiated singleton
     private static final ItemGraph instance = new ItemGraph();
-
-    private XYSeries inventory_ = new XYSeries("Items in Inventory");
-    private XYSeries damaged_ = new XYSeries("Items Damaged");
-    private XYSeries sold_ = new XYSeries("Items Sold");
     
     private ItemGraph() {
+        series_.add(new XYSeries("In Inventory"));
+        series_.add(new XYSeries("Damaged"));
+        series_.add(new XYSeries("Sold"));
         interesting_events_.add(InventoryEvent.class);
         interesting_events_.add(BrokeTuningEvent.class);
         interesting_events_.add(BrokeCleaningEvent.class);
         interesting_events_.add(ItemsSoldEvent.class);
         fileName_ = "ItemGraph";
+        graphName_[0] = "Item Graph (Both Stores)";
+        graphName_[1] = "Days";
+        graphName_[0] = "# of Items";
     };
 
     public static ItemGraph getInstance() { return instance; }
@@ -184,50 +202,19 @@ class ItemGraph extends Graph {
                 sold += event.GetData();
             }
         }
-        inventory_.add(Simulation.current_day_, inventory);
-        damaged_.add(Simulation.current_day_, damaged);
-        sold_.add(Simulation.current_day_, sold);
+        series_.get(0).add(Simulation.current_day_, inventory);
+        series_.get(1).add(Simulation.current_day_, damaged);
+        series_.get(2).add(Simulation.current_day_, sold);
         // clear events to be ready for next day
         events_.clear();
     }
 
-    protected XYSeriesCollection CreateDataSet() {
+    protected void NormalizeData() {
         // fill in data for sundays with previous days inventory
         for (int i = 2; i < Simulation.last_day_; i++) {
             if (i % 7 == 0) {
-                inventory_.update(i, inventory_.getY(inventory_.indexOf(i-1)));
+                series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
             }
         }
-        // add all series to dataset
-        XYSeriesCollection dataset = new XYSeriesCollection();
-        dataset.addSeries(inventory_);
-        dataset.addSeries(damaged_);
-        dataset.addSeries(sold_);
-        return dataset;
     }
-
-    // create graph from all collected data
-    protected JFreeChart CreateGraph() {
-        // create chart
-        JFreeChart chart = ChartFactory.createXYLineChart(
-            "Item Stats",
-            "Day",
-            "Amount ($)",
-            CreateDataSet(),
-            PlotOrientation.VERTICAL,
-            true,
-            true,
-            false
-        );
-        // format and return chart
-        FormatPlot(chart.getXYPlot());
-        chart.getLegend().setFrame(BlockBorder.NONE);
-        chart.setTitle(new TextTitle("Item Stats (Both Stores)",
-                        new Font("Serif", java.awt.Font.BOLD, 18)
-                )
-        );
-        return chart;
-    }
-
-    public void Close() {};
 }
