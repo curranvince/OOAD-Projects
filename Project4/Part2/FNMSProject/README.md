@@ -37,8 +37,9 @@ Assumptions (from project 3):
 * Our interpretation/implementation of the 'discontinue' feature: When a Clothing subclass runs out, it will no longer be ordered, but can still be bought from customers. When all clothing subclasses are discontinued, they are no longer bought from customers.
 
 New Assumptions / Changes:
-
-
+* The user starts with no items in their inventory. If they want to sell an item when they have none, they will be allowed to choose an itemtype to be generated for them to sell. If a user has items in their inventory, they will choose from these items when attempting to sell to a store. 
+* When a user wants to buy an item, they can choose any itemtype. The store will respond appropiately about the item being available, discontinued, etc. 
+* The graphs for register money, item sales, items broken, etc. are aggregated between the 2 stores for each day. IE if Store 1 has $1000 and Store 2 has $1000 at the end of Day 1, the graph would show $2000. Statistics show values taken from the end of the day. Or more specifically, they keep track of each event throughout the day, then add them up and write them at the end of the day. 
 
 Contributors:
 Vince Curran, Logan Park, Kevin Vo
