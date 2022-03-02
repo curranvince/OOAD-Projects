@@ -33,15 +33,10 @@ abstract class Graph implements Subscriber {
 
     protected List<Class> interesting_events_ = new ArrayList<Class>(); // class types of events we're interested in
     protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
-    protected String fileName_;                       // file to print to
-}
-
-abstract class LineGraph extends Graph {
-    protected List<XYSeries> series_ = new ArrayList<XYSeries>();       // series to be plotted
     protected String[] graphName_ = new String[3];    // 0 for title, 1 for x title, 2 for y title
+    protected String fileName_;                       // file to print to
 
-    abstract public void UpdateSeries();     // to update the line
-    abstract protected void NormalizeData();
+    abstract protected JFreeChart CreateGraph();
 
     // keep list of events for each day
     final public void Update(MyEvent event) {
@@ -75,6 +70,16 @@ abstract class LineGraph extends Graph {
         }
     }
 
+    public void Close() {
+        events_.clear();
+    }
+}
+
+abstract class LineGraph extends Graph {
+    protected List<XYSeries> series_ = new ArrayList<XYSeries>();       // series to be plotted
+    
+    abstract public void UpdateSeries();     // to update the line
+    
     // fill in missing data & turn series into a dataset
     private XYSeriesCollection CreateDataSet() {
         NormalizeData();
@@ -122,8 +127,18 @@ abstract class LineGraph extends Graph {
         plot.setDomainGridlinePaint(Color.BLACK);
     }
 
+    protected void NormalizeData() {
+        // fill in data for sundays with previous days money
+        for (int i = 2; i < Simulation.last_day_; i++) {
+            if (i % 7 == 0) {
+                series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
+            }
+        }
+    }
+
+    @Override
     public void Close() {
-        events_.clear();
+        super.Close();
         series_.clear();
     }
 }
@@ -160,15 +175,6 @@ class MoneyGraph extends LineGraph {
         series_.get(1).add(Simulation.current_day_, sales);
         // clear events to be ready for next day
         events_.clear();
-    }
-
-    protected void NormalizeData() {
-        // fill in data for sundays with previous days money
-        for (int i = 2; i < Simulation.last_day_; i++) {
-            if (i % 7 == 0) {
-                series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
-            }
-        }
     }
 }
 
@@ -210,14 +216,5 @@ class ItemGraph extends LineGraph {
         series_.get(2).add(Simulation.current_day_, sold);
         // clear events to be ready for next day
         events_.clear();
-    }
-
-    protected void NormalizeData() {
-        // fill in data for sundays with previous days inventory
-        for (int i = 2; i < Simulation.last_day_; i++) {
-            if (i % 7 == 0) {
-                series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
-            }
-        }
     }
 }
