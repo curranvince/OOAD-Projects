@@ -13,7 +13,7 @@ import org.junit.jupiter.api.DisplayName;
  */
 public class RegisterTest 
 {
-    Store store = new Store();
+    Store store = new Store("Test Store", new NorthKitFactory());
 
     @Test
     @DisplayName("Cash register should initialize with no money")

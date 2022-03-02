@@ -1,12 +1,26 @@
-Daphne arrived at the store
-Daphne added 0 item(s) to inventory
-Daphne checked register to find $0
-Daphne checked register to find $1000
-Daphne damaged 0 item(s) while tuning
-Daphne counted 63 item(s) in inventory
-Daphne found the store's inventory is worth $1715
-Daphne ordered 0 item(s)
-Daphne sold 6 item(s)
-Daphne purchased 1 item(s)
-Daphne damaged 0 item(s) while cleaning
-Daphne left the store
+Scooby arrived at the North Side Store
+Scooby added 0 item(s) to North Side Store's inventory
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Scooby checked the North Side Store's register to find $0
+Scooby went to the bank, then checked the North Side Store's register to find $1000
+Norville checked the South Side Store's register to find $0
+Norville went to the bank, then checked the South Side Store's register to find $1000
+Scooby damaged 0 item(s) at the North Side Store while tuning
+Scooby counted 63 item(s) in North Side Store's' inventory
+Scooby found the North Side Store's' inventory is worth $1633
+Scooby ordered 0 item(s) for the North Side Store
+Norville damaged 0 item(s) at the South Side Store while tuning
+Norville counted 63 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1678
+Norville ordered 0 item(s) for the South Side Store
+Scooby sold 7 item(s) at the North Side Store
+Scooby sold $412 worth of items at the North Side Store
+Scooby bought 1 item(s) at the North Side Store
+Norville bought 4 item(s) at the South Side Store
+Norville sold 3 item(s) at the South Side Store
+Norville sold $230 worth of items at the South Side Store
+Scooby damaged 0 item(s) at the North Side Store while cleaning
+Norville damaged 0 item(s) at the South Side Store while cleaning
+Scooby left the North Side Store
+Norville left the South Side Store

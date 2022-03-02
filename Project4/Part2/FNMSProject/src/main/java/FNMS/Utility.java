@@ -1,29 +1,48 @@
 package FNMS;
 
+import java.io.*;
 import java.util.Random;
+import java.util.Scanner;
+import java.util.InputMismatchException;
 import java.util.List;
 
 interface Utility {
-    // https://docs.oracle.com/javase/tutorial/java/generics/types.html
-    class Pair<K, V> {
-        private K key_;
-        private V value_;
-    
-        Pair(K key, V value) {
-            key_ = key;
-            value_ = value;
+    // make sure theres only one random and scanner instead of instantiating everywhere
+    final Random random = new Random();
+    final Scanner scanner = new Scanner(System.in);
+    final TeeStream teeStream = new TeeStream();
+
+    // TeeStream to write to multiple streams at once idea from
+    // https://commons.apache.org/proper/commons-io/javadocs/api-2.5/org/apache/commons/io/output/TeeOutputStream.html
+    class TeeStream { 
+        private FileOutputStream fileStream;
+        private OutputStream outStream = System.out;
+        
+        public TeeStream() {
+            try {
+                File file = new File("output/Output.txt");
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+                fileStream = new FileOutputStream(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-    
-        public K getKey() { return key_; }
-        public V getValue() { return value_; }
-        public void updateValue(V value) { value_ = value; } // must update val with same type as declared with, or beware
+
+        public void Write(String msg) {
+            msg = (msg + "\n");
+            try {
+                fileStream.write(msg.getBytes()); // https://www.baeldung.com/java-string-to-byte-array
+                outStream.write(msg.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
-    
-    // make sure theres only one 'random' instead of instantiating everywhere
-    Random random = new Random();
-    
-    // make printing simpler
-    default void Print(String str) { System.out.println(str); }
+
+    // Print everything to Sys.out as well as Output.txt
+    // For easy interaction as well as capture
+    default void Print(String str) { teeStream.Write(str); }
     
     // simple methods for getting random nums
     default int GetRandomNum(int range) { return random.nextInt(range); }
@@ -36,7 +55,37 @@ interface Utility {
         }
         return rando;
     }
+   
+    // get int from user with bounds
+    // https://stackoverflow.com/questions/38830142/how-to-handle-invalid-input-when-using-scanner-nextint
+    default int GetIntFromUser(int min, int max) {
+        int choice = -1; 
+        while (choice < min || choice > max) {
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine(); // consume eol char
+                Print(String.valueOf(choice)); 
+                if (choice < min || choice > max) Print("Please input a valid integer");
+            } catch (InputMismatchException e) {
+                Print("Please input a valid integer");
+                scanner.nextLine();
+            } 
+        }
+        return choice;
+    }
     
+    // get yes or no from user
+    default boolean GetBoolFromUser() {
+        while (true) {
+            String input = scanner.nextLine();
+            Print(input);
+            if (input.toLowerCase().startsWith("y")) return true;
+            else if (input.toLowerCase().startsWith("n")) return false;
+            else Print("Please input Y or N");
+        }
+    }
+
+    // get a random variate coming from a poisson distribution with given mean
     // https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
     // https://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
     default int GetPoissonRandom(int mean) {
@@ -51,7 +100,7 @@ interface Utility {
     }
 
     // taken from profs project 2 code
-    // a utility for getting a random enum value from any enum
+    // utility for getting a random enum value from any enum
     // https://stackoverflow.com/questions/1972392/pick-a-random-value-from-an-enum
     default <T extends Enum<?>> T GetRandomEnumVal(Class<T> clazz){
         int x = new Random().nextInt(clazz.getEnumConstants().length);

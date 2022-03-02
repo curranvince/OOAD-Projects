@@ -75,7 +75,12 @@ abstract class Item implements ItemUtility {
 
     // add a component to an item
     void AddComponent(Component component) { components_.add(component); }
-    
+    void AddComponents(List<Component> components) {
+        for (Component component : components) {
+            components_.add(component);
+        }
+    }
+
     // get a component from an item
     // suppress the 'typesafe' warning because the code IS typesafe
     @SuppressWarnings("unchecked")
@@ -111,6 +116,23 @@ abstract class Item implements ItemUtility {
         return true;
     }
 }
+
+class GuitarKit extends Item {
+    GuitarKit() { name_ += "Guitar Kit"; }
+    
+    public int GetPrice() {
+        int price = 0;
+        for (Component component : components_) {
+            if (component instanceof KitComponent) {
+                KitComponent kc = (KitComponent)component;
+                price += kc.GetPrice();
+            }
+        }
+        purchase_price_ = price;
+        sale_price_ = price;
+        return price;
+    }
+} 
 
 // Example of Iheritance : Music inherits from Item
 // All the classes below are also examples of Inheritance

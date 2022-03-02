@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import FNMS.Item.ItemType;
 
 public class StoreTest {
-    Store store = new Store();
+    Store store = new Store("Test Store", new NorthKitFactory());
 
     @Test
     @DisplayName("Should be able to create items")

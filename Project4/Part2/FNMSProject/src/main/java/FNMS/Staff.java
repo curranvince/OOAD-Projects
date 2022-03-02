@@ -2,34 +2,36 @@ package FNMS;
 
 import java.util.Set;
 
-import FNMS.Customer.RequestType;
-
 // staff members have a name, access to store, and know how many days theyve worked in a row
 // they can publish information to subscribers, and do so when arriving or leaving store
 // can be extended to create Staff members with completely different roles
-abstract class Staff extends Publisher implements Utility {
+abstract class Staff extends Publisher {
     protected Store store_;
     protected String name_;
+    protected int id_;
     private int days_worked_ = 0;
     
     // methods to access staff members names and worked days stats
     public String GetName() { return name_; }
+    public int GetID() { return id_; }
     public void IncrementDaysWorked() { days_worked_++; }
     public int GetDaysWorked() { return days_worked_; }
     public void ResetDaysWorked() { days_worked_ = 0; }
 
-    protected void Publish(String context, int data) { Publish(context, name_, data); }
-   
+    public void UpdateStore(Store store) { store_ = store; }
+
     // broadcast arriving to store
     public void ArriveAtStore() {
-        Print(name_  + " has arrived at the store on Day " + Simulation.current_day_);
-        Publish("arrival", 1);
+        days_worked_++;
+        Print(name_  + " has arrived at the " + store_.getName() + " on Day " + Simulation.current_day_);
+        Publish(new ArrivalEvent(store_));
     }
 
     // broadcast leaving
     public void CloseStore() {
-        Print(name_ + " leaves the store");
-        Publish("leftstore", 0);
+        Print(name_ + " leaves the " + store_.getName());
+        Publish(new EODRegisterEvent(store_.register_.GetAmount(), store_));
+        Publish(new LeaveEvent(store_));
     }
 }
 
@@ -42,14 +44,14 @@ abstract class AbstractClerk extends Staff {
     abstract public boolean CheckRegister();
     abstract public void GoToBank();
     abstract public Set<Item.ItemType> DoInventory();
-    abstract public int PlaceOrders(Set<Item.ItemType> orderTypes);
-    abstract public int Sell(Item item, int salePrice);
-    abstract public int Buy(Item item, int salePrice);
-    abstract public boolean OfferAccepted(Item item, boolean buying, boolean discount);
+    abstract public void PlaceOrders(Set<Item.ItemType> orderTypes);
+    abstract public boolean Sell(Item item, int salePrice);
+    abstract public boolean Buy(Item item, int salePrice);
     abstract public Item CheckForItem(Item.ItemType itemType);
-    abstract public Pair<RequestType, Integer> TryTransaction(Item item, boolean buying);
-    abstract public Pair<RequestType, Integer> HandleCustomer(Customer customer);
+    abstract public boolean TryTransaction(Customer customer, Item item, boolean buying);
     abstract public void CleanStore();
+    abstract public String GetTime();
+    abstract public Item SellGuitarKit();
 }
 
 // The Tune interface and its subclasses is an example of the Strategy pattern

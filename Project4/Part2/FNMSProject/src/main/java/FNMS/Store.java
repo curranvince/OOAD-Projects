@@ -2,21 +2,33 @@ package FNMS;
 
 import java.util.*;
 
-import FNMS.Customer.RequestType;
 import FNMS.Item.ItemType;
 
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
-abstract class Publisher {
-    private List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
+abstract class Publisher implements Utility {
+    protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
+    protected LinkedList<Customer> customers_ = new LinkedList<Customer>();
 
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
+    public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
-    protected void Publish(String context, String name, int data) { for (Subscriber subscriber : subscribers_) subscriber.Update(context, name, data); }
+    protected void Publish(MyEvent event) { for (Subscriber subscriber : subscribers_) subscriber.Update(event); }
 }
 
-class Store extends Publisher implements Utility {
+class Store extends Publisher {
+    private String name_;
+    private int total_withdrawn_ = 0;
+    private AbstractClerk activeClerk_;
+   
+    public KitFactory kitFactory_;
+    public CashRegister register_ = new CashRegister();
+    public List<Item> inventory_ = new ArrayList<Item>();
+    public List<Item> sold_ = new ArrayList<Item>();
+    public List<ItemType> discontinued_ = new ArrayList<ItemType>();
+    public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
+
     // CashRegister class to handle the Stores $
     // Good example of Cohesion because the class has
     // one specifc purpose (handling money/doing simple math)
@@ -38,18 +50,10 @@ class Store extends Publisher implements Utility {
         }
     }
 
-    private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
-    private AbstractClerk activeClerk_;
-
-    public int total_withdrawn_ = 0;
-    public CashRegister register_ = new CashRegister();
-    public List<Item> inventory_ = new ArrayList<Item>();
-    public List<Item> sold_ = new ArrayList<Item>();
-    public List<ItemType> discontinued_ = new ArrayList<ItemType>();
-    public HashMap<Integer, List<ItemType>> orders_ = new HashMap<Integer, List<ItemType>>();
-    
-    Store() {
-        // store start with 3 of each item
+    Store(String name, KitFactory kitFactory) {
+        kitFactory_ = kitFactory;
+        name_ = name;
+        // Stores start with 3 of each item
         // Making the items is an example of Identity
         // Each individual Item represents a real world object
         for (ItemType itemType : ItemType.values()) {
@@ -57,114 +61,46 @@ class Store extends Publisher implements Utility {
                 inventory_.add(ItemFactory.MakeItem(itemType.name()));
             }
         }
-        // make decorated clerks with break chances & tuning algorithms
-        clerks_.add(new Clerk("Shaggy", 20, new HaphazardTune(), this)); // Shaggy is lazy - so he does not try to sell extra items when Stringed instruments are sold
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune(), this)));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new ManualTune(), this)));
     }
-    
+
+    public String getName() { return name_; }
+    public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }
+    public int getWithdrawn() { return total_withdrawn_; }
+
+    public AbstractClerk GetActiveClerk() { return activeClerk_; }
+    public void UpdateClerk(AbstractClerk clerk) { 
+        activeClerk_ = clerk; 
+        activeClerk_.UpdateStore(this);
+    }
+
+    public void QueueCustomers(List<Customer> customers) { customers_.addAll(customers); }
+
     public void Discontiue(ItemType itemType) { 
         Print("The store has officially discontinued " + itemType + ", so it will no longer order them");
         discontinued_.add(itemType); 
     }
 
-    // override subscribe to also have all workers also be subscribed to
-    @Override
-    public void Subscribe(Subscriber subscriber) { 
-        super.Subscribe(subscriber);
-        for (Staff clerk : clerks_) clerk.Subscribe(subscriber);
-    } 
-
-    // override ubsubscribe to also have all workers also be unsubscribed from
-    @Override
-    public void Unsubscribe(Subscriber unsubscriber) { 
-        super.Unsubscribe(unsubscriber);
-        for (Staff clerk : clerks_) clerk.Unsubscribe(unsubscriber);
-    }
-    
-    // override publish to automatically send name of active clerk
-    private void Publish(String context, int data) { super.Publish(context, activeClerk_.GetName(), data); }
-
-    // method for an entire open store day
-    public void OpenToday() {
-        // choose a clerk, have them check register & go to bank if needed
-        // have clerk do inventory and order items if necessary
-        // let the store open, clerk handles customers
-        // have clerk clean and close the store
-        this.ChooseClerk();
-        activeClerk_.ArriveAtStore();
-        if (!activeClerk_.CheckRegister()) activeClerk_.GoToBank();
-        activeClerk_.PlaceOrders(activeClerk_.DoInventory());
-        this.Opens();
-        activeClerk_.CleanStore();
-        activeClerk_.CloseStore();
-    }
-
-    public void ChooseClerk() {
-        // 10% chance that one random clerk is sick
-        List<Integer> cantWorkIDs = new ArrayList<>();
-        if (GetRandomNum(10) == 0) {
-            int cantWorkID = GetRandomNum(clerks_.size());
-            cantWorkIDs.add(cantWorkID);
-            Print(clerks_.get(cantWorkID).GetName() + " is sick, so they can't work today");
-        }
-        // choose a clerk
-        int id = GetRandomNumEx(0, clerks_.size(), cantWorkIDs);
-        activeClerk_ = clerks_.get(id);
-        // if they worked 3 days in a row pick someone else
-        if (activeClerk_.GetDaysWorked() == 3) { 
-            cantWorkIDs.add(id);
-            activeClerk_ = clerks_.get(GetRandomNumEx(0, clerks_.size(), cantWorkIDs));
-        }
-        // update days worked for all clerks
-        activeClerk_.IncrementDaysWorked();
-        for (Staff clerk : clerks_) {
-            if (clerk != activeClerk_) clerk.ResetDaysWorked();
-        }
-    }
-
-    private List<Customer> GenerateCustomers() {
-        // make vector to return
-        List<Customer> toServe = new ArrayList<Customer>();
-        // get random amounts of buyers and sellers in range
-        int buyers = 2 + GetPoissonRandom(3);
-        int sellers = GetRandomNum(1, 5);
-        // create buyers and sellers
-        for (int i = 0; i < buyers; i++) { toServe.add(new Buyer()); }
-        for (int i = 0; i < sellers; i++) { toServe.add(new Seller()); }
-        // shuffle vector so we get customers in random order
-        Collections.shuffle(toServe);
-        return toServe;
-    }
-
     // store opens for the day
     public void Opens() {
+        Print(activeClerk_.GetName() + " lets customers into the " + name_);
         int itemssold, itemsbought;
         itemssold = itemsbought = 0;
-        // make custoemrs and have clerk handle their request
-        for (Customer customer : GenerateCustomers()) {
-            Pair<RequestType, Integer> results = activeClerk_.HandleCustomer(customer);
-            switch (results.getKey()) {
-                case Buy:
-                    itemssold += results.getValue();
-                    break;
-                case Sell:
-                    itemsbought += results.getValue();
-                    break;
-                default:
-                    break;
+        while (!customers_.isEmpty()) { // https://stackoverflow.com/questions/57715470/iterating-a-list-until-the-list-is-empty
+            Iterator<Customer> it = customers_.listIterator();
+            while (it.hasNext()) {
+                Customer customer = it.next();
+                customer.MakeRequest();
+                customer.LeaveStore();
+                it.remove();
             }
-            customer.LeaveStore();
         }
-        // publish number of items sold and bought throughout day
-        Publish("itemsold", itemssold);
-        Publish("itemsbought", itemsbought);
+        Print("The line at the " + name_ + " has finally seceded");
     }
 
     // announce that the store is closed
     public void ClosedToday() {
         Print("Today is Day " + Simulation.current_day_ + ", which is Sunday, so the store is closed");
-        Publish("closed", 0);
+        Publish(new ClosedEvent(this));
     }
 
     // show one of the inventories and its value
