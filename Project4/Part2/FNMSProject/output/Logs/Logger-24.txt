@@ -1,24 +1,24 @@
-Scooby arrived at the North Side Store
-Scooby added 3 item(s) to North Side Store's inventory
-Daphne arrived at the South Side Store
-Daphne added 3 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $3248
-Daphne checked the South Side Store's register to find $3029
-Scooby damaged 10 item(s) at the North Side Store while tuning
-Scooby counted 51 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $1411
-Scooby ordered 3 item(s) for the North Side Store
-Daphne damaged 16 item(s) at the South Side Store while tuning
-Daphne counted 57 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1491
-Daphne ordered 3 item(s) for the South Side Store
-Scooby sold 3 item(s) at the North Side Store
-Scooby sold $128 worth of items at the North Side Store
-Scooby bought 2 item(s) at the North Side Store
-Daphne sold 19 item(s) at the South Side Store
-Daphne sold $812 worth of items at the South Side Store
-Daphne bought 1 item(s) at the South Side Store
-Scooby damaged 0 item(s) at the North Side Store while cleaning
-Daphne damaged 0 item(s) at the South Side Store while cleaning
-Scooby left the North Side Store
-Daphne left the South Side Store
+Daphne arrived at the North Side Store
+Daphne added 3 item(s) to North Side Store's inventory
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Daphne checked the North Side Store's register to find $3266
+Scooby checked the South Side Store's register to find $3189
+Daphne damaged 8 item(s) at the North Side Store while tuning
+Daphne counted 47 item(s) in North Side Store's' inventory
+Daphne found the North Side Store's' inventory is worth $1324
+Daphne ordered 0 item(s) for the North Side Store
+Scooby damaged 4 item(s) at the South Side Store while tuning
+Scooby counted 59 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1594
+Scooby ordered 0 item(s) for the South Side Store
+Daphne sold 9 item(s) at the North Side Store
+Daphne sold $374 worth of items at the North Side Store
+Daphne bought 2 item(s) at the North Side Store
+Scooby sold 3 item(s) at the South Side Store
+Scooby sold $239 worth of items at the South Side Store
+Scooby bought 1 item(s) at the South Side Store
+Daphne damaged 0 item(s) at the North Side Store while cleaning
+Scooby damaged 0 item(s) at the South Side Store while cleaning
+Daphne left the North Side Store
+Scooby left the South Side Store

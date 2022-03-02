@@ -1,24 +1,24 @@
-Velma arrived at the North Side Store
-Velma added 0 item(s) to North Side Store's inventory
-Daphne arrived at the South Side Store
-Daphne added 0 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $2325
-Daphne checked the South Side Store's register to find $2325
-Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 45 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1297
-Velma ordered 0 item(s) for the North Side Store
-Daphne damaged 14 item(s) at the South Side Store while tuning
-Daphne counted 46 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1169
-Daphne ordered 3 item(s) for the South Side Store
-Velma bought 2 item(s) at the North Side Store
-Velma sold 3 item(s) at the North Side Store
-Velma sold $248 worth of items at the North Side Store
-Daphne sold 5 item(s) at the South Side Store
-Daphne sold $200 worth of items at the South Side Store
-Daphne bought 1 item(s) at the South Side Store
-Velma damaged 0 item(s) at the North Side Store while cleaning
-Daphne damaged 0 item(s) at the South Side Store while cleaning
-Velma left the North Side Store
-Daphne left the South Side Store
+Fred arrived at the North Side Store
+Fred added 3 item(s) to North Side Store's inventory
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Fred checked the North Side Store's register to find $2199
+Scooby checked the South Side Store's register to find $2468
+Fred damaged 3 item(s) at the North Side Store while tuning
+Fred counted 49 item(s) in North Side Store's' inventory
+Fred found the North Side Store's' inventory is worth $1266
+Fred ordered 0 item(s) for the North Side Store
+Scooby damaged 11 item(s) at the South Side Store while tuning
+Scooby counted 48 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1203
+Scooby ordered 3 item(s) for the South Side Store
+Fred bought 3 item(s) at the North Side Store
+Fred sold 9 item(s) at the North Side Store
+Fred sold $336 worth of items at the North Side Store
+Scooby bought 4 item(s) at the South Side Store
+Scooby sold 1 item(s) at the South Side Store
+Scooby sold $44 worth of items at the South Side Store
+Fred damaged 1 item(s) at the North Side Store while cleaning
+Scooby damaged 1 item(s) at the South Side Store while cleaning
+Fred left the North Side Store
+Scooby left the South Side Store

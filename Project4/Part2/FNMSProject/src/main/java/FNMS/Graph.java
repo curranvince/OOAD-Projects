@@ -101,7 +101,7 @@ abstract class LineGraph extends Graph {
         // format and return chart
         FormatPlot(chart.getXYPlot());
         chart.getLegend().setFrame(BlockBorder.NONE);
-        chart.setTitle(new TextTitle(graphName_[0] + "(Both Stores)",
+        chart.setTitle(new TextTitle(graphName_[0] + " (Both Stores)",
                         new Font("Serif", java.awt.Font.BOLD, 18)
                 )
         );
@@ -140,7 +140,7 @@ class MoneyGraph extends LineGraph {
         fileName_ = "MoneyGraph";
         graphName_[0] = "Money Graph";
         graphName_[1] = "Days";
-        graphName_[0] = "Amount ($)";
+        graphName_[2] = "Amount ($)";
     };
 
     public static MoneyGraph getInstance() { return instance; }
@@ -185,9 +185,9 @@ class ItemGraph extends LineGraph {
         interesting_events_.add(BrokeCleaningEvent.class);
         interesting_events_.add(ItemsSoldEvent.class);
         fileName_ = "ItemGraph";
-        graphName_[0] = "Item Graph (Both Stores)";
+        graphName_[0] = "Item Graph";
         graphName_[1] = "Days";
-        graphName_[0] = "# of Items";
+        graphName_[2] = "# of Items";
     };
 
     public static ItemGraph getInstance() { return instance; }
