@@ -1,24 +1,24 @@
 Daphne arrived at the North Side Store
 Daphne added 0 item(s) to North Side Store's inventory
-Shaggy arrived at the South Side Store
-Shaggy added 0 item(s) to South Side Store's inventory
-Daphne checked the North Side Store's register to find $1301
-Shaggy checked the South Side Store's register to find $1109
-Daphne damaged 17 item(s) at the North Side Store while tuning
-Daphne counted 58 item(s) in North Side Store's' inventory
-Daphne found the North Side Store's' inventory is worth $1349
+Norville arrived at the South Side Store
+Norville added 0 item(s) to South Side Store's inventory
+Daphne checked the North Side Store's register to find $1174
+Norville checked the South Side Store's register to find $1100
+Daphne damaged 10 item(s) at the North Side Store while tuning
+Daphne counted 59 item(s) in North Side Store's' inventory
+Daphne found the North Side Store's' inventory is worth $1611
 Daphne ordered 0 item(s) for the North Side Store
-Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 63 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1746
-Shaggy ordered 0 item(s) for the South Side Store
-Daphne sold 11 item(s) at the North Side Store
-Daphne sold $437 worth of items at the North Side Store
+Norville damaged 9 item(s) at the South Side Store while tuning
+Norville counted 61 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1570
+Norville ordered 0 item(s) for the South Side Store
+Daphne sold 7 item(s) at the North Side Store
+Daphne sold $264 worth of items at the North Side Store
 Daphne bought 1 item(s) at the North Side Store
-Shaggy sold 9 item(s) at the South Side Store
-Shaggy sold $250 worth of items at the South Side Store
-Shaggy bought 3 item(s) at the South Side Store
-Daphne damaged 1 item(s) at the North Side Store while cleaning
-Shaggy damaged 1 item(s) at the South Side Store while cleaning
+Norville bought 3 item(s) at the South Side Store
+Norville sold 3 item(s) at the South Side Store
+Norville sold $155 worth of items at the South Side Store
+Daphne damaged 0 item(s) at the North Side Store while cleaning
+Norville damaged 0 item(s) at the South Side Store while cleaning
 Daphne left the North Side Store
-Shaggy left the South Side Store
+Norville left the South Side Store

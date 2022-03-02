@@ -33,9 +33,12 @@ abstract class Graph implements Subscriber {
 
     protected List<Class> interesting_events_ = new ArrayList<Class>(); // class types of events we're interested in
     protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
+    protected String fileName_;                       // file to print to
+}
+
+abstract class LineGraph extends Graph {
     protected List<XYSeries> series_ = new ArrayList<XYSeries>();       // series to be plotted
     protected String[] graphName_ = new String[3];    // 0 for title, 1 for x title, 2 for y title
-    protected String fileName_;                       // file to print to
 
     abstract public void UpdateSeries();     // to update the line
     abstract protected void NormalizeData();
@@ -125,7 +128,7 @@ abstract class Graph implements Subscriber {
     }
 }
 
-class MoneyGraph extends Graph {
+class MoneyGraph extends LineGraph {
     // eagerly instantiated singleton
     private static final MoneyGraph instance = new MoneyGraph();
     
@@ -169,7 +172,7 @@ class MoneyGraph extends Graph {
     }
 }
 
-class ItemGraph extends Graph {
+class ItemGraph extends LineGraph {
     // eagerly instantiated singleton
     private static final ItemGraph instance = new ItemGraph();
     
