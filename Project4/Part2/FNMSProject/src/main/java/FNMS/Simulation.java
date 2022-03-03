@@ -11,11 +11,14 @@ public class Simulation implements Utility {
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
+    private SubMan sub_man_ = new SubMan();
 
     // generate stores and clerks on simulation instantiation
     public Simulation() {
         GenerateStores();
         GenerateClerks(); 
+        sub_man_.SubscribeAll(stores_);
+        sub_man_.SubscribeAll(clerks_);
     }
 
     private void SetDaysToRun() {
@@ -34,12 +37,6 @@ public class Simulation implements Utility {
         // make north and south stores with appropriate kit factories
         stores_.add(new Store("North Side Store", new NorthKitFactory()));
         stores_.add(new Store("South Side Store", new SouthKitFactory()));
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Subscribe(Tracker.getInstance());
-            stores_.get(i).Subscribe(MoneyGraph.getInstance());
-            stores_.get(i).Subscribe(ItemGraph.getInstance());
-            stores_.get(i).Subscribe(Logger.getInstance());
-        }
     }
 
     private void GenerateClerks() {
@@ -50,14 +47,8 @@ public class Simulation implements Utility {
         clerks_.add(new Clerk("Fred", 15, new ManualTune()));
         clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
         clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
-        for (int i = 0; i < clerks_.size(); i++) {
-            clerks_.get(i).Subscribe(Tracker.getInstance());
-            clerks_.get(i).Subscribe(MoneyGraph.getInstance());
-            clerks_.get(i).Subscribe(ItemGraph.getInstance());
-            clerks_.get(i).Subscribe(Logger.getInstance());
-        }
     }
-
+    
     public void RunSimulation() {
         SetDaysToRun();
         Print(" *** BEGINNING SIMULATION *** \n");
@@ -107,15 +98,7 @@ public class Simulation implements Utility {
                 Logger.getInstance().OutputData();
             }
         }
-        ResetLogger();
-        /*
-        // show tracker at end of each day
-        Tracker.getInstance().OutputData();
-        // update graphs
-
-        // have stores unsubscribe from logger and close it
-        CloseLogger();
-        */
+        sub_man_.HandleEOD();
     }
 
     // pick clerks and assign them to store
@@ -177,27 +160,16 @@ public class Simulation implements Utility {
         }
     }
 
-    // create daily logger and subscribe stores to it
     /*
-    private void OpenLogger() {
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Subscribe(Logger.getInstance());
-        }
-        for (int i = 0; i < clerks_.size(); i++) {
-            clerks_.get(i).Subscribe(Logger.getInstance());
-        }
-    }
-    */
-
-    private void ResetLogger() {
+    private void ResetSubs() {
         Tracker.getInstance().OutputData();
         Logger.getInstance().Close();
-        MoneyGraph.getInstance().UpdateSeries();
-        ItemGraph.getInstance().UpdateSeries();
+        MoneyGraph.getInstance().UpdateData();
+        ItemGraph.getInstance().UpdateData();
     }
 
     // close daily logger by unsubscribing everyone and clearing its data
-    private void CloseLogger() {
+    private void CloseSubs() {
         for (int i = 0; i < stores_.size(); i++) {
             stores_.get(i).Unsubscribe(Logger.getInstance());
         }
@@ -205,8 +177,10 @@ public class Simulation implements Utility {
             clerks_.get(i).Unsubscribe(Logger.getInstance());
         }
         Logger.getInstance().Close();
+        MoneyGraph.getInstance().Close();
+        ItemGraph.getInstance().Close();
     }
-
+    */
     // reset all clerks days worked
     private void ResetDaysWorked() {
         for (int i = 0; i < clerks_.size(); i++) {
@@ -217,8 +191,6 @@ public class Simulation implements Utility {
     // display simulation results
     private void DisplayResults() {
         Print(" *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***");
-        MoneyGraph.getInstance().OutputData();
-        ItemGraph.getInstance().OutputData();
         for (int i = 0; i < stores_.size(); i++) {
             Print("Results for " + stores_.get(i).getName());
             // display inventory & its value
@@ -230,7 +202,7 @@ public class Simulation implements Utility {
             Print("$" + stores_.get(i).getWithdrawn() + " was withdrawn from the bank");
             stores_.get(i).Unsubscribe(Tracker.getInstance());
         }
-        Tracker.getInstance().Close();
+        sub_man_.Shutdown();
         Print("\n *** SIMULATION COMPLETE *** ");
     }
     

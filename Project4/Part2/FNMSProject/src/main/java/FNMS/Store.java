@@ -8,8 +8,7 @@ import FNMS.Item.ItemType;
 // They can also publish information to their subscribers
 abstract class Publisher implements Utility {
     protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
-    protected LinkedList<Customer> customers_ = new LinkedList<Customer>();
-
+    
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
     public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
     public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
@@ -21,7 +20,8 @@ class Store extends Publisher {
     private String name_;
     private int total_withdrawn_ = 0;
     private AbstractClerk activeClerk_;
-   
+    private LinkedList<Customer> customers_ = new LinkedList<Customer>();
+
     public KitFactory kitFactory_;
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();

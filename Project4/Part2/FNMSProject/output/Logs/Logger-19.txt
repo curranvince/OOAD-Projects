@@ -1,24 +1,24 @@
 Daphne arrived at the North Side Store
 Daphne added 3 item(s) to North Side Store's inventory
-Shaggy arrived at the South Side Store
-Shaggy added 0 item(s) to South Side Store's inventory
-Daphne checked the North Side Store's register to find $2076
-Shaggy checked the South Side Store's register to find $3198
-Daphne damaged 10 item(s) at the North Side Store while tuning
-Daphne counted 61 item(s) in North Side Store's' inventory
-Daphne found the North Side Store's' inventory is worth $1766
-Daphne ordered 0 item(s) for the North Side Store
-Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 45 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1184
-Shaggy ordered 3 item(s) for the South Side Store
-Daphne sold 9 item(s) at the North Side Store
-Daphne sold $648 worth of items at the North Side Store
-Daphne bought 1 item(s) at the North Side Store
-Shaggy bought 1 item(s) at the South Side Store
-Shaggy sold 11 item(s) at the South Side Store
-Shaggy sold $499 worth of items at the South Side Store
+Scooby arrived at the South Side Store
+Scooby added 0 item(s) to South Side Store's inventory
+Daphne checked the North Side Store's register to find $3053
+Scooby checked the South Side Store's register to find $2782
+Daphne damaged 13 item(s) at the North Side Store while tuning
+Daphne counted 54 item(s) in North Side Store's' inventory
+Daphne found the North Side Store's' inventory is worth $1450
+Daphne ordered 6 item(s) for the North Side Store
+Scooby damaged 10 item(s) at the South Side Store while tuning
+Scooby counted 45 item(s) in South Side Store's' inventory
+Scooby found the South Side Store's' inventory is worth $1162
+Scooby ordered 3 item(s) for the South Side Store
+Daphne sold 3 item(s) at the North Side Store
+Daphne sold $123 worth of items at the North Side Store
+Daphne bought 2 item(s) at the North Side Store
+Scooby sold 3 item(s) at the South Side Store
+Scooby sold $196 worth of items at the South Side Store
+Scooby bought 1 item(s) at the South Side Store
 Daphne damaged 0 item(s) at the North Side Store while cleaning
-Shaggy damaged 0 item(s) at the South Side Store while cleaning
+Scooby damaged 0 item(s) at the South Side Store while cleaning
 Daphne left the North Side Store
-Shaggy left the South Side Store
+Scooby left the South Side Store
