@@ -1,24 +1,24 @@
-Shaggy arrived at the North Side Store
-Shaggy added 6 item(s) to North Side Store's inventory
-Norville arrived at the South Side Store
-Norville added 6 item(s) to South Side Store's inventory
-Shaggy checked the North Side Store's register to find $2521
-Norville checked the South Side Store's register to find $1676
-Shaggy damaged 0 item(s) at the North Side Store while tuning
-Shaggy counted 50 item(s) in North Side Store's' inventory
-Shaggy found the North Side Store's' inventory is worth $1363
-Shaggy ordered 3 item(s) for the North Side Store
-Norville damaged 4 item(s) at the South Side Store while tuning
-Norville counted 58 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1372
-Norville ordered 0 item(s) for the South Side Store
-Shaggy sold 7 item(s) at the North Side Store
-Shaggy sold $359 worth of items at the North Side Store
-Shaggy bought 1 item(s) at the North Side Store
-Norville sold 23 item(s) at the South Side Store
-Norville sold $1414 worth of items at the South Side Store
-Norville bought 4 item(s) at the South Side Store
-Shaggy damaged 0 item(s) at the North Side Store while cleaning
-Norville damaged 0 item(s) at the South Side Store while cleaning
-Shaggy left the North Side Store
-Norville left the South Side Store
+Norville arrived at the North Side Store
+Norville added 0 item(s) to North Side Store's inventory
+Fred arrived at the South Side Store
+Fred added 3 item(s) to South Side Store's inventory
+Norville checked the North Side Store's register to find $2271
+Fred checked the South Side Store's register to find $2387
+Norville damaged 1 item(s) at the North Side Store while tuning
+Norville counted 48 item(s) in North Side Store's' inventory
+Norville found the North Side Store's' inventory is worth $1186
+Norville ordered 0 item(s) for the North Side Store
+Fred damaged 2 item(s) at the South Side Store while tuning
+Fred counted 51 item(s) in South Side Store's' inventory
+Fred found the South Side Store's' inventory is worth $1215
+Fred ordered 3 item(s) for the South Side Store
+Norville sold 15 item(s) at the North Side Store
+Norville sold $1047 worth of items at the North Side Store
+Norville bought 4 item(s) at the North Side Store
+Fred sold 3 item(s) at the South Side Store
+Fred sold $82 worth of items at the South Side Store
+Fred bought 3 item(s) at the South Side Store
+Norville damaged 0 item(s) at the North Side Store while cleaning
+Fred damaged 0 item(s) at the South Side Store while cleaning
+Norville left the North Side Store
+Fred left the South Side Store

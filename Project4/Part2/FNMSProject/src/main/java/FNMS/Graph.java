@@ -29,8 +29,8 @@ import java.awt.Font;
 // https://www.javatips.net/blog/create-line-chart-using-jfreechart
 // https://stackoverflow.com/questions/34836338/how-to-save-current-chart-in-chartpanel-as-png-programmatically
 abstract class Graph implements Subscriber {
-    static final int HEIGHT = 450;
-    static final int WIDTH = 450;
+    static final int HEIGHT = 600;
+    static final int WIDTH = 600;
 
     protected List<Class> interesting_events_ = new ArrayList<Class>(); // class types of events we're interested in
     protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
