@@ -8,7 +8,6 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.title.TextTitle;
-import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -32,7 +31,7 @@ abstract class Graph implements Subscriber {
     static final int HEIGHT = 600;
     static final int WIDTH = 600;
 
-    protected List<Class> interesting_events_ = new ArrayList<Class>(); // class types of events we're interested in
+    protected List<Class<? extends MyEvent>> interesting_events_ = new ArrayList<Class<? extends MyEvent>>(); // class types of events we're interested in
     protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
     protected String[] graphName_ = new String[3];    // 0 for title, 1 for x title, 2 for y title
     protected String fileName_;                       // file to print to
@@ -43,17 +42,20 @@ abstract class Graph implements Subscriber {
     // keep list of events for each day
     final public void Update(MyEvent event) {
         // if day has changed, add data points and clear events
-        for (Class clazz : interesting_events_) {
+        for (Class<? extends MyEvent> clazz : interesting_events_) {
             if (clazz == event.getClass()) {
                 boolean updated = false;
                 // add event if needed, else update whats there
                 for (MyEvent event_ : events_) {
                     if (event_.equals(event)) {
-                        event_.update(event.GetData());
+                        event_.UpdateData(event.GetData());
                         updated = true;
                     }
                 }
-                if (!updated) { events_.add(event); }
+                if (!updated) { 
+                    MyEvent toAdd = event.clone();
+                    events_.add(toAdd); 
+                }
             }
         }
     }
@@ -70,10 +72,6 @@ abstract class Graph implements Subscriber {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void Close() {
-        events_.clear();
     }
 }
 
@@ -128,12 +126,6 @@ abstract class LineGraph extends Graph {
                 series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
             }
         }
-    }
-
-    @Override
-    public void Close() {
-        super.Close();
-        series_.clear();
     }
 }
 

@@ -177,7 +177,7 @@ public class Clerk extends AbstractClerk {
         store_.inventory_.remove(item);
         store_.sold_.add(item);
         // update discontinued items whenever clothing is sold
-        if (item instanceof Clothing) UpdateDiscontinuedStatus(item.itemType_);
+        if (item instanceof Clothing) { UpdateDiscontinuedStatus(item.itemType_); }
         Publish(new ItemsSoldEvent(store_));
         Publish(new SalePriceEvent(salePrice, store_));
         return true;
@@ -234,9 +234,9 @@ public class Clerk extends AbstractClerk {
             } else {
                 // customer does not want to complete transaction after new price
                 Print("The customer still does not want to " + (buying ? "sell" : "buy") + " the " + item.name_);
-                return false;
             }
         }
+        return false;
     }
 
     // look through inventory for an itemtype, return first item found of type

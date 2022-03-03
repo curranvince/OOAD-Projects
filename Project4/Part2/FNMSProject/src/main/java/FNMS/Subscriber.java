@@ -8,7 +8,6 @@ import java.util.*;
 interface Subscriber extends Utility {
     public void Update(MyEvent event);
     public void OutputData();
-    public void Close();
 }
 
 // Logger keeps track of all information for a single day and writes it to its own file
@@ -35,11 +34,24 @@ class Logger implements Subscriber {
         boolean updated = false;
         for (MyEvent event_ : events_) {
             if (event_.equals(event)) {
-                event_.update(event.GetData());
+                event_.UpdateData(event.GetData());
                 updated = true;
+                break;
             }
         }
-        if (!updated) { events_.add(event); }
+        if (!updated) { 
+            MyEvent toAdd = event.clone();
+            events_.add(toAdd); 
+        }
+    }
+
+    // write data to file and clear it
+    public void OutputData() {
+        UpdateWriter();
+        for (MyEvent event_ : events_) {
+            Write(event_.toString());
+        }
+        Close();
     }
 
     // make sure we write to appropriate file
@@ -69,17 +81,9 @@ class Logger implements Subscriber {
         } 
     }
 
-    // write data to file and clear it
-    public void OutputData() {
-        UpdateWriter();
-        for (MyEvent event_ : events_) {
-            Write(event_.toString());
-        }
-        events_.clear();
-    }
-
     // close the writer at end of each run
-    public void Close() {
+    private void Close() {
+        events_.clear();
         try {
             writer_.close();
         } catch (IOException e) {
@@ -122,7 +126,4 @@ class Tracker implements Subscriber {
         }
         Print(""); //skips line
     }
-
-    // clear data table on close
-    public void Close() { stats_ = null; }
 }
