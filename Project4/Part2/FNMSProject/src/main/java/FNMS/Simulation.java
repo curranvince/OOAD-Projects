@@ -1,7 +1,6 @@
 package FNMS;
 
 import java.util.*;
-import java.io.*;
 
 public class Simulation implements Utility {
     static int last_day_;
@@ -11,11 +10,51 @@ public class Simulation implements Utility {
     private List<Store> stores_ = new ArrayList<Store>();
     private List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
+    private SubMan sub_man_ = new SubMan();
+
+    class SubMan {
+        private List<Subscriber> subs = new ArrayList<Subscriber>();
+        private List<Graph> graphs = new ArrayList<Graph>();
+
+        public SubMan() {
+            subs.add(Tracker.getInstance());
+            subs.add(Logger.getInstance());
+            graphs.add(MoneyGraph.getInstance());
+            graphs.add(ItemGraph.getInstance());
+            graphs.add(ComparisonGraph.getInstance());
+            subs.addAll(graphs);
+        }
+
+        public void SubscribeAll(List<? extends Publisher> pubs) {
+            for (Publisher pub : pubs) {
+                for (Subscriber sub : subs) {
+                    pub.Subscribe(sub);
+                }
+            }
+        }
+
+        public void HandleEOD() {
+            Tracker.getInstance().OutputData();
+            Logger.getInstance().OutputData();
+            for (Graph graph : graphs) {
+                graph.UpdateData();
+            }
+        }
+
+        public void WriteGraphs() {
+            for (Graph graph : graphs) {
+                graph.OutputData();
+            }
+        }
+    }
 
     // generate stores and clerks on simulation instantiation
     public Simulation() {
         GenerateStores();
         GenerateClerks(); 
+        sub_man_.SubscribeAll(stores_);
+        sub_man_.SubscribeAll(clerks_);
+        SetDaysToRun();
     }
 
     private void SetDaysToRun() {
@@ -23,23 +62,10 @@ public class Simulation implements Utility {
         last_day_ = GetIntFromUser(10,30);
     }
 
-    private int GetClerkID(String name) {
-        for (int i = 0; i < clerks_.size(); i++) {
-            if (clerks_.get(i).GetName() == name) return i;
-        }
-        return -1;
-    }
-    
     private void GenerateStores() {
         // make north and south stores with appropriate kit factories
         stores_.add(new Store("North Side Store", new NorthKitFactory()));
         stores_.add(new Store("South Side Store", new SouthKitFactory()));
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Subscribe(Tracker.getInstance());
-            stores_.get(i).Subscribe(MoneyGraph.getInstance());
-            stores_.get(i).Subscribe(ItemGraph.getInstance());
-            stores_.get(i).Subscribe(Logger.getInstance());
-        }
     }
 
     private void GenerateClerks() {
@@ -50,72 +76,52 @@ public class Simulation implements Utility {
         clerks_.add(new Clerk("Fred", 15, new ManualTune()));
         clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
         clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
-        for (int i = 0; i < clerks_.size(); i++) {
-            clerks_.get(i).Subscribe(Tracker.getInstance());
-            clerks_.get(i).Subscribe(MoneyGraph.getInstance());
-            clerks_.get(i).Subscribe(ItemGraph.getInstance());
-            clerks_.get(i).Subscribe(Logger.getInstance());
-        }
     }
-
+    
     public void RunSimulation() {
-        SetDaysToRun();
-        Print(" *** BEGINNING SIMULATION *** \n");
+        Print(" *** SIMULATION BEGINNING *** \n");
         // run however many days are input
         for (int i = 0; i < last_day_; i++) {
-            // iterate day and create daily logger
+            // iterate day and run a day in the simulation
             current_day_++;
             Print(" ***SIMULATION : DAY " + current_day_ + " BEGINNING***");
-            // run a day
             SimDay();
-            //tracker.ShowData();
             Print(" ***SIMULATION : DAY " + current_day_ + " HAS ENDED***\n");
         }  
         DisplayResults();
+        Print("\n *** SIMULATION COMPLETE *** ");
     }
 
     private void SimDay() {
-        // open new logger and subscribe everyone
-        //OpenLogger();
-        // open or close stores depending on day
+        // check if its sunday
         if (Simulation.current_day_ % 7 != 0) { 
+            // if not sunday assign clerks and queue customers
             AssignClerks();
             if (current_day_ != last_day_) QueueCustomers();
-            // no loop because we want to alternate between stores
-            stores_.get(0).GetActiveClerk().ArriveAtStore();
-            stores_.get(1).GetActiveClerk().ArriveAtStore();
-            if (!stores_.get(0).GetActiveClerk().CheckRegister()) stores_.get(0).GetActiveClerk().GoToBank();
-            if (!stores_.get(1).GetActiveClerk().CheckRegister()) stores_.get(1).GetActiveClerk().GoToBank();
-            stores_.get(0).GetActiveClerk().PlaceOrders(stores_.get(0).GetActiveClerk().DoInventory());
-            stores_.get(1).GetActiveClerk().PlaceOrders(stores_.get(1).GetActiveClerk().DoInventory());
+            // interleave commands between stores
+            // clerks arrive
+            for (Store store : stores_) store.GetActiveClerk().ArriveAtStore();
+            // clerks check register and go to bank if necessary
+            for (Store store : stores_) if (!store.GetActiveClerk().CheckRegister()) store.GetActiveClerk().GoToBank();
+            // clerks do inventory and place orders
+            for (Store store : stores_) store.GetActiveClerk().PlaceOrders(store.GetActiveClerk().DoInventory());
+            // let user go on last day, else go through regular customer line
             if (current_day_ == last_day_) {
                 User user = new User(this);
                 user.MakeRequests();
             } else {
-                stores_.get(0).Opens();
-                stores_.get(1).Opens();
+                for (Store store : stores_) store.Opens();
             }
-            stores_.get(0).GetActiveClerk().CleanStore();
-            stores_.get(1).GetActiveClerk().CleanStore();
-            stores_.get(0).GetActiveClerk().CloseStore();
-            stores_.get(1).GetActiveClerk().CloseStore();
-            Logger.getInstance().OutputData();
+            // have clerks clean and close stores
+            for (Store store : stores_) store.GetActiveClerk().CleanStore();
+            for (Store store : stores_) store.GetActiveClerk().CloseStore();
         } else { 
+            // on sundays reset all the clerks days worked and announce the stores are closed
             ResetDaysWorked();
-            for (int i = 0; i < stores_.size(); i++) {
-                stores_.get(i).ClosedToday();
-                Logger.getInstance().OutputData();
-            }
+            for (Store store : stores_) store.ClosedToday();
         }
-        ResetLogger();
-        /*
-        // show tracker at end of each day
-        Tracker.getInstance().OutputData();
-        // update graphs
-
-        // have stores unsubscribe from logger and close it
-        CloseLogger();
-        */
+        // reset logger, display tracker, etc. 
+        sub_man_.HandleEOD();
     }
 
     // pick clerks and assign them to store
@@ -177,36 +183,6 @@ public class Simulation implements Utility {
         }
     }
 
-    // create daily logger and subscribe stores to it
-    /*
-    private void OpenLogger() {
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Subscribe(Logger.getInstance());
-        }
-        for (int i = 0; i < clerks_.size(); i++) {
-            clerks_.get(i).Subscribe(Logger.getInstance());
-        }
-    }
-    */
-
-    private void ResetLogger() {
-        Tracker.getInstance().OutputData();
-        Logger.getInstance().Close();
-        MoneyGraph.getInstance().UpdateSeries();
-        ItemGraph.getInstance().UpdateSeries();
-    }
-
-    // close daily logger by unsubscribing everyone and clearing its data
-    private void CloseLogger() {
-        for (int i = 0; i < stores_.size(); i++) {
-            stores_.get(i).Unsubscribe(Logger.getInstance());
-        }
-        for (int i = 0; i < clerks_.size(); i++) {
-            clerks_.get(i).Unsubscribe(Logger.getInstance());
-        }
-        Logger.getInstance().Close();
-    }
-
     // reset all clerks days worked
     private void ResetDaysWorked() {
         for (int i = 0; i < clerks_.size(); i++) {
@@ -216,9 +192,7 @@ public class Simulation implements Utility {
 
     // display simulation results
     private void DisplayResults() {
-        Print(" *** SIMULATION COMPLETE ***  OUTPUTTING RESULTS ***");
-        MoneyGraph.getInstance().OutputData();
-        ItemGraph.getInstance().OutputData();
+        Print(" *** OUTPUTTING SIMULATION RESULTS ***");
         for (int i = 0; i < stores_.size(); i++) {
             Print("Results for " + stores_.get(i).getName());
             // display inventory & its value
@@ -228,10 +202,9 @@ public class Simulation implements Utility {
             // display money stats
             Print(stores_.get(i).getName() + " has $" + stores_.get(i).register_.GetAmount() + " in the register");
             Print("$" + stores_.get(i).getWithdrawn() + " was withdrawn from the bank");
-            stores_.get(i).Unsubscribe(Tracker.getInstance());
         }
-        Tracker.getInstance().Close();
-        Print("\n *** SIMULATION COMPLETE *** ");
+        // write graphs to files
+        sub_man_.WriteGraphs();
     }
     
     // return a store based off user input (so user can switch stores)

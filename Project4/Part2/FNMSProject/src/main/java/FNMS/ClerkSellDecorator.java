@@ -16,7 +16,6 @@ abstract class ClerkDecorator extends AbstractClerk {
     }
     // Publisher methods
     public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
-    public void Unsubscribe(Subscriber unsubscriber) { decoratedStaff_.Unsubscribe(unsubscriber); }
     public void Publish(MyEvent event) { decoratedStaff_.Publish(event); }
     // Staff methods
     public String GetName() { return decoratedStaff_.GetName(); }
@@ -46,6 +45,7 @@ class ClerkSellDecorator extends ClerkDecorator {
     public ClerkSellDecorator(AbstractClerk clerk) { super(clerk); }
 
     // decorated sell method to sell accessories when a stringed instrument is sold
+    @Override
     public boolean TryTransaction(Customer customer, Item item, boolean buying) {
         boolean result = super.TryTransaction(customer, item, buying);
         // if we just sold a stringed instrument
@@ -96,10 +96,12 @@ class ClerkSellDecorator extends ClerkDecorator {
                             Item toSell = super.CheckForItem(types[i]);
                             if (toSell != null) super.Sell(toSell, toSell.list_price_);
                         }
+                    } else {
+                        Print("The customer does not want to buy " + types[i].name());
                     }
                 }
             }
         }
-        return true;
+        return result;
     }
 }

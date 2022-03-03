@@ -8,11 +8,8 @@ import FNMS.Item.ItemType;
 // They can also publish information to their subscribers
 abstract class Publisher implements Utility {
     protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
-    protected LinkedList<Customer> customers_ = new LinkedList<Customer>();
-
+    
     public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
-    public void Unsubscribe(Subscriber unsubscriber) { subscribers_.remove(unsubscriber); }
-    public void UnsubscribeAll() { subscribers_ = new ArrayList<Subscriber>(); }
     
     protected void Publish(MyEvent event) { for (Subscriber subscriber : subscribers_) subscriber.Update(event); }
 }
@@ -21,7 +18,8 @@ class Store extends Publisher {
     private String name_;
     private int total_withdrawn_ = 0;
     private AbstractClerk activeClerk_;
-   
+    private LinkedList<Customer> customers_ = new LinkedList<Customer>();
+
     public KitFactory kitFactory_;
     public CashRegister register_ = new CashRegister();
     public List<Item> inventory_ = new ArrayList<Item>();
@@ -83,8 +81,6 @@ class Store extends Publisher {
     // store opens for the day
     public void Opens() {
         Print(activeClerk_.GetName() + " lets customers into the " + name_);
-        int itemssold, itemsbought;
-        itemssold = itemsbought = 0;
         while (!customers_.isEmpty()) { // https://stackoverflow.com/questions/57715470/iterating-a-list-until-the-list-is-empty
             Iterator<Customer> it = customers_.listIterator();
             while (it.hasNext()) {
