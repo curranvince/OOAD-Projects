@@ -1,6 +1,6 @@
 package FNMS;
 
-abstract class MyEvent implements Utility, Cloneable {
+abstract class MyEvent implements Cloneable {
     protected int data_;
     protected Store store_;
     protected String name_;
