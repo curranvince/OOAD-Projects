@@ -17,7 +17,6 @@ import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.Ellipse2D;
 import java.awt.Color;
@@ -30,35 +29,11 @@ import java.awt.Font;
 abstract class Graph implements Subscriber {
     static final int HEIGHT = 600;
     static final int WIDTH = 600;
-
-    protected List<Class<? extends MyEvent>> interesting_events_ = new ArrayList<Class<? extends MyEvent>>(); // class types of events we're interested in
-    protected LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();  // current list of events
+    
     protected String[] graphName_ = new String[3];    // 0 for title, 1 for x title, 2 for y title
     protected String fileName_;                       // file to print to
 
-    abstract public void UpdateData();
     abstract protected JFreeChart CreateGraph();
-
-    // keep list of events for each day
-    final public void Update(MyEvent event) {
-        // if day has changed, add data points and clear events
-        for (Class<? extends MyEvent> clazz : interesting_events_) {
-            if (clazz == event.getClass()) {
-                boolean updated = false;
-                // add event if needed, else update whats there
-                for (MyEvent event_ : events_) {
-                    if (event_.equals(event)) {
-                        event_.UpdateData(event.GetData());
-                        updated = true;
-                    }
-                }
-                if (!updated) { 
-                    MyEvent toAdd = event.clone();
-                    events_.add(toAdd); 
-                }
-            }
-        }
-    }
 
     // output graph as .png
     final public void OutputData() {
@@ -119,8 +94,8 @@ abstract class LineGraph extends Graph {
         plot.setDomainGridlinePaint(Color.BLACK);
     }
 
+    // // fill missing data for sundays when appropriate
     protected void NormalizeData() {
-        // fill in data for sundays with previous days money
         for (int i = 2; i < Simulation.last_day_; i++) {
             if (i % 7 == 0) {
                 series_.get(0).update(i, series_.get(0).getY(series_.get(0).indexOf(i-1)));
@@ -130,15 +105,12 @@ abstract class LineGraph extends Graph {
 }
 
 class MoneyGraph extends LineGraph {
-    // eagerly instantiated singleton
-    private static final MoneyGraph instance = new MoneyGraph();
+    private static final MoneyGraph instance = new MoneyGraph(); // eagerly instantiated singleton
     public static MoneyGraph getInstance() { return instance; }
     
     private MoneyGraph() {
         series_.add(new XYSeries("Register"));
         series_.add(new XYSeries("Item Sales"));
-        interesting_events_.add(EODRegisterEvent.class);
-        interesting_events_.add(SalePriceEvent.class);
         fileName_ = "MoneyGraph";
         graphName_[0] = "Money Graph (Both Stores)";
         graphName_[1] = "Days";
@@ -158,24 +130,17 @@ class MoneyGraph extends LineGraph {
         }
         series_.get(0).add(Simulation.current_day_, money);
         series_.get(1).add(Simulation.current_day_, sales);
-        // clear events to be ready for next day
-        events_.clear();
     }
 }
 
 class ItemGraph extends LineGraph {
-    // eagerly instantiated singleton
-    private static final ItemGraph instance = new ItemGraph();
+    private static final ItemGraph instance = new ItemGraph(); // eagerly instantiated singleton
     public static ItemGraph getInstance() { return instance; }
 
     private ItemGraph() {
         series_.add(new XYSeries("In Inventory"));
         series_.add(new XYSeries("Damaged"));
         series_.add(new XYSeries("Sold"));
-        interesting_events_.add(InventoryEvent.class);
-        interesting_events_.add(BrokeTuningEvent.class);
-        interesting_events_.add(BrokeCleaningEvent.class);
-        interesting_events_.add(ItemsSoldEvent.class);
         fileName_ = "ItemGraph";
         graphName_[0] = "Item Graph (Both Stores)";
         graphName_[1] = "Days";
@@ -198,14 +163,11 @@ class ItemGraph extends LineGraph {
         series_.get(0).add(Simulation.current_day_, inventory);
         series_.get(1).add(Simulation.current_day_, damaged);
         series_.get(2).add(Simulation.current_day_, sold);
-        // clear events to be ready for next day
-        events_.clear();
     }
 }
 
 class ComparisonGraph extends LineGraph {
-    // eagerly instantiated singleton
-    private static final ComparisonGraph instance = new ComparisonGraph();
+    private static final ComparisonGraph instance = new ComparisonGraph(); // eagerly instantiated singleton
     public static ComparisonGraph getInstance() { return instance; }
 
     private ComparisonGraph() {
@@ -213,8 +175,6 @@ class ComparisonGraph extends LineGraph {
         series_.add(new XYSeries("North Sales"));
         series_.add(new XYSeries("South Register"));
         series_.add(new XYSeries("South Sales"));
-        interesting_events_.add(EODRegisterEvent.class);
-        interesting_events_.add(SalePriceEvent.class);
         fileName_ = "ComparisonGraph";
         graphName_[0] = "Comparison Graph";
         graphName_[1] = "Days";
@@ -244,8 +204,6 @@ class ComparisonGraph extends LineGraph {
         series_.get(1).add(Simulation.current_day_, n_sales);
         series_.get(2).add(Simulation.current_day_, s_mon);
         series_.get(3).add(Simulation.current_day_, s_sales);
-        // clear events to be ready for next day
-        events_.clear();
     }
 
     @Override
@@ -268,11 +226,13 @@ class ComparisonGraph extends LineGraph {
         // set color and shape to distinguish between stores
         for (int i = 0; i < 2; i++) {
             renderer.setSeriesPaint(i, Color.RED);
-            renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
+            if (i == 0) renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
+            else renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
         }
         for (int i = 2; i < 4; i++) {
             renderer.setSeriesPaint(i, Color.BLUE);
-            renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
+            if (i == 2) renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
+            else renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
         }
         plot.setRenderer(renderer);
     }

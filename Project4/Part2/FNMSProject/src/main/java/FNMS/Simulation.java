@@ -12,38 +12,27 @@ public class Simulation implements Utility {
     private List<Integer> unavailable_clerks_ = new ArrayList<Integer>();
     private SubMan sub_man_ = new SubMan();
 
-    class SubMan {
+    class SubMan { // easy access to all subscribers
         private List<Subscriber> subs = new ArrayList<Subscriber>();
-        private List<Graph> graphs = new ArrayList<Graph>();
 
         public SubMan() {
             subs.add(Tracker.getInstance());
             subs.add(Logger.getInstance());
-            graphs.add(MoneyGraph.getInstance());
-            graphs.add(ItemGraph.getInstance());
-            graphs.add(ComparisonGraph.getInstance());
-            subs.addAll(graphs);
-        }
-
-        public void SubscribeAll(List<? extends Publisher> pubs) {
-            for (Publisher pub : pubs) {
-                for (Subscriber sub : subs) {
-                    pub.Subscribe(sub);
-                }
-            }
+            subs.add(MoneyGraph.getInstance());
+            subs.add(ItemGraph.getInstance());
+            subs.add(ComparisonGraph.getInstance());
         }
 
         public void HandleEOD() {
-            Tracker.getInstance().OutputData();
-            Logger.getInstance().OutputData();
-            for (Graph graph : graphs) {
-                graph.UpdateData();
+            for (Subscriber sub : subs) {
+                sub.UpdateData();
             }
+            Subscriber.ClearEvents();
         }
 
-        public void WriteGraphs() {
-            for (Graph graph : graphs) {
-                graph.OutputData();
+        public void HandleEOS() {
+            for (Subscriber sub : subs) {
+                sub.OutputData();
             }
         }
     }
@@ -52,24 +41,23 @@ public class Simulation implements Utility {
     public Simulation() {
         GenerateStores();
         GenerateClerks(); 
-        sub_man_.SubscribeAll(stores_);
-        sub_man_.SubscribeAll(clerks_);
         SetDaysToRun();
     }
 
+    // allow user to input # of days to run simulation
     private void SetDaysToRun() {
         Print("How many days would you like to run the simulation? (10-30)");
         last_day_ = GetIntFromUser(10,30);
     }
 
+    // make north and south stores with appropriate kit factories
     private void GenerateStores() {
-        // make north and south stores with appropriate kit factories
         stores_.add(new Store("North Side Store", new NorthKitFactory()));
         stores_.add(new Store("South Side Store", new SouthKitFactory()));
     }
 
+    // make custom set of clerks, can choose tuning algos, break chances, and decoration (extra sales)
     private void GenerateClerks() {
-        // make decorated clerks with break chances & tuning algorithms
         clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
         clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new HaphazardTune())));
         clerks_.add(new ClerkSellDecorator(new Clerk("Norville", 15, new ManualTune())));
@@ -78,9 +66,9 @@ public class Simulation implements Utility {
         clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
     }
     
+    // run full simulation including outputting results
     public void RunSimulation() {
         Print(" *** SIMULATION BEGINNING *** \n");
-        // run however many days are input
         for (int i = 0; i < last_day_; i++) {
             // iterate day and run a day in the simulation
             current_day_++;
@@ -97,7 +85,7 @@ public class Simulation implements Utility {
         if (Simulation.current_day_ % 7 != 0) { 
             // if not sunday assign clerks and queue customers
             AssignClerks();
-            if (current_day_ != last_day_) QueueCustomers();
+            if (current_day_ != last_day_) QueueCustomers(); // dont need customers on last dat, making user is handled later
             // interleave commands between stores
             // clerks arrive
             for (Store store : stores_) store.GetActiveClerk().ArriveAtStore();
@@ -105,7 +93,7 @@ public class Simulation implements Utility {
             for (Store store : stores_) if (!store.GetActiveClerk().CheckRegister()) store.GetActiveClerk().GoToBank();
             // clerks do inventory and place orders
             for (Store store : stores_) store.GetActiveClerk().PlaceOrders(store.GetActiveClerk().DoInventory());
-            // let user go on last day, else go through regular customer line
+            // let user go on last day, else go through standard customer queue
             if (current_day_ == last_day_) {
                 User user = new User(this);
                 user.MakeRequests();
@@ -120,8 +108,7 @@ public class Simulation implements Utility {
             ResetDaysWorked();
             for (Store store : stores_) store.ClosedToday();
         }
-        // reset logger, display tracker, etc. 
-        sub_man_.HandleEOD();
+        sub_man_.HandleEOD(); // reset logger, display tracker, etc. 
     }
 
     // pick clerks and assign them to store
@@ -176,10 +163,9 @@ public class Simulation implements Utility {
             // create buyers and sellers
             for (int j = 0; j < buyers; j++) { toServe.add(new Buyer(stores_.get(i).GetActiveClerk())); }
             for (int k = 0; k < sellers; k++) { toServe.add(new Seller(stores_.get(i).GetActiveClerk())); }
-            // shuffle vector so we get customers in random order
-            Collections.shuffle(toServe);
-            stores_.get(i).QueueCustomers(toServe);
-            toServe.clear();
+            Collections.shuffle(toServe); // shuffle vector so we get customers in random order
+            stores_.get(i).QueueCustomers(toServe); // queue customers at store
+            toServe.clear(); // clear list so we can assign different customers to next store
         }
     }
 
@@ -203,8 +189,7 @@ public class Simulation implements Utility {
             Print(stores_.get(i).getName() + " has $" + stores_.get(i).register_.GetAmount() + " in the register");
             Print("$" + stores_.get(i).getWithdrawn() + " was withdrawn from the bank");
         }
-        // write graphs to files
-        sub_man_.WriteGraphs();
+        sub_man_.HandleEOS(); // write graphs to files
     }
     
     // return a store based off user input (so user can switch stores)

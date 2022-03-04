@@ -1,24 +1,24 @@
-Scooby arrived at the North Side Store
-Scooby added 3 item(s) to North Side Store's inventory
-Shaggy arrived at the South Side Store
-Shaggy added 3 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $1883
-Shaggy checked the South Side Store's register to find $2152
-Scooby damaged 15 item(s) at the North Side Store while tuning
-Scooby counted 53 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $1539
-Scooby ordered 0 item(s) for the North Side Store
-Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 42 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1047
-Shaggy ordered 3 item(s) for the South Side Store
-Scooby sold 6 item(s) at the North Side Store
-Scooby sold $393 worth of items at the North Side Store
-Scooby bought 2 item(s) at the North Side Store
-Shaggy bought 4 item(s) at the South Side Store
-Shaggy sold 5 item(s) at the South Side Store
-Shaggy sold $144 worth of items at the South Side Store
-Scooby damaged 0 item(s) at the North Side Store while cleaning
-Shaggy damaged 0 item(s) at the South Side Store while cleaning
-Scooby left the North Side Store
-Shaggy left the South Side Store
+Shaggy arrived at the North Side Store
+Shaggy added 0 item(s) to North Side Store's inventory
+Velma arrived at the South Side Store
+Velma added 3 item(s) to South Side Store's inventory
+Shaggy checked the North Side Store's register to find $1857
+Velma checked the South Side Store's register to find $2629
+Shaggy damaged 0 item(s) at the North Side Store while tuning
+Shaggy counted 56 item(s) in North Side Store's' inventory
+Shaggy found the North Side Store's' inventory is worth $1425
+Shaggy ordered 0 item(s) for the North Side Store
+Velma damaged 0 item(s) at the South Side Store while tuning
+Velma counted 51 item(s) in South Side Store's' inventory
+Velma found the South Side Store's' inventory is worth $1320
+Velma ordered 3 item(s) for the South Side Store
+Shaggy bought 2 item(s) at the North Side Store
+Shaggy sold 4 item(s) at the North Side Store
+Shaggy sold $105 worth of items at the North Side Store
+Velma sold 8 item(s) at the South Side Store
+Velma sold $292 worth of items at the South Side Store
+Velma bought 4 item(s) at the South Side Store
+Shaggy damaged 0 item(s) at the North Side Store while cleaning
+Velma damaged 0 item(s) at the South Side Store while cleaning
+Shaggy left the North Side Store
+Velma left the South Side Store

@@ -15,7 +15,6 @@ abstract class ClerkDecorator extends AbstractClerk {
         this.decoratedStaff_ = decoratedStaff; 
     }
     // Publisher methods
-    public void Subscribe(Subscriber subscriber) {  decoratedStaff_.Subscribe(subscriber); }
     public void Publish(MyEvent event) { decoratedStaff_.Publish(event); }
     // Staff methods
     public String GetName() { return decoratedStaff_.GetName(); }
