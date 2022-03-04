@@ -277,7 +277,8 @@ class AveragesGraph extends BarGraph {
         List<String> names = Tracker.getInstance().GetNames();
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (int i = 0; i < names.size(); i++) {
-            int days_worked = (data[i][0] == 0) ? data[i][0] : 1;
+            int days_worked = data[i][0];
+            if (days_worked == 0) days_worked++;
             int avg_items_sold = (int)data[i][1]/days_worked;
             int avg_items_bought = (int)data[i][2]/days_worked;
             int avg_items_broke = (int)data[i][3]/days_worked;
