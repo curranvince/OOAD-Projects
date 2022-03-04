@@ -119,9 +119,7 @@ class Tracker implements Subscriber {
 
     private void UpdateStats() {
         for (MyEvent event : events_) {
-            Print("Tracker checking event");
             if (event instanceof CreatedClerkEvent) {
-                Print("Found out about clerk creation");
                 if (!clerk_names_.contains(event.GetName())) clerk_names_.add(event.GetName());
             } else {
                 if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
