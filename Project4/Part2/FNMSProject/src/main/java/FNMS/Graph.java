@@ -8,6 +8,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.title.TextTitle;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -235,5 +236,55 @@ class ComparisonGraph extends LineGraph {
             else renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
         }
         plot.setRenderer(renderer);
+    }
+}
+
+abstract class BarGraph extends Graph {
+    abstract protected DefaultCategoryDataset CreateDataSet();
+
+    // create graph from all collected data
+    protected JFreeChart CreateGraph() {
+        // create chart
+        JFreeChart chart = ChartFactory.createBarChart(
+            graphName_[0],
+            graphName_[1],
+            graphName_[2],
+            CreateDataSet(),
+            PlotOrientation.VERTICAL,
+            true,
+            true,
+            false
+        );
+        return chart;
+    }
+}
+
+class AveragesGraph extends BarGraph {
+    private static final AveragesGraph instance = new AveragesGraph(); // eagerly instantiated singleton
+    public static AveragesGraph getInstance() { return instance; }
+
+    private AveragesGraph() {
+        fileName_ = "AveragesGraph";
+        graphName_[0] = "Clerk Averages";
+        graphName_[1] = "Clerk";
+        graphName_[2] = "Avg. # of Items";
+    }
+
+    public void UpdateData() {} // no need to update data since we use the trackers
+
+    protected DefaultCategoryDataset CreateDataSet() {
+        int[][] data = Tracker.getInstance().GetData();
+        List<String> names = Tracker.getInstance().GetNames();
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for (int i = 0; i < names.size(); i++) {
+            int days_worked = (data[i][0] == 0) ? data[i][0] : 1;
+            int avg_items_sold = (int)data[i][1]/days_worked;
+            int avg_items_bought = (int)data[i][2]/days_worked;
+            int avg_items_broke = (int)data[i][3]/days_worked;
+            dataset.addValue(avg_items_sold, names.get(i), "Items Sold");
+            dataset.addValue(avg_items_bought, names.get(i), "Items Bought");
+            dataset.addValue(avg_items_broke, names.get(i), "Items Broke");
+        }
+        return dataset;
     }
 }

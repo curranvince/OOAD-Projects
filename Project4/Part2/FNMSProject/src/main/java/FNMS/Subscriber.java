@@ -105,7 +105,9 @@ class Tracker implements Subscriber {
 
     private Tracker() {};
     public static Tracker getInstance() { return instance; }
-
+    public int[][] GetData() { return stats_; }
+    public List<String> GetNames() { return clerk_names_; }
+    
     // for data we're interested in, add to the data table
     public void UpdateData() {
         UpdateStats();

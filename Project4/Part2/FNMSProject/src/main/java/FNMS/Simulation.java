@@ -21,6 +21,7 @@ public class Simulation implements Utility {
             subs.add(MoneyGraph.getInstance());
             subs.add(ItemGraph.getInstance());
             subs.add(ComparisonGraph.getInstance());
+            subs.add(AveragesGraph.getInstance());
         }
 
         public void HandleEOD() {

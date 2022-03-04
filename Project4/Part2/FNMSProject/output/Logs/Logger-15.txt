@@ -1,24 +1,24 @@
-Scooby arrived at the North Side Store
-Scooby added 9 item(s) to North Side Store's inventory
-Shaggy arrived at the South Side Store
-Shaggy added 3 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $2364
-Shaggy checked the South Side Store's register to find $3013
-Scooby damaged 8 item(s) at the North Side Store while tuning
-Scooby counted 51 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $1435
-Scooby ordered 0 item(s) for the North Side Store
-Shaggy damaged 0 item(s) at the South Side Store while tuning
-Shaggy counted 46 item(s) in South Side Store's' inventory
-Shaggy found the South Side Store's' inventory is worth $1104
-Shaggy ordered 0 item(s) for the South Side Store
-Scooby sold 3 item(s) at the North Side Store
-Scooby sold $143 worth of items at the North Side Store
-Scooby bought 3 item(s) at the North Side Store
-Shaggy bought 3 item(s) at the South Side Store
-Shaggy sold 6 item(s) at the South Side Store
-Shaggy sold $243 worth of items at the South Side Store
-Scooby damaged 0 item(s) at the North Side Store while cleaning
-Shaggy damaged 0 item(s) at the South Side Store while cleaning
-Scooby left the North Side Store
-Shaggy left the South Side Store
+Velma arrived at the North Side Store
+Velma added 9 item(s) to North Side Store's inventory
+Daphne arrived at the South Side Store
+Daphne added 3 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $3069
+Daphne checked the South Side Store's register to find $2781
+Velma damaged 0 item(s) at the North Side Store while tuning
+Velma counted 42 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1073
+Velma ordered 3 item(s) for the North Side Store
+Daphne damaged 10 item(s) at the South Side Store while tuning
+Daphne counted 48 item(s) in South Side Store's' inventory
+Daphne found the South Side Store's' inventory is worth $1275
+Daphne ordered 3 item(s) for the South Side Store
+Velma sold 7 item(s) at the North Side Store
+Velma sold $255 worth of items at the North Side Store
+Velma bought 3 item(s) at the North Side Store
+Daphne sold 7 item(s) at the South Side Store
+Daphne sold $380 worth of items at the South Side Store
+Daphne bought 3 item(s) at the South Side Store
+Velma damaged 0 item(s) at the North Side Store while cleaning
+Daphne damaged 0 item(s) at the South Side Store while cleaning
+Velma left the North Side Store
+Daphne left the South Side Store
