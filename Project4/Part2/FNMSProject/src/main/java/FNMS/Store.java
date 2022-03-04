@@ -7,11 +7,7 @@ import FNMS.Item.ItemType;
 // Publishers have a list of subscribers which can be subscribed/unsubscribed to
 // They can also publish information to their subscribers
 abstract class Publisher implements Utility {
-    protected List<Subscriber> subscribers_ = new ArrayList<Subscriber>();
-    
-    public void Subscribe(Subscriber subscriber) { subscribers_.add(subscriber); } 
-    
-    protected void Publish(MyEvent event) { for (Subscriber subscriber : subscribers_) subscriber.Update(event); }
+    protected void Publish(MyEvent event) { Subscriber.Update(event); }
 }
 
 class Store extends Publisher {
@@ -30,7 +26,7 @@ class Store extends Publisher {
     // CashRegister class to handle the Stores $
     // Good example of Cohesion because the class has
     // one specifc purpose (handling money/doing simple math)
-    public class CashRegister {
+    class CashRegister {
         private int money_;
 
         CashRegister() { money_ = 0; }
@@ -81,6 +77,7 @@ class Store extends Publisher {
     // store opens for the day
     public void Opens() {
         Print(activeClerk_.GetName() + " lets customers into the " + name_);
+        // loop through queue of customers allowing them all to make requests
         while (!customers_.isEmpty()) { // https://stackoverflow.com/questions/57715470/iterating-a-list-until-the-list-is-empty
             Iterator<Customer> it = customers_.listIterator();
             while (it.hasNext()) {
@@ -93,7 +90,7 @@ class Store extends Publisher {
         Print("The line at the " + name_ + " has finally seceded");
     }
 
-    // announce that the store is closed
+    // announce that the store is closed (for Sunday)
     public void ClosedToday() {
         Print("Today is Day " + Simulation.current_day_ + ", which is Sunday, so the store is closed");
         Publish(new ClosedEvent(this));

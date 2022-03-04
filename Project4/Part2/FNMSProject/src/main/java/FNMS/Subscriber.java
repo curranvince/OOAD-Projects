@@ -6,8 +6,24 @@ import java.util.*;
 // These Subscribers are an example of the Observer pattern
 // They both also use the Singleton pattern
 interface Subscriber extends Utility {
-    public void Update(MyEvent event);
-    public void OutputData();
+    static LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();
+    
+    abstract public void UpdateData(); // called at end of each day
+    abstract public void OutputData(); // called at end of simulation
+
+    static void Update(MyEvent event) {
+        boolean updated = false;
+        for (MyEvent event_ : events_) {
+            if (event_.equals(event)) {
+                event_.UpdateData(event.GetData());
+                updated = true;
+                break;
+            }
+        }
+        if (!updated) { events_.add(event); }
+    }
+
+    static void ClearEvents() { events_.clear(); } 
 }
 
 // Logger keeps track of all information for a single day and writes it to its own file
@@ -15,7 +31,7 @@ class Logger implements Subscriber {
     // uses lazy instantiation
     private static Logger instance; 
     // current list of events and file writer
-    private LinkedList<MyEvent> events_ = new LinkedList<MyEvent>();
+    
     private FileWriter writer_;
     // what day logger thinks it is
     private int current_ = 0;
@@ -28,28 +44,13 @@ class Logger implements Subscriber {
         return instance;
     }
 
-    // update data
-    public void Update(MyEvent event) {
-        if (event instanceof CreatedClerkEvent || event instanceof EODRegisterEvent) return;
-        boolean updated = false;
-        for (MyEvent event_ : events_) {
-            if (event_.equals(event)) {
-                event_.UpdateData(event.GetData());
-                updated = true;
-                break;
-            }
-        }
-        if (!updated) { 
-            MyEvent toAdd = event.clone();
-            events_.add(toAdd); 
-        }
-    }
-
-    // write data to file and clear it
-    public void OutputData() {
+    // write data to file and close writer at end of each day
+    public void UpdateData() {
         UpdateWriter();
-        for (MyEvent event_ : events_) {
-            Write(event_.toString());
+        for (MyEvent event : events_) {
+            if (!(event instanceof CreatedClerkEvent || event instanceof EODRegisterEvent)) {
+                Write(event.toString());
+            }   
         }
         Close();
     }
@@ -81,15 +82,16 @@ class Logger implements Subscriber {
         } 
     }
 
-    // close the writer at end of each run
+    // close the writer
     private void Close() {
-        events_.clear();
         try {
             writer_.close();
         } catch (IOException e) {
             Print("Error: Failed to close Loggers file writer");
         }
     }
+
+    public void OutputData() {} // do nothing at end of sim
 }
 
 // Tracker exists for an entire simulation and 
@@ -103,22 +105,12 @@ class Tracker implements Subscriber {
 
     private Tracker() {};
     public static Tracker getInstance() { return instance; }
-
-    // for data we're interested in, add to the data table
-    public void Update(MyEvent event) {
-        if (event instanceof CreatedClerkEvent) {
-            if (!clerk_names_.contains(event.GetName())) clerk_names_.add(event.GetName());
-        } else {
-            if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
-            else if (event instanceof BrokeTuningEvent) stats_[event.GetClerkID()][3] += event.GetData();
-            else if (event instanceof ItemsSoldEvent) stats_[event.GetClerkID()][1] += event.GetData();
-            else if (event instanceof ItemsBoughtEvent) stats_[event.GetClerkID()][2] += event.GetData();
-            else if (event instanceof BrokeCleaningEvent) stats_[event.GetClerkID()][3] += event.GetData();
-        }
-    }
+    public int[][] GetData() { return stats_; }
+    public List<String> GetNames() { return clerk_names_; }
     
-    // print the data table
-    public void OutputData() {
+    // for data we're interested in, add to the data table
+    public void UpdateData() {
+        UpdateStats();
         Print("\nTracker : Day " + Simulation.current_day_);
         Print("Clerk      Days Worked       Items Sold      Items Purchased      Items Damaged ");
         for (int i = 0; i < clerk_names_.size(); i++) {
@@ -126,4 +118,20 @@ class Tracker implements Subscriber {
         }
         Print(""); //skips line
     }
+
+    private void UpdateStats() {
+        for (MyEvent event : events_) {
+            if (event instanceof CreatedClerkEvent) {
+                if (!clerk_names_.contains(event.GetName())) clerk_names_.add(event.GetName());
+            } else {
+                if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
+                else if (event instanceof BrokeTuningEvent) stats_[event.GetClerkID()][3] += event.GetData();
+                else if (event instanceof ItemsSoldEvent) stats_[event.GetClerkID()][1] += event.GetData();
+                else if (event instanceof ItemsBoughtEvent) stats_[event.GetClerkID()][2] += event.GetData();
+                else if (event instanceof BrokeCleaningEvent) stats_[event.GetClerkID()][3] += event.GetData();
+            }
+        }
+    }
+    
+    public void OutputData() {} // do nothing at end of sim
 }

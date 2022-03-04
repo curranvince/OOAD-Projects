@@ -14,14 +14,9 @@ public class Clerk extends AbstractClerk {
         name_ = name;
         break_percentage_ = break_percentage;
         tune_strategy_ = tune; 
+        Publish(new CreatedClerkEvent(name));
         Simulation.num_clerks_++;
     }  
-    
-    @Override 
-    public void Subscribe(Subscriber subscriber) {
-        super.Subscribe(subscriber);
-        Publish(new CreatedClerkEvent(name_));
-    }
 
     // receive current days orders when arriving to store
     public void ArriveAtStore() { 

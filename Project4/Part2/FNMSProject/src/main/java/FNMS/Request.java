@@ -4,7 +4,7 @@ import FNMS.Item.ItemType;
 
 // these requests are an example of the Command pattern
 // they are the 'order slip' from the example
-abstract class Request implements Utility {
+abstract class Request implements Utility { 
     abstract void Execute();
 }
 
