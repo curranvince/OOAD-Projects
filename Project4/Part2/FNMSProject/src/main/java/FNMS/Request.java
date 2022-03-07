@@ -104,8 +104,8 @@ class SwitchRequest extends Request {
     }
 
     public void Execute() {
-        Print("The customer wants to switch stores");
-        user_.SetStore(simulation_.GetStore());
+        Print("Please choose a store to switch to");
+        user_.SetStore(ChooseFromList(simulation_.GetStores()));
     }
 
     public String toString() { return "switch stores"; }

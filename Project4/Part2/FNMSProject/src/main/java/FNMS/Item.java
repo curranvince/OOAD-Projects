@@ -67,6 +67,9 @@ abstract class Item implements ItemUtility {
         } while (condition_ == Condition.broken);
     };
 
+    @Override
+    public String toString() { return name_; }
+    
     // Resources that helped with the Component system
     // https://stackoverflow.com/questions/10531513/how-to-identify-object-types-in-java
     // https://stackoverflow.com/questions/24600489/get-the-type-of-generic-t

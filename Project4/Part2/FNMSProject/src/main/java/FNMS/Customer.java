@@ -126,36 +126,23 @@ class User extends Customer {
         Print("7: End the interaction");
         // get choice and assign request based off it 
         int choice = GetIntFromUser(1, 7); 
-        if (choice == 1) { request_ = new SwitchRequest(sim_, this); }
-        else if (choice == 2) { request_ = new NameRequest(store_.GetActiveClerk()); }
-        else if (choice == 3) { request_ = new TimeRequest(store_.GetActiveClerk()); }
-        else if (choice == 4) { request_ = new SellRequest(store_.GetActiveClerk(), this, ChooseItem()); }
-        else if (choice == 5) { request_ = new BuyRequest(store_.GetActiveClerk(), this, ChooseItemType()); }
+        if (choice == 1) { request_ = new SwitchRequest(sim_, this); } // user wants to switch stores
+        else if (choice == 2) { request_ = new NameRequest(store_.GetActiveClerk()); } // user wants to know the clerks name
+        else if (choice == 3) { request_ = new TimeRequest(store_.GetActiveClerk()); } // user wants to know the time
+        else if (choice == 4) { // user wants to sell an item
+            // if nothing in inventory allow user to choose an itemtype to add to it
+            if (inventory_.size() == 0) {
+                Print("You have nothing in your inventory, please choose an ItemType to add");
+                inventory_.add(ItemFactory.MakeItem(ChooseFromList(Arrays.asList(ItemType.values())).name()));
+            }
+            Print("Please choose an item from your inventory to sell");
+            request_ = new SellRequest(store_.GetActiveClerk(), this, ChooseFromList(inventory_));
+        }
+        else if (choice == 5) {  // user wants to buy an item
+            Print("Please choose which type of item you would like to buy");
+            request_ = new BuyRequest(store_.GetActiveClerk(), this, ChooseFromList(Arrays.asList(ItemType.values())));
+        }
         else if (choice == 6) { request_ = new BuyKitRequest(store_, this); }
         else if (choice == 7) { request_ = new LeaveRequest(this); }
-    }
-
-    // allows user to choose an item from their inventory
-    private Item ChooseItem() {
-        // if inventory is empty allow user to choose an itemtype to add
-        if (inventory_.size() == 0) inventory_.add(ItemFactory.MakeItem(ChooseItemType().name()));
-        // display inventory
-        Print("Please choose an Item: ");
-        for (int i = 0; i < inventory_.size(); i++) {
-            Print(String.valueOf(i) + ": " + inventory_.get(i).name_);
-        }
-        // return chosen item
-        return (inventory_.get(GetIntFromUser(0,(inventory_.size()-1))));
-    }
-
-    // allow user to choose an item type
-    private ItemType ChooseItemType() {
-        // present all the itemtypes
-        Print("Please choose an ItemType: ");
-        for (int i = 0; i < ItemType.values().length; i++) {
-            Print(String.valueOf(i) + ": " + ItemType.values()[i]);
-        }
-        // return the itemtype user chooses
-        return ItemType.values()[GetIntFromUser(0, ItemType.values().length-1)];
     }
 }

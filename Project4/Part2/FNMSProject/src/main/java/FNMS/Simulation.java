@@ -45,6 +45,8 @@ public class Simulation implements Utility {
         SetDaysToRun();
     }
 
+    public List<Store> GetStores() { return stores_; }
+
     // allow user to input # of days to run simulation
     private void SetDaysToRun() {
         Print("How many days would you like to run the simulation? (10-30)");
@@ -191,14 +193,5 @@ public class Simulation implements Utility {
             Print("$" + stores_.get(i).getWithdrawn() + " was withdrawn from the bank");
         }
         sub_man_.HandleEOS(); // write graphs to files
-    }
-    
-    // return a store based off user input (so user can switch stores)
-    public Store GetStore() {
-        Print("What store would you like to switch to?");
-        for (int i = 0; i < stores_.size(); i++) {
-            Print(String.valueOf(i) + ": " + stores_.get(i).getName());
-        }
-        return stores_.get(GetIntFromUser(0, (stores_.size()-1)));
     }
 }

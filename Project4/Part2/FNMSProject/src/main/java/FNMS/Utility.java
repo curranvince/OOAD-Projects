@@ -114,6 +114,13 @@ interface Utility {
         if (min == 0) min++;
         return (GetRandomNum(min, max));
     }
+
+    default <T> T ChooseFromList(List<T> list) {
+        for (int i = 0; i < list.size(); i++) {
+            Print(String.valueOf(i) + ": " + list.get(i).toString());
+        }
+        return list.get(GetIntFromUser(0,(list.size()-1)));
+    }
 }
 
 // interface to make custom names for items

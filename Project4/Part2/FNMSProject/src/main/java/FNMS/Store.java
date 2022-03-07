@@ -57,6 +57,7 @@ class Store extends Publisher {
         }
     }
 
+    public String toString() { return name_; }
     public String getName() { return name_; }
     public void updateWithdrawn(int withdrawn) { total_withdrawn_ += withdrawn; }
     public int getWithdrawn() { return total_withdrawn_; }
