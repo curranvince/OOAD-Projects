@@ -1,24 +1,24 @@
-Scooby arrived at the North Side Store
-Scooby added 0 item(s) to North Side Store's inventory
-Norville arrived at the South Side Store
-Norville added 6 item(s) to South Side Store's inventory
-Scooby checked the North Side Store's register to find $2274
-Norville checked the South Side Store's register to find $2172
-Scooby damaged 12 item(s) at the North Side Store while tuning
-Scooby counted 47 item(s) in North Side Store's' inventory
-Scooby found the North Side Store's' inventory is worth $1258
-Scooby ordered 6 item(s) for the North Side Store
-Norville damaged 3 item(s) at the South Side Store while tuning
-Norville counted 50 item(s) in South Side Store's' inventory
-Norville found the South Side Store's' inventory is worth $1411
-Norville ordered 3 item(s) for the South Side Store
-Scooby bought 2 item(s) at the North Side Store
-Scooby sold 1 item(s) at the North Side Store
-Scooby sold $68 worth of items at the North Side Store
-Norville sold 8 item(s) at the South Side Store
-Norville sold $484 worth of items at the South Side Store
-Norville bought 2 item(s) at the South Side Store
-Scooby damaged 0 item(s) at the North Side Store while cleaning
-Norville damaged 0 item(s) at the South Side Store while cleaning
-Scooby left the North Side Store
-Norville left the South Side Store
+Norville arrived at the North Side Store
+Norville added 0 item(s) to North Side Store's inventory
+Shaggy arrived at the South Side Store
+Shaggy added 3 item(s) to South Side Store's inventory
+Norville checked the North Side Store's register to find $1935
+Shaggy checked the South Side Store's register to find $2845
+Norville damaged 4 item(s) at the North Side Store while tuning
+Norville counted 47 item(s) in North Side Store's' inventory
+Norville found the North Side Store's' inventory is worth $1104
+Norville ordered 0 item(s) for the North Side Store
+Shaggy damaged 0 item(s) at the South Side Store while tuning
+Shaggy counted 42 item(s) in South Side Store's' inventory
+Shaggy found the South Side Store's' inventory is worth $1029
+Shaggy ordered 0 item(s) for the South Side Store
+Norville bought 2 item(s) at the North Side Store
+Norville sold 8 item(s) at the North Side Store
+Norville sold $399 worth of items at the North Side Store
+Shaggy sold 4 item(s) at the South Side Store
+Shaggy sold $200 worth of items at the South Side Store
+Shaggy bought 1 item(s) at the South Side Store
+Norville damaged 0 item(s) at the North Side Store while cleaning
+Shaggy damaged 0 item(s) at the South Side Store while cleaning
+Norville left the North Side Store
+Shaggy left the South Side Store

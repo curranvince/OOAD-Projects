@@ -122,7 +122,7 @@ class Tracker implements Subscriber {
     private void UpdateStats() {
         for (MyEvent event : events_) {
             if (event instanceof CreatedClerkEvent) {
-                if (!clerk_names_.contains(event.GetName())) clerk_names_.add(event.GetName());
+                if (!clerk_names_.contains(event.GetClerkName())) clerk_names_.add(event.GetClerkName());
             } else {
                 if (event instanceof ArrivalEvent) stats_[event.GetClerkID()][0] += event.GetData();
                 else if (event instanceof BrokeTuningEvent) stats_[event.GetClerkID()][3] += event.GetData();

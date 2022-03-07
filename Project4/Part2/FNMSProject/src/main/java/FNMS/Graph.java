@@ -1,25 +1,16 @@
 package FNMS;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtils;
-import org.jfree.chart.JFreeChart;
+import org.jfree.chart.*;
+import org.jfree.chart.plot.*;
 import org.jfree.chart.block.BlockBorder;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.title.TextTitle;
+import org.jfree.data.xy.*;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.FileOutputStream;
-import java.util.List;
-import java.util.ArrayList;
-import java.awt.geom.Rectangle2D;
-import java.awt.geom.Ellipse2D;
+import java.io.*;
+import java.util.*;
+import java.awt.geom.*;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -171,7 +162,7 @@ class ComparisonGraph extends LineGraph {
     private static final ComparisonGraph instance = new ComparisonGraph(); // eagerly instantiated singleton
     public static ComparisonGraph getInstance() { return instance; }
 
-    private ComparisonGraph() {
+    private ComparisonGraph() { 
         series_.add(new XYSeries("North Register"));
         series_.add(new XYSeries("North Sales"));
         series_.add(new XYSeries("South Register"));
@@ -186,19 +177,14 @@ class ComparisonGraph extends LineGraph {
     public void UpdateData() {
         int n_mon, s_mon, n_sales, s_sales;
         n_mon = s_mon = n_sales = s_sales = 0;
+        // split up events based on type and store
         for (MyEvent event : events_) {
             if (event instanceof EODRegisterEvent) {
-                if (event.GetStore().getName().contains("North")) {
-                    n_mon += event.GetData();
-                } else {
-                    s_mon += event.GetData();
-                }
+                if (event.GetStore().toString().contains("North")) { n_mon += event.GetData(); } 
+                else { s_mon += event.GetData(); }
             } else if (event instanceof SalePriceEvent) {
-                if (event.GetStore().getName().contains("North")) {
-                    n_sales += event.GetData();
-                } else {
-                    s_sales += event.GetData();
-                }
+                if (event.GetStore().toString().contains("North")) { n_sales += event.GetData(); } 
+                else { s_sales += event.GetData(); }
             }
         }
         series_.get(0).add(Simulation.current_day_, n_mon);
@@ -225,14 +211,10 @@ class ComparisonGraph extends LineGraph {
         super.FormatPlot(plot);
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         // set color and shape to distinguish between stores
-        for (int i = 0; i < 2; i++) {
-            renderer.setSeriesPaint(i, Color.RED);
-            if (i == 0) renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
-            else renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
-        }
-        for (int i = 2; i < 4; i++) {
-            renderer.setSeriesPaint(i, Color.BLUE);
-            if (i == 2) renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
+        for (int i = 0; i < 4; i++) {
+            if (i < 2) renderer.setSeriesPaint(i, Color.RED);
+            if (i > 1) renderer.setSeriesPaint(i, Color.BLUE);
+            if (i % 2 == 0) renderer.setSeriesShape(i, new Rectangle2D.Double(-3.0, -3.0, 6.0, 6.0));
             else renderer.setSeriesShape(i, new Ellipse2D.Double(-3.0, -3.0, 6.0, 6.0));
         }
         plot.setRenderer(renderer);

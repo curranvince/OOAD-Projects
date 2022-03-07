@@ -23,13 +23,13 @@ abstract class Staff extends Publisher {
     // broadcast arriving to store
     public void ArriveAtStore() {
         days_worked_++;
-        Print(name_  + " has arrived at the " + store_.getName() + " on Day " + Simulation.current_day_);
+        Print(name_  + " has arrived at the " + store_.toString() + " on Day " + Simulation.current_day_);
         Publish(new ArrivalEvent(store_));
     }
 
     // broadcast leaving
     public void CloseStore() {
-        Print(name_ + " leaves the " + store_.getName());
+        Print(name_ + " leaves the " + store_.toString());
         Publish(new EODRegisterEvent(store_.register_.GetAmount(), store_));
         Publish(new LeaveEvent(store_));
     }

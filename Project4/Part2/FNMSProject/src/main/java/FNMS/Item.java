@@ -7,9 +7,9 @@ import java.util.ArrayList;
 // You cannot create an 'Item', but must instead create
 // one of its concrete subclasses
 abstract class Item implements ItemUtility {
+    protected String name_;
     protected List<Component> components_ = new ArrayList<Component>();
     ItemType itemType_;
-    String name_;
     Condition condition_;
     int purchase_price_;
     int list_price_;
@@ -67,9 +67,13 @@ abstract class Item implements ItemUtility {
         } while (condition_ == Condition.broken);
     };
 
-    @Override
     public String toString() { return name_; }
     
+    // display an items name and list price
+    void Display() { Print(name_ + " for $" + list_price_); }
+    // display the day an item sold and the price
+    void DisplaySold() { Print(name_ + " for $" + sale_price_ + " on Day " + day_sold_); }
+
     // Resources that helped with the Component system
     // https://stackoverflow.com/questions/10531513/how-to-identify-object-types-in-java
     // https://stackoverflow.com/questions/24600489/get-the-type-of-generic-t
@@ -78,11 +82,6 @@ abstract class Item implements ItemUtility {
 
     // add a component to an item
     void AddComponent(Component component) { components_.add(component); }
-    void AddComponents(List<Component> components) {
-        for (Component component : components) {
-            components_.add(component);
-        }
-    }
 
     // get a component from an item
     // suppress the 'typesafe' warning because the code IS typesafe
@@ -95,12 +94,6 @@ abstract class Item implements ItemUtility {
         }
         return null;
     }
-
-    // display an items name and list price
-    void Display() { Print(name_ + " for $" + list_price_); }
-
-    // display the day an item sold and the price
-    void DisplaySold() { Print(name_ + " for $" + sale_price_ + " on Day " + day_sold_); }
 
     // lower the condition of an item, including its list price
     // if the item breaks return false, else return true
@@ -123,6 +116,7 @@ abstract class Item implements ItemUtility {
 class GuitarKit extends Item {
     GuitarKit() { name_ += "Guitar Kit"; }
     
+    // price of guitar kit is gotten by adding value of all components
     public int GetPrice() {
         int price = 0;
         for (Component component : components_) {

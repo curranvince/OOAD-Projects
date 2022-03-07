@@ -33,7 +33,7 @@ abstract class KitComponent extends Component {
         price_ = GetRandomNum(5,21); 
     }
 
-    public String GetName() { return name_ + " " + id_; }
+    public String toString() { return (name_ + " " + id_ + " for $" + price_); }
     public int GetPrice() { return price_; }
     // https://stackoverflow.com/questions/2626835/is-there-functionality-to-generate-a-random-character-in-java
     private char GetRandomChar() { return (char)(random.nextInt(26) + 'a'); }

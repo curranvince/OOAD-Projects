@@ -183,13 +183,13 @@ public class Simulation implements Utility {
     private void DisplayResults() {
         Print(" *** OUTPUTTING SIMULATION RESULTS ***");
         for (int i = 0; i < stores_.size(); i++) {
-            Print("Results for " + stores_.get(i).getName());
+            Print("Results for " + stores_.get(i).toString());
             // display inventory & its value
             stores_.get(i).DisplayInventory(true); 
             // display items sold & their value
             stores_.get(i).DisplayInventory(false);
             // display money stats
-            Print(stores_.get(i).getName() + " has $" + stores_.get(i).register_.GetAmount() + " in the register");
+            Print(stores_.get(i).toString() + " has $" + stores_.get(i).register_.GetAmount() + " in the register");
             Print("$" + stores_.get(i).getWithdrawn() + " was withdrawn from the bank");
         }
         sub_man_.HandleEOS(); // write graphs to files
