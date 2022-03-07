@@ -39,7 +39,10 @@ Assumptions (from project 3):
 New Assumptions / Changes:
 * The user starts with no items in their inventory. If they want to sell an item when they have none, they will be allowed to choose an itemtype to be generated for them to sell. If a user has items in their inventory, they will choose from these items when attempting to sell to a store. 
 * When a user wants to buy an item, they can choose any itemtype. The store will respond appropiately about the item being available, discontinued, etc. 
-* The graphs for register money, item sales, items broken, etc. are aggregated between the 2 stores for each day. IE if Store 1 has $1000 and Store 2 has $1000 at the end of Day 1, the graph would show $2000. Statistics show values taken from the end of the day. Or more specifically, they keep track of each event throughout the day, then add them up and write them at the end of the day. 
+* The graphs for register money, item sales, items broken, etc. are aggregated between the 2 stores for each day. IE if Store 1 has $1000 and Store 2 has $1000 at the end of Day 1, the graph would show $2000. These are MoneyGraph and ItemGraph.
+* New graphs have been added in addition to the above. The ComparisonGraph shows the register money and daily sales for each store individually. The AveragesGraph shows average statistics per day for each clerk, as calculated at end of simulation from their actual values.
+* Statistics show values taken from the end of the day. Or more specifically, they keep track of each event throughout the day, then add them up and write them at the end of the day.
+
 
 Contributors:
 Vince Curran, Logan Park, Kevin Vo
