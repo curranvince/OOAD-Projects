@@ -15,7 +15,8 @@ import java.time.temporal.ChronoUnit;
 public class ClerkTest {
     DateTimeFormatter date_time_ = DateTimeFormatter.ofPattern("HH:mm");
     List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
-    private String[] clerkNames_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
+    private String[] clerkNames_ = {"Velma", "Daphne", "Norville", "Fred", "Shaggy", "Scooby"};
+
     @Test
     @DisplayName("Should be able to get the clerk's name when asked by the customer.")
     public void testNameRequest() {
@@ -26,9 +27,10 @@ public class ClerkTest {
         clerks_.add(new Clerk(clerkNames_[4], 20, new ElectronicTune()));
         clerks_.add(new Clerk(clerkNames_[5], 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
-            assertTrue(clerks_.get(i).GetName() == clerkNames_[i],"the clerks should yield their proper name upon user-customer requesting the clerk's name");
+            assertTrue(clerks_.get(i).GetName() == clerkNames_[i], "the clerks should yield their proper name upon user-customer requesting the clerk's name");
         }
     }
+
     @Test
     @DisplayName("Should be able to get the curren time name when asked by the customer.")
     public void testTimeRequest() {
@@ -42,11 +44,21 @@ public class ClerkTest {
             String time_clerk = clerks_.get(i).GetTime().substring(0, 5);
 
             String time_current = date_time_.format(LocalTime.now());
-            assertTrue(time_clerk.equals(time_current),"current local time should be equal ignoring seconds with the clerk's current local time");
+            assertTrue(time_clerk.equals(time_current), "current local time should be equal ignoring seconds with the clerk's current local time");
         }
     }
+    //New Test
+    @Test
+    @DisplayName("Should be able to get the 1000 bucks when invoked")
+    public void testGoToBank() {
+        Store s = new Store("sample store", new SouthKitFactory());
+        //public Clerk(String name, int break_percentage, TuneStrategy tune)
+        Clerk c = new Clerk("Lol", 10, new ManualTune());
+        s.UpdateClerk(c);
+        c.GoToBank();
+        assertTrue((s.register_.GetAmount() == 1000), "Got 1000 bucks");
+    }
 }
-
 
 
 // if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);        
