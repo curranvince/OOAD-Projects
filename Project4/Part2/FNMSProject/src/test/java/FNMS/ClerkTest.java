@@ -1,7 +1,6 @@
 package FNMS;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-// import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -73,14 +72,3 @@ public class ClerkTest {
         assertTrue((s.register_.GetAmount() == 1000), "Got 1000 bucks");
     }
 }
-
-
-// if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);        
-// @Test
-// @DisplayName("Should be able to create store with items")
-// public void testItems() {
-//     for (Item.ItemType itemType : Item.ItemType.values()) {
-//         item = ItemFactory.MakeItem(itemType.name());
-//         assertTrue(item.itemType_ == itemType, "Factory should be able to create items of type" + itemType.name());
-//     }
-// }

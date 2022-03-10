@@ -1,24 +1,23 @@
 Velma arrived at the North Side Store
-Velma added 0 item(s) to North Side Store's inventory
-Daphne arrived at the South Side Store
-Daphne added 0 item(s) to South Side Store's inventory
-Velma checked the North Side Store's register to find $2319
-Daphne checked the South Side Store's register to find $3524
+Velma added 9 item(s) to North Side Store's inventory
+Norville arrived at the South Side Store
+Norville added 3 item(s) to South Side Store's inventory
+Velma checked the North Side Store's register to find $2775
+Norville checked the South Side Store's register to find $2814
 Velma damaged 0 item(s) at the North Side Store while tuning
-Velma counted 43 item(s) in North Side Store's' inventory
-Velma found the North Side Store's' inventory is worth $1343
+Velma counted 51 item(s) in North Side Store's' inventory
+Velma found the North Side Store's' inventory is worth $1302
 Velma ordered 0 item(s) for the North Side Store
-Daphne damaged 7 item(s) at the South Side Store while tuning
-Daphne counted 43 item(s) in South Side Store's' inventory
-Daphne found the South Side Store's' inventory is worth $1053
-Daphne ordered 0 item(s) for the South Side Store
+Norville damaged 1 item(s) at the South Side Store while tuning
+Norville counted 54 item(s) in South Side Store's' inventory
+Norville found the South Side Store's' inventory is worth $1553
+Norville ordered 3 item(s) for the South Side Store
 Velma sold 5 item(s) at the North Side Store
-Velma sold $300 worth of items at the North Side Store
-Velma bought 2 item(s) at the North Side Store
-Daphne sold 3 item(s) at the South Side Store
-Daphne sold $104 worth of items at the South Side Store
-Daphne bought 1 item(s) at the South Side Store
+Velma sold $240 worth of items at the North Side Store
+Norville sold 4 item(s) at the South Side Store
+Norville sold $128 worth of items at the South Side Store
+Norville bought 3 item(s) at the South Side Store
 Velma damaged 0 item(s) at the North Side Store while cleaning
-Daphne damaged 0 item(s) at the South Side Store while cleaning
+Norville damaged 0 item(s) at the South Side Store while cleaning
 Velma left the North Side Store
-Daphne left the South Side Store
+Norville left the South Side Store
