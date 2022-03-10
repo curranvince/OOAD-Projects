@@ -57,7 +57,14 @@ public class ClerkTest {
         c.GoToBank();
         assertTrue(c.Buy(item, 5), "Bought Item");
     }
-
+    @Test
+    @DisplayName("Should be able to check if store bought item")
+    public void testSell() {
+        Item item = ItemFactory.MakeItem("CD");
+        s.UpdateClerk(c);
+        assertTrue(c.Sell(item, 5), "Sold Item");
+        assertTrue(s.register_.GetAmount() == 5, "Correct Price");
+    }
     @Test
     @DisplayName("Should be able to get the 1000 bucks when invoked")
     public void testGoToBank() {

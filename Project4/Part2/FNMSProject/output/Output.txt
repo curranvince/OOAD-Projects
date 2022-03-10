@@ -1,13 +1,14 @@
 Lol goes to the bank to withdraw $1000 for the register
-The sample store buys the Straight Outta Compton by N.W.A. CD in excellent condition for $5
+The sample store buys the The Miseducation of Lauryn Hill by Lauryn Hill CD in very_good condition for $5
+The customer buys the Purple Rain by Prince and the Revolution CD for $5 from the sample store
 Lol goes to the bank to withdraw $1000 for the register
-Straight Outta Compton by N.W.A. CD's condition has lowered from excellent to very_good
-Straight Outta Compton by N.W.A. CD list price has lowered to $62
-Straight Outta Compton by N.W.A. CD's condition has lowered from very_good to good
-Straight Outta Compton by N.W.A. CD list price has lowered to $49
-Straight Outta Compton by N.W.A. CD's condition has lowered from good to fair
-Straight Outta Compton by N.W.A. CD list price has lowered to $39
-Straight Outta Compton by N.W.A. CD's condition has lowered from fair to poor
-Straight Outta Compton by N.W.A. CD list price has lowered to $31
-Straight Outta Compton by N.W.A. CD's condition has lowered from poor to broken
-Straight Outta Compton by N.W.A. CD has been removed from inventory
+Ready to Die by The Notorious B.I.G. CD's condition has lowered from excellent to very_good
+Ready to Die by The Notorious B.I.G. CD list price has lowered to $57
+Ready to Die by The Notorious B.I.G. CD's condition has lowered from very_good to good
+Ready to Die by The Notorious B.I.G. CD list price has lowered to $45
+Ready to Die by The Notorious B.I.G. CD's condition has lowered from good to fair
+Ready to Die by The Notorious B.I.G. CD list price has lowered to $36
+Ready to Die by The Notorious B.I.G. CD's condition has lowered from fair to poor
+Ready to Die by The Notorious B.I.G. CD list price has lowered to $28
+Ready to Die by The Notorious B.I.G. CD's condition has lowered from poor to broken
+Ready to Die by The Notorious B.I.G. CD has been removed from inventory
