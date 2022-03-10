@@ -1,11 +1,13 @@
 Lol goes to the bank to withdraw $1000 for the register
-Blond by Frank Ocean CD's condition has lowered from excellent to very_good
-Blond by Frank Ocean CD list price has lowered to $76
-Blond by Frank Ocean CD's condition has lowered from very_good to good
-Blond by Frank Ocean CD list price has lowered to $60
-Blond by Frank Ocean CD's condition has lowered from good to fair
-Blond by Frank Ocean CD list price has lowered to $48
-Blond by Frank Ocean CD's condition has lowered from fair to poor
-Blond by Frank Ocean CD list price has lowered to $38
-Blond by Frank Ocean CD's condition has lowered from poor to broken
-Blond by Frank Ocean CD has been removed from inventory
+The sample store buys the Straight Outta Compton by N.W.A. CD in excellent condition for $5
+Lol goes to the bank to withdraw $1000 for the register
+Straight Outta Compton by N.W.A. CD's condition has lowered from excellent to very_good
+Straight Outta Compton by N.W.A. CD list price has lowered to $62
+Straight Outta Compton by N.W.A. CD's condition has lowered from very_good to good
+Straight Outta Compton by N.W.A. CD list price has lowered to $49
+Straight Outta Compton by N.W.A. CD's condition has lowered from good to fair
+Straight Outta Compton by N.W.A. CD list price has lowered to $39
+Straight Outta Compton by N.W.A. CD's condition has lowered from fair to poor
+Straight Outta Compton by N.W.A. CD list price has lowered to $31
+Straight Outta Compton by N.W.A. CD's condition has lowered from poor to broken
+Straight Outta Compton by N.W.A. CD has been removed from inventory

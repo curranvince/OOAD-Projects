@@ -16,6 +16,8 @@ public class ClerkTest {
     DateTimeFormatter date_time_ = DateTimeFormatter.ofPattern("HH:mm");
     List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private String[] clerkNames_ = {"Velma", "Daphne", "Norville", "Fred", "Shaggy", "Scooby"};
+    Store s = new Store("sample store", new SouthKitFactory());
+    Clerk c = new Clerk("Lol", 10, new ManualTune());
 
     @Test
     @DisplayName("Should be able to get the clerk's name when asked by the customer.")
@@ -47,13 +49,18 @@ public class ClerkTest {
             assertTrue(time_clerk.equals(time_current), "current local time should be equal ignoring seconds with the clerk's current local time");
         }
     }
-    //New Test
+    @Test
+    @DisplayName("Should be able to check if store bought item")
+    public void testBuy() {
+        Item item = ItemFactory.MakeItem("CD");
+        s.UpdateClerk(c);
+        c.GoToBank();
+        assertTrue(c.Buy(item, 5), "Bought Item");
+    }
+
     @Test
     @DisplayName("Should be able to get the 1000 bucks when invoked")
     public void testGoToBank() {
-        Store s = new Store("sample store", new SouthKitFactory());
-        //public Clerk(String name, int break_percentage, TuneStrategy tune)
-        Clerk c = new Clerk("Lol", 10, new ManualTune());
         s.UpdateClerk(c);
         c.GoToBank();
         assertTrue((s.register_.GetAmount() == 1000), "Got 1000 bucks");
