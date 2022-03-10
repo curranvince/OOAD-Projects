@@ -26,18 +26,23 @@ public class ClerkTest {
         clerks_.add(new Clerk(clerkNames_[4], 20, new ElectronicTune()));
         clerks_.add(new Clerk(clerkNames_[5], 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
-            assertTrue(clerks_.get(i).GetName() == clerkNames_[i]);
+            assertTrue(clerks_.get(i).GetName() == clerkNames_[i],"the clerks should yield their proper name upon user-customer requesting the clerk's name");
         }
     }
     @Test
     @DisplayName("Should be able to get the curren time name when asked by the customer.")
     public void testTimeRequest() {
         clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[0], 5, new ElectronicTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[1], 10, new HaphazardTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[2], 15, new ManualTune())));
+        clerks_.add(new Clerk(clerkNames_[3], 15, new ManualTune()));
+        clerks_.add(new Clerk(clerkNames_[4], 20, new ElectronicTune()));
+        clerks_.add(new Clerk(clerkNames_[5], 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
             String time_clerk = clerks_.get(i).GetTime().substring(0, 5);
 
             String time_current = date_time_.format(LocalTime.now());
-            assertTrue(time_clerk.equals(time_current));
+            assertTrue(time_clerk.equals(time_current),"current local time should be equal ignoring seconds with the clerk's current local time");
         }
     }
 }
