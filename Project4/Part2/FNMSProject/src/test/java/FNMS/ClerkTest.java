@@ -1,5 +1,5 @@
 package FNMS;
-
+import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 // import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -9,21 +9,22 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 public class ClerkTest {
-    DateTimeFormatter date_time_ = DateTimeFormatter.ofPattern("HH:mm:ss");
-    LocalTime current_localtime_ = LocalTime.now();
+    DateTimeFormatter date_time_ = DateTimeFormatter.ofPattern("HH:mm");
     List<AbstractClerk> clerks_ = new ArrayList<AbstractClerk>();
     private String[] clerkNames_ = {"Velma","Daphne","Norville","Fred","Shaggy","Scooby"};
     @Test
     @DisplayName("Should be able to get the clerk's name when asked by the customer.")
     public void testNameRequest() {
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new HaphazardTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Norville", 15, new ManualTune())));
-        clerks_.add(new Clerk("Fred", 15, new ManualTune()));
-        clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
-        clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[0], 5, new ElectronicTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[1], 10, new HaphazardTune())));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[2], 15, new ManualTune())));
+        clerks_.add(new Clerk(clerkNames_[3], 15, new ManualTune()));
+        clerks_.add(new Clerk(clerkNames_[4], 20, new ElectronicTune()));
+        clerks_.add(new Clerk(clerkNames_[5], 25, new HaphazardTune()));
         for (int i = 0; i < clerks_.size(); i++) {
             assertTrue(clerks_.get(i).GetName() == clerkNames_[i]);
         }
@@ -31,21 +32,20 @@ public class ClerkTest {
     @Test
     @DisplayName("Should be able to get the curren time name when asked by the customer.")
     public void testTimeRequest() {
-        clerks_.add(new ClerkSellDecorator(new Clerk("Velma", 5, new ElectronicTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Daphne", 10, new HaphazardTune())));
-        clerks_.add(new ClerkSellDecorator(new Clerk("Norville", 15, new ManualTune())));
-        clerks_.add(new Clerk("Fred", 15, new ManualTune()));
-        clerks_.add(new Clerk("Shaggy", 20, new ElectronicTune()));
-        clerks_.add(new Clerk("Scooby", 25, new HaphazardTune()));
+        clerks_.add(new ClerkSellDecorator(new Clerk(clerkNames_[0], 5, new ElectronicTune())));
         for (int i = 0; i < clerks_.size(); i++) {
-            assertTrue(clerks_.get(i).GetTime() == date_time_.format(current_localtime_));
+            String time_clerk = clerks_.get(i).GetTime().substring(0, 5);
+
+            String time_current = date_time_.format(LocalTime.now());
+            assertTrue(time_clerk.equals(time_current));
         }
     }
 }
 
 
 
-// if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);        @Test
+// if (GetNumItemsByType(itemType) == 0 && !store_.discontinued_.contains(itemType)) store_.Discontiue(itemType);        
+// @Test
 // @DisplayName("Should be able to create store with items")
 // public void testItems() {
 //     for (Item.ItemType itemType : Item.ItemType.values()) {
