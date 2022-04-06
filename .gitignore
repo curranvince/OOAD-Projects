@@ -3,4 +3,5 @@
 *.DS_Store
 *.lst
 *.meta
+*.inputactions
 TEST-FNMS.*.xml
