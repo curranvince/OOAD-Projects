@@ -1,24 +1,15 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class EnemyAttack : Attack
 {
-    public enum AttackType
-    {
-        Melee,
-        Ranged
-    }
-
-    public AttackType m_type;
-
     private BoxCollider meleeCollider;
     private Enemy enemy;
     private Player player;
 
     private void Awake()
     {
-        if (m_type == AttackType.Melee)
+        if (m_attackData.m_attackType == AttackType.Melee)
         {
             meleeCollider = GetComponent<BoxCollider>();
             Vector3 size = meleeCollider.size;
@@ -35,11 +26,11 @@ public class EnemyAttack : Attack
 
     public override void DoAttack()
     {
-        if (m_type == AttackType.Melee)
+        if (m_attackData.m_attackType == AttackType.Melee)
         {
             StartCoroutine("DelayedDamage", m_attackData.m_damage);
         } 
-        else if (m_type == AttackType.Ranged)
+        else if (m_attackData.m_attackType == AttackType.Ranged)
         {
             StartCoroutine(DelayedBullet());
         }

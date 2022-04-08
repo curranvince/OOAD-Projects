@@ -96,7 +96,7 @@ public class PlayerController : Controller
     private float _timeSinceRoll;
 
     // animation IDs
-    private int _animIDMoveX;
+    //private int _animIDMoveX;
     private int _animIDMoveZ;
     private int _animIDGrounded;
     private int _animIDJump;
@@ -140,24 +140,30 @@ public class PlayerController : Controller
     // Update is called once per frame
     private void Update()
     {
-        if (!PauseManager.Instance.paused)
+        if (!MainMenuManager.Instance.onMenu)
         {
-            UpdateAimTarget();
-            GroundedCheck();
-            RollCheck();
-            JumpAndGravity();
-            if (!_rolling)
+            if (!PauseManager.Instance.paused)
             {
-                BlockCheck();
-                Move();
+                UpdateAimTarget();
+                GroundedCheck();
+                RollCheck();
+                JumpAndGravity();
+                if (!_rolling)
+                {
+                    BlockCheck();
+                    Move();
+                }
             }
-        } 
-        CheckInteractions();
+            CheckInteractions();
+        }   
     }
 
     private void LateUpdate()
     {
-        CameraRotation();
+        if (!camTransform)
+            camTransform = Camera.main.transform;
+        if (!MainMenuManager.Instance.onMenu)
+            CameraRotation();
     }
 
     private void AssignActions()
@@ -178,7 +184,7 @@ public class PlayerController : Controller
     // cache anim ids so we dont have to type strings on each access
     private void AssignAnimationIDs()
     {
-        _animIDMoveX = Animator.StringToHash("MoveX");
+        //_animIDMoveX = Animator.StringToHash("MoveX");
         _animIDMoveZ = Animator.StringToHash("MoveZ");
         _animIDGrounded = Animator.StringToHash("Grounded");
         _animIDJump = Animator.StringToHash("Jump");
@@ -359,7 +365,7 @@ public class PlayerController : Controller
         }
 
         // need to use timed checks for attacks & heals since they can happen at any point
-        if (player.attackObject.attackTimeoutDelta <= (player.attackObject.m_attackData.m_attackTimeout-0.5f)) { 
+        if (player.attackObject && player.attackObject.attackTimeoutDelta <= (player.attackObject.m_attackData.m_attackTimeout-0.5f)) { 
             animator.SetBool(_animIDAttack, false);
             animator.SetBool(_animIDAttack2, false);
         }
@@ -445,7 +451,8 @@ public class PlayerController : Controller
 
     private void UpdateAimTarget()
     {
-        aimTarget.position = camTransform.position + camTransform.forward * aimDistance;
+        if (camTransform)
+            aimTarget.position = camTransform.position + camTransform.forward * aimDistance;
     }
 
     private void BlockCheck()
@@ -464,7 +471,7 @@ public class PlayerController : Controller
 
     private void Attack()
     {
-        if (!PauseManager.Instance.paused && player.attackObject.CanAttack())
+        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoAttack"); // uses polymorphism, whereas calling directly would not
             animator.SetBool(_animIDAttack, true); 
@@ -473,7 +480,7 @@ public class PlayerController : Controller
 
     private void Attack2()
     {
-        if (!PauseManager.Instance.paused && player.attackObject.CanAttack())
+        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoSecondary");
             animator.SetBool(_animIDAttack2, true);
@@ -482,7 +489,7 @@ public class PlayerController : Controller
 
     private void DrinkPotion()
     {
-        if (!PauseManager.Instance.paused && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
+        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
         {
             animator.SetBool(_animIDDrink, true);
             _healTimeoutDelta = player.m_healTimeout;

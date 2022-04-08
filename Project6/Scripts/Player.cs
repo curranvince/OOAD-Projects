@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using Cinemachine;
 
 public class Player : Character
 {
+    public static Player Instance;
+
     public float m_strafeSpeed = 2f;
     [Header("Rolling")]
     [Tooltip("Speed of roll")]
@@ -42,18 +43,27 @@ public class Player : Character
     // private Image healthBackground;
 
     [HideInInspector]
-    public Checkpoint checkpoint { get; set; }
-
+    public PlayerData saveData = new PlayerData();
+    
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     protected override void Start()
     {
         base.Start();
         triedToInteract = false;
-        checkpoint = GameObject.FindGameObjectWithTag("Spawn").GetComponent<Checkpoint>();
-        transform.position = checkpoint.transform.position;
-        previousPosition = transform.position;
         healthBar = transform.Find("UI/HealthBarUI");
         healthForeground = healthBar.transform.Find("Foreground").GetComponent<Image>();
-        // healthBackground = healthBar.transform.Find("Background").GetComponent<Image>();
     }
 
     void Update()
@@ -68,17 +78,16 @@ public class Player : Character
 
     public override void Damage(float amount)
     {
-        Debug.Log("Player took damage");
-        float dmgTaken = amount * m_damageModifier;
-        currentHealth -= dmgTaken;
-        UpdateHealthBar();
-        CamShake.Instance.ShakeCamera(3f, 0.2f);
-        if (currentHealth <= 0.0f) { StartCoroutine(Die()); }
+        if (!m_invincible)
+        {
+            Debug.Log("Player took damage");
+            CameraController.Instance.ShakeCamera(3f, 0.2f);
+            base.Damage(amount);
+        }
     }
 
     protected override void UpdateHealthBar()
     {
-
         float width = 150 * (currentHealth / m_maxHealth);
         if (width < 0) width = 0;
         healthForeground.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
@@ -89,7 +98,7 @@ public class Player : Character
         Time.timeScale = 0; // pause
         yield return StartCoroutine(FadeToBlack.Instance.Fade()); // wait for fade to finish
         /* teleport to last checkpoint & reset health */
-        transform.position = checkpoint.transform.position;
+        transform.position = saveData.spawnPosition;
         previousPosition = transform.position;
         currentHealth = m_maxHealth; 
         UpdateHealthBar();
@@ -115,5 +124,41 @@ public class Player : Character
     {
         PlayerAttack pattackObject = (PlayerAttack)attackObject;
         pattackObject.CheckHit();
+    }
+
+    public void SetFromData(PlayerData playerData)
+    {
+        /* copy data */
+        saveData.spawnPosition = playerData.spawnPosition;
+        saveData.playerClass = playerData.playerClass;
+        saveData.fileName = playerData.fileName;
+        /* set position */
+        transform.position = saveData.spawnPosition;
+        previousPosition = transform.position;
+        /* set class*/
+        m_attacks.Clear();
+        //if (attackObject) Destroy(attackObject);
+        if (saveData.playerClass == "Mage")
+        {
+            m_attacks.Add(Resources.Load<GameObject>("MagicStaff"));
+        } 
+        else if (saveData.playerClass == "Melee")
+        {
+            m_attacks.Add(Resources.Load<GameObject>("SharpSword"));
+        }
+        attackObject = m_attacks[0].GetComponent<Attack>();
+        m_shield = Resources.Load<GameObject>("PlayerShield");
+        EquipWeapons();
+    }
+
+    public void ClearWeapons()
+    {
+        if (attackObject)
+            Destroy(attackObject.gameObject);
+    }
+
+    public void SetHealthBar(bool newValue)
+    {
+        healthBar.gameObject.SetActive(newValue);
     }
 }

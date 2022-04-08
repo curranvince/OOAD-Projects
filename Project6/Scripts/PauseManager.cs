@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject menu;
+    public GameObject m_pauseScreen;
 
     [HideInInspector]
     public bool paused;
@@ -16,8 +12,14 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-        menu = transform.Find("Menu").gameObject;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         paused = false;
     }
 
@@ -33,21 +35,31 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
-        CinemachineInputProvider inputProvider = GameObject.FindObjectOfType<CinemachineInputProvider>().GetComponent<CinemachineInputProvider>();
-        inputProvider.enabled = false;
-        AudioListener.pause = true;
-        menu.SetActive(true);
+        //CinemachineInputProvider inputProvider = FindObjectOfType<CinemachineInputProvider>().GetComponent<CinemachineInputProvider>();
+        //inputProvider.enabled = false;
+        if (CameraController.Instance)
+        {
+            CameraController.Instance.SetInput(false);
+            CameraController.Instance.SetReticle(false);
+        }
+        Player.Instance.SetHealthBar(false);
+        m_pauseScreen.SetActive(true);
         paused = true;
     }
 
     private void Unpause()
     {
         Time.timeScale = 1;
-        menu.SetActive(false);
+        m_pauseScreen.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        CinemachineInputProvider inputProvider = GameObject.FindObjectOfType<CinemachineInputProvider>().GetComponent<CinemachineInputProvider>();
-        inputProvider.enabled = true;
-        AudioListener.pause = false;
+        //CinemachineInputProvider inputProvider = FindObjectOfType<CinemachineInputProvider>().GetComponent<CinemachineInputProvider>();
+        //inputProvider.enabled = true;
+        if (CameraController.Instance)
+        {
+            CameraController.Instance.SetInput(true);
+            CameraController.Instance.SetReticle(true);
+        }
+        Player.Instance.SetHealthBar(true);
         paused = false;
     }
 }

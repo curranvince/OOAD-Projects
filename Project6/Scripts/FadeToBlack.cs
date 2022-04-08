@@ -10,7 +10,14 @@ public class FadeToBlack : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         blackSquare.SetActive(true);
         StartCoroutine(Unfade());
     }

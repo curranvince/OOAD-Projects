@@ -1,41 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CamShake : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    public static CamShake Instance { get; private set; }
-
+    public static CameraController Instance { get; private set; }
+    
+    [SerializeField]
+    private GameObject m_reticle;
+    
     private CinemachineVirtualCamera vCam;
     private CinemachineBasicMultiChannelPerlin perlin;
+    private CinemachineInputProvider inputProvider;
     private NoiseSettings calmNoise;
     private NoiseSettings shakeNoise;
     private float shakeTimerDelta;
     //private float shakeTimeout;
     //private float startingIntensity;
-    
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
-        Instance = this;
         vCam = GetComponent<CinemachineVirtualCamera>();
         perlin = vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        inputProvider = GetComponent<CinemachineInputProvider>();
         calmNoise = Resources.Load("CalmShake") as NoiseSettings;
         shakeNoise = Resources.Load("BigShake") as NoiseSettings;
         shakeTimerDelta = 0;
         perlin.m_NoiseProfile = calmNoise;
         perlin.m_AmplitudeGain = 0.5f;
         perlin.m_FrequencyGain = 0.5f;
-    }
-
-    public void ShakeCamera(float intensity, float time)
-    {
-        perlin.m_NoiseProfile = shakeNoise;
-        perlin.m_AmplitudeGain = intensity;
-        perlin.m_FrequencyGain = 5f;
-        //startingIntensity = intensity;
-        shakeTimerDelta = time;
-        //shakeTimeout = time;
     }
 
     private void Update()
@@ -51,5 +56,25 @@ public class CamShake : MonoBehaviour
                 perlin.m_FrequencyGain = 0.5f;
             }
         }
+    }
+
+    public void ShakeCamera(float intensity, float time)
+    {
+        perlin.m_NoiseProfile = shakeNoise;
+        perlin.m_AmplitudeGain = intensity;
+        perlin.m_FrequencyGain = 5f;
+        //startingIntensity = intensity;
+        shakeTimerDelta = time;
+        //shakeTimeout = time;
+    }
+
+    public void SetInput(bool newValue)
+    {
+        inputProvider.enabled = newValue;
+    }
+
+    public void SetReticle(bool newValue)
+    {
+        m_reticle.SetActive(newValue);
     }
 }

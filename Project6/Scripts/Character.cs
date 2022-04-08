@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Character : MonoBehaviour
@@ -18,7 +19,8 @@ public abstract class Character : MonoBehaviour
     public float m_rotationSmoothTime = 0.12f; // how long for char to face movement direction
 
     [Header("Combat")]
-    public GameObject[] m_attacks;
+    public List<GameObject> m_attacks = new List<GameObject>(); 
+    //public GameObject[] m_attacks;
     public Transform m_attackParent;
     public GameObject m_shield;
     public Transform m_shieldParent;
@@ -37,7 +39,6 @@ public abstract class Character : MonoBehaviour
     protected virtual void Start()
     {
         currentHealth = m_maxHealth;
-        EquipWeapons();
     }
 
     protected abstract IEnumerator Die();
@@ -48,15 +49,12 @@ public abstract class Character : MonoBehaviour
         float dmgTaken = amount * m_damageModifier;
         currentHealth -= dmgTaken;
         UpdateHealthBar();
-        if (currentHealth <= 0.0f)
-        {
-            SendMessage("Die");
-        }
+        if (currentHealth <= 0.0f) { StartCoroutine(Die()); }
     }
 
     public void SwitchToWeapon(int index)
     {
-        if (m_attacks.Length >= (index - 1))
+        if (m_attacks.Count >= (index - 1))
         {
             Destroy(attackObject.gameObject);
             GameObject newattack = Instantiate(m_attacks[index], m_attackParent) as GameObject;
@@ -66,10 +64,11 @@ public abstract class Character : MonoBehaviour
 
     protected void EquipWeapons()
     {
+        //if (attackObject) Destroy(attackObject);
         // bool set = false;
         Controller controller = GetComponent<Controller>();
 
-        if (m_attacks.Length > 0)
+        if (m_attacks.Count > 0)
         {
             GameObject newattack = Instantiate(m_attacks[0], m_attackParent) as GameObject;
             attackObject = newattack.GetComponent<Attack>();

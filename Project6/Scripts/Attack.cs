@@ -3,9 +3,16 @@ using UnityEngine;
 
 public abstract class Attack : MonoBehaviour
 {
+    public enum AttackType
+    {
+        Melee,
+        Ranged
+    }
+
     [Serializable]
     public class AttackData
     {
+        public AttackType m_attackType;
         public Transform m_attackOrigin;
         public float m_damage = 10f;
         public float m_attackRange = 25f;

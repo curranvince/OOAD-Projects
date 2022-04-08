@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Character
@@ -11,6 +10,7 @@ public class Enemy : Character
     protected override void Start()
     {
         base.Start();
+        EquipWeapons();
         controller = GetComponent<EnemyController>();
         /* if enemy has health bar slot, give them a health bar */
         if (transform.Find("HealthBarSlot"))
@@ -24,7 +24,8 @@ public class Enemy : Character
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        if (controller && controller.stateMachine.currentState == EnemyStateID.Idle) controller.stateMachine.ChangeState(EnemyStateID.Combat);
+        if (controller && controller.stateMachine.currentState == EnemyStateID.Idle) 
+            controller.stateMachine.ChangeState(EnemyStateID.Combat);
     }
 
     protected override void UpdateHealthBar()
