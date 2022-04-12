@@ -140,9 +140,9 @@ public class PlayerController : Controller
     // Update is called once per frame
     private void Update()
     {
-        if (!MainMenuManager.Instance.onMenu)
+        if (!MenuManager.Instance.onMainMenu)
         {
-            if (!PauseManager.Instance.paused)
+            if (!MenuManager.Instance.isPaused)
             {
                 UpdateAimTarget();
                 GroundedCheck();
@@ -162,7 +162,7 @@ public class PlayerController : Controller
     {
         if (!camTransform)
             camTransform = Camera.main.transform;
-        if (!MainMenuManager.Instance.onMenu)
+        if (!MenuManager.Instance.onMainMenu)
             CameraRotation();
     }
 
@@ -312,7 +312,7 @@ public class PlayerController : Controller
         // check for pause
         if (pauseAction.WasPerformedThisFrame())
         {
-            PauseManager.Instance.DeterminePause();
+            MenuManager.Instance.DeterminePause();
         }
     }
 
@@ -471,7 +471,7 @@ public class PlayerController : Controller
 
     private void Attack()
     {
-        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.attackObject.CanAttack())
+        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoAttack"); // uses polymorphism, whereas calling directly would not
             animator.SetBool(_animIDAttack, true); 
@@ -480,7 +480,7 @@ public class PlayerController : Controller
 
     private void Attack2()
     {
-        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.attackObject.CanAttack())
+        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoSecondary");
             animator.SetBool(_animIDAttack2, true);
@@ -489,7 +489,7 @@ public class PlayerController : Controller
 
     private void DrinkPotion()
     {
-        if (!PauseManager.Instance.paused && !MainMenuManager.Instance.onMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
+        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
         {
             animator.SetBool(_animIDDrink, true);
             _healTimeoutDelta = player.m_healTimeout;

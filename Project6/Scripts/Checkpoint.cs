@@ -5,6 +5,6 @@ public class Checkpoint : Interactable
     {
         player.Heal(player.m_maxHealth);
         player.saveData.spawnPosition = this.transform.position;
-        JSONSave.Instance.SaveData(player.saveData);
+        SaveManager.Instance.SaveData(player.saveData);
     }
 }

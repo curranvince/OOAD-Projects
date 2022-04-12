@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class EnemyAttack : Attack
 {
-    private BoxCollider meleeCollider;
-    private Enemy enemy;
     private Player player;
 
     private void Awake()
@@ -20,7 +18,6 @@ public class EnemyAttack : Attack
     protected override void Start()
     {
         base.Start();
-        enemy = GetComponentInParent<Enemy>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
@@ -39,14 +36,14 @@ public class EnemyAttack : Attack
 
     public override void DoSecondary() { }
 
-    IEnumerator DelayedDamage(float damage)
+    private IEnumerator DelayedDamage(float damage)
     {
         yield return new WaitForSeconds(m_attackData.m_dodgeWindow);
         Debug.Log("Skelly attacked");
         player.SendMessage("Damage", damage);
     }
 
-    IEnumerator DelayedBullet()
+    private IEnumerator DelayedBullet()
     {
         yield return new WaitForSeconds(m_attackData.m_fireDelay);
         GameObject bullet = GameObject.Instantiate(m_attackData.m_projPrefab, m_attackData.m_attackOrigin.position, Quaternion.LookRotation(transform.forward));

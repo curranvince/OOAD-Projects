@@ -12,9 +12,8 @@ public class PlayerAttack : Attack
     protected Transform camTransform;
 
     private float currentDmg;
-    private BoxCollider meleeCollider;
 
-    protected virtual void Awake()
+    private void Awake()
     {
         camTransform = Camera.main.transform;
         meleeCollider = GetComponent<BoxCollider>();
@@ -69,12 +68,9 @@ public class PlayerAttack : Attack
 
     /* called fom player anim event */
     /* start collecting hits along a swing */
-    public void CheckHit()
-    {
-        StartCoroutine(CollectHits());
-    }
+    public void CheckHit() => StartCoroutine(CollectHits());
 
-    IEnumerator CollectHits()
+    private IEnumerator CollectHits()
     {
         /* check all colliders hit over range of time to simulate a swing */
         float timer = 0f;
@@ -107,7 +103,7 @@ public class PlayerAttack : Attack
         }
     }
 
-    IEnumerator DelayedFire(AttackData rangedData)
+    private IEnumerator DelayedFire(AttackData rangedData)
     {
         /* wait until we are at fire point to actually fire */
         yield return new WaitForSeconds(rangedData.m_fireDelay);

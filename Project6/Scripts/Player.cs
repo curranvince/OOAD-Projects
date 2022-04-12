@@ -40,7 +40,6 @@ public class Player : Character
 
     private Transform healthBar;
     private Image healthForeground;
-    // private Image healthBackground;
 
     [HideInInspector]
     public PlayerData saveData = new PlayerData();
@@ -76,6 +75,8 @@ public class Player : Character
         }
     }
 
+    public void SetHealthBar(bool newValue) => healthBar.gameObject.SetActive(newValue);
+
     public override void Damage(float amount)
     {
         if (!m_invincible)
@@ -95,22 +96,19 @@ public class Player : Character
 
     protected override IEnumerator Die()
     {
-        Time.timeScale = 0; // pause
-        yield return StartCoroutine(FadeToBlack.Instance.Fade()); // wait for fade to finish
+        MenuManager.Instance.Pause(false);
+        yield return StartCoroutine(MenuManager.Instance.FadeToBlack()); // wait for fade to finish
+        MenuManager.Instance.ShowDeathScreen();
         /* teleport to last checkpoint & reset health */
         transform.position = saveData.spawnPosition;
         previousPosition = transform.position;
         currentHealth = m_maxHealth; 
         UpdateHealthBar();
-        /* reset enemies */
+        /* reset enemies & spawners */
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         foreach (Enemy enemy in enemies) { Destroy(enemy.gameObject); }
         Spawner[] spawners = FindObjectsOfType<Spawner>();
         foreach (Spawner spawner in spawners) { spawner.Reset(); }
-        //AreaSpawner[] aSpawners = FindObjectsOfType<AreaSpawner>();
-        //foreach (AreaSpawner spawner in aSpawners) { spawner.Reset(); }
-        StartCoroutine(FadeToBlack.Instance.Unfade());
-        Time.timeScale = 1; // unpause
     }
 
     public void Heal(float amount)
@@ -137,7 +135,6 @@ public class Player : Character
         previousPosition = transform.position;
         /* set class*/
         m_attacks.Clear();
-        //if (attackObject) Destroy(attackObject);
         if (saveData.playerClass == "Mage")
         {
             m_attacks.Add(Resources.Load<GameObject>("MagicStaff"));
@@ -151,14 +148,10 @@ public class Player : Character
         EquipWeapons();
     }
 
+    /* destroy the players attack object so it doesnt 'hang around' */
     public void ClearWeapons()
     {
         if (attackObject)
             Destroy(attackObject.gameObject);
-    }
-
-    public void SetHealthBar(bool newValue)
-    {
-        healthBar.gameObject.SetActive(newValue);
     }
 }

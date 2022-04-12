@@ -1,21 +1,15 @@
 using System.IO;
 using UnityEngine;
 
-public class JSONSave : MonoBehaviour
+public class SaveManager : MonoBehaviour
 {
-    public static JSONSave Instance { get; private set; }
+    public static SaveManager Instance { get; private set; }
 
     private string path = "";
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    private void Awake() => Instance = this;
 
-    private void SetPath(string fileName)
-    {
-        path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + fileName + ".json";
-    }
+    private void SetPath(string fileName) => path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + fileName + ".json";
 
     public void SaveData(JSONData data)
     {

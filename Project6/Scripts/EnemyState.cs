@@ -47,24 +47,20 @@ public class IdleState : EnemyState
         controller.animator.SetFloat("MoveZ", controller.agent.velocity.magnitude);
     }
 
+    /* returns if player is in enemies line of sight */
     private bool InLineOfSight(EnemyController controller)
     {
-        // shoot ray from enemy chest to player chest
-        // if it connects then enemy can see player
-        RaycastHit hit;
+        /* create ray from enemies chest to players chest */
         Vector3 pos = controller.transform.position + new Vector3(0, 1.5f, 0);
         Vector3 dir = ((controller.playerTransform.position + new Vector3(0, 1.5f, 0)) - pos).normalized;
-        Vector3 target = pos + dir * controller.m_alertDistance;
-        // Debug.DrawLine(pos, target, Color.black, 3f);
-        if (Physics.Raycast(pos, dir, out hit, controller.m_alertDistance))
+        /* if the ray connects with a part of the player, they can be seen */
+        if (Physics.Raycast(pos, dir, out RaycastHit hit, controller.m_alertDistance))
         {
             if (hit.collider.transform.name == "PGeometry")
             {
-        //         Debug.Log("Can see");
                 return true;
             }
         }
-        // Debug.Log("Cant see");
         return false;
     }
 
@@ -181,13 +177,13 @@ public class CombatState : EnemyState
     }
 
     /* get current distance to player */
-    private float DistanceToPlayer(EnemyController controller) { return (controller.playerTransform.position - controller.transform.position).magnitude; }
+    private float DistanceToPlayer(EnemyController controller) => (controller.playerTransform.position - controller.transform.position).magnitude;
     
     /* get current attack */
-    private Attack GetAttack(EnemyController controller) { return controller.character.attackObject; }
+    private Attack GetAttack(EnemyController controller) => controller.character.attackObject;
 
     /* check if player in range of attack */
-    private bool InRange(EnemyController controller) { return DistanceToPlayer(controller) < GetAttack(controller).m_attackData.m_attackRange; }
+    private bool InRange(EnemyController controller) => DistanceToPlayer(controller) < GetAttack(controller).m_attackData.m_attackRange;
 
     /* check if player is in front of enemy (only checks angle) */
     private bool InFront(EnemyController controller)
@@ -208,10 +204,9 @@ public class CombatState : EnemyState
     */
     private bool InLineOfSight(EnemyController controller)
     {
-        RaycastHit hit;
         Vector3 pos = controller.transform.position + new Vector3(0, 1.5f, 0); // pos of enemies 'eyes' (chest/neck)
         Vector3 dir = ((controller.playerTransform.position + new Vector3(0, 1.5f, 0)) - pos).normalized; // direction to players chest from our origin
-        if (Physics.Raycast(pos, dir, out hit, GetAttack(controller).m_attackData.m_attackRange))
+        if (Physics.Raycast(pos, dir, out RaycastHit hit, GetAttack(controller).m_attackData.m_attackRange))
         {
             if (hit.collider.GetComponentInParent<Player>()) return true;
         }
@@ -220,7 +215,7 @@ public class CombatState : EnemyState
 
     public void Exit(EnemyController controller)
     {
-        
+        // throw new System.NotImplementedException();
     }
 }
 

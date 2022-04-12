@@ -14,11 +14,10 @@ public class CameraController : MonoBehaviour
     private NoiseSettings calmNoise;
     private NoiseSettings shakeNoise;
     private float shakeTimerDelta;
-    //private float shakeTimeout;
-    //private float startingIntensity;
 
     private void Awake()
     {
+        /* ensure only one CameraController is ever made */
         DontDestroyOnLoad(this);
         if (Instance == null)
         {
@@ -32,11 +31,14 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        /* get references to componenets */
         vCam = GetComponent<CinemachineVirtualCamera>();
         perlin = vCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         inputProvider = GetComponent<CinemachineInputProvider>();
+        /* load noise (shake) settings */
         calmNoise = Resources.Load("CalmShake") as NoiseSettings;
         shakeNoise = Resources.Load("BigShake") as NoiseSettings;
+        /* set initial values */
         shakeTimerDelta = 0;
         perlin.m_NoiseProfile = calmNoise;
         perlin.m_AmplitudeGain = 0.5f;
@@ -60,21 +62,14 @@ public class CameraController : MonoBehaviour
 
     public void ShakeCamera(float intensity, float time)
     {
+        /* make camera start shaking and set timer */
         perlin.m_NoiseProfile = shakeNoise;
         perlin.m_AmplitudeGain = intensity;
         perlin.m_FrequencyGain = 5f;
-        //startingIntensity = intensity;
         shakeTimerDelta = time;
-        //shakeTimeout = time;
     }
 
-    public void SetInput(bool newValue)
-    {
-        inputProvider.enabled = newValue;
-    }
+    public void SetInput(bool newValue) => inputProvider.enabled = newValue;
 
-    public void SetReticle(bool newValue)
-    {
-        m_reticle.SetActive(newValue);
-    }
+    public void SetReticle(bool newValue) => m_reticle.SetActive(newValue);
 }
