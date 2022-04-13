@@ -43,7 +43,10 @@ public class Player : Character
 
     [HideInInspector]
     public PlayerData saveData = new PlayerData();
-    
+
+    [HideInInspector]
+    public bool controls = true;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -76,6 +79,10 @@ public class Player : Character
     }
 
     public void SetHealthBar(bool newValue) => healthBar.gameObject.SetActive(newValue);
+
+    public void PlayAnimation(string animation) => GetComponent<Animator>().Play("Interaction Layer." + animation, 3);
+
+    public void StopMovement() => GetComponent<Animator>().SetFloat("MoveZ", 0f);
 
     public override void Damage(float amount)
     {

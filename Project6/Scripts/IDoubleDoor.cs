@@ -18,6 +18,7 @@ public class IDoubleDoor : Interactable
     protected override void Start()
     {
         base.Start();
+        m_animClipName = "OpenDoor";
         leftDoor = transform.Find("LeftDoor").gameObject;
         rightDoor = transform.Find("RightDoor").gameObject;
         ld = leftDoor.AddComponent<Door>();

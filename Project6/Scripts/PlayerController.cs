@@ -144,17 +144,22 @@ public class PlayerController : Controller
         {
             if (!MenuManager.Instance.isPaused)
             {
-                UpdateAimTarget();
-                GroundedCheck();
-                RollCheck();
-                JumpAndGravity();
-                if (!_rolling)
+                if (player.controls)
                 {
-                    BlockCheck();
-                    Move();
+                    UpdateAimTarget();
+                    GroundedCheck();
+                    RollCheck();
+                    JumpAndGravity();
+                    if (!_rolling)
+                    {
+                        BlockCheck();
+
+                        Move();
+                    }
                 }
+                CheckInteractions();
             }
-            CheckInteractions();
+            CheckForPause();
         }   
     }
 
@@ -293,23 +298,26 @@ public class PlayerController : Controller
         }
     }
 
+    /* check if player interacted with anything */
+    /* if interaction button was pressed, shoot a ray from camera */
+    /* if it collides with an "Interactable" object, Interact with the Interactable component of it */
     private void CheckInteractions()
     {
-        // try to interact with interactables
         if (interactAction.WasPerformedThisFrame())
         {
-            RaycastHit hit;
-            if (Physics.Raycast(camTransform.position, camTransform.forward, out hit, Mathf.Infinity, ~interactMask))
+            if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, Mathf.Infinity, ~interactMask))
             {
-                if (hit.collider.tag == "Interactable")
+                if (hit.collider.CompareTag("Interactable"))
                 {
-                    if (hit.collider.gameObject.GetComponent<Interactable>().Interact())
-                        animator.SetBool(_animIDInteract, true);
+                    hit.collider.gameObject.GetComponent<Interactable>().Interact();
                 }
             }
         }
+    }
 
-        // check for pause
+    /* see if player tried to pause game this frame */
+    private void CheckForPause()
+    {
         if (pauseAction.WasPerformedThisFrame())
         {
             MenuManager.Instance.DeterminePause();
@@ -471,7 +479,7 @@ public class PlayerController : Controller
 
     private void Attack()
     {
-        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
+        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoAttack"); // uses polymorphism, whereas calling directly would not
             animator.SetBool(_animIDAttack, true); 
@@ -480,7 +488,7 @@ public class PlayerController : Controller
 
     private void Attack2()
     {
-        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
+        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
         {
             player.attackObject.SendMessage("DoSecondary");
             animator.SetBool(_animIDAttack2, true);
@@ -489,7 +497,7 @@ public class PlayerController : Controller
 
     private void DrinkPotion()
     {
-        if (!MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
+        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
         {
             animator.SetBool(_animIDDrink, true);
             _healTimeoutDelta = player.m_healTimeout;

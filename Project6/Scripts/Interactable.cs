@@ -4,16 +4,19 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public float interactRange;
+    public float m_interactRange = 3f;
     [SerializeField]
-    private LayerMask interactMask;
+    private LayerMask m_interactMask;
+
+    [HideInInspector]
+    protected string m_animClipName;
 
     [HideInInspector]
     public bool active;
     protected Player player;
     protected Camera mainCam;
 
-    private GameObject ui;
+    protected GameObject ui;
 
     protected virtual void Start()
     {
@@ -27,7 +30,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (PlayerInRange() && PlayerLookingAt())
+        if (!MenuManager.Instance.isPaused && PlayerInRange() && PlayerLookingAt())
         {
             Activate();
         } else
@@ -40,6 +43,10 @@ public abstract class Interactable : MonoBehaviour
     {
         if (active)
         {
+            if (m_animClipName != "")
+            {
+                player.PlayAnimation(m_animClipName);
+            }
             DoInteraction();
             return true;
         }
@@ -48,15 +55,11 @@ public abstract class Interactable : MonoBehaviour
 
     protected abstract void DoInteraction();
 
-    private bool PlayerInRange()
-    {
-        return (player.transform.position - transform.position).magnitude < interactRange;
-    }
+    protected bool PlayerInRange() => (player.transform.position - transform.position).magnitude < m_interactRange;
 
-    private bool PlayerLookingAt()
+    protected bool PlayerLookingAt()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit, Mathf.Infinity, ~interactMask))
+        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, Mathf.Infinity, ~m_interactMask))
         {
             if (hit.collider.transform.name == transform.name)
             {
@@ -76,4 +79,3 @@ public abstract class Interactable : MonoBehaviour
         ui.SetActive(false);
     }
 }
-

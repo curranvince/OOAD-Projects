@@ -1,5 +1,11 @@
 public class Checkpoint : Interactable
 {
+    protected override void Start()
+    {
+        base.Start();
+        m_animClipName = "TouchCheckpoint";
+    }
+
     /* heal the player, set their spawn position, and save the game */
     protected override void DoInteraction()
     {

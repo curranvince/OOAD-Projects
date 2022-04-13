@@ -14,6 +14,7 @@ public class IDoor : Interactable
     protected override void Start()
     {
         base.Start();
+        m_animClipName = "OpenDoor";
         door = gameObject.AddComponent<Door>();
         door.m_speed = m_speed;
         door.m_rotationAmount = m_rotationAmount;

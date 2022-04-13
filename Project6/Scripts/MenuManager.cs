@@ -189,6 +189,7 @@ public class MenuManager : MonoBehaviour
             CameraController.Instance.SetReticle(true);
         }
         Player.Instance.SetHealthBar(true);
+        Player.Instance.controls = true;
         Time.timeScale = 1;                                         // resume time 
         isPaused = false;
     }
