@@ -7,6 +7,6 @@ Other Projects:
 Projects 2-4 are different versions of a Store Simulation made in Java  
 Project 1 is a simple card game in Java
 
-Please see individual projects for their own READMEs.
+Please see individual projects for their own READMEs, documentation, and diagrams.
 
 Contributors: Vince Curran, Logan Park, Kevin Vo
