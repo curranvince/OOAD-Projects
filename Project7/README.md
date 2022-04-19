@@ -3,7 +3,7 @@ Project Title: _Soul Keeper_
 Team Members: Vince Curran, Logan Park, Kevin Vo
 
 Code:  
-All code can be found directly in the Project7/Scripts folder. 
+All code can be found directly in the /Scripts folder. 
 
 To Play:  
 Download the .zip for your system (PC/Mac) from the releases section  
