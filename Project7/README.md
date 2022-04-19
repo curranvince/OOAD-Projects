@@ -15,4 +15,4 @@ INSERT LINK HERE
 Web Version Notes:
 If UI is weird, going fullscreen should fix it
 Can save/load games within a session (until you close tab)
-Quit button freezes app (not webpage) instead of closing it, youc an just close the tab its open in to quit
+Quit button freezes app (not webpage) so instead of using quit, you can just close the tab its open in to quit
