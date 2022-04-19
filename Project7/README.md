@@ -2,6 +2,10 @@ Project Title: _Soul Keeper_
 
 Team Members: Vince Curran, Logan Park, Kevin Vo
 
+Versions:  
+Made with Unity 2020.3 (LTS)  
+.NET 4.6 (C# 7.3) compiled with Roslyn
+
 Code:  
 All code can be found directly in the /Scripts folder. 
 
