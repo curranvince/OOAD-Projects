@@ -13,6 +13,9 @@ Alternate Web Version:
 INSERT LINK HERE
 
 Web Version Notes:
-If UI is weird, going fullscreen should fix it
+
+If UI is weird, going fullscreen should fix it 
+
 Can save/load games within a session (until you close tab)
+
 Quit button freezes app (not webpage) so instead of using quit, you can just close the tab its open in to quit
