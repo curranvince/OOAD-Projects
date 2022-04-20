@@ -15,17 +15,20 @@ public class IDoubleDoor : Interactable
     private Door ld;
     private Door rd;
 
+    /* set up doors with correct rotations */
     protected override void Start()
     {
         base.Start();
         m_animClipName = "OpenDoor";
         leftDoor = transform.Find("LeftDoor").gameObject;
         rightDoor = transform.Find("RightDoor").gameObject;
+        /* set up 'left' door */
         ld = leftDoor.AddComponent<Door>();
         ld.m_left = true;
         ld.m_speed = m_speed;
         ld.m_rotationAmount = m_rotationAmount;
         ld.m_forwardDirection = m_forwardDirection;
+        /* set up 'right' door */
         rd = rightDoor.AddComponent<Door>();
         rd.m_left = false;
         rd.m_speed = m_speed;
@@ -33,6 +36,7 @@ public class IDoubleDoor : Interactable
         rd.m_forwardDirection = m_forwardDirection;
     }
 
+    /* open/close both doors on interaction */ 
     protected override void DoInteraction()
     {
         if (!ld.isOpen)

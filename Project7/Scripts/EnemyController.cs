@@ -39,9 +39,7 @@ public class EnemyController : Controller
         stateMachine.ChangeState(initialState);
 
         if (playerTransform == null)
-        {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        }
     }
 
     private void Update()

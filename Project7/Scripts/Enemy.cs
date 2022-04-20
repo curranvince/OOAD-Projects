@@ -5,7 +5,8 @@ public class Enemy : Character
 {
     [HideInInspector]
     public UIHealthBar healthBar;
-    private EnemyController controller;
+    
+    protected EnemyController controller;
 
     protected override void Start()
     {

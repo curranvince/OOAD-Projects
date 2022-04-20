@@ -18,10 +18,7 @@ public interface EnemyState
 
 public class IdleState : EnemyState
 {
-    public EnemyStateID GetID()
-    {
-        return EnemyStateID.Idle;
-    }
+    public EnemyStateID GetID() => EnemyStateID.Idle;
 
     public void Enter(EnemyController controller)
     {
@@ -40,14 +37,12 @@ public class IdleState : EnemyState
         playerDirection.Normalize();
         float dotProduct = Vector3.Dot(playerDirection, agentDirection);
         if (dotProduct > 0.0f && InLineOfSight(controller))
-        {
             controller.stateMachine.ChangeState(EnemyStateID.Combat);
-        }
 
         controller.animator.SetFloat("MoveZ", controller.agent.velocity.magnitude);
     }
 
-    /* returns if player is in enemies line of sight */
+    /* returns if player is in enemies line of sight or not */
     private bool InLineOfSight(EnemyController controller)
     {
         /* create ray from enemies chest to players chest */
@@ -57,9 +52,7 @@ public class IdleState : EnemyState
         if (Physics.Raycast(pos, dir, out RaycastHit hit, controller.m_alertDistance))
         {
             if (hit.collider.transform.name == "PGeometry")
-            {
                 return true;
-            }
         }
         return false;
     }
@@ -97,6 +90,11 @@ public class CombatState : EnemyState
         _initialZ = controller.transform.position.z;
         /* make agent stop when it gets w/in attack range */
         controller.agent.stoppingDistance = GetAttack(controller).m_attackData.m_attackRange;
+        if (controller.character is Boss)
+        {
+            Boss boss = controller.character as Boss;
+            boss.SetHealthBar(true);
+        }
     }
 
     /* TO DO : Choosing between attacks */
@@ -138,9 +136,7 @@ public class CombatState : EnemyState
 
         /* set path immediately if agent has none */
         if (!controller.agent.hasPath)
-        {
             controller.agent.destination = controller.playerTransform.position;
-        }
 
         /* update somewhat sparingly since setting destination is expensive */
         if (_timerDelta < 0.0f || DistanceToPlayer(controller) < 3.0f)
@@ -229,12 +225,11 @@ public class DeathState : EnemyState
     /* When entering death state play death effects & destroy gameobject */
     public void Enter(EnemyController controller)
     {
+        /* instantiate death effects */ 
         if (controller.character.m_deathEffects.Length > 0)
         {
             foreach (var effect in controller.character.m_deathEffects)
-            {
                 GameObject.Instantiate(effect, controller.transform.position, controller.transform.rotation);
-            }
         }
         /* ensure health bar doesnt 'hang around' while the objects being deleted */
         if (controller.character.healthBar) controller.character.healthBar.gameObject.SetActive(false);

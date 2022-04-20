@@ -41,14 +41,11 @@ public class IDialogue : Interactable
     protected override void Update()
     {
         if (!talking && !MenuManager.Instance.isPaused && PlayerInRange() && PlayerLookingAt())
-        {
-            Activate();
-        } 
+            Set(true);
         else if ((!talking && (!PlayerInRange() || !PlayerLookingAt())) || MenuManager.Instance.isPaused)
-        {
-            Deactivate();
-        }
+            Set(false);
 
+        /* if player pauses during interaction, just end it */
         if (MenuManager.Instance.isPaused)
         {
             dialogueContainer.SetActive(false);
@@ -56,72 +53,65 @@ public class IDialogue : Interactable
         }
     }
 
+    /* start, continue, or end interaction based off current state */
     protected override void DoInteraction()
     {
         if (!talking)
-        {
             StartTalking();
-        }
         else if (allDone)
-        {
             EndInteraction();
-        }
         else
-        {
             continueDialogue = true;
-        }
     }
 
+    /* begin a dialogue interaction */
     private void StartTalking()
     {
         talking = true;
-        ui.SetActive(false);
-        dialogueContainer.SetActive(true);
-        player.controls = false;
-        CameraController.Instance.SetInput(false);
-        player.StopMovement();
-        animator.SetBool(_animIDTalking, true);
-        ShowDialogue();
+        ui.SetActive(false);                        // remove normal game ui
+        dialogueContainer.SetActive(true);          // turn on dialogue container
+        player.controls = false;                    // turn off player controls
+        CameraController.Instance.SetInput(false);   
+        player.StopMovement();                      // ensure player stops moving (so walking anim does not continue) 
+        animator.SetBool(_animIDTalking, true);     // set NPC talking anim to true
+        ShowDialogue();                             // begin the dialogue interaction
     }
 
     private void ShowDialogue() => StartCoroutine(StepThroughDialog(m_dialogue));
 
+    /* go through one 'screen' of dialogue at a time, waiting for player input to continue */
     private IEnumerator StepThroughDialog(ScriptableDialogue scriptableDialogue)
     {
-        allDone = false;
-        
+        allDone = false;    // signal dialogue is not done yet
+
         Speech last = scriptableDialogue.Dialogue[scriptableDialogue.Dialogue.Length-1];
         foreach (Speech speech in scriptableDialogue.Dialogue)
         {
             continueDialogue = false;
-
-            animator.SetBool(_animIDTalking2, speech.important);
-
-            yield return WriteText(speech.dialogue);
-
-            if (!speech.Equals(last))
-            {
+            animator.SetBool(_animIDTalking2, speech.important);    // assign different animation for 'important' information
+            yield return WriteText(speech.dialogue);                // wait for text to be written
+            if (!speech.Equals(last))                               // wait for player input to continue
                 yield return new WaitUntil(() => continueDialogue);
-            }
         }
 
-        allDone = true;
+        allDone = true;     // signal dialogue is done 
     }
 
+    /* end the dialogue interaction */
     private void EndInteraction()
     {
-        // end dialogue interaction
         talking = false;
-        dialogueContainer.SetActive(false);
-        textLabel.text = string.Empty;  // ensure text label is empty
-        animator.SetBool(_animIDTalking, false);
+        dialogueContainer.SetActive(false);             // remove UI
+        textLabel.text = string.Empty;                  // ensure text label is empty
+        animator.SetBool(_animIDTalking, false);        // end animations
         animator.SetBool(_animIDTalking2, false);
-        if (writingCo != null)
+        if (writingCo != null)                          // make sure writing coroutine stops
             StopCoroutine(writingCo);
-        player.controls = true;
+        player.controls = true;                         // give control back to player
         CameraController.Instance.SetInput(true);
     }
 
+    /* write text to screen with 'typewriter' effect */
     private IEnumerator WriteText(string textToType)
     {
         textLabel.text = string.Empty;  // ensure text label is empty

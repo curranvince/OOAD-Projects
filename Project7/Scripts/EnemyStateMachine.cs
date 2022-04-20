@@ -25,10 +25,7 @@ public class EnemyStateMachine
         return states[index];
     }
 
-    public void Update()
-    {
-        GetState(currentState)?.Update(controller);
-    }
+    public void Update() => GetState(currentState)?.Update(controller);
 
     public void ChangeState(EnemyStateID newState)
     {

@@ -9,8 +9,10 @@ public class SaveManager : MonoBehaviour
 
     private void Awake() => Instance = this;
 
+    /* add in directory path & suffix so we only deal with fileNames */
     private void SetPath(string fileName) => path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + fileName + ".json";
 
+    /* convert data to JSON and write to a file */
     public void SaveData(JSONData data)
     {
         SetPath(data.fileName);
@@ -23,36 +25,27 @@ public class SaveManager : MonoBehaviour
         writer.Write(json);
     }
 
+    /* load data from a specified file and convert to proper data type */ 
     public JSONData LoadData(string fileName)
     {
         string json = "";
         SetPath(fileName);
 
-        try
-        {
+        /* try to read file with given name */
+        try {
             using StreamReader reader = new StreamReader(path);
             json = reader.ReadToEnd();
-            //Debug.Log("Read json as: " + json);
-        }
-        catch (System.IO.FileNotFoundException)
-        {
-            // if theres no user settings create a default profile
+        } catch (System.IO.FileNotFoundException) {
+            /* if theres no user settings create a default profile */
             if (fileName == "UserSettings")
-                return new UserData()
-                {
-                    fileName = fileName
-                };
+                return new UserData() { fileName = fileName };
         }
         
-        if (fileName == "UserSettings")
-        {
-            UserData data = JsonUtility.FromJson<UserData>(json);
-            return data;
-        } 
-        else
-        {
-            PlayerData data = JsonUtility.FromJson<PlayerData>(json);
-            return data;
+        /* return data as proper type by checking the filename */
+        if (fileName == "UserSettings") {
+            return JsonUtility.FromJson<UserData>(json);
+        } else {
+            return JsonUtility.FromJson<PlayerData>(json);
         }
     }
 }

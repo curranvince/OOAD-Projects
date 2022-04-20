@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
     public GameObject m_pauseScreen;
     public GameObject m_deathScreen;
     public GameObject m_blackScreen;
+    public GameObject m_winScreen;
 
     [Header("Main Menu")]
     public GameObject[] m_hideOnStart;
@@ -35,7 +36,7 @@ public class MenuManager : MonoBehaviour
     /* ensure the same MenuManager is available throughout life of application */
     private void Awake()
     {
-        
+
         if (Instance == null)
         {
             Instance = this;
@@ -66,6 +67,12 @@ public class MenuManager : MonoBehaviour
 
     public void ShowDeathScreen() => m_deathScreen.SetActive(true);
 
+    public void ShowWinScreen() {
+        Pause(false);
+        StartCoroutine(FadeToBlack());
+        m_winScreen.SetActive(true);
+    }
+
     /* start game with new save file */
     public void StartNewGame(string fileInput)
     {
@@ -84,11 +91,12 @@ public class MenuManager : MonoBehaviour
     /* start game from loaded data */
     public void StartGameFromLoad(string fileName)
     {
-        if (SaveManager.Instance.LoadData(fileName) is PlayerData data)
-        {
+        if (SaveManager.Instance.LoadData(fileName) is PlayerData data) {
+            /* if data found disable menu and start the game */
             m_mainForeground.SetActive(false);
             StartCoroutine(StartGame(data));
         } else {
+            /* if data not found show menu again */
             m_mainForeground.SetActive(true);
             Debug.Log("Could not find save game: " + fileName);
         }
@@ -112,7 +120,8 @@ public class MenuManager : MonoBehaviour
         /* save and set player data */
         SaveManager.Instance.SaveData(playerData);
         GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SetFromData(playerData);
-        
+        CameraController.Instance.SetRotation(playerData.spawnRotation);
+
         /* unfade from black and turn game UI on */
         StartCoroutine(UnfadeFromBlack(0.5f));
         CameraController.Instance.SetReticle(true);
@@ -194,6 +203,7 @@ public class MenuManager : MonoBehaviour
     /* return to main menu from pause menu */
     public void ReturnToMainMenu()
     {
+        StartCoroutine(UnfadeFromBlack());
         if (isPaused)
         {
             /* unpause game, hide game UI, & reset Player */

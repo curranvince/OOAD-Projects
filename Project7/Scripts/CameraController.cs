@@ -15,18 +15,20 @@ public class CameraController : MonoBehaviour
     private NoiseSettings shakeNoise;
     private float shakeTimerDelta;
 
+    public void SetRotation(Vector3 eulerAngles) => vCam.transform.eulerAngles = eulerAngles;
+
+    public void SetInput(bool newValue) => inputProvider.enabled = newValue;
+
+    public void SetReticle(bool newValue) => m_reticle.SetActive(newValue);
+
     private void Awake()
     {
         /* ensure only one CameraController is ever made */
         DontDestroyOnLoad(this);
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
     private void Start()
@@ -50,7 +52,7 @@ public class CameraController : MonoBehaviour
         if (shakeTimerDelta > 0)
         {
             shakeTimerDelta -= Time.deltaTime;
-            //perlin.m_AmplitudeGain = Mathf.Lerp(startingIntensity, 0, (1 - (shakeTimerDelta / shakeTimeout)));
+            /* if no longer need to shake, go back to normal noise settings */
             if (perlin.m_AmplitudeGain != 0.5f && shakeTimerDelta <= 0)
             {
                 perlin.m_NoiseProfile = calmNoise;
@@ -62,14 +64,10 @@ public class CameraController : MonoBehaviour
 
     public void ShakeCamera(float intensity, float time)
     {
-        /* make camera start shaking and set timer */
+        /* start camera shaking and set shake timer */
         perlin.m_NoiseProfile = shakeNoise;
         perlin.m_AmplitudeGain = intensity;
         perlin.m_FrequencyGain = 5f;
         shakeTimerDelta = time;
     }
-
-    public void SetInput(bool newValue) => inputProvider.enabled = newValue;
-
-    public void SetReticle(bool newValue) => m_reticle.SetActive(newValue);
 }

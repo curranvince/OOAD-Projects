@@ -51,13 +51,9 @@ public class Player : Character
     {
         DontDestroyOnLoad(this);
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
     
     protected override void Start()
@@ -103,6 +99,7 @@ public class Player : Character
 
     protected override IEnumerator Die()
     {
+        Debug.Log("Player died");
         MenuManager.Instance.Pause(false);
         yield return StartCoroutine(MenuManager.Instance.FadeToBlack()); // wait for fade to finish
         MenuManager.Instance.ShowDeathScreen();
@@ -146,6 +143,9 @@ public class Player : Character
         transform.position = saveData.spawnPosition;
         previousPosition = transform.position;
         transform.eulerAngles = saveData.spawnRotation;
+        //Vector3 newDirection = Vector3.RotateTowards(transform.forward, saveData.spawnRotation, Time.deltaTime, 0.0f);
+
+        //transform.eulerAngles = saveData.spawnRotation;
         /* set class and equip weapons */
         m_attacks.Clear();
         if (saveData.playerClass == "Mage") m_attacks.Add(Resources.Load<GameObject>("MagicStaff"));

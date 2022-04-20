@@ -11,8 +11,7 @@ public class Speech
     public override bool Equals(object obj)
     {
         if (!(obj is Speech other)) return false;
-
-        return (this.dialogue.Equals(other.dialogue));
+        return dialogue.Equals(other.dialogue);
     }
 
     public override int GetHashCode() => base.GetHashCode();

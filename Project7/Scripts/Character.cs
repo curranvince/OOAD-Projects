@@ -49,7 +49,7 @@ public abstract class Character : MonoBehaviour
         float dmgTaken = amount * m_damageModifier;
         currentHealth -= dmgTaken;
         UpdateHealthBar();
-        if (currentHealth <= 0.0f) { StartCoroutine(Die()); }
+        if (currentHealth <= 0.0f) StartCoroutine(Die());
     }
 
     public void SwitchToWeapon(int index)

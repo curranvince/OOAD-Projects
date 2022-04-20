@@ -18,6 +18,12 @@ public abstract class Interactable : MonoBehaviour
 
     protected GameObject ui;
 
+    protected abstract void DoInteraction();
+
+    protected bool PlayerInRange() => (player.transform.position - transform.position).magnitude < m_interactRange;
+
+    protected bool PlayerLookingAt() => (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, Mathf.Infinity, ~m_interactMask) && hit.collider.transform.name == transform.name);
+
     protected virtual void Start()
     {
         active = false;
@@ -28,54 +34,30 @@ public abstract class Interactable : MonoBehaviour
         ui.SetActive(false);
     }
 
+    /* activate if not on a menu, player in range, and player looking at, else deactivate */
     protected virtual void Update()
     {
         if ((!MenuManager.Instance || !MenuManager.Instance.isPaused) && PlayerInRange() && PlayerLookingAt())
-        {
-            Activate();
-        } else
-        {
-            Deactivate();
-        }
+            Set(true);
+        else
+            Set(false);
     }
 
+    /* on Interact, play anim clip and call DoInteraction */
+    /* return wether interaction was started */
     public bool Interact()
     {
         if (active)
         {
-            if (m_animClipName != "")
-            {
-                player.PlayAnimation(m_animClipName);
-            }
+            if (m_animClipName != "") player.PlayAnimation(m_animClipName);
             DoInteraction();
-            return true;
         }
-        return false;
+        return active;
     }
 
-    protected abstract void DoInteraction();
-
-    protected bool PlayerInRange() => (player.transform.position - transform.position).magnitude < m_interactRange;
-
-    protected bool PlayerLookingAt()
+    protected void Set(bool setAs)
     {
-        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, Mathf.Infinity, ~m_interactMask))
-        {
-            if (hit.collider.transform.name == transform.name)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    protected void Activate() {
-        active = true;
-        ui.SetActive(true);
-    }
-
-    protected void Deactivate() {
-        active = false;
-        ui.SetActive(false);
+        active = setAs;
+        ui.SetActive(setAs);
     }
 }
