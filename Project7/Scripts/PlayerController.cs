@@ -28,20 +28,6 @@ public class PlayerController : Controller
     [Tooltip("What layers the character uses as ground")]
     public LayerMask GroundLayers;
 
-    /*
-    [Header("Cinemachine")]
-    [Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
-    public GameObject CinemachineCameraTarget;
-    [Tooltip("How far in degrees can you move the camera up")]
-    public float TopClamp = 70.0f;
-    [Tooltip("How far in degrees can you move the camera down")]
-    public float BottomClamp = -30.0f;
-    [Tooltip("Additional degress to override the camera. Useful for fine tuning camera position when locked")]
-    public float CameraAngleOverride = 0.0f;
-    [Tooltip("For locking the camera position on all axis")]
-    public bool LockCameraPosition = false;
-    */
-
     [SerializeField]
     private float animationSmoothTime = 0.1f;
     
@@ -54,10 +40,6 @@ public class PlayerController : Controller
     [Header("Interact")]
     [SerializeField]
     private LayerMask interactMask;
-
-    // cinemachine
-    // private float _cinemachineTargetYaw;
-    // private float _cinemachineTargetPitch;
 
     private CharacterController controller;
     private PlayerInput playerInput;
@@ -137,12 +119,11 @@ public class PlayerController : Controller
         drinkAction.performed -= _ => DrinkPotion();
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        if (!MenuManager.Instance.onMainMenu)
+        if (!MenuManager.Instance || !MenuManager.Instance.onMainMenu)      // do nothing while on main menu
         {
-            if (!MenuManager.Instance.isPaused)
+            if (!MenuManager.Instance || !MenuManager.Instance.isPaused)    // only check for pause button while on pause menu
             {
                 if (player.controls)
                 {
@@ -153,7 +134,6 @@ public class PlayerController : Controller
                     if (!_rolling)
                     {
                         BlockCheck();
-
                         Move();
                     }
                 }
@@ -167,10 +147,11 @@ public class PlayerController : Controller
     {
         if (!camTransform)
             camTransform = Camera.main.transform;
-        if (!MenuManager.Instance.onMainMenu)
-            CameraRotation();
+        if (!MenuManager.Instance || !MenuManager.Instance.onMainMenu)
+            RotateToCamera();
     }
 
+    /* cache input actions for easy access */ 
     private void AssignActions()
     {
         moveAction = playerInput.actions["Move"];
@@ -186,7 +167,7 @@ public class PlayerController : Controller
         pauseAction = playerInput.actions["Pause"];
     }
 
-    // cache anim ids so we dont have to type strings on each access
+    /* cache anim ids so we dont have to type strings on each access */
     private void AssignAnimationIDs()
     {
         //_animIDMoveX = Animator.StringToHash("MoveX");
@@ -203,58 +184,31 @@ public class PlayerController : Controller
         _animIDDrink = Animator.StringToHash("Drink");
     }
     
+    /* check if player is touching ground using small offset */
     private void GroundedCheck()
     {
-        // set sphere position, with offset
         Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
         Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
         animator.SetBool(_animIDGrounded, Grounded);
     }
-
-    /*
-    private void CameraRotation()
-    {
-        Vector2 input = lookAction.ReadValue<Vector2>();
-        // if there is an input and camera position is not fixed
-        if (input.sqrMagnitude >= _threshold && !LockCameraPosition)
-        {
-            _cinemachineTargetYaw += input.x * Time.deltaTime;
-            _cinemachineTargetPitch += input.y * Time.deltaTime;
-        }
-
-        // clamp our rotations so our values are limited 360 degrees
-        _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-        _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
-        // Cinemachine will follow this target
-        CinemachineCameraTarget.transform.rotation = Quaternion.Euler(_cinemachineTargetPitch + CameraAngleOverride, _cinemachineTargetYaw, 0.0f);
-    }
-    */
-
-    private void CameraRotation()
+    
+    /* keep player looking in same direction as camera */
+    private void RotateToCamera()
     {
         Quaternion targetRotation = Quaternion.Euler(0, camTransform.eulerAngles.y, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, player.m_rotationSpeed * Time.deltaTime);
     }
 
+    /* handle player movement */
     private void Move()
     {
-        // set target speed based on move speed, sprint speed and if sprint is pressed
-        float targetSpeed = player.m_walkSpeed; 
-        
+        /* read user iput and set base speed if there is any */ 
         Vector2 input = moveAction.ReadValue<Vector2>();
+        float targetSpeed = (input == Vector2.zero) ? 0.0f : player.m_walkSpeed;
 
-        // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-        // if there is no input, set the target speed to 0
-        if (input == Vector2.zero)
-        {
-            targetSpeed = 0.0f;
-        }
-
-        // move the player
-        if (strafeAction.activeControl != null)
-        {
-            // handle strafing
+        /* use different blends for strafe and walk/run so theres more abrupt change when you begin crouching */
+        if (strafeAction.activeControl != null) {
+            /* handle strafing */
             targetSpeed = player.m_strafeSpeed;
             _currentStrafeBlend = Vector2.SmoothDamp(_currentStrafeBlend, input, ref _animationVelocity, animationSmoothTime);
             Vector3 move = new Vector3(_currentStrafeBlend.x, 0, _currentStrafeBlend.y);
@@ -264,35 +218,29 @@ public class PlayerController : Controller
             animator.SetFloat("StrafeMoveX", _currentStrafeBlend.x);
             animator.SetFloat("StrafeMoveZ", _currentStrafeBlend.y);
             animator.SetBool(_animIDStrafe, true);
-        }
-        else
-        {
-            // handle walking/sprinting
-            if (sprintAction.activeControl != null) targetSpeed = player.m_sprintSpeed; 
-            // a reference to the players current horizontal velocity
-            float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0.0f, controller.velocity.z).magnitude;
-
+        } else {
+            /* handle walking/sprinting */
+            /* set speed to sprint if necessary and cache some variables */
+            if (sprintAction.activeControl != null) targetSpeed = player.m_sprintSpeed;                               
+            float currentHorizontalSpeed = new Vector3(controller.velocity.x, 0.0f, controller.velocity.z).magnitude; 
             float speedOffset = 0.1f;
 
-            // accelerate or decelerate to target speed
+            /* accelerate or decelerate to target speed */
             if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
             {
-                // creates curved result rather than a linear one giving a more organic speed change
-                // note T in Lerp is clamped, so we don't need to clamp our speed
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed, Time.deltaTime * player.m_accelerationRate);
+                /* creates curved result rather than a linear one giving a more organic speed change */
+                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed, Time.deltaTime * player.m_accelerationRate);        // note lerp has clamp built in
+                _speed = Mathf.Round(_speed * 1000f) / 1000f;                                                                // round to 3 decimals
+            } else {
+                _speed = targetSpeed;                   /* if we dont need to accel/decel then keep speed the same */
+            }
 
-                // round speed to 3 decimal places
-                _speed = Mathf.Round(_speed * 1000f) / 1000f;
-            }
-            else
-            {
-                _speed = targetSpeed;
-            }
+            /* get final speed blend */
             _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * player.m_accelerationRate);
-            
+
+            /* convert input to direction and combine with speed to move the character */
             Vector3 targetDirection = InputToTarget(input);
             animator.SetBool(_animIDStrafe, false);
-
             controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
             animator.SetFloat(_animIDMoveZ, _animationBlend);
         }
@@ -318,90 +266,67 @@ public class PlayerController : Controller
     /* see if player tried to pause game this frame */
     private void CheckForPause()
     {
-        if (pauseAction.WasPerformedThisFrame())
-        {
-            MenuManager.Instance.DeterminePause();
-        }
+        if (pauseAction.WasPerformedThisFrame()) MenuManager.Instance.DeterminePause();
     }
 
+    /* apply gravity and check for player jumping */
     private void JumpAndGravity()
     {
         if (Grounded)
         {
-            // stop our velocity dropping infinitely when grounded
-            if (_verticalVelocity < 0.0f)
-            {
-                _verticalVelocity = -2f;
-            }
+            /* stop our velocity dropping infinitely when grounded */
+            if (_verticalVelocity < 0.0f) _verticalVelocity = -2f;
 
-            // jump 
+            /* if player jumps, add to their vertical velocity and alert animator */
             if (_jumpTimeoutDelta <= 0.0f && strafeAction.activeControl == null && jumpAction.WasPerformedThisFrame())
             {
                 _verticalVelocity = Mathf.Sqrt(player.m_jumpHeight * -2f * player.Gravity);
-
-                // update animator if using character
-                animator.SetBool(_animIDJump, true);
+                animator.SetBool(_animIDJump, true);                                        
             }
 
-            // jump timeout
-            if (_jumpTimeoutDelta >= 0.0f)
-            {
-                _jumpTimeoutDelta -= Time.deltaTime;
-            }
+            /* jump timeout */
+            if (_jumpTimeoutDelta >= 0.0f) _jumpTimeoutDelta -= Time.deltaTime;
         }
         else
         {
-            // reset the jump timeout timer
+            /* reset the jump timeout timer if in air */
             _jumpTimeoutDelta = player.m_jumpTimeout;
 
-            // fall timeout
-            if (_fallTimeoutDelta >= 0.0f)
-            {
-                _fallTimeoutDelta -= Time.deltaTime;
-            }
-            else
-            {
-                // update animator if using character
-                animator.SetBool(_animIDFreeFall, true);
-            }
+            /* iterate fall timer or alert animator if actually falling */
+            if (_fallTimeoutDelta >= 0.0f) _fallTimeoutDelta -= Time.deltaTime;
+            else animator.SetBool(_animIDFreeFall, true);
         }
 
         // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-        if (_verticalVelocity < _terminalVelocity)
-        {
-            _verticalVelocity += player.Gravity * Time.deltaTime;
-        }
+        if (_verticalVelocity < _terminalVelocity) _verticalVelocity += player.Gravity * Time.deltaTime;
 
-        // need to use timed checks for attacks & heals since they can happen at any point
+        /* need to use timed checks for attacks & heals since they can happen at any point */
         if (player.attackObject && player.attackObject.attackTimeoutDelta <= (player.attackObject.m_attackData.m_attackTimeout-0.5f)) { 
             animator.SetBool(_animIDAttack, false);
             animator.SetBool(_animIDAttack2, false);
         }
-
-        if (_healTimeoutDelta <= (player.m_healTimeout - 0.5f))
-        {
-            animator.SetBool(_animIDDrink, false);
-        }
-
+        if (_healTimeoutDelta <= (player.m_healTimeout - 0.5f)) animator.SetBool(_animIDDrink, false);
+        
+        /* iterate roll timer */
         _timeSinceRoll += Time.deltaTime;
     }
 
+    /* convert given input to a direction */
     private Vector3 InputToTarget(Vector2 input)
     {
-        // normalise input direction
+        /* normalise input direction */
         Vector3 inputDirection = new Vector3(input.x, 0.0f, input.y).normalized;
 
-        // note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-        // if there is a move input rotate player when the player is moving
+        /* if there is input rotate to face same direction as camera */
         if (input != Vector2.zero)
         {
             _targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + camTransform.eulerAngles.y;
             float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, player.m_rotationSmoothTime);
 
-            // rotate to face input direction relative to camera position
             transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
         }
 
+        /* return target rotation (in eulers) */
         return Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
     }
 
@@ -470,7 +395,7 @@ public class PlayerController : Controller
             animator.SetBool(_animIDBlock, true);
             player.shieldObject.Block();
         }
-        else
+        else if (player.shieldObject)
         {
             animator.SetBool(_animIDBlock, false);
             player.shieldObject.StopBlocking();
@@ -504,13 +429,4 @@ public class PlayerController : Controller
             player.Heal(player.m_healAmount);
         }
     }
-
-    /*
-    private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
-    {
-        if (lfAngle < -360f) lfAngle += 360f;
-        if (lfAngle > 360f) lfAngle -= 360f;
-        return Mathf.Clamp(lfAngle, lfMin, lfMax);
-    }
-    */
 }

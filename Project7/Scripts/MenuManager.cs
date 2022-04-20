@@ -51,8 +51,8 @@ public class MenuManager : MonoBehaviour
         /* load & set user settings */
         currentUserData = SaveManager.Instance.LoadData("UserSettings") as UserData;
         /* set options screen UI appropiately */
-        m_muteToggle.SetIsOnWithoutNotify(!currentUserData.m_volumeOn);
-        m_volumeSlider.value = currentUserData.m_volumeLevel;
+        m_muteToggle.SetIsOnWithoutNotify(!currentUserData.volumeOn);
+        m_volumeSlider.value = currentUserData.volumeLevel;
         UpdateSettings();
         onMainMenu = true;
         isPaused = false;
@@ -74,6 +74,7 @@ public class MenuManager : MonoBehaviour
         {
             fileName = fileInput,
             spawnPosition = Vector3.zero,
+            spawnRotation = Vector3.zero,
             playerClass = classChoice
         };
         Debug.Log("Created new save game: " + newPlayerData.fileName);
@@ -87,9 +88,7 @@ public class MenuManager : MonoBehaviour
         {
             m_mainForeground.SetActive(false);
             StartCoroutine(StartGame(data));
-        }
-        else
-        {
+        } else {
             m_mainForeground.SetActive(true);
             Debug.Log("Could not find save game: " + fileName);
         }
@@ -98,19 +97,24 @@ public class MenuManager : MonoBehaviour
     /* start the game with given save data*/
     private IEnumerator StartGame(PlayerData playerData)
     {
-        yield return StartCoroutine(FadeToBlack(1f));            // wait for screen to go black
-        foreach (GameObject toHide in m_hideOnStart) toHide.SetActive(false);  // hide some menu UI
+        yield return StartCoroutine(FadeToBlack(1f));                                                       // wait for screen to go black
+        foreach (GameObject toHide in m_hideOnStart) toHide.SetActive(false);                               // hide some menu UI
         AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(m_gameScene, LoadSceneMode.Single);     // load the game scene
-        while (!asyncLoadLevel.isDone) yield return null;                      // wait for level to load
-        yield return new WaitForSecondsRealtime(1f);                           // wait a second so awakes can finish
+        while (!asyncLoadLevel.isDone) yield return null;                                                   // wait for level to load
+        yield return new WaitForSecondsRealtime(1f);                                                        // wait a second so awakes can finish
+        
         /* if player has no spawn position set it as the world spawn */
-        if (playerData.spawnPosition == Vector3.zero) playerData.spawnPosition = GameObject.FindGameObjectWithTag("Spawn").GetComponent<Checkpoint>().gameObject.transform.position;
+        GameObject spawnObject = GameObject.FindGameObjectWithTag("Spawn");
+        if (playerData.spawnPosition == Vector3.zero) playerData.spawnPosition = spawnObject.transform.position;
+        if (playerData.spawnRotation == Vector3.zero) playerData.spawnRotation = spawnObject.transform.eulerAngles;
+        Debug.Log(playerData.spawnRotation);
+        
         /* save and set player data */
         SaveManager.Instance.SaveData(playerData);
-        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        player.SetFromData(playerData);
-        StartCoroutine(UnfadeFromBlack(0.5f));                     // unfade from black
-        /* turn game UI on */
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SetFromData(playerData);
+        
+        /* unfade from black and turn game UI on */
+        StartCoroutine(UnfadeFromBlack(0.5f));
         CameraController.Instance.SetReticle(true);
         Player.Instance.SetHealthBar(true);
         onMainMenu = false;
@@ -120,8 +124,8 @@ public class MenuManager : MonoBehaviour
     public void UpdateSettings()
     {
         /* update audio */
-        AudioListener.pause = !currentUserData.m_volumeOn;
-        AudioListener.volume = currentUserData.m_volumeLevel;
+        AudioListener.pause = !currentUserData.volumeOn;
+        AudioListener.volume = currentUserData.volumeLevel;
         /* save the settings we just applied */
         SaveManager.Instance.SaveData(currentUserData);
     }
@@ -129,46 +133,38 @@ public class MenuManager : MonoBehaviour
     /* handle mute button being toggled */
     public void MuteToggle(bool isMuted)
     {
-        currentUserData.m_volumeOn = !isMuted;
+        currentUserData.volumeOn = !isMuted;
         UpdateSettings();
     }
 
     /* handle volume slider being changed */
     public void VolumeSliderChange()
     {
-        currentUserData.m_volumeLevel = m_volumeSlider.value;
+        currentUserData.volumeLevel = m_volumeSlider.value;
         UpdateSettings();
     }
 
     /* close the settings menu */
     public void ExitSettings()
     {
-        if (isPaused)
-        {
-            m_pauseScreen.SetActive(true);
-        }
-        else
-        {
-            m_mainScreen.SetActive(true);
-        }
+        if (isPaused) m_pauseScreen.SetActive(true);
+        else m_mainScreen.SetActive(true);
     }
 
     /* toggle pausing */
     public void DeterminePause()
     {
-        if (isPaused)
-            Resume();
-        else
-            Pause();
+        if (isPaused) Resume();
+        else Pause();
     }
 
     /* pause the game */
     public void Pause(bool showPauseScreen = true)
     {
         /* stop time, unlock cursor, swap game UI for pause screen */
-        Time.timeScale = 0;
+        Time.timeScale = 0;                                 // stops all operations using Time.deltaTime 
         Cursor.lockState = CursorLockMode.None;
-        if (CameraController.Instance)
+        if (CameraController.Instance) 
         {
             CameraController.Instance.SetInput(false);
             CameraController.Instance.SetReticle(false);
@@ -181,6 +177,7 @@ public class MenuManager : MonoBehaviour
     /* resume game */
     public void Resume(bool clearPauseScreen = true)
     {
+        /* clear pause screen, lock cursor, set game UI back on */
         if (clearPauseScreen) m_pauseScreen.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         if (CameraController.Instance)
@@ -190,7 +187,7 @@ public class MenuManager : MonoBehaviour
         }
         Player.Instance.SetHealthBar(true);
         Player.Instance.controls = true;
-        Time.timeScale = 1;                                         // resume time 
+        Time.timeScale = 1;                              // resumes Time.deltaTime
         isPaused = false;
     }
 
@@ -212,11 +209,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    /* fade screen to black with given speed */
     public IEnumerator FadeToBlack(float fadeSpeed = 2f)
     {
+        /* get the color of plain image covering whole screen */
         Color color = m_blackScreen.GetComponent<Image>().color;
         float fadeAmount;
 
+        /* darken color until pure black at the given speed */
         while (m_blackScreen.GetComponent<Image>().color.a < 1)
         {
             fadeAmount = color.a + (fadeSpeed * Time.unscaledDeltaTime);
@@ -227,11 +227,14 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    /* unfade screen from black with given speed */
     public IEnumerator UnfadeFromBlack(float fadeSpeed = 2f)
     {
+        /* get the color of plain image covering whole screen */
         Color color = m_blackScreen.GetComponent<Image>().color;
         float fadeAmount;
 
+        /* lighten color until invisible at the given speed */ 
         while (m_blackScreen.GetComponent<Image>().color.a > 0)
         {
             fadeAmount = color.a - (fadeSpeed * Time.unscaledDeltaTime);
@@ -242,6 +245,8 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    /* resume game after death */
+    /* Player has already been reset at this point */
     public void ExitDeathScreen()
     {
         StartCoroutine(UnfadeFromBlack(0.25f));

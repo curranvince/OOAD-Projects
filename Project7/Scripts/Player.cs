@@ -113,11 +113,12 @@ public class Player : Character
         UpdateHealthBar();
         /* reset enemies & spawners */
         Enemy[] enemies = FindObjectsOfType<Enemy>();
-        foreach (Enemy enemy in enemies) { Destroy(enemy.gameObject); }
+        foreach (Enemy enemy in enemies) Destroy(enemy.gameObject);
         Spawner[] spawners = FindObjectsOfType<Spawner>();
-        foreach (Spawner spawner in spawners) { spawner.Reset(); }
+        foreach (Spawner spawner in spawners) spawner.Reset(); 
     }
 
+    /* heal player a given amount */
     public void Heal(float amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, m_maxHealth);
@@ -125,31 +126,30 @@ public class Player : Character
         UpdateHealthBar();
     }
 
+    /* called udring the middle of melee attacks */
+    /* allow object to check along its path for hits */
     public void Hit()
     {
         PlayerAttack pattackObject = (PlayerAttack)attackObject;
         pattackObject.CheckHit();
     }
 
+    /* update player from given save data */
     public void SetFromData(PlayerData playerData)
     {
         /* copy data */
         saveData.spawnPosition = playerData.spawnPosition;
+        saveData.spawnRotation = playerData.spawnRotation;
         saveData.playerClass = playerData.playerClass;
         saveData.fileName = playerData.fileName;
-        /* set position */
+        /* set position & rotation */
         transform.position = saveData.spawnPosition;
         previousPosition = transform.position;
-        /* set class*/
+        transform.eulerAngles = saveData.spawnRotation;
+        /* set class and equip weapons */
         m_attacks.Clear();
-        if (saveData.playerClass == "Mage")
-        {
-            m_attacks.Add(Resources.Load<GameObject>("MagicStaff"));
-        } 
-        else if (saveData.playerClass == "Melee")
-        {
-            m_attacks.Add(Resources.Load<GameObject>("SharpSword"));
-        }
+        if (saveData.playerClass == "Mage") m_attacks.Add(Resources.Load<GameObject>("MagicStaff"));
+        else if (saveData.playerClass == "Melee") m_attacks.Add(Resources.Load<GameObject>("SharpSword"));
         attackObject = m_attacks[0].GetComponent<Attack>();
         m_shield = Resources.Load<GameObject>("PlayerShield");
         EquipWeapons();
@@ -158,7 +158,6 @@ public class Player : Character
     /* destroy the players attack object so it doesnt 'hang around' */
     public void ClearWeapons()
     {
-        if (attackObject)
-            Destroy(attackObject.gameObject);
+        if (attackObject) Destroy(attackObject.gameObject);
     }
 }

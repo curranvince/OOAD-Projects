@@ -30,7 +30,7 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (!MenuManager.Instance.isPaused && PlayerInRange() && PlayerLookingAt())
+        if ((!MenuManager.Instance || !MenuManager.Instance.isPaused) && PlayerInRange() && PlayerLookingAt())
         {
             Activate();
         } else

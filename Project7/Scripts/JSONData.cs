@@ -14,11 +14,12 @@ public class PlayerData : JSONData
 {
     public string playerClass;
     public Vector3 spawnPosition;
+    public Vector3 spawnRotation;
 }
 
 public class UserData : JSONData
 {
-    public bool m_volumeOn = true;
+    public bool volumeOn = true;
     [Range(0f,1f)]
-    public float m_volumeLevel = 1f;
+    public float volumeLevel = 1f;
 }
