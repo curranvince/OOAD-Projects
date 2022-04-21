@@ -10,7 +10,7 @@ Code:
 All code can be found directly in the /Scripts folder. 
 
 To Play:  
-Download the .zip for your system (PC/Mac) from the releases section of /OOAD-Projects
+Download the .zip for your system (PC/Mac) from the releases section of /OOAD-Projects  
 Extract the zip and run the included .exe/.app
 
 Alternate Web Version:  
