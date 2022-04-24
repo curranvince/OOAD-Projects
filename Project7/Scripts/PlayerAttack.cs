@@ -24,46 +24,28 @@ public class PlayerAttack : Attack
         }
     }
 
-    public override void DoAttack()
-    {
-        if (m_attackData.m_attackType == AttackType.Melee)
-        {
-            currentDmg = m_attackData.m_damage;
-            attackTimeoutDelta = m_attackData.m_attackTimeout;
-            if (m_attackData.m_startEffects.Length > 0)
-            {
-                foreach (GameObject effect in m_attackData.m_startEffects)
-                {
-                    Instantiate(effect, transform.position, transform.rotation, transform);
-                }
-            }
-        }
-        else if (m_attackData.m_attackType == AttackType.Ranged)
-        {
-            StartCoroutine(DelayedFire(m_attackData));
-        }
-        attackTimeoutDelta = m_attackData.m_attackTimeout;
-    }
+    public override void DoAttack() => DetermineAttack(m_attackData);
 
-    public override void DoSecondary()
+    public override void DoSecondary() => DetermineAttack(m_secondaryData);
+
+    private void DetermineAttack(AttackData attackData)
     {
-        if (m_secondaryData.m_attackType == AttackType.Melee)
-        {
-            currentDmg = m_secondaryData.m_damage;
-            attackTimeoutDelta = m_secondaryData.m_attackTimeout;
-            if (m_secondaryData.m_startEffects.Length > 0)
+        /* determine coroutine to run based off attack type */
+        if (attackData.m_attackType == AttackType.Melee) {
+            currentDmg = attackData.m_damage;
+            attackTimeoutDelta = attackData.m_attackTimeout;
+            /* play start effects */
+            if (attackData.m_startEffects.Length > 0)
             {
-                foreach (GameObject effect in m_secondaryData.m_startEffects)
+                foreach (GameObject effect in attackData.m_startEffects)
                 {
                     Instantiate(effect, transform.position, transform.rotation, transform);
                 }
             }
+        } else if (attackData.m_attackType == AttackType.Ranged) {
+            StartCoroutine(DelayedFire(attackData));
         }
-        else if (m_secondaryData.m_attackType == AttackType.Ranged)
-        {
-            StartCoroutine(DelayedFire(m_secondaryData));
-        }
-        attackTimeoutDelta = m_attackData.m_attackTimeout;
+        attackTimeoutDelta = m_attackData.m_attackTimeout; // start attack timeout
     }
 
     /* called fom player anim event */
@@ -107,16 +89,13 @@ public class PlayerAttack : Attack
     {
         /* wait until we are at fire point to actually fire */
         yield return new WaitForSeconds(rangedData.m_fireDelay);
-        GameObject bullet = GameObject.Instantiate(rangedData.m_projPrefab, rangedData.m_attackOrigin.position, Quaternion.LookRotation(camTransform.forward));
+        GameObject bullet = Instantiate(rangedData.m_projPrefab, rangedData.m_attackOrigin.position, Quaternion.LookRotation(camTransform.forward));
         Projectile proj = bullet.GetComponent<Projectile>();
         proj.damage = rangedData.m_damage;
-        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, Mathf.Infinity, ~m_layerMask))
-        {
+        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit hit, Mathf.Infinity, ~m_layerMask)) {
             proj.target = hit.point;
             proj.hit = true;
-        }
-        else
-        {
+        } else {
             proj.target = camTransform.position + camTransform.forward * rangedData.m_attackRange;
             proj.hit = false;
         }

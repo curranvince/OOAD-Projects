@@ -8,11 +8,13 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private GameObject m_reticle;
     
+    /* Cinemachine components */
     private CinemachineVirtualCamera vCam;
     private CinemachineBasicMultiChannelPerlin perlin;
     private CinemachineInputProvider inputProvider;
     private NoiseSettings calmNoise;
     private NoiseSettings shakeNoise;
+
     private float shakeTimerDelta;
 
     public void SetRotation(Vector3 eulerAngles) => vCam.transform.eulerAngles = eulerAngles;
@@ -25,10 +27,8 @@ public class CameraController : MonoBehaviour
     {
         /* ensure only one CameraController is ever made */
         DontDestroyOnLoad(this);
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     private void Start()
@@ -49,10 +49,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        /* shake the camera if needed, or go back to normal noise settings */
         if (shakeTimerDelta > 0)
         {
             shakeTimerDelta -= Time.deltaTime;
-            /* if no longer need to shake, go back to normal noise settings */
+            
             if (perlin.m_AmplitudeGain != 0.5f && shakeTimerDelta <= 0)
             {
                 perlin.m_NoiseProfile = calmNoise;

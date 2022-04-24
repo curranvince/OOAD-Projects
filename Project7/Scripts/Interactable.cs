@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+    [Tooltip("How far away can the player interact with the object")]
     public float m_interactRange = 3f;
     [SerializeField]
-    private LayerMask m_interactMask;
+    private LayerMask m_interactMask; // what layers can the interaction happen through
 
     [HideInInspector]
-    protected string m_animClipName;
+    protected string m_animClipName; // what animation to play when player interacts with the object
 
     [HideInInspector]
     public bool active;
@@ -20,8 +19,10 @@ public abstract class Interactable : MonoBehaviour
 
     protected abstract void DoInteraction();
 
+    /* see if player is within the interaction range */
     protected bool PlayerInRange() => (player.transform.position - transform.position).magnitude < m_interactRange;
 
+    /* see if player is looking at 'this' */
     protected bool PlayerLookingAt() => (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, Mathf.Infinity, ~m_interactMask) && hit.collider.transform.name == transform.name);
 
     protected virtual void Start()
@@ -55,6 +56,7 @@ public abstract class Interactable : MonoBehaviour
         return active;
     }
 
+    /* set wether the interactable object is active */
     protected void Set(bool setAs)
     {
         active = setAs;

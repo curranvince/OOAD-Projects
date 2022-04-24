@@ -24,13 +24,7 @@ public class IDoor : Interactable
 
     protected override void DoInteraction()
     {
-        if (!door.isOpen)
-        {
-            door.Open();
-        }
-        else
-        {
-            door.Close();
-        }
+        if (!door.isOpen) door.Open();
+        else door.Close();
     }
 }

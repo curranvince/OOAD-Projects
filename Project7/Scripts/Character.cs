@@ -75,6 +75,7 @@ public abstract class Character : MonoBehaviour
             controller.animator.runtimeAnimatorController = attackObject.m_animator;
             // set = true;
         }
+
         if (m_shield)
         {
             GameObject newshield = Instantiate(m_shield, m_shieldParent) as GameObject;

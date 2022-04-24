@@ -6,16 +6,9 @@ public class PermanentObject : MonoBehaviour
 
     private void Awake()
     {
-        {
-            DontDestroyOnLoad(gameObject);
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        /* ensure only one perm object, and that it lives forever */
+        DontDestroyOnLoad(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 }

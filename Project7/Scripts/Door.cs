@@ -26,29 +26,34 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-        if (animCoroutine != null)
-        {
-            StopCoroutine(animCoroutine);
-        }
+        if (animCoroutine != null) StopCoroutine(animCoroutine);
 
         float dot = Vector3.Dot(_forward, (player.transform.position - transform.position).normalized);
         animCoroutine = StartCoroutine(RotateOpen(dot));
+    }
+
+    public void Close()
+    {
+        if (animCoroutine != null) StopCoroutine(animCoroutine);
+
+        animCoroutine = StartCoroutine(RotateClosed());
     }
 
     private IEnumerator RotateOpen(float forwardAmount)
     {
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation;
-        if (m_left)
-        {
+
+        /* determine rotation endpoint depending on direction of open */
+        if (m_left) {
             endRotation = (forwardAmount >= m_forwardDirection) ? Quaternion.Euler(new Vector3(0, _startRotation.y - m_rotationAmount, 0)) : Quaternion.Euler(new Vector3(0, _startRotation.y + m_rotationAmount, 0));
-        } else
-        {
+        } else {
             endRotation = (forwardAmount <= m_forwardDirection) ? Quaternion.Euler(new Vector3(0, _startRotation.y - m_rotationAmount, 0)) : Quaternion.Euler(new Vector3(0, _startRotation.y + m_rotationAmount, 0));
         }
         
         isOpen = true;
 
+        /* rotate door open over time */
         float time = 0;
         while (time < 1)
         {
@@ -58,23 +63,14 @@ public class Door : MonoBehaviour
         }
     }
 
-    public void Close()
-    {
-        if (animCoroutine != null)
-        {
-            StopCoroutine(animCoroutine);
-        }
-
-        animCoroutine = StartCoroutine(RotateClosed());
-    }
-
     private IEnumerator RotateClosed()
     {
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(_startRotation);
+        Quaternion endRotation = Quaternion.Euler(_startRotation); // to close we set rotation back t its original state
 
         isOpen = false;
 
+        /* rotate door closed over time */
         float time = 0;
         while (time < 1)
         {

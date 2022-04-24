@@ -7,6 +7,7 @@ public enum EnemyStateID
     Death
 }
 
+/* all states will inherit from enemy state */ 
 public interface EnemyState
 {
     EnemyStateID GetID();
@@ -16,6 +17,7 @@ public interface EnemyState
 
 }
 
+/* idle state for when enemy has nothign to do */
 public class IdleState : EnemyState
 {
     public EnemyStateID GetID() => EnemyStateID.Idle;
@@ -63,6 +65,7 @@ public class IdleState : EnemyState
     }
 }
 
+/* state to handle combat */
 public class CombatState : EnemyState
 {
     /* timeout for updating path */
@@ -76,11 +79,7 @@ public class CombatState : EnemyState
     private float _initialY;
     private float _initialZ;
 
-    public EnemyStateID GetID()
-    {
-        return EnemyStateID.Combat;
-    }
-
+    public EnemyStateID GetID() => EnemyStateID.Combat;
     public void Enter(EnemyController controller)
     {
         _timerDelta = _timeout;
@@ -128,9 +127,7 @@ public class CombatState : EnemyState
                 controller.stateMachine.ChangeState(EnemyStateID.Idle);
                 return;
             }
-        }
-        else
-        {
+        } else {
             _combatTimeoutDelta = _combatTimeout; // still in combat
         }
 
@@ -158,7 +155,7 @@ public class CombatState : EnemyState
             /* if attack is ready, use it */
             if (GetAttack(controller).CanAttack() && InFront(controller))
             {
-                /*introduce a bit of randomness so attacks arent always isntant when in range & ready */
+                /*introduce a bit of randomness so attacks arent always instant when in range & ready */
                 if (Random.Range(0, 3) == 0)
                 {
                     controller.animator.SetBool("Attack", true);
@@ -186,11 +183,8 @@ public class CombatState : EnemyState
     {
         Vector3 directionOfPlayer = controller.transform.position - controller.playerTransform.position;
         float angle = Vector3.Angle(controller.transform.forward, directionOfPlayer);
-        if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
-        {
-            return true;
-        }
-        return false;
+
+        return (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270);
     }
 
     /*
@@ -215,12 +209,10 @@ public class CombatState : EnemyState
     }
 }
 
+/* state to handle death */
 public class DeathState : EnemyState
 {
-    public EnemyStateID GetID()
-    {
-        return EnemyStateID.Death;
-    }
+    public EnemyStateID GetID() => EnemyStateID.Death;
 
     /* When entering death state play death effects & destroy gameobject */
     public void Enter(EnemyController controller)

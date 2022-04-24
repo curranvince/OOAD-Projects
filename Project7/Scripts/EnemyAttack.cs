@@ -23,12 +23,10 @@ public class EnemyAttack : Attack
 
     public override void DoAttack()
     {
-        if (m_attackData.m_attackType == AttackType.Melee)
-        {
-            StartCoroutine("DelayedDamage", m_attackData.m_damage);
-        } 
-        else if (m_attackData.m_attackType == AttackType.Ranged)
-        {
+        /* start attack absed off type */
+        if (m_attackData.m_attackType == AttackType.Melee) {
+            StartCoroutine(DelayedDamage());
+        } else if (m_attackData.m_attackType == AttackType.Ranged) {
             StartCoroutine(DelayedBullet());
         }
         attackTimeoutDelta = m_attackData.m_attackTimeout;
@@ -36,17 +34,19 @@ public class EnemyAttack : Attack
 
     public override void DoSecondary() { }
 
-    private IEnumerator DelayedDamage(float damage)
+    /* do damage to the player */
+    private IEnumerator DelayedDamage()
     {
         yield return new WaitForSeconds(m_attackData.m_dodgeWindow);
         Debug.Log("Skelly attacked");
-        player.SendMessage("Damage", damage);
+        player.SendMessage("Damage", m_attackData.m_damage);
     }
 
+    /* fire a bullet after a short delay */
     private IEnumerator DelayedBullet()
     {
         yield return new WaitForSeconds(m_attackData.m_fireDelay);
-        GameObject bullet = GameObject.Instantiate(m_attackData.m_projPrefab, m_attackData.m_attackOrigin.position, Quaternion.LookRotation(transform.forward));
+        GameObject bullet = Instantiate(m_attackData.m_projPrefab, m_attackData.m_attackOrigin.position, Quaternion.LookRotation(transform.forward));
         Projectile proj = bullet.GetComponent<Projectile>();
         proj.damage = m_attackData.m_damage;
         Vector3 pos = m_attackData.m_attackOrigin.position; // where attack starts from

@@ -202,7 +202,7 @@ public class PlayerController : Controller
     /* handle player movement */
     private void Move()
     {
-        /* read user iput and set base speed if there is any */ 
+        /* read user input and set base speed if there is any */ 
         Vector2 input = moveAction.ReadValue<Vector2>();
         float targetSpeed = (input == Vector2.zero) ? 0.0f : player.m_walkSpeed;
 
@@ -305,8 +305,10 @@ public class PlayerController : Controller
             animator.SetBool(_animIDAttack, false);
             animator.SetBool(_animIDAttack2, false);
         }
-        if (_healTimeoutDelta <= (player.m_healTimeout - 0.5f)) animator.SetBool(_animIDDrink, false);
-        
+
+        if (_healTimeoutDelta >= 0.0f) _healTimeoutDelta -= Time.deltaTime;
+        if (_healTimeoutDelta <= (player.m_healTimeout - 0.4f)) animator.SetBool(_animIDDrink, false);
+
         /* iterate roll timer */
         _timeSinceRoll += Time.deltaTime;
     }

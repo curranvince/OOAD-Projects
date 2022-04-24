@@ -11,14 +11,10 @@ public class Projectile : MonoBehaviour
 
     [HideInInspector]
     public float damage { get; set; }
-
     public Vector3 target { get; set; }
     public bool hit { get; set; }
 
-    private void OnEnable()
-    {
-        Destroy(gameObject, m_timeToDestroy);
-    }
+    private void OnEnable() => Destroy(gameObject, m_timeToDestroy);
     
     private void FixedUpdate()
     {
@@ -31,15 +27,12 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.GetType() != typeof(CapsuleCollider)) return; 
-
+        /* if projectile hits a character do damage to them */
         var character = collider.gameObject.GetComponentInParent<Character>();
-        if (character)
-        {
-            character.SendMessage("Damage", damage);
-        }
-        //ContactPoint contact = collision.GetContact(0);
-        /* effects when projectile strikes something
+        if (character) character.SendMessage("Damage", damage);
+
+        
+        /* play hit effects when projectile strikes something */
         if (m_strikeEffects.Length > 0)
         {
             foreach (var effect in m_strikeEffects)
@@ -47,9 +40,11 @@ public class Projectile : MonoBehaviour
                 Instantiate(effect, transform.position, transform.rotation);
             }
         }
-        */
+
         // If we want to paint a 2D decal on a surface use this
+        //ContactPoint contact = collision.GetContact(0);
         //GameObject.Instantiate(projectileDecal, contact.point + contact.normal * 0.0001f, Quaternion.LookRotation(contact.normal));
+        
         Destroy(gameObject);
     }
 }

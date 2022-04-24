@@ -31,12 +31,13 @@ public class Enemy : Character
 
     protected override void UpdateHealthBar()
     {
-        if (healthBar) healthBar.SetHealthbar(currentHealth / m_maxHealth);
+        if (healthBar) 
+            healthBar.SetHealthbar(currentHealth / m_maxHealth);
     }
 
     protected override IEnumerator Die()
     {
-        if (controller)
+        if (controller) 
             controller.stateMachine.ChangeState(EnemyStateID.Death);
         Destroy(gameObject);
         yield return null;

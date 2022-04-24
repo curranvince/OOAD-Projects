@@ -38,15 +38,17 @@ public class IDialogue : Interactable
         textLabel = dialogueContainer.transform.Find("DialogueText").GetComponent<TMP_Text>();
     }
 
+    /* TO DO: Take out references to MenuManager (HollyWood Principle)
+     * The MenuManager should tell Dialogue to stop if the game gets paused */
     protected override void Update()
     {
-        if (!talking && !MenuManager.Instance.isPaused && PlayerInRange() && PlayerLookingAt())
+        if (!talking && (!MenuManager.Instance || !MenuManager.Instance.isPaused) && PlayerInRange() && PlayerLookingAt())
             Set(true);
-        else if ((!talking && (!PlayerInRange() || !PlayerLookingAt())) || MenuManager.Instance.isPaused)
+        else if ((!talking && (!PlayerInRange() || !PlayerLookingAt())) || (MenuManager.Instance && MenuManager.Instance.isPaused))
             Set(false);
 
         /* if player pauses during interaction, just end it */
-        if (MenuManager.Instance.isPaused)
+        if (MenuManager.Instance && MenuManager.Instance.isPaused)
         {
             dialogueContainer.SetActive(false);
             if (talking) EndInteraction();
