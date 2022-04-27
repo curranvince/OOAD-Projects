@@ -50,10 +50,8 @@ public class Player : Character
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
     
     protected override void Start()
@@ -111,11 +109,16 @@ public class Player : Character
         currentHealth = m_maxHealth;
         m_healthPotions = 3;
         UpdateHealthBar();
-        /* reset enemies & spawners */
+        /* reset the world */
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         foreach (Enemy enemy in enemies) Destroy(enemy.gameObject);
         Spawner[] spawners = FindObjectsOfType<Spawner>();
-        foreach (Spawner spawner in spawners) spawner.Reset(); 
+        foreach (Spawner spawner in spawners) spawner.Reset();
+        Door[] doors = FindObjectsOfType<Door>();
+        foreach (Door door in doors)
+        {
+            if (door.isOpen) door.Close();
+        }
     }
 
     /* heal player a given amount */
