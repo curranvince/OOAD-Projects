@@ -17,6 +17,7 @@ Alternate Web Version:
 https://play.unity.com/mg/other/soulkeeper_webgl
 
 Web Version Notes:  
-If UI is weird, going fullscreen should fix it  
-Can save/load games within a session (until you close tab)  
+If UI is weird, going fullscreen should fix it 
+Due to controls overlapping with common browser shortcuts (such as Ctrl+W), it is not a reccomended experienece  
+Can save/load games within a session (unless you have a Unity account it will save to that)  
 Quit button freezes app (not webpage) so instead of using quit, you can just close the tab its open in to quit
