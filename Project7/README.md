@@ -14,7 +14,7 @@ Download the .zip for your system (PC/Mac) from the releases section of /OOAD-Pr
 Extract the zip and run the included .exe/.app
 
 Alternate Web Version:  
-INSERT LINK HERE
+https://play.unity.com/mg/other/soulkeeper_webgl
 
 Web Version Notes:  
 If UI is weird, going fullscreen should fix it  
