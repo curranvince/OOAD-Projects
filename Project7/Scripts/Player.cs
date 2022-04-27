@@ -86,11 +86,13 @@ public class Player : Character
         {
             Debug.Log("Player took damage");
             CameraController.Instance.ShakeCamera(3f, 0.2f);
+            if (shieldObject.blocking) m_damageModifier = 0.5f;
+            else m_damageModifier = 1f;
             base.Damage(amount);
         }
     }
 
-    protected override void UpdateHealthBar()
+    public override void UpdateHealthBar()
     {
         float width = 150 * (currentHealth / m_maxHealth);
         if (width < 0) width = 0;
@@ -106,7 +108,8 @@ public class Player : Character
         /* teleport to last checkpoint & reset health */
         transform.position = saveData.spawnPosition;
         previousPosition = transform.position;
-        currentHealth = m_maxHealth; 
+        currentHealth = m_maxHealth;
+        m_healthPotions = 3;
         UpdateHealthBar();
         /* reset enemies & spawners */
         Enemy[] enemies = FindObjectsOfType<Enemy>();
@@ -127,8 +130,11 @@ public class Player : Character
     /* allow object to check along its path for hits */
     public void Hit()
     {
-        PlayerAttack pattackObject = (PlayerAttack)attackObject;
-        pattackObject.CheckHit();
+        if (attackObject)
+        {
+            PlayerAttack pattackObject = (PlayerAttack)attackObject;
+            pattackObject.CheckHit();
+        }
     }
 
     /* update player from given save data */

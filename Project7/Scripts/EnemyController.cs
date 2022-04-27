@@ -42,6 +42,7 @@ public class EnemyController : Controller
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    /* pass control along to state machine */
     private void Update()
     {
         stateMachine.Update();

@@ -10,6 +10,7 @@ public class Checkpoint : Interactable
     protected override void DoInteraction()
     {
         player.Heal(player.m_maxHealth);
+        player.m_healthPotions = 3;
         player.saveData.spawnPosition = this.transform.position;
         SaveManager.Instance.SaveData(player.saveData);
     }

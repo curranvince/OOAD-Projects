@@ -10,6 +10,9 @@ public class MenuManager : MonoBehaviour
     [Tooltip("Name of the scene to load when the game starts")]
     public string m_gameScene;
 
+    [SerializeField]
+    private GameObject m_clickEffect;
+
     [Header("Screens")]
     public GameObject m_mainScreen;
     public GameObject m_pauseScreen;
@@ -36,15 +39,8 @@ public class MenuManager : MonoBehaviour
     /* ensure the same MenuManager is available throughout life of application */
     private void Awake()
     {
-
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     private void Start()
@@ -66,6 +62,8 @@ public class MenuManager : MonoBehaviour
     public void SetClassChoice(string classInput) => classChoice = classInput;
 
     public void ShowDeathScreen() => m_deathScreen.SetActive(true);
+
+    public void PlayClickSound() => Instantiate(m_clickEffect);
 
     public void ShowWinScreen() {
         Pause(false);
@@ -105,6 +103,7 @@ public class MenuManager : MonoBehaviour
     /* start the game with given save data*/
     private IEnumerator StartGame(PlayerData playerData)
     {
+        StartCoroutine(AudioMananger.Instance.ChangeAmbientLoop(1));
         yield return StartCoroutine(FadeToBlack(1f));                                                       // wait for screen to go black
         foreach (GameObject toHide in m_hideOnStart) toHide.SetActive(false);                               // hide some menu UI
         AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(m_gameScene, LoadSceneMode.Single);     // load the game scene
@@ -209,14 +208,18 @@ public class MenuManager : MonoBehaviour
             /* unpause game, hide game UI, & reset Player */
             Resume();
             CameraController.Instance.SetReticle(false);
+            Player.Instance.currentHealth = Player.Instance.m_maxHealth;
+            Player.Instance.UpdateHealthBar();
             Player.Instance.SetHealthBar(false);
             Player.Instance.ClearWeapons();
             /* show main menu and unlock cursor */
+            m_mainScreen.SetActive(true);
             m_mainForeground.SetActive(true);
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             Cursor.lockState = CursorLockMode.None;
             onMainMenu = true;
         }
+        StartCoroutine(AudioMananger.Instance.ChangeAmbientLoop(0));
     }
 
     /* fade screen to black with given speed */

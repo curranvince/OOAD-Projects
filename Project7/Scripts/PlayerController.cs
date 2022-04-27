@@ -226,8 +226,7 @@ public class PlayerController : Controller
             float speedOffset = 0.1f;
 
             /* accelerate or decelerate to target speed */
-            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
-            {
+            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset) {
                 /* creates curved result rather than a linear one giving a more organic speed change */
                 _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed, Time.deltaTime * player.m_accelerationRate);        // note lerp has clamp built in
                 _speed = Mathf.Round(_speed * 1000f) / 1000f;                                                                // round to 3 decimals
@@ -346,14 +345,8 @@ public class PlayerController : Controller
             animator.SetBool(_animIDRoll, false);
             animator.SetBool(_animIDJump, false);
             animator.SetBool(_animIDFreeFall, false);
-            if (_timeSinceRoll >= player.m_rollInvincibilityTime)
-            {
-                player.m_invincible = false;
-            }
-            if (_timeSinceRoll >= 1.15f)
-            {
-                rigBuilder.enabled = true;
-            }
+            if (_timeSinceRoll >= player.m_rollInvincibilityTime) player.m_invincible = false;
+            if (_timeSinceRoll >= 1.15f) rigBuilder.enabled = true;
         }
 
         if (_timeSinceRoll >= player.m_rollTimeout && jumpAction.WasPerformedThisFrame() && strafeAction.activeControl != null)
@@ -392,13 +385,10 @@ public class PlayerController : Controller
 
     private void BlockCheck()
     {
-        if (player.shieldObject && blockAction.activeControl != null)
-        {
+        if (player.shieldObject && blockAction.activeControl != null) {
             animator.SetBool(_animIDBlock, true);
             player.shieldObject.Block();
-        }
-        else if (player.shieldObject)
-        {
+        } else if (player.shieldObject) {
             animator.SetBool(_animIDBlock, false);
             player.shieldObject.StopBlocking();
         }
@@ -406,7 +396,7 @@ public class PlayerController : Controller
 
     private void Attack()
     {
-        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
+        if (player.controls && player.attackObject.CanAttack() && _healTimeoutDelta <= 0.0f && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu)
         {
             player.attackObject.SendMessage("DoAttack"); // uses polymorphism, whereas calling directly would not
             animator.SetBool(_animIDAttack, true); 
@@ -415,7 +405,7 @@ public class PlayerController : Controller
 
     private void Attack2()
     {
-        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.attackObject.CanAttack())
+        if (player.controls && player.attackObject.CanAttack() && _healTimeoutDelta <= 0.0f && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu)
         {
             player.attackObject.SendMessage("DoSecondary");
             animator.SetBool(_animIDAttack2, true);
@@ -424,7 +414,7 @@ public class PlayerController : Controller
 
     private void DrinkPotion()
     {
-        if (player.controls && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu && player.m_healthPotions > 0 && _healTimeoutDelta <= 0)
+        if (player.controls && player.m_healthPotions > 0 && _healTimeoutDelta <= 0 && !MenuManager.Instance.isPaused && !MenuManager.Instance.onMainMenu)
         {
             animator.SetBool(_animIDDrink, true);
             _healTimeoutDelta = player.m_healTimeout;

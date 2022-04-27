@@ -20,12 +20,12 @@ public abstract class Character : MonoBehaviour
 
     [Header("Combat")]
     public List<GameObject> m_attacks = new List<GameObject>(); 
-    //public GameObject[] m_attacks;
     public Transform m_attackParent;
     public GameObject m_shield;
     public Transform m_shieldParent;
 
     [Header("Effects")]
+    public GameObject[] m_hitEffects;
     public GameObject[] m_deathEffects;
 
     [HideInInspector]
@@ -42,29 +42,40 @@ public abstract class Character : MonoBehaviour
     }
 
     protected abstract IEnumerator Die();
-    protected virtual void UpdateHealthBar() { }
+    public virtual void UpdateHealthBar() { }
 
     public virtual void Damage(float amount)
     {
+        /* play hit effects */
+        if (m_hitEffects.Length > 0)
+        {
+            foreach (var effect in m_hitEffects)
+                GameObject.Instantiate(effect, transform.position, transform.rotation);
+        }
+
+        /* do damage & update healthbar */
         float dmgTaken = amount * m_damageModifier;
         currentHealth -= dmgTaken;
         UpdateHealthBar();
-        if (currentHealth <= 0.0f) StartCoroutine(Die());
+        if (currentHealth <= 0.0f) StartCoroutine(Die()); 
     }
 
+    /* destroy current weapon and equip new weapon given index of the new attack */
     public void SwitchToWeapon(int index)
     {
-        if (m_attacks.Count >= (index - 1))
+        if (index >= 0 && index < m_attacks.Count)
         {
             Destroy(attackObject.gameObject);
             GameObject newattack = Instantiate(m_attacks[index], m_attackParent) as GameObject;
             attackObject = newattack.GetComponent<Attack>();
+            // Debug.Log("Switched attack to " + index);
         }
     }
 
+    /* equip default weapons, called at Start */
     protected void EquipWeapons()
     {
-        //if (attackObject) Destroy(attackObject);
+        // if (attackObject) Destroy(attackObject);
         // bool set = false;
         Controller controller = GetComponent<Controller>();
 

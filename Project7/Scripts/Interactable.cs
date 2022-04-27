@@ -7,6 +7,8 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField]
     private LayerMask m_interactMask; // what layers can the interaction happen through
 
+    public GameObject[] m_startEffects;
+
     [HideInInspector]
     protected string m_animClipName; // what animation to play when player interacts with the object
 
@@ -50,7 +52,13 @@ public abstract class Interactable : MonoBehaviour
     {
         if (active)
         {
+            /* play animation & start effects, and do the interaction */
             if (m_animClipName != "") player.PlayAnimation(m_animClipName);
+            if (m_startEffects.Length > 0)
+            {
+                foreach (var effect in m_startEffects)
+                    GameObject.Instantiate(effect, transform.position, transform.rotation);
+            }
             DoInteraction();
         }
         return active;

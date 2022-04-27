@@ -29,7 +29,7 @@ public class Enemy : Character
             controller.stateMachine.ChangeState(EnemyStateID.Combat);
     }
 
-    protected override void UpdateHealthBar()
+    public override void UpdateHealthBar()
     {
         if (healthBar) 
             healthBar.SetHealthbar(currentHealth / m_maxHealth);

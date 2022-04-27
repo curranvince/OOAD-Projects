@@ -9,19 +9,28 @@ public class Boss : Enemy
     private Image healthForeground;
     private TMP_Text bossLabel;
 
-    public void SetHealthBar(bool value) => bossBar.SetActive(value);
+    public void SetHealthBar(bool value)
+    {
+        if (!bossBar) CreateHealthBar();
+        bossBar.SetActive(value);
+    }
 
     protected override void Start()
     {
         base.Start();
+        CreateHealthBar();
+        SetHealthBar(false);
+    }
+
+    private void CreateHealthBar()
+    {
         bossBar = Instantiate(Resources.Load<GameObject>("BossUI"), gameObject.transform);    // add a boss health bar
         healthForeground = bossBar.transform.Find("HealthBarUI/Foreground").GetComponent<Image>();
         bossLabel = bossBar.transform.Find("HealthBarUI/BossName").GetComponent<TMP_Text>();
         bossLabel.text = m_name;
-        SetHealthBar(false);
     }
 
-    protected override void UpdateHealthBar()
+    public override void UpdateHealthBar()
     {
         float width = 150 * (currentHealth / m_maxHealth);
         if (width < 0) width = 0;
