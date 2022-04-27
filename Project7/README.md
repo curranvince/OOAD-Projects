@@ -13,6 +13,11 @@ To Play:
 Download the .zip for your system (PC/Mac) from the releases section of /OOAD-Projects  
 Extract the zip and run the included .exe/.app
 
+Mac Users:  
+The game will fail to open initially becuase Apple cannot 'check that theres no malicious content'  
+You can go to Security and Privacy to allow the app through anyway  
+We promise there is nothing malicious  
+
 Alternate Web Version:  
 https://play.unity.com/mg/other/soulkeeper_webgl
 
