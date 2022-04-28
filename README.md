@@ -10,3 +10,5 @@ Project 1 is a simple card game in Java
 Please see individual projects for their own READMEs, documentation, and diagrams.
 
 Contributors: Vince Curran, Logan Park, Kevin Vo
+
+Project 7 Video Demos URL: https://www.youtube.com/watch?v=oNVAAF8Ck4s
