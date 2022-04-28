@@ -2,7 +2,8 @@ Project Title: _Soul Keeper_
 
 Team Members: Vince Curran, Logan Park, Kevin Vo
 
-Final Project 7 video walk-through URL: https://www.youtube.com/watch?v=oNVAAF8Ck4s
+Final Project 7 video walk-through URL: https://www.youtube.com/watch?v=oNVAAF8Ck4s  
+The poor quality and lag in the video is due to it being a recording of an online stream. The performance of the game itself has been super smooth on all our testing machines.  
 
 Language Specification:  
 Made with Unity 2020.3 (LTS)  
